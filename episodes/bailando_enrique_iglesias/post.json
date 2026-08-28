@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "ELE NÃO GOSTOU DE BAILANDO?",
+    "source": {
+      "type": "asset",
+      "asset_id": "enrique_2010"
+    }
+  },
+  "youtube": {
+    "title": "ENRIQUE NÃO GOSTOU? A história por trás de BAILANDO",
+    "description": "Antes de virar um fenômeno global, Bailando passou por uma transformação decisiva com Descemer Bueno e Gente de Zona em Cuba. A versão que voltou para Enrique Iglesias era tão diferente que mudou completamente a reação dele.",
+    "hashtags": [
+      "EnriqueIglesias",
+      "Bailando",
+      "GenteDeZona",
+      "DescemerBueno",
+      "Shorts"
+    ],
+    "privacy_status": "private",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "ENRIQUE NÃO GOSTOU DE BAILANDO? A primeira ideia era bem diferente. Depois que Descemer Bueno levou a faixa para Cuba e trabalhou com Gente de Zona, a música voltou transformada — e virou um fenômeno mundial.",
+    "hashtags": [
+      "EnriqueIglesias",
+      "Bailando",
+      "GenteDeZona",
+      "DescemerBueno",
+      "HistoriaDaMusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "Bailando só virou o hit que conhecemos depois de uma transformação em Cuba.",
+    "hashtags": [
+      "EnriqueIglesias",
+      "Bailando",
+      "GenteDeZona",
+      "HistoriaDaMusica"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

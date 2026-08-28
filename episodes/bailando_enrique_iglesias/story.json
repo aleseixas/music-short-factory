@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "title": "Enrique Iglesias — Bailando",
+  "slug": "bailando_enrique_iglesias",
+  "target_duration_seconds": 75,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Enrique Iglesias ouviu uma versão inicial de Bailando e não ficou convencido."
+    },
+    {
+      "id": "hook_turn",
+      "text": "O hit só ganhou outra vida depois de passar por Cuba."
+    },
+    {
+      "id": "early_sketch",
+      "text": "Descemer Bueno contou que mostrou os primeiros esboços a Enrique anos antes do lançamento."
+    },
+    {
+      "id": "bachata",
+      "text": "Na época, a música era muito diferente, quase uma bachata."
+    },
+    {
+      "id": "cuba",
+      "text": "Descemer então levou a canção para Cuba e trabalhou nela com Gente de Zona."
+    },
+    {
+      "id": "old_title",
+      "text": "Segundo o grupo, ela chegou até a se chamar Física y Química antes de virar Bailando."
+    },
+    {
+      "id": "gdz_change",
+      "text": "Alexander Delgado e Randy Malcom mudaram partes da faixa e deram mais força ao refrão e ao ritmo."
+    },
+    {
+      "id": "enrique_return",
+      "text": "Quando Enrique ouviu aquela nova versão, a reação mudou completamente."
+    },
+    {
+      "id": "prediction",
+      "text": "Descemer disse que Enrique chegou a prever que aquela seria a maior música da carreira dele."
+    },
+    {
+      "id": "bet",
+      "text": "E a aposta não ficou pequena."
+    },
+    {
+      "id": "spanish_version",
+      "text": "Bailando ganhou uma versão em espanhol com Descemer e Gente de Zona."
+    },
+    {
+      "id": "spanglish",
+      "text": "Também saiu uma versão em Spanglish com Sean Paul."
+    },
+    {
+      "id": "four_versions",
+      "text": "No total, foram quatro versões em três idiomas."
+    },
+    {
+      "id": "global",
+      "text": "A música entrou nas paradas de mais de cinquenta países."
+    },
+    {
+      "id": "billboard",
+      "text": "Nos Estados Unidos, ficou quarenta e uma semanas no topo da Billboard Hot Latin Songs."
+    },
+    {
+      "id": "record",
+      "text": "Com isso, quebrou o recorde de permanência que antes era de Shakira."
+    },
+    {
+      "id": "grammy",
+      "text": "No Latin Grammy de 2014, venceu três categorias, incluindo Canção do Ano."
+    },
+    {
+      "id": "payoff_setup",
+      "text": "Um dos maiores hits latinos da década começou como uma ideia que Enrique nem queria gravar."
+    },
+    {
+      "id": "payoff",
+      "text": "Até Cuba mudar tudo."
+    }
+  ]
+}

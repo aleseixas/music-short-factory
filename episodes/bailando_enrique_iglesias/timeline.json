@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "enrique_2010",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "ELE NÃO GOSTOU DE BAILANDO?",
+        "start_seconds": 0.18,
+        "duration_seconds": 1.7
+      }
+    },
+    {
+      "id": "shot_hook_turn",
+      "segment": "hook_turn",
+      "asset": "gente_de_zona_2015",
+      "motion": "pan_right",
+      "transition_out": "crossfade",
+      "highlight": "A VIRADA ACONTECEU EM CUBA"
+    },
+    {
+      "id": "shot_early_sketch",
+      "segment": "early_sketch",
+      "asset": "enrique_0611",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_bachata",
+      "segment": "bachata",
+      "asset": "studio_microphone",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "ERA QUASE UMA BACHATA"
+    },
+    {
+      "id": "shot_cuba",
+      "segment": "cuba",
+      "asset": "gente_de_zona_concert",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "DESCEMER + GENTE DE ZONA"
+    },
+    {
+      "id": "shot_old_title",
+      "segment": "old_title",
+      "asset": "gente_de_zona_billboard",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "FÍSICA Y QUÍMICA?"
+    },
+    {
+      "id": "shot_gdz_change",
+      "segment": "gdz_change",
+      "asset": "alexander_delgado",
+      "motion": "pan_right",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_enrique_return",
+      "segment": "enrique_return",
+      "asset": "enrique_0714",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "A REAÇÃO MUDOU"
+    },
+    {
+      "id": "shot_prediction",
+      "segment": "prediction",
+      "asset": "enrique_2010",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "A MAIOR DA CARREIRA?"
+    },
+    {
+      "id": "shot_bet",
+      "segment": "bet",
+      "asset": "enrique_espaco_americas",
+      "motion": "push_in",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_spanish_version",
+      "segment": "spanish_version",
+      "asset": "gente_de_zona_2015",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "VERSÃO EM ESPANHOL"
+    },
+    {
+      "id": "shot_spanglish",
+      "segment": "spanglish",
+      "asset": "enrique_0611",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "DEPOIS, SPANGLISH"
+    },
+    {
+      "id": "shot_four_versions",
+      "segment": "four_versions",
+      "asset": "gente_de_zona_billboard",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "4 VERSÕES • 3 IDIOMAS"
+    },
+    {
+      "id": "shot_global",
+      "segment": "global",
+      "asset": "enrique_0714",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "+50 PAÍSES"
+    },
+    {
+      "id": "shot_billboard",
+      "segment": "billboard",
+      "asset": "enrique_espaco_americas",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "41 SEMANAS NO TOPO"
+    },
+    {
+      "id": "shot_record",
+      "segment": "record",
+      "asset": "enrique_2010",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "NOVO RECORDE"
+    },
+    {
+      "id": "shot_grammy",
+      "segment": "grammy",
+      "asset": "gente_de_zona_billboard",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "3 LATIN GRAMMYS"
+    },
+    {
+      "id": "shot_payoff_setup",
+      "segment": "payoff_setup",
+      "asset": "enrique_0611",
+      "motion": "push_in",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "gente_de_zona_concert",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "CUBA MUDOU TUDO"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "kendrick_portrait",
+      "file": "Kendrick_2017.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kendrick_2017.jpg",
+      "credit": "Kenny Sun / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.38
+      }
+    },
+    {
+      "id": "kendrick_damn_1",
+      "file": "Kendrick_Lamar_DAMN_Tour_35968122561.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kendrick_Lamar_The_DAMN._Tour_%40_TD_Garden_%28Boston%2C_MA%29_%2835968122561%29.jpg",
+      "credit": "Kenny Sun / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {
+        "x": 0.53,
+        "y": 0.43
+      }
+    },
+    {
+      "id": "kendrick_damn_2",
+      "file": "Kendrick_Lamar_DAMN_Tour_36059988466.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kendrick_Lamar-_The_DAMN._Tour_%40_TD_Garden_%28Boston%2C_MA%29_%2836059988466%29.jpg",
+      "credit": "Kenny Sun / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "kfc_los_angeles",
+      "file": "KFC_bucket_restaurant.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/KFC_bucket_restaurant.jpg",
+      "credit": "Carol M. Highsmith / Library of Congress / Wikimedia Commons",
+      "license": "Public domain; no known copyright restrictions",
+      "focus": {
+        "x": 0.52,
+        "y": 0.48
+      }
+    },
+    {
+      "id": "nickerson_gardens",
+      "file": "Nickerson_Gardens_Watts_Los_Angeles.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Nickerson_Gardens%2C_Watts%2C_Los_Angeles.jpg",
+      "credit": "U.S. Department of Housing and Urban Development / Wikimedia Commons",
+      "license": "Public domain (U.S. federal government work)",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "la_night",
+      "file": "Downtown_Los_Angeles_at_night.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Downtown_Los_Angeles_at_night.jpg",
+      "credit": "Serouj / Wikimedia Commons",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.52
+      }
+    },
+    {
+      "id": "ninth_wonder",
+      "file": "9th_Wonder_at_Paid_Dues_2.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/9th_Wonder_at_Paid_Dues_2.jpg",
+      "credit": "Flowizm / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "studio_microphone",
+      "file": "Microphone_recording_studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY; verify attribution on the source page",
+      "focus": {
+        "x": 0.52,
+        "y": 0.48
+      }
+    }
+  ]
+}

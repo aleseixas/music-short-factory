@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "kanye_vertigo",
+      "file": "Kanye_West_Portland_Vertigo_Tour_2005.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanye_West_Portland_Vertigo_Tour_2005.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY-SA; verify attribution on the source page",
+      "focus": { "x": 0.62, "y": 0.48 }
+    },
+    {
+      "id": "kanye_live8",
+      "file": "Kanye_West_Live_8_2005.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanye_West_Live_8_2005.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "See the Wikimedia Commons source page",
+      "focus": { "x": 0.52, "y": 0.58 }
+    },
+    {
+      "id": "los_angeles_highway",
+      "file": "Highway_101_at_night_in_Los_Angeles.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Highway_101_at_night_in_Los_Angeles.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "See the Wikimedia Commons source page",
+      "focus": { "x": 0.52, "y": 0.55 }
+    },
+    {
+      "id": "kanye_air_canada",
+      "file": "Kanye_West_Air_Canada_Centre_2005.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanye_West_Air_Canada_Centre_2005_(61886354).jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "See the Wikimedia Commons source page",
+      "focus": { "x": 0.64, "y": 0.44 }
+    },
+    {
+      "id": "studio_microphone",
+      "file": "Microphone_recording_studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY; verify attribution on the source page",
+      "focus": { "x": 0.53, "y": 0.48 }
+    },
+    {
+      "id": "chaka_khan",
+      "file": "Chaka_Khan.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chaka_Khan.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY-SA; verify attribution on the source page",
+      "focus": { "x": 0.53, "y": 0.42 }
+    },
+    {
+      "id": "kanye_portland",
+      "file": "Kanye_West_in_Portland.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanye_West_in_Portland.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "See the Wikimedia Commons source page",
+      "focus": { "x": 0.62, "y": 0.42 }
+    }
+  ]
+}

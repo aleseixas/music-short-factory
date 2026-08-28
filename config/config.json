@@ -1,0 +1,40 @@
+{
+  "paths": {
+    "episodes_dir": "episodes",
+    "work_dir": "work",
+    "output_dir": "output",
+    "cache_dir": "cache"
+  },
+  "render": {
+    "width": 720,
+    "height": 1280,
+    "fps": 30,
+    "working_scale": 2,
+    "intermediate_crf": 10,
+    "intermediate_preset": "veryfast",
+    "crf": 18,
+    "preset": "medium"
+  },
+  "duration": {
+    "target_tolerance_seconds": 15
+  },
+  "tts": {
+    "custom_audio": "assets/custom_voice.mp3",
+    "custom_timings": "assets/custom_voice.srt",
+    "provider": "edge",
+    "fallback_provider": null,
+    "reuse_generated_audio": true,
+    "allow_estimated_custom_timings": false,
+    "edge_voice": "pt-BR-AntonioNeural",
+    "edge_rate": "+6%"
+  },
+  "mix": {
+    "voice_volume": 1.0,
+    "music_file": "",
+    "music_volume": 0.06,
+    "music_fade_out_seconds": 0.35,
+    "limiter": 0.95,
+    "sample_rate": 48000,
+    "bitrate": "192k"
+  }
+}

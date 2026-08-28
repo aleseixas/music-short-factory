@@ -1,0 +1,53 @@
+{
+  "motion": {
+    "zoom_amount": 0.035,
+    "pan_zoom": 1.055,
+    "pan_start": 0.1,
+    "pan_end": 0.9,
+    "easing": "cosine",
+    "contrast": 1.02,
+    "saturation": 1.03,
+    "brightness": -0.005
+  },
+  "transitions": {
+    "crossfade_seconds": 0.14
+  },
+  "captions": {
+    "font_name": "Arial",
+    "font_size": 52,
+    "text_color": "#FFFFFF",
+    "active_color": "#FFD43B",
+    "outline_color": "#090909",
+    "outline_size": 5,
+    "shadow_size": 1,
+    "margin_left": 54,
+    "margin_right": 54,
+    "margin_bottom": 185,
+    "max_words": 4,
+    "max_chars": 25,
+    "max_duration": 1.7,
+    "long_gap_seconds": 0.38,
+    "balanced_split_threshold": 18,
+    "bold": -1,
+    "alignment": 2
+  },
+  "highlights": {
+    "font_file": "",
+    "font_size": 48,
+    "min_font_size": 24,
+    "text_color": "#FFFFFF",
+    "accent_color": "#FFD43B",
+    "background_color": "#101010DC",
+    "max_width": 600,
+    "top": 108,
+    "default_duration": 1.65,
+    "fade_seconds": 0.1,
+    "horizontal_padding": 44,
+    "vertical_padding": 28,
+    "border_radius": 10,
+    "accent_width": 7,
+    "line_gap": 6,
+    "minimum_visible_seconds": 0.12,
+    "end_margin_seconds": 0.08
+  }
+}

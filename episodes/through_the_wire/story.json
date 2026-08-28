@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "title": "Kanye West — Through the Wire",
+  "slug": "through_the_wire",
+  "target_duration_seconds": 37.27,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Você sabia que Kanye West gravou um dos primeiros grandes hits da carreira com a mandíbula presa por fios?"
+    },
+    {
+      "id": "accident",
+      "text": "Em outubro de 2002, depois de um acidente de carro em Los Angeles, ele fraturou a mandíbula."
+    },
+    {
+      "id": "recovery",
+      "text": "Cerca de duas semanas depois, ainda em recuperação,"
+    },
+    {
+      "id": "recording",
+      "text": "Kanye voltou ao estúdio e gravou Through the Wire."
+    },
+    {
+      "id": "wordplay",
+      "text": "O nome faz um trocadilho com Through the Fire, da Chaka Khan,"
+    },
+    {
+      "id": "sample",
+      "text": "música que ele sampleou na faixa."
+    },
+    {
+      "id": "producer",
+      "text": "O resultado ajudou o público a enxergar Kanye não apenas como produtor,"
+    },
+    {
+      "id": "rapper",
+      "text": "mas também como rapper."
+    },
+    {
+      "id": "closing",
+      "text": "Um acidente quase interrompeu sua carreira e acabou virando parte da história de um dos seus primeiros grandes sucessos."
+    }
+  ]
+}

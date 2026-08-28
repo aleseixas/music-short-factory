@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "ELE GRAVOU ASSIM?!",
+    "source": {
+      "type": "asset",
+      "asset_id": "kanye_vertigo"
+    }
+  },
+  "youtube": {
+    "title": "ESSA MÚSICA NASCEU DE UM ACIDENTE — Through the Wire",
+    "description": "Kanye West voltou ao estúdio poucas semanas depois de fraturar a mandíbula e gravou Through the Wire ainda com fios mantendo-a presa. O acidente que poderia interromper sua carreira virou parte de um de seus primeiros grandes sucessos.",
+    "hashtags": [
+      "KanyeWest",
+      "ThroughTheWire",
+      "HipHop",
+      "Shorts"
+    ],
+    "privacy_status": "private",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "ELE GRAVOU ASSIM?! Poucas semanas depois de fraturar a mandíbula, Kanye West voltou ao estúdio e transformou o acidente em Through the Wire — com um sample de Through the Fire, de Chaka Khan.",
+    "hashtags": [
+      "KanyeWest",
+      "ThroughTheWire",
+      "ChakaKhan",
+      "HipHop",
+      "HistoriaDaMusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "Kanye gravou Through the Wire com a mandíbula presa por fios — e fez do acidente parte da própria música.",
+    "hashtags": [
+      "KanyeWest",
+      "ThroughTheWire",
+      "HipHop",
+      "HistoriaDaMusica"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

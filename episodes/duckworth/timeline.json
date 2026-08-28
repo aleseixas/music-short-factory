@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "kendrick_portrait",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "UM KFC MUDOU A CARREIRA DE KENDRICK?",
+        "start_seconds": 0.15,
+        "duration_seconds": 1.75
+      }
+    },
+    {
+      "id": "shot_father",
+      "segment": "father",
+      "asset": "kfc_los_angeles",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "ANOS 80 • LOS ANGELES"
+    },
+    {
+      "id": "shot_top_dawg",
+      "segment": "top_dawg",
+      "asset": "nickerson_gardens",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "ANTHONY “TOP DAWG” TIFFITH"
+    },
+    {
+      "id": "shot_danger",
+      "segment": "danger",
+      "asset": "la_night",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "O RESTAURANTE JÁ TINHA VISTO VIOLÊNCIA"
+    },
+    {
+      "id": "shot_food",
+      "segment": "food",
+      "asset": "kfc_los_angeles",
+      "motion": "pan_right",
+      "transition_out": "crossfade",
+      "highlight": "COMIDA GRÁTIS PARA EVITAR PROBLEMAS"
+    },
+    {
+      "id": "shot_robbery",
+      "segment": "robbery",
+      "asset": "nickerson_gardens",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "ESSA DECISÃO PODE TER SALVADO SUA VIDA"
+    },
+    {
+      "id": "shot_meeting",
+      "segment": "meeting",
+      "asset": "kendrick_damn_1",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "KENDRICK CONHECE TOP DAWG AOS 16"
+    },
+    {
+      "id": "shot_recognition",
+      "segment": "recognition",
+      "asset": "studio_microphone",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "O PAI RECONHECEU QUEM ELE ERA"
+    },
+    {
+      "id": "shot_confirmed",
+      "segment": "confirmed",
+      "asset": "kendrick_damn_2",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "“É UMA HISTÓRIA REAL”"
+    },
+    {
+      "id": "shot_damn",
+      "segment": "damn",
+      "asset": "kendrick_portrait",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "DUCKWORTH. • DAMN. • 2017"
+    },
+    {
+      "id": "shot_production",
+      "segment": "production",
+      "asset": "ninth_wonder",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "3 BEATS • 9TH WONDER"
+    },
+    {
+      "id": "shot_closing",
+      "segment": "closing",
+      "asset": "kendrick_damn_1",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "UMA DECISÃO. TRÊS VIDAS.",
+        "start_seconds": 0.12,
+        "duration_seconds": 1.8
+      }
+    }
+  ]
+}

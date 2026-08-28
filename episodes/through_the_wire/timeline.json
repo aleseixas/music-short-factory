@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "kanye_vertigo",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "MANDÍBULA PRESA POR FIOS?",
+        "start_seconds": 0.18,
+        "duration_seconds": 1.65
+      }
+    },
+    {
+      "id": "shot_accident",
+      "segment": "accident",
+      "asset": "los_angeles_highway",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "LOS ANGELES • 2002"
+    },
+    {
+      "id": "shot_recovery",
+      "segment": "recovery",
+      "asset": "kanye_air_canada",
+      "motion": "pull_out",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_recording",
+      "segment": "recording",
+      "asset": "studio_microphone",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "2 SEMANAS DEPOIS"
+    },
+    {
+      "id": "shot_wordplay",
+      "segment": "wordplay",
+      "asset": "chaka_khan",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "FIRE → WIRE"
+    },
+    {
+      "id": "shot_sample",
+      "segment": "sample",
+      "asset": "kanye_live8",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_producer",
+      "segment": "producer",
+      "asset": "kanye_portland",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_rapper",
+      "segment": "rapper",
+      "asset": "kanye_vertigo",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "highlight": "RAPPER, NÃO SÓ PRODUTOR"
+    },
+    {
+      "id": "shot_closing",
+      "segment": "closing",
+      "asset": "kanye_portland",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    }
+  ]
+}

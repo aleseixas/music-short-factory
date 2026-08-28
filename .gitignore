@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes virtuais e variáveis locais
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Ferramentas de teste, cobertura e análise
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Artefatos regeneráveis do Music Short Factory
+/work/
+/output/
+/cache/
+
+# Arquivos parciais e intermediários
+*.part
+*.tmp
+*.temp
+*.ffconcat
+*.log
+
+# Editores e sistema operacional
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+*.zip

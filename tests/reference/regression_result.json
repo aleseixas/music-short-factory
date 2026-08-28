@@ -1,0 +1,20 @@
+{
+  "reference_file": "through_the_wire_v7.mp4",
+  "reference_sha256": "c46dcc3daf7f2c2e9aa6c582ab45ff9197e471fd0346a31ba4971d34fc1f642d",
+  "candidate_file": "output/through_the_wire.mp4",
+  "candidate_sha256": "e065d4c9c06cfd155e5adf9ce084c8b4b036186825e34cc94e7dc8ca75bf868d",
+  "width": 720,
+  "height": 1280,
+  "fps": 30,
+  "frames": 1119,
+  "duration_seconds": 37.3,
+  "audio_stream_sha256": "87cba2a91401eb93ee1f30c771695382c1c63675d2053cfea1064c22d25bb1bd",
+  "audio_stream_identical": true,
+  "ssim": {
+    "all": 0.990655,
+    "y": 0.988927,
+    "u": 0.994052,
+    "v": 0.994172
+  },
+  "timeline_and_static_visual_inputs_identical": true
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "ISSO QUASE MUDOU TUDO",
+    "source": {
+      "type": "asset",
+      "asset_id": "kendrick_portrait"
+    }
+  },
+  "youtube": {
+    "title": "A COINCIDÊNCIA ABSURDA por trás de DUCKWORTH.",
+    "description": "Uma decisão dentro de um KFC conectou o pai de Kendrick Lamar a Anthony “Top Dawg” Tiffith anos antes da carreira do rapper começar. Esta é a história real narrada em DUCKWORTH., faixa de DAMN.",
+    "hashtags": [
+      "KendrickLamar",
+      "DUCKWORTH",
+      "HipHop",
+      "Shorts"
+    ],
+    "privacy_status": "private",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "UMA DECISÃO dentro de um KFC quase mudou três vidas. Anos antes de Kendrick Lamar conhecer sua gravadora, o pai dele já tinha cruzado o caminho de Anthony “Top Dawg” Tiffith — e essa coincidência virou a história de DUCKWORTH.",
+    "hashtags": [
+      "KendrickLamar",
+      "DUCKWORTH",
+      "DAMN",
+      "HipHop",
+      "HistoriaDaMusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "A COINCIDÊNCIA por trás de DUCKWORTH. parece roteiro de filme — mas Kendrick confirmou que aconteceu.",
+    "hashtags": [
+      "KendrickLamar",
+      "DUCKWORTH",
+      "HipHop",
+      "HistoriaDaMusica"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "enrique_2010",
+      "file": "Enrique_Iglesias_2010.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enrique_Iglesias_2010.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.50, "y": 0.38 }
+    },
+    {
+      "id": "enrique_0611",
+      "file": "Enrique_iglesias_0611.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enrique_iglesias_0611.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.50, "y": 0.38 }
+    },
+    {
+      "id": "enrique_0714",
+      "file": "Enrique_Iglesias_0714.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enrique_Iglesias_0714.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.50, "y": 0.36 }
+    },
+    {
+      "id": "enrique_espaco_americas",
+      "file": "Enrique_Iglesias_Espaco_das_Americas_41435743681.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Enrique%20Iglesias%20-%20Espa%C3%A7o%20das%20Am%C3%A9ricas%20%2841435743681%29.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.50, "y": 0.36 }
+    },
+    {
+      "id": "gente_de_zona_2015",
+      "file": "Gente_de_Zona_2015.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gente_de_Zona_2015.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.52, "y": 0.42 }
+    },
+    {
+      "id": "gente_de_zona_concert",
+      "file": "Gente_de_Zona_Concert_2016.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Gente_de_Zona_Concert_2016.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.50, "y": 0.46 }
+    },
+    {
+      "id": "gente_de_zona_billboard",
+      "file": "Billboard_Latin_Music_Showcase_Chile_2018_Gente_de_Zona_01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Billboard%20Latin%20Music%20Showcase%20Chile%202018%20-%20Gente%20de%20Zona%20-%2001.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.52, "y": 0.45 }
+    },
+    {
+      "id": "alexander_delgado",
+      "file": "Billboard_Latin_Music_Showcase_Chile_2018_Alexander_Delgado_01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Billboard%20Latin%20Music%20Showcase%20Chile%202018%20-%20Alexander%20Delgado%20-%2001.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Reusable under the license listed on the Wikimedia Commons file page; verify attribution before publishing",
+      "focus": { "x": 0.50, "y": 0.40 }
+    },
+    {
+      "id": "studio_microphone",
+      "file": "Microphone_recording_studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY; verify exact attribution on the Wikimedia Commons file page",
+      "focus": { "x": 0.53, "y": 0.48 }
+    }
+  ]
+}
