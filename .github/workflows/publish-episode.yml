@@ -7,6 +7,11 @@ on:
         description: Episode slug (for example, duckworth)
         required: true
         type: string
+  push:
+    branches:
+      - main
+    paths:
+      - ".publish-queue/*.txt"
 
 permissions:
   contents: read
@@ -14,20 +19,65 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      EPISODE: ${{ inputs.episode }}
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
-      - name: Validate episode slug
+      - name: Resolve episode slug
+        id: episode
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_EPISODE: ${{ inputs.episode }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
         run: |
-          if [[ ! "$EPISODE" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+          set -euo pipefail
+
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            episode="$MANUAL_EPISODE"
+          else
+            if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+              mapfile -t queue_files < <(
+                git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.publish-queue/*.txt'
+              )
+            else
+              mapfile -t queue_files < <(
+                git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.publish-queue/*.txt'
+              )
+            fi
+
+            if [[ ${#queue_files[@]} -ne 1 ]]; then
+              echo "::error::Expected exactly one newly added .publish-queue/*.txt file, found ${#queue_files[@]}."
+              exit 1
+            fi
+
+            queue_file="${queue_files[0]}"
+            episode="$(basename "$queue_file" .txt)"
+            queue_value="$(tr -d '\r\n' < "$queue_file")"
+
+            if [[ -n "$queue_value" && "$queue_value" != "$episode" ]]; then
+              echo "::error::Queue filename slug and file contents do not match."
+              exit 1
+            fi
+          fi
+
+          if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
             echo "::error::Invalid episode slug."
             exit 1
           fi
+
+          if [[ ! -d "episodes/$episode" ]]; then
+            echo "::error::Episode directory episodes/$episode does not exist."
+            exit 1
+          fi
+
+          echo "EPISODE=$episode" >> "$GITHUB_ENV"
+          echo "slug=$episode" >> "$GITHUB_OUTPUT"
+          echo "Publishing episode: $episode"
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -49,8 +99,8 @@ jobs:
       - name: Upload rendered MP4
         uses: actions/upload-artifact@v7
         with:
-          name: rendered-${{ inputs.episode }}
-          path: output/${{ inputs.episode }}.mp4
+          name: rendered-${{ steps.episode.outputs.slug }}
+          path: output/${{ steps.episode.outputs.slug }}.mp4
           if-no-files-found: error
           retention-days: 3
           compression-level: 0
