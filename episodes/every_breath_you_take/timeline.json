@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "wedding_rings",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "ISSO NÃO É UMA CANÇÃO DE AMOR",
+        "start_seconds": 0.1,
+        "duration_seconds": 1.85
+      }
+    },
+    {
+      "id": "shot_collapse",
+      "segment": "collapse",
+      "asset": "sting_portrait",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "A VIDA DE STING ESTAVA DESMORONANDO"
+    },
+    {
+      "id": "shot_marriage",
+      "segment": "marriage",
+      "asset": "police_band",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "CASAMENTO EM CRISE • BANDA EM TENSÃO"
+    },
+    {
+      "id": "shot_jamaica",
+      "segment": "jamaica",
+      "asset": "ocho_rios",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "JAMAICA • GOLDENEYE"
+    },
+    {
+      "id": "shot_desk",
+      "segment": "desk",
+      "asset": "ocho_rios",
+      "motion": "pan_right",
+      "transition_out": "crossfade",
+      "highlight": "NA MESA DE IAN FLEMING"
+    },
+    {
+      "id": "shot_dark_turn",
+      "segment": "dark_turn",
+      "asset": "sting_portrait",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "DE SEDUTORA A SOMBRIA"
+    },
+    {
+      "id": "shot_watching",
+      "segment": "watching",
+      "asset": "surveillance_camera",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "“EU ESTAREI OBSERVANDO”"
+    },
+    {
+      "id": "shot_meaning",
+      "segment": "meaning",
+      "asset": "surveillance_camera",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "VIGILÂNCIA • POSSE • PARANOIA"
+    },
+    {
+      "id": "shot_misread",
+      "segment": "misread",
+      "asset": "wedding_rings",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "E MESMO ASSIM VIROU “ROMÂNTICA”"
+    },
+    {
+      "id": "shot_montserrat",
+      "segment": "montserrat",
+      "asset": "air_montserrat",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "AIR STUDIOS • MONTSERRAT"
+    },
+    {
+      "id": "shot_fight",
+      "segment": "fight",
+      "asset": "police_band",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "STING × STEWART COPELAND"
+    },
+    {
+      "id": "shot_chaos",
+      "segment": "chaos",
+      "asset": "studio_microphone",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "DO CAOS SAIU O MAIOR HIT"
+    },
+    {
+      "id": "shot_charts",
+      "segment": "charts",
+      "asset": "police_band",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "4 SEMANAS EM #1 NO REINO UNIDO"
+    },
+    {
+      "id": "shot_grammy",
+      "segment": "grammy",
+      "asset": "sting_portrait",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "GRAMMY • CANÇÃO DO ANO"
+    },
+    {
+      "id": "shot_final_album",
+      "segment": "final_album",
+      "asset": "air_montserrat",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "O ÚLTIMO ÁLBUM DE ESTÚDIO"
+    },
+    {
+      "id": "shot_closing",
+      "segment": "closing",
+      "asset": "wedding_rings",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "POSSE VIROU “AMOR ETERNO”",
+        "start_seconds": 0.1,
+        "duration_seconds": 1.9
+      }
+    }
+  ]
+}

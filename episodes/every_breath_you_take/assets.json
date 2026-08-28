@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "sting_portrait",
+      "file": "Sting_by_Yancho_Sabev.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Sting_by_Yancho_Sabev.jpg",
+      "credit": "Yancho Sabev / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "focus": {
+        "x": 0.4,
+        "y": 0.43
+      }
+    },
+    {
+      "id": "police_band",
+      "file": "ThePolice_2007.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/ThePolice_2007.jpg",
+      "credit": "Lionel Urman / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.48
+      }
+    },
+    {
+      "id": "ocho_rios",
+      "file": "Ocho_Rios.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ocho_Rios.jpg",
+      "credit": "Christopher / Wikimedia Commons",
+      "license": "CC BY-SA 2.0",
+      "focus": {
+        "x": 0.53,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "air_montserrat",
+      "file": "AIR_Studio_ruins_Montserrat_May_2013.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/AIR_Studio_ruins_Montserrat_May_2013.jpg",
+      "credit": "Captmatty / Wikimedia Commons",
+      "license": "CC BY-SA 3.0 / GFDL",
+      "focus": {
+        "x": 0.52,
+        "y": 0.48
+      }
+    },
+    {
+      "id": "surveillance_camera",
+      "file": "Surveillance_camera.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Surveillance_camera.jpg",
+      "credit": "Neslihan Turan / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {
+        "x": 0.67,
+        "y": 0.49
+      }
+    },
+    {
+      "id": "wedding_rings",
+      "file": "Pair_of_wedding_rings.JPG",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pair_of_wedding_rings.JPG",
+      "credit": "Mauro Cateb / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "focus": {
+        "x": 0.62,
+        "y": 0.58
+      }
+    },
+    {
+      "id": "studio_microphone",
+      "file": "Microphone_recording_studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY; verify attribution on the source page",
+      "focus": {
+        "x": 0.52,
+        "y": 0.48
+      }
+    }
+  ]
+}

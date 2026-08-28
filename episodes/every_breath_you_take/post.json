@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "NÃO ERA ROMÂNTICA",
+    "source": {
+      "type": "asset",
+      "asset_id": "wedding_rings"
+    }
+  },
+  "youtube": {
+    "title": "NÃO ERA UMA CANÇÃO DE AMOR — Every Breath You Take",
+    "description": "Every Breath You Take parece uma declaração romântica, mas Sting descreveu a música em termos de vigilância, posse e paranoia. Ela nasceu durante uma crise pessoal, foi gravada em meio às tensões finais do The Police e acabou se tornando um dos maiores sucessos da banda.",
+    "hashtags": [
+      "ThePolice",
+      "Sting",
+      "EveryBreathYouTake",
+      "Shorts"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "NÃO ERA UMA CANÇÃO DE AMOR. Sting escreveu Every Breath You Take durante uma fase de crise e depois explicou que a música fala de vigilância, posse e paranoia. A parte mais irônica? Muita gente passou a tratá-la como uma das grandes baladas românticas dos anos 80.",
+    "hashtags": [
+      "ThePolice",
+      "Sting",
+      "EveryBreathYouTake",
+      "Rock",
+      "HistoriaDaMusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "EVERY BREATH YOU TAKE não era uma canção romântica: Sting diz que ela fala de vigilância, posse e paranoia.",
+    "hashtags": [
+      "ThePolice",
+      "Sting",
+      "EveryBreathYouTake",
+      "HistoriaDaMusica"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
