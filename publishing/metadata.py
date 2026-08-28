@@ -195,7 +195,7 @@ def build_post_defaults(story: Mapping[str, Any], asset_id: str) -> dict[str, An
             "title": youtube_title,
             "description": youtube_description,
             "hashtags": ["Shorts"],
-            "privacy_status": "private",
+            "privacy_status": "public",
             "category_id": "10",
         },
         "instagram": {

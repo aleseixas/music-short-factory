@@ -1,0 +1,78 @@
+name: Publish episode
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Episode slug (for example, duckworth)
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      EPISODE: ${{ inputs.episode }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Validate episode slug
+        shell: bash
+        run: |
+          if [[ ! "$EPISODE" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+            echo "::error::Invalid episode slug."
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Render episode
+        run: python generate.py "$EPISODE"
+
+      - name: Upload rendered MP4
+        uses: actions/upload-artifact@v7
+        with:
+          name: rendered-${{ inputs.episode }}
+          path: output/${{ inputs.episode }}.mp4
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+      - name: Prepare publishing metadata and cover
+        run: python prepare_post.py "$EPISODE"
+
+      - name: Publish to YouTube
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: python publish.py "$EPISODE" --platform youtube --live
+
+      - name: Publish to Instagram
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          INSTAGRAM_API_HOST: graph.instagram.com
+          META_GRAPH_API_VERSION: v26.0
+          INSTAGRAM_VIDEO_HOST: cloudinary
+        run: python publish.py "$EPISODE" --platform instagram --live

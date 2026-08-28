@@ -402,7 +402,7 @@ class CoverAndPreparationTests(unittest.TestCase):
                 post.data["cover"]["source"],
                 {"type": "asset", "asset_id": "main_image"},
             )
-            self.assertEqual(post.data["youtube"]["privacy_status"], "private")
+            self.assertEqual(post.data["youtube"]["privacy_status"], "public")
             self.assertLessEqual(len(post.data["cover"]["headline"].split()), 6)
 
     def test_prepare_episode_post_creates_template_preview_and_cover(self):
