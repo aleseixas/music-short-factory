@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"britney_2007","motion":"push_in","transition_out":"cut","highlight":{"text":"ANTES DE RIHANNA, FOI PARA BRITNEY","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_atlanta","segment":"atlanta","asset":"atlanta","motion":"pan_left","transition_out":"crossfade","highlight":"ATLANTA • 2007"},
+    {"id":"shot_spark","segment":"spark","asset":"studio_console","motion":"push_in","transition_out":"cut","highlight":"UM LOOP, ACORDES E UMA IDEIA"},
+    {"id":"shot_mic","segment":"mic","asset":"studio_console","motion":"pan_right","transition_out":"cut","highlight":"“LIGA O MICROFONE”"},
+    {"id":"shot_first_take","segment":"first_take","asset":"studio_console","motion":"pull_out","transition_out":"crossfade","highlight":"QUASE TUDO NA PRIMEIRA PASSADA"},
+    {"id":"shot_first_choice","segment":"first_choice","asset":"rihanna_2007","motion":"push_in","transition_out":"cut","highlight":"RIHANNA NÃO ERA A PRIMEIRA OPÇÃO"},
+    {"id":"shot_britney_pitch","segment":"britney_pitch","asset":"britney_2007","motion":"push_in","transition_out":"cut","highlight":"O TIME DE BRITNEY RECEBEU A FAIXA"},
+    {"id":"shot_pass","segment":"pass","asset":"rain_umbrella","motion":"pull_out","transition_out":"crossfade","highlight":"E DEIXOU PASSAR"},
+    {"id":"shot_mary","segment":"mary","asset":"mary_blige_2007","motion":"push_in","transition_out":"cut","highlight":"DEPOIS: MARY J. BLIGE"},
+    {"id":"shot_grammy_week","segment":"grammy_week","asset":"mary_blige_2007","motion":"pan_left","transition_out":"crossfade","highlight":"A SEMANA DO GRAMMY ATRAPALHOU"},
+    {"id":"shot_def_jam","segment":"def_jam","asset":"rihanna_2007","motion":"pan_right","transition_out":"cut","highlight":"DEF JAM GARANTIU A MÚSICA"},
+    {"id":"shot_rihanna","segment":"rihanna","asset":"rihanna_2007","motion":"push_in","transition_out":"cut","highlight":"“UMBRELLA” ERA DELA"},
+    {"id":"shot_jay_z","segment":"jay_z","asset":"jay_z","motion":"push_in","transition_out":"crossfade","highlight":"JAY-Z ABRIU A FAIXA"},
+    {"id":"shot_charts","segment":"charts","asset":"rain_umbrella","motion":"push_in","transition_out":"cut","highlight":"7 SEMANAS EM #1"},
+    {"id":"shot_grammy_win","segment":"grammy_win","asset":"rihanna_2007","motion":"pull_out","transition_out":"crossfade","highlight":"O PRIMEIRO GRAMMY DE RIHANNA"},
+    {"id":"shot_closing","segment":"closing","asset":"rihanna_2007","motion":"push_in","transition_out":"cut","highlight":{"text":"O HIT RECUSADO VIROU UM MARCO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

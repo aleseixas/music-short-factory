@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O TIME DE BRITNEY PASSOU",
+    "source": {"type": "asset", "asset_id": "britney_2007"}
+  },
+  "youtube": {
+    "title": "O TIME DE BRITNEY RECUSOU UMBRELLA — e Rihanna ficou com o hit",
+    "description": "Antes de virar um dos maiores hits de Rihanna, Umbrella foi oferecida ao time de Britney Spears, que passou a faixa. Mary J. Blige também entrou na história antes de a música chegar a Rihanna, ficar sete semanas no topo da Billboard Hot 100 e render o primeiro Grammy da cantora.",
+    "hashtags": ["Rihanna", "Umbrella", "BritneySpears", "HistoriaDaMusica", "Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "O TIME DE BRITNEY DEIXOU UMBRELLA PASSAR. A música ainda circulou por Mary J. Blige antes de chegar a Rihanna — e então ficou sete semanas no topo da Billboard Hot 100 e rendeu o primeiro Grammy da carreira dela.",
+    "hashtags": ["Rihanna", "Umbrella", "BritneySpears", "Pop", "HistoriaDaMusica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "ANTES DE RIHANNA, UMBRELLA FOI PARA O TIME DE BRITNEY — e eles deixaram o hit passar.",
+    "hashtags": ["Rihanna", "Umbrella", "BritneySpears", "HistoriaDaMusica"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

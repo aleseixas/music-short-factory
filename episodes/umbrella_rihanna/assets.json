@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "rihanna_2007",
+      "file": "Rihannalive2007_cropped.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rihannalive2007_cropped.jpg",
+      "credit": "tomasland; crop by Ilikeriri / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {"x": 0.5, "y": 0.38}
+    },
+    {
+      "id": "britney_2007",
+      "file": "Britney_Spears_car_october_2007_cropped.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Britney_Spears_car_october_2007_%28cropped%29.jpg",
+      "credit": "C. Estrada / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {"x": 0.49, "y": 0.42}
+    },
+    {
+      "id": "mary_blige_2007",
+      "file": "Mary_J._Blige_2007.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mary_J._Blige_2007.jpg",
+      "credit": "Mark Sebastian / Wikimedia Commons",
+      "license": "CC BY-SA 2.0",
+      "focus": {"x": 0.5, "y": 0.35}
+    },
+    {
+      "id": "jay_z",
+      "file": "Jay-Z_at_a_Barack_Obama_rally.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Jay-Z_at_a_Barack_Obama_rally.jpg",
+      "credit": "Bbsrock / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {"x": 0.48, "y": 0.35}
+    },
+    {
+      "id": "atlanta",
+      "file": "Atlanta_cityscape.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Atlanta_cityscape.jpg",
+      "credit": "Paul Brennan / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {"x": 0.5, "y": 0.48}
+    },
+    {
+      "id": "studio_console",
+      "file": "Mixing_desk_at_the_Hipposonic_Recording_Studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mixing_desk_at_the_Hipposonic_Recording_Studio.jpg",
+      "credit": "Hipposonic Studios / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "rain_umbrella",
+      "file": "Rain_on_a_blue_umbrella.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Rain_on_a_blue_umbrella.jpg",
+      "credit": "CorraleH / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {"x": 0.5, "y": 0.52}
+    }
+  ]
+}
