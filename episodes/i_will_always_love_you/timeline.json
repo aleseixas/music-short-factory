@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"elvis_1970","motion":"push_in","transition_out":"cut","highlight":{"text":"ELVIS QUASE GRAVOU — DOLLY DISSE NÃO","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_porter","segment":"porter","asset":"porter_dolly_1969","motion":"pan_left","transition_out":"crossfade","highlight":"O FIM DE UMA PARCERIA"},
+    {"id":"shot_farewell","segment":"farewell","asset":"dolly_1970","motion":"push_in","transition_out":"cut","highlight":"UMA DESPEDIDA EM FORMA DE MÚSICA"},
+    {"id":"shot_country","segment":"country_hit","asset":"dolly_1970","motion":"pull_out","transition_out":"crossfade","highlight":"#1 COUNTRY • 1974"},
+    {"id":"shot_elvis","segment":"elvis_interest","asset":"elvis_1970","motion":"push_in","transition_out":"cut","highlight":"ELVIS QUERIA A CANÇÃO"},
+    {"id":"shot_publishing","segment":"publishing","asset":"elvis_1970","motion":"pan_right","transition_out":"cut","highlight":"METADE DA PUBLICAÇÃO"},
+    {"id":"shot_refusal","segment":"refusal","asset":"dolly_1970","motion":"push_in","transition_out":"crossfade","highlight":"DOLLY DISSE NÃO"},
+    {"id":"shot_rights","segment":"rights","asset":"dolly_1970","motion":"pull_out","transition_out":"cut","highlight":"ELA MANTEVE OS DIREITOS"},
+    {"id":"shot_second_life","segment":"second_life","asset":"studio_console","motion":"pan_left","transition_out":"crossfade","highlight":"QUASE 20 ANOS DEPOIS"},
+    {"id":"shot_costner","segment":"costner","asset":"whitney_1991","motion":"push_in","transition_out":"cut","highlight":"KEVIN COSTNER SUGERIU A MÚSICA"},
+    {"id":"shot_arrangement","segment":"arrangement","asset":"whitney_1991","motion":"pull_out","transition_out":"cut","highlight":"A ABERTURA A CAPPELLA"},
+    {"id":"shot_global","segment":"global","asset":"whitney_1991","motion":"push_in","transition_out":"crossfade","highlight":"A ASSINATURA DE WHITNEY"},
+    {"id":"shot_grammys","segment":"grammys","asset":"whitney_1991","motion":"pan_right","transition_out":"cut","highlight":"2 GRAMMYS PARA A FAIXA"},
+    {"id":"shot_dolly_stage","segment":"dolly_stage","asset":"dolly_1970","motion":"push_in","transition_out":"crossfade","highlight":"DOLLY ENTREGOU O TROFÉU"},
+    {"id":"shot_registry","segment":"registry","asset":"whitney_1991","motion":"pull_out","transition_out":"cut","highlight":"NATIONAL RECORDING REGISTRY"},
+    {"id":"shot_payoff","segment":"payoff","asset":"dolly_1970","motion":"push_in","transition_out":"cut","highlight":{"text":"UM NÃO QUE VALEU POR DÉCADAS","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

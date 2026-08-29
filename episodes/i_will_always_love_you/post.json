@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "DOLLY DISSE NÃO A ELVIS",
+    "source": {"type": "asset", "asset_id": "elvis_1970"}
+  },
+  "youtube": {
+    "title": "DOLLY DISSE NÃO A ELVIS — e protegeu I Will Always Love You",
+    "description": "Antes de Whitney Houston transformar I Will Always Love You em um fenômeno, Elvis Presley quis gravar a composição de Dolly Parton. A negociação exigia parte dos direitos de publicação, Dolly recusou — e quase vinte anos depois Whitney levou a música a outro nível em O Guarda-Costas.",
+    "hashtags": ["DollyParton", "WhitneyHouston", "ElvisPresley", "IWillAlwaysLoveYou", "Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "DOLLY PARTON DISSE NÃO A ELVIS. O motivo era a publicação de I Will Always Love You. Anos depois, Whitney Houston transformou a composição em um dos maiores clássicos pop.",
+    "hashtags": ["DollyParton", "WhitneyHouston", "ElvisPresley", "HistoriaDaMusica", "Pop"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "ELVIS QUASE GRAVOU I WILL ALWAYS LOVE YOU — mas Dolly Parton recusou a condição sobre os direitos da música.",
+    "hashtags": ["DollyParton", "WhitneyHouston", "ElvisPresley", "HistoriaDaMusica"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

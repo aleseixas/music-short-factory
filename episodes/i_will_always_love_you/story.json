@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "title": "Dolly Parton / Whitney Houston — I Will Always Love You: o hit que Elvis não gravou",
+  "slug": "i_will_always_love_you",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id": "hook", "text": "Antes de Whitney Houston transformar I Will Always Love You em fenômeno, Elvis Presley quase gravou a música — e Dolly Parton disse não."},
+    {"id": "porter", "text": "A história começou quando Dolly decidiu encerrar sua parceria profissional com Porter Wagoner."},
+    {"id": "farewell", "text": "Ela escreveu a canção como despedida: carinho, gratidão e a decisão de seguir sozinha."},
+    {"id": "country_hit", "text": "A gravação de Dolly chegou ao primeiro lugar da parada country em 1974."},
+    {"id": "elvis_interest", "text": "Então apareceu uma oportunidade enorme: Elvis Presley queria gravar a música."},
+    {"id": "publishing", "text": "Mas o empresário Colonel Tom Parker exigia metade dos direitos de publicação para Elvis gravá-la."},
+    {"id": "refusal", "text": "Dolly recusou. Depois contou que foi doloroso, mas preferiu proteger o próprio copyright."},
+    {"id": "rights", "text": "A escolha manteve com ela o controle sobre uma de suas composições mais valiosas."},
+    {"id": "second_life", "text": "Quase vinte anos depois, a música ganhou uma segunda vida no cinema."},
+    {"id": "costner", "text": "Kevin Costner sugeriu que Whitney Houston a gravasse para O Guarda-Costas."},
+    {"id": "arrangement", "text": "Ele também defendeu a abertura a cappella, deixando a voz de Whitney sozinha antes da explosão instrumental."},
+    {"id": "global", "text": "A versão virou fenômeno e se tornou a gravação mais associada a Whitney."},
+    {"id": "grammys", "text": "No Grammy de 1994, venceu Gravação do Ano e Melhor Performance Vocal Pop Feminina."},
+    {"id": "dolly_stage", "text": "Na cerimônia, Dolly estava no palco para entregar um dos troféus a Whitney."},
+    {"id": "registry", "text": "Décadas depois, a gravação entrou para o National Recording Registry dos Estados Unidos."},
+    {"id": "payoff", "text": "No fim, dizer NÃO a Elvis ajudou Dolly a manter os direitos da música que Whitney transformaria em um clássico global."}
+  ]
+}
