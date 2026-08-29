@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O RIFF ERA SÓ UMA BRINCADEIRA","source":{"type":"asset","asset_id":"slash"}},
+  "youtube": {
+    "title":"O RIFF DE SWEET CHILD O' MINE quase ficou só na brincadeira",
+    "description":"Slash nem planejava transformar aquele desenho de guitarra em um grande hit. Axl ouviu, a banda entrou na ideia e Sweet Child O' Mine acabou se tornando o único nº 1 do Guns N' Roses na Billboard Hot 100.",
+    "hashtags":["SweetChildOMine","GunsNRoses","Slash","Rock","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"O RIFF MAIS FAMOSO DO GUNS N' ROSES nasceu de uma ideia que Slash talvez nem apresentasse à banda. Depois, virou o único nº 1 do grupo nos EUA.",
+    "hashtags":["SweetChildOMine","GunsNRoses","Slash","Rock","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"O riff de SWEET CHILD O' MINE nasceu de uma brincadeira que Slash nem imaginava transformar em hit.",
+    "hashtags":["SweetChildOMine","GunsNRoses","Slash","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

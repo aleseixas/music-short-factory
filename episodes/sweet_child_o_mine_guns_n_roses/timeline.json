@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"slash","motion":"push_in","transition_out":"cut","highlight":{"text":"O RIFF QUASE FICOU SÓ NA BRINCADEIRA","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_house","segment":"house","asset":"guitar","motion":"pan_left","transition_out":"crossfade","highlight":"1986 • UMA IDEIA CASUAL"},
+    {"id":"shot_myth","segment":"myth","asset":"slash","motion":"push_in","transition_out":"cut","highlight":"NÃO ERA SÓ AQUECIMENTO"},
+    {"id":"shot_izzy","segment":"izzy","asset":"guitar","motion":"pull_out","transition_out":"crossfade","highlight":"IZZY ADICIONOU OS ACORDES"},
+    {"id":"shot_axl","segment":"axl_hears","asset":"axl_slash","motion":"pan_right","transition_out":"cut","highlight":"AXL OUVIU E PEDIU DE NOVO"},
+    {"id":"shot_song","segment":"song_forms","asset":"band_2026","motion":"push_in","transition_out":"crossfade","highlight":"A BRINCADEIRA VIROU MÚSICA"},
+    {"id":"shot_poem","segment":"poem","asset":"axl_slash","motion":"pan_left","transition_out":"cut","highlight":"VERSOS PARA ERIN EVERLY"},
+    {"id":"shot_doubt","segment":"slash_doubt","asset":"slash","motion":"pull_out","transition_out":"crossfade","highlight":"SLASH NÃO VIA UM HIT"},
+    {"id":"shot_joke","segment":"joke","asset":"guitar","motion":"push_in","transition_out":"cut","highlight":"ELE CHAMOU O RIFF DE PIADA"},
+    {"id":"shot_appetite","segment":"appetite","asset":"band_2026","motion":"pan_right","transition_out":"crossfade","highlight":"APPETITE FOR DESTRUCTION • 1987"},
+    {"id":"shot_breakthrough","segment":"breakthrough","asset":"axl_slash","motion":"push_in","transition_out":"cut","highlight":"A MÚSICA MUDOU A TRAJETÓRIA"},
+    {"id":"shot_number_one","segment":"number_one","asset":"slash","motion":"pan_left","transition_out":"crossfade","highlight":"ÚNICO #1 DO GUNS NOS EUA"},
+    {"id":"shot_revival","segment":"revival","asset":"band_2026","motion":"push_in","transition_out":"cut","highlight":"DE VOLTA ÀS PARADAS EM 2026"},
+    {"id":"shot_irony","segment":"irony","asset":"guitar","motion":"pull_out","transition_out":"cut","highlight":"A IRONIA"},
+    {"id":"shot_iconic","segment":"iconic","asset":"slash","motion":"push_in","transition_out":"crossfade","highlight":"UM DOS RIFFS MAIS RECONHECÍVEIS"},
+    {"id":"shot_payoff","segment":"payoff","asset":"axl_slash","motion":"push_in","transition_out":"cut","highlight":{"text":"NINGUÉM ESTAVA TENTANDO CRIAR UM HIT","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

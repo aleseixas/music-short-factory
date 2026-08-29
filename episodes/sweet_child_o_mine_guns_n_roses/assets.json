@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"slash","file":"Slash_Guns_n_Roses_26387292599.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Slash_-_Guns_n_Roses_(26387292599).jpg","credit":"John Bauld / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"axl_slash","file":"Axl_Rose_And_Slash_Of_Guns_N_Roses_Performing_Live_in_2023.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Axl_Rose_And_Slash_Of_Guns_N%E2%80%99_Roses_Performing_Live_in_2023.jpg","credit":"ChoticoTheGamer / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"guitar","file":"E-Gitarre.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/E-Gitarre.jpg","credit":"André Karwath / Wikimedia Commons","license":"CC BY-SA 2.5","focus":{"x":0.5,"y":0.5}},
+    {"id":"band_2026","file":"212945_Guns_N_Roses_at_Jockey_Club_Porto_Alegre_1_April_2026.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/212945_Guns_N%27_Roses_at_Jockey_Club%2C_Porto_Alegre%2C_1_April_2026.jpg","credit":"Lenny Maidana / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.38}}
+  ]
+}

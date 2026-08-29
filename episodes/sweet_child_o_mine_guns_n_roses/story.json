@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "title": "Guns N' Roses — Sweet Child O' Mine: o riff que quase ficou só na brincadeira",
+  "slug": "sweet_child_o_mine_guns_n_roses",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"O riff mais famoso do Guns N' Roses nasceu de uma brincadeira que Slash nem pretendia apresentar à banda."},
+    {"id":"house","text":"Em 1986, na casa do grupo, Slash mexia em notas e encontrou aquele desenho de guitarra."},
+    {"id":"myth","text":"Anos depois, ele corrigiu uma lenda: não era aquecimento, mas uma ideia surgida enquanto experimentava."},
+    {"id":"izzy","text":"Izzy Stradlin começou a tocar acordes por trás do riff."},
+    {"id":"axl_hears","text":"Axl Rose ouviu e pediu que repetissem."},
+    {"id":"song_forms","text":"A brincadeira começou a virar música."},
+    {"id":"poem","text":"Axl aproveitou versos de um poema inspirado em Erin Everly, sua namorada na época."},
+    {"id":"slash_doubt","text":"Slash, porém, não enxergava aquilo como um futuro gigante."},
+    {"id":"joke","text":"Ele descreveu o riff como piada e disse que talvez nem o mostrasse à banda em outra situação."},
+    {"id":"appetite","text":"Sweet Child O' Mine entrou em Appetite for Destruction, lançado em 1987."},
+    {"id":"breakthrough","text":"O álbum demorou a explodir, mas a música mudou a trajetória do grupo."},
+    {"id":"number_one","text":"Em 1988, virou o único número um do Guns N' Roses na Billboard Hot 100."},
+    {"id":"revival","text":"Em 2026, quase quatro décadas depois, voltou a aparecer em paradas de streaming de rock."},
+    {"id":"irony","text":"O detalhe mais irônico é esse:"},
+    {"id":"iconic","text":"o riff que Slash poderia ter deixado desaparecer virou uma das introduções mais reconhecíveis do rock."},
+    {"id":"payoff","text":"Às vezes, o maior hit nasce da ideia que ninguém tentava transformar em hit."}
+  ]
+}
