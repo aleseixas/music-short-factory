@@ -10,7 +10,6 @@ from typing import Any, Mapping
 
 SCHEMA_VERSION = 1
 PLATFORMS = ("youtube", "instagram", "tiktok")
-HASHTAG_LIMITS = {"youtube": 5, "instagram": 8, "tiktok": 5}
 PRIVACY_LEVELS = {
     "PUBLIC_TO_EVERYONE",
     "MUTUAL_FOLLOW_FRIENDS",
@@ -351,12 +350,6 @@ def _validate_hashtags(data: Mapping[str, Any], platform: str, label: str) -> No
     hashtags = data.get("hashtags", [])
     if not isinstance(hashtags, list):
         raise RuntimeError(f"{platform}.hashtags precisa ser uma lista em {label}.")
-    limit = HASHTAG_LIMITS[platform]
-    if len(hashtags) > limit:
-        raise RuntimeError(
-            f"{platform}.hashtags tem {len(hashtags)} itens em {label}; "
-            f"use no maximo {limit} para evitar excesso."
-        )
     seen: set[str] = set()
     for index, tag in enumerate(hashtags, start=1):
         if not isinstance(tag, str) or not tag or tag.startswith("#"):
