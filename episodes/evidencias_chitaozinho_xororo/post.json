@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "EVIDÊNCIAS FOI REJEITADA",
+    "source": {"type": "asset", "asset_id": "duo"}
+  },
+  "youtube": {
+    "title": "EVIDÊNCIAS FOI REJEITADA antes de virar hino",
+    "description": "Antes de Chitãozinho & Xororó transformarem Evidências em um dos maiores clássicos do Brasil, a música foi considerada fraca, gravada primeiro por Leonardo Sullivan e pouco divulgada. Depois, uma fita cassete mudou tudo.",
+    "hashtags": ["Evidencias", "ChitaozinhoEXororo", "Sertanejo", "HistoriaDaMusica", "Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "EVIDÊNCIAS QUASE MORREU ANTES DE VIRAR HINO. A música foi rejeitada, gravada por outro cantor e pouco divulgada antes de chegar a Chitãozinho & Xororó.",
+    "hashtags": ["Evidencias", "ChitaozinhoEXororo", "Sertanejo", "MusicaBrasileira", "HistoriaDaMusica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "EVIDÊNCIAS FOI REJEITADA antes de Chitãozinho & Xororó transformarem a música em um hino brasileiro.",
+    "hashtags": ["Evidencias", "ChitaozinhoEXororo", "Sertanejo", "HistoriaDaMusica"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

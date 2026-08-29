@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "duo",
+      "file": "Chitaozinho_e_Xororo_19748486916.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Chit%C3%A3ozinho_e_Xororo_%2819748486916%29.jpg",
+      "credit": "Renan Katayama / Wikimedia Commons",
+      "license": "CC BY-SA 2.0",
+      "focus": {"x": 0.5, "y": 0.34}
+    },
+    {
+      "id": "cassette",
+      "file": "Cassette-tape_8192.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cassette-tape_8192.jpg",
+      "credit": "Wwongbc / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "studio",
+      "file": "Mixing_desk_at_the_Hipposonic_Recording_Studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mixing_desk_at_the_Hipposonic_Recording_Studio.jpg",
+      "credit": "Hipposonic Studios / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "microphone",
+      "file": "Mikrofon.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mikrofon.png",
+      "credit": "Patapaya / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "cowboy",
+      "file": "Cowboy1902.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Cowboy1902.jpg",
+      "credit": "Unknown author / Wikimedia Commons",
+      "license": "Public domain",
+      "focus": {"x": 0.5, "y": 0.4}
+    }
+  ]
+}

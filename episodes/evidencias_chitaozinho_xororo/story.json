@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "title": "Chitãozinho & Xororó — Evidências: o hino que foi rejeitado",
+  "slug": "evidencias_chitaozinho_xororo",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"O hino quase morreu antes de nascer: Evidências foi rejeitada e gravada por outro cantor antes de Chitãozinho & Xororó."},
+    {"id":"writers","text":"José Augusto compôs a canção com Paulo Sérgio Valle no fim dos anos 1980."},
+    {"id":"rejection","text":"Quando ficou pronta, ele mostrou a música e ouviu que ela era mediana, sem cara de sucesso."},
+    {"id":"first_recording","text":"Mesmo assim, Leonardo Sullivan gravou Evidências primeiro."},
+    {"id":"label_pass","text":"Só que a gravadora não apostou na faixa e não a divulgou."},
+    {"id":"cassette","text":"Depois, José Augusto enviou uma fita cassete com várias composições para Chitãozinho & Xororó."},
+    {"id":"car","text":"Os irmãos ouviram Evidências no carro, a caminho do estúdio."},
+    {"id":"emotion","text":"Chitãozinho contou que os dois se emocionaram imediatamente."},
+    {"id":"first_choice","text":"Foi a primeira música daquela fita que mostraram ao maestro e decidiram gravar."},
+    {"id":"arrangement","text":"No estúdio, deram à faixa uma cara pop, com bateria e arranjo amplo."},
+    {"id":"album","text":"A versão entrou no álbum Cowboy do Asfalto, de 1990."},
+    {"id":"turn","text":"E então aconteceu o oposto do que os produtores previram."},
+    {"id":"explosion","text":"Evidências explodiu e virou um dos maiores sucessos da dupla."},
+    {"id":"re_recordings","text":"José Augusto lembrou que a mesma música chamada de fraca ganhou dezenas de regravações."},
+    {"id":"legacy","text":"Hoje ela atravessa karaokês, festas e shows como um hino brasileiro."},
+    {"id":"payoff","text":"O clássico que todo mundo sabe cantar quase foi ignorado pela indústria."}
+  ]
+}

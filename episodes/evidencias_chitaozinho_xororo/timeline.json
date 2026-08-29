@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"duo","motion":"push_in","transition_out":"cut","highlight":{"text":"EVIDÊNCIAS FOI REJEITADA","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_writers","segment":"writers","asset":"microphone","motion":"pan_left","transition_out":"crossfade","highlight":"JOSÉ AUGUSTO + PAULO SÉRGIO VALLE"},
+    {"id":"shot_rejection","segment":"rejection","asset":"studio","motion":"push_in","transition_out":"cut","highlight":"“NÃO TEM CARA DE SUCESSO”"},
+    {"id":"shot_first_recording","segment":"first_recording","asset":"microphone","motion":"pull_out","transition_out":"crossfade","highlight":"OUTRO CANTOR GRAVOU PRIMEIRO"},
+    {"id":"shot_label_pass","segment":"label_pass","asset":"studio","motion":"pan_right","transition_out":"cut","highlight":"A GRAVADORA NÃO APOSTOU"},
+    {"id":"shot_cassette","segment":"cassette","asset":"cassette","motion":"push_in","transition_out":"crossfade","highlight":"UMA FITA CASSETE MUDOU TUDO"},
+    {"id":"shot_car","segment":"car","asset":"cassette","motion":"pan_left","transition_out":"cut","highlight":"OUVIRAM NO CAMINHO DO ESTÚDIO"},
+    {"id":"shot_emotion","segment":"emotion","asset":"duo","motion":"push_in","transition_out":"cut","highlight":"ELES SE EMOCIONARAM NA HORA"},
+    {"id":"shot_first_choice","segment":"first_choice","asset":"duo","motion":"pull_out","transition_out":"crossfade","highlight":"FOI A PRIMEIRA ESCOLHIDA"},
+    {"id":"shot_arrangement","segment":"arrangement","asset":"studio","motion":"push_in","transition_out":"cut","highlight":"UMA CARA MAIS POP"},
+    {"id":"shot_album","segment":"album","asset":"cowboy","motion":"pan_right","transition_out":"crossfade","highlight":"COWBOY DO ASFALTO • 1990"},
+    {"id":"shot_turn","segment":"turn","asset":"cassette","motion":"pull_out","transition_out":"cut","highlight":"A PREVISÃO ESTAVA ERRADA"},
+    {"id":"shot_explosion","segment":"explosion","asset":"duo","motion":"push_in","transition_out":"crossfade","highlight":"VIROU UM DOS MAIORES HITS"},
+    {"id":"shot_re_recordings","segment":"re_recordings","asset":"microphone","motion":"pan_left","transition_out":"cut","highlight":"DEZENAS DE REGRAVAÇÕES"},
+    {"id":"shot_legacy","segment":"legacy","asset":"microphone","motion":"push_in","transition_out":"crossfade","highlight":"UM HINO BRASILEIRO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"duo","motion":"push_in","transition_out":"cut","highlight":{"text":"QUASE IGNORADA PELA INDÚSTRIA","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}
