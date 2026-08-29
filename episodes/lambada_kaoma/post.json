@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O HIT NÃO NASCEU NO BRASIL",
+    "source": {"type": "asset", "asset_id": "lambada_dancers"}
+  },
+  "youtube": {
+    "title": "LAMBADA NÃO NASCEU NO BRASIL — a história por trás do hit do Kaoma",
+    "description": "O refrão de Lambada virou símbolo do Brasil no fim dos anos 1980, mas a melodia nasceu na Bolívia com Los Kjarkas. Depois passou por uma versão brasileira, chegou a produtores franceses, explodiu com o Kaoma e terminou em disputa por autoria.",
+    "hashtags": ["Lambada", "Kaoma", "LosKjarkas", "HistoriaDaMusica", "Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "LAMBADA NÃO NASCEU NO BRASIL. Antes do Kaoma transformar a faixa em febre mundial, a melodia já existia na Bolívia e passou por uma versão brasileira — até uma disputa por autoria mudar os créditos.",
+    "hashtags": ["Lambada", "Kaoma", "MusicaBrasileira", "CuriosidadesMusicais", "HistoriaDaMusica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "O MAIOR HIT DA LAMBADA NÃO NASCEU NO BRASIL — e a história terminou em disputa por plágio.",
+    "hashtags": ["Lambada", "Kaoma", "LosKjarkas", "HistoriaDaMusica"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

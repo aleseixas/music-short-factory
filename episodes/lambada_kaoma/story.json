@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "title": "Kaoma — Lambada: o hit brasileiro que nasceu na Bolívia",
+  "slug": "lambada_kaoma",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"O refrão de Lambada parece brasileiro. Mas o maior hit do Kaoma nasceu de uma música boliviana — e terminou em disputa por plágio."},
+    {"id":"bolivia_1981","text":"Em 1981, Ulises e Gonzalo Hermosa, do Los Kjarkas, lançaram a balada andina Llorando se fue."},
+    {"id":"journey","text":"A melodia viajou pela América Latina até ganhar versões mais dançantes, com acordeão e ritmo acelerado."},
+    {"id":"marcia","text":"No Brasil, Márcia Ferreira gravou Chorando se foi em português, em 1986."},
+    {"id":"porto_seguro","text":"Dois anos depois, produtores franceses ouviram essa versão durante uma viagem a Porto Seguro, na Bahia."},
+    {"id":"pseudonym","text":"De volta à França, Olivier Lorsac registrou a música sob o pseudônimo Chico de Oliveira."},
+    {"id":"kaoma","text":"Então nasceu o projeto Kaoma, com a brasileira Loalwa Braz nos vocais."},
+    {"id":"explosion","text":"Em 1989, Lambada explodiu na Europa e transformou a dança em uma febre mundial."},
+    {"id":"clip","text":"O clipe reforçava a imagem brasileira, com praias baianas e a dupla Chico e Roberta."},
+    {"id":"recognition","text":"Só que os compositores bolivianos reconheceram imediatamente a própria melodia."},
+    {"id":"kjarkas_claim","text":"Los Kjarkas denunciaram que o hit copiava Llorando se fue e exigiram seus direitos."},
+    {"id":"marcia_claim","text":"Márcia Ferreira também reivindicou a autoria da adaptação em português gravada antes do Kaoma."},
+    {"id":"court","text":"A disputa chegou aos tribunais, que reconheceram os autores originais e corrigiram os créditos da canção."},
+    {"id":"legacy","text":"O escândalo não apagou o sucesso: Lambada continuou associada ao Brasil no mundo inteiro."},
+    {"id":"route","text":"Mas por trás daquele refrão existe uma rota improvável: Bolívia, Brasil, França e uma briga por autoria."},
+    {"id":"payoff","text":"Depois de saber disso, é difícil ouvir Chorando se foi como apenas um hit brasileiro."}
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "los_kjarkas",
+      "file": "Los_Kjarkas.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Los_Kjarkas.jpg",
+      "credit": "Marc Davis / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {"x": 0.5, "y": 0.42}
+    },
+    {
+      "id": "lambada_dancers",
+      "file": "Dupla_dancando_Lambada.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dupla_dan%C3%A7ando_Lambada_-_IMG_7501_%28Copy%29.jpg",
+      "credit": "Funk Dooby / Wikimedia Commons",
+      "license": "CC BY-SA 2.0",
+      "focus": {"x": 0.5, "y": 0.45}
+    },
+    {
+      "id": "trancoso_bahia",
+      "file": "Trancoso-Bahia.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Trancoso-Bahia.jpg",
+      "credit": "Juliana Sucupira / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "accordion_player",
+      "file": "Accordion_player.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Accordion_player.jpg",
+      "credit": "Biser Todorov / Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "focus": {"x": 0.48, "y": 0.5}
+    },
+    {
+      "id": "vinyl_closeup",
+      "file": "Vinyl_record_close_up.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vinyl_record_close_up.jpg",
+      "credit": "ProtoplasmaKid / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    }
+  ]
+}

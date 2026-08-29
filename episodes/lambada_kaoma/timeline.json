@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"lambada_dancers","motion":"push_in","transition_out":"cut","highlight":{"text":"O HIT NÃO NASCEU NO BRASIL","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_bolivia","segment":"bolivia_1981","asset":"los_kjarkas","motion":"push_in","transition_out":"crossfade","highlight":"BOLÍVIA • 1981"},
+    {"id":"shot_journey","segment":"journey","asset":"accordion_player","motion":"pan_left","transition_out":"cut","highlight":"A MELODIA COMEÇOU A VIAJAR"},
+    {"id":"shot_marcia","segment":"marcia","asset":"vinyl_closeup","motion":"pull_out","transition_out":"crossfade","highlight":"BRASIL • 1986"},
+    {"id":"shot_porto","segment":"porto_seguro","asset":"trancoso_bahia","motion":"pan_right","transition_out":"cut","highlight":"PORTO SEGURO • BAHIA"},
+    {"id":"shot_pseudonym","segment":"pseudonym","asset":"vinyl_closeup","motion":"push_in","transition_out":"cut","highlight":"UM PSEUDÔNIMO NOS CRÉDITOS"},
+    {"id":"shot_kaoma","segment":"kaoma","asset":"lambada_dancers","motion":"push_in","transition_out":"crossfade","highlight":"NASCE O KAOMA"},
+    {"id":"shot_explosion","segment":"explosion","asset":"lambada_dancers","motion":"pull_out","transition_out":"cut","highlight":"1989: FEBRE MUNDIAL"},
+    {"id":"shot_clip","segment":"clip","asset":"trancoso_bahia","motion":"pan_left","transition_out":"crossfade","highlight":"A IMAGEM ERA TOTALMENTE BRASILEIRA"},
+    {"id":"shot_recognition","segment":"recognition","asset":"los_kjarkas","motion":"push_in","transition_out":"cut","highlight":"ELES RECONHECERAM A MELODIA"},
+    {"id":"shot_kjarkas_claim","segment":"kjarkas_claim","asset":"los_kjarkas","motion":"pan_right","transition_out":"cut","highlight":"LOS KJARKAS DENUNCIARAM A CÓPIA"},
+    {"id":"shot_marcia_claim","segment":"marcia_claim","asset":"vinyl_closeup","motion":"push_in","transition_out":"crossfade","highlight":"A VERSÃO BRASILEIRA TAMBÉM COBROU CRÉDITOS"},
+    {"id":"shot_court","segment":"court","asset":"vinyl_closeup","motion":"pull_out","transition_out":"cut","highlight":"A DISPUTA FOI À JUSTIÇA"},
+    {"id":"shot_legacy","segment":"legacy","asset":"lambada_dancers","motion":"push_in","transition_out":"crossfade","highlight":"O SUCESSO SOBREVIVEU AO ESCÂNDALO"},
+    {"id":"shot_route","segment":"route","asset":"trancoso_bahia","motion":"pan_left","transition_out":"cut","highlight":"BOLÍVIA → BRASIL → FRANÇA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"lambada_dancers","motion":"push_in","transition_out":"cut","highlight":{"text":"AGORA VOCÊ OUVE DE OUTRO JEITO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}
