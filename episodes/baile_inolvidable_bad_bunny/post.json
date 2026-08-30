@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"UMA SALSA GUARDADA DESDE 2022","source":{"type":"asset","asset_id":"bad_bunny_close"}},
+  "youtube": {
+    "title":"BAD BUNNY guardou BAILE INoLVIDABLE desde 2022 antes de virar salsa",
+    "description":"BAILE INoLVIDABLE começou com um sintetizador ouvido durante a era de Un Verano Sin Ti. Anos depois, Bad Bunny transformou a ideia em salsa com uma nova geração de músicos porto-riquenhos.",
+    "hashtags":["BadBunny","BaileInolvidable","Salsa","PuertoRico","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"BAILE INoLVIDABLE começou com um synth que Bad Bunny ouviu em 2022 e decidiu guardar. Depois, um TikTok ajudou a conectar a música a jovens instrumentistas de Porto Rico.",
+    "hashtags":["BadBunny","BaileInolvidable","Salsa","PuertoRico","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"Bad Bunny guardou a ideia de BAILE INoLVIDABLE desde 2022 — até uma nova geração de músicos porto-riquenhos dar vida à salsa.",
+    "hashtags":["BadBunny","BaileInolvidable","Salsa","PuertoRico"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
