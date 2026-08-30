@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"UMA VIDA VIRA OBSTÁCULO","source":{"type":"asset","asset_id":"chico"}},
+  "youtube": {
+    "title":"CONSTRUÇÃO: por que a letra de Chico Buarque é tão brutal?",
+    "description":"Construção não conta apenas a queda de um operário. A repetição da letra e o arranjo crescente de Rogério Duprat transformam uma vida humana em parte da engrenagem da cidade — até a morte virar apenas um incômodo.",
+    "hashtags":["Construcao","ChicoBuarque","MPB","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"CONSTRUÇÃO, de Chico Buarque, fica ainda mais brutal quando você percebe o que as palavras repetidas e o arranjo fazem com o personagem: aos poucos, um trabalhador vira máquina, corpo e obstáculo.",
+    "hashtags":["Construcao","ChicoBuarque","MPB","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"CONSTRUÇÃO, de Chico Buarque, não fala só de um acidente. A forma da música é parte do significado.",
+    "hashtags":["Construcao","ChicoBuarque","MPB","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

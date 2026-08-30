@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Chico Buarque — Construção: quando um trabalhador vira obstáculo",
+  "slug": "construcao_chico_buarque",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Construção, de Chico Buarque, conta a morte de um operário — mas o choque está em como a letra transforma uma vida em peça descartável da cidade."},
+    {"id":"ordinary","text":"Acompanhamos um homem comum: ele se despede da família, trabalha, almoça, bebe e volta ao andaime."},
+    {"id":"fall","text":"Então cai e morre no meio da rua."},
+    {"id":"context","text":"Chico escreveu a música em 1971, após voltar do exílio na Itália, durante a ditadura militar."},
+    {"id":"social","text":"Ele disse que a dimensão social veio intuitivamente, ligada à sua formação e à solidariedade."},
+    {"id":"form","text":"A genialidade está na forma."},
+    {"id":"proparoxytone","text":"Os versos repetem quase as mesmas ações, mas trocam as palavras finais — sempre proparoxítonas."},
+    {"id":"dehumanize","text":"Com essas trocas, o trabalhador perde identidade: homem, máquina, corpo e obstáculo começam a se confundir."},
+    {"id":"origin","text":"Chico contou que primeiro veio a experiência formal; a ideia dos últimos instantes de um operário apareceu depois."},
+    {"id":"duprat","text":"E o arranjo de Rogério Duprat completa a história."},
+    {"id":"layers","text":"A música começa contida e acumula camadas, metais e tensão, como uma construção crescendo até ficar sufocante."},
+    {"id":"coldness","text":"No fim, a morte não interrompe uma vida: ela atrapalha o tráfego, o público, o sábado."},
+    {"id":"turn","text":"É essa frieza que muda tudo."},
+    {"id":"payoff","text":"Construção não mostra apenas um acidente. Mostra uma sociedade que enxerga um trabalhador, até na morte, pelo incômodo que ele causa."}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"chico","file":"Chico_Buarque.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Chico%20Buarque.jpg","credit":"Fernanda Steffen / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"protest","file":"Chico_Buarque_na_Passeata_dos_Cem_Mil.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Chico%20Buarque%20na%20Passeata%20dos%20Cem%20Mil.jpg","credit":"Unknown / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.45}},
+    {"id":"building","file":"Brazil_construction.JPG","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Brazil%20construction.JPG","credit":"WTF Formwork / Wikimedia Commons","license":"CC BY-SA 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"city","file":"Building_in_Sao_Paulo_343.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Building%20in%20S%C3%A3o%20Paulo%20343.jpg","credit":"Wilfredor / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

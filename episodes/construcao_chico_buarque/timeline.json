@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"chico","motion":"push_in","transition_out":"cut","highlight":{"text":"UMA VIDA VIRA OBSTÁCULO","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_ordinary","segment":"ordinary","asset":"building","motion":"pan_left","transition_out":"crossfade","highlight":"UM OPERÁRIO COMUM"},
+    {"id":"shot_fall","segment":"fall","asset":"city","motion":"push_in","transition_out":"cut","highlight":"ENTÃO ELE CAI"},
+    {"id":"shot_context","segment":"context","asset":"protest","motion":"pan_right","transition_out":"crossfade","highlight":"1971 • DITADURA MILITAR"},
+    {"id":"shot_social","segment":"social","asset":"building","motion":"pull_out","transition_out":"cut","highlight":"DIMENSÃO SOCIAL • SOLIDARIEDADE"},
+    {"id":"shot_form","segment":"form","asset":"chico","motion":"push_in","transition_out":"cut","highlight":"A GENIALIDADE ESTÁ NA FORMA"},
+    {"id":"shot_words","segment":"proparoxytone","asset":"chico","motion":"pan_left","transition_out":"crossfade","highlight":"AS PALAVRAS FINAIS MUDAM"},
+    {"id":"shot_identity","segment":"dehumanize","asset":"building","motion":"push_in","transition_out":"cut","highlight":"HOMEM • MÁQUINA • CORPO • OBSTÁCULO"},
+    {"id":"shot_origin","segment":"origin","asset":"chico","motion":"pull_out","transition_out":"crossfade","highlight":"PRIMEIRO VEIO A EXPERIÊNCIA FORMAL"},
+    {"id":"shot_duprat","segment":"duprat","asset":"building","motion":"pan_right","transition_out":"cut","highlight":"O ARRANJO COMPLETA A HISTÓRIA"},
+    {"id":"shot_layers","segment":"layers","asset":"city","motion":"push_in","transition_out":"crossfade","highlight":"CAMADAS • METAIS • TENSÃO"},
+    {"id":"shot_coldness","segment":"coldness","asset":"city","motion":"pan_left","transition_out":"cut","highlight":"TRÁFEGO • PÚBLICO • SÁBADO"},
+    {"id":"shot_turn","segment":"turn","asset":"protest","motion":"pull_out","transition_out":"crossfade","highlight":"É ESSA FRIEZA QUE MUDA TUDO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"building","motion":"push_in","transition_out":"cut","highlight":{"text":"UM TRABALHADOR VIRA INCÔMODO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}
