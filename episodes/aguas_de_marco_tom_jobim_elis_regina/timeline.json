@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"tom_1965","motion":"push_in","transition_out":"cut","highlight":{"text":"ESCRITA NUM PAPEL DE PÃO","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_construction","segment":"construction","asset":"house","motion":"pan_left","transition_out":"crossfade","highlight":"MARÇO DE 1972 • UMA CASA NA SERRA"},
+    {"id":"shot_rain","segment":"rain","asset":"rain_rio","motion":"push_in","transition_out":"cut","highlight":"A CHUVA PARAVA A OBRA"},
+    {"id":"shot_objects","segment":"objects","asset":"house","motion":"pull_out","transition_out":"crossfade","highlight":"PAU • PEDRA • MADEIRA • RIO"},
+    {"id":"shot_bread","segment":"bread_paper","asset":"tom_1965","motion":"push_in","transition_out":"cut","highlight":"PAPEL PARDO DE EMBRULHO"},
+    {"id":"shot_midnight","segment":"midnight","asset":"tom_statue","motion":"pan_right","transition_out":"crossfade","highlight":"DE MADRUGADA, MOSTROU O RASCUNHO"},
+    {"id":"shot_dark","segment":"dark_turn","asset":"rain_rio","motion":"pull_out","transition_out":"cut","highlight":"MAS HAVIA ALGO MAIS SOMBRIO"},
+    {"id":"shot_crisis","segment":"crisis","asset":"tom_1965","motion":"push_in","transition_out":"crossfade","highlight":"TOM VIVIA UMA FASE DIFÍCIL"},
+    {"id":"shot_meaning","segment":"meaning","asset":"rain_rio","motion":"pan_left","transition_out":"cut","highlight":"FIM DO CAMINHO • PROMESSA DE VIDA"},
+    {"id":"shot_first","segment":"first_versions","asset":"elis_1970","motion":"push_in","transition_out":"crossfade","highlight":"1972 • TOM E ELIS GRAVAM"},
+    {"id":"shot_la","segment":"los_angeles","asset":"elis_1970","motion":"pan_right","transition_out":"cut","highlight":"1974 • ELIS & TOM"},
+    {"id":"shot_tension","segment":"tension","asset":"tom_1965","motion":"pull_out","transition_out":"crossfade","highlight":"O ENCONTRO COMEÇOU COM TENSÃO"},
+    {"id":"shot_turn","segment":"studio_turn","asset":"elis_1970","motion":"push_in","transition_out":"cut","highlight":"NO ESTÚDIO, TUDO MUDOU"},
+    {"id":"shot_duet","segment":"duet","asset":"elis_1970","motion":"pan_left","transition_out":"crossfade","highlight":"CONVERSA • IMPROVISO • RISADA"},
+    {"id":"shot_legacy","segment":"legacy","asset":"tom_statue","motion":"push_in","transition_out":"cut","highlight":"UMA GRAVAÇÃO DEFINITIVA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"rain_rio","motion":"push_in","transition_out":"cut","highlight":{"text":"A CHUVA PAROU A OBRA E VIROU CANÇÃO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"ESCRITA NUM PAPEL DE PÃO","source":{"type":"asset","asset_id":"tom_1965"}},
+  "youtube": {
+    "title":"ÁGUAS DE MARÇO nasceu durante uma obra — num papel de pão",
+    "description":"Tom Jobim estava construindo uma casa quando a chuva, o barro, a madeira e as pedras começaram a virar uma das letras mais famosas da música brasileira. Depois, Elis Regina ajudaria a eternizar a canção em Elis & Tom.",
+    "hashtags":["AguasDeMarco","TomJobim","ElisRegina","MPB","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"ÁGUAS DE MARÇO nasceu no meio de uma obra. Tom Jobim rabiscou a letra num papel de pão enquanto a chuva atrapalhava a construção de sua casa — e aquele cenário acabou entrando na música.",
+    "hashtags":["AguasDeMarco","TomJobim","ElisRegina","MPB","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"Tom Jobim escreveu ÁGUAS DE MARÇO num papel de pão enquanto a chuva atrapalhava uma obra.",
+    "hashtags":["AguasDeMarco","TomJobim","ElisRegina","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

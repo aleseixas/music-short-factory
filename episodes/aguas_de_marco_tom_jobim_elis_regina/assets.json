@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"tom_1965","file":"Tom_Jobim_1965.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Tom%20Jobim%2C%201965.jpg","credit":"Arquivo Nacional / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.38}},
+    {"id":"elis_1970","file":"Elis_Regina_1970.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Elis%20Regina%20%281970%29.jpg","credit":"Arquivo Nacional / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.35}},
+    {"id":"rain_rio","file":"Street_corner_at_night_in_the_rain_Rio_de_Janeiro.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Street%20corner%20at%20night%20in%20the%20rain%2C%20Rio%20de%20Janeiro.jpg","credit":"Wilfredor / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"house","file":"Half_timbered_chalet_Petropolis_Rio_de_Janeiro.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Half-timbered%20chalet%20in%20Petr%C3%B3polis%2C%20Rio%20de%20Janeiro.jpg","credit":"Wilfredor / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"tom_statue","file":"Tom_Jobim_RJ.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Tom%20Jobim%20RJ.jpg","credit":"Boaventuravinicius / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.4}}
+  ]
+}

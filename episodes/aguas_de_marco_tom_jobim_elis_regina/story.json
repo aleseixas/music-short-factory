@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "title": "Tom Jobim & Elis Regina — Águas de Março: o clássico escrito num papel de pão",
+  "slug": "aguas_de_marco_tom_jobim_elis_regina",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Uma das músicas brasileiras mais famosas nasceu durante uma obra: Tom Jobim rabiscou Águas de Março num PAPEL DE PÃO."},
+    {"id":"construction","text":"Era março de 1972. Tom construía uma casa na serra do Rio de Janeiro."},
+    {"id":"rain","text":"A chuva transformava a estrada em barro e atrapalhava caminhões e materiais."},
+    {"id":"objects","text":"Segundo o próprio Tom, pau, pedra, madeira, rio e outros objetos foram entrando na letra enquanto ele observava aquele cenário."},
+    {"id":"bread_paper","text":"Ele escreveu depressa, num papel pardo de embrulho de pão."},
+    {"id":"midnight","text":"De madrugada, acordou a irmã Helena e o cunhado para mostrar o rascunho."},
+    {"id":"dark_turn","text":"Mas havia algo mais sombrio por trás da lista de imagens."},
+    {"id":"crisis","text":"Tom contou depois que vivia uma fase difícil, bebia muito e chegou a ouvir de um médico que poderia morrer de cirrose."},
+    {"id":"meaning","text":"Por isso, a canção mistura fim de caminho com uma promessa de vida."},
+    {"id":"first_versions","text":"Tom lançou a música em 1972, e Elis Regina também a gravou naquele ano."},
+    {"id":"los_angeles","text":"Dois anos depois, os dois se encontraram em Los Angeles para o álbum Elis & Tom."},
+    {"id":"tension","text":"No começo houve tensão entre gerações e ideias de arranjo."},
+    {"id":"studio_turn","text":"Mas no estúdio o clima mudou."},
+    {"id":"duet","text":"Em Águas de Março, os dois transformaram os versos numa conversa musical que termina com brincadeira, improviso e a risada de Elis."},
+    {"id":"legacy","text":"Décadas depois, essa gravação continua sendo tratada como definitiva."},
+    {"id":"payoff","text":"E a imagem é perfeita: uma música sobre a vida fluindo nasceu porque a chuva literalmente parou uma construção."}
+  ]
+}
