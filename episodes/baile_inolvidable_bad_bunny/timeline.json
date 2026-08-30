@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"bad_bunny_close","motion":"push_in","transition_out":"cut","highlight":{"text":"UMA SALSA GUARDADA DESDE 2022","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_uvst","segment":"uvst","asset":"bad_bunny_stage","motion":"pan_left","transition_out":"crossfade","highlight":"2022 • UN VERANO SIN TI"},
+    {"id":"shot_later","segment":"later","asset":"bad_bunny_close","motion":"pull_out","transition_out":"cut","highlight":"A IDEIA FOI ARQUIVADA"},
+    {"id":"shot_return","segment":"return","asset":"puerto_rico_flag","motion":"push_in","transition_out":"crossfade","highlight":"2024 • A SALSA VOLTOU"},
+    {"id":"shot_voice","segment":"voice_notes","asset":"bad_bunny_close","motion":"pan_right","transition_out":"cut","highlight":"NOTAS DE VOZ + ARRANJO NA CABEÇA"},
+    {"id":"shot_first","segment":"first_salsa","asset":"salsa_dance","motion":"push_in","transition_out":"crossfade","highlight":"ELE NUNCA TINHA FEITO SALSA ASSIM"},
+    {"id":"shot_new","segment":"new_people","asset":"bad_bunny_stage","motion":"pull_out","transition_out":"cut","highlight":"QUERIA GENTE NOVA"},
+    {"id":"shot_bigjay","segment":"big_jay","asset":"bad_bunny_close","motion":"pan_left","transition_out":"crossfade","highlight":"BIG JAY • SALSA POR BRINCADEIRA"},
+    {"id":"shot_tiktok","segment":"tiktok","asset":"bad_bunny_stage","motion":"push_in","transition_out":"cut","highlight":"UM TIKTOK MUDOU A GRAVAÇÃO"},
+    {"id":"shot_julito","segment":"julito","asset":"puerto_rico_flag","motion":"push_in","transition_out":"crossfade","highlight":"JULITO GASTÓN"},
+    {"id":"shot_age","segment":"age","asset":"bad_bunny_stage","motion":"pan_right","transition_out":"cut","highlight":"14 NO VÍDEO • 19 NO ESTÚDIO"},
+    {"id":"shot_school","segment":"school","asset":"puerto_rico_flag","motion":"pull_out","transition_out":"crossfade","highlight":"ESCUELA LIBRE DE MÚSICA"},
+    {"id":"shot_band","segment":"band","asset":"bad_bunny_stage","motion":"push_in","transition_out":"cut","highlight":"UMA BANDA DE VERDADE"},
+    {"id":"shot_video","segment":"video","asset":"salsa_dance","motion":"pan_left","transition_out":"crossfade","highlight":"ELE FOI APRENDER A DANÇAR"},
+    {"id":"shot_favorite","segment":"favorite","asset":"bad_bunny_close","motion":"push_in","transition_out":"cut","highlight":"“A MELHOR MÚSICA QUE JÁ FIZ”"},
+    {"id":"shot_payoff","segment":"payoff","asset":"bad_bunny_stage","motion":"push_in","transition_out":"cut","highlight":{"text":"UMA NOVA GERAÇÃO DE SALSA","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}
