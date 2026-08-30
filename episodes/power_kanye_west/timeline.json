@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "kanye_close",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "O PREÇO DO PODER",
+        "start_seconds": 0.1,
+        "duration_seconds": 1.9
+      }
+    },
+    {
+      "id": "shot_tension",
+      "segment": "tension",
+      "asset": "kanye_stage",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "2010 • UM RETORNO SOB PRESSÃO"
+    },
+    {
+      "id": "shot_vma",
+      "segment": "vma_hawaii",
+      "asset": "honolulu",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "DEPOIS DO VMA • HAVAÍ"
+    },
+    {
+      "id": "shot_persona",
+      "segment": "persona",
+      "asset": "kanye_close",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "ELE VIROU O PRÓPRIO PERSONAGEM"
+    },
+    {
+      "id": "shot_chorus",
+      "segment": "chorus",
+      "asset": "kanye_stage",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "“NO ONE MAN SHOULD HAVE ALL THAT POWER”"
+    },
+    {
+      "id": "shot_superhero",
+      "segment": "superhero",
+      "asset": "kanye_close",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "SUPER-HERÓI OU PRISIONEIRO?"
+    },
+    {
+      "id": "shot_not_celebration",
+      "segment": "not_celebration",
+      "asset": "kanye_stage",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "NÃO É SÓ EGO"
+    },
+    {
+      "id": "shot_meaning",
+      "segment": "meaning",
+      "asset": "kanye_close",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "PODER QUE TAMBÉM DESTRÓI"
+    },
+    {
+      "id": "shot_s1",
+      "segment": "s1",
+      "asset": "king_crimson",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "21ST CENTURY SCHIZOID MAN"
+    },
+    {
+      "id": "shot_sample",
+      "segment": "sample_meaning",
+      "asset": "king_crimson",
+      "motion": "pan_right",
+      "transition_out": "crossfade",
+      "highlight": "GRANDEZA + CAOS"
+    },
+    {
+      "id": "shot_hours",
+      "segment": "hours",
+      "asset": "honolulu",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "CERCA DE 5.000 HORAS"
+    },
+    {
+      "id": "shot_versions",
+      "segment": "versions",
+      "asset": "kanye_stage",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "VÁRIAS VERSÕES"
+    },
+    {
+      "id": "shot_ending",
+      "segment": "ending",
+      "asset": "kanye_close",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "A POSE COMEÇA A DESMORONAR"
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "kanye_stage",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": {
+        "text": "QUEM CONTROLA QUEM?",
+        "start_seconds": 0.1,
+        "duration_seconds": 1.9
+      }
+    }
+  ]
+}

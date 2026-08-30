@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "kanye_close",
+      "file": "Kanye_Jesus_Walks.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanye%20Jesus%20Walks.jpg",
+      "credit": "Merva Man / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.35
+      }
+    },
+    {
+      "id": "kanye_stage",
+      "file": "Kanye_West_Yankee_Stadium_2010.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanye%20West%20Yankee%20Stadium%202010.jpg",
+      "credit": "Bryan Horowitz / Wikimedia Commons",
+      "license": "CC BY-SA 2.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.48
+      }
+    },
+    {
+      "id": "king_crimson",
+      "file": "King_Crimson_Playing_in_1973.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/King%20Crimson%20Playing%20in%201973.jpg",
+      "credit": "Unknown author / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "honolulu",
+      "file": "Honolulu_cityscape.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Honolulu%20cityscape.jpg",
+      "credit": "Christian Joudrey / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}

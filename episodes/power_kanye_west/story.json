@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "title": "Kanye West — POWER: o preço de ter poder demais",
+  "slug": "power_kanye_west",
+  "target_duration_seconds": 78,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "POWER, de Kanye West, parece uma música sobre ego. Mas também é um aviso sobre o preço desse poder."
+    },
+    {
+      "id": "tension",
+      "text": "Ela surgiu num momento tenso da carreira dele."
+    },
+    {
+      "id": "vma_hawaii",
+      "text": "Após as críticas pelo VMA de 2009, Kanye mergulhou nas sessões de My Beautiful Dark Twisted Fantasy no Havaí."
+    },
+    {
+      "id": "persona",
+      "text": "Ele transforma a própria imagem pública em personagem."
+    },
+    {
+      "id": "chorus",
+      "text": "O refrão resume a contradição: “No one man should have all that power”."
+    },
+    {
+      "id": "superhero",
+      "text": "Ele soa como um super-herói, mas admite pressão, isolamento e uma realidade começando a alcançá-lo."
+    },
+    {
+      "id": "not_celebration",
+      "text": "POWER não é só celebração da fama."
+    },
+    {
+      "id": "meaning",
+      "text": "É o retrato de alguém intoxicado pelo próprio poder e consciente de que ele pode destruí-lo."
+    },
+    {
+      "id": "s1",
+      "text": "S1 criou a base com bateria, cantos e sirenes; depois entrou o sample de “21st Century Schizoid Man”, do King Crimson."
+    },
+    {
+      "id": "sample_meaning",
+      "text": "O título do sample combina com essa figura dividida entre grandeza e caos."
+    },
+    {
+      "id": "hours",
+      "text": "Kanye afirmou que cerca de cinco mil horas de trabalho foram gastas na faixa."
+    },
+    {
+      "id": "versions",
+      "text": "S1 contou que existiram várias versões, versos e refrões."
+    },
+    {
+      "id": "ending",
+      "text": "No final, a pose de invencível dá lugar a uma imagem de queda e autodestruição."
+    },
+    {
+      "id": "payoff",
+      "text": "POWER começa como música de um homem poderoso e termina perguntando se ele consegue escapar do próprio poder."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O PREÇO DO PODER",
+    "source": {
+      "type": "asset",
+      "asset_id": "kanye_close"
+    }
+  },
+  "youtube": {
+    "title": "POWER não é só ego: o verdadeiro conflito por trás da música de Kanye West",
+    "description": "POWER soa como um hino de domínio, mas a letra mistura ego, pressão, autodestruição e medo do próprio poder. O sample de King Crimson e a produção obsessiva ajudam a contar essa história.",
+    "hashtags": [
+      "KanyeWest",
+      "POWER",
+      "MBDTF",
+      "HistoriaDaMusica",
+      "Shorts"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "POWER parece um hino de ego, mas a música também funciona como um aviso sobre o preço de ter poder demais. Até o sample de King Crimson reforça essa tensão.",
+    "hashtags": [
+      "KanyeWest",
+      "POWER",
+      "MBDTF",
+      "Musica",
+      "HistoriaDaMusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "tiktok": {
+    "caption": "POWER não é só Kanye se gabando. A música coloca ego, fama e autodestruição na mesma disputa.",
+    "hashtags": [
+      "KanyeWest",
+      "POWER",
+      "MBDTF",
+      "CuriosidadeMusical"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
