@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "assets": [
-    {"id":"bad_bunny_close","file":"Bad_Bunny_Performs_cropped.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/c/c9/Bad_Bunny_Performs_%28cropped%29.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org","credit":"Comecoquito / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.38}},
-    {"id":"bad_bunny_stage","file":"Bad_Bunny_Performs.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/7/76/Bad_Bunny_Performs.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org","credit":"Comecoquito / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.46}},
-    {"id":"salsa_dance","file":"Salsa_dancing.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/2/2b/Salsa_dancing.jpg?utm_campaign=index&utm_content=original&utm_source=commons.wikimedia.org","credit":"Lance Cpl. Brian Kester / U.S. Marine Corps / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.48}},
-    {"id":"puerto_rico_flag","file":"Puerto_Rico_Flag.png","url":"https://upload.wikimedia.org/wikipedia/commons/4/4d/Puerto_Rico_Flag.png","credit":"Alfarix / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+    {"id":"bad_bunny_close","file":"Bad_Bunny_Performs_cropped.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bad%20Bunny%20Performs%20%28cropped%29.jpg","credit":"Comecoquito / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"bad_bunny_stage","file":"Bad_Bunny_Performs_cropped.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bad%20Bunny%20Performs%20%28cropped%29.jpg","credit":"Comecoquito / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.56}},
+    {"id":"salsa_dance","file":"Salsa_dancing.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Salsa%20dancing.jpg","credit":"Lance Cpl. Brian Kester / U.S. Marine Corps / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.48}},
+    {"id":"puerto_rico_flag","file":"Puerto_Rico_Flag.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Puerto%20Rico%20Flag.png","credit":"Alfarix / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
   ]
 }
