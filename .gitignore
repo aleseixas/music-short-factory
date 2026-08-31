@@ -43,3 +43,9 @@ Thumbs.db
 Desktop.ini
 
 *.zip
+# Episode images are downloaded from assets.json URLs at render time
+episodes/*/assets/*.jpg
+episodes/*/assets/*.JPG
+episodes/*/assets/*.jpeg
+episodes/*/assets/*.JPEG
+tests/reference/*.mp4
