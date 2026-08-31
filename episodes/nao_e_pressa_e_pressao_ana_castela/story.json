@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "title": "Rincon, Ana Castela & DJ BOSS — Não é Pressa, é Pressão: quando um clássico muda de sentido",
+  "slug": "nao_e_pressa_e_pressao_ana_castela",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Não é Pressa, é Pressão, de Rincon, Ana Castela e DJ BOSS, parece só uma festa agro — mas transforma um clássico sobre dignidade na favela em ostentação."},
+    {"id":"interpolation","text":"A faixa reaproveita a melodia e a estrutura de Rap da Felicidade, de Cidinho e Doca."},
+    {"id":"original_meaning","text":"No original, o pedido era simples e político: viver em paz, andar sem medo e ter orgulho do lugar onde se nasceu."},
+    {"id":"cidinho_context","text":"Em entrevista de 1995, Cidinho explicou que o recado não era só para a polícia, mas para o Brasil inteiro diante da violência e da desigualdade."},
+    {"id":"thirty_years","text":"Trinta anos depois, a nova música desloca esse mesmo refrão para outro universo."},
+    {"id":"new_meaning","text":"Agora, felicidade aparece ligada a caminhonete, bebida, Barretos e festa."},
+    {"id":"official_credit","text":"Isso não é apenas semelhança: os créditos oficiais registram uma interpolação de Rap da Felicidade."},
+    {"id":"production","text":"E a produção reforça a troca de cenário, misturando a memória melódica do funk com a estética atual do agro."},
+    {"id":"turn","text":"A virada é justamente essa: uma melodia associada à busca por segurança e respeito passa a embalar consumo e celebração."},
+    {"id":"criticism","text":"Por isso a faixa gerou críticas recentes sobre o esvaziamento da mensagem social do original."},
+    {"id":"current","text":"Não é Pressa, é Pressão está entre as músicas mais ouvidas do Brasil agora."},
+    {"id":"not_chart","text":"Mas o detalhe mais interessante não é o ranking."},
+    {"id":"payoff","text":"É perceber que a mesma melodia pode carregar duas ideias quase opostas de felicidade — dependendo de quem canta e de onde a história parte."}
+  ]
+}

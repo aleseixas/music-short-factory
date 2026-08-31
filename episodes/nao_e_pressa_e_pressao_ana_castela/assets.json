@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"ana_2026","file":"Ana_Castela_Verao_Maior_Parana_2026.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ana%20Castela%20-%20Ver%C3%A3o%20Maior%20Paran%C3%A1%202026.jpg","credit":"Igor Jacinto / Vice Governadoria / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"ana_2023","file":"Ana_Castela_2023.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ana%20Castela%202023.jpg","credit":"Programa Variedades / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"ana_stage","file":"Festa_da_virada_Beira_Rio_2024_06.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Festa%20da%20virada%20na%20Beira%20Rio%20%282023%20-%202024%29%2006.jpg","credit":"Félix Alencar/GEA and Maksuel Martins/GEA / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.45}}
+  ]
+}

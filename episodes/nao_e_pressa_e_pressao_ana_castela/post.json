@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A MESMA MELODIA, OUTRO SENTIDO","source":{"type":"asset","asset_id":"ana_2026"}},
+  "youtube": {
+    "title":"NÃO É PRESSA, É PRESSÃO: o detalhe que muda a música",
+    "description":"Não é Pressa, é Pressão reaproveita Rap da Felicidade, mas troca um pedido por paz e dignidade na favela por caminhonete, Barretos e festa. A interpolação é oficial — e o contraste ajuda a entender por que a faixa virou debate.",
+    "hashtags":["AnaCastela","NaoEPressaEPressao","RapDaFelicidade","MusicaBrasileira","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"NÃO É PRESSA, É PRESSÃO fica bem diferente quando você percebe de onde vem sua melodia. A faixa transforma a memória de Rap da Felicidade — um pedido por paz e dignidade — em uma celebração de caminhonete, Barretos e festa.",
+    "hashtags":["AnaCastela","NaoEPressaEPressao","RapDaFelicidade","MusicaBrasileira"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"NÃO É PRESSA, É PRESSÃO usa a memória de um clássico com uma mensagem quase oposta.",
+    "hashtags":["AnaCastela","NaoEPressaEPressao","RapDaFelicidade","MusicaBrasileira"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

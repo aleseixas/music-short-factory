@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"ana_2026","motion":"push_in","transition_out":"cut","highlight":{"text":"UM CLÁSSICO MUDA DE SENTIDO","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_interpolation","segment":"interpolation","asset":"ana_2023","motion":"pan_left","transition_out":"crossfade","highlight":"RAP DA FELICIDADE"},
+    {"id":"shot_original","segment":"original_meaning","asset":"ana_stage","motion":"pull_out","transition_out":"cut","highlight":"PAZ • SEGURANÇA • DIGNIDADE"},
+    {"id":"shot_cidinho","segment":"cidinho_context","asset":"ana_2023","motion":"pan_right","transition_out":"crossfade","highlight":"UM RECADO PARA O BRASIL"},
+    {"id":"shot_thirty","segment":"thirty_years","asset":"ana_2026","motion":"push_in","transition_out":"cut","highlight":"30 ANOS DEPOIS"},
+    {"id":"shot_new","segment":"new_meaning","asset":"ana_stage","motion":"pan_left","transition_out":"crossfade","highlight":"CAMINHONETE • BARRETOS • FESTA"},
+    {"id":"shot_credit","segment":"official_credit","asset":"ana_2023","motion":"push_in","transition_out":"cut","highlight":"INTERPOLAÇÃO OFICIAL"},
+    {"id":"shot_production","segment":"production","asset":"ana_stage","motion":"pull_out","transition_out":"crossfade","highlight":"FUNK + ESTÉTICA AGRO"},
+    {"id":"shot_turn","segment":"turn","asset":"ana_2026","motion":"pan_right","transition_out":"cut","highlight":"A MESMA MELODIA • OUTRO SENTIDO"},
+    {"id":"shot_criticism","segment":"criticism","asset":"ana_2023","motion":"push_in","transition_out":"crossfade","highlight":"A MENSAGEM VIROU DEBATE"},
+    {"id":"shot_current","segment":"current","asset":"ana_stage","motion":"pan_left","transition_out":"cut","highlight":"ENTRE AS MAIS OUVIDAS DO BRASIL"},
+    {"id":"shot_not_chart","segment":"not_chart","asset":"ana_2026","motion":"pull_out","transition_out":"crossfade","highlight":"MAS NÃO É SOBRE O RANKING"},
+    {"id":"shot_payoff_a","segment":"payoff","asset":"ana_2023","motion":"push_in","transition_out":"cut","highlight":"DUAS IDEIAS DE FELICIDADE"},
+    {"id":"shot_payoff_b","segment":"payoff","asset":"ana_2026","motion":"pan_right","transition_out":"cut","highlight":{"text":"A MELODIA CARREGA O CONTEXTO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}
