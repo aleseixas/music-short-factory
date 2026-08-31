@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Ariana Grande — petal: a música sobre crescer sob pressão",
+  "slug": "petal_ariana_grande",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"petal, de Ariana Grande, parece delicada — mas fala de continuar viva enquanto fama e exposição tentam esmagar você."},
+    {"id":"image","text":"Ariana explicou a imagem: uma pétala crescendo pelas rachaduras de algo frio, duro e desafiador."},
+    {"id":"not_breakup","text":"Por isso, não é uma simples música de término."},
+    {"id":"attachments","text":"O rompimento também é com vozes externas, expectativas e versões da vida dela construídas pelo público."},
+    {"id":"success_pain","text":"Na letra, sucesso e dor convivem: aplausos chegam mesmo quando a pessoa por trás da estrela está esgotada."},
+    {"id":"rage","text":"Ariana disse que escreveu o álbum de um lugar incomum: uma raiva sem filtro."},
+    {"id":"rewrites","text":"Normalmente, contou, ela reescreve e suaviza as palavras."},
+    {"id":"unfiltered","text":"Desta vez, decidiu não fazer isso."},
+    {"id":"moment","text":"E o momento torna essa escolha mais forte."},
+    {"id":"scrutiny","text":"Depois de anos de escrutínio sobre sua vida pessoal, petal transforma essa pressão em conceito."},
+    {"id":"production","text":"A produção acompanha a tensão, trocando parte do brilho pop por texturas mais escuras e vocais em camadas."},
+    {"id":"chart","text":"A faixa-título entrou no Billboard Brasil Hot 100 poucas semanas após o lançamento."},
+    {"id":"turn","text":"Mas o detalhe mais interessante não é o ranking: é usar uma imagem frágil para falar de resistência."},
+    {"id":"payoff","text":"petal não diz que a pressão desapareceu. Diz que ainda é possível crescer justamente pelas rachaduras que ela deixou."}
+  ]
+}

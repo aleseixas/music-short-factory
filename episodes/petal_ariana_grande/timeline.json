@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"ariana_portrait","motion":"push_in","transition_out":"cut","highlight":{"text":"DELICADA POR FORA • RAIVA POR DENTRO","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_image","segment":"image","asset":"flower","motion":"push_in","transition_out":"crossfade","highlight":"CRESCER PELAS RACHADURAS"},
+    {"id":"shot_not_breakup","segment":"not_breakup","asset":"ariana_portrait_2","motion":"pan_left","transition_out":"cut","highlight":"NÃO É SÓ UM TÉRMINO"},
+    {"id":"shot_attachments","segment":"attachments","asset":"crowd","motion":"pull_out","transition_out":"crossfade","highlight":"VOZES EXTERNAS • EXPECTATIVAS"},
+    {"id":"shot_success_pain","segment":"success_pain","asset":"crowd","motion":"push_in","transition_out":"cut","highlight":"APLAUSOS E DOR AO MESMO TEMPO"},
+    {"id":"shot_rage","segment":"rage","asset":"ariana_portrait","motion":"pan_right","transition_out":"crossfade","highlight":"RAIVA SEM FILTRO"},
+    {"id":"shot_rewrites","segment":"rewrites","asset":"ariana_portrait_2","motion":"pull_out","transition_out":"cut","highlight":"ANTES, ELA SUAVIZAVA"},
+    {"id":"shot_unfiltered","segment":"unfiltered","asset":"ariana_portrait","motion":"push_in","transition_out":"cut","highlight":"DESTA VEZ, NÃO"},
+    {"id":"shot_moment","segment":"moment","asset":"crowd","motion":"pan_left","transition_out":"crossfade","highlight":"O MOMENTO MUDA TUDO"},
+    {"id":"shot_scrutiny","segment":"scrutiny","asset":"ariana_portrait_2","motion":"push_in","transition_out":"cut","highlight":"A PRESSÃO VIRA CONCEITO"},
+    {"id":"shot_production","segment":"production","asset":"ariana_portrait","motion":"pull_out","transition_out":"crossfade","highlight":"POP MAIS ESCURO • VOZES EM CAMADAS"},
+    {"id":"shot_chart","segment":"chart","asset":"crowd","motion":"pan_right","transition_out":"cut","highlight":"HOT 100 NO BRASIL"},
+    {"id":"shot_turn","segment":"turn","asset":"flower","motion":"push_in","transition_out":"crossfade","highlight":"FRAGILIDADE VIRA RESISTÊNCIA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"flower","motion":"pull_out","transition_out":"cut","highlight":{"text":"AINDA DÁ PARA CRESCER","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

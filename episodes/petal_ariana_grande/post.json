@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"CRESCER SOB PRESSÃO","source":{"type":"asset","asset_id":"ariana_portrait"}},
+  "youtube": {
+    "title":"PETAL: o que Ariana Grande está realmente dizendo?",
+    "description":"petal parece delicada, mas Ariana Grande explicou que o álbum nasceu de uma raiva sem filtro e da ideia de romper com vozes externas e ligações negativas. A imagem da pétala crescendo pelas rachaduras transforma fragilidade em resistência.",
+    "hashtags":["ArianaGrande","Petal","Pop","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"PETAL, de Ariana Grande, fica diferente quando você entende a metáfora: algo vivo tentando crescer pelas rachaduras de uma superfície fria e dura — enquanto fama, julgamento e dor continuam pressionando.",
+    "hashtags":["ArianaGrande","Petal","Pop","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"PETAL, de Ariana Grande, não é só sobre término. É sobre crescer mesmo quando a pressão tenta esmagar você.",
+    "hashtags":["ArianaGrande","Petal","Pop","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

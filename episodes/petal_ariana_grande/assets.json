@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"ariana_portrait","file":"Ariana_Grande_promoting_Wicked_2024.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ariana%20Grande%20promoting%20Wicked%20%282024%29.jpg","credit":"Barbie Simons / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"ariana_portrait_2","file":"Ariana_Grande_promoting_Wicked_2024_3.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ariana%20Grande%20promoting%20Wicked%20%282024%29%203.jpg","credit":"Barbie Simons / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"flower","file":"Round_petal_flower.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Round%20petal%20flower.jpg","credit":"Swathi sri srinivasa raghavan / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"crowd","file":"Man_person_people_crowd_concert_audience_41796.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Man-person-people-crowd-concert-audience-41796.jpg","credit":"Pxhere / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
