@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"olivia_4369","file":"Olivia_Dean_-_4369.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Olivia%20Dean%20-%204369.jpg","credit":"Harald Krichel / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"olivia_4476","file":"Olivia_Dean_-_4476.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Olivia%20Dean%20-%204476.jpg","credit":"Harald Krichel / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"olivia_4569","file":"Olivia_Dean_-_4569.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Olivia%20Dean%20-%204569.jpg","credit":"Harald Krichel / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"olivia_4359","file":"Olivia_Dean_-_4359.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Olivia%20Dean%20-%204359.jpg","credit":"Harald Krichel / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.38}}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"ELA QUASE NÃO LANÇOU O HIT","source":{"type":"asset","asset_id":"olivia_4369"}},
+  "youtube": {
+    "title":"MAN I NEED: o hit que Olivia Dean quase não lançou",
+    "description":"Man I Need parece uma declaração romântica, mas Olivia Dean a descreve como uma música sobre saber como você merece ser amado e ter coragem de pedir isso. E o maior detalhe: ela nem tinha certeza se a faixa deveria virar single.",
+    "hashtags":["OliviaDean","ManINeed","Pop","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"MAN I NEED, de Olivia Dean, não é sobre precisar de qualquer amor. É sobre saber o que você merece — e a faixa que virou um fenômeno quase nem saiu como single.",
+    "hashtags":["OliviaDean","ManINeed","Pop","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"MAN I NEED quase nem virou single — e o significado é mais confiante do que parece.",
+    "hashtags":["OliviaDean","ManINeed","Pop","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

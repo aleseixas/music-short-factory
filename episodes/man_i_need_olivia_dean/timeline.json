@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"olivia_4369","motion":"push_in","transition_out":"cut","highlight":{"text":"NÃO ACEITAR AMOR CONFUSO","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_meaning","segment":"meaning","asset":"olivia_4476","motion":"pan_left","transition_out":"crossfade","highlight":"PEDIR O AMOR QUE VOCÊ MERECE"},
+    {"id":"shot_title","segment":"title","asset":"olivia_4569","motion":"pull_out","transition_out":"cut","highlight":"O TÍTULO ENGANA"},
+    {"id":"shot_not_need","segment":"not_need","asset":"olivia_4359","motion":"pan_right","transition_out":"crossfade","highlight":"NÃO É SOBRE SER COMPLETADA"},
+    {"id":"shot_standards","segment":"standards","asset":"olivia_4369","motion":"push_in","transition_out":"cut","highlight":"CLAREZA • PRESENÇA • COMUNICAÇÃO"},
+    {"id":"shot_album","segment":"album","asset":"olivia_4476","motion":"pan_left","transition_out":"crossfade","highlight":"THE ART OF LOVING"},
+    {"id":"shot_perspective","segment":"perspective","asset":"olivia_4569","motion":"pull_out","transition_out":"cut","highlight":"TERAPIA + BELL HOOKS"},
+    {"id":"shot_production","segment":"production","asset":"olivia_4359","motion":"pan_right","transition_out":"crossfade","highlight":"SEM TRANSFORMAR EM DRAMA"},
+    {"id":"shot_groove","segment":"groove","asset":"olivia_4369","motion":"push_in","transition_out":"cut","highlight":"CONFIANTE, NÃO DESESPERADA"},
+    {"id":"shot_irony","segment":"irony","asset":"olivia_4476","motion":"pan_left","transition_out":"crossfade","highlight":"A IRONIA VEIO DEPOIS"},
+    {"id":"shot_not_single","segment":"not_single","asset":"olivia_4569","motion":"pull_out","transition_out":"cut","highlight":"NEM DEVERIA SER SINGLE"},
+    {"id":"shot_doubt","segment":"doubt","asset":"olivia_4359","motion":"pan_right","transition_out":"crossfade","highlight":"ELA TINHA DÚVIDAS"},
+    {"id":"shot_band","segment":"band","asset":"olivia_4369","motion":"push_in","transition_out":"cut","highlight":"A BANDA INSISTIU"},
+    {"id":"shot_hit","segment":"hit","asset":"olivia_4476","motion":"pan_left","transition_out":"crossfade","highlight":"VIROU O MAIOR HIT"},
+    {"id":"shot_chart","segment":"chart","asset":"olivia_4569","motion":"pull_out","transition_out":"cut","highlight":"TOP 10 DA HOT 100"},
+    {"id":"shot_payoff","segment":"payoff","asset":"olivia_4359","motion":"pan_right","transition_out":"cut","highlight":{"text":"DEFINIR O AMOR QUE VOCÊ ACEITA","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}
