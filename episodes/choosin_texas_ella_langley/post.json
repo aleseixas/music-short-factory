@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"UM CANGURU CRIOU O HIT","source":{"type":"asset","asset_id":"ella_2026"}},
+  "youtube": {
+    "title":"CHOOSIN’ TEXAS: o hit nasceu por causa de um CANGURU",
+    "description":"O maior hit de Ella Langley nasceu de uma história real de Miranda Lambert envolvendo um canguru, uma abordagem policial e placas do Texas. A piada virou uma música sobre perceber quando alguém já escolheu outra pessoa.",
+    "hashtags":["EllaLangley","ChoosinTexas","MirandaLambert","Country","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"CHOOSIN’ TEXAS parece só uma música de ciúme. Mas a frase que criou o hit nasceu quando Ella Langley ouviu Miranda Lambert contar que já foi parada pela polícia com um canguru no carro.",
+    "hashtags":["EllaLangley","ChoosinTexas","MirandaLambert","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"O maior hit de Ella Langley nasceu por causa de um canguru no carro de Miranda Lambert. E a piada virou uma história de coração partido.",
+    "hashtags":["EllaLangley","ChoosinTexas","Country","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

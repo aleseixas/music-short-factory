@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"ella_2026","motion":"push_in","transition_out":"cut","highlight":"UM CANGURU CRIOU O HIT"},
+    {"id":"shot_kangaroo","segment":"kangaroo","asset":"kangaroo","motion":"pan_left","transition_out":"crossfade","highlight":"O CANGURU DE MIRANDA"},
+    {"id":"shot_traffic_stop","segment":"traffic_stop","asset":"miranda","motion":"push_in","transition_out":"cut","highlight":"PARADA PELA POLÍCIA"},
+    {"id":"shot_phrase","segment":"phrase","asset":"kangaroo","motion":"pull_out","transition_out":"crossfade","highlight":"ELA É DO TEXAS"},
+    {"id":"shot_title","segment":"title","asset":"ella_2026","motion":"pan_right","transition_out":"cut","highlight":"NASCE O TÍTULO"},
+    {"id":"shot_perspective","segment":"perspective","asset":"miranda","motion":"push_in","transition_out":"crossfade","highlight":"A PERSPECTIVA MUDA"},
+    {"id":"shot_written_fast","segment":"written_fast","asset":"ella_live","motion":"pull_out","transition_out":"cut","highlight":"MENOS DE UMA HORA"},
+    {"id":"shot_meaning","segment":"meaning","asset":"ella_2026","motion":"pan_left","transition_out":"crossfade","highlight":"TEXAS VIRA RIVAL"},
+    {"id":"shot_references","segment":"references","asset":"ella_live","motion":"push_in","transition_out":"cut","highlight":"TWO-STEP • AMARILLO"},
+    {"id":"shot_production","segment":"production","asset":"ella_live","motion":"pull_out","transition_out":"crossfade","highlight":"STEEL GUITAR • HONKY-TONK"},
+    {"id":"shot_contrast","segment":"contrast","asset":"ella_2026","motion":"pan_right","transition_out":"cut","highlight":"SOM DOCE • LETRA AMARGA"},
+    {"id":"shot_miranda_role","segment":"miranda_role","asset":"miranda","motion":"push_in","transition_out":"crossfade","highlight":"MIRANDA NOS BASTIDORES"},
+    {"id":"shot_curiosity","segment":"curiosity","asset":"kangaroo","motion":"pull_out","transition_out":"cut","highlight":"DO CANGURU À DESPEDIDA"},
+    {"id":"shot_chart","segment":"chart","asset":"ella_2026","motion":"push_in","transition_out":"crossfade","highlight":"20 SEMANAS NO #1"},
+    {"id":"shot_payoff","segment":"payoff","asset":"ella_2026","motion":"pull_out","transition_out":"cut","highlight":"QUANDO VOCÊ JÁ PERDEU ALGUÉM"}
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Ella Langley — Choosin’ Texas: o hit que nasceu de um canguru",
+  "slug": "choosin_texas_ella_langley",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Choosin’ Texas, de Ella Langley, parece só ciúme — mas o maior hit do momento nasceu por causa de um canguru."},
+    {"id":"kangaroo","text":"Num retiro de composição, Ella perguntou a Miranda Lambert sobre um antigo canguru de estimação."},
+    {"id":"traffic_stop","text":"Miranda contou que foi parada pela polícia com o animal no carro e placas do Texas."},
+    {"id":"phrase","text":"Ella brincou: ela é do Texas, dá para perceber."},
+    {"id":"title","text":"Da frase nasceu o título."},
+    {"id":"perspective","text":"Então Miranda virou a perspectiva: e se a narradora percebesse que seu parceiro estava escolhendo outra mulher, justamente do Texas?"},
+    {"id":"written_fast","text":"Em menos de uma hora, a música estava escrita."},
+    {"id":"meaning","text":"Na letra, Texas vira rival: representa o que ele deseja e aquilo contra o que a narradora não consegue competir."},
+    {"id":"references","text":"Referências ao two-step e a Amarillo tornam essa derrota quase inevitável."},
+    {"id":"production","text":"A produção reforça isso com steel guitar e clima de honky-tonk."},
+    {"id":"contrast","text":"O som acolhe; a letra aceita a perda."},
+    {"id":"miranda_role","text":"Miranda também coproduziu a faixa e canta vocais de apoio."},
+    {"id":"curiosity","text":"A história absurda do canguru virou uma música sobre reconhecer quando alguém já escolheu partir."},
+    {"id":"chart","text":"Em 31 de agosto de 2026, Choosin’ Texas completou vinte semanas no topo da Billboard Hot 100."},
+    {"id":"payoff","text":"Depois disso, o título muda: não é perder para um lugar. É perceber quando você já perdeu alguém."}
+  ]
+}

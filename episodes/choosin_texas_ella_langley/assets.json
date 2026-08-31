@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"ella_2026","file":"Ella_Langley_2026_cropped.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ella%20Langley%202026%20%28cropped%29.jpg","credit":"Rick Munroe / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.34}},
+    {"id":"ella_live","file":"Ella_Langley_in_Concert_2025.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ella%20Langley%20in%20Concert%202025.jpg","credit":"BrDen / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"miranda","file":"Miranda_Lambert_2010.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Miranda%20Lambert%202010.jpg","credit":"Keith Hinkle / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.34}},
+    {"id":"kangaroo","file":"Albino_kangaroo_public_domain.JPG","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Albino%20kangaroo%20%28public%20domain%29.JPG","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
