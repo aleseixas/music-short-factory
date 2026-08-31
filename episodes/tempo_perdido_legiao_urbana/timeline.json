@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"renato","motion":"push_in","transition_out":"cut","highlight":{"text":"DUAS MÚSICAS VIRARAM UMA","start_seconds":0.1,"duration_seconds":1.9}},
+    {"id":"shot_first_song","segment":"first_song","asset":"legiao_booklet","motion":"pan_left","transition_out":"crossfade","highlight":"1977"},
+    {"id":"shot_second_song","segment":"second_song","asset":"legiao_booklet","motion":"pan_right","transition_out":"cut","highlight":"GENTE OBSOLETA"},
+    {"id":"shot_meaning","segment":"meaning","asset":"renato","motion":"pull_out","transition_out":"crossfade","highlight":"O PASSADO NÃO PRECISA SER DESPERDIÇADO"},
+    {"id":"shot_time","segment":"time","asset":"brasilia","motion":"push_in","transition_out":"cut","highlight":"AINDA EXISTE TEMPO"},
+    {"id":"shot_tension","segment":"tension","asset":"renato","motion":"pan_right","transition_out":"crossfade","highlight":"ANSIEDADE • MEMÓRIA • AMOR"},
+    {"id":"shot_production","segment":"production","asset":"legiao_booklet","motion":"pull_out","transition_out":"cut","highlight":"A PRODUÇÃO MUDA O CLIMA"},
+    {"id":"shot_smiths","segment":"smiths","asset":"renato","motion":"push_in","transition_out":"crossfade","highlight":"THE SMITHS COMO REFERÊNCIA"},
+    {"id":"shot_guitars","segment":"guitars","asset":"legiao_live","motion":"pan_left","transition_out":"cut","highlight":"MELANCOLIA SEM DERROTA"},
+    {"id":"shot_legacy","segment":"legacy","asset":"legiao_live","motion":"pull_out","transition_out":"crossfade","highlight":"40 ANOS DEPOIS"},
+    {"id":"shot_revival","segment":"revival","asset":"legiao_booklet","motion":"push_in","transition_out":"cut","highlight":"UMA NOVA VIDA EM 2026"},
+    {"id":"shot_chart","segment":"chart","asset":"brasilia","motion":"pan_right","transition_out":"crossfade","highlight":"#73 NO BRASIL"},
+    {"id":"shot_turn","segment":"turn","asset":"renato","motion":"push_in","transition_out":"crossfade","highlight":"PEDAÇOS ANTIGOS • NOVAS GERAÇÕES"},
+    {"id":"shot_payoff","segment":"payoff","asset":"renato","motion":"pull_out","transition_out":"cut","highlight":{"text":"NÃO PRECISA TER SIDO EM VÃO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

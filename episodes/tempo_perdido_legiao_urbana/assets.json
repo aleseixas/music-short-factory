@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"renato","file":"Renato_Russo_1987_cropped.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Renato%20Russo%2C%201987%20%28cropped%29.jpg","credit":"Arquivo Nacional / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.4}},
+    {"id":"legiao_booklet","file":"Livreto_Legiao_Urbana.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Livreto%20Legi%C3%A3o%20Urbana.jpg","credit":"Cassio Sabacão / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"legiao_live","file":"Legiao_XXX.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Legi%C3%A3o%20XXX.jpg","credit":"Nelson R. de Lima Filho / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"brasilia","file":"Brasilia_Arquivo_Nacional.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bras%C3%ADlia%20-%20BR%20RJANRIO%20PH%200%20FOT%2000746%200003%2C%20Acervo%20do%20Arquivo%20Nacional.jpg","credit":"Arquivo Nacional / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.5}}
+  ]
+}

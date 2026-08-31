@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Legião Urbana — Tempo Perdido: a música feita de duas canções inacabadas",
+  "slug": "tempo_perdido_legiao_urbana",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Tempo Perdido, da Legião Urbana, parece falar de juventude — mas nasceu juntando duas músicas que Renato Russo havia deixado inacabadas."},
+    {"id":"first_song","text":"Uma delas era 1977, criada antes do segundo álbum da banda."},
+    {"id":"second_song","text":"A outra, Gente Obsoleta, forneceu melodia e harmonia que acabariam reaproveitadas."},
+    {"id":"meaning","text":"Essa origem combina com a letra: olhar para o passado sem aceitar que tudo tenha sido desperdiçado."},
+    {"id":"time","text":"O narrador reconhece que o passado não volta, mas insiste que ainda existe tempo pela frente."},
+    {"id":"tension","text":"Por isso, a música oscila entre ansiedade, memória, amor e uma urgência de continuar."},
+    {"id":"production","text":"A produção também deu outra identidade à composição."},
+    {"id":"smiths","text":"Renato contou que a banda usava referências como The Smiths para explicar ao produtor o som desejado."},
+    {"id":"guitars","text":"As guitarras melancólicas deixam a letra triste sem transformá-la em derrota."},
+    {"id":"legacy","text":"Quarenta anos depois, a canção encontra novas vidas."},
+    {"id":"revival","text":"Em 2026, ganhou releitura acústica e permaneceu no Billboard Brasil Hot 100."},
+    {"id":"chart","text":"Na semana de 24 de agosto, aparecia na posição 73 do ranking brasileiro."},
+    {"id":"turn","text":"A ironia é bonita: uma música feita de pedaços antigos continua se renovando para novas gerações."},
+    {"id":"payoff","text":"Tempo Perdido não diz que o tempo não acaba. Diz que aquilo que vivemos não precisa ter sido em vão."}
+  ]
+}

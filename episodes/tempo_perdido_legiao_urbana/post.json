@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"DUAS MÚSICAS VIRARAM UM HINO","source":{"type":"asset","asset_id":"renato"}},
+  "youtube": {
+    "title":"TEMPO PERDIDO nasceu de DUAS músicas inacabadas",
+    "description":"Tempo Perdido, da Legião Urbana, nasceu da junção de ideias antigas de Renato Russo e ganhou uma sonoridade marcada por referências do rock britânico. Quarenta anos depois, continua encontrando novas gerações — e segue no Hot 100 brasileiro.",
+    "hashtags":["LegiaoUrbana","TempoPerdido","RenatoRusso","RockBrasil","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"TEMPO PERDIDO fica ainda mais interessante quando você descobre que o clássico nasceu de duas músicas inacabadas de Renato Russo. E a própria origem combina com a mensagem: o passado pode ganhar outro sentido.",
+    "hashtags":["LegiaoUrbana","TempoPerdido","RenatoRusso","RockBrasil"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"TEMPO PERDIDO nasceu de duas músicas inacabadas — e isso combina perfeitamente com o significado do clássico da Legião Urbana.",
+    "hashtags":["LegiaoUrbana","TempoPerdido","RenatoRusso","RockBrasil"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
