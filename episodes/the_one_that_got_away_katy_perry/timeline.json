@@ -23,7 +23,7 @@
   "text_fx_cues": [
     {"segment":"hook","offset_seconds":0.20,"duration_seconds":1.50,"text":"VOLTOU A EXPLODIR\n15 ANOS DEPOIS","accent_text":"15 ANOS","animation":"scale_bounce","position":"center","intensity":0.58},
     {"segment":"promise","offset_seconds":0.25,"duration_seconds":1.35,"text":"PROMETEU\n“PARA SEMPRE”","accent_text":"PARA SEMPRE","animation":"fade_pop","position":"center","intensity":0.48},
-    {"segment":"groban","offset_seconds":0.20,"duration_seconds":1.35,"text":"ERA JOSH\nGROBAN","accent_text":"JOSH GROBAN","animation":"pop_in","position":"center","intensity":0.54},
+    {"segment":"groban","offset_seconds":0.20,"duration_seconds":1.35,"text":"ERA JOSH\nGROBAN","accent_text":"GROBAN","animation":"pop_in","position":"center","intensity":0.54},
     {"segment":"twist","offset_seconds":0.25,"duration_seconds":1.40,"text":"SEM MUSTANG.\nSEM TATUAGEM.","accent_text":"SEM","animation":"slide_up","position":"center","intensity":0.50},
     {"segment":"regret","offset_seconds":0.25,"duration_seconds":1.45,"text":"A VIDA QUE\nPODERIA TER SIDO","accent_text":"PODERIA","animation":"fade_pop","position":"center","intensity":0.48},
     {"segment":"tiktok","offset_seconds":0.20,"duration_seconds":1.40,"text":"MÚSICA GLOBAL\nDO VERÃO 2026","accent_text":"2026","animation":"scale_bounce","position":"center","intensity":0.60},
