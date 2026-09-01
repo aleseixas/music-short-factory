@@ -1,17 +1,18 @@
 # Busca externa de áudio para o agente editorial
 
 Esta capacidade existe para a etapa de **autoria**. Ela não roda no renderer e
-não escolhe áudio automaticamente. O GPT/agente pesquisa, compara os resultados
-com os catálogos locais e só então registra conscientemente uma opção compatível
-com o schema já existente.
+não escolhe áudio automaticamente. Quando houver acesso web, o GPT/agente segue
+uma política **external-first**: pesquisa e compara opções externas antes de
+aceitar o catálogo local, sem relaxar compatibilidade técnica ou verificação de
+direitos. O catálogo local continua sendo fallback seguro.
 
 ## Caminho principal: tarefa agendada do ChatGPT
 
 A tarefa agendada que edita o repositório não depende de terminal local. Ela deve
 ser configurada com acesso à rede/web (ou uma skill/plugin que ofereça a consulta),
-pois a conexão com o GitHub, sozinha, não concede HTTP genérico. Quando a
-biblioteca atual não oferecer uma opção adequada e esse acesso estiver disponível,
-o próprio agente pode fazer uma requisição HTTP GET à API pública do Openverse:
+pois a conexão com o GitHub, sozinha, não concede HTTP genérico. Com esse acesso
+disponível, o próprio agente deve fazer requisições HTTP GET à API pública do
+Openverse antes de concluir que usará o catálogo local:
 
 ```text
 https://api.openverse.org/v1/audio/?q=<CONSULTA_URL_ENCODED>&page_size=8&mature=false&license_type=commercial,modification
@@ -21,6 +22,12 @@ Para background music, acrescente `category=music`. Para SFX, não force a
 categoria: parte do acervo de efeitos do Freesound chega ao Openverse sem esse
 campo. O agente precisa confirmar pelo título, tags, duração e página de origem
 que o resultado é de fato um efeito sonoro.
+
+Em cada episódio, faça pelo menos três variações de consulta para background e
+duas para SFX. Compare 2–3 candidatas externas plausíveis por camada. Não use uma
+opção local só porque já é conhecida: use-a quando a busca falhar ou quando as
+candidatas externas perderem por licença, compatibilidade, qualidade, duração ou
+adequação editorial. Registre a razão concreta do fallback em `sources.txt`.
 
 Para descobrir músicas comerciais/populares apenas como metadados, sem obter o
 áudio, o agente também pode consultar:
@@ -63,6 +70,12 @@ automática, a implementação é conservadora e só sugere entrada de catálogo
 formato suportado e host conhecido. `by` exige atribuição. Licenças `by-sa`,
 `nc`, `nd` ou informações incompletas exigem revisão de direitos fora da tarefa;
 sem essa confirmação, use o fallback local.
+
+Reddit e fóruns de criadores podem ser consultados como termômetro secundário de
+Content ID, áudio silenciado, bloqueios ou desmonetização na prática. Registre
+link, plataforma e data quando esse sinal influenciar a escolha, e procure mais
+de um relato quando possível. Esses relatos nunca concedem licença; a ausência
+de reclamações também não prova que o uso é permitido.
 
 Os hosts aceitos para aquisição Openverse são `cdn.freesound.org` e
 `upload.wikimedia.org`; os formatos são AAC, FLAC, M4A, MP3, OGG, Opus e WAV. A

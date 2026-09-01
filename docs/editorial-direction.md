@@ -40,13 +40,14 @@ Antes de escrever cues, o agente deve ler os arquivos do próprio projeto:
   arquivo local PNG, JPG/JPEG ou WEBP em `episodes/<slug>/assets/`.
 
 As listas não devem ser congeladas no agente: os catálogos são a fonte de verdade
-e podem evoluir. Se não houver música ou SFX local adequado, o GPT agendado pode
-consultar diretamente a API pública descrita em `docs/audio-search.md`, sem
-depender de terminal. A busca é opcional e sua resposta é apenas dado externo:
-confira fonte, autoria, licença, duração, formato e URL direta antes de registrar
-uma entrada `{file, url}` no catálogo global apropriado. Falha externa ou direitos
-incertos significam fallback local, nunca falha da criação. Se também não houver
-overlay adequado, omita essa camada em vez de inventar um nome ou ID.
+e podem evoluir. Quando houver acesso web, o GPT agendado deve pesquisar primeiro
+opções externas pela API pública descrita em `docs/audio-search.md`, sem depender
+de terminal, e só então decidir entre elas e o acervo local. A resposta da busca
+é apenas dado externo: confira fonte, autoria, licença, duração, formato e URL
+direta antes de registrar uma entrada `{file, url}` no catálogo global apropriado.
+Falha externa, incompatibilidade ou direitos incertos significam fallback local,
+nunca falha da criação. Se também não houver overlay adequado, omita essa camada
+em vez de inventar um nome ou ID.
 
 O renderer continua aceitando somente profiles/types presentes nos catálogos.
 Não coloque URLs novas em `timeline.json`, não baixe áudio comercial de redes
@@ -102,13 +103,22 @@ Não crie um pacote completo em todos os beats. Varie a intensidade:
 - reveals: densidade pode subir por um intervalo curto;
 - payoff: encerre com clareza, sem empilhar tudo no último segundo.
 
+Para uma linguagem mais nativa de TikTok, Reels e Shorts, use microacentos de
+áudio para sustentar retenção: entrada do hook, mudanças de assunto, revelações,
+estatísticas, aparições de texto, transições visuais e payoff. O alvo é cerca de
+15 SFX em 60–90 segundos, distribuídos pela narrativa — aproximadamente um a
+cada 4–6 segundos como média, nunca como grade automática. Os primeiros três
+segundos podem ser mais densos; contexto emocional e frases importantes ainda
+precisam de espaço para respirar. Ritmo alto não significa volume alto nem um
+efeito em toda frase.
+
 ## Editorial budget
 
 Para vídeos de 60–90 segundos, use como referência:
 
 | Camada | Faixa editorial | Warning de excesso |
 | --- | ---: | ---: |
-| SFX | 6–12 | mais de 12 |
+| SFX | aproximadamente 15 (12–18) | mais de 25 |
 | visual FX explícitos | 6–10 | mais de 10 |
 | text FX | 5–9 | mais de 10 |
 | overlays | 2–5 | mais de 6 |
@@ -136,7 +146,9 @@ de arquivo em `profile`. Não altere ducking e não presuma normalização LUFS.
 Escolha pelo significado: `impact` para informação decisiva, `whoosh` para
 movimento, `pop` para detalhe curto e `riser` para expectativa são referências
 possíveis, não associações obrigatórias. Evite sequências repetitivas e clusters
-sem motivo editorial.
+sem motivo editorial. Prefira uma paleta variada e sincronize os SFX com ações
+visuais ou mudanças semânticas reais. Sobreposição intencional é permitida em um
+mesmo editorial beat quando o mix continuar claro; evite sobreposição acidental.
 
 Quando somente um trecho do arquivo for editorialmente útil, use
 `source_start_seconds` (padrão `0`) e `duration_seconds` (opcional). Consulte a
@@ -203,7 +215,9 @@ warnings: pedem revisão, mas não bloqueiam um estilo intencional.
 O exemplo assume um vídeo de 75 segundos e segmentos com os IDs mostrados. Os
 IDs `artist_photo`, `cuba_flag` e `billboard_logo` são ilustrativos: só podem ser
 usados se estiverem declarados em `assets.json` e os arquivos existirem
-localmente. O profile e todos os SFX abaixo existem nos catálogos atuais.
+localmente. O profile e todos os types de SFX abaixo existem nos catálogos atuais;
+um type dedicado de fonte externa aprovada pode substituí-los quando for uma
+escolha editorial melhor.
 
 ```json
 {
@@ -214,12 +228,20 @@ localmente. O profile e todos os SFX abaixo existem nos catálogos atuais.
   },
   "sfx_cues": [
     {"time_seconds": 0.25, "type": "impact", "volume": 0.35},
-    {"time_seconds": 8.1, "type": "whoosh", "volume": 0.22},
-    {"time_seconds": 19.4, "type": "pop", "volume": 0.2},
+    {"time_seconds": 3.1, "type": "whoosh", "volume": 0.2},
+    {"time_seconds": 8.1, "type": "pop", "volume": 0.18},
+    {"time_seconds": 13.6, "type": "camera_shutter", "volume": 0.16},
+    {"time_seconds": 19.4, "type": "ding", "volume": 0.18},
+    {"time_seconds": 24.2, "type": "whoosh", "volume": 0.2},
     {"time_seconds": 30.7, "type": "riser", "volume": 0.18},
     {"time_seconds": 32.1, "type": "impact", "volume": 0.32},
+    {"time_seconds": 38.8, "type": "pop", "volume": 0.17},
+    {"time_seconds": 44.5, "type": "reverse_cymbal", "volume": 0.14},
     {"time_seconds": 49.0, "type": "cinematic_piano", "volume": 0.1, "source_start_seconds": 1.5, "duration_seconds": 2.5},
-    {"time_seconds": 67.2, "type": "impact", "volume": 0.28}
+    {"time_seconds": 54.3, "type": "camera_flash", "volume": 0.15},
+    {"time_seconds": 60.1, "type": "crowd_gasp", "volume": 0.12},
+    {"time_seconds": 67.2, "type": "impact", "volume": 0.28},
+    {"time_seconds": 72.0, "type": "applause", "volume": 0.12}
   ],
   "visual_fx_cues": [
     {"start_seconds": 0.18, "end_seconds": 0.58, "type": "punch_zoom", "intensity": 0.58},

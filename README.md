@@ -570,15 +570,17 @@ mensagem clara da plataforma; o dry-run continua disponível.
 
 Mantenha informações de artistas, faixas e roteiro fora desses arquivos globais.
 
-## Busca externa opcional para autoria
+## Busca externa external-first para autoria
 
 A busca de áudio pertence ao GPT/agente que cria o episódio, não ao pipeline de
-render. O agente deve começar pelos catálogos locais. Se não houver uma opção
-adequada, ele pode consultar diretamente a API pública do Openverse descrita em
+render. Quando houver web, o agente deve pesquisar opções externas antes de
+escolher o catálogo local, usando a API pública do Openverse descrita em
 [`docs/audio-search.md`](docs/audio-search.md), mesmo quando estiver rodando como
 tarefa agendada do ChatGPT sem terminal local. Essa tarefa precisa ter rede/web
 ou uma skill/plugin equivalente habilitada; a conexão GitHub não concede HTTP
-genérico por si só.
+genérico por si só. O catálogo local permanece como fallback quando a busca
+falhar ou nenhuma candidata externa passar em direitos, qualidade e
+compatibilidade técnica.
 
 Os resultados incluem nome, criador, fonte, página original, licença, duração,
 formato, tags e, quando seguro, uma sugestão `{file, url}` compatível com os

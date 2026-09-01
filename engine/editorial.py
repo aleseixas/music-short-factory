@@ -253,7 +253,7 @@ def _editorial_warnings(
             warnings.append(EditorialWarning(code, message))
 
     limits = {
-        "sfx": _scaled_budget_limit(12, duration),
+        "sfx": 25,
         "visual": _scaled_budget_limit(10, duration),
         "text": _scaled_budget_limit(10, duration),
         "overlay": _scaled_budget_limit(6, duration),
@@ -263,7 +263,7 @@ def _editorial_warnings(
     warn(
         len(episode.sfx_cues) > limits["sfx"],
         "sfx_count_high",
-        f"Mais de {limits['sfx']} SFX para esta duracao; preserve momentos limpos.",
+        f"Mais de {limits['sfx']} SFX para esta duracao; revise ritmo, repeticao e clareza do mix.",
     )
     warn(
         len(episode.visual_fx_cues) > limits["visual"],

@@ -108,6 +108,29 @@ def _codes(episode: Episode, plan: TimelinePlan | None = None) -> frozenset[str]
 
 
 class EditorialDirectionTests(unittest.TestCase):
+    def test_agent_guidance_matches_high_energy_sfx_budget(self):
+        guide = (PROJECT_ROOT / "docs" / "editorial-direction.md").read_text(
+            encoding="utf-8"
+        )
+        prompt = (
+            PROJECT_ROOT / "templates" / "editorial-direction-prompt.md"
+        ).read_text(encoding="utf-8")
+
+        for content, count_phrase in (
+            (guide, "mais de 25"),
+            (prompt, "acima de 25"),
+        ):
+            self.assertIn("aproximadamente 15", content)
+            self.assertIn(count_phrase, content)
+            self.assertNotIn("6–12 SFX", content)
+
+        self.assertIn("pesquisar primeiro\nopções externas", guide)
+        self.assertIn("busca externa é a primeira\netapa", prompt)
+        example_sfx = guide.split('"sfx_cues": [', 1)[1].split(
+            '"visual_fx_cues": [', 1
+        )[0]
+        self.assertEqual(example_sfx.count('"time_seconds"'), 15)
+
     def test_catalog_discovery_reads_only_real_music_and_sfx_names(self):
         catalogs = load_editorial_catalogs(PROJECT_ROOT)
         music_catalog = json.loads(
@@ -140,11 +163,12 @@ class EditorialDirectionTests(unittest.TestCase):
             shot_count=10,
             background_music=BackgroundMusicSpec("latin_pop_uplifting", 0.12),
             sfx_cues=tuple(
-                SfxCue(time, effect, 0.25)
-                for time, effect in zip(
-                    (0.3, 9, 18, 27, 36, 45, 54, 66),
-                    ("impact", "whoosh", "pop", "riser") * 2,
+                SfxCue(
+                    0.3 + index * 5,
+                    ("impact", "whoosh", "pop", "riser")[index % 4],
+                    0.25,
                 )
+                for index in range(15)
             ),
             visual_fx_cues=tuple(
                 VisualFxCue(index * 7.5 + 0.4, index * 7.5 + 1.4, effect, 0.45)
@@ -185,8 +209,12 @@ class EditorialDirectionTests(unittest.TestCase):
         cases = {
             "sfx_count_high": _episode(
                 sfx_cues=tuple(
-                    SfxCue(index * 5, ("impact", "whoosh", "pop", "riser")[index % 4], 0.2)
-                    for index in range(13)
+                    SfxCue(
+                        index * 2.8,
+                        ("impact", "whoosh", "pop", "riser")[index % 4],
+                        0.2,
+                    )
+                    for index in range(26)
                 ),
             ),
             "visual_fx_count_high": _episode(
@@ -232,6 +260,23 @@ class EditorialDirectionTests(unittest.TestCase):
         for expected, episode in cases.items():
             with self.subTest(expected=expected):
                 self.assertIn(expected, _codes(episode))
+
+    def test_sfx_count_warning_starts_above_twenty_five(self):
+        for duration in (30.0, 75.0, 120.0):
+            for count, expected in ((15, False), (25, False), (26, True)):
+                with self.subTest(duration=duration, count=count):
+                    episode = _episode(
+                        sfx_cues=tuple(
+                            SfxCue(
+                                index * ((duration - 1) / max(1, count - 1)),
+                                ("impact", "whoosh", "pop", "riser")[index % 4],
+                                0.2,
+                            )
+                            for index in range(count)
+                        )
+                    )
+                    codes = _codes(episode, _plan(episode, duration))
+                    self.assertEqual("sfx_count_high" in codes, expected)
 
     def test_sfx_cluster_and_repetition_have_separate_warnings(self):
         clustered = _episode(
