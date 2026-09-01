@@ -1,14 +1,15 @@
 from __future__ import annotations
 
+import math
 from pathlib import Path
 
 from .captions import _ass_color, _escape_ass_text, ass_time
 from .config import CaptionStyle, HighlightStyle
-from .models import TextFxCue
+from .models import ResolvedTextFxCue, TextFxCue
 
 
 def write_text_fx_ass(
-    cues: tuple[TextFxCue, ...],
+    cues: tuple[ResolvedTextFxCue | TextFxCue, ...],
     path: Path,
     width: int,
     height: int,
@@ -63,7 +64,9 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
         tags = _animation_tags(cue, x, y, height)
         text = _render_text(cue, style_name, accent_color, font_size)
         events.append(
-            f"Dialogue: 1,{ass_time(start)},{ass_time(end)},{style_name},,0,0,0,,{tags}{text}"
+            f"Dialogue: 1,{_ass_start_time(cue, start, index)},"
+            f"{_ass_end_time(cue, start, end, index)},"
+            f"{style_name},,0,0,0,,{tags}{text}"
         )
 
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -75,6 +78,61 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     )
 
 
+def _ass_start_time(
+    cue: ResolvedTextFxCue | TextFxCue,
+    start: float,
+    index: int,
+) -> str:
+    limit = getattr(cue, "start_limit_seconds", None)
+    if limit is None:
+        return ass_time(start)
+    if isinstance(limit, bool) or not math.isfinite(limit) or limit < 0:
+        raise RuntimeError(
+            f"text_fx_cues[{index}] tem limite inicial invalido apos resolucao."
+        )
+    rounded_start = max(0, round(start * 100))
+    minimum_start = max(0, math.ceil(limit * 100 - 1e-9))
+    return _format_ass_centiseconds(max(rounded_start, minimum_start))
+
+
+def _ass_end_time(
+    cue: ResolvedTextFxCue | TextFxCue,
+    start: float,
+    end: float,
+    index: int,
+) -> str:
+    limit = getattr(cue, "end_limit_seconds", None)
+    if limit is None:
+        return ass_time(end)
+    if isinstance(limit, bool) or not math.isfinite(limit) or limit < 0:
+        raise RuntimeError(
+            f"text_fx_cues[{index}] tem limite final invalido apos resolucao."
+        )
+    start_limit = getattr(cue, "start_limit_seconds", None)
+    start_centiseconds = max(0, round(start * 100))
+    if start_limit is not None:
+        start_centiseconds = max(
+            start_centiseconds,
+            math.ceil(start_limit * 100 - 1e-9),
+        )
+    end_centiseconds = max(0, round(end * 100))
+    limit_centiseconds = max(0, math.floor(limit * 100 + 1e-9))
+    constrained_end = min(end_centiseconds, limit_centiseconds)
+    if constrained_end <= start_centiseconds:
+        raise RuntimeError(
+            f"text_fx_cues[{index}] fica curta demais para o timing em centesimos "
+            "do renderer ASS."
+        )
+    return _format_ass_centiseconds(constrained_end)
+
+
+def _format_ass_centiseconds(total_centiseconds: int) -> str:
+    hours, remainder = divmod(total_centiseconds, 360_000)
+    minutes, remainder = divmod(remainder, 6_000)
+    whole_seconds, centiseconds = divmod(remainder, 100)
+    return f"{hours}:{minutes:02}:{whole_seconds:02}.{centiseconds:02}"
+
+
 def _font_size(text: str, width: int, height: int, base_size: int) -> int:
     lines = text.splitlines() or [text]
     longest = max((len(line) for line in lines), default=1)
@@ -84,7 +142,12 @@ def _font_size(text: str, width: int, height: int, base_size: int) -> int:
     return min(base_size, by_width, by_height)
 
 
-def _animation_tags(cue: TextFxCue, x: int, y: int, height: int) -> str:
+def _animation_tags(
+    cue: ResolvedTextFxCue | TextFxCue,
+    x: int,
+    y: int,
+    height: int,
+) -> str:
     duration_ms = max(1, round((cue.end_seconds - cue.start_seconds) * 1000))
     enter = min(240, max(80, round(duration_ms * 0.28)))
     exit_duration = min(180, max(80, round(duration_ms * 0.18)), max(1, duration_ms // 3))
@@ -122,7 +185,12 @@ def _animation_tags(cue: TextFxCue, x: int, y: int, height: int) -> str:
     )
 
 
-def _render_text(cue: TextFxCue, style_name: str, accent_color: str, font_size: int) -> str:
+def _render_text(
+    cue: ResolvedTextFxCue | TextFxCue,
+    style_name: str,
+    accent_color: str,
+    font_size: int,
+) -> str:
     text = cue.text
     if cue.accent_text:
         lower = text.casefold()

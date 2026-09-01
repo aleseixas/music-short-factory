@@ -14,10 +14,12 @@ from .models import (
     TEXT_FX_POSITIONS,
     VISUAL_FX_TYPES,
     Episode,
+    ResolvedTextFxCue,
     TimelinePlan,
 )
 from .music import MUSIC_CATALOG
 from .sfx import SFX_CATALOG
+from .timeline import resolve_text_fx_cues
 from .utils import load_json, validate_schema
 
 
@@ -69,6 +71,7 @@ def validate_editorial_direction(
     catalogs: EditorialCatalogs,
     *,
     highlight_default_duration: float | None = None,
+    resolved_text_fx_cues: tuple[ResolvedTextFxCue, ...] | None = None,
 ) -> EditorialReport:
     """Validate renderer constraints and report non-blocking editorial excesses.
 
@@ -77,6 +80,11 @@ def validate_editorial_direction(
     density observations are warnings.
     """
     video_duration = plan.duration
+    text_fx_cues = (
+        resolve_text_fx_cues(episode.text_fx_cues, plan)
+        if resolved_text_fx_cues is None
+        else resolved_text_fx_cues
+    )
     errors: list[str] = []
     if not math.isfinite(video_duration) or video_duration <= 0:
         errors.append("video_duration precisa ser positivo e finito")
@@ -123,7 +131,13 @@ def validate_editorial_direction(
         _check_interval(cue.start_seconds, cue.end_seconds, video_duration, label, errors)
         _check_unit_interval(cue.intensity, f"{label}.intensity", errors)
 
-    for index, cue in enumerate(episode.text_fx_cues, start=1):
+    if len(text_fx_cues) != len(episode.text_fx_cues):
+        errors.append(
+            "a quantidade de text_fx_cues resolvidas difere da especificacao "
+            "declarativa"
+        )
+
+    for index, cue in enumerate(text_fx_cues, start=1):
         label = f"text_fx_cues[{index}]"
         if cue.animation not in TEXT_FX_ANIMATIONS:
             errors.append(f"{label}.animation desconhecida: {cue.animation!r}")
@@ -157,7 +171,7 @@ def validate_editorial_direction(
             errors.append(f"shot {shot.id!r} referencia asset inexistente: {shot.asset_id!r}")
 
     _check_overlaps(episode.visual_fx_cues, "visual_fx_cues", errors)
-    _check_overlaps(episode.text_fx_cues, "text_fx_cues", errors)
+    _check_overlaps(text_fx_cues, "text_fx_cues", errors)
     _check_overlaps(episode.overlay_cues, "overlay_cues", errors)
     for scene in plan.scenes:
         if len(scene.visual_fx_cues) > 1:
@@ -175,6 +189,7 @@ def validate_editorial_direction(
         video_duration,
         plan,
         highlight_default_duration,
+        text_fx_cues,
     )
     return EditorialReport(tuple(warnings))
 
@@ -198,7 +213,9 @@ def _check_interval(
     errors: list[str],
 ) -> None:
     if (
-        not math.isfinite(start)
+        isinstance(start, bool)
+        or isinstance(end, bool)
+        or not math.isfinite(start)
         or not math.isfinite(end)
         or start < 0
         or end <= start
@@ -208,7 +225,7 @@ def _check_interval(
 
 
 def _check_unit_interval(value: float, label: str, errors: list[str]) -> None:
-    if not math.isfinite(value) or not 0 <= value <= 1:
+    if isinstance(value, bool) or not math.isfinite(value) or not 0 <= value <= 1:
         errors.append(f"{label} precisa ficar entre 0 e 1")
 
 
@@ -227,6 +244,7 @@ def _editorial_warnings(
     duration: float,
     plan: TimelinePlan,
     highlight_default_duration: float | None,
+    text_fx_cues: tuple[ResolvedTextFxCue, ...],
 ) -> list[EditorialWarning]:
     warnings: list[EditorialWarning] = []
 
@@ -253,7 +271,7 @@ def _editorial_warnings(
         f"Mais de {limits['visual']} visual_fx explicitos para esta duracao.",
     )
     warn(
-        len(episode.text_fx_cues) > limits["text"],
+        len(text_fx_cues) > limits["text"],
         "text_fx_count_high",
         f"Mais de {limits['text']} text_fx editoriais para esta duracao.",
     )
@@ -291,7 +309,7 @@ def _editorial_warnings(
         "visual_fx_repetition",
         "O mesmo visual_fx domina a edição.",
     )
-    text_animations = [cue.animation for cue in episode.text_fx_cues]
+    text_animations = [cue.animation for cue in text_fx_cues]
     warn(
         len(text_animations) >= 4
         and text_animations.count("scale_bounce") / len(text_animations) >= 0.75,
@@ -306,7 +324,7 @@ def _editorial_warnings(
         "O mesmo asset de overlay é repetido em excesso.",
     )
 
-    for index, cue in enumerate(episode.text_fx_cues, start=1):
+    for index, cue in enumerate(text_fx_cues, start=1):
         words = re.findall(r"\S+", cue.text)
         if len(words) > 6 or len(" ".join(words)) > 42:
             warnings.append(
@@ -321,6 +339,7 @@ def _editorial_warnings(
         plan,
         warnings,
         highlight_default_duration,
+        text_fx_cues,
     )
     return warnings
 
@@ -338,6 +357,7 @@ def _append_timeline_warnings(
     plan: TimelinePlan,
     warnings: list[EditorialWarning],
     highlight_default_duration: float | None,
+    text_fx_cues: tuple[ResolvedTextFxCue, ...],
 ) -> None:
     punch_shots: list[tuple[int, int]] = []
     for scene in plan.scenes:
@@ -369,7 +389,7 @@ def _append_timeline_warnings(
             else start
         )
         normalized_highlight = _normalize_editorial_text(highlight.text)
-        for text_index, cue in enumerate(episode.text_fx_cues, start=1):
+        for text_index, cue in enumerate(text_fx_cues, start=1):
             overlaps = (
                 cue.start_seconds < end and start < cue.end_seconds
                 if end > start

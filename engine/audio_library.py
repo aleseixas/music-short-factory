@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+from urllib.parse import urlparse
 
 from .media_cache import download_to_cache
 
@@ -15,6 +16,15 @@ SUPPORTED_AUDIO_SUFFIXES = {
     ".opus",
     ".wav",
 }
+OPENVERSE_EXTERNAL_PREFIX = "external/openverse/"
+OPENVERSE_AUDIO_DOWNLOAD_HOSTS = frozenset(
+    {
+        "cdn.freesound.org",
+        "upload.wikimedia.org",
+    }
+)
+MAX_EXTERNAL_MUSIC_BYTES = 100 * 1024 * 1024
+MAX_EXTERNAL_SFX_BYTES = 25 * 1024 * 1024
 
 
 @dataclass(frozen=True)
@@ -88,12 +98,29 @@ def materialize_audio_catalog_entry(
             f"Arquivo local de {kind} nao encontrado e sem URL em {label}: "
             f"{entry.relative_file}."
         )
+    download_options: dict[str, object] = {}
+    if entry.relative_file.casefold().startswith(OPENVERSE_EXTERNAL_PREFIX):
+        host = (urlparse(entry.url).hostname or "").casefold()
+        if host not in OPENVERSE_AUDIO_DOWNLOAD_HOSTS:
+            raise RuntimeError(
+                f"Host externo nao aprovado para {kind} em {label}."
+            )
+        download_options = {
+            "allowed_hosts": {host},
+            "require_https": True,
+            "max_bytes": (
+                MAX_EXTERNAL_SFX_BYTES
+                if kind.casefold() == "sfx"
+                else MAX_EXTERNAL_MUSIC_BYTES
+            ),
+        }
     return (
         download_to_cache(
             entry.url,
             cache_dir,
             entry.relative_file,
             f"{kind} {entry.relative_file!r}",
+            **download_options,
         ),
         True,
     )

@@ -21,10 +21,10 @@ from engine.models import (
     OverlayCue,
     ResolvedBackgroundMusic,
     ResolvedSfxCue,
+    ResolvedTextFxCue,
     ScriptSegment,
     ShotSpec,
     Story,
-    TextFxCue,
     VisualFxCue,
     WordTiming,
 )
@@ -258,7 +258,7 @@ class OverlayRendererTests(unittest.TestCase):
             clip = root / "clip.mp4"; clip.write_bytes(b"clip")
             captions = work / "captions.ass"; captions.write_text("", encoding="utf-8")
             text_fx = work / "text_fx.ass"
-            write_text_fx_ass((TextFxCue(0.1, 0.9, "IMPACTO", "pop_in"),), text_fx, 90, 160, self.style.captions, self.style.highlights, 1)
+            write_text_fx_ass((ResolvedTextFxCue(0.1, 0.9, "IMPACTO", "pop_in"),), text_fx, 90, 160, self.style.captions, self.style.highlights, 1)
             graphic = work / "graphic.png"; graphic.write_bytes(b"png")
             renderer = Renderer(root, work, root / "output", config, self.style)
             with patch("engine.renderer.run_ffmpeg") as ffmpeg, patch("engine.renderer.probe_video_frame_count", return_value=12):
@@ -290,7 +290,7 @@ class OverlayRendererTests(unittest.TestCase):
             clip = root / "clip.mp4"; clip.write_bytes(b"video")
             captions = work / "captions.ass"; captions.write_text("", encoding="utf-8")
             text_fx = work / "text_fx.ass"
-            write_text_fx_ass((TextFxCue(0.1, 0.9, "41 SEMANAS", "pop_in"),), text_fx, 90, 160, self.style.captions, self.style.highlights, 1)
+            write_text_fx_ass((ResolvedTextFxCue(0.1, 0.9, "41 SEMANAS", "pop_in"),), text_fx, 90, 160, self.style.captions, self.style.highlights, 1)
             graphic = work / "graphic.png"; graphic.write_bytes(b"png")
             with patch("engine.renderer.run_ffmpeg") as compose_call, patch("engine.renderer.probe_video_frame_count", return_value=12):
                 renderer.compose_timeline([clip], plan, captions, text_fx, ((OverlayCue(0.1, 0.9, "logo", "pop_in", "center"), graphic),))

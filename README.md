@@ -324,11 +324,35 @@ antes.
 
 #### Tipografia cinética por intervalo
 
-`text_fx_cues` é uma camada editorial opcional, com tempos globais semiabertos
-(`start_seconds` inclusivo e `end_seconds` exclusivo). Cada item requer `text` e
-`animation`; aceita texto multilinha, `accent_text` (que deve aparecer em `text`),
-`position: "center"` e `intensity` entre `0` e `1` (padrão `0.5`). As animações
-disponíveis são `pop_in`, `scale_bounce`, `slide_up` e `fade_pop`.
+`text_fx_cues` é uma camada editorial opcional. Cada cue usa exatamente um dos
+dois modos de timing:
+
+- absoluto legado: `start_seconds` inclusivo + `end_seconds` exclusivo;
+- relativo ao segmento: `segment` + `offset_seconds` + `duration_seconds`.
+
+No modo relativo, o engine espera a TTS, constrói a timeline real e ancora a cue
+no início real do único shot associado ao segmento. O offset deve ser não
+negativo, a duração deve ser positiva e a cue inteira precisa caber no segmento;
+não há corte silencioso nem uso de `target_duration_seconds`. Campos absolutos e
+relativos não podem ser misturados na mesma cue.
+
+```json
+{
+  "segment": "chart",
+  "offset_seconds": 0.4,
+  "duration_seconds": 1.8,
+  "text": "Nº 1\nNO BRASIL",
+  "accent_text": "Nº 1",
+  "animation": "scale_bounce",
+  "position": "center",
+  "intensity": 0.55
+}
+```
+
+Cada item também requer `text` e `animation`; aceita texto multilinha,
+`accent_text` (que deve aparecer em `text`), `position: "center"` e `intensity`
+entre `0` e `1` (padrão `0.5`). As animações disponíveis são `pop_in`,
+`scale_bounce`, `slide_up` e `fade_pop`.
 
 As cues não podem se sobrepor. A camada fica no centro seguro do quadro, os
 highlights continuam no topo e as legendas palavra a palavra são aplicadas por
@@ -367,6 +391,9 @@ autoria, os editorial beats, budgets, conflitos e um exemplo completo ficam em
 [`docs/editorial-direction.md`](docs/editorial-direction.md). Um prompt copiável
 fica em
 [`templates/editorial-direction-prompt.md`](templates/editorial-direction-prompt.md).
+A tarefa agendada do ChatGPT também pode consultar áudio externo diretamente pela
+web seguindo [`docs/audio-search.md`](docs/audio-search.md), sempre com fallback
+para os catálogos locais e sem introduzir chamadas de busca no renderer.
 
 Depois que a duração real é conhecida, `engine/editorial.py` rejeita conflitos
 que quebrariam o schema/renderer e emite warnings determinísticos para excesso,
@@ -542,6 +569,45 @@ mensagem clara da plataforma; o dry-run continua disponível.
 - aparência, posição, duração e fade dos highlights.
 
 Mantenha informações de artistas, faixas e roteiro fora desses arquivos globais.
+
+## Busca externa opcional para autoria
+
+A busca de áudio pertence ao GPT/agente que cria o episódio, não ao pipeline de
+render. O agente deve começar pelos catálogos locais. Se não houver uma opção
+adequada, ele pode consultar diretamente a API pública do Openverse descrita em
+[`docs/audio-search.md`](docs/audio-search.md), mesmo quando estiver rodando como
+tarefa agendada do ChatGPT sem terminal local. Essa tarefa precisa ter rede/web
+ou uma skill/plugin equivalente habilitada; a conexão GitHub não concede HTTP
+genérico por si só.
+
+Os resultados incluem nome, criador, fonte, página original, licença, duração,
+formato, tags e, quando seguro, uma sugestão `{file, url}` compatível com os
+catálogos existentes. Conteúdo remoto é tratado somente como dados. O agente deve
+verificar direitos e atribuição; aparecer em TikTok, Reels ou Shorts não autoriza
+o download ou a sincronização de uma faixa comercial.
+
+O Openverse cobre áudio aberto. Para músicas comerciais reconhecíveis, o guia
+também oferece pesquisa Apple Music exclusivamente de metadados e ignora
+`previewUrl`; ela não fornece áudio utilizável pelo renderer. A integração usa a
+API do Openverse, não é endossada/certificada por ele e mantém
+`rights_verified: false` até a verificação da fonte original.
+
+Para usar exatamente um resultado aprovado, o agente cria no catálogo global um
+profile/type dedicado ao episódio com uma única entrada, registra a fonte em
+`episodes/<slug>/sources.txt` e referencia essa chave em `timeline.json`. Uma
+chave com várias variantes mantém a seleção determinística por slug e não garante
+um arquivo específico. Se a busca falhar ou a licença não for clara, nada no
+episódio é bloqueado: use uma opção local ou omita a camada.
+
+Existe também um espelho local e mockável para desenvolvimento:
+
+```bash
+python search_audio.py "record scratch" --kind sfx --external --limit 8
+```
+
+O comando nunca edita catálogos/episódios automaticamente. `--download N` apenas
+aquece e valida o cache do resultado escolhido; não é requisito para o GPT
+agendado.
 
 ## Background music local ou remota
 

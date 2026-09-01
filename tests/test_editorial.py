@@ -16,6 +16,7 @@ from engine.models import (
     Episode,
     HighlightSpec,
     OverlayCue,
+    RelativeTextFxCue,
     ResolvedVisualFxCue,
     ScriptSegment,
     SfxCue,
@@ -406,6 +407,29 @@ class EditorialDirectionTests(unittest.TestCase):
         codes = _codes(episode, plan)
         self.assertIn("duplicate_editorial_text", codes)
         self.assertIn("consecutive_punch_zoom", codes)
+
+    def test_editorial_duplicate_check_uses_resolved_relative_timing(self):
+        base = _episode(shot_count=2)
+        second = replace(
+            base.shots[1],
+            highlight=HighlightSpec("No. 1 NO BRASIL", 0.2, 1.5),
+        )
+        episode = replace(
+            base,
+            shots=(base.shots[0], second),
+            text_fx_cues=(
+                RelativeTextFxCue(
+                    "segment_1",
+                    0.2,
+                    1.5,
+                    "No. 1\nNO BRASIL",
+                    "scale_bounce",
+                    accent_text="No. 1",
+                ),
+            ),
+        )
+
+        self.assertIn("duplicate_editorial_text", _codes(episode))
 
     def test_no_effects_and_legacy_timeline_remain_valid(self):
         empty = _episode()

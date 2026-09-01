@@ -8,6 +8,8 @@ chamar uma API de IA.
 
 O prompt copiável fica em
 [`templates/editorial-direction-prompt.md`](../templates/editorial-direction-prompt.md).
+A busca externa opcional para o GPT agendado fica em
+[`docs/audio-search.md`](audio-search.md).
 
 ## Ordem obrigatória de autoria
 
@@ -37,10 +39,18 @@ Antes de escrever cues, o agente deve ler os arquivos do próprio projeto:
 - overlays: `episodes/<slug>/assets.json`; use somente um ID existente, com
   arquivo local PNG, JPG/JPEG ou WEBP em `episodes/<slug>/assets/`.
 
-No catálogo atual, o profile real é `latin_pop_uplifting` e os types reais são
-`impact`, `pop`, `riser` e `whoosh`. Esta lista não deve ser congelada no agente:
-os catálogos são a fonte de verdade e podem evoluir. Se não houver música, SFX ou
-overlay adequado, omita a camada em vez de inventar um nome ou ID.
+As listas não devem ser congeladas no agente: os catálogos são a fonte de verdade
+e podem evoluir. Se não houver música ou SFX local adequado, o GPT agendado pode
+consultar diretamente a API pública descrita em `docs/audio-search.md`, sem
+depender de terminal. A busca é opcional e sua resposta é apenas dado externo:
+confira fonte, autoria, licença, duração, formato e URL direta antes de registrar
+uma entrada `{file, url}` no catálogo global apropriado. Falha externa ou direitos
+incertos significam fallback local, nunca falha da criação. Se também não houver
+overlay adequado, omita essa camada em vez de inventar um nome ou ID.
+
+O renderer continua aceitando somente profiles/types presentes nos catálogos.
+Não coloque URLs novas em `timeline.json`, não baixe áudio comercial de redes
+sociais e registre a atribuição aprovada em `episodes/<slug>/sources.txt`.
 
 ## Vocabulário atual do schema
 
@@ -148,6 +158,25 @@ ou uma estatística curta. Use `accent_text` para o número, negação, nome ou
 palavra principal. Varie `pop_in`, `scale_bounce`, `slide_up` e `fade_pop` de
 acordo com o tom; não use `scale_bounce` em tudo.
 
+Prefira timing relativo quando o texto acompanha semanticamente um segmento:
+
+```json
+{
+  "segment": "statistic",
+  "offset_seconds": 0.4,
+  "duration_seconds": 1.8,
+  "text": "41 SEMANAS\nNO TOPO",
+  "accent_text": "41 SEMANAS",
+  "animation": "scale_bounce"
+}
+```
+
+O engine resolve esse timing somente depois da TTS, usando o início real do
+shot associado a `segment`. A cue deve caber integralmente no segmento. Para um
+momento verdadeiramente global, o formato legado com `start_seconds` e
+`end_seconds` continua válido. Cada cue usa somente um desses modos; nunca
+misture campos absolutos e relativos.
+
 Se um highlight e um text FX diriam a mesma coisa ao mesmo tempo, escolha uma
 camada. Prefira text FX para uma grande informação editorial e highlight para
 um reforço curto do estilo tradicional.
@@ -201,9 +230,9 @@ localmente. O profile e todos os SFX abaixo existem nos catálogos atuais.
     {"start_seconds": 66.8, "end_seconds": 73.2, "type": "slow_zoom_out", "intensity": 0.42}
   ],
   "text_fx_cues": [
-    {"start_seconds": 0.2, "end_seconds": 1.6, "text": "NÃO GOSTOU?", "accent_text": "NÃO", "animation": "scale_bounce", "position": "center", "intensity": 0.58},
+    {"segment": "hook", "offset_seconds": 0.2, "duration_seconds": 1.4, "text": "NÃO GOSTOU?", "accent_text": "NÃO", "animation": "scale_bounce", "position": "center", "intensity": 0.58},
     {"start_seconds": 19.5, "end_seconds": 21.0, "text": "COMEÇOU EM CUBA", "accent_text": "CUBA", "animation": "pop_in", "position": "center", "intensity": 0.45},
-    {"start_seconds": 31.95, "end_seconds": 33.5, "text": "41 SEMANAS\nNO TOPO", "accent_text": "41 SEMANAS", "animation": "scale_bounce", "position": "center", "intensity": 0.62},
+    {"segment": "statistic", "offset_seconds": 0.35, "duration_seconds": 1.55, "text": "41 SEMANAS\nNO TOPO", "accent_text": "41 SEMANAS", "animation": "scale_bounce", "position": "center", "intensity": 0.62},
     {"start_seconds": 48.8, "end_seconds": 50.2, "text": "3 IDIOMAS", "accent_text": "3", "animation": "slide_up", "position": "center", "intensity": 0.42},
     {"start_seconds": 67.0, "end_seconds": 68.6, "text": "MUDOU TUDO", "accent_text": "TUDO", "animation": "fade_pop", "position": "center", "intensity": 0.48}
   ],

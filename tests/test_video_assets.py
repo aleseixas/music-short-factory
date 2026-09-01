@@ -18,11 +18,11 @@ from engine.models import (
     AssetSpec,
     HighlightSpec,
     OverlayCue,
+    ResolvedTextFxCue,
     ResolvedVisualFxCue,
     ScriptSegment,
     ShotSpec,
     Story,
-    TextFxCue,
     TimelinePlan,
     TimelineScene,
     VisualFxCue,
@@ -306,7 +306,7 @@ class VideoAssetRendererTests(unittest.TestCase):
         )
         text_fx = self.work / "text_fx.ass"
         write_text_fx_ass(
-            (TextFxCue(0.15, 0.85, "VIDEO", "pop_in"),),
+            (ResolvedTextFxCue(0.15, 0.85, "VIDEO", "pop_in"),),
             text_fx,
             90,
             160,

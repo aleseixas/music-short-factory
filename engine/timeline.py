@@ -21,6 +21,8 @@ from .models import (
     AssetSpec,
     BackgroundMusicSpec,
     HighlightSpec,
+    RelativeTextFxCue,
+    ResolvedTextFxCue,
     ResolvedVisualFxCue,
     SfxCue,
     ShotSpec,
@@ -29,6 +31,7 @@ from .models import (
     TimelineScene,
     TimelineSpec,
     TextFxCue,
+    TextFxCueSpec,
     OverlayCue,
     VisualFxCue,
     WordTiming,
@@ -227,6 +230,116 @@ def build_timeline(
         audio_duration=audio_duration,
         scenes=tuple(scenes),
     )
+
+
+def resolve_text_fx_cues(
+    cues: tuple[TextFxCueSpec, ...],
+    plan: TimelinePlan,
+) -> tuple[ResolvedTextFxCue, ...]:
+    """Resolve declarative text FX against the real, frame-based timeline."""
+    if not cues:
+        return ()
+    if (
+        isinstance(plan.fps, bool)
+        or not isinstance(plan.fps, (int, float))
+        or not math.isfinite(plan.fps)
+        or plan.fps <= 0
+    ):
+        raise RuntimeError("FPS invalido ao resolver text_fx_cues.")
+
+    scenes_by_segment: dict[str, list[TimelineScene]] = {}
+    for scene in plan.scenes:
+        scenes_by_segment.setdefault(scene.shot.segment_id, []).append(scene)
+
+    resolved: list[ResolvedTextFxCue] = []
+    for index, cue in enumerate(cues, start=1):
+        label = f"text_fx_cues[{index}]"
+        start_limit = None
+        end_limit = None
+        if isinstance(cue, TextFxCue):
+            start = _parse_non_negative_seconds(
+                cue.start_seconds,
+                f"{label}.start_seconds",
+            )
+            end = _parse_non_negative_seconds(
+                cue.end_seconds,
+                f"{label}.end_seconds",
+            )
+            if end <= start:
+                raise RuntimeError(
+                    f"{label}.end_seconds precisa ser maior que start_seconds."
+                )
+        elif isinstance(cue, RelativeTextFxCue):
+            if not isinstance(cue.segment_id, str) or not re.fullmatch(
+                r"[A-Za-z0-9_-]+",
+                cue.segment_id,
+            ):
+                raise RuntimeError(f"{label}.segment invalido: {cue.segment_id!r}.")
+            offset = _parse_non_negative_seconds(
+                cue.offset_seconds,
+                f"{label}.offset_seconds",
+            )
+            duration = _parse_number(
+                cue.duration_seconds,
+                f"{label}.duration_seconds",
+            )
+            if duration <= 0:
+                raise RuntimeError(
+                    f"{label}.duration_seconds precisa ser maior que zero."
+                )
+
+            matching_scenes = scenes_by_segment.get(cue.segment_id, [])
+            if not matching_scenes:
+                raise RuntimeError(
+                    f"{label}.segment referencia segmento inexistente na timeline "
+                    f"resolvida: {cue.segment_id!r}."
+                )
+            if len(matching_scenes) != 1:
+                raise RuntimeError(
+                    f"{label}.segment tem ancora ambigua na timeline resolvida: "
+                    f"{cue.segment_id!r} corresponde a {len(matching_scenes)} shots."
+                )
+
+            scene = matching_scenes[0]
+            scene_start = scene.start_frame / plan.fps
+            scene_end = scene.end_frame / plan.fps
+            available = scene_end - scene_start
+            if offset >= available:
+                raise RuntimeError(
+                    f"{label} comeca fora do segmento {cue.segment_id!r}: "
+                    f"offset={offset:.6f}s; duracao do segmento={available:.6f}s."
+                )
+            if offset + duration > available + 1e-9:
+                raise RuntimeError(
+                    f"{label} ultrapassa o segmento {cue.segment_id!r}: "
+                    f"offset + duration={offset + duration:.6f}s; "
+                    f"disponivel={available:.6f}s."
+                )
+            start = scene_start + offset
+            end = start + duration
+            if abs(end - scene_end) <= 1e-9:
+                end = scene_end
+            start_limit = scene_start
+            end_limit = scene_end
+        else:
+            raise RuntimeError(f"{label} usa um formato de timing desconhecido.")
+
+        resolved.append(
+            ResolvedTextFxCue(
+                start_seconds=start,
+                end_seconds=end,
+                text=cue.text,
+                animation=cue.animation,
+                position=cue.position,
+                intensity=cue.intensity,
+                accent_text=cue.accent_text,
+                start_limit_seconds=start_limit,
+                end_limit_seconds=end_limit,
+            )
+        )
+
+    _check_text_fx_overlaps(tuple(resolved))
+    return tuple(resolved)
 
 
 def _attach_visual_fx_cues(
@@ -447,42 +560,166 @@ def _parse_visual_fx_cues(raw: object) -> tuple[VisualFxCue, ...]:
     return tuple(cues)
 
 
-def _parse_text_fx_cues(raw: object) -> tuple[TextFxCue, ...]:
+def _parse_text_fx_cues(raw: object) -> tuple[TextFxCueSpec, ...]:
     if raw is None:
         return ()
     if not isinstance(raw, list):
         raise RuntimeError("text_fx_cues precisa ser uma lista.")
-    cues: list[TextFxCue] = []
+    cues: list[TextFxCueSpec] = []
     for index, cue in enumerate(raw, start=1):
         label = f"text_fx_cues[{index}]"
         if not isinstance(cue, dict):
             raise RuntimeError(f"{label} precisa ser um objeto.")
-        start = _parse_non_negative_seconds(cue.get("start_seconds"), f"{label}.start_seconds")
-        end = _parse_non_negative_seconds(cue.get("end_seconds"), f"{label}.end_seconds")
-        if end <= start:
-            raise RuntimeError(f"{label}.end_seconds precisa ser maior que start_seconds.")
-        text = str(cue.get("text", "")).strip()
-        if not text:
-            raise RuntimeError(f"{label}.text precisa ser um texto nao vazio.")
-        animation = _parse_effect_name(cue.get("animation"), f"{label}.animation")
-        if animation not in TEXT_FX_ANIMATIONS:
-            supported = ", ".join(sorted(TEXT_FX_ANIMATIONS))
-            raise RuntimeError(f"{label}.animation desconhecida: {animation!r}. Animacoes suportadas: {supported}.")
-        position = str(cue.get("position", "center")).strip()
-        if position not in TEXT_FX_POSITIONS:
-            supported = ", ".join(sorted(TEXT_FX_POSITIONS))
-            raise RuntimeError(f"{label}.position desconhecida: {position!r}. Posicoes suportadas: {supported}.")
-        accent_raw = cue.get("accent_text")
-        accent_text = str(accent_raw).strip() if accent_raw is not None else None
-        if accent_text and accent_text.casefold() not in text.casefold():
-            raise RuntimeError(f"{label}.accent_text precisa aparecer em text.")
-        cues.append(TextFxCue(start, end, text, animation, position, _parse_volume(cue.get("intensity", DEFAULT_TEXT_FX_INTENSITY), f"{label}.intensity"), accent_text or None))
+        absolute_fields = {"start_seconds", "end_seconds"}
+        relative_fields = {"segment", "offset_seconds", "duration_seconds"}
+        present_absolute = absolute_fields.intersection(cue)
+        present_relative = relative_fields.intersection(cue)
+        if present_absolute and present_relative:
+            raise RuntimeError(
+                f"{label} mistura timing absoluto e relativo; use somente "
+                "start_seconds + end_seconds ou segment + offset_seconds + "
+                "duration_seconds."
+            )
+        if present_absolute:
+            missing = absolute_fields.difference(cue)
+            if missing:
+                raise RuntimeError(
+                    f"{label} no modo absoluto precisa definir start_seconds e "
+                    "end_seconds."
+                )
+            start = _parse_non_negative_seconds(
+                cue.get("start_seconds"),
+                f"{label}.start_seconds",
+            )
+            end = _parse_non_negative_seconds(
+                cue.get("end_seconds"),
+                f"{label}.end_seconds",
+            )
+            if end <= start:
+                raise RuntimeError(
+                    f"{label}.end_seconds precisa ser maior que start_seconds."
+                )
+            text, animation, position, intensity, accent_text = (
+                _parse_text_fx_content(cue, label)
+            )
+            cues.append(
+                TextFxCue(
+                    start,
+                    end,
+                    text,
+                    animation,
+                    position,
+                    intensity,
+                    accent_text,
+                )
+            )
+            continue
+        if present_relative:
+            missing = relative_fields.difference(cue)
+            if missing:
+                raise RuntimeError(
+                    f"{label} no modo relativo precisa definir segment, "
+                    "offset_seconds e duration_seconds."
+                )
+            raw_segment = cue.get("segment")
+            segment_id = raw_segment.strip() if isinstance(raw_segment, str) else ""
+            if not re.fullmatch(r"[A-Za-z0-9_-]+", segment_id):
+                raise RuntimeError(f"{label}.segment invalido: {raw_segment!r}.")
+            offset = _parse_non_negative_seconds(
+                cue.get("offset_seconds"),
+                f"{label}.offset_seconds",
+            )
+            duration = _parse_number(
+                cue.get("duration_seconds"),
+                f"{label}.duration_seconds",
+            )
+            if duration <= 0:
+                raise RuntimeError(
+                    f"{label}.duration_seconds precisa ser maior que zero."
+                )
+            text, animation, position, intensity, accent_text = (
+                _parse_text_fx_content(cue, label)
+            )
+            cues.append(
+                RelativeTextFxCue(
+                    segment_id,
+                    offset,
+                    duration,
+                    text,
+                    animation,
+                    position,
+                    intensity,
+                    accent_text,
+                )
+            )
+            continue
+        raise RuntimeError(
+            f"{label} precisa definir timing absoluto com start_seconds + "
+            "end_seconds ou timing relativo com segment + offset_seconds + "
+            "duration_seconds."
+        )
 
-    ordered = sorted(enumerate(cues, start=1), key=lambda item: item[1].start_seconds)
+    absolute_cues = tuple(
+        (index, cue)
+        for index, cue in enumerate(cues, start=1)
+        if isinstance(cue, TextFxCue)
+    )
+    _check_text_fx_overlaps(
+        tuple(cue for _, cue in absolute_cues),
+        tuple(index for index, _ in absolute_cues),
+    )
+    return tuple(cues)
+
+
+def _parse_text_fx_content(
+    cue: dict[str, object],
+    label: str,
+) -> tuple[str, str, str, float, str | None]:
+    text = str(cue.get("text", "")).strip()
+    if not text:
+        raise RuntimeError(f"{label}.text precisa ser um texto nao vazio.")
+    animation = _parse_effect_name(cue.get("animation"), f"{label}.animation")
+    if animation not in TEXT_FX_ANIMATIONS:
+        supported = ", ".join(sorted(TEXT_FX_ANIMATIONS))
+        raise RuntimeError(
+            f"{label}.animation desconhecida: {animation!r}. "
+            f"Animacoes suportadas: {supported}."
+        )
+    position = str(cue.get("position", "center")).strip()
+    if position not in TEXT_FX_POSITIONS:
+        supported = ", ".join(sorted(TEXT_FX_POSITIONS))
+        raise RuntimeError(
+            f"{label}.position desconhecida: {position!r}. "
+            f"Posicoes suportadas: {supported}."
+        )
+    accent_raw = cue.get("accent_text")
+    accent_text = str(accent_raw).strip() if accent_raw is not None else None
+    if accent_text and accent_text.casefold() not in text.casefold():
+        raise RuntimeError(f"{label}.accent_text precisa aparecer em text.")
+    intensity = _parse_volume(
+        cue.get("intensity", DEFAULT_TEXT_FX_INTENSITY),
+        f"{label}.intensity",
+    )
+    return text, animation, position, intensity, accent_text or None
+
+
+def _check_text_fx_overlaps(
+    cues: tuple[TextFxCue | ResolvedTextFxCue, ...],
+    source_indexes: tuple[int, ...] | None = None,
+) -> None:
+    indexes = source_indexes or tuple(range(1, len(cues) + 1))
+    if len(indexes) != len(cues):
+        raise RuntimeError("Indices invalidos ao validar text_fx_cues.")
+    ordered = sorted(
+        zip(indexes, cues),
+        key=lambda item: item[1].start_seconds,
+    )
     for (left_index, left), (right_index, right) in zip(ordered, ordered[1:]):
         if right.start_seconds < left.end_seconds:
-            raise RuntimeError("text_fx_cues sobrepostas nao sao suportadas nesta etapa: " f"cue {left_index} e cue {right_index}.")
-    return tuple(cues)
+            raise RuntimeError(
+                "text_fx_cues sobrepostas nao sao suportadas nesta etapa: "
+                f"cue {left_index} e cue {right_index}."
+            )
 
 
 def _parse_overlay_cues(

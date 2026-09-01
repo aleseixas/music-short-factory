@@ -134,6 +134,34 @@ class TextFxCue:
 
 
 @dataclass(frozen=True)
+class RelativeTextFxCue:
+    segment_id: str
+    offset_seconds: float
+    duration_seconds: float
+    text: str
+    animation: str
+    position: str = "center"
+    intensity: float = DEFAULT_TEXT_FX_INTENSITY
+    accent_text: str | None = None
+
+
+@dataclass(frozen=True)
+class ResolvedTextFxCue:
+    start_seconds: float
+    end_seconds: float
+    text: str
+    animation: str
+    position: str = "center"
+    intensity: float = DEFAULT_TEXT_FX_INTENSITY
+    accent_text: str | None = None
+    start_limit_seconds: float | None = None
+    end_limit_seconds: float | None = None
+
+
+TextFxCueSpec = TextFxCue | RelativeTextFxCue
+
+
+@dataclass(frozen=True)
 class OverlayCue:
     start_seconds: float
     end_seconds: float
@@ -164,7 +192,7 @@ class TimelineSpec:
     background_music: BackgroundMusicSpec | None = None
     sfx_cues: tuple[SfxCue, ...] = ()
     visual_fx_cues: tuple[VisualFxCue, ...] = ()
-    text_fx_cues: tuple[TextFxCue, ...] = ()
+    text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
 
 
@@ -222,7 +250,7 @@ class Episode:
     background_music: BackgroundMusicSpec | None = None
     sfx_cues: tuple[SfxCue, ...] = ()
     visual_fx_cues: tuple[VisualFxCue, ...] = ()
-    text_fx_cues: tuple[TextFxCue, ...] = ()
+    text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
 
     @property

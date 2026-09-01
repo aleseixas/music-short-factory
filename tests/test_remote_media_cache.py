@@ -13,10 +13,11 @@ from engine.sfx import resolve_sfx_cues
 
 
 class FakeResponse:
-    def __init__(self, chunks=(), status_code=200, headers=None):
+    def __init__(self, chunks=(), status_code=200, headers=None, url=None):
         self.status_code = status_code
         self._chunks = tuple(chunks)
         self.headers = dict(headers or {})
+        self.url = url
         self.closed = False
 
     def iter_content(self, chunk_size):
@@ -178,6 +179,74 @@ class RemoteMediaCacheTests(unittest.TestCase):
                     attempts=1,
                 )
             get.assert_not_called()
+
+    def test_external_download_rejects_redirect_outside_allowlist(self):
+        response = FakeResponse(
+            status_code=302,
+            headers={"Location": "https://unexpected.example.test/audio/track.mp3"},
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            cache = Path(directory) / "cache" / "sfx"
+            with (
+                patch("engine.media_cache.requests.get", return_value=response) as get,
+                self.assertRaisesRegex(RuntimeError, "URL invalida"),
+            ):
+                download_to_cache(
+                    "https://cdn.freesound.org/audio/track.mp3",
+                    cache,
+                    "external/track.mp3",
+                    "resultado externo",
+                    attempts=1,
+                    allowed_hosts={"cdn.freesound.org"},
+                    require_https=True,
+                )
+            get.assert_called_once()
+            self.assertFalse(get.call_args.kwargs["allow_redirects"])
+            self.assertTrue(response.closed)
+            self.assertFalse((cache / "external" / "track.mp3").exists())
+
+    def test_external_download_enforces_maximum_size(self):
+        response = FakeResponse((b"1234", b"5678"))
+        with tempfile.TemporaryDirectory() as directory:
+            cache = Path(directory) / "cache" / "sfx"
+            with (
+                patch("engine.media_cache.requests.get", return_value=response),
+                self.assertRaisesRegex(RuntimeError, "limite de tamanho"),
+            ):
+                download_to_cache(
+                    "https://cdn.freesound.org/audio/track.mp3",
+                    cache,
+                    "external/track.mp3",
+                    "resultado externo",
+                    attempts=1,
+                    allowed_hosts={"cdn.freesound.org"},
+                    require_https=True,
+                    max_bytes=5,
+                )
+            self.assertFalse((cache / "external" / "track.mp3").exists())
+            self.assertFalse((cache / "external" / "track.mp3.part").exists())
+
+    def test_external_oversized_cache_hit_is_removed_without_network(self):
+        with tempfile.TemporaryDirectory() as directory:
+            cache = Path(directory) / "cache" / "music"
+            cached = cache / "external" / "track.mp3"
+            cached.parent.mkdir(parents=True)
+            cached.write_bytes(b"123456")
+            with (
+                patch("engine.media_cache.requests.get") as get,
+                self.assertRaisesRegex(RuntimeError, "excede o limite"),
+            ):
+                download_to_cache(
+                    "https://cdn.freesound.org/audio/track.mp3",
+                    cache,
+                    "external/track.mp3",
+                    "resultado externo",
+                    allowed_hosts={"cdn.freesound.org"},
+                    require_https=True,
+                    max_bytes=5,
+                )
+            get.assert_not_called()
+            self.assertFalse(cached.exists())
 
 
 class RemoteVideoAssetTests(unittest.TestCase):

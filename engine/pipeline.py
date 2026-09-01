@@ -14,7 +14,7 @@ from .music import resolve_background_music
 from .renderer import Renderer
 from .sfx import resolve_sfx_cues
 from .text_fx import write_text_fx_ass
-from .timeline import build_timeline, write_timeline_plan
+from .timeline import build_timeline, resolve_text_fx_cues, write_timeline_plan
 from .utils import safe_child
 
 
@@ -156,6 +156,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         crossfade_seconds=style.transitions.crossfade_seconds,
         visual_fx_cues=episode.visual_fx_cues,
     )
+    resolved_text_fx_cues = resolve_text_fx_cues(episode.text_fx_cues, plan)
     editorial_catalogs = load_editorial_catalogs(
         project_root,
         require_music=episode.background_music is not None,
@@ -166,6 +167,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         plan,
         editorial_catalogs,
         highlight_default_duration=style.highlights.default_duration,
+        resolved_text_fx_cues=resolved_text_fx_cues,
     )
     for warning in editorial_report.warnings:
         print(f"[direcao] aviso {warning.code}: {warning.message}")
@@ -197,10 +199,10 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         style=style.captions,
     )
     text_fx_path = None
-    if episode.text_fx_cues:
+    if resolved_text_fx_cues:
         text_fx_path = work_dir / "text_fx.ass"
         write_text_fx_ass(
-            cues=episode.text_fx_cues,
+            cues=resolved_text_fx_cues,
             path=text_fx_path,
             width=config.render.width,
             height=config.render.height,
