@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "ELA MANDOU APAGAR APT.?!",
+    "source": {
+      "type": "asset",
+      "asset_id": "rose_rimowa"
+    }
+  },
+  "youtube": {
+    "title": "ROSÉ QUASE APAGOU APT. ANTES DO HIT 😳",
+    "description": "APT., de ROSÉ e Bruno Mars, nasceu de um jogo coreano chamado Apartment. O mais absurdo é que ROSÉ ficou insegura com a ideia e pediu para os produtores apagarem a música dos celulares antes de decidir trazê-la de volta.\n\nMúsica de fundo: “Monkeys Spinning Monkeys” — Kevin MacLeod (incompetech.com), CC BY 3.0: https://creativecommons.org/licenses/by/3.0/",
+    "hashtags": [
+      "ROSE",
+      "BrunoMars",
+      "APT",
+      "BLACKPINK",
+      "Shorts"
+    ],
+    "privacy_status": "private",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "ELA MANDOU APAGAR APT.?! 😳 ROSÉ ensinou um jogo coreano no estúdio, o canto virou refrão e depois ela ficou tão insegura que pediu para apagarem a música dos celulares. APT. quase sumiu antes de chegar ao público.\n\nBG: “Monkeys Spinning Monkeys” — Kevin MacLeod (incompetech.com), CC BY 3.0.",
+    "hashtags": [
+      "ROSE",
+      "BrunoMars",
+      "APT",
+      "BLACKPINK",
+      "HistoriaDaMusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "ROSÉ quase mandou APT. para o lixo antes de o mundo ouvir 😳 | BG: “Monkeys Spinning Monkeys” — Kevin MacLeod (incompetech.com), CC BY 3.0.",
+    "hashtags": [
+      "ROSE",
+      "APT",
+      "BrunoMars",
+      "BLACKPINK",
+      "Musica"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
