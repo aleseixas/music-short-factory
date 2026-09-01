@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "title": "APT. — ROSÉ & Bruno Mars",
+  "slug": "apt_rose_bruno_mars",
+  "target_duration_seconds": 74,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "APT., da ROSÉ com Bruno Mars, quase foi apagada antes de virar um fenômeno mundial."
+    },
+    {
+      "id": "game",
+      "text": "A ideia nasceu quando Rosé ensinou no estúdio um jogo de bebida coreano chamado Apartment, ou apateu."
+    },
+    {
+      "id": "chant",
+      "text": "Enquanto explicava, ela repetia apateu, apateu, e os produtores perceberam que aquilo já soava como refrão."
+    },
+    {
+      "id": "write",
+      "text": "No dia seguinte, transformaram a brincadeira em música."
+    },
+    {
+      "id": "panic",
+      "text": "Só que Rosé chegou em casa e entrou em pânico: achou que uma faixa sobre um jogo de bebida era boba demais."
+    },
+    {
+      "id": "delete",
+      "text": "Ela pediu para produtores e compositores apagarem APT. dos próprios celulares."
+    },
+    {
+      "id": "test",
+      "text": "Depois, mostrou a música para algumas pessoas, e a reação foi o oposto do medo dela: todo mundo ficava viciado no refrão."
+    },
+    {
+      "id": "return",
+      "text": "Então ela voltou correndo e pediu para recuperarem a música que tinha mandado deletar."
+    },
+    {
+      "id": "bruno",
+      "text": "Quando Bruno Mars entrou, segundo o produtor Cirkut, ele levou a faixa a outro nível."
+    },
+    {
+      "id": "korean",
+      "text": "E o apateu ficou em coreano de propósito, transformando uma brincadeira local em um gancho que o mundo inteiro conseguia repetir."
+    },
+    {
+      "id": "payoff",
+      "text": "O detalhe mais absurdo de APT. é esse: o maior risco não foi a música fracassar. Foi Rosé quase apagar o hit antes de lançá-lo."
+    }
+  ]
+}
