@@ -26,14 +26,14 @@ travis_rolling_loud — Travis Scott performing at Rolling Loud Miami 2021
 https://commons.wikimedia.org/wiki/File:Travis_Scott_of_Rolling_Loud_2021.png
 Credit: author not identified on Commons; source video via YouTube. License: CC BY 3.0.
 
-owl_night_video — Owl on tree branch at night with flash of lightning, Largo Datsko Park, 23 June 2021
-https://commons.wikimedia.org/wiki/File:Owl_on_tree_branch_at_night_with_flash_of_lightning,_in_Largo_Datsko_Park,_Clearwater,_Florida,_US,_23_June_2021.webm
-Credit: MatthewHoobin. License: CC BY 4.0. Original length: 5.9 s, 1080x1920.
-Used as an atmospheric visual metaphor for the quiet/observational first half of the song; it is not presented as footage of Travis Scott.
+lightning_rain_video — Lightning and rain in Tuntorp, Sweden, 13 May 2021
+https://commons.wikimedia.org/wiki/File:Lightning_and_rain_in_Tuntorp.webm
+Credit: W.carter. License: CC BY-SA 4.0. Original length: 1 min 29 s, 1920x1080.
+Used as an atmospheric visual metaphor for the song's hazy first half and its change in texture; it is not presented as footage of Travis Scott. The timeline uses 15-second source windows, leaving substantial safety margin over the narrated shot durations.
 
 storm_video — Wind and rain from Tropical Storm Eta at night, Clearwater, 11 Nov. 2020
 https://commons.wikimedia.org/wiki/File:Wind_and_rain_from_Tropical_Storm_Eta_at_night_in_Clearwater,_Florida,_US,_on_11_November_2020.webm
 Credit: MatthewHoobin. License: CC0 1.0. Original length: 8.0 s, 1080x1920.
-Used as an atmospheric visual metaphor for the song's abrupt increase in intensity; it is not presented as footage of Travis Scott.
+Used only on short, cut-transition shots as an atmospheric visual metaphor for the song's abrupt increase in intensity; it is not presented as footage of Travis Scott.
 
 No AI-generated image or video is used in this episode.
