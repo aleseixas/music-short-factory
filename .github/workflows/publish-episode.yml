@@ -38,7 +38,7 @@ jobs:
           set -euo pipefail
 
           if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
-            episode="$MANUAL_EPISODE"
+            episode="$(printf '%s' "$MANUAL_EPISODE" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
           else
             if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
               mapfile -t queue_files < <(
