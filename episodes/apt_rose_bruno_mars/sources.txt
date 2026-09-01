@@ -1,0 +1,56 @@
+Roteiro:
+- Vogue — Rosé explica que APT. nasceu quando ensinou o jogo coreano no estúdio, que depois ficou insegura e pediu para todos apagarem a música dos celulares:
+  https://www.vogue.com/video/watch/now-serving-rose
+- Vogue — contexto do single e da inspiração no jogo "Apartment":
+  https://www.vogue.com/article/rose-bruno-mars-single-apt
+- Billboard Canada — Cirkut descreve a origem espontânea do hook e diz que Bruno Mars levou a faixa a outro nível:
+  https://ca.billboard.com/music/pop/cirkut-producer-lady-gaga-disease-rose-apt-interview-1235834421/
+
+Observação editorial:
+- Para o agendamento, priorizar música de fundo e SFX virais/reconhecíveis quando houver acesso web e direitos seguros; caso contrário, usar o catálogo local.
+
+Assets e licenças:
+- BLACKPINK motion video — CC BY 3.0:
+  https://commons.wikimedia.org/wiki/File:%E3%80%90%E7%B5%95%E5%9C%B0%E6%B1%82%E7%94%9FM%E3%80%91%E5%B0%B1%E8%AE%93_Lisa%E3%80%81Jisoo%E3%80%81Jennie%E3%80%81Ros%C3%A9_%E8%B7%9F%E5%A4%A7%E5%AE%B6%E5%88%86%E4%BA%AB%E6%9C%AA%E4%BE%86%E9%82%84%E6%9C%89%E9%82%A3%E4%BA%9B%E5%90%B8%E5%BC%95%E4%BA%BA%E7%9A%84%E5%90%88%E4%BD%9C%E5%90%A7%EF%BC%81.webm
+- Rosé Rimowa 2024:
+  https://commons.wikimedia.org/wiki/File:Blackpink_Ros%C3%A9_Rimowa_2.jpg
+- Rosé fan signing 2022:
+  https://commons.wikimedia.org/wiki/File:Ros%C3%A9_at_a_fan_signing_event_on_September_25,_2022_(cropped).jpg
+- Soju bottle:
+  https://commons.wikimedia.org/wiki/File:Bottle_soju.jpg
+- Recording-studio microphone:
+  https://commons.wikimedia.org/wiki/File:Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg
+- Bruno Mars:
+  https://commons.wikimedia.org/wiki/File:BrunoMars.jpg
+- Seoul apartment buildings:
+  https://commons.wikimedia.org/wiki/File:Seoul_Apartment_Buildings_(1509272335).jpg
+
+Áudio de fundo externo — opção viral/reconhecível:
+- “Monkeys Spinning Monkeys” — Kevin MacLeod (incompetech.com).
+  Uso em vídeos curtos: NPR/GPB documenta a faixa como trilha de milhões de TikToks e amplamente usada também no Instagram e YouTube.
+  Fonte/licença: Wikimedia Commons, CC BY 3.0.
+  Página: https://commons.wikimedia.org/wiki/File:Monkeys_Spinning_Monkeys_(ISRC_USUAN1400011).mp3
+  Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/e/e9/Monkeys_Spinning_Monkeys_%28ISRC_USUAN1400011%29.mp3
+  Licença: https://creativecommons.org/licenses/by/3.0/
+  Atribuição: Monkeys Spinning Monkeys — Kevin MacLeod (incompetech.com).
+
+SFX externos:
+- Fail buzzer — BlastOButter42, Wikimedia Commons, domínio público.
+  Página: https://commons.wikimedia.org/wiki/File:Buzzer.ogg
+  Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/3/34/Buzzer.ogg
+- Applause after a concert — Amada44, Wikimedia Commons, CC0 1.0.
+  Página: https://commons.wikimedia.org/wiki/File:Sound_Effects_-_Applause_after_a_concert.ogg
+  Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/3/32/Sound_Effects_-_Applause_after_a_concert.ogg
+- Explosion-LS100155 — Fg2, Wikimedia Commons, domínio público.
+  Página: https://commons.wikimedia.org/wiki/File:Explosion-LS100155.ogg
+  Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/b/b9/Explosion-LS100155.ogg
+
+SFX virais/reconhecíveis com fallback já validado na repo:
+- vine_boom
+- record_scratch
+- ding
+- riser
+
+Observação:
+- Foi priorizada uma trilha de fundo comprovadamente reconhecível em TikTok/Reels/Shorts.
+- Para SFX, sons externos foram usados apenas quando havia licença clara e URL direta segura; efeitos conhecidos já disponíveis no catálogo local foram mantidos quando eram a opção mais segura.
