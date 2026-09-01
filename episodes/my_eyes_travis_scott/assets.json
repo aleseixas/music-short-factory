@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"travis_ema","file":"travis_ema.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Travis%20Scott%20at%20the%202017%20MTV%20EMAs.png","credit":"MTV UK / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"travis_longitude","file":"travis_longitude.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Travis%20Scott%20performing%20on%20the%20Main%20Stage%20at%20Longitude%20Festival%202018.jpg","credit":"Peyton Edward / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"travis_rolling_loud","file":"travis_rolling_loud.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Travis%20Scott%20of%20Rolling%20Loud%202021.png","credit":"Unknown author / Wikimedia Commons; source video via YouTube","license":"CC BY 3.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"owl_night_video","file":"owl_night_lightning.webm","url":"https://upload.wikimedia.org/wikipedia/commons/b/b3/Owl_on_tree_branch_at_night_with_flash_of_lightning%2C_in_Largo_Datsko_Park%2C_Clearwater%2C_Florida%2C_US%2C_23_June_2021.webm","credit":"MatthewHoobin / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"storm_video","file":"storm_eta_night.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/95/Wind_and_rain_from_Tropical_Storm_Eta_at_night_in_Clearwater%2C_Florida%2C_US%2C_on_11_November_2020.webm","credit":"MatthewHoobin / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

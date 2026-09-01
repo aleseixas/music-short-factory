@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A VIRADA MUDA TUDO","source":{"type":"asset","asset_id":"travis_ema"}},
+  "youtube": {
+    "title":"MY EYES: a virada que muda tudo — Travis Scott",
+    "description":"MY EYES parece duas músicas em uma. A mudança de clima, o que Travis Scott disse sobre o peso por trás da faixa e a referência documentada ao Astroworld fazem a segunda metade soar diferente.",
+    "hashtags":["TravisScott","MyEyes","Utopia","HipHop","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"MY EYES muda completamente no meio — e não é só produção. Quando você conecta a virada ao que Travis Scott disse sobre o peso que carrega e à referência ao Astroworld, a faixa ganha outra leitura.",
+    "hashtags":["TravisScott","MyEyes","Utopia","HipHop"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"MY EYES parece duas músicas diferentes. A virada fica ainda mais forte quando você entende o peso por trás da faixa.",
+    "hashtags":["TravisScott","MyEyes","Utopia","HipHop"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

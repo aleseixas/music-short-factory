@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "MY EYES — Travis Scott: a virada que muda o significado",
+  "slug": "my_eyes_travis_scott",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"MY EYES, de Travis Scott, parece duas músicas diferentes — e essa virada revela o coração da faixa."},
+    {"id":"first_half","text":"A primeira metade flutua: voz suave, sintetizadores enevoados e uma sensação íntima."},
+    {"id":"mask","text":"Travis fala de luxo e relações, mas deixa insegurança e culpa atravessarem a pose."},
+    {"id":"switch","text":"Então, perto da metade, tudo muda."},
+    {"id":"acceleration","text":"A bateria pesa, o fluxo acelera e a voz fica urgente."},
+    {"id":"confrontation","text":"A transformação soa como uma passagem do torpor para o confronto."},
+    {"id":"context","text":"E existe um contexto importante para ouvir essa segunda parte."},
+    {"id":"gq_weight","text":"À GQ, Travis disse que MY EYES fala do que enfrenta na vida e do peso que carrega."},
+    {"id":"astroworld","text":"Ele também confirmou que um trecho toca no desastre do Astroworld Festival de 2021."},
+    {"id":"more_than_switch","text":"Por isso, a aceleração pode significar mais que um beat switch."},
+    {"id":"interpretation","text":"É uma interpretação: o som parece empurrá-lo da introspecção para encarar trauma, responsabilidade e julgamento público."},
+    {"id":"credits","text":"A faixa reúne uma equipe incomum: Justin Vernon, Sampha, Vegyn, Buddy Ross, WondaGurl e Wheezy aparecem entre vozes e produção."},
+    {"id":"texture","text":"Essa mistura ajuda a explicar por que MY EYES começa etérea e termina tão física."},
+    {"id":"listen_again","text":"Na próxima vez, não espere apenas a batida virar."},
+    {"id":"payoff","text":"Escute o personagem mudar: primeiro escondido na névoa, depois correndo diretamente para aquilo que pesa sobre ele."}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"dark_cinematic","volume":0.10},
+  "sfx_cues": [
+    {"time_seconds":0.25,"type":"heartbeat","volume":0.30,"duration_seconds":1.2},
+    {"time_seconds":20.0,"type":"bass_drop","volume":0.38,"duration_seconds":1.0}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.0,"end_seconds":3.0,"type":"slow_zoom_in","intensity":0.45},
+    {"start_seconds":20.0,"end_seconds":22.0,"type":"punch_zoom","intensity":0.55}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"travis_ema","motion":"push_in","transition_out":"cut","highlight":"DUAS MÚSICAS EM UMA"},
+    {"id":"shot_first_half","segment":"first_half","asset":"owl_night_video","motion":"hold","transition_out":"cut","highlight":"A PRIMEIRA METADE FLUTUA"},
+    {"id":"shot_mask","segment":"mask","asset":"travis_longitude","motion":"pan_left","transition_out":"cut","highlight":"LUXO • INSEGURANÇA • CULPA"},
+    {"id":"shot_switch","segment":"switch","asset":"storm_video","motion":"hold","transition_out":"cut","highlight":"ENTÃO, TUDO MUDA"},
+    {"id":"shot_acceleration","segment":"acceleration","asset":"travis_rolling_loud","motion":"push_in","transition_out":"cut","highlight":"O FLUXO ACELERA"},
+    {"id":"shot_confrontation","segment":"confrontation","asset":"storm_video","motion":"hold","transition_out":"cut","highlight":"TORPOR → CONFRONTO"},
+    {"id":"shot_context","segment":"context","asset":"travis_ema","motion":"pull_out","transition_out":"cut","highlight":"O CONTEXTO MUDA A ESCUTA"},
+    {"id":"shot_gq_weight","segment":"gq_weight","asset":"travis_longitude","motion":"push_in","transition_out":"crossfade","highlight":"O PESO QUE ELE CARREGA"},
+    {"id":"shot_astroworld","segment":"astroworld","asset":"travis_rolling_loud","motion":"pan_right","transition_out":"cut","highlight":"ASTROWORLD • 2021"},
+    {"id":"shot_more_than_switch","segment":"more_than_switch","asset":"storm_video","motion":"hold","transition_out":"cut","highlight":"MAIS QUE UM BEAT SWITCH"},
+    {"id":"shot_interpretation","segment":"interpretation","asset":"travis_longitude","motion":"pull_out","transition_out":"crossfade","highlight":"INTERPRETAÇÃO: ENCARAR O PESO"},
+    {"id":"shot_credits","segment":"credits","asset":"travis_ema","motion":"pan_left","transition_out":"cut","highlight":"VERNON • SAMPHA • VEGYN • WONDAGURL"},
+    {"id":"shot_texture","segment":"texture","asset":"owl_night_video","motion":"hold","transition_out":"cut","highlight":"ETÉREA → FÍSICA"},
+    {"id":"shot_listen_again","segment":"listen_again","asset":"travis_longitude","motion":"push_in","transition_out":"cut","highlight":"OUÇA DE NOVO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"travis_rolling_loud","motion":"pull_out","transition_out":"cut","highlight":"O PERSONAGEM TAMBÉM MUDA"}
+  ]
+}
