@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "SUTIL DEMAIS PARA SER HIT?",
+    "source": {
+      "type": "asset",
+      "asset_id": "bts_group"
+    }
+  },
+  "youtube": {
+    "title": "SWIM: o hit sutil que marcou a volta do BTS",
+    "description": "SWIM nasceu rápido, quase perdeu a disputa para ser o single principal e virou uma metáfora poderosa no retorno do BTS.",
+    "hashtags": [
+      "BTS",
+      "SWIM",
+      "ARIRANG",
+      "HistoriaDaMusica",
+      "Shorts"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "SWIM parecia sutil demais para ser o grande single. A história da volta do BTS explica por que justamente essa música venceu.",
+    "hashtags": [
+      "BTS",
+      "SWIM",
+      "ARIRANG",
+      "Kpop",
+      "HistoriaDaMusica",
+      "AlemDoHit"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 850
+  },
+  "tiktok": {
+    "caption": "Por que o BTS não conseguiu criar uma música que superasse SWIM?",
+    "hashtags": [
+      "BTS",
+      "SWIM",
+      "ARIRANG",
+      "Kpop",
+      "AlemDoHit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 850,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "title": "SWIM — BTS",
+  "slug": "swim_bts",
+  "target_duration_seconds": 83,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "SWIM, do BTS, parece uma música simples sobre continuar nadando. Mas ela nasceu da pausa, do serviço militar e da volta dos sete."
+    },
+    {
+      "id": "return",
+      "text": "ARIRANG marcou o retorno coletivo do BTS depois de cerca de quatro anos. E SWIM não parecia o hit mais óbvio do álbum."
+    },
+    {
+      "id": "month",
+      "text": "RM contou que passaram um mês tentando criar uma faixa que superasse SWIM como single principal. Não conseguiram."
+    },
+    {
+      "id": "studio",
+      "text": "O produtor Tyler Spry disse que a composição inicial nasceu em menos de trinta minutos, com um beat simples e o refrão surgindo quase por acaso."
+    },
+    {
+      "id": "v",
+      "text": "A equipe achava a música sutil demais. Duas semanas depois, Spry ouviu V cantarolando o refrão sozinho e percebeu que ele já tinha grudado."
+    },
+    {
+      "id": "meaning",
+      "text": "RM deu à ideia um sentido pessoal: no serviço militar, a vida parecia atravessar um dia de cada vez, respirar e continuar nadando."
+    },
+    {
+      "id": "interpretation",
+      "text": "Por isso, a letra funciona como romance e também como resistência: a imagem de nadar vira uma forma de falar sobre seguir em frente."
+    },
+    {
+      "id": "arirang",
+      "text": "O grupo ligou isso a Arirang, a canção tradicional coreana: queria que SWIM também permanecesse com as pessoas por muito tempo."
+    },
+    {
+      "id": "video",
+      "text": "No clipe, um navio cruza um mar infinito enquanto uma mulher enfrenta dor e dúvida, reforçando essa metáfora de cura."
+    },
+    {
+      "id": "chart",
+      "text": "A escolha discreta virou enorme: SWIM chegou ao número um no Brasil e ainda estava no Hot 100 em agosto, após vinte e duas semanas."
+    },
+    {
+      "id": "payoff",
+      "text": "O retorno do BTS não veio com uma música sobre dominar o mundo. Veio com uma sobre respirar, seguir e continuar nadando."
+    }
+  ]
+}

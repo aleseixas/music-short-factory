@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "uplifting_documentary",
+    "volume": 0.13
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.18,
+      "type": "vine_boom",
+      "volume": 0.1,
+      "source_start_seconds": 0.0,
+      "duration_seconds": 1.1
+    },
+    {
+      "time_seconds": 15.1,
+      "type": "clock_ticking",
+      "volume": 0.045,
+      "source_start_seconds": 0.5,
+      "duration_seconds": 2.0
+    },
+    {
+      "time_seconds": 21.3,
+      "type": "reverse_cymbal",
+      "volume": 0.05,
+      "source_start_seconds": 0.4,
+      "duration_seconds": 1.6
+    },
+    {
+      "time_seconds": 30.0,
+      "type": "camera_shutter",
+      "volume": 0.055,
+      "source_start_seconds": 0.3,
+      "duration_seconds": 0.8
+    },
+    {
+      "time_seconds": 67.1,
+      "type": "crowd_cheer",
+      "volume": 0.055,
+      "source_start_seconds": 0.4,
+      "duration_seconds": 2.0
+    },
+    {
+      "time_seconds": 75.5,
+      "type": "bass_drop",
+      "volume": 0.06,
+      "source_start_seconds": 0.0,
+      "duration_seconds": 1.5
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.16,
+      "end_seconds": 0.58,
+      "type": "punch_zoom",
+      "intensity": 0.52
+    },
+    {
+      "start_seconds": 31.0,
+      "end_seconds": 34.0,
+      "type": "slow_zoom_in",
+      "intensity": 0.3
+    },
+    {
+      "start_seconds": 68.0,
+      "end_seconds": 71.0,
+      "type": "slow_zoom_out",
+      "intensity": 0.28
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "start_seconds": 0.22,
+      "end_seconds": 1.7,
+      "text": "A VOLTA\nDOS 7",
+      "accent_text": "DOS 7",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.58
+    },
+    {
+      "start_seconds": 15.4,
+      "end_seconds": 17.0,
+      "text": "1 MÊS\nTENTANDO SUPERAR",
+      "accent_text": "1 MÊS",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.48
+    },
+    {
+      "start_seconds": 31.0,
+      "end_seconds": 32.6,
+      "text": "SUTIL\nDEMAIS?",
+      "accent_text": "DEMAIS?",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.46
+    },
+    {
+      "start_seconds": 67.8,
+      "end_seconds": 69.8,
+      "text": "Nº 1\nNO BRASIL",
+      "accent_text": "Nº 1",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.56
+    }
+  ],
+  "overlay_cues": [],
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "bts_group",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_return",
+      "segment": "return",
+      "asset": "video_bts_logo",
+      "source_start_seconds": 2.0,
+      "source_end_seconds": 15.0,
+      "motion": "hold",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_month",
+      "segment": "month",
+      "asset": "rm_whitehouse",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_studio",
+      "segment": "studio",
+      "asset": "studio_recording",
+      "motion": "push_in",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_v",
+      "segment": "v",
+      "asset": "v_whitehouse",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_meaning",
+      "segment": "meaning",
+      "asset": "video_swimming",
+      "source_start_seconds": 1.0,
+      "source_end_seconds": 12.7,
+      "motion": "hold",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_interpretation",
+      "segment": "interpretation",
+      "asset": "bts_walk",
+      "motion": "pan_left",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_arirang",
+      "segment": "arirang",
+      "asset": "video_korean_music",
+      "source_start_seconds": 5.0,
+      "source_end_seconds": 20.0,
+      "motion": "hold",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_video",
+      "segment": "video",
+      "asset": "video_ship_sunset",
+      "source_start_seconds": 4.0,
+      "source_end_seconds": 18.0,
+      "motion": "hold",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_chart",
+      "segment": "chart",
+      "asset": "video_concert_hall",
+      "source_start_seconds": 2.0,
+      "source_end_seconds": 16.0,
+      "motion": "hold",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "bts_group",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    }
+  ]
+}

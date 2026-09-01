@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "bts_group",
+      "file": "bts_group_2022.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/BTS%20at%20the%20White%20House%20on%20May%2031%2C%202022.jpg",
+      "credit": "The White House / Wikimedia Commons",
+      "license": "Public domain (U.S. federal government work)",
+      "focus": {
+        "x": 0.5,
+        "y": 0.47
+      }
+    },
+    {
+      "id": "bts_walk",
+      "file": "bts_walk_white_house.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/President%20Joe%20Biden%20and%20BTS%20walking%20along%20the%20Colonnade%20of%20the%20White%20House%20to%20the%20Oval%20Office%2C%20May%2031%2C%202022.jpg",
+      "credit": "The White House / Wikimedia Commons",
+      "license": "Public domain (U.S. federal government work)",
+      "focus": {
+        "x": 0.5,
+        "y": 0.48
+      }
+    },
+    {
+      "id": "rm_whitehouse",
+      "file": "rm_whitehouse.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/RM%20in%20the%20Oval%20Office%20of%20the%20White%20House%2C%20May%2031%2C%202022%20%28cropped%29.jpg",
+      "credit": "The White House / Wikimedia Commons",
+      "license": "Public domain (U.S. federal government work)",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "v_whitehouse",
+      "file": "v_whitehouse.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/V%20during%20a%20White%20House%20press%20conference%20May%2031%2C%202022.jpg",
+      "credit": "The White House / Wikimedia Commons",
+      "license": "Public domain (U.S. federal government work)",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "video_bts_logo",
+      "file": "bts_logo_animation.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/BTS%202017%20logo%20animation.webm",
+      "credit": "Plus X / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "studio_recording",
+      "file": "recording_studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Recording%20studio.jpg",
+      "credit": "Eduard Castillo / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "video_swimming",
+      "file": "front_crawl_underwater.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Front%20Crawl%20Underwater.webm",
+      "credit": "It is a wonderful world / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "video_korean_music",
+      "file": "korean_traditional_music.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Korean%20Traditional%20Music%20%28Part%20Nine%29.webm",
+      "credit": "Paul K. Takahashi / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "video_ship_sunset",
+      "file": "ship_sunset.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Batumi2025ship-and-sunset.webm",
+      "credit": "Vitaly Zdanevich / Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "video_concert_hall",
+      "file": "concert_hall_panorama.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/National%20Concert%20Hall%20panorama.webm",
+      "credit": "Peterwchen / Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}
