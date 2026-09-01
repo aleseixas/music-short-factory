@@ -26,52 +26,70 @@
       "crowd_cheer/crowd-cheer-01.mp3"
     ],
     "crowd_gasp": [
-      "crowd_gasp/crowd-gasp-01.mp3"
+      "crowd-gasp/crowd-gasp-01.mp3"
     ],
     "cash_register": [
-      "cash_register/cash-register-01.mp3"
+      "cash-register/cash-register-01.mp3"
     ],
     "dramatic_gasp": [
-      "dramatic_gasp/dramatic-gasp-01.mp3"
+      "dramatic-gasp/dramatic-gasp-01.mp3"
     ],
     "ding": [
       "ding/ding-01.mp3"
     ],
     "fail_buzzer": [
-      "fail_buzzer/fail-buzzer-01.mp3"
+      "fail-buzzer/fail-buzzer-01.mp3"
     ],
     "applause": [
       "applause/applause-01.mp3"
     ],
     "cinematic_piano": [
-      "cinematic_piano/cinematic-piano-01.mp3"
+      "cinematic-piano/cinematic-piano-01.mp3"
     ],
     "reverse_cymbal": [
-      "reverse_cymbal/reverse-cymbal-01.mp3"
+      "reverse-cymbal/reverse-cymbal-01.mp3"
     ],
     "typing": [
       "typing/typing-01.mp3"
     ],
     "phone_ring": [
-      "phone_ring/phone-ring-01.mp3"
+      "phone-ring/phone-ring-01.mp3"
     ],
     "glass_break": [
-      "glass_break/glass-break-01.mp3"
+      "glass-break/glass-break-01.mp3"
     ],
     "camera_flash": [
-      "camera_flash/camera-flash-01.mp3"
+      "camera-flash/camera-flash-01.mp3"
     ],
     "heartbeat": [
       "heartbeat/heartbeat-01.mp3"
     ],
     "clock_ticking": [
-      "clock_ticking/clock-ticking-01.mp3"
+      "clock-ticking/clock-ticking-01.mp3"
     ],
     "metallic_riser": [
-      "metallic_riser/metallic-riser-01.mp3"
+      "metallic-riser/metallic-riser-01.mp3"
     ],
     "bass_drop": [
-      "bass_drop/bass-drop-01.mp3"
+      "bass-drop/bass-drop-01.mp3"
+    ],
+    "external_apt_fail_buzzer": [
+      {
+        "file": "external/openverse/buzzer.ogg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/34/Buzzer.ogg"
+      }
+    ],
+    "external_apt_applause": [
+      {
+        "file": "external/openverse/applause-after-concert.ogg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Sound_Effects_-_Applause_after_a_concert.ogg"
+      }
+    ],
+    "external_apt_impact_boom": [
+      {
+        "file": "external/openverse/explosion-ls100155.ogg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Explosion-LS100155.ogg"
+      }
     ]
   }
 }
