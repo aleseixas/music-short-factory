@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "blackpink_motion",
+      "file": "blackpink_pubg_2020.webm",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/%E3%80%90%E7%B5%95%E5%9C%B0%E6%B1%82%E7%94%9FM%E3%80%91%E5%B0%B1%E8%AE%93_Lisa%E3%80%81Jisoo%E3%80%81Jennie%E3%80%81Ros%C3%A9_%E8%B7%9F%E5%A4%A7%E5%AE%B6%E5%88%86%E4%BA%AB%E6%9C%AA%E4%BE%86%E9%82%84%E6%9C%89%E9%82%A3%E4%BA%9B%E5%90%B8%E5%BC%95%E4%BA%BA%E7%9A%84%E5%90%88%E4%BD%9C%E5%90%A7%EF%BC%81.webm",
+      "credit": "PUBG MOBILE:絕地求生M / Wikimedia Commons",
+      "license": "CC BY 3.0; license reviewed on Wikimedia Commons",
+      "focus": {
+        "x": 0.5,
+        "y": 0.47
+      }
+    },
+    {
+      "id": "rose_rimowa",
+      "file": "rose_rimowa_2024.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Blackpink%20Ros%C3%A9%20Rimowa%202.jpg",
+      "credit": "TV10 / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.38
+      }
+    },
+    {
+      "id": "rose_fansign",
+      "file": "rose_fansign_2022.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ros%C3%A9%20at%20a%20fan%20signing%20event%20on%20September%2025%2C%202022%20%28cropped%29.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY-SA 4.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.38
+      }
+    },
+    {
+      "id": "soju_bottle",
+      "file": "bottle_soju.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bottle%20soju.jpg",
+      "credit": "gteddy / Pixabay via Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "studio_microphone",
+      "file": "studio_microphone.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close%20up%20view%20of%20a%20microphone%20set%20up%20in%20a%20recording%20studio.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY; verify attribution on source page",
+      "focus": {
+        "x": 0.53,
+        "y": 0.48
+      }
+    },
+    {
+      "id": "bruno_mars",
+      "file": "bruno_mars.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/BrunoMars.jpg",
+      "credit": "Laura / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {
+        "x": 0.5,
+        "y": 0.38
+      }
+    },
+    {
+      "id": "seoul_apartments",
+      "file": "seoul_apartments.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Seoul%20Apartment%20Buildings%20%281509272335%29.jpg",
+      "credit": "Francisco Anzola / Wikimedia Commons",
+      "license": "Creative Commons; verify exact terms on source page",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}
