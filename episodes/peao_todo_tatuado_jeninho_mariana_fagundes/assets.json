@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"barretos_rodeo","file":"festa_peao_barretos.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Festa%20do%20Pe%C3%A3o%20de%20Boiadeiro%20em%20Barretos.jpg","credit":"Gerardo Lazzari / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"barretos_rodeo_2019","file":"festa_peao_barretos_2019.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Festa%20do%20Pe%C3%A3o%20de%20Boiadeiro%20de%20Barretos%20%2848557768452%29.jpg","credit":"Governo do Estado de São Paulo / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"barretos_entrance","file":"barretos_entrada.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Barretos-SP%208.jpg","credit":"Felipe Micaroni Lalli / Wikimedia Commons","license":"CC BY-SA 2.5","focus":{"x":0.5,"y":0.5}},
+    {"id":"goiania","file":"goiania_skyline.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Goi%C3%A2nia%20Skyline.JPG","credit":"Aoaassis / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.5}},
+    {"id":"cowboy_hat","file":"bangora_cowboy_hat.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Bangora%20Cowboy%20Hat.jpg","credit":"Yenguis Jan / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.45}},
+    {"id":"recording_studio","file":"recording_studio.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Recording%20studio.jpg","credit":"Eduard Castillo / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"microphone","file":"recording_studio_alt.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/RECORDING%20STUDIO.jpg","credit":"Mrunali31.mb / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

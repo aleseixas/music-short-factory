@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "title": "Peão Todo Tatuado — Jeninho e Mariana Fagundes",
+  "slug": "peao_todo_tatuado_jeninho_mariana_fagundes",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"Peão Todo Tatuado, de Jeninho e Mariana Fagundes, virou hit nacional depois de nascer em cima da hora — e começar por uma dancinha."},
+    {"id":"identity","text":"Jeninho já misturava sertanejo e funk no agrofunk, usando a estética de peão como parte da própria identidade."},
+    {"id":"deadline","text":"Uma semana antes de gravar seu primeiro projeto audiovisual em Goiânia, ainda faltava uma faixa forte."},
+    {"id":"dance","text":"Segundo a Billboard Brasil, a composição foi feita às pressas e começou pelo movimento pensado para o refrão."},
+    {"id":"meaning","text":"A letra transforma o rodeio em paquera: chapéu, laço e caminhonete viram códigos de desejo, não uma história sobre competição."},
+    {"id":"rejection","text":"E quase deu errado: a melodia não convenceu Mariana Fagundes de primeira."},
+    {"id":"feat","text":"Ela confiou no projeto, entrou no feat e ajudou a unir voz sertaneja com a batida híbrida."},
+    {"id":"formula","text":"Essa mistura resume Jeninho: símbolos do interior dentro de uma estrutura feita para circular também no funk e nas redes."},
+    {"id":"viral","text":"O resultado explodiu no TikTok, ganhou coreografias e chegou ao primeiro lugar do Spotify Brasil."},
+    {"id":"chart","text":"Depois, Peão Todo Tatuado liderou o Billboard Brasil Hot 100 e ainda estava entre as mais ouvidas no fim de agosto."},
+    {"id":"payoff","text":"O detalhe que muda tudo: um dos maiores hits brasileiros de 2026 não começou pela letra. Começou pelo gesto que faria o público dançar."}
+  ]
+}

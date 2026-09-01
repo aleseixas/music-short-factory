@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"latin_pop_uplifting","volume":0.12},
+  "sfx_cues": [
+    {"time_seconds":0.18,"type":"vine_boom","volume":0.08,"source_start_seconds":0.0,"duration_seconds":1.0},
+    {"time_seconds":20.0,"type":"clock_ticking","volume":0.04,"source_start_seconds":0.5,"duration_seconds":1.8},
+    {"time_seconds":39.0,"type":"record_scratch","volume":0.05,"source_start_seconds":0.0,"duration_seconds":1.0},
+    {"time_seconds":63.0,"type":"crowd_cheer","volume":0.05,"source_start_seconds":0.4,"duration_seconds":1.8}
+  ],
+  "visual_fx_cues": [],
+  "text_fx_cues": [],
+  "overlay_cues": [],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"barretos_rodeo","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_identity","segment":"identity","asset":"barretos_entrance","motion":"pan_right","transition_out":"crossfade"},
+    {"id":"shot_deadline","segment":"deadline","asset":"goiania","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_dance","segment":"dance","asset":"barretos_rodeo","motion":"pull_out","transition_out":"crossfade"},
+    {"id":"shot_meaning","segment":"meaning","asset":"cowboy_hat","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_rejection","segment":"rejection","asset":"recording_studio","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_feat","segment":"feat","asset":"microphone","motion":"pull_out","transition_out":"crossfade"},
+    {"id":"shot_formula","segment":"formula","asset":"barretos_entrance","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_viral","segment":"viral","asset":"barretos_rodeo","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_chart","segment":"chart","asset":"barretos_rodeo_2019","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_payoff","segment":"payoff","asset":"barretos_rodeo","motion":"pull_out","transition_out":"cut"}
+  ]
+}
