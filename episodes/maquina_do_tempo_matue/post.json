@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "MATUÊ TENTOU RECRIAR ESSA MÚSICA MIL VEZES",
+    "source": {"type": "asset", "asset_id": "matue_the_town"}
+  },
+  "youtube": {
+    "title": "MATUÊ TENTOU RECRIAR MÁQUINA DO TEMPO MIL VEZES",
+    "description": "Máquina do Tempo, do Matuê, nasceu de uma ideia espontânea que ele tentou recuperar inúmeras vezes. O detalhe mais interessante é que a faixa final também fecha o conceito do álbum como um ciclo entre passado, presente e futuro.",
+    "hashtags": ["Matue", "MaquinaDoTempo", "TrapBrasil", "HistoriaDaMusica", "Shorts"],
+    "privacy_status": "private",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Matuê tentou recriar a ideia de Máquina do Tempo inúmeras vezes — e a versão final acabou virando a chave conceitual do álbum. O final volta para o começo.",
+    "hashtags": ["Matue", "MaquinaDoTempo", "TrapBrasil", "HistoriaDaMusica", "Musica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "A história de Máquina do Tempo explica por que o álbum do Matuê funciona como um ciclo.",
+    "hashtags": ["Matue", "MaquinaDoTempo", "TrapBrasil", "Musica", "Curiosidade"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

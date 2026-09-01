@@ -1,0 +1,48 @@
+PESQUISA / ROTEIRO
+1. O POVO — entrevista com Matuê sobre Máquina do Tempo, processo autoral, meses de criação e estudo de instrumentos:
+https://mais.opovo.com.br/jornal/dom/2020/10/04/inspirar-pessoas-pela-musica.html
+
+2. ZonaSuburbana — relato de criação da faixa com Menestrel, improviso, sample de “Como Tudo Deve Ser”, stories e tentativas de recriar a música:
+https://www.zonasuburbana.com.br/a-maquina-do-tempo-de-matue/
+
+3. SPCULT — relato sobre a criação espontânea, as tentativas de recriar e a gravação dos instrumentos na versão final:
+https://spcult.com.br/a-maquina-do-tempo-de-matue/
+
+4. Rota Cult — conceito do álbum: a última faixa inicia a narrativa ao levar o personagem de volta à primeira música; caráter pessoal do projeto:
+https://rotacult.com.br/2020/09/primeiro-album-de-matue-maquina-do-tempo-foi-todo-autoproduzido/
+
+5. POPline — entrevista com Matuê sobre o conceito amplo do disco e a narrativa pós-apocalíptica ligada a experiências pessoais:
+https://portalpopline.com.br/popline-entrevista-matue-quer-superar-seus-recordes-revelar-outros-nomes-cena-trap/
+
+6. UOL — entrevista de Matuê sobre suas origens tocando instrumentos em banda e o resgate dessa musicalidade:
+https://www.uol.com.br/toca/noticias/2025/01/07/matue-333-turne-entrevista.htm
+
+ASSETS VISUAIS
+7. Matuê no The Town 2025 — Feitidede — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Matu%C3%AA.jpg
+
+8. Matuê no Planeta Atlântida 2026 — Governo RS / Vitor Rosa — CC BY-SA 4.0:
+https://commons.wikimedia.org/wiki/File:31.01.2026_%E2%80%93_Matu%C3%AA_participa_da_segunda_noite_do_Planeta_Atl%C3%A2ntida_-_55072476430.jpg
+
+9. Matuê e Teto — Arnaldo Jovem — CC BY-SA 4.0:
+https://commons.wikimedia.org/wiki/File:Doode_Teto_e_Matue_(cropped).jpg
+
+10. Charlie Brown Jr. 2012 — Editorial J — CC BY-SA 2.0:
+https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr._2012.jpg
+
+11. Home studio.webm — Ieruca — CC BY 4.0; duração 23s:
+https://commons.wikimedia.org/wiki/File:Home_studio.webm
+
+12. Ikusgela-Skateboard.webm — Ikusgela — CC BY-SA 4.0; duração 90s; vídeo vertical com movimento perceptível:
+https://commons.wikimedia.org/wiki/File:Ikusgela-Skateboard.webm
+
+13. Tick Tock Clock.webm — Lydia Owen — CC BY 3.0; duração 90,6s:
+https://commons.wikimedia.org/wiki/File:Tick_Tock_Clock.webm
+
+14. Guitar Solo.webm — Châu Tuấn Hùng — CC BY 4.0; duração 80s:
+https://commons.wikimedia.org/wiki/File:Guitar_Solo.webm
+
+ÁUDIO
+15. Busca externa de background realizada com as variações “dark trap instrumental”, “hip hop storytelling instrumental” e “nostalgic hip hop instrumental”. Nenhuma candidata externa segura e tecnicamente validada nesta execução superou o profile local; fallback escolhido: hiphop_groove.
+
+16. Busca externa de SFX priorizada conforme docs/audio-search.md; sem candidato externo validado nesta execução. Foram usados apenas types existentes da repo: impact, clock_ticking, record_scratch, whoosh, bass_drop e riser.

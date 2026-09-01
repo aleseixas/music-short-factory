@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile": "hiphop_groove", "volume": 0.07},
+  "sfx_cues": [
+    {"time_seconds": 0.14, "type": "impact", "volume": 0.14, "duration_seconds": 0.75},
+    {"time_seconds": 12.8, "type": "clock_ticking", "volume": 0.07, "duration_seconds": 1.1},
+    {"time_seconds": 24.5, "type": "record_scratch", "volume": 0.11, "duration_seconds": 0.8},
+    {"time_seconds": 36.0, "type": "whoosh", "volume": 0.09, "duration_seconds": 0.8},
+    {"time_seconds": 49.0, "type": "bass_drop", "volume": 0.10, "duration_seconds": 0.9},
+    {"time_seconds": 63.0, "type": "riser", "volume": 0.08, "duration_seconds": 1.15}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds": 0.08, "end_seconds": 0.6, "type": "punch_zoom", "intensity": 0.58}
+  ],
+  "text_fx_cues": [
+    {"segment": "hook", "offset_seconds": 0.15, "duration_seconds": 1.55, "text": "TENTOU RECRIAR\nMIL VEZES", "accent_text": "MIL VEZES", "animation": "scale_bounce", "position": "center", "intensity": 0.6},
+    {"segment": "demo", "offset_seconds": 0.2, "duration_seconds": 1.35, "text": "LIGOU O MIC\nE IMPROVISOU", "accent_text": "IMPROVISOU", "animation": "pop_in", "position": "center", "intensity": 0.5},
+    {"segment": "cbjr", "offset_seconds": 0.18, "duration_seconds": 1.4, "text": "CHARLIE BROWN JR.", "accent_text": "CHARLIE BROWN JR.", "animation": "fade_pop", "position": "center", "intensity": 0.52},
+    {"segment": "obsession", "offset_seconds": 0.2, "duration_seconds": 1.4, "text": "OS FÃS\nCOBRARAM", "accent_text": "COBRARAM", "animation": "slide_up", "position": "center", "intensity": 0.52},
+    {"segment": "concept", "offset_seconds": 0.2, "duration_seconds": 1.45, "text": "O FINAL É\nO COMEÇO", "accent_text": "COMEÇO", "animation": "scale_bounce", "position": "center", "intensity": 0.6},
+    {"segment": "loop", "offset_seconds": 0.2, "duration_seconds": 1.4, "text": "O ÁLBUM\nVOLTA NO TEMPO", "accent_text": "VOLTA NO TEMPO", "animation": "fade_pop", "position": "center", "intensity": 0.54},
+    {"segment": "meaning", "offset_seconds": 0.2, "duration_seconds": 1.4, "text": "REVISITAR\nQUEM VOCÊ ERA", "accent_text": "QUEM VOCÊ ERA", "animation": "pop_in", "position": "center", "intensity": 0.52},
+    {"segment": "payoff", "offset_seconds": 0.2, "duration_seconds": 1.5, "text": "NÃO ERA A DEMO.\nERA A SENSAÇÃO.", "accent_text": "SENSAÇÃO", "animation": "scale_bounce", "position": "center", "intensity": 0.6}
+  ],
+  "shots": [
+    {"id": "shot_hook", "segment": "hook", "asset": "matue_the_town", "motion": "push_in", "transition_out": "cut", "highlight": "MÁQUINA DO TEMPO • MATUÊ"},
+    {"id": "shot_origin", "segment": "origin", "asset": "home_studio", "source_start_seconds": 0.0, "source_end_seconds": 11.5, "motion": "hold", "transition_out": "cut", "highlight": "BLOQUEIO CRIATIVO"},
+    {"id": "shot_demo", "segment": "demo", "asset": "skateboard_motion", "source_start_seconds": 1.0, "source_end_seconds": 13.0, "motion": "hold", "transition_out": "crossfade"},
+    {"id": "shot_cbjr", "segment": "cbjr", "asset": "cbjr_2012", "motion": "pan_right", "transition_out": "cut", "highlight": "COMO TUDO DEVE SER"},
+    {"id": "shot_obsession", "segment": "obsession", "asset": "matue_teto", "motion": "pull_out", "transition_out": "cut", "highlight": "FÃS COBRAVAM O TRECHO"},
+    {"id": "shot_rebuild", "segment": "rebuild", "asset": "home_studio", "source_start_seconds": 11.0, "source_end_seconds": 22.8, "motion": "hold", "transition_out": "crossfade"},
+    {"id": "shot_instruments", "segment": "instruments", "asset": "guitar_solo", "source_start_seconds": 2.0, "source_end_seconds": 14.5, "motion": "hold", "transition_out": "cut", "highlight": "ELE GRAVOU OS INSTRUMENTOS"},
+    {"id": "shot_concept", "segment": "concept", "asset": "matue_planeta", "motion": "push_in", "transition_out": "cut", "highlight": "A ÚLTIMA FAIXA É O COMEÇO"},
+    {"id": "shot_loop", "segment": "loop", "asset": "clock_motion", "source_start_seconds": 4.0, "source_end_seconds": 16.0, "motion": "hold", "transition_out": "crossfade"},
+    {"id": "shot_story", "segment": "story", "asset": "skateboard_motion", "source_start_seconds": 24.0, "source_end_seconds": 36.0, "motion": "hold", "transition_out": "cut"},
+    {"id": "shot_personal", "segment": "personal", "asset": "matue_the_town", "motion": "pan_left", "transition_out": "cut", "highlight": "UM DISCO PESSOAL"},
+    {"id": "shot_growth", "segment": "growth", "asset": "guitar_solo", "source_start_seconds": 25.0, "source_end_seconds": 37.0, "motion": "hold", "transition_out": "crossfade", "highlight": "VOLTOU A ESTUDAR PRODUÇÃO"},
+    {"id": "shot_meaning", "segment": "meaning", "asset": "clock_motion", "source_start_seconds": 30.0, "source_end_seconds": 42.0, "motion": "hold", "transition_out": "cut"},
+    {"id": "shot_payoff", "segment": "payoff", "asset": "matue_planeta", "motion": "pull_out", "transition_out": "cut", "highlight": "RECUPERAR A SENSAÇÃO"}
+  ]
+}

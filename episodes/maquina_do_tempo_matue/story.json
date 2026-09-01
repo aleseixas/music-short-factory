@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Máquina do Tempo — Matuê: a música que ele tentou recriar mil vezes",
+  "slug": "maquina_do_tempo_matue",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id": "hook", "text": "Máquina do Tempo, do Matuê, nasceu de uma música que ele tentou recriar mil vezes — e isso explica o álbum."},
+    {"id": "origin", "text": "Tudo começou quando ele e Menestrel falavam sobre bloqueio criativo e reencontrar a essência."},
+    {"id": "demo", "text": "Para destravar, Matuê escolheu um beat, ligou o microfone e improvisou sem julgar."},
+    {"id": "cbjr", "text": "Na primeira ideia, ele usou um sample de Como Tudo Deve Ser, do Charlie Brown Jr."},
+    {"id": "obsession", "text": "O trecho foi aos stories, os fãs cobraram, e ele tentou recuperar aquela energia inúmeras vezes."},
+    {"id": "rebuild", "text": "A versão final, porém, não virou uma simples cópia da demo."},
+    {"id": "instruments", "text": "Matuê disse que gravou os instrumentos da nova versão, trazendo o rock que marcou sua formação."},
+    {"id": "concept", "text": "E vem a virada: Máquina do Tempo fecha o álbum, mas conceitualmente também funciona como começo."},
+    {"id": "loop", "text": "A última faixa fala em voltar no tempo; quando o disco reinicia, o personagem retorna à primeira música."},
+    {"id": "story", "text": "Por isso passado, presente e futuro se misturam, formando um ciclo."},
+    {"id": "personal", "text": "Matuê descreveu o disco como pessoal e mergulhou no processo criativo."},
+    {"id": "growth", "text": "Também voltou a estudar instrumentos e produção para construir o som imaginado."},
+    {"id": "meaning", "text": "Então a máquina do tempo vira metáfora para revisitar quem você era e criar diferente."},
+    {"id": "payoff", "text": "Matuê não queria apenas recuperar uma demo. Queria recuperar a sensação que tinha criado ela."}
+  ]
+}

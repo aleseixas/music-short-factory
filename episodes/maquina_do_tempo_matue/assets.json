@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id": "matue_the_town", "file": "matue_the_town_2025.jpg", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Matu%C3%AA.jpg", "credit": "Feitidede / Wikimedia Commons", "license": "CC0 1.0", "focus": {"x": 0.5, "y": 0.35}},
+    {"id": "matue_planeta", "file": "matue_planeta_atlantida_2026.jpg", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/31.01.2026%20%E2%80%93%20Matu%C3%AA%20participa%20da%20segunda%20noite%20do%20Planeta%20Atl%C3%A2ntida%20-%2055072476430.jpg", "credit": "Governo RS / Vitor Rosa / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.4}},
+    {"id": "matue_teto", "file": "doode_teto_matue_cropped.jpg", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Doode%20Teto%20e%20Matue%20%28cropped%29.jpg", "credit": "Arnaldo Jovem / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.38}},
+    {"id": "cbjr_2012", "file": "charlie_brown_jr_2012.jpg", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Charlie%20Brown%20Jr.%202012.jpg", "credit": "Editorial J / Wikimedia Commons", "license": "CC BY-SA 2.0", "focus": {"x": 0.5, "y": 0.42}},
+    {"id": "home_studio", "file": "home_studio.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Home%20studio.webm", "credit": "Ieruca / Wikimedia Commons", "license": "CC BY 4.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "skateboard_motion", "file": "ikusgela_skateboard.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ikusgela-Skateboard.webm", "credit": "Ikusgela / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "clock_motion", "file": "tick_tock_clock.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Tick%20Tock%20Clock.webm", "credit": "Lydia Owen / Wikimedia Commons", "license": "CC BY 3.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "guitar_solo", "file": "guitar_solo.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Guitar%20Solo.webm", "credit": "Châu Tuấn Hùng / Wikimedia Commons", "license": "CC BY 4.0", "focus": {"x": 0.5, "y": 0.5}}
+  ]
+}
