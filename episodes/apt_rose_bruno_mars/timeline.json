@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "external_apt_monkeys_spinning_monkeys",
+    "volume": 0.07
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "vine_boom",
+      "volume": 0.12,
+      "duration_seconds": 0.8
+    },
+    {
+      "time_seconds": 23.0,
+      "type": "external_apt_fail_buzzer",
+      "volume": 0.11,
+      "duration_seconds": 0.8
+    },
+    {
+      "time_seconds": 29.2,
+      "type": "record_scratch",
+      "volume": 0.14,
+      "duration_seconds": 0.85
+    },
+    {
+      "time_seconds": 35.2,
+      "type": "external_apt_applause",
+      "volume": 0.08,
+      "source_start_seconds": 0.0,
+      "duration_seconds": 1.2
+    },
+    {
+      "time_seconds": 44.2,
+      "type": "ding",
+      "volume": 0.09,
+      "duration_seconds": 0.65
+    },
+    {
+      "time_seconds": 54.8,
+      "type": "riser",
+      "volume": 0.08,
+      "duration_seconds": 1.25
+    },
+    {
+      "time_seconds": 62.1,
+      "type": "external_apt_impact_boom",
+      "volume": 0.11,
+      "duration_seconds": 0.9
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.08,
+      "end_seconds": 0.62,
+      "type": "punch_zoom",
+      "intensity": 0.62
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.18,
+      "duration_seconds": 1.7,
+      "text": "ELA QUASE\nAPAGOU APT.?",
+      "accent_text": "APAGOU APT.?",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.62
+    },
+    {
+      "segment": "game",
+      "offset_seconds": 0.34,
+      "duration_seconds": 1.45,
+      "text": "UM JOGO\nCOREANO",
+      "accent_text": "JOGO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.48
+    },
+    {
+      "segment": "chant",
+      "offset_seconds": 0.26,
+      "duration_seconds": 1.55,
+      "text": "APATEU,\nAPATEU",
+      "accent_text": "APATEU",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.56
+    },
+    {
+      "segment": "panic",
+      "offset_seconds": 0.32,
+      "duration_seconds": 1.35,
+      "text": "ELA ENTROU\nEM PÂNICO",
+      "accent_text": "PÂNICO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.48
+    },
+    {
+      "segment": "delete",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.5,
+      "text": "APAGUEM DOS\nCELULARES",
+      "accent_text": "APAGUEM",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.58
+    },
+    {
+      "segment": "return",
+      "offset_seconds": 0.22,
+      "duration_seconds": 1.45,
+      "text": "TRAZ ELA\nDE VOLTA!",
+      "accent_text": "VOLTA!",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.6
+    },
+    {
+      "segment": "bruno",
+      "offset_seconds": 0.28,
+      "duration_seconds": 1.45,
+      "text": "BRUNO ENTROU",
+      "accent_text": "BRUNO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.5
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.3,
+      "duration_seconds": 1.75,
+      "text": "QUASE APAGOU\nO PRÓPRIO HIT",
+      "accent_text": "PRÓPRIO HIT",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.64
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "blackpink_motion",
+      "source_start_seconds": 0.0,
+      "source_end_seconds": 8.0,
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "APT. • ROSÉ + BRUNO MARS"
+    },
+    {
+      "id": "shot_game",
+      "segment": "game",
+      "asset": "soju_bottle",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "O JOGO SE CHAMA APARTMENT"
+    },
+    {
+      "id": "shot_chant",
+      "segment": "chant",
+      "asset": "blackpink_motion",
+      "source_start_seconds": 8.2,
+      "source_end_seconds": 16.5,
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "\"APATEU\" VIROU O HOOK"
+    },
+    {
+      "id": "shot_write",
+      "segment": "write",
+      "asset": "studio_microphone",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "NO DIA SEGUINTE: MÚSICA"
+    },
+    {
+      "id": "shot_panic",
+      "segment": "panic",
+      "asset": "rose_rimowa",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "ELA ACHOU A IDEIA BOBA"
+    },
+    {
+      "id": "shot_delete",
+      "segment": "delete",
+      "asset": "blackpink_motion",
+      "source_start_seconds": 17.0,
+      "source_end_seconds": 24.5,
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "MANDOU TODO MUNDO APAGAR"
+    },
+    {
+      "id": "shot_test",
+      "segment": "test",
+      "asset": "rose_fansign",
+      "motion": "pan_right",
+      "transition_out": "crossfade",
+      "highlight": "TODO MUNDO FICAVA VICIADO"
+    },
+    {
+      "id": "shot_return",
+      "segment": "return",
+      "asset": "blackpink_motion",
+      "source_start_seconds": 25.0,
+      "source_end_seconds": 33.7,
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "ELA PEDIU A MÚSICA DE VOLTA"
+    },
+    {
+      "id": "shot_bruno",
+      "segment": "bruno",
+      "asset": "bruno_mars",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "BRUNO LEVOU A OUTRO NÍVEL"
+    },
+    {
+      "id": "shot_korean",
+      "segment": "korean",
+      "asset": "seoul_apartments",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "APATEU = APARTMENT"
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "rose_rimowa",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "QUASE DELETOU O HIT"
+    }
+  ]
+}
