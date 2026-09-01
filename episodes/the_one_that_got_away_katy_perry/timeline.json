@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "emotional_piano",
+    "volume": 0.08
+  },
+  "sfx_cues": [
+    {"time_seconds":0.18,"type":"impact","volume":0.18},
+    {"time_seconds":10.0,"type":"heartbeat","volume":0.10},
+    {"time_seconds":20.5,"type":"record_scratch","volume":0.13},
+    {"time_seconds":31.5,"type":"whoosh","volume":0.11},
+    {"time_seconds":43.5,"type":"crowd_gasp","volume":0.10},
+    {"time_seconds":57.0,"type":"ding","volume":0.09},
+    {"time_seconds":68.0,"type":"riser","volume":0.08}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.10,"end_seconds":0.55,"type":"punch_zoom","intensity":0.55},
+    {"start_seconds":24.0,"end_seconds":27.5,"type":"slow_zoom_in","intensity":0.30},
+    {"start_seconds":39.0,"end_seconds":39.5,"type":"punch_zoom","intensity":0.48},
+    {"start_seconds":52.0,"end_seconds":56.0,"type":"slow_zoom_out","intensity":0.28},
+    {"start_seconds":67.0,"end_seconds":73.0,"type":"slow_zoom_in","intensity":0.32}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.20,"duration_seconds":1.50,"text":"VOLTOU A EXPLODIR\n15 ANOS DEPOIS","accent_text":"15 ANOS","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"promise","offset_seconds":0.25,"duration_seconds":1.35,"text":"PROMETEU\n“PARA SEMPRE”","accent_text":"PARA SEMPRE","animation":"fade_pop","position":"center","intensity":0.48},
+    {"segment":"groban","offset_seconds":0.20,"duration_seconds":1.35,"text":"ERA JOSH\nGROBAN","accent_text":"JOSH GROBAN","animation":"pop_in","position":"center","intensity":0.54},
+    {"segment":"twist","offset_seconds":0.25,"duration_seconds":1.40,"text":"SEM MUSTANG.\nSEM TATUAGEM.","accent_text":"SEM","animation":"slide_up","position":"center","intensity":0.50},
+    {"segment":"regret","offset_seconds":0.25,"duration_seconds":1.45,"text":"A VIDA QUE\nPODERIA TER SIDO","accent_text":"PODERIA","animation":"fade_pop","position":"center","intensity":0.48},
+    {"segment":"tiktok","offset_seconds":0.20,"duration_seconds":1.40,"text":"MÚSICA GLOBAL\nDO VERÃO 2026","accent_text":"2026","animation":"scale_bounce","position":"center","intensity":0.60},
+    {"segment":"scale","offset_seconds":0.20,"duration_seconds":1.55,"text":"+42 MILHÕES\nDE VÍDEOS","accent_text":"+42 MILHÕES","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"payoff","offset_seconds":0.25,"duration_seconds":1.55,"text":"O FUTURO\nQUE VOCÊ PERDEU","accent_text":"PERDEU","animation":"fade_pop","position":"center","intensity":0.54}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"katy_lifetimes","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_promise","segment":"promise","asset":"katy_interview","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_groban","segment":"groban","asset":"josh_groban","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_dating","segment":"dating","asset":"katy_interview","source_start_seconds":18.0,"source_end_seconds":32.0,"motion":"hold","transition_out":"crossfade","highlight":"UM ROMANCE REAL"},
+    {"id":"shot_twist","segment":"twist","asset":"josh_groban","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_meaning","segment":"meaning","asset":"katy_2010","motion":"pull_out","transition_out":"crossfade","highlight":"REALIDADE + FICÇÃO"},
+    {"id":"shot_regret","segment":"regret","asset":"crowd_walk","source_start_seconds":10.0,"source_end_seconds":24.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_production","segment":"production","asset":"katy_vma_2011","motion":"pan_left","transition_out":"crossfade","highlight":"MAX MARTIN • DR. LUKE"},
+    {"id":"shot_contrast","segment":"contrast","asset":"katy_interview","source_start_seconds":40.0,"source_end_seconds":54.0,"motion":"hold","transition_out":"cut","highlight":"POP BRILHANTE • REGRET SOMBRIO"},
+    {"id":"shot_video","segment":"video","asset":"katy_2010","motion":"push_in","transition_out":"crossfade","highlight":"ELA REVIVE O AMOR PERDIDO"},
+    {"id":"shot_revival","segment":"revival","asset":"crowd_walk","source_start_seconds":35.0,"source_end_seconds":49.0,"motion":"hold","transition_out":"cut","highlight":"A INTERNET TROUXE DE VOLTA"},
+    {"id":"shot_tiktok","segment":"tiktok","asset":"smartphone_slowmo","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_scale","segment":"scale","asset":"crowd_walk","source_start_seconds":55.0,"source_end_seconds":69.0,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_katy_return","segment":"katy_return","asset":"smartphone_slowmo","source_start_seconds":16.0,"source_end_seconds":30.0,"motion":"hold","transition_out":"cut","highlight":"KATY ENTROU NA BRINCADEIRA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"katy_lifetimes","motion":"pull_out","transition_out":"cut"}
+  ]
+}

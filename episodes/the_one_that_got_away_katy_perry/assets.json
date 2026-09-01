@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"katy_interview","file":"katy_unicef_interview.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Interview%20with%20Katy%20Perry%20on%20her%20role%20as%20UNICEF%20Goodwill%20Ambassador.webm","credit":"Priyanka Pruthi / UNICEF via Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"crowd_walk","file":"crowd_walk_boston.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking%20through%20the%20crowd%20in%20Boston%208%2019%2017.webm","credit":"DaTechGuyBlog / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"smartphone_slowmo","file":"smartphone_slowmo_2025.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Slowmotion%20med%20Smartphone%20-%202025.webm","credit":"Jonn Leffmann / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"katy_2010","file":"katy_perry_2010.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Katy%20Perry%202010.jpg","credit":"Philip Nelson / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"katy_vma_2011","file":"katy_perry_vma_2011.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Katy%20Perry%20-%20MTV%20VMA%202011.jpg","credit":"Philip Nelson / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"katy_lifetimes","file":"katy_lifetimes_manchester_04.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Lifetimes%20Tour%20Manchester%2004.jpg","credit":"Biagio2103 / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.36}},
+    {"id":"josh_groban","file":"josh_groban_manchester.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Josh%20Groban%20Manchester%20NH%2001.JPG","credit":"Captain-tucker / Wikimedia Commons","license":"CC BY-SA 3.0","focus":{"x":0.5,"y":0.32}}
+  ]
+}

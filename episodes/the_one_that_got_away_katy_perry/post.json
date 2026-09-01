@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "A VERDADE POR TRÁS DO HIT",
+    "source": {
+      "type": "asset",
+      "asset_id": "katy_lifetimes"
+    }
+  },
+  "youtube": {
+    "title": "KATY PERRY: a verdade por trás de THE ONE THAT GOT AWAY",
+    "description": "The One That Got Away voltou a explodir em 2026, mas a história por trás dela mistura um romance real com detalhes dramatizados. Josh Groban confirmou que os dois namoraram — e até brincou que nunca teve o Mustang ou a tatuagem citados na música.\n\nVisuais: Priyanka Pruthi/UNICEF, DaTechGuyBlog, Jonn Leffmann, Philip Nelson e Captain-tucker via Wikimedia Commons (CC BY/CC BY-SA); Biagio2103 (CC0).",
+    "hashtags": ["KatyPerry", "TheOneThatGotAway", "Pop", "HistoriaDaMusica", "Shorts"],
+    "privacy_status": "private",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "The One That Got Away voltou a explodir 15 anos depois — e a história real é mais estranha do que parece. Josh Groban confirmou o romance, mas vários detalhes da letra não eram literalmente sobre ele.\n\nVisuais: Priyanka Pruthi/UNICEF, DaTechGuyBlog, Jonn Leffmann, Philip Nelson e Captain-tucker via Wikimedia Commons (CC BY/CC BY-SA); Biagio2103 (CC0).",
+    "hashtags": ["KatyPerry", "TheOneThatGotAway", "Pop", "HistoriaDaMusica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "The One That Got Away virou música global do verão de 2026 — 15 anos depois. E Josh Groban confirmou a história real por trás dela. Visuais: Wikimedia Commons, CC BY/CC BY-SA; Biagio2103 (CC0).",
+    "hashtags": ["KatyPerry", "TheOneThatGotAway", "Pop", "Musica"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
