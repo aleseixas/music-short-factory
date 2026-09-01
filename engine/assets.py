@@ -1,22 +1,18 @@
 from __future__ import annotations
 
-import random
 import re
-import time
 from pathlib import Path
 from urllib.parse import urlparse
 
-import requests
 from PIL import Image, ImageOps, UnidentifiedImageError
 
-from .models import AssetSpec
+from .ffmpeg import VideoStreamInfo, probe_video_stream
+from .media_cache import download_to_cache
+from .models import AssetSpec, TimelineScene
 from .utils import load_json, validate_schema
 
 
-HEADERS = {
-    "User-Agent": "MusicShortFactory/7.0 (real-assets-only)",
-    "Accept": "image/*,*/*;q=0.8",
-}
+OVERLAY_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
 def load_asset_catalog(path: Path) -> dict[str, AssetSpec]:
@@ -70,6 +66,7 @@ class AssetManager:
         height: int,
         scale: int,
         allowed_assets_root: Path | None = None,
+        video_cache_dir: Path | None = None,
     ):
         self.assets_dir = assets_dir.resolve()
         allowed_root = (
@@ -84,8 +81,12 @@ class AssetManager:
                 f"Pasta de assets fora do episodio permitido: {self.assets_dir}"
             ) from exc
         self.prepared_dir = (work_dir / "prepared").resolve()
+        self.video_cache_dir = video_cache_dir.resolve() if video_cache_dir else None
+        self.output_width = width
+        self.output_height = height
         self.width = width * scale
         self.height = height * scale
+        self._video_info: dict[Path, VideoStreamInfo] = {}
         self.assets_dir.mkdir(parents=True, exist_ok=True)
         self.prepared_dir.mkdir(parents=True, exist_ok=True)
 
@@ -99,6 +100,34 @@ class AssetManager:
 
     def ensure(self, asset: AssetSpec) -> Path:
         path = self.source_path(asset)
+        if asset.is_video:
+            remote = False
+            if not path.is_file():
+                if not asset.url:
+                    raise RuntimeError(
+                        f"Asset de video ausente e sem URL: {asset.id} ({path})."
+                    )
+                if self.video_cache_dir is None:
+                    raise RuntimeError(
+                        f"Cache de video nao configurado para o asset remoto {asset.id!r}."
+                    )
+                path = download_to_cache(
+                    asset.url,
+                    self.video_cache_dir,
+                    asset.file,
+                    f"asset de video {asset.id!r}",
+                )
+                remote = True
+            if path not in self._video_info:
+                try:
+                    self._video_info[path] = probe_video_stream(path)
+                except RuntimeError as exc:
+                    if remote:
+                        path.unlink(missing_ok=True)
+                    raise RuntimeError(
+                        f"Asset de video invalido {asset.id!r}: {exc}"
+                    ) from exc
+            return path
         if path.exists():
             self._verify_image(path)
             return path
@@ -121,6 +150,8 @@ class AssetManager:
         fy = asset.focus_y if focus_y is None else focus_y
         if not 0 <= fx <= 1 or not 0 <= fy <= 1:
             raise RuntimeError(f"Foco invalido para o asset {asset.id!r}.")
+        if asset.is_video:
+            return source
         # Six decimals are finer than one source pixel even on very large photos.
         target = self.prepared_dir / f"{asset.id}_{fx:.6f}_{fy:.6f}.jpg"
         if target.exists():
@@ -137,6 +168,76 @@ class AssetManager:
             fitted.save(target, format="JPEG", quality=95, subsampling=0, optimize=True)
         return target
 
+    def video_info(self, asset: AssetSpec) -> VideoStreamInfo:
+        if not asset.is_video:
+            raise RuntimeError(f"Asset {asset.id!r} nao e um video.")
+        source = self.ensure(asset)
+        return self._video_info[source]
+
+    def preflight_video_scene(self, scene: TimelineScene, fps: int) -> VideoStreamInfo | None:
+        if not scene.asset.is_video:
+            return None
+        info = self.video_info(scene.asset)
+        start = scene.shot.source_start_seconds
+        requested_end = scene.shot.source_end_seconds
+        tolerance = 1e-6
+        if start >= info.duration - tolerance:
+            raise RuntimeError(
+                f"Shot {scene.shot.id!r}: source_start_seconds={start:.3f}s fica "
+                f"no ou apos o fim do video {scene.asset.id!r} ({info.duration:.3f}s)."
+            )
+        if requested_end is not None and requested_end > info.duration + tolerance:
+            raise RuntimeError(
+                f"Shot {scene.shot.id!r}: source_end_seconds={requested_end:.3f}s "
+                f"ultrapassa a duracao do video {scene.asset.id!r} ({info.duration:.3f}s)."
+            )
+        effective_end = min(requested_end or info.duration, info.duration)
+        available = effective_end - start
+        required = scene.render_frames / fps
+        if available + tolerance < required:
+            crossfade_note = (
+                f", incluindo {scene.transition_frames / fps:.3f}s de handle de crossfade"
+                if scene.transition_frames
+                else ""
+            )
+            raise RuntimeError(
+                f"Trecho de video insuficiente no shot {scene.shot.id!r} "
+                f"(asset {scene.asset.id!r}): disponivel={available:.3f}s; "
+                f"necessario={required:.3f}s{crossfade_note}. Loop nao e permitido."
+            )
+        return info
+
+    def prepare_overlay(self, asset: AssetSpec, scale: float) -> Path:
+        """Create a contained PNG overlay without fetching or cropping the source."""
+        source = self.source_path(asset)
+        if source.suffix.lower() not in OVERLAY_EXTENSIONS:
+            supported = ", ".join(sorted(OVERLAY_EXTENSIONS))
+            raise RuntimeError(
+                f"Formato de overlay nao suportado para {asset.id!r}: {source.suffix or '(sem extensao)'}. "
+                f"Use: {supported}."
+            )
+        if not source.is_file():
+            raise RuntimeError(f"Asset de overlay ausente: {asset.id} ({source})")
+        self._verify_image(source)
+        target = self.prepared_dir / f"overlay_{asset.id}_{scale:.3f}.png"
+        if target.exists():
+            return target
+        with Image.open(source) as opened:
+            image = ImageOps.exif_transpose(opened)
+            image = image.convert("RGBA")
+            # Overlays are composed after scene downsampling, on the final canvas.
+            # Reserve top/bottom safe areas and enough room for the 1.12 bounce peak.
+            safe_height = round(self.output_height * 0.54)
+            image.thumbnail(
+                (
+                    max(1, round(min(self.output_width * scale, self.output_width * 0.85 / 1.12))),
+                    max(1, round(min(self.output_height * scale, safe_height / 1.12))),
+                ),
+                Image.Resampling.LANCZOS,
+            )
+            image.save(target, format="PNG", optimize=True)
+        return target
+
     @staticmethod
     def _verify_image(path: Path) -> None:
         try:
@@ -147,28 +248,15 @@ class AssetManager:
 
     @staticmethod
     def _download(url: str, destination: Path, attempts: int = 6) -> None:
-        destination.parent.mkdir(parents=True, exist_ok=True)
-        partial = destination.with_suffix(destination.suffix + ".part")
-        last_error: Exception | None = None
-        for attempt in range(1, attempts + 1):
-            try:
-                response = requests.get(url, headers=HEADERS, timeout=90, allow_redirects=True)
-                if response.status_code == 429:
-                    wait = float(response.headers.get("Retry-After", 2.0 * attempt))
-                    last_error = RuntimeError(f"HTTP 429 ao baixar {url}")
-                    time.sleep(wait + random.uniform(0.2, 0.6))
-                    continue
-                response.raise_for_status()
-                content_type = response.headers.get("Content-Type", "").lower()
-                if content_type and "image" not in content_type and "octet-stream" not in content_type:
-                    raise RuntimeError(f"Resposta nao parece imagem ({content_type}): {url}")
-                partial.write_bytes(response.content)
-                AssetManager._verify_image(partial)
-                partial.replace(destination)
-                return
-            except Exception as exc:  # requests exposes several transport exceptions.
-                last_error = exc
-                partial.unlink(missing_ok=True)
-                if attempt < attempts:
-                    time.sleep(1.4 * attempt + random.uniform(0.2, 0.6))
-        raise RuntimeError(f"Falha ao baixar {url}: {last_error}") from last_error
+        try:
+            downloaded = download_to_cache(
+                url,
+                destination.parent,
+                destination.name,
+                f"asset de imagem {destination.name!r}",
+                attempts=attempts,
+            )
+            AssetManager._verify_image(downloaded)
+        except RuntimeError:
+            destination.unlink(missing_ok=True)
+            raise

@@ -67,6 +67,11 @@ class EpisodeTests(unittest.TestCase):
         self.assertEqual(episode.story.narration, "Uma abertura curta.")
         self.assertEqual(episode.assets["cover"].focus_x, 0.4)
         self.assertEqual(episode.shots[0].segment_id, "hook")
+        self.assertIsNone(episode.background_music)
+        self.assertEqual(episode.sfx_cues, ())
+        self.assertEqual(episode.visual_fx_cues, ())
+        self.assertEqual(episode.text_fx_cues, ())
+        self.assertEqual(episode.overlay_cues, ())
 
     def test_load_story_reports_invalid_json(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -102,10 +107,18 @@ class EpisodeTests(unittest.TestCase):
                 {"story.json", "timeline.json", "assets.json", "sources.txt", "assets"},
             )
             episode = load_episode(root, "episodes", "my_eyes")
+            timeline = json.loads(
+                (destination / "timeline.json").read_text(encoding="utf-8")
+            )
 
         self.assertEqual(episode.story.slug, "my_eyes")
         self.assertEqual(episode.story.target_duration_seconds, 75)
         self.assertEqual(episode.shots[0].asset_id, "main_image")
+        self.assertIsNone(timeline["background_music"])
+        self.assertEqual(timeline["sfx_cues"], [])
+        self.assertEqual(timeline["visual_fx_cues"], [])
+        self.assertEqual(timeline["text_fx_cues"], [])
+        self.assertEqual(timeline["overlay_cues"], [])
 
     def test_create_episode_refuses_to_overwrite_existing_episode(self):
         with tempfile.TemporaryDirectory() as temp_dir:

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import math
 from pathlib import Path
 import re
 from typing import Any
@@ -54,6 +55,12 @@ class MixSettings:
     limiter: float
     sample_rate: int
     bitrate: str
+    background_music_fade_in_seconds: float = 0.75
+    background_music_fade_out_seconds: float = 1.25
+    background_music_ducking_threshold: float = 0.02
+    background_music_ducking_ratio: float = 8.0
+    background_music_ducking_attack_ms: float = 20.0
+    background_music_ducking_release_ms: float = 350.0
 
 
 @dataclass(frozen=True)
@@ -186,6 +193,24 @@ def _load_project_config(path: Path) -> ProjectConfig:
             music_file=str(mix.get("music_file", "")),
             music_volume=float(mix.get("music_volume", 0.06)),
             music_fade_out_seconds=float(mix.get("music_fade_out_seconds", 0.35)),
+            background_music_fade_in_seconds=float(
+                mix.get("background_music_fade_in_seconds", 0.75)
+            ),
+            background_music_fade_out_seconds=float(
+                mix.get("background_music_fade_out_seconds", 1.25)
+            ),
+            background_music_ducking_threshold=float(
+                mix.get("background_music_ducking_threshold", 0.02)
+            ),
+            background_music_ducking_ratio=float(
+                mix.get("background_music_ducking_ratio", 8.0)
+            ),
+            background_music_ducking_attack_ms=float(
+                mix.get("background_music_ducking_attack_ms", 20.0)
+            ),
+            background_music_ducking_release_ms=float(
+                mix.get("background_music_ducking_release_ms", 350.0)
+            ),
             limiter=float(mix.get("limiter", 0.95)),
             sample_rate=int(mix.get("sample_rate", 48000)),
             bitrate=str(mix.get("bitrate", "192k")),
@@ -305,8 +330,11 @@ def _validate_project(config: ProjectConfig) -> None:
         raise RuntimeError("Valores de CRF invalidos.")
     if not render.intermediate_preset.strip() or not render.preset.strip():
         raise RuntimeError("Presets FFmpeg nao podem ficar vazios.")
-    if config.duration.target_tolerance_seconds < 0:
-        raise RuntimeError("target_tolerance_seconds nao pode ser negativo.")
+    if (
+        not math.isfinite(config.duration.target_tolerance_seconds)
+        or config.duration.target_tolerance_seconds < 0
+    ):
+        raise RuntimeError("target_tolerance_seconds precisa ser finito e nao negativo.")
     if not re.fullmatch(r"[a-z0-9_-]+", config.tts.provider):
         raise RuntimeError(f"Provider de TTS invalido: {config.tts.provider!r}")
     if config.tts.fallback_provider and not re.fullmatch(
@@ -320,6 +348,29 @@ def _validate_project(config: ProjectConfig) -> None:
         raise RuntimeError("Volumes de audio invalidos.")
     if mix.music_fade_out_seconds < 0 or not 0 < mix.limiter <= 1:
         raise RuntimeError("Fade ou limiter de audio invalido.")
+    background_values = (
+        mix.background_music_fade_in_seconds,
+        mix.background_music_fade_out_seconds,
+        mix.background_music_ducking_threshold,
+        mix.background_music_ducking_ratio,
+        mix.background_music_ducking_attack_ms,
+        mix.background_music_ducking_release_ms,
+    )
+    if not all(math.isfinite(value) for value in background_values):
+        raise RuntimeError("Parametros de background music precisam ser finitos.")
+    if (
+        mix.background_music_fade_in_seconds <= 0
+        or mix.background_music_fade_out_seconds <= 0
+    ):
+        raise RuntimeError("Fades de background music precisam ser positivos.")
+    if not 0.000976563 <= mix.background_music_ducking_threshold <= 1:
+        raise RuntimeError("Threshold de ducking precisa ficar entre 0.000976563 e 1.")
+    if not 1 <= mix.background_music_ducking_ratio <= 20:
+        raise RuntimeError("Ratio de ducking precisa ficar entre 1 e 20.")
+    if not 0.01 <= mix.background_music_ducking_attack_ms <= 2000:
+        raise RuntimeError("Attack de ducking precisa ficar entre 0.01 e 2000 ms.")
+    if not 0.01 <= mix.background_music_ducking_release_ms <= 9000:
+        raise RuntimeError("Release de ducking precisa ficar entre 0.01 e 9000 ms.")
     if mix.sample_rate <= 0 or not re.fullmatch(r"\d+[kKmM]?", mix.bitrate):
         raise RuntimeError("Sample rate ou bitrate de audio invalido.")
 

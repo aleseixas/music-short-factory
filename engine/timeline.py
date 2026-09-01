@@ -3,23 +3,48 @@ from __future__ import annotations
 import json
 import math
 import re
+from dataclasses import replace
 from pathlib import Path
 
 from .models import (
+    DEFAULT_VISUAL_FX_INTENSITY,
+    DEFAULT_TEXT_FX_INTENSITY,
+    DEFAULT_OVERLAY_OPACITY,
+    DEFAULT_OVERLAY_SCALE,
     MOTIONS,
     TRANSITIONS,
+    TEXT_FX_ANIMATIONS,
+    TEXT_FX_POSITIONS,
+    OVERLAY_ANIMATIONS,
+    OVERLAY_POSITIONS,
+    VISUAL_FX_TYPES,
     AssetSpec,
+    BackgroundMusicSpec,
     HighlightSpec,
+    ResolvedVisualFxCue,
+    SfxCue,
     ShotSpec,
     Story,
     TimelinePlan,
     TimelineScene,
+    TimelineSpec,
+    TextFxCue,
+    OverlayCue,
+    VisualFxCue,
     WordTiming,
 )
 from .utils import load_json, validate_schema
 
 
 def load_shots(path: Path, story: Story, assets: dict[str, AssetSpec]) -> tuple[ShotSpec, ...]:
+    return load_timeline(path, story, assets).shots
+
+
+def load_timeline(
+    path: Path,
+    story: Story,
+    assets: dict[str, AssetSpec],
+) -> TimelineSpec:
     data = load_json(path)
     validate_schema(data, path)
     raw_shots = data.get("shots")
@@ -44,6 +69,30 @@ def load_shots(path: Path, story: Story, assets: dict[str, AssetSpec]) -> tuple[
             raise RuntimeError(f"Movimento desconhecido no plano {shot_id!r}: {motion!r}")
         if transition not in TRANSITIONS:
             raise RuntimeError(f"Transicao desconhecida no plano {shot_id!r}: {transition!r}")
+
+        source_start = _parse_non_negative_seconds(
+            raw.get("source_start_seconds", 0),
+            f"Plano {shot_id!r}.source_start_seconds",
+        )
+        raw_source_end = raw.get("source_end_seconds")
+        source_end = (
+            _parse_non_negative_seconds(
+                raw_source_end,
+                f"Plano {shot_id!r}.source_end_seconds",
+            )
+            if raw_source_end is not None
+            else None
+        )
+        if source_end is not None and source_end <= source_start:
+            raise RuntimeError(
+                f"Plano {shot_id!r}.source_end_seconds precisa ser maior que "
+                "source_start_seconds."
+            )
+        if not assets[asset_id].is_video and (source_start != 0 or source_end is not None):
+            raise RuntimeError(
+                f"Plano {shot_id!r} usa recorte de fonte, mas o asset "
+                f"{asset_id!r} nao e video."
+            )
 
         highlight = _parse_highlight(raw.get("highlight"), shot_id)
         focus = raw.get("focus")
@@ -70,6 +119,8 @@ def load_shots(path: Path, story: Story, assets: dict[str, AssetSpec]) -> tuple[
                 highlight=highlight,
                 focus_x=focus_x,
                 focus_y=focus_y,
+                source_start_seconds=source_start,
+                source_end_seconds=source_end,
             )
         )
 
@@ -82,7 +133,14 @@ def load_shots(path: Path, story: Story, assets: dict[str, AssetSpec]) -> tuple[
         )
     if shots[-1].transition_out != "cut":
         raise RuntimeError("O ultimo plano precisa terminar com transition_out='cut'.")
-    return tuple(shots)
+    return TimelineSpec(
+        shots=tuple(shots),
+        background_music=_parse_background_music(data.get("background_music")),
+        sfx_cues=_parse_sfx_cues(data.get("sfx_cues")),
+        visual_fx_cues=_parse_visual_fx_cues(data.get("visual_fx_cues")),
+        text_fx_cues=_parse_text_fx_cues(data.get("text_fx_cues")),
+        overlay_cues=_parse_overlay_cues(data.get("overlay_cues"), assets),
+    )
 
 
 def build_timeline(
@@ -93,6 +151,7 @@ def build_timeline(
     audio_duration: float,
     fps: int,
     crossfade_seconds: float,
+    visual_fx_cues: tuple[VisualFxCue, ...] = (),
 ) -> TimelinePlan:
     if not words:
         raise RuntimeError("A timeline precisa de timestamps de palavras.")
@@ -155,12 +214,84 @@ def build_timeline(
                 transition_frames=transition_frames,
             )
         )
+    if visual_fx_cues:
+        scenes = _attach_visual_fx_cues(
+            scenes,
+            visual_fx_cues,
+            total_frames,
+            fps,
+        )
     return TimelinePlan(
         fps=fps,
         total_frames=total_frames,
         audio_duration=audio_duration,
         scenes=tuple(scenes),
     )
+
+
+def _attach_visual_fx_cues(
+    scenes: list[TimelineScene],
+    cues: tuple[VisualFxCue, ...],
+    total_frames: int,
+    fps: int,
+) -> list[TimelineScene]:
+    resolved_by_scene: list[list[ResolvedVisualFxCue]] = [
+        [] for _ in scenes
+    ]
+    video_duration = total_frames / fps
+
+    for cue_index, cue in enumerate(cues, start=1):
+        if cue.start_seconds >= video_duration:
+            print(
+                f"[visual_fx] aviso: cue {cue_index} ({cue.type}) ignorada; "
+                f"start_seconds={cue.start_seconds:.3f}s esta no ou apos o fim "
+                f"do video ({video_duration:.3f}s)."
+            )
+            continue
+
+        # Treat cues as half-open intervals [start, end): never start on a
+        # frame whose timestamp precedes start_seconds. The epsilon avoids a
+        # floating-point artifact pushing exact frame boundaries forward.
+        start_frame = max(0, math.ceil(cue.start_seconds * fps - 1e-9))
+        end_frame = min(total_frames, math.ceil(cue.end_seconds * fps - 1e-9))
+        if end_frame <= start_frame:
+            print(
+                f"[visual_fx] aviso: cue {cue_index} ({cue.type}) ignorada; "
+                f"o intervalo {cue.start_seconds:.3f}s-{cue.end_seconds:.3f}s "
+                f"nao contem frames em {fps} FPS."
+            )
+            continue
+
+        for scene_position, scene in enumerate(scenes):
+            segment_start = max(start_frame, scene.start_frame)
+            segment_end = min(end_frame, scene.end_frame)
+            if segment_start >= segment_end:
+                continue
+            if resolved_by_scene[scene_position]:
+                previous = resolved_by_scene[scene_position][0]
+                raise RuntimeError(
+                    f"O plano {scene.shot.id!r} recebe mais de uma visual_fx_cue "
+                    f"(cues {previous.index} e {cue_index}). Nesta etapa, use no "
+                    "maximo uma cue visual por plano."
+                )
+            resolved_by_scene[scene_position].append(
+                ResolvedVisualFxCue(
+                    index=cue_index,
+                    start_frame=start_frame,
+                    end_frame=end_frame,
+                    local_start_frame=segment_start - scene.start_frame,
+                    local_end_frame=segment_end - scene.start_frame,
+                    type=cue.type,
+                    intensity=cue.intensity,
+                )
+            )
+
+    return [
+        replace(scene, visual_fx_cues=tuple(resolved))
+        if resolved
+        else scene
+        for scene, resolved in zip(scenes, resolved_by_scene)
+    ]
 
 
 def write_timeline_plan(plan: TimelinePlan, path: Path) -> None:
@@ -220,3 +351,219 @@ def _parse_highlight(raw: object, shot_id: str) -> HighlightSpec | None:
         start_seconds=start,
         duration_seconds=parsed_duration,
     )
+
+
+def _parse_background_music(raw: object) -> BackgroundMusicSpec | None:
+    if raw is None:
+        return None
+    if not isinstance(raw, dict):
+        raise RuntimeError("background_music precisa ser um objeto ou null.")
+    return BackgroundMusicSpec(
+        profile=_parse_effect_name(raw.get("profile"), "background_music.profile"),
+        volume=_parse_volume(raw.get("volume"), "background_music.volume"),
+    )
+
+
+def _parse_sfx_cues(raw: object) -> tuple[SfxCue, ...]:
+    if raw is None:
+        return ()
+    if not isinstance(raw, list):
+        raise RuntimeError("sfx_cues precisa ser uma lista.")
+    cues: list[SfxCue] = []
+    for index, cue in enumerate(raw, start=1):
+        label = f"sfx_cues[{index}]"
+        if not isinstance(cue, dict):
+            raise RuntimeError(f"{label} precisa ser um objeto.")
+        source_start = _parse_non_negative_seconds(
+            cue.get("source_start_seconds", 0),
+            f"{label}.source_start_seconds",
+        )
+        raw_duration = cue.get("duration_seconds")
+        duration = (
+            _parse_number(raw_duration, f"{label}.duration_seconds")
+            if raw_duration is not None
+            else None
+        )
+        if duration is not None and duration <= 0:
+            raise RuntimeError(f"{label}.duration_seconds precisa ser maior que zero.")
+        cues.append(
+            SfxCue(
+                time_seconds=_parse_non_negative_seconds(
+                    cue.get("time_seconds"), f"{label}.time_seconds"
+                ),
+                type=_parse_effect_name(cue.get("type"), f"{label}.type"),
+                volume=_parse_volume(cue.get("volume"), f"{label}.volume"),
+                source_start_seconds=source_start,
+                duration_seconds=duration,
+            )
+        )
+    return tuple(cues)
+
+
+def _parse_visual_fx_cues(raw: object) -> tuple[VisualFxCue, ...]:
+    if raw is None:
+        return ()
+    if not isinstance(raw, list):
+        raise RuntimeError("visual_fx_cues precisa ser uma lista.")
+    cues: list[VisualFxCue] = []
+    for index, cue in enumerate(raw, start=1):
+        label = f"visual_fx_cues[{index}]"
+        if not isinstance(cue, dict):
+            raise RuntimeError(f"{label} precisa ser um objeto.")
+        start = _parse_non_negative_seconds(
+            cue.get("start_seconds"), f"{label}.start_seconds"
+        )
+        end = _parse_non_negative_seconds(
+            cue.get("end_seconds"), f"{label}.end_seconds"
+        )
+        if end <= start:
+            raise RuntimeError(f"{label}.end_seconds precisa ser maior que start_seconds.")
+        effect_type = _parse_effect_name(cue.get("type"), f"{label}.type")
+        if effect_type not in VISUAL_FX_TYPES:
+            supported = ", ".join(sorted(VISUAL_FX_TYPES))
+            raise RuntimeError(
+                f"{label}.type desconhecido: {effect_type!r}. "
+                f"Tipos suportados: {supported}."
+            )
+        cues.append(
+            VisualFxCue(
+                start_seconds=start,
+                end_seconds=end,
+                type=effect_type,
+                intensity=_parse_volume(
+                    cue.get("intensity", DEFAULT_VISUAL_FX_INTENSITY),
+                    f"{label}.intensity",
+                ),
+            )
+        )
+
+    ordered = sorted(enumerate(cues, start=1), key=lambda item: item[1].start_seconds)
+    for (left_index, left), (right_index, right) in zip(ordered, ordered[1:]):
+        if right.start_seconds < left.end_seconds:
+            raise RuntimeError(
+                "visual_fx_cues sobrepostas nao sao suportadas nesta etapa: "
+                f"cue {left_index} ({left.type}) e cue {right_index} ({right.type})."
+            )
+    return tuple(cues)
+
+
+def _parse_text_fx_cues(raw: object) -> tuple[TextFxCue, ...]:
+    if raw is None:
+        return ()
+    if not isinstance(raw, list):
+        raise RuntimeError("text_fx_cues precisa ser uma lista.")
+    cues: list[TextFxCue] = []
+    for index, cue in enumerate(raw, start=1):
+        label = f"text_fx_cues[{index}]"
+        if not isinstance(cue, dict):
+            raise RuntimeError(f"{label} precisa ser um objeto.")
+        start = _parse_non_negative_seconds(cue.get("start_seconds"), f"{label}.start_seconds")
+        end = _parse_non_negative_seconds(cue.get("end_seconds"), f"{label}.end_seconds")
+        if end <= start:
+            raise RuntimeError(f"{label}.end_seconds precisa ser maior que start_seconds.")
+        text = str(cue.get("text", "")).strip()
+        if not text:
+            raise RuntimeError(f"{label}.text precisa ser um texto nao vazio.")
+        animation = _parse_effect_name(cue.get("animation"), f"{label}.animation")
+        if animation not in TEXT_FX_ANIMATIONS:
+            supported = ", ".join(sorted(TEXT_FX_ANIMATIONS))
+            raise RuntimeError(f"{label}.animation desconhecida: {animation!r}. Animacoes suportadas: {supported}.")
+        position = str(cue.get("position", "center")).strip()
+        if position not in TEXT_FX_POSITIONS:
+            supported = ", ".join(sorted(TEXT_FX_POSITIONS))
+            raise RuntimeError(f"{label}.position desconhecida: {position!r}. Posicoes suportadas: {supported}.")
+        accent_raw = cue.get("accent_text")
+        accent_text = str(accent_raw).strip() if accent_raw is not None else None
+        if accent_text and accent_text.casefold() not in text.casefold():
+            raise RuntimeError(f"{label}.accent_text precisa aparecer em text.")
+        cues.append(TextFxCue(start, end, text, animation, position, _parse_volume(cue.get("intensity", DEFAULT_TEXT_FX_INTENSITY), f"{label}.intensity"), accent_text or None))
+
+    ordered = sorted(enumerate(cues, start=1), key=lambda item: item[1].start_seconds)
+    for (left_index, left), (right_index, right) in zip(ordered, ordered[1:]):
+        if right.start_seconds < left.end_seconds:
+            raise RuntimeError("text_fx_cues sobrepostas nao sao suportadas nesta etapa: " f"cue {left_index} e cue {right_index}.")
+    return tuple(cues)
+
+
+def _parse_overlay_cues(
+    raw: object,
+    assets: dict[str, AssetSpec],
+) -> tuple[OverlayCue, ...]:
+    if raw is None:
+        return ()
+    if not isinstance(raw, list):
+        raise RuntimeError("overlay_cues precisa ser uma lista.")
+    cues: list[OverlayCue] = []
+    for index, cue in enumerate(raw, start=1):
+        label = f"overlay_cues[{index}]"
+        if not isinstance(cue, dict):
+            raise RuntimeError(f"{label} precisa ser um objeto.")
+        start = _parse_non_negative_seconds(cue.get("start_seconds"), f"{label}.start_seconds")
+        end = _parse_non_negative_seconds(cue.get("end_seconds"), f"{label}.end_seconds")
+        if end <= start:
+            raise RuntimeError(f"{label}.end_seconds precisa ser maior que start_seconds.")
+        asset_id = str(cue.get("asset", "")).strip()
+        if asset_id not in assets:
+            raise RuntimeError(f"Asset de overlay desconhecido em {label}: {asset_id!r}.")
+        if assets[asset_id].is_video:
+            raise RuntimeError(
+                f"Asset de video {asset_id!r} nao pode ser usado em overlay_cues; "
+                "overlays de video nao sao suportados nesta etapa."
+            )
+        animation = _parse_effect_name(cue.get("animation"), f"{label}.animation")
+        if animation not in OVERLAY_ANIMATIONS:
+            supported = ", ".join(sorted(OVERLAY_ANIMATIONS))
+            raise RuntimeError(f"{label}.animation desconhecida: {animation!r}. Animacoes suportadas: {supported}.")
+        position = str(cue.get("position", "center")).strip()
+        if position not in OVERLAY_POSITIONS:
+            supported = ", ".join(sorted(OVERLAY_POSITIONS))
+            raise RuntimeError(f"{label}.position desconhecida: {position!r}. Posicoes suportadas: {supported}.")
+        scale = _parse_number(cue.get("scale", DEFAULT_OVERLAY_SCALE), f"{label}.scale")
+        if not 0.10 <= scale <= 0.80:
+            raise RuntimeError(f"{label}.scale precisa ficar entre 0.10 e 0.80.")
+        opacity = _parse_volume(cue.get("opacity", DEFAULT_OVERLAY_OPACITY), f"{label}.opacity")
+        cues.append(OverlayCue(start, end, asset_id, animation, position, scale, opacity))
+
+    ordered = sorted(enumerate(cues, start=1), key=lambda item: item[1].start_seconds)
+    for (left_index, left), (right_index, right) in zip(ordered, ordered[1:]):
+        if right.start_seconds < left.end_seconds:
+            raise RuntimeError(
+                "overlay_cues simultaneos nao sao suportados nesta etapa: "
+                f"cue {left_index} e cue {right_index}."
+            )
+    return tuple(cues)
+
+
+def _parse_effect_name(raw: object, label: str) -> str:
+    value = raw.strip() if isinstance(raw, str) else ""
+    if not re.fullmatch(r"[a-z0-9]+(?:[_-][a-z0-9]+)*", value):
+        raise RuntimeError(
+            f"{label} invalido: use letras minusculas, numeros, '_' ou '-'."
+        )
+    return value
+
+
+def _parse_volume(raw: object, label: str) -> float:
+    value = _parse_number(raw, label)
+    if not 0 <= value <= 1:
+        raise RuntimeError(f"{label} precisa ficar entre 0 e 1.")
+    return value
+
+
+def _parse_non_negative_seconds(raw: object, label: str) -> float:
+    value = _parse_number(raw, label)
+    if value < 0:
+        raise RuntimeError(f"{label} precisa ser maior ou igual a zero.")
+    return value
+
+
+def _parse_number(raw: object, label: str) -> float:
+    if isinstance(raw, bool):
+        raise RuntimeError(f"{label} precisa ser um numero finito.")
+    try:
+        value = float(raw)
+    except (TypeError, ValueError) as exc:
+        raise RuntimeError(f"{label} precisa ser um numero finito.") from exc
+    if not math.isfinite(value):
+        raise RuntimeError(f"{label} precisa ser um numero finito.")
+    return value

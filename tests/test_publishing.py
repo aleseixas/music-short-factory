@@ -14,6 +14,7 @@ from unittest.mock import patch
 from PIL import Image
 import requests
 
+from prepare_post import main as prepare_post_main
 from publish import create_publisher, main as publish_main
 from publishing.base import ApiError, PublishContext, PublishingError
 from publishing.cover import generate_cover
@@ -24,6 +25,7 @@ from publishing.metadata import (
     load_post,
     normalize_post,
     prepare_episode_post,
+    render_platform_text,
     validate_post,
 )
 from publishing.tiktok import TikTokPublisher
@@ -347,7 +349,7 @@ class MetadataTests(unittest.TestCase):
         self.assertEqual(loaded.data["youtube"]["hashtags"], ["Musica", "Shorts"])
         self.assertEqual(loaded.for_platform("youtube")["privacy_status"], "private")
 
-    def test_invalid_headlines_are_rejected(self):
+    def test_long_headlines_warn_and_continue(self):
         cases = (
             "UM DOIS TRES QUATRO CINCO SEIS SETE",
             "X" * 43,
@@ -356,14 +358,40 @@ class MetadataTests(unittest.TestCase):
             with self.subTest(headline=headline):
                 data = valid_post()
                 data["cover"]["headline"] = headline
-                with self.assertRaisesRegex(RuntimeError, "headline.*longo demais"):
+                stdout = io.StringIO()
+                with redirect_stdout(stdout):
                     validate_post(data)
+                self.assertIn("[metadata] aviso", stdout.getvalue())
+                self.assertIn("cover.headline", stdout.getvalue())
 
-    def test_invalid_or_excessive_hashtags_are_rejected(self):
+    def test_hashtags_above_recommendation_warn_and_continue(self):
+        recommendations = {"youtube": 5, "instagram": 8, "tiktok": 5}
+        for platform, recommendation in recommendations.items():
+            with self.subTest(platform=platform):
+                data = valid_post()
+                hashtags = [f"tag{index}" for index in range(recommendation + 1)]
+                data[platform]["hashtags"] = hashtags
+                stdout = io.StringIO()
+
+                with redirect_stdout(stdout):
+                    validate_post(data, warning_platforms=(platform,))
+
+                rendered = render_platform_text(data, platform)
+                text_field = "description" if platform == "youtube" else "caption"
+                self.assertIn("[metadata] aviso", stdout.getvalue())
+                self.assertIn(
+                    f"{platform}.hashtags tem {recommendation + 1} itens",
+                    stdout.getvalue(),
+                )
+                self.assertIn("As hashtags serao mantidas", stdout.getvalue())
+                self.assertEqual(data[platform]["hashtags"], hashtags)
+                self.assertIn(f"#{hashtags[-1]}", rendered[text_field])
+
+    def test_invalid_hashtag_schema_remains_a_technical_error(self):
         cases = (
-            ["um", "dois", "tres", "quatro", "cinco", "seis"],
             ["tag-com-hifen"],
-            ["Duplicada", "duplicada"],
+            "nao-e-lista",
+            ["valida", 123],
         )
         for hashtags in cases:
             with self.subTest(hashtags=hashtags):
@@ -371,6 +399,17 @@ class MetadataTests(unittest.TestCase):
                 data["youtube"]["hashtags"] = hashtags
                 with self.assertRaisesRegex(RuntimeError, "Hashtag|hashtags"):
                     validate_post(data)
+
+    def test_platform_text_limit_warns_during_generic_post_validation(self):
+        data = valid_post()
+        data["youtube"]["description"] = "x" * 5001
+        stdout = io.StringIO()
+
+        with redirect_stdout(stdout):
+            validate_post(data)
+
+        self.assertIn("[metadata] aviso", stdout.getvalue())
+        self.assertIn("Texto final de youtube excede 5000", stdout.getvalue())
 
 
 class CoverAndPreparationTests(unittest.TestCase):
@@ -417,6 +456,46 @@ class CoverAndPreparationTests(unittest.TestCase):
             self.assertTrue(prepared.cover_path.is_file())
             self.assertEqual(set(prepared.previews), {"youtube", "instagram", "tiktok"})
             self.assertIn("description", prepared.previews["youtube"])
+
+    def test_prepare_long_headline_warns_once_and_still_generates_cover(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            write_project_config(root)
+            episode_dir = write_episode_sources(root)
+            post = valid_post()
+            post["cover"]["headline"] = "UM DOIS TRES QUATRO CINCO SEIS SETE"
+            write_json(episode_dir / "post.json", post)
+            stdout = io.StringIO()
+
+            with redirect_stdout(stdout):
+                prepared = prepare_episode_post(root, "demo")
+
+            self.assertTrue(prepared.cover_path.is_file())
+
+        self.assertEqual(stdout.getvalue().count("cover.headline"), 1)
+
+    def test_prepare_cli_warnings_keep_zero_exit_code(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            write_project_config(root)
+            episode_dir = write_episode_sources(root)
+            post = valid_post()
+            post["cover"]["headline"] = "UM DOIS TRES QUATRO CINCO SEIS SETE"
+            post["instagram"]["hashtags"] = [f"tag{index}" for index in range(9)]
+            write_json(episode_dir / "post.json", post)
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+
+            with redirect_stdout(stdout), redirect_stderr(stderr):
+                exit_code = prepare_post_main(
+                    ["demo", "--project-root", str(root)]
+                )
+
+        self.assertEqual(exit_code, 0, stderr.getvalue())
+        self.assertEqual(stderr.getvalue(), "")
+        self.assertIn("[metadata] aviso", stdout.getvalue())
+        self.assertIn("instagram.hashtags tem 9 itens", stdout.getvalue())
+        self.assertIn("Post preparado:", stdout.getvalue())
 
 
 class CredentialAndPublisherTests(unittest.TestCase):
@@ -558,6 +637,238 @@ class CredentialAndPublisherTests(unittest.TestCase):
             for platform in ("youtube", "instagram", "tiktok"):
                 self.assertIn(f'"platform": "{platform}"', stdout.getvalue())
             request.assert_not_called()
+
+    def test_editorial_metadata_warnings_do_not_change_dry_run_exit_code(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            write_publishable_files(root)
+            post = valid_post()
+            post["cover"]["headline"] = "UM DOIS TRES QUATRO CINCO SEIS SETE"
+            post["youtube"]["hashtags"] = [
+                "um", "dois", "tres", "quatro", "cinco", "seis"
+            ]
+            write_json(root / "episodes" / "demo" / "post.json", post)
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+
+            with (
+                patch.dict(os.environ, {}, clear=True),
+                patch(
+                    "requests.sessions.Session.request",
+                    side_effect=AssertionError("dry-run tentou acessar a rede"),
+                ) as request,
+                redirect_stdout(stdout),
+                redirect_stderr(stderr),
+            ):
+                exit_code = publish_main(
+                    ["demo", "--platform", "youtube", "--project-root", str(root)]
+                )
+
+        self.assertEqual(exit_code, 0, stderr.getvalue())
+        self.assertIn("[metadata] aviso", stdout.getvalue())
+        self.assertIn("cover.headline", stdout.getvalue())
+        self.assertIn("youtube.hashtags tem 6 itens", stdout.getvalue())
+        self.assertIn('"status": "validated"', stdout.getvalue())
+        request.assert_not_called()
+
+    def test_invalid_metadata_still_returns_nonzero_without_network(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            write_publishable_files(root)
+            post = valid_post()
+            post["youtube"]["hashtags"] = ["tag-com-hifen"]
+            write_json(root / "episodes" / "demo" / "post.json", post)
+            stdout = io.StringIO()
+            stderr = io.StringIO()
+
+            with (
+                patch.dict(os.environ, {}, clear=True),
+                patch(
+                    "requests.sessions.Session.request",
+                    side_effect=AssertionError("metadata invalida tentou acessar a rede"),
+                ) as request,
+                redirect_stdout(stdout),
+                redirect_stderr(stderr),
+            ):
+                exit_code = publish_main(
+                    ["demo", "--platform", "youtube", "--project-root", str(root)]
+                )
+
+        self.assertEqual(exit_code, 1)
+        self.assertIn("ERRO:", stderr.getvalue())
+        self.assertIn("Hashtag", stderr.getvalue())
+        request.assert_not_called()
+
+    def test_real_text_limit_blocks_only_its_target_platform(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            write_publishable_files(root)
+            post = valid_post()
+            post["youtube"]["description"] = "x" * 5001
+            write_json(root / "episodes" / "demo" / "post.json", post)
+            instagram_stdout = io.StringIO()
+            instagram_stderr = io.StringIO()
+            youtube_stdout = io.StringIO()
+            youtube_stderr = io.StringIO()
+
+            with (
+                patch.dict(os.environ, {}, clear=True),
+                patch(
+                    "requests.sessions.Session.request",
+                    side_effect=AssertionError("dry-run tentou acessar a rede"),
+                ) as request,
+            ):
+                with redirect_stdout(instagram_stdout), redirect_stderr(instagram_stderr):
+                    instagram_exit = publish_main(
+                        ["demo", "--platform", "instagram", "--project-root", str(root)]
+                    )
+                with redirect_stdout(youtube_stdout), redirect_stderr(youtube_stderr):
+                    youtube_exit = publish_main(
+                        ["demo", "--platform", "youtube", "--project-root", str(root)]
+                    )
+
+        self.assertEqual(instagram_exit, 0, instagram_stderr.getvalue())
+        self.assertNotIn("Texto final de youtube", instagram_stdout.getvalue())
+        self.assertEqual(youtube_exit, 1)
+        self.assertIn("Texto final de youtube excede 5000", youtube_stdout.getvalue())
+        self.assertIn("description final excede 5000", youtube_stderr.getvalue())
+        request.assert_not_called()
+
+    def test_real_platform_text_limits_remain_blocking_in_each_publisher(self):
+        cases = (
+            (YouTubePublisher, "youtube", "description", 5000),
+            (InstagramPublisher, "instagram", "caption", 2200),
+            (TikTokPublisher, "tiktok", "caption", 2200),
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            for publisher_type, platform, field, limit in cases:
+                with self.subTest(platform=platform):
+                    original = local_context(root, platform)
+                    metadata = deepcopy(dict(original.metadata))
+                    metadata[field] = "x" * limit
+                    context = PublishContext(
+                        episode=original.episode,
+                        video_path=original.video_path,
+                        cover_path=original.cover_path,
+                        metadata=metadata,
+                    )
+                    publisher = publisher_type(
+                        credentials=CredentialStore.from_mapping({}),
+                        session=FailingSession(),
+                    )
+
+                    with self.assertRaisesRegex(PublishingError, str(limit)):
+                        publisher.validate(context, require_credentials=False)
+
+    def test_youtube_enforces_real_aggregate_tag_limit_not_recommended_count(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            original = local_context(root, "youtube")
+            metadata = deepcopy(dict(original.metadata))
+            metadata["hashtags"] = [f"tag{index}" for index in range(20)]
+            context = PublishContext(
+                episode=original.episode,
+                video_path=original.video_path,
+                cover_path=original.cover_path,
+                metadata=metadata,
+            )
+            publisher = YouTubePublisher(
+                credentials=CredentialStore.from_mapping({}),
+                session=FailingSession(),
+            )
+
+            publisher.validate(context, require_credentials=False)
+
+            metadata = deepcopy(metadata)
+            metadata["hashtags"] = ["a" * 250, "b" * 250]
+            oversized_context = PublishContext(
+                episode=original.episode,
+                video_path=original.video_path,
+                cover_path=original.cover_path,
+                metadata=metadata,
+            )
+            with self.assertRaisesRegex(PublishingError, "500"):
+                publisher.validate(oversized_context, require_credentials=False)
+
+    def test_selected_publishers_measure_text_with_platform_units(self):
+        cases = (
+            (
+                YouTubePublisher,
+                "youtube",
+                "description",
+                "\u00e9" * 2500,
+                "\u00e9" * 2501,
+                "bytes UTF-8",
+            ),
+            (
+                InstagramPublisher,
+                "instagram",
+                "caption",
+                "\U0001f600" * 1100,
+                "\U0001f600" * 1101,
+                "unidades UTF-16",
+            ),
+            (
+                TikTokPublisher,
+                "tiktok",
+                "caption",
+                "\U0001f600" * 1100,
+                "\U0001f600" * 1101,
+                "unidades UTF-16",
+            ),
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            for publisher_type, platform, field, boundary, oversized, unit in cases:
+                with self.subTest(platform=platform):
+                    original = local_context(root, platform)
+                    publisher = publisher_type(
+                        credentials=CredentialStore.from_mapping({}),
+                        session=FailingSession(),
+                    )
+                    metadata = deepcopy(dict(original.metadata))
+                    metadata[field] = boundary
+                    metadata["hashtags"] = []
+                    boundary_context = PublishContext(
+                        episode=original.episode,
+                        video_path=original.video_path,
+                        cover_path=original.cover_path,
+                        metadata=metadata,
+                    )
+
+                    publisher.validate(boundary_context, require_credentials=False)
+
+                    metadata = deepcopy(metadata)
+                    metadata[field] = oversized
+                    oversized_context = PublishContext(
+                        episode=original.episode,
+                        video_path=original.video_path,
+                        cover_path=original.cover_path,
+                        metadata=metadata,
+                    )
+                    with self.assertRaisesRegex(PublishingError, unit):
+                        publisher.validate(oversized_context, require_credentials=False)
+
+    def test_youtube_title_limit_remains_a_target_platform_error(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            original = local_context(root, "youtube")
+            metadata = deepcopy(dict(original.metadata))
+            metadata["title"] = "x" * 101
+            context = PublishContext(
+                episode=original.episode,
+                video_path=original.video_path,
+                cover_path=original.cover_path,
+                metadata=metadata,
+            )
+            publisher = YouTubePublisher(
+                credentials=CredentialStore.from_mapping({}),
+                session=FailingSession(),
+            )
+
+            with self.assertRaisesRegex(PublishingError, "100"):
+                publisher.validate(context, require_credentials=False)
 
     def test_api_error_is_sanitized_before_becoming_user_facing(self):
         session = StaticSession(ErrorResponse())

@@ -128,22 +128,26 @@ def validate_audio_duration(
     duration: float,
     target_duration_seconds: float,
     tolerance_seconds: float,
-) -> None:
+) -> str | None:
     if not math.isfinite(duration) or duration <= 0:
         raise RuntimeError(f"Duracao de audio invalida: {duration!r}")
     if not math.isfinite(target_duration_seconds) or target_duration_seconds <= 0:
         raise RuntimeError(
             f"target_duration_seconds invalido: {target_duration_seconds!r}"
         )
+    if not math.isfinite(tolerance_seconds) or tolerance_seconds < 0:
+        raise RuntimeError(f"Tolerancia de duracao invalida: {tolerance_seconds!r}")
     deviation = abs(duration - target_duration_seconds)
     if deviation > tolerance_seconds:
         lower = max(0.0, target_duration_seconds - tolerance_seconds)
         upper = target_duration_seconds + tolerance_seconds
-        raise RuntimeError(
+        return (
             f"Duracao da narracao fora do alvo: {duration:.2f}s. "
             f"Esperado entre {lower:.2f}s e {upper:.2f}s para o alvo "
-            f"de {target_duration_seconds:.2f}s."
+            f"de {target_duration_seconds:.2f}s. A duracao real sera usada sem "
+            "corte, aceleracao ou nova geracao."
         )
+    return None
 
 
 def load_timings(

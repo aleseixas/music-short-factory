@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import Any, Mapping
 
 from .base import ApiError, PublishContext, PublishResult, Publisher, PublishingError
-from .metadata import render_platform_text
+from .metadata import PLATFORM_TEXT_LIMITS, platform_text_length, render_platform_text
 
 
 class TikTokPublisher(Publisher):
@@ -27,6 +27,12 @@ class TikTokPublisher(Publisher):
         caption = str(context.metadata.get("caption", "")).strip()
         if not caption:
             raise PublishingError("TikTokPublisher: caption nao pode ficar vazia.")
+        rendered = render_platform_text({"tiktok": context.metadata}, "tiktok")
+        text_limit = PLATFORM_TEXT_LIMITS["tiktok"]
+        if platform_text_length(str(rendered.get("caption", "")), "tiktok") > text_limit:
+            raise PublishingError(
+                f"TikTokPublisher: caption final excede {text_limit} unidades UTF-16."
+            )
         privacy = context.metadata.get("privacy_level", "SELF_ONLY")
         if not isinstance(privacy, str) or not privacy:
             raise PublishingError("TikTokPublisher: privacy_level invalido.")

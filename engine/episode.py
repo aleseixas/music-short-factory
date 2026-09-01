@@ -7,7 +7,7 @@ import re
 
 from .assets import load_asset_catalog
 from .models import Episode, ScriptSegment, Story
-from .timeline import load_shots
+from .timeline import load_timeline
 from .utils import load_json, safe_child, validate_schema, validate_slug
 
 
@@ -87,8 +87,19 @@ def load_episode(project_root: Path, episodes_dir: str, name: str) -> Episode:
             f"({episode_name!r})."
         )
     assets = load_asset_catalog(directory / "assets.json")
-    shots = load_shots(directory / "timeline.json", story, assets)
-    return Episode(episode_name, directory, story, assets, shots)
+    timeline = load_timeline(directory / "timeline.json", story, assets)
+    return Episode(
+        name=episode_name,
+        directory=directory,
+        story=story,
+        assets=assets,
+        shots=timeline.shots,
+        background_music=timeline.background_music,
+        sfx_cues=timeline.sfx_cues,
+        visual_fx_cues=timeline.visual_fx_cues,
+        text_fx_cues=timeline.text_fx_cues,
+        overlay_cues=timeline.overlay_cues,
+    )
 
 
 def create_episode(project_root: Path, episodes_dir: str, name: str) -> Path:
@@ -115,6 +126,11 @@ def create_episode(project_root: Path, episodes_dir: str, name: str) -> Path:
     }
     timeline = {
         "schema_version": 1,
+        "background_music": None,
+        "sfx_cues": [],
+        "visual_fx_cues": [],
+        "text_fx_cues": [],
+        "overlay_cues": [],
         "shots": [
             {
                 "id": "shot_hook",

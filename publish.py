@@ -57,7 +57,10 @@ def build_context(project_root: Path, episode: str, platform: str) -> PublishCon
         raise PublishingError(f"Caminho de episodio fora da pasta permitida: {episode_dir}") from exc
     if not episode_dir.is_dir():
         raise PublishingError(f"Episodio {episode!r} nao encontrado em {episode_dir}.")
-    post = load_post(episode_dir / "post.json")
+    post = load_post(
+        episode_dir / "post.json",
+        warning_platforms=(platform,),
+    )
     output_root = (project_root / output_dir).resolve()
     video_path = (output_root / f"{episode}.mp4").resolve()
     cover_path = (output_root / f"{episode}_cover.jpg").resolve()

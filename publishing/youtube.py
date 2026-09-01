@@ -3,7 +3,13 @@ from __future__ import annotations
 from typing import Any, Mapping
 
 from .base import ApiError, PublishContext, PublishResult, Publisher, PublishingError
-from .metadata import render_platform_text
+from .metadata import (
+    PLATFORM_TEXT_LIMITS,
+    YOUTUBE_TAGS_LIMIT,
+    YOUTUBE_TITLE_LIMIT,
+    platform_text_length,
+    render_platform_text,
+)
 
 
 class YouTubePublisher(Publisher):
@@ -22,8 +28,25 @@ class YouTubePublisher(Publisher):
     def validate(self, context: PublishContext, require_credentials: bool = True) -> None:
         self._validate_common(context)
         title = str(context.metadata.get("title", "")).strip()
-        if not title or len(title) > 100:
-            raise PublishingError("YouTubePublisher: titulo ausente ou maior que 100 caracteres.")
+        if not title or len(title) > YOUTUBE_TITLE_LIMIT:
+            raise PublishingError(
+                f"YouTubePublisher: titulo ausente ou maior que {YOUTUBE_TITLE_LIMIT} "
+                "caracteres."
+            )
+        rendered = render_platform_text({"youtube": context.metadata}, "youtube")
+        text_limit = PLATFORM_TEXT_LIMITS["youtube"]
+        if platform_text_length(str(rendered.get("description", "")), "youtube") > text_limit:
+            raise PublishingError(
+                f"YouTubePublisher: description final excede {text_limit} bytes UTF-8."
+            )
+        tags = rendered.get("hashtags", [])
+        if not isinstance(tags, list):
+            raise PublishingError("YouTubePublisher: hashtags precisa ser uma lista.")
+        if _youtube_tags_length(tags) > YOUTUBE_TAGS_LIMIT:
+            raise PublishingError(
+                f"YouTubePublisher: tags excedem o limite oficial agregado de "
+                f"{YOUTUBE_TAGS_LIMIT} caracteres."
+            )
         privacy = context.metadata.get("privacy_status", "private")
         if privacy not in {"private", "unlisted", "public"}:
             raise PublishingError(
@@ -191,3 +214,10 @@ class YouTubePublisher(Publisher):
             raise ApiError("YouTubePublisher: OAuth nao retornou access_token.")
         self._current_token = token
         return token
+
+
+def _youtube_tags_length(tags: list[object]) -> int:
+    values = [str(tag) for tag in tags]
+    separators = max(0, len(values) - 1)
+    quoted_spaces = sum(2 for value in values if " " in value)
+    return sum(len(value) for value in values) + separators + quoted_spaces

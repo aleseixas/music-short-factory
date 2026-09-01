@@ -33,6 +33,12 @@
     "music_file": "",
     "music_volume": 0.06,
     "music_fade_out_seconds": 0.35,
+    "background_music_fade_in_seconds": 0.75,
+    "background_music_fade_out_seconds": 1.25,
+    "background_music_ducking_threshold": 0.02,
+    "background_music_ducking_ratio": 8.0,
+    "background_music_ducking_attack_ms": 20.0,
+    "background_music_ducking_release_ms": 350.0,
     "limiter": 0.95,
     "sample_rate": 48000,
     "bitrate": "192k"

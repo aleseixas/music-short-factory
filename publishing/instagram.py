@@ -14,7 +14,7 @@ from cloudinary import uploader as cloudinary_uploader
 import requests
 
 from .base import ApiError, PublishContext, PublishResult, Publisher, PublishingError
-from .metadata import render_platform_text
+from .metadata import PLATFORM_TEXT_LIMITS, platform_text_length, render_platform_text
 
 
 class VideoHost(Protocol):
@@ -379,6 +379,12 @@ class InstagramPublisher(Publisher):
         caption = str(context.metadata.get("caption", "")).strip()
         if not caption:
             raise PublishingError("InstagramPublisher: caption nao pode ficar vazia.")
+        rendered = render_platform_text({"instagram": context.metadata}, "instagram")
+        text_limit = PLATFORM_TEXT_LIMITS["instagram"]
+        if platform_text_length(str(rendered.get("caption", "")), "instagram") > text_limit:
+            raise PublishingError(
+                f"InstagramPublisher: caption final excede {text_limit} unidades UTF-16."
+            )
         if require_credentials:
             missing = [
                 key

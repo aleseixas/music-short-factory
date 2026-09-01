@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from copy import deepcopy
+from collections.abc import Sequence
 from dataclasses import dataclass
 import json
 from pathlib import Path
@@ -10,6 +11,10 @@ from typing import Any, Mapping
 
 SCHEMA_VERSION = 1
 PLATFORMS = ("youtube", "instagram", "tiktok")
+HASHTAG_RECOMMENDATIONS = {"youtube": 5, "instagram": 8, "tiktok": 5}
+PLATFORM_TEXT_LIMITS = {"youtube": 5000, "instagram": 2200, "tiktok": 2200}
+YOUTUBE_TITLE_LIMIT = 100
+YOUTUBE_TAGS_LIMIT = 500
 PRIVACY_LEVELS = {
     "PUBLIC_TO_EVERYONE",
     "MUTUAL_FOLLOW_FRIENDS",
@@ -40,10 +45,13 @@ class PreparedPost:
     previews: Mapping[str, Mapping[str, Any]]
 
 
-def load_post(path: Path) -> PostMetadata:
+def load_post(
+    path: Path,
+    warning_platforms: Sequence[str] | None = None,
+) -> PostMetadata:
     data = _load_json(path)
     normalized = normalize_post(data)
-    validate_post(normalized, path)
+    validate_post(normalized, path, warning_platforms=warning_platforms)
     return PostMetadata(path=path, data=normalized)
 
 
@@ -70,8 +78,20 @@ def normalize_post(data: Mapping[str, Any]) -> dict[str, Any]:
     return normalized
 
 
-def validate_post(data: Mapping[str, Any], path: Path | None = None) -> None:
+def validate_post(
+    data: Mapping[str, Any],
+    path: Path | None = None,
+    *,
+    warning_platforms: Sequence[str] | None = None,
+) -> None:
     label = str(path or "post.json")
+    warning_scope = frozenset(PLATFORMS if warning_platforms is None else warning_platforms)
+    unknown_warning_platforms = warning_scope.difference(PLATFORMS)
+    if unknown_warning_platforms:
+        raise RuntimeError(
+            "Plataformas de warning desconhecidas: "
+            + ", ".join(sorted(unknown_warning_platforms))
+        )
     if data.get("schema_version") != SCHEMA_VERSION:
         raise RuntimeError(
             f"schema_version invalido em {label}: esperado {SCHEMA_VERSION}, "
@@ -80,9 +100,20 @@ def validate_post(data: Mapping[str, Any], path: Path | None = None) -> None:
     _validate_cover(data.get("cover"), label)
 
     youtube = _platform_object(data, "youtube", label)
-    _required_text(youtube, "title", "youtube", label, maximum=100)
-    _optional_text(youtube, "description", "youtube", label, maximum=5000)
-    _validate_hashtags(youtube, "youtube", label)
+    _required_text(youtube, "title", "youtube", label)
+    youtube_title = str(youtube["title"]).strip()
+    if "youtube" in warning_scope and len(youtube_title) > YOUTUBE_TITLE_LIMIT:
+        _editorial_warning(
+            f"youtube.title excede {YOUTUBE_TITLE_LIMIT} caracteres em {label}. "
+            "A publicacao no YouTube sera validada separadamente."
+        )
+    _optional_text(youtube, "description", "youtube", label)
+    _validate_hashtags(
+        youtube,
+        "youtube",
+        label,
+        warn_excess="youtube" in warning_scope,
+    )
     privacy = youtube.get("privacy_status", "private")
     if privacy not in {"private", "unlisted", "public"}:
         raise RuntimeError(
@@ -94,16 +125,26 @@ def validate_post(data: Mapping[str, Any], path: Path | None = None) -> None:
         raise RuntimeError(f"youtube.category_id precisa ser numerico em {label}.")
 
     instagram = _platform_object(data, "instagram", label)
-    _required_text(instagram, "caption", "instagram", label, maximum=2200)
-    _validate_hashtags(instagram, "instagram", label)
+    _required_text(instagram, "caption", "instagram", label)
+    _validate_hashtags(
+        instagram,
+        "instagram",
+        label,
+        warn_excess="instagram" in warning_scope,
+    )
     _optional_bool(instagram, "share_to_feed", "instagram", label)
     _optional_url(instagram, "video_url", "instagram", label)
     _optional_url(instagram, "cover_url", "instagram", label)
     _optional_nonnegative_int(instagram, "thumb_offset_ms", "instagram", label)
 
     tiktok = _platform_object(data, "tiktok", label)
-    _required_text(tiktok, "caption", "tiktok", label, maximum=2200)
-    _validate_hashtags(tiktok, "tiktok", label)
+    _required_text(tiktok, "caption", "tiktok", label)
+    _validate_hashtags(
+        tiktok,
+        "tiktok",
+        label,
+        warn_excess="tiktok" in warning_scope,
+    )
     privacy_level = tiktok.get("privacy_level", "SELF_ONLY")
     if privacy_level not in PRIVACY_LEVELS:
         raise RuntimeError(
@@ -123,13 +164,18 @@ def validate_post(data: Mapping[str, Any], path: Path | None = None) -> None:
         _optional_bool(tiktok, field, "tiktok", label)
 
     for platform in PLATFORMS:
+        if platform not in warning_scope:
+            continue
         rendered = render_platform_text(data, platform)
-        maximum = 5000 if platform == "youtube" else 2200
+        maximum = PLATFORM_TEXT_LIMITS[platform]
         measured = rendered.get("description") or rendered.get("caption") or ""
-        if _utf16_length(str(measured)) > maximum:
-            raise RuntimeError(
-                f"Texto final de {platform} excede {maximum} caracteres em {label} "
-                "depois de adicionar hashtags."
+        measured_length = platform_text_length(str(measured), platform)
+        if measured_length > maximum:
+            unit = "bytes UTF-8" if platform == "youtube" else "unidades UTF-16"
+            _editorial_warning(
+                f"Texto final de {platform} excede {maximum} {unit} em {label} "
+                "depois de adicionar hashtags. A publicacao nessa plataforma "
+                "sera validada separadamente."
             )
 
 
@@ -254,7 +300,7 @@ def prepare_episode_post(project_root: Path, episode: str) -> PreparedPost:
     merged = normalize_post(merged)
     validate_post(merged, post_path)
     _write_json_atomic(post_path, merged)
-    post = load_post(post_path)
+    post = PostMetadata(path=post_path, data=merged)
 
     from .cover import generate_cover
 
@@ -278,8 +324,11 @@ def _validate_cover(raw: Any, label: str) -> None:
     if not headline:
         raise RuntimeError(f"cover.headline nao pode ficar vazio em {label}.")
     if len(headline) > 42 or len(headline.split()) > 6:
-        raise RuntimeError(
-            f"cover.headline esta longo demais em {label}; use no maximo 42 caracteres e 6 palavras."
+        _editorial_warning(
+            f"cover.headline tem {len(headline)} caracteres e "
+            f"{len(headline.split())} palavras em {label}; a recomendacao editorial "
+            "e usar no maximo 42 caracteres e 6 palavras. O gerador tentara "
+            "ajustar a tipografia e continuara."
         )
     source = raw.get("source")
     if not isinstance(source, Mapping):
@@ -327,29 +376,41 @@ def _platform_object(data: Mapping[str, Any], platform: str, label: str) -> Mapp
 
 
 def _required_text(
-    data: Mapping[str, Any], field: str, platform: str, label: str, maximum: int
+    data: Mapping[str, Any],
+    field: str,
+    platform: str,
+    label: str,
 ) -> None:
     value = data.get(field)
     if not isinstance(value, str) or not value.strip():
         raise RuntimeError(f"{platform}.{field} nao pode ficar vazio em {label}.")
-    if _utf16_length(value.strip()) > maximum:
-        raise RuntimeError(f"{platform}.{field} excede {maximum} caracteres em {label}.")
 
 
 def _optional_text(
-    data: Mapping[str, Any], field: str, platform: str, label: str, maximum: int
+    data: Mapping[str, Any], field: str, platform: str, label: str
 ) -> None:
     value = data.get(field, "")
     if not isinstance(value, str):
         raise RuntimeError(f"{platform}.{field} precisa ser texto em {label}.")
-    if _utf16_length(value.strip()) > maximum:
-        raise RuntimeError(f"{platform}.{field} excede {maximum} caracteres em {label}.")
 
 
-def _validate_hashtags(data: Mapping[str, Any], platform: str, label: str) -> None:
+def _validate_hashtags(
+    data: Mapping[str, Any],
+    platform: str,
+    label: str,
+    *,
+    warn_excess: bool,
+) -> None:
     hashtags = data.get("hashtags", [])
     if not isinstance(hashtags, list):
         raise RuntimeError(f"{platform}.hashtags precisa ser uma lista em {label}.")
+    limit = HASHTAG_RECOMMENDATIONS[platform]
+    if warn_excess and len(hashtags) > limit:
+        _editorial_warning(
+            f"{platform}.hashtags tem {len(hashtags)} itens em {label}; "
+            f"a recomendacao editorial e usar no maximo {limit}. "
+            "As hashtags serao mantidas."
+        )
     seen: set[str] = set()
     for index, tag in enumerate(hashtags, start=1):
         if not isinstance(tag, str) or not tag or tag.startswith("#"):
@@ -365,6 +426,10 @@ def _validate_hashtags(data: Mapping[str, Any], platform: str, label: str) -> No
         if key in seen:
             raise RuntimeError(f"Hashtag duplicada em {platform}: {tag!r}.")
         seen.add(key)
+
+
+def _editorial_warning(message: str) -> None:
+    print(f"[metadata] aviso: {message}")
 
 
 def _optional_bool(data: Mapping[str, Any], field: str, platform: str, label: str) -> None:
@@ -437,8 +502,16 @@ def _truncate(value: str, maximum: int) -> str:
     return (shortened or value[: maximum - 1]).rstrip() + "…"
 
 
-def _utf16_length(value: str) -> int:
+def utf16_length(value: str) -> int:
     return len(value.encode("utf-16-le")) // 2
+
+
+def platform_text_length(value: str, platform: str) -> int:
+    if platform == "youtube":
+        return len(value.encode("utf-8"))
+    if platform in {"instagram", "tiktok"}:
+        return utf16_length(value)
+    raise RuntimeError(f"Plataforma desconhecida: {platform!r}.")
 
 
 def _load_json(path: Path) -> dict[str, Any]:
