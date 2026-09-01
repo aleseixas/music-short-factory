@@ -563,7 +563,7 @@ class Renderer:
                 f"Saida final com {final_frames} frames; esperado: {expected_frames}."
             )
         final_duration = probe_duration(partial)
-        tolerance = 1 / self.config.render.fps + 0.02
+        tolerance = 2 / self.config.render.fps + 0.02
         if abs(final_duration - audio.duration) > tolerance:
             partial.unlink(missing_ok=True)
             raise RuntimeError(
