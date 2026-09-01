@@ -37,6 +37,12 @@
     "uplifting_documentary": [
       "uplifting_documentary/discover-01.mp3",
       "uplifting_documentary/driving-ambition-01.mp3"
+    ],
+    "external_apt_monkeys_spinning_monkeys": [
+      {
+        "file": "external/openverse/monkeys-spinning-monkeys-kevin-macleod.mp3",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Monkeys_Spinning_Monkeys_%28ISRC_USUAN1400011%29.mp3"
+      }
     ]
   }
 }
