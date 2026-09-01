@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"energetic_hype","volume":0.09},
+  "sfx_cues": [
+    {"time_seconds":0.25,"type":"crowd_cheer","volume":0.24,"duration_seconds":1.1},
+    {"time_seconds":28.0,"type":"ding","volume":0.20,"duration_seconds":0.7},
+    {"time_seconds":58.0,"type":"applause","volume":0.18,"duration_seconds":1.2}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.0,"end_seconds":2.0,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":28.0,"end_seconds":30.0,"type":"slow_zoom_in","intensity":0.35},
+    {"start_seconds":58.0,"end_seconds":60.0,"type":"punch_zoom","intensity":0.38}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"shakira_burna_opening","motion":"push_in","transition_out":"cut","highlight":"UM GRITO MUNDIAL"},
+    {"id":"shot_title_meaning","segment":"title_meaning","asset":"stadium_celebration_video","source_start_seconds":2.0,"source_end_seconds":16.0,"motion":"hold","transition_out":"cut","highlight":"DAI = VAMOS"},
+    {"id":"shot_five_languages","segment":"five_languages","asset":"stadium_dance_video","source_start_seconds":1.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"crossfade","highlight":"5 LÍNGUAS"},
+    {"id":"shot_global_chant","segment":"global_chant","asset":"football_goal_video","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"cut","highlight":"UMA ARQUIBANCADA GLOBAL"},
+    {"id":"shot_children","segment":"children","asset":"shakira_opening","motion":"pan_left","transition_out":"cut","highlight":"SONHOS GRANDES DEMAIS?"},
+    {"id":"shot_lyrics","segment":"lyrics","asset":"stadium_celebration_video","source_start_seconds":18.0,"source_end_seconds":34.0,"motion":"hold","transition_out":"cut","highlight":"CAIR • INSISTIR • ACREDITAR"},
+    {"id":"shot_players","segment":"players","asset":"football_goal_video","source_start_seconds":16.0,"source_end_seconds":31.0,"motion":"hold","transition_out":"crossfade","highlight":"PERSISTÊNCIA ATÉ O TOPO"},
+    {"id":"shot_production","segment":"production","asset":"stadium_dance_video","source_start_seconds":10.0,"source_end_seconds":24.0,"motion":"hold","transition_out":"cut","highlight":"LATIN • AFROBEATS"},
+    {"id":"shot_burna_turn","segment":"burna_turn","asset":"burna_evolution_video","source_start_seconds":2.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"cut","highlight":"BURNA BOY"},
+    {"id":"shot_burna_choice","segment":"burna_choice","asset":"burna_evolution_video","source_start_seconds":16.0,"source_end_seconds":31.0,"motion":"hold","transition_out":"cut","highlight":"ELA QUERIA ELE NA FAIXA"},
+    {"id":"shot_voice","segment":"voice","asset":"burna_evolution_video","source_start_seconds":33.0,"source_end_seconds":48.0,"motion":"hold","transition_out":"crossfade","highlight":"A ENERGIA QUE FALTAVA"},
+    {"id":"shot_fund","segment":"fund","asset":"shakira_medellin","motion":"push_in","transition_out":"cut","highlight":"EDUCAÇÃO + FUTEBOL"},
+    {"id":"shot_connection","segment":"connection","asset":"shakira_opening","motion":"pull_out","transition_out":"cut","highlight":"A MENSAGEM VIRA AÇÃO"},
+    {"id":"shot_after_cup","segment":"after_cup","asset":"stadium_celebration_video","source_start_seconds":32.0,"source_end_seconds":47.0,"motion":"hold","transition_out":"crossfade","highlight":"AINDA Nº 1 DEPOIS DA COPA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"shakira_burna_opening","motion":"push_in","transition_out":"cut","highlight":"VAI DE NOVO"}
+  ]
+}

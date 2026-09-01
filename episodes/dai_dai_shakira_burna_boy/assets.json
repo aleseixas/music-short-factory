@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"shakira_burna_opening","file":"shakira_burna_opening.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Shakira%20and%20Burna%20Boy%20at%20the%20opening%20ceremony%20of%20the%202026%20World%20Cup.jpg","credit":"Omar David Sandoval Sida / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"shakira_opening","file":"shakira_opening.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Shakira%20at%20the%20opening%20ceremony%20of%20the%202026%20World%20Cup.jpg","credit":"Omar David Sandoval Sida / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"shakira_medellin","file":"shakira_medellin.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/SHARIKA%20MEDELLIN%2013%2004%202025%20%2879%29.jpg","credit":"J.ébey / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"burna_evolution_video","file":"burna_evolution.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/The%20Evolution%20of%20Burna%20Boy.webm","credit":"Warner Music New Zealand / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"football_goal_video","file":"football_goal.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Amateurfu%C3%9Fball%20Torschuss%20von%20oben.webm","credit":"Maximilian Schönherr / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"stadium_celebration_video","file":"stadium_celebration.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Samsunspor-Ankara%20Ke%C3%A7i%C3%B6reng%C3%BCc%C3%BC%20ma%C3%A7%C4%B1%20%2823.4.23%29%20saha%20i%C5%9Fgali.webm","credit":"Wikimedia user 𐰇𐱅𐰚𐰤 / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"stadium_dance_video","file":"stadium_dance.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Cape%20Town%20Palestine%20Soccer%20Match%20Dance.webm","credit":"23Faerie / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

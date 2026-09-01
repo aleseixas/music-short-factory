@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Shakira & Burna Boy — Dai Dai: o refrão que diz 'vamos' em cinco línguas",
+  "slug": "dai_dai_shakira_burna_boy",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Dai Dai, de Shakira e Burna Boy, parece só um hino de Copa — mas é um grito mundial para quem quase desistiu."},
+    {"id":"title_meaning","text":"O título vem do italiano: “dai” funciona como “vamos” ou “vai em frente”."},
+    {"id":"five_languages","text":"E o refrão repete essa mesma ideia em cinco línguas."},
+    {"id":"global_chant","text":"Italiano, japonês, espanhol, francês e inglês viram uma arquibancada global dentro da música."},
+    {"id":"children","text":"Shakira explicou que a mensagem é para crianças que ouviram que seus sonhos eram grandes demais."},
+    {"id":"lyrics","text":"Por isso a letra fala de quedas, dor, insistência e de acreditar novamente."},
+    {"id":"players","text":"A faixa cita craques de várias gerações como exemplos de persistência até o topo."},
+    {"id":"production","text":"Na produção, pop latino, reggaeton e Afrobeats misturam continentes."},
+    {"id":"burna_turn","text":"E Burna Boy não entrou por acaso."},
+    {"id":"burna_choice","text":"Shakira contou que já queria trabalhar com ele e ficou obcecada em tê-lo na faixa."},
+    {"id":"voice","text":"Para ela, a voz e a energia do nigeriano eram exatamente o que faltava."},
+    {"id":"fund","text":"Há outra camada: os royalties de Shakira apoiam o fundo educacional FIFA Global Citizen."},
+    {"id":"connection","text":"Assim, a mensagem também se conecta ao destino financeiro da canção."},
+    {"id":"after_cup","text":"Mais de um mês após a final, Dai Dai ainda liderava os rankings globais da Billboard."},
+    {"id":"payoff","text":"Então o refrão não é só sobre futebol: é um “vai de novo” cantado pelo mundo inteiro."}
+  ]
+}

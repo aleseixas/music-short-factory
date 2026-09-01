@@ -1,0 +1,19 @@
+Pesquisa editorial e factual
+- Billboard, 31 ago. 2026 — Shakira & Burna Boy: Dai Dai segue nº 1 global — https://www.billboard.com/music/chart-beat/shakira-burna-boy-global-charts-sept-5-1236329009/
+- Billboard Brasil, 2 jul. 2026 — https://billboard.com.br/shakira-lidera-billboard-e-spotify-com-musica-da-copa-do-mundo/
+- Official Charts — https://www.officialcharts.com/songs/shakiraburna-boy-dai-dai/
+- Music Times, 16 jul. 2026 — título, refrão multilíngue, créditos e contexto — https://www.musictimes.com/articles/112320/20260716/what-does-dai-dai-mean-shakira-burna-boys-world-cup-song-explained.htm
+- PEOPLE interview repercutida pela AOL — mensagem para crianças, Burna Boy e fundo educacional — https://www.aol.com/articles/meaning-behind-2026-fifa-world-090000000.html
+
+Visuais/licenças
+- Shakira and Burna Boy at the opening ceremony of the 2026 World Cup.jpg — Omar David Sandoval Sida — CC BY-SA 4.0 — Wikimedia Commons.
+- Shakira at the opening ceremony of the 2026 World Cup.jpg — Omar David Sandoval Sida — CC BY-SA 4.0 — Wikimedia Commons.
+- SHARIKA MEDELLIN 13 04 2025 (79).jpg — J.ébey — CC0 1.0 — Wikimedia Commons.
+- The Evolution of Burna Boy.webm — Warner Music New Zealand — CC BY 3.0 — 52.7 s, 1920x1080 — Wikimedia Commons.
+- Amateurfußball Torschuss von oben.webm — Maximilian Schönherr — CC BY-SA 4.0 — 32 s, 3840x2160 — Wikimedia Commons.
+- Samsunspor-Ankara Keçiörengücü maçı (23.4.23) saha işgali.webm — 𐰇𐱅𐰚𐰤 — CC BY-SA 4.0 — 48.5 s, 1080x1920 — Wikimedia Commons.
+- Cape Town Palestine Soccer Match Dance.webm — 23Faerie — CC BY-SA 4.0 — 25.4 s, 1920x1080 — Wikimedia Commons.
+
+Áudio
+- Background music: profile `energetic_hype`, catálogo interno da repo.
+- SFX: `crowd_cheer`, `ding`, `applause`, catálogo interno da repo. Nenhum SFX externo incorporado.

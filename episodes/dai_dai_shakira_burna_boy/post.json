@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O REFRÃO FALA 5 LÍNGUAS","source":{"type":"asset","asset_id":"shakira_burna_opening"}},
+  "youtube": {
+    "title":"DAI DAI: o refrão que diz a mesma coisa em 5 línguas",
+    "description":"Dai Dai, de Shakira e Burna Boy, foi criada como um grito global de incentivo. O título italiano, o refrão em cinco línguas e a mistura de pop latino com Afrobeats reforçam uma mensagem sobre insistir mesmo depois das quedas.",
+    "hashtags":["Shakira","BurnaBoy","DaiDai","WorldCup","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Dai Dai parece só um hino de Copa, mas o refrão repete a mesma ideia de incentivo em cinco línguas. E Shakira explicou que a mensagem também mira crianças que ouviram que seus sonhos eram grandes demais.",
+    "hashtags":["Shakira","BurnaBoy","DaiDai","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"O refrão de Dai Dai diz praticamente a mesma coisa em cinco línguas — e isso explica a ideia central do hit de Shakira e Burna Boy.",
+    "hashtags":["Shakira","BurnaBoy","DaiDai","HistoriaDaMusica"],
+    "privacy_level":"SELF_ONLY",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
