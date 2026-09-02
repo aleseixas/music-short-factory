@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_boston_stella_the_farmer","volume":0.07},
+  "sfx_cues": [
+    {"time_seconds":0.15,"type":"impact","volume":0.13},{"time_seconds":3.5,"type":"whoosh","volume":0.09},{"time_seconds":8.8,"type":"pop","volume":0.08},{"time_seconds":13.8,"type":"ding","volume":0.08},{"time_seconds":18.5,"type":"camera_shutter","volume":0.08},{"time_seconds":23.5,"type":"cinematic_piano","volume":0.07},{"time_seconds":28.5,"type":"whoosh","volume":0.09},{"time_seconds":33.5,"type":"record_scratch","volume":0.10},{"time_seconds":38.5,"type":"riser","volume":0.08},{"time_seconds":43.5,"type":"impact","volume":0.11},{"time_seconds":48.5,"type":"reverse_cymbal","volume":0.08},{"time_seconds":53.5,"type":"ding","volume":0.08},{"time_seconds":58.5,"type":"crowd_gasp","volume":0.07},{"time_seconds":64.0,"type":"crowd_cheer","volume":0.08},{"time_seconds":70.0,"type":"impact","volume":0.12}
+  ],
+  "visual_fx_cues": [{"start_seconds":0.10,"end_seconds":0.55,"type":"punch_zoom","intensity":0.55}],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.25,"text":"NASCEU ANTES\nDE UM ENCONTRO","accent_text":"ENCONTRO","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"piano","offset_seconds":0.12,"duration_seconds":1.10,"text":"O PIANO DIZIA\nBOSTON","accent_text":"BOSTON","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"tiktok","offset_seconds":0.12,"duration_seconds":1.00,"text":"POSTOU.\nEXPLODIU.","accent_text":"EXPLODIU","animation":"slide_up","position":"center","intensity":0.52},
+    {"segment":"similarity","offset_seconds":0.12,"duration_seconds":1.10,"text":"PARECIA\nSTICK SEASON?","accent_text":"STICK SEASON","animation":"fade_pop","position":"center","intensity":0.55},
+    {"segment":"credit","offset_seconds":0.12,"duration_seconds":1.10,"text":"NOAH GANHOU\nCRÉDITO","accent_text":"CRÉDITO","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"number_two","offset_seconds":0.12,"duration_seconds":1.10,"text":"#2 NA\nHOT 100","accent_text":"#2","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.20,"text":"DO PIANO\nPARA O TOPO","accent_text":"TOPO","animation":"fade_pop","position":"center","intensity":0.54}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"boston_crowd","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_nashville","segment":"nashville","asset":"country_guitar","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_meaning","segment":"meaning","asset":"stella_lefty","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_city","segment":"city","asset":"new_england_drone","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_piano","segment":"piano","asset":"piano_playing","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_unnoticed","segment":"unnoticed","asset":"stella_lefty","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_tiktok","segment":"tiktok","asset":"country_guitar","source_start_seconds":20,"source_end_seconds":32,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_similarity","segment":"similarity","asset":"noah_kahan","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_denial","segment":"denial","asset":"stella_lefty","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_contact","segment":"contact","asset":"noah_kahan","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_credit","segment":"credit","asset":"country_guitar","source_start_seconds":40,"source_end_seconds":52,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_survived","segment":"survived","asset":"boston_crowd","source_start_seconds":25,"source_end_seconds":37,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_number_two","segment":"number_two","asset":"new_england_drone","source_start_seconds":40,"source_end_seconds":52,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_payoff","segment":"payoff","asset":"stella_lefty","motion":"push_in","transition_out":"cut"}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"BOSTON GANHOU UM COAUTOR INESPERADO","source":{"type":"asset","asset_id":"stella_lefty"}},
+  "youtube": {
+    "title":"BOSTON: por que Noah Kahan ganhou crédito no hit de Stella Lefty?",
+    "description":"Boston nasceu em Nashville, viralizou e depois ganhou Noah Kahan nos créditos após comparações com Stick Season. A faixa chegou ao nº 2 da Billboard Hot 100.\n\nBackground: “The Farmer” — Infraction - No Copyright Music (CC BY 3.0, Wikimedia Commons). Visuais: DaTechGuyBlog (CC BY 3.0), Isak Zvegelj (CC BY 3.0), Cecygdl (CC BY-SA 4.0), Jules Verne Times Two (CC BY-SA 4.0), Antrikshy (CC BY 4.0), u/no_thoughts_kurapika (CC BY 4.0), via Wikimedia Commons.",
+    "hashtags":["StellaLefty","Boston","NoahKahan","StickSeason","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Boston, de Stella Lefty, nasceu quase por acaso e acabou envolvendo Noah Kahan nos créditos. A história ficou ainda maior quando o hit chegou ao nº 2 da Hot 100.\n\nBackground: “The Farmer” — Infraction (CC BY 3.0). Visuais via Wikimedia Commons, com créditos em sources.txt.",
+    "hashtags":["StellaLefty","Boston","NoahKahan","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Boston nasceu antes de um encontro — e depois Noah Kahan acabou nos créditos. Entenda a história do hit de Stella Lefty.",
+    "hashtags":["StellaLefty","Boston","NoahKahan","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

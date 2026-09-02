@@ -1,0 +1,23 @@
+PESQUISA EDITORIAL
+- Billboard Hot 100, chart de 5 set. 2026: Boston — Stella Lefty em #2. https://www.billboard.com/charts/hot-100/
+- Boston Globe, 3 jun. 2026: origem em Nashville; refrão escrito enquanto esperava um novo interesse amoroso; Boston estava na cabeça por amiga/show; piano tinha “Boston” escrito; versos vieram uma semana depois. https://www.bostonglobe.com/2026/06/03/arts/stella-lefty-boston-billboard-hot-100/
+- People, 23 ago. 2026, resumindo entrevista da Vanity Fair: música sobre Vincent Mason; viralização; contato da equipe de Noah Kahan; crédito concedido para evitar conflito. https://people.com/stella-lefty-reveals-why-she-gave-noah-kahan-retroactive-writing-credit-for-boston-12066661
+- NME, 26 ago. 2026: Stella disse não estar pensando em Noah Kahan; representantes apontaram similaridade; Kahan recebeu crédito; Boston chegou ao #2. https://www.nme.com/news/music/stella-lefty-explains-noah-kahan-songwriting-credit-on-boston-and-stick-season-interpolation-3964865
+
+VISUAIS
+- Walking through the crowd in Boston 8 19 17.webm — DaTechGuyBlog — CC BY 3.0 — 105s, 1280x720. https://commons.wikimedia.org/wiki/File:Walking_through_the_crowd_in_Boston_8_19_17.webm
+- Ljubljana Street Country Guitar Performance.webm — Isak Zvegelj — CC BY 3.0 — 113.949s, 1920x1080. https://commons.wikimedia.org/wiki/File:Ljubljana_Street_Country_Guitar_Performance.webm
+- VideoCervantino2015 23.webm — Cecygdl — CC BY-SA 4.0 — 14.538s, 1920x1080. https://commons.wikimedia.org/wiki/File:VideoCervantino2015_23.webm
+- Drone video of New England, US.webm — Jules Verne Times Two — CC BY-SA 4.0 — 234.168s, 3840x2160. https://commons.wikimedia.org/wiki/File:Drone_video_of_New_England,_US.webm
+- Stella Lefty (Seattle, May 2026).jpg — Antrikshy — CC BY 4.0 — 863x1285. https://commons.wikimedia.org/wiki/File:Stella_Lefty_(Seattle,_May_2026).jpg
+- Noah Kahan 2024 01.jpg — u/no_thoughts_kurapika — CC BY 4.0 — 1080x1920. https://commons.wikimedia.org/wiki/File:Noah_Kahan_2024_01.jpg
+- Imagens são fotografias reais; IA=0.
+
+BACKGROUND MUSIC — BUSCA EXTERNA
+Variações pesquisadas: upbeat acoustic folk instrumental; acoustic folk/country guitar; CC acoustic folk background.
+Candidatas avaliadas incluíram Warm Sunset (MusicLFiles), One Warm Day (Lowtone Music) e The Farmer (Infraction).
+Escolhida: “The Farmer (Acoustic Folk Instrumental)” — Infraction - No Copyright Music — CC BY 3.0 no Wikimedia Commons; 2m31s, Opus; acústico folk com guitarras, bateria e bells. URL direta: https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus
+Fonte: https://commons.wikimedia.org/wiki/File:Infraction_-_The_Farmer_(Acoustic_Folk_Instrumental).opus
+
+SFX
+Foram pesquisados externamente transport/train chime CC0 e acoustic guitar CC0 no Freesound. Exemplos: Sadiquecat “D# and F chime” (CC0) e deadrobotmusic guitar loops (CC0). As páginas exigiam login e não expuseram URL direta cdn.freesound.org validada nesta execução; fallback para 15 cues do catálogo local para manter compatibilidade e ritmo.

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"boston_crowd","file":"boston_crowd.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking%20through%20the%20crowd%20in%20Boston%208%2019%2017.webm","credit":"DaTechGuyBlog / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"country_guitar","file":"ljubljana_country_guitar.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ljubljana%20Street%20Country%20Guitar%20Performance.webm","credit":"Isak Zvegelj / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"piano_playing","file":"cervantino_piano.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/VideoCervantino2015%2023.webm","credit":"Cecygdl / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"new_england_drone","file":"new_england_drone.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Drone%20video%20of%20New%20England%2C%20US.webm","credit":"Jules Verne Times Two / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"stella_lefty","file":"stella_lefty_seattle.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Stella%20Lefty%20%28Seattle%2C%20May%202026%29.jpg","credit":"Antrikshy / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"noah_kahan","file":"noah_kahan_2024.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Noah%20Kahan%202024%2001.jpg","credit":"u/no_thoughts_kurapika / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.38}}
+  ]
+}

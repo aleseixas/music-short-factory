@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Stella Lefty — Boston: o hit que ganhou um coautor inesperado",
+  "slug": "boston_stella_lefty",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Boston, de Stella Lefty, virou um fenômeno — e começou minutos antes de um encontro."},
+    {"id":"nashville","text":"Stella estava em Nashville, esperando Vincent Mason buscá-la, quando sentou ao piano e escreveu o refrão."},
+    {"id":"meaning","text":"A ideia: duas pessoas se apaixonando rápido demais, talvez pulando etapas."},
+    {"id":"city","text":"Boston entrou porque a cidade estava na cabeça dela: uma amiga era de lá e uma apresentação se aproximava."},
+    {"id":"piano","text":"A coincidência é perfeita: o piano onde ela começou a música tinha “Boston” escrito na lateral."},
+    {"id":"unnoticed","text":"Ela nem percebeu isso enquanto compunha."},
+    {"id":"tiktok","text":"Stella postou o refrão; no dia seguinte, o vídeo já tinha ganhado tração."},
+    {"id":"similarity","text":"Só que ouvintes notaram outra coisa: a melodia lembrava Stick Season, de Noah Kahan."},
+    {"id":"denial","text":"Stella diz que não estava pensando em Noah quando escreveu."},
+    {"id":"contact","text":"Mesmo assim, representantes dele procuraram sua equipe dizendo que as músicas soavam parecidas."},
+    {"id":"credit","text":"Para evitar conflito, Noah recebeu crédito de compositor antes do lançamento oficial."},
+    {"id":"survived","text":"A história não matou o hit."},
+    {"id":"number_two","text":"Boston continuou crescendo até chegar ao número dois da Billboard Hot 100."},
+    {"id":"payoff","text":"E o detalhe fecha o círculo: uma música sobre se jogar cedo demais num romance também explodiu cedo demais na carreira de Stella — de um piano e um TikTok para o topo das paradas."}
+  ]
+}
