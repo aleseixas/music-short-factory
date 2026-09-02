@@ -563,12 +563,13 @@ class Renderer:
                 f"Saida final com {final_frames} frames; esperado: {expected_frames}."
             )
         final_duration = probe_duration(partial)
+        expected_duration = expected_frames / self.config.render.fps
         tolerance = 2 / self.config.render.fps + 0.02
-        if abs(final_duration - audio.duration) > tolerance:
+        if abs(final_duration - expected_duration) > tolerance:
             partial.unlink(missing_ok=True)
             raise RuntimeError(
                 f"Duracao final invalida: {final_duration:.3f}s; "
-                f"audio: {audio.duration:.3f}s."
+                f"video esperado: {expected_duration:.3f}s."
             )
         partial.replace(output)
         return output
