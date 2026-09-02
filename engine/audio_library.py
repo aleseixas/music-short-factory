@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import unquote, urljoin, urlparse
+
+import requests
 
 from .media_cache import download_to_cache
 
@@ -17,14 +20,22 @@ SUPPORTED_AUDIO_SUFFIXES = {
     ".wav",
 }
 OPENVERSE_EXTERNAL_PREFIX = "external/openverse/"
+MANUAL_EXTERNAL_PREFIX = "external/manual/"
 OPENVERSE_AUDIO_DOWNLOAD_HOSTS = frozenset(
     {
         "cdn.freesound.org",
         "upload.wikimedia.org",
     }
 )
+MYINSTANTS_HOSTS = frozenset(
+    {
+        "myinstants.com",
+        "www.myinstants.com",
+    }
+)
 MAX_EXTERNAL_MUSIC_BYTES = 100 * 1024 * 1024
 MAX_EXTERNAL_SFX_BYTES = 25 * 1024 * 1024
+MYINSTANTS_PAGE_TIMEOUT_SECONDS = (10, 30)
 
 
 @dataclass(frozen=True)
@@ -32,6 +43,30 @@ class AudioCatalogEntry:
     local_path: Path
     relative_file: str
     url: str | None
+
+
+class _MyInstantsAudioLinkParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.audio_href: str | None = None
+
+    def handle_starttag(
+        self,
+        tag: str,
+        attrs: list[tuple[str, str | None]],
+    ) -> None:
+        if self.audio_href is not None:
+            return
+        values = dict(attrs)
+        for attribute in ("href", "src"):
+            raw_value = values.get(attribute)
+            if not isinstance(raw_value, str):
+                continue
+            value = raw_value.strip()
+            path = unquote(urlparse(value).path)
+            if "/media/sounds/" in path and Path(path).suffix.lower() == ".mp3":
+                self.audio_href = value
+                return
 
 
 def parse_audio_catalog_entry(
@@ -98,9 +133,12 @@ def materialize_audio_catalog_entry(
             f"Arquivo local de {kind} nao encontrado e sem URL em {label}: "
             f"{entry.relative_file}."
         )
+
+    download_url = entry.url
     download_options: dict[str, object] = {}
-    if entry.relative_file.casefold().startswith(OPENVERSE_EXTERNAL_PREFIX):
-        host = (urlparse(entry.url).hostname or "").casefold()
+    relative_file = entry.relative_file.casefold()
+    if relative_file.startswith(OPENVERSE_EXTERNAL_PREFIX):
+        host = (urlparse(download_url).hostname or "").casefold()
         if host not in OPENVERSE_AUDIO_DOWNLOAD_HOSTS:
             raise RuntimeError(
                 f"Host externo nao aprovado para {kind} em {label}."
@@ -114,9 +152,20 @@ def materialize_audio_catalog_entry(
                 else MAX_EXTERNAL_MUSIC_BYTES
             ),
         }
+    elif relative_file.startswith(MANUAL_EXTERNAL_PREFIX):
+        download_url = _resolve_manual_audio_url(download_url, label)
+        download_options = {
+            "require_https": True,
+            "max_bytes": (
+                MAX_EXTERNAL_SFX_BYTES
+                if kind.casefold() == "sfx"
+                else MAX_EXTERNAL_MUSIC_BYTES
+            ),
+        }
+
     return (
         download_to_cache(
-            entry.url,
+            download_url,
             cache_dir,
             entry.relative_file,
             f"{kind} {entry.relative_file!r}",
@@ -124,6 +173,75 @@ def materialize_audio_catalog_entry(
         ),
         True,
     )
+
+
+def _resolve_manual_audio_url(url: str, label: str) -> str:
+    value = url.strip()
+    parsed = urlparse(value)
+    host = (parsed.hostname or "").casefold()
+    if (
+        parsed.scheme.casefold() == "https"
+        and host in MYINSTANTS_HOSTS
+        and "/instant/" in parsed.path.casefold()
+    ):
+        return _resolve_myinstants_audio_url(value, label)
+    return value
+
+
+def _resolve_myinstants_audio_url(page_url: str, label: str) -> str:
+    try:
+        response = requests.get(
+            page_url,
+            headers={
+                "User-Agent": (
+                    "MusicShortFactory/8.1 "
+                    "(+https://github.com/aleseixas/music-short-factory; sfx-catalog)"
+                ),
+                "Accept": "text/html,application/xhtml+xml",
+            },
+            timeout=MYINSTANTS_PAGE_TIMEOUT_SECONDS,
+            allow_redirects=True,
+        )
+    except requests.RequestException as exc:
+        raise RuntimeError(
+            f"Falha ao resolver pagina MyInstants em {label}: {type(exc).__name__}."
+        ) from exc
+
+    try:
+        status = int(response.status_code)
+        if status >= 400:
+            raise RuntimeError(
+                f"Falha ao resolver pagina MyInstants em {label}: HTTP {status}."
+            )
+        final_url = str(getattr(response, "url", page_url) or page_url).strip()
+        final = urlparse(final_url)
+        if (
+            final.scheme.casefold() != "https"
+            or (final.hostname or "").casefold() not in MYINSTANTS_HOSTS
+        ):
+            raise RuntimeError(
+                f"Redirecionamento MyInstants invalido em {label}."
+            )
+
+        parser = _MyInstantsAudioLinkParser()
+        parser.feed(response.text)
+        if not parser.audio_href:
+            raise RuntimeError(
+                f"Pagina MyInstants sem link MP3 direto em {label}."
+            )
+        audio_url = urljoin(final_url, parser.audio_href)
+        parsed_audio = urlparse(audio_url)
+        if (
+            parsed_audio.scheme.casefold() != "https"
+            or (parsed_audio.hostname or "").casefold() not in MYINSTANTS_HOSTS
+            or Path(unquote(parsed_audio.path)).suffix.lower() != ".mp3"
+        ):
+            raise RuntimeError(
+                f"Link MP3 MyInstants invalido em {label}."
+            )
+        return audio_url
+    finally:
+        response.close()
 
 
 def resolve_local_audio_path(
