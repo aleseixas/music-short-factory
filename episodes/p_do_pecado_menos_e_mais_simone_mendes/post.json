@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O HIT QUE FOI RECUSADO",
+    "source": {"type":"asset","asset_id":"menos_mais"}
+  },
+  "youtube": {
+    "title": "P do Pecado: o hit que mudou de gênero e venceu uma rejeição",
+    "description": "P do Pecado, do Menos é Mais com Simone Mendes, parece ter nascido pronta para virar hit. Mas a história passa por uma traição real, uma primeira direção em reggaeton, uma rejeição e uma mudança de caminho até chegar ao pagode. Depois, a faixa virou um dos maiores fenômenos recentes do Brasil.\n\nBackground: “Dance (Upbeat Creative Future Pop)” — Infraction (CC BY 3.0, Wikimedia Commons). Visuais via Wikimedia Commons; créditos completos em sources.txt.",
+    "hashtags": ["PDoPecado","MenosEMais","SimoneMendes","Pagode","MusicaBrasileira","Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "P do Pecado parece um hit que nasceu pronto. Só que antes do Menos é Mais + Simone Mendes, a música passou por outro gênero, rejeição e uma mudança decisiva de caminho. O resultado virou um fenômeno nacional.\n\nCréditos e fontes completos em sources.txt.",
+    "hashtags": ["PDoPecado","MenosEMais","SimoneMendes","Pagode","MusicaBrasileira"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "P do Pecado começou em outro gênero e ainda foi recusada antes de virar um dos maiores hits do Brasil.",
+    "hashtags": ["PDoPecado","MenosEMais","SimoneMendes","Pagode","Musica"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
