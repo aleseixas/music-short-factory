@@ -17,12 +17,12 @@
   ],
   "visual_fx_cues": [
     {"start_seconds": 0.08, "end_seconds": 0.6, "type": "punch_zoom", "intensity": 0.58},
-    {"start_seconds": 18.0, "end_seconds": 19.35, "type": "slow_zoom_in", "intensity": 0.34},
-    {"start_seconds": 23.6, "end_seconds": 24.25, "type": "punch_zoom", "intensity": 0.44},
-    {"start_seconds": 37.1, "end_seconds": 38.45, "type": "slow_zoom_in", "intensity": 0.32},
-    {"start_seconds": 54.6, "end_seconds": 55.95, "type": "slow_zoom_in", "intensity": 0.34},
-    {"start_seconds": 61.4, "end_seconds": 62.05, "type": "punch_zoom", "intensity": 0.42},
-    {"start_seconds": 72.95, "end_seconds": 73.55, "type": "punch_zoom", "intensity": 0.5}
+    {"start_seconds": 20.2, "end_seconds": 21.5, "type": "slow_zoom_in", "intensity": 0.34},
+    {"start_seconds": 25.0, "end_seconds": 25.65, "type": "punch_zoom", "intensity": 0.44},
+    {"start_seconds": 38.2, "end_seconds": 39.5, "type": "slow_zoom_in", "intensity": 0.32},
+    {"start_seconds": 57.0, "end_seconds": 58.35, "type": "slow_zoom_in", "intensity": 0.34},
+    {"start_seconds": 64.0, "end_seconds": 64.65, "type": "punch_zoom", "intensity": 0.42},
+    {"start_seconds": 75.0, "end_seconds": 75.65, "type": "punch_zoom", "intensity": 0.5}
   ],
   "text_fx_cues": [
     {"segment": "hook", "offset_seconds": 0.15, "duration_seconds": 1.55, "text": "NÃO É SÓ\nSOBRE DINHEIRO", "accent_text": "DINHEIRO", "animation": "scale_bounce", "position": "center", "intensity": 0.6},
