@@ -1,17 +1,23 @@
 from __future__ import annotations
 
 import hashlib
+import inspect
 import json
 import math
 import re
+import tempfile
 import unicodedata
 from difflib import SequenceMatcher
 from pathlib import Path
 
 from .config import TTSSettings
-from .ffmpeg import probe_duration
-from .models import AudioResult, WordTiming
+from .delivery import DEFAULT_DELIVERY
+from .ffmpeg import probe_audio_duration, probe_duration, run_ffmpeg
+from .models import AudioResult, ScriptSegment, WordTiming
 from .tts import TTSProvider, built_in_providers
+
+
+SEGMENTED_TTS_CACHE_VERSION = 1
 
 
 async def resolve_audio(
@@ -20,8 +26,23 @@ async def resolve_audio(
     episode_dir: Path,
     cache_dir: Path,
     providers: dict[str, TTSProvider] | None = None,
+    *,
+    segments: tuple[ScriptSegment, ...] | None = None,
 ) -> AudioResult:
     """Resolve custom voice, configured provider and fallback, in that order."""
+
+    segment_plan = tuple(segments or ())
+    segmented = bool(segment_plan) and any(
+        segment.delivery is not None for segment in segment_plan
+    )
+    if segmented:
+        planned_narration = " ".join(
+            segment.text.strip() for segment in segment_plan
+        ).strip()
+        if planned_narration != narration.strip():
+            raise RuntimeError(
+                "Os segmentos enviados ao TTS nao correspondem a narracao completa."
+            )
 
     custom_audio = _resolve(episode_dir, settings.custom_audio)
     custom_timings = _resolve(episode_dir, settings.custom_timings)
@@ -31,6 +52,11 @@ async def resolve_audio(
         )
     if custom_audio.exists():
         if custom_timings.exists():
+            if segmented:
+                print(
+                    "[tts] delivery por segmento nao aplicado: "
+                    "o audio customizado tem prioridade."
+                )
             duration = probe_duration(custom_audio)
             words = load_timings(
                 custom_timings,
@@ -39,6 +65,11 @@ async def resolve_audio(
             )
             return AudioResult(custom_audio, duration, words, "custom", True)
         if settings.allow_estimated_custom_timings:
+            if segmented:
+                print(
+                    "[tts] delivery por segmento nao aplicado: "
+                    "o audio customizado tem prioridade."
+                )
             duration = probe_duration(custom_audio)
             print("[voz] custom_voice.mp3 sem sidecar; usando tempos estimados.")
             return AudioResult(
@@ -67,6 +98,18 @@ async def resolve_audio(
             failures.append(f"{provider_name}: provider nao registrado")
             continue
 
+        try:
+            # Keep provider-specific identity resolution inside the provider
+            # attempt so a broken primary still follows the configured chain.
+            provider_options = (
+                _provider_options(provider, segment_plan) if segmented else None
+            )
+        except Exception as exc:
+            failures.append(f"{provider_name}: {exc}")
+            if provider_name != chain[-1]:
+                print(f"[voz] provider {provider_name} falhou; tentando fallback.")
+            continue
+
         if settings.reuse_generated_audio and generated.exists():
             try:
                 duration = probe_duration(generated)
@@ -77,6 +120,7 @@ async def resolve_audio(
                     generated,
                     narration,
                     duration,
+                    provider_options=provider_options,
                 )
             except (OSError, RuntimeError) as exc:
                 print(f"[voz] cache de audio invalido; regenerando: {exc}")
@@ -99,20 +143,30 @@ async def resolve_audio(
 
         try:
             print(f"[voz] gerando narracao com provider {provider_name}...")
-            words = await provider.synthesize(narration, generated)
-            duration = probe_duration(generated)
-            words = _validate_timing_sequence(
-                tuple(words),
-                generated_timings,
-                narration,
-                duration,
-            )
+            if segmented:
+                words, duration = await _synthesize_segments(
+                    provider,
+                    segment_plan,
+                    generated,
+                    generated_timings,
+                    narration,
+                )
+            else:
+                words = await provider.synthesize(narration, generated)
+                duration = probe_duration(generated)
+                words = _validate_timing_sequence(
+                    tuple(words),
+                    generated_timings,
+                    narration,
+                    duration,
+                )
             _write_provider_timings(
                 generated_timings,
                 narration_hash,
                 words,
                 provider,
                 generated,
+                provider_options=provider_options,
             )
             return AudioResult(generated, duration, words, provider_name, True)
         except Exception as exc:
@@ -122,6 +176,178 @@ async def resolve_audio(
 
     details = "; ".join(failures)
     raise RuntimeError(f"Nenhum provider de TTS conseguiu gerar a narracao. {details}")
+
+
+async def _synthesize_segments(
+    provider: TTSProvider,
+    segments: tuple[ScriptSegment, ...],
+    output: Path,
+    timings_path: Path,
+    narration: str,
+) -> tuple[tuple[WordTiming, ...], float]:
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.unlink(missing_ok=True)
+    global_words: list[WordTiming] = []
+    offset = 0.0
+
+    with tempfile.TemporaryDirectory(
+        prefix=".tts-segments-",
+        dir=output.parent,
+    ) as temp_dir:
+        temp_root = Path(temp_dir)
+        audio_parts: list[Path] = []
+        for index, segment in enumerate(segments, start=1):
+            delivery = segment.effective_delivery
+            part = temp_root / f"{index:03d}.mp3"
+            print(f"[tts] segment={segment.id} delivery={delivery}")
+            local_words = await _provider_synthesize(
+                provider,
+                segment.text,
+                part,
+                delivery,
+            )
+            part_duration = probe_audio_duration(part)
+            local_words = _validate_timing_sequence(
+                tuple(local_words),
+                part,
+                segment.text,
+                part_duration,
+            )
+            global_words.extend(
+                WordTiming(
+                    word.text,
+                    word.start + offset,
+                    word.end + offset,
+                )
+                for word in local_words
+            )
+            offset += part_duration
+            audio_parts.append(part)
+
+        combined = temp_root / "narracao.mp3"
+        _concatenate_segment_audio(tuple(audio_parts), combined)
+        combined.replace(output)
+
+    duration = probe_audio_duration(output)
+    words = _validate_timing_sequence(
+        tuple(global_words),
+        timings_path,
+        narration,
+        duration,
+    )
+    return words, duration
+
+
+async def _provider_synthesize(
+    provider: TTSProvider,
+    text: str,
+    output: Path,
+    delivery: str,
+) -> tuple[WordTiming, ...]:
+    """Pass delivery to modern providers and adapt older implementations safely."""
+
+    try:
+        parameters = inspect.signature(provider.synthesize).parameters.values()
+    except (TypeError, ValueError):
+        parameters = ()
+    accepts_delivery = any(
+        (
+            parameter.name == "delivery"
+            and parameter.kind is not inspect.Parameter.POSITIONAL_ONLY
+        )
+        or parameter.kind is inspect.Parameter.VAR_KEYWORD
+        for parameter in parameters
+    )
+    if accepts_delivery:
+        return await provider.synthesize(text, output, delivery=delivery)
+    if delivery != DEFAULT_DELIVERY:
+        print(
+            f"[tts] provider={provider.name} nao traduz delivery={delivery}; "
+            "usando seus controles neutros."
+        )
+    return await provider.synthesize(text, output)
+
+
+def _concatenate_segment_audio(parts: tuple[Path, ...], output: Path) -> None:
+    if not parts:
+        raise RuntimeError("Nao ha segmentos de audio para concatenar.")
+    output.unlink(missing_ok=True)
+    arguments: list[object] = ["-y", "-hide_banner"]
+    for part in parts:
+        arguments.extend(("-i", part))
+    normalized: list[str] = []
+    filter_parts: list[str] = []
+    for index in range(len(parts)):
+        label = f"segment_{index}"
+        normalized.append(f"[{label}]")
+        filter_parts.append(
+            f"[{index}:a:0]"
+            "aformat=sample_fmts=fltp:sample_rates=24000:channel_layouts=mono,"
+            f"asetpts=PTS-STARTPTS[{label}]"
+        )
+    filter_parts.append(
+        "".join(normalized) + f"concat=n={len(parts)}:v=0:a=1[out]"
+    )
+    arguments.extend(
+        (
+            "-filter_complex",
+            ";".join(filter_parts),
+            "-map",
+            "[out]",
+            "-vn",
+            "-c:a",
+            "libmp3lame",
+            "-b:a",
+            "128k",
+            output,
+        )
+    )
+    run_ffmpeg(
+        arguments
+    )
+    if not output.is_file() or output.stat().st_size <= 0:
+        raise RuntimeError("FFmpeg nao produziu a narracao segmentada final.")
+
+
+def _provider_options(
+    provider: TTSProvider,
+    segments: tuple[ScriptSegment, ...],
+) -> object:
+    if not segments:
+        return provider.cache_identity
+    return {
+        "segmented_tts_version": SEGMENTED_TTS_CACHE_VERSION,
+        "base": provider.cache_identity,
+        "segments": [
+            {
+                "id": segment.id,
+                "text_sha256": _narration_hash(segment.text),
+                "delivery": segment.effective_delivery,
+                "synthesis": _provider_synthesis_identity(
+                    provider,
+                    segment.effective_delivery,
+                ),
+            }
+            for segment in segments
+        ],
+    }
+
+
+def _provider_synthesis_identity(
+    provider: TTSProvider,
+    delivery: str,
+) -> object:
+    resolver = getattr(provider, "synthesis_identity", None)
+    if callable(resolver):
+        try:
+            return resolver(delivery)
+        except NotImplementedError:
+            pass
+    return {
+        "base": provider.cache_identity,
+        "delivery": delivery,
+        "delivery_applied": False,
+    }
 
 
 def validate_audio_duration(
@@ -315,6 +541,7 @@ def _load_provider_timings(
     audio_path: Path,
     expected_text: str,
     audio_duration: float,
+    provider_options: object | None = None,
 ) -> tuple[tuple[WordTiming, ...], bool]:
     if not path.exists():
         return (), False
@@ -325,11 +552,18 @@ def _load_provider_timings(
     if not isinstance(data, dict) or not bool(data.get("exact", False)):
         return (), False
 
+    expected_provider_options = (
+        provider.cache_identity if provider_options is None else provider_options
+    )
     provider_matches = (
         data.get("provider") == provider.name
-        and data.get("provider_options") == provider.cache_identity
+        and data.get("provider_options") == expected_provider_options
     )
-    if provider.name == "edge" and data.get("provider") is None:
+    if (
+        provider_options is None
+        and provider.name == "edge"
+        and data.get("provider") is None
+    ):
         provider_matches = (
             data.get("edge_voice") == provider.cache_identity.get("voice")
             and data.get("edge_rate") == provider.cache_identity.get("rate")
@@ -353,12 +587,15 @@ def _write_provider_timings(
     words: tuple[WordTiming, ...],
     provider: TTSProvider,
     audio_path: Path,
+    provider_options: object | None = None,
 ) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     data: dict[str, object] = {
         "narration_sha256": narration_hash,
         "provider": provider.name,
-        "provider_options": provider.cache_identity,
+        "provider_options": (
+            provider.cache_identity if provider_options is None else provider_options
+        ),
         "audio_sha256": _file_hash(audio_path),
         "exact": True,
         "words": [
@@ -383,7 +620,16 @@ class _LegacyEdgeProvider:
     def cache_identity(self) -> dict[str, str]:
         return {"voice": self.voice, "rate": self.rate}
 
-    async def synthesize(self, text: str, output: Path) -> tuple[WordTiming, ...]:
+    def synthesis_identity(self, delivery: str = DEFAULT_DELIVERY) -> dict[str, str]:
+        return {**self.cache_identity, "delivery": delivery}
+
+    async def synthesize(
+        self,
+        text: str,
+        output: Path,
+        *,
+        delivery: str = DEFAULT_DELIVERY,
+    ) -> tuple[WordTiming, ...]:
         raise NotImplementedError
 
 

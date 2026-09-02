@@ -3,6 +3,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+from .delivery import DEFAULT_DELIVERY
+
 
 MOTIONS = {"push_in", "pull_out", "pan_left", "pan_right", "hold"}
 VISUAL_FX_TYPES = {
@@ -49,6 +51,13 @@ class AssetSpec:
 class ScriptSegment:
     id: str
     text: str
+    # None preserves the monolithic legacy TTS path. Its effective editorial
+    # meaning is still neutral.
+    delivery: str | None = None
+
+    @property
+    def effective_delivery(self) -> str:
+        return self.delivery or DEFAULT_DELIVERY
 
 
 @dataclass(frozen=True)
@@ -61,6 +70,10 @@ class Story:
     @property
     def narration(self) -> str:
         return " ".join(segment.text.strip() for segment in self.segments).strip()
+
+    @property
+    def uses_segment_delivery(self) -> bool:
+        return any(segment.delivery is not None for segment in self.segments)
 
 
 @dataclass(frozen=True)

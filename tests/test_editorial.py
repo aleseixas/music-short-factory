@@ -396,7 +396,6 @@ class EditorialDirectionTests(unittest.TestCase):
 
         outside = (
             _episode(sfx_cues=(SfxCue(75, "impact", 0.2),)),
-            _episode(visual_fx_cues=(VisualFxCue(74.5, 75.5, "pan_left"),)),
             _episode(text_fx_cues=(TextFxCue(74.5, 75.5, "FIM", "fade_pop"),)),
             _episode(overlay_cues=(OverlayCue(74.5, 75.5, "overlay_1", "fade_in", "center"),)),
         )
@@ -404,6 +403,13 @@ class EditorialDirectionTests(unittest.TestCase):
             with self.subTest(cues=episode):
                 with self.assertRaisesRegex(RuntimeError, "dentro do video"):
                     validate_editorial_direction(episode, plain_plan, CATALOGS)
+
+        # The current renderer intentionally clips a visual FX that starts in
+        # the video and extends beyond its tail (commit 95089dd).
+        tail_visual = _episode(
+            visual_fx_cues=(VisualFxCue(74.5, 75.5, "pan_left"),)
+        )
+        validate_editorial_direction(tail_visual, plain_plan, CATALOGS)
 
     def test_invalid_accent_and_multiple_visual_fx_in_one_shot_are_errors(self):
         invalid_accent = _episode(

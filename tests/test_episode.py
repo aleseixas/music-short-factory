@@ -110,9 +110,13 @@ class EpisodeTests(unittest.TestCase):
             timeline = json.loads(
                 (destination / "timeline.json").read_text(encoding="utf-8")
             )
+            story = json.loads(
+                (destination / "story.json").read_text(encoding="utf-8")
+            )
 
         self.assertEqual(episode.story.slug, "my_eyes")
         self.assertEqual(episode.story.target_duration_seconds, 75)
+        self.assertEqual(story["segments"][0]["delivery"], "hook")
         self.assertEqual(episode.shots[0].asset_id, "main_image")
         self.assertIsNone(timeline["background_music"])
         self.assertEqual(timeline["sfx_cues"], [])

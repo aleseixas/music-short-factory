@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "a-ha — Take On Me: a demo que virou um clássico visual",
+  "slug": "take_on_me_a_ha",
+  "target_duration_seconds": 78,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Take On Me, do a-ha, não nasceu como clássico: quase ficou presa numa demo que ninguém lembraria.",
+      "delivery": "hook"
+    },
+    {
+      "id": "bridges",
+      "text": "Em 1981, Paul Waaktaar e Magne Furuholmen esboçaram a canção no Bridges.",
+      "delivery": "curious"
+    },
+    {
+      "id": "lesson_one",
+      "text": "A primeira versão se chamava Lesson One e tinha outra letra, outro ritmo e pouca chance de rádio.",
+      "delivery": "curious"
+    },
+    {
+      "id": "rewrite",
+      "text": "Depois, o a-ha levou a música a Londres e reescreveu o arranjo com Alan Tarney.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "first_release",
+      "text": "O primeiro lançamento, em 1984, passou quase despercebido.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "second_chance",
+      "text": "Em vez de abandonar o refrão, a banda gravou tudo de novo e ganhou uma segunda oportunidade.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "video",
+      "text": "A virada veio com um clipe que parecia sair de uma história em quadrinhos.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "rotoscope",
+      "text": "O clipe mistura live action e rotoscopia: lápis, perseguição e romance dentro de um mundo desenhado.",
+      "delivery": "curious"
+    },
+    {
+      "id": "animators",
+      "text": "Michael Patterson e Candace Reckinger transformaram movimentos em traços, quadro a quadro.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "mtv",
+      "text": "A MTV colocou o vídeo em rotação, e o público descobriu uma imagem tão forte quanto o refrão.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "morten",
+      "text": "O agudo de Morten Harket virou assinatura; a emoção vinha do contraste entre fragilidade e explosão.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "number_one",
+      "text": "Em 1985, Take On Me chegou ao número um da Billboard Hot 100.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "insistence",
+      "text": "O sucesso nasceu de insistência, regravação e uma ideia visual arriscada.",
+      "delivery": "curious"
+    },
+    {
+      "id": "payoff",
+      "text": "Uma demo esquecida virou um clássico impossível de ignorar.",
+      "delivery": "payoff"
+    }
+  ]
+}

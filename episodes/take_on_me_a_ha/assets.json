@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "recording_studio",
+      "file": "recording_studio.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Mixing_desk_at_the_Hipposonic_Recording_Studio.jpg",
+      "credit": "Hipposonic Studios / Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "vinyl_record",
+      "file": "vinyl_record.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Vinyl_record_close_up.jpg",
+      "credit": "ProtoplasmaKid / Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "microphone",
+      "file": "microphone.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "CC BY; verify attribution on the source page",
+      "focus": {"x": 0.53, "y": 0.48}
+    },
+    {
+      "id": "cityscape",
+      "file": "cityscape.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Atlanta_cityscape.jpg",
+      "credit": "Paul Brennan / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "surveillance_camera",
+      "file": "surveillance_camera.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Surveillance_camera.jpg",
+      "credit": "Neslihan Turan / Wikimedia Commons",
+      "license": "CC0 1.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    }
+  ]
+}

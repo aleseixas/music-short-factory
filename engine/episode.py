@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 from .assets import load_asset_catalog
+from .delivery import DELIVERY_NAMES
 from .models import Episode, ScriptSegment, Story
 from .timeline import load_timeline
 from .utils import load_json, safe_child, validate_schema, validate_slug
@@ -32,8 +33,22 @@ def load_story(path: Path) -> Story:
             raise RuntimeError(f"ID de segmento ausente ou duplicado: {segment_id!r}")
         if not text:
             raise RuntimeError(f"O segmento {segment_id!r} nao tem texto.")
+        raw_delivery = raw.get("delivery")
+        delivery: str | None = None
+        if raw_delivery is not None:
+            if not isinstance(raw_delivery, str) or not raw_delivery.strip():
+                raise RuntimeError(
+                    f"O delivery do segmento {segment_id!r} precisa ser uma string valida."
+                )
+            delivery = raw_delivery.strip()
+            if delivery not in DELIVERY_NAMES:
+                supported = ", ".join(sorted(DELIVERY_NAMES))
+                raise RuntimeError(
+                    f"Delivery invalido no segmento {segment_id!r}: {delivery!r}. "
+                    f"Valores suportados: {supported}."
+                )
         seen.add(segment_id)
-        segments.append(ScriptSegment(id=segment_id, text=text))
+        segments.append(ScriptSegment(id=segment_id, text=text, delivery=delivery))
 
     title = str(data.get("title", "")).strip()
     slug = validate_slug(str(data.get("slug", "")), "slug")
@@ -122,7 +137,13 @@ def create_episode(project_root: Path, episodes_dir: str, name: str) -> Path:
         "title": "Novo video musical",
         "slug": episode_name,
         "target_duration_seconds": 75,
-        "segments": [{"id": "hook", "text": "Substitua pelo texto da narracao."}],
+        "segments": [
+            {
+                "id": "hook",
+                "text": "Substitua pelo texto da narracao.",
+                "delivery": "hook",
+            }
+        ],
     }
     timeline = {
         "schema_version": 1,

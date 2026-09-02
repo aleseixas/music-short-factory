@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "A DEMO QUE VIROU CLÁSSICO",
+    "source": {
+      "type": "asset",
+      "asset_id": "vinyl_record"
+    }
+  },
+  "youtube": {
+    "title": "Take On Me: a demo esquecida que virou um clássico visual",
+    "description": "Antes do clipe icônico, Take On Me quase passou despercebida. A história do a-ha mostra como regravação, insistência e uma ideia visual arriscada mudaram tudo.",
+    "hashtags": ["AHa", "TakeOnMe", "HistoriaDaMusica", "Rock", "Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Take On Me quase ficou esquecida. O a-ha regravou a música, apostou num clipe de quadrinhos e transformou uma demo em clássico.",
+    "hashtags": ["AHa", "TakeOnMe", "HistoriaDaMusica", "Rock", "Reels"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 850
+  },
+  "tiktok": {
+    "caption": "A demo esquecida que virou o clipe mais reconhecível do a-ha.",
+    "hashtags": ["AHa", "TakeOnMe", "MusicTok", "HistoriaDaMusica", "TikTokMusic"],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 850,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

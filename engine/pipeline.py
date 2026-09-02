@@ -132,6 +132,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         config.tts,
         episode.directory,
         audio_cache_dir,
+        segments=episode.story.segments,
     )
     duration_warning = validate_audio_duration(
         audio.duration,

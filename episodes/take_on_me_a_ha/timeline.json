@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "emotional_piano",
+    "volume": 0.09
+  },
+  "sfx_cues": [
+    {"time_seconds": 0.12, "type": "impact", "volume": 0.11, "duration_seconds": 0.75},
+    {"time_seconds": 6.2, "type": "camera_shutter", "volume": 0.05, "duration_seconds": 0.55},
+    {"time_seconds": 15.4, "type": "record_scratch", "volume": 0.09, "duration_seconds": 0.7},
+    {"time_seconds": 21.0, "type": "riser", "volume": 0.06, "duration_seconds": 1.1},
+    {"time_seconds": 29.4, "type": "whoosh", "volume": 0.06, "duration_seconds": 0.8},
+    {"time_seconds": 43.0, "type": "pop", "volume": 0.055, "duration_seconds": 0.20},
+    {"time_seconds": 55.3, "type": "impact", "volume": 0.08, "duration_seconds": 0.7},
+    {"time_seconds": 69.2, "type": "impact", "volume": 0.07, "duration_seconds": 0.75}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds": 0.10, "end_seconds": 0.62, "type": "punch_zoom", "intensity": 0.58},
+    {"start_seconds": 8.0, "end_seconds": 10.8, "type": "slow_zoom_in", "intensity": 0.30},
+    {"start_seconds": 17.0, "end_seconds": 17.55, "type": "punch_zoom", "intensity": 0.48},
+    {"start_seconds": 27.0, "end_seconds": 30.0, "type": "pan_right", "intensity": 0.34},
+    {"start_seconds": 39.5, "end_seconds": 42.0, "type": "slow_zoom_in", "intensity": 0.32},
+    {"start_seconds": 53.0, "end_seconds": 53.65, "type": "punch_zoom", "intensity": 0.50},
+    {"start_seconds": 66.0, "end_seconds": 68.8, "type": "slow_zoom_out", "intensity": 0.30}
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.16,
+      "duration_seconds": 1.55,
+      "text": "A DEMO\nESQUECIDA?",
+      "accent_text": "ESQUECIDA?",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.62
+    },
+    {
+      "segment": "lesson_one",
+      "offset_seconds": 0.20,
+      "duration_seconds": 1.45,
+      "text": "LESSON ONE",
+      "accent_text": "LESSON ONE",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.46
+    },
+    {
+      "segment": "first_release",
+      "offset_seconds": 0.18,
+      "duration_seconds": 1.35,
+      "text": "QUASE\nNINGUÉM OUVIU",
+      "accent_text": "NINGUÉM",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.50
+    },
+    {
+      "segment": "video",
+      "offset_seconds": 0.16,
+      "duration_seconds": 1.50,
+      "text": "UM CLIPE\nDE QUADRINHOS",
+      "accent_text": "QUADRINHOS",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.58
+    },
+    {
+      "segment": "rotoscope",
+      "offset_seconds": 0.20,
+      "duration_seconds": 1.45,
+      "text": "DESENHADO\nQUADRO A QUADRO",
+      "accent_text": "QUADRO A QUADRO",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.46
+    },
+    {
+      "segment": "mtv",
+      "offset_seconds": 0.18,
+      "duration_seconds": 1.45,
+      "text": "A MTV\nMUDOU TUDO",
+      "accent_text": "MUDOU TUDO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.54
+    },
+    {
+      "segment": "number_one",
+      "offset_seconds": 0.18,
+      "duration_seconds": 1.50,
+      "text": "Nº 1\nNA BILLBOARD",
+      "accent_text": "Nº 1",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.60
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.18,
+      "duration_seconds": 1.40,
+      "text": "UM CLÁSSICO\nIMPOSSÍVEL DE IGNORAR",
+      "accent_text": "CLÁSSICO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.58
+    }
+  ],
+  "overlay_cues": [],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"vinyl_record","motion":"push_in","transition_out":"cut","highlight":"TAKE ON ME QUASE SUMIU"},
+    {"id":"shot_bridges","segment":"bridges","asset":"recording_studio","motion":"pan_left","transition_out":"crossfade","highlight":"1981 • A PRIMEIRA IDEIA"},
+    {"id":"shot_lesson_one","segment":"lesson_one","asset":"microphone","motion":"push_in","transition_out":"cut","highlight":"ANTES: LESSON ONE"},
+    {"id":"shot_rewrite","segment":"rewrite","asset":"cityscape","motion":"pan_right","transition_out":"crossfade","highlight":"LONDRES • NOVO ARRANJO"},
+    {"id":"shot_first_release","segment":"first_release","asset":"vinyl_record","motion":"pull_out","transition_out":"cut","highlight":"1984: QUASE PASSOU BATIDO"},
+    {"id":"shot_second_chance","segment":"second_chance","asset":"recording_studio","motion":"push_in","transition_out":"crossfade","highlight":"UMA SEGUNDA CHANCE"},
+    {"id":"shot_video","segment":"video","asset":"surveillance_camera","motion":"push_in","transition_out":"cut","highlight":"O CLIPE PARECIA UMA HQ"},
+    {"id":"shot_rotoscope","segment":"rotoscope","asset":"microphone","motion":"pull_out","transition_out":"crossfade","highlight":"LIVE ACTION + ROTOSCOPIA"},
+    {"id":"shot_animators","segment":"animators","asset":"vinyl_record","motion":"pan_left","transition_out":"cut","highlight":"TRAÇO POR TRAÇO"},
+    {"id":"shot_mtv","segment":"mtv","asset":"cityscape","motion":"push_in","transition_out":"crossfade","highlight":"A MTV COLOCOU EM ROTAÇÃO"},
+    {"id":"shot_morten","segment":"morten","asset":"microphone","motion":"pull_out","transition_out":"cut","highlight":"O AGUDO DE MORTEN"},
+    {"id":"shot_number_one","segment":"number_one","asset":"vinyl_record","motion":"push_in","transition_out":"crossfade","highlight":"#1 NA BILLBOARD"},
+    {"id":"shot_insistence","segment":"insistence","asset":"recording_studio","motion":"pan_right","transition_out":"cut","highlight":"INSISTÊNCIA + RISCO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"vinyl_record","motion":"pull_out","transition_out":"cut","highlight":{"text":"A DEMO VIROU CLÁSSICO","start_seconds":0.1,"duration_seconds":1.9}}
+  ]
+}

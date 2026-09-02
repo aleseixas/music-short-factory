@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
 from typing import Protocol, runtime_checkable
 
 from .config import TTSSettings
+from .delivery import DEFAULT_DELIVERY, get_delivery_preset
 from .models import WordTiming
 
 
@@ -19,7 +21,15 @@ class TTSProvider(Protocol):
     @property
     def cache_identity(self) -> dict[str, str]: ...
 
-    async def synthesize(self, text: str, output: Path) -> tuple[WordTiming, ...]: ...
+    def synthesis_identity(self, delivery: str = DEFAULT_DELIVERY) -> dict[str, str]: ...
+
+    async def synthesize(
+        self,
+        text: str,
+        output: Path,
+        *,
+        delivery: str = DEFAULT_DELIVERY,
+    ) -> tuple[WordTiming, ...]: ...
 
 
 class EdgeTTSProvider:
@@ -33,7 +43,24 @@ class EdgeTTSProvider:
     def cache_identity(self) -> dict[str, str]:
         return {"voice": self.voice, "rate": self.rate}
 
-    async def synthesize(self, text: str, output: Path) -> tuple[WordTiming, ...]:
+    def synthesis_identity(self, delivery: str = DEFAULT_DELIVERY) -> dict[str, str]:
+        preset = get_delivery_preset(delivery)
+        base_rate = _parse_percentage(self.rate, "rate")
+        return {
+            "voice": self.voice,
+            "delivery": delivery,
+            "rate": _format_signed(base_rate + preset.rate_delta_percent, "%"),
+            "pitch": _format_signed(preset.pitch_delta_hz, "Hz"),
+            "volume": _format_signed(preset.volume_delta_percent, "%"),
+        }
+
+    async def synthesize(
+        self,
+        text: str,
+        output: Path,
+        *,
+        delivery: str = DEFAULT_DELIVERY,
+    ) -> tuple[WordTiming, ...]:
         try:
             import edge_tts
         except ModuleNotFoundError as exc:
@@ -46,10 +73,13 @@ class EdgeTTSProvider:
         partial = output.with_suffix(output.suffix + ".part")
         partial.unlink(missing_ok=True)
         words: list[WordTiming] = []
+        controls = self.synthesis_identity(delivery)
         communicate = edge_tts.Communicate(
             text,
             self.voice,
-            rate=self.rate,
+            rate=controls["rate"],
+            pitch=controls["pitch"],
+            volume=controls["volume"],
             boundary="WordBoundary",
         )
         try:
@@ -73,3 +103,17 @@ class EdgeTTSProvider:
 def built_in_providers(settings: TTSSettings) -> dict[str, TTSProvider]:
     edge = EdgeTTSProvider(settings.edge_voice, settings.edge_rate)
     return {edge.name: edge}
+
+
+def _parse_percentage(value: str, label: str) -> int:
+    match = re.fullmatch(r"([+-])(\d+)%", value.strip())
+    if not match:
+        raise RuntimeError(
+            f"Parametro {label} invalido para Edge TTS: use o formato '+6%' ou '-4%'."
+        )
+    amount = int(match.group(2))
+    return amount if match.group(1) == "+" else -amount
+
+
+def _format_signed(value: int, suffix: str) -> str:
+    return f"{value:+d}{suffix}"
