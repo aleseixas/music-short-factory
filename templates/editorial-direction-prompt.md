@@ -60,10 +60,16 @@ Siga exatamente esta ordem:
    web; usar o catálogo local como fallback documentado, não como escolha por
    conveniência;
 7. escolher um profile real de background music, ou usar `null`;
-8. gerar aproximadamente 15 SFX, somente com types reais, distribuídos por hook,
-   transições, reveals, estatísticas, entradas de texto e payoff; quando usar
-   `source_start_seconds` ou `duration_seconds`, manter o recorte dentro da
-   duração real do arquivo;
+8. gerar SFX somente quando reforçarem um evento audiovisual concreto. Sempre que
+   possível, sincronize o início do SFX com troca de shot/corte, transição,
+   punch zoom, entrada de kinetic text, overlay ou outra mudança visual
+   perceptível. Não existe meta mínima de SFX e muitos shots podem ficar sem
+   efeito. Antes de adicionar uma cue, pergunte: “o que acontece visualmente
+   exatamente neste instante?”. Se a resposta for “nada relevante”, normalmente
+   omita o SFX. Exceções como risers ou acentos puramente narrativos são válidas
+   apenas quando houver motivo editorial claro. Use somente types reais; quando
+   usar `source_start_seconds` ou `duration_seconds`, mantenha o recorte dentro
+   da duração real do arquivo;
 9. gerar visual FX somente com tipos suportados;
 10. gerar kinetic text curto, com `accent_text` válido; quando ele acompanhar um
    segmento, usar `segment` + `offset_seconds` + `duration_seconds` para ancorar
@@ -79,15 +85,17 @@ mesmo momento devem usar timestamps próximos. Não aplique todas as camadas em
 todo beat. Preserve trechos limpos, varie intensidade e reserve punch zoom,
 impact e scale bounce para momentos que mereçam ênfase.
 
-Para 60–90 segundos, mire aproximadamente 15 SFX (faixa editorial 12–18), 6–10
-visual FX, 5–9 text FX, 2–5 overlays e 2–4 punch zoom. O warning de quantidade de
-SFX começa somente acima de 25, em qualquer duração; warnings de cluster e
-repetição continuam úteis.
+Para 60–90 segundos, não use quantidade-alvo de SFX: deixe a quantidade emergir
+dos eventos visuais e narrativos realmente importantes. O warning de quantidade
+de SFX começa somente acima de 25, em qualquer duração, mas esse número é apenas
+um alerta de excesso e nunca uma meta. Como referência para as demais camadas,
+use 6–10 visual FX, 5–9 text FX, 2–5 overlays e 2–4 punch zoom.
 Busque ritmo de mini-documentário musical nativo de TikTok/Reels/Shorts, com
-microacentos a cada 4–6 segundos em média, maior densidade no hook e variação no
-corpo. Não transforme essa média em grade automática nem cubra toda frase com
-efeito. Kinetic text deve ter preferencialmente 2–6 palavras ou uma estatística
-curta. Não duplique o mesmo texto em highlight e text FX no mesmo momento.
+mudanças visuais e editoriais frequentes, maior densidade no hook e variação no
+corpo. Não transforme retenção em grade automática nem use SFX para preencher
+intervalos. Kinetic text deve ter preferencialmente 2–6 palavras ou uma
+estatística curta. Não duplique o mesmo texto em highlight e text FX no mesmo
+momento.
 
 Nunca invente profile, type ou asset. Não use um overlay sem arquivo local PNG,
 JPG/JPEG ou WEBP. Respeite intervalos semiabertos, não sobreponha cues da mesma
