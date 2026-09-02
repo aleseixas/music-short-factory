@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O HIT DE PISTA QUE É SOBRE SENTIR FALTA",
+    "source": {"type":"asset","asset_id":"club_dancing_image"}
+  },
+  "youtube": {
+    "title": "BbY WOW: por que esse hit dançante é, na verdade, sobre saudade?",
+    "description": "BbY WOW, de Karol G, Judeline e rusowsky, nasceu de uma ideia contraditória: criar uma música para a pista sem esconder a dor de pensar em alguém que não está ali. Karol G contou como a primeira versão virou uma colaboração — e a faixa terminou no #1 global do Spotify e no top 10 do Billboard Global 200.\n\nBackground: “3 am West End” — statusq (CC0, Wikimedia Commons/FreePD). Visuais: Agencia LUSA (CC BY 3.0), ProtoplasmaKid (CC BY-SA 4.0), Ieruca (CC BY 4.0), Location Kenya (CC BY 3.0) e JasonParis (CC BY 2.0), via Wikimedia Commons.",
+    "hashtags": ["KarolG","BbYWow","Judeline","Rusowsky","HistoriaDaMusica","Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "BbY WOW foi pensada para uma contradição: estar na pista, dançar e ainda sentir falta de alguém. A primeira versão era só de Karol G; depois vieram Judeline e rusowsky — e a faixa chegou ao #1 global do Spotify.\n\nBackground: “3 am West End” — statusq (CC0). Visuais via Wikimedia Commons; créditos completos em sources.txt.",
+    "hashtags": ["KarolG","BbYWow","Judeline","Rusowsky","Musica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "BbY WOW parece só uma música de pista. A ideia por trás dela é bem mais triste.",
+    "hashtags": ["KarolG","BbYWow","Judeline","Rusowsky","Musica"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
