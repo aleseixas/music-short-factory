@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_p_do_pecado_dance","volume":0.055},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.10,"duration_seconds":0.6},
+    {"time_seconds":10.5,"type":"whoosh_fast","volume":0.07,"duration_seconds":0.45},
+    {"time_seconds":17.8,"type":"record_scratch","volume":0.09,"duration_seconds":0.55},
+    {"time_seconds":27.5,"type":"ding","volume":0.065,"duration_seconds":0.45},
+    {"time_seconds":36.5,"type":"whoosh_transition","volume":0.07,"duration_seconds":0.5},
+    {"time_seconds":49.0,"type":"crowd_cheer","volume":0.06,"duration_seconds":0.75},
+    {"time_seconds":58.0,"type":"riser_build_up","volume":0.06,"duration_seconds":0.9},
+    {"time_seconds":66.0,"type":"impact","volume":0.09,"duration_seconds":0.6}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.56},
+    {"start_seconds":17.7,"end_seconds":18.35,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":27.4,"end_seconds":28.2,"type":"slow_zoom_in","intensity":0.32},
+    {"start_seconds":48.9,"end_seconds":49.65,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":65.9,"end_seconds":66.55,"type":"punch_zoom","intensity":0.48}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.15,"duration_seconds":1.45,"text":"NÃO NASCEU\nCOMO PAGODE","accent_text":"PAGODE","animation":"scale_bounce","position":"center","intensity":0.60},
+    {"segment":"rejection","offset_seconds":0.15,"duration_seconds":1.20,"text":"FOI\nRECUSADA","accent_text":"RECUSADA","animation":"fade_pop","position":"center","intensity":0.56},
+    {"segment":"menos","offset_seconds":0.12,"duration_seconds":1.25,"text":"A VIRADA:\nMENOS É MAIS","accent_text":"MENOS É MAIS","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"record","offset_seconds":0.15,"duration_seconds":1.45,"text":"105 DIAS\nNO TOPO","accent_text":"105 DIAS","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"longevity","offset_seconds":0.14,"duration_seconds":1.35,"text":"AINDA NO CHART\nEM 2026","accent_text":"2026","animation":"slide_up","position":"center","intensity":0.54},
+    {"segment":"payoff","offset_seconds":0.15,"duration_seconds":1.45,"text":"PRECISOU\nMUDAR TUDO","accent_text":"MUDAR TUDO","animation":"scale_bounce","position":"center","intensity":0.60}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"menos_mais","motion":"push_in","transition_out":"cut","highlight":"P DO PECADO • MENOS É MAIS + SIMONE"},
+    {"id":"shot_real_story","segment":"real_story","asset":"street_traffic","source_start_seconds":0.0,"source_end_seconds":10.0,"motion":"hold","transition_out":"crossfade","highlight":"INSPIRADA EM UMA HISTÓRIA REAL"},
+    {"id":"shot_first_version","segment":"first_version","asset":"menos_mais","motion":"pan_right","transition_out":"cut","highlight":"PRIMEIRO: REGGAETON"},
+    {"id":"shot_rejection","segment":"rejection","asset":"simone_2026","motion":"pull_out","transition_out":"cut","highlight":"A MÚSICA NÃO AVANÇOU"},
+    {"id":"shot_detour","segment":"detour","asset":"street_traffic","source_start_seconds":10.0,"source_end_seconds":20.0,"motion":"hold","transition_out":"crossfade","highlight":"OUTRO CAMINHO"},
+    {"id":"shot_menos","segment":"menos","asset":"menos_mais","motion":"push_in","transition_out":"cut","highlight":"DUDU BORGES → MENOS É MAIS"},
+    {"id":"shot_simone","segment":"simone","asset":"simone_2026","motion":"push_in","transition_out":"crossfade","highlight":"SIMONE ENTROU NO FEAT"},
+    {"id":"shot_recording","segment":"recording","asset":"concert_gothenburg","source_start_seconds":1.0,"source_end_seconds":12.5,"motion":"hold","transition_out":"cut","highlight":"CAMPINA GRANDE • ABRIL 2025"},
+    {"id":"shot_formula","segment":"formula","asset":"menos_mais","motion":"pull_out","transition_out":"cut","highlight":"PAGODE + SERTANEJO"},
+    {"id":"shot_record","segment":"record","asset":"concert_gothenburg","source_start_seconds":1.0,"source_end_seconds":12.5,"motion":"hold","transition_out":"cut","highlight":"RECORDE NO SPOTIFY BRASIL"},
+    {"id":"shot_awards","segment":"awards","asset":"simone_2026","motion":"pan_left","transition_out":"crossfade","highlight":"HIT DO ANO"},
+    {"id":"shot_longevity","segment":"longevity","asset":"street_traffic","source_start_seconds":0.0,"source_end_seconds":10.0,"motion":"hold","transition_out":"crossfade","highlight":"AINDA NO HOT 100 EM 2026"},
+    {"id":"shot_payoff","segment":"payoff","asset":"menos_mais","motion":"pull_out","transition_out":"cut","highlight":"O HIT PRECISOU ENCONTRAR SUA FORMA"}
+  ]
+}
