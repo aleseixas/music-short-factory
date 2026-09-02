@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile": "external_jolene_the_farmer", "volume": 0.05},
+  "sfx_cues": [
+    {"time_seconds": 0.12, "type": "bass_drop_cinematic", "volume": 0.09, "duration_seconds": 0.55},
+    {"time_seconds": 7.0, "type": "whoosh_fast", "volume": 0.065, "duration_seconds": 0.4},
+    {"time_seconds": 13.0, "type": "ding", "volume": 0.06, "duration_seconds": 0.4},
+    {"time_seconds": 23.0, "type": "heartbeat_slow", "volume": 0.045, "duration_seconds": 0.8},
+    {"time_seconds": 32.0, "type": "record_scratch", "volume": 0.065, "duration_seconds": 0.45},
+    {"time_seconds": 41.0, "type": "whoosh_transition", "volume": 0.06, "duration_seconds": 0.45},
+    {"time_seconds": 50.0, "type": "camera_flash", "volume": 0.055, "duration_seconds": 0.35},
+    {"time_seconds": 59.0, "type": "riser_build_up", "volume": 0.05, "duration_seconds": 0.8},
+    {"time_seconds": 67.0, "type": "crowd_cheer", "volume": 0.05, "duration_seconds": 0.7},
+    {"time_seconds": 74.0, "type": "impact", "volume": 0.075, "duration_seconds": 0.5}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds": 0.08, "end_seconds": 0.62, "type": "punch_zoom", "intensity": 0.52},
+    {"start_seconds": 22.8, "end_seconds": 23.45, "type": "slow_zoom_in", "intensity": 0.3},
+    {"start_seconds": 40.8, "end_seconds": 41.45, "type": "punch_zoom", "intensity": 0.38},
+    {"start_seconds": 58.8, "end_seconds": 59.45, "type": "punch_zoom", "intensity": 0.42},
+    {"start_seconds": 73.8, "end_seconds": 74.45, "type": "punch_zoom", "intensity": 0.48}
+  ],
+  "text_fx_cues": [
+    {"segment": "hook", "offset_seconds": 0.12, "duration_seconds": 1.35, "text": "DUAS PESSOAS\nVIRARAM JOLENE", "accent_text": "JOLENE", "animation": "scale_bounce", "position": "center", "intensity": 0.6},
+    {"segment": "bank", "offset_seconds": 0.12, "duration_seconds": 1.25, "text": "A RIVAL\nERA REAL", "accent_text": "ERA REAL", "animation": "fade_pop", "position": "center", "intensity": 0.56},
+    {"segment": "why", "offset_seconds": 0.12, "duration_seconds": 1.2, "text": "NÃO É RAIVA.\nÉ INSEGURANÇA.", "accent_text": "INSEGURANÇA", "animation": "pop_in", "position": "center", "intensity": 0.58},
+    {"segment": "beyonce", "offset_seconds": 0.12, "duration_seconds": 1.25, "text": "2024:\nOUTRA JOLENE", "accent_text": "OUTRA JOLENE", "animation": "slide_up", "position": "center", "intensity": 0.54},
+    {"segment": "chart_2026", "offset_seconds": 0.12, "duration_seconds": 1.35, "text": "TOP 40\nEM 2026", "accent_text": "TOP 40", "animation": "scale_bounce", "position": "center", "intensity": 0.62},
+    {"segment": "payoff", "offset_seconds": 0.12, "duration_seconds": 1.3, "text": "MEDO >\nORGULHO", "accent_text": "ORGULHO", "animation": "scale_bounce", "position": "center", "intensity": 0.58}
+  ],
+  "shots": [
+    {"id": "shot_hook", "segment": "hook", "asset": "dolly_wildhorse", "source_start_seconds": 0.0, "source_end_seconds": 12.0, "motion": "hold", "transition_out": "cut", "highlight": "JOLENE • DOLLY PARTON"},
+    {"id": "shot_name", "segment": "name", "asset": "dolly_1970", "motion": "push_in", "transition_out": "crossfade", "highlight": "O NOME VEIO DE UMA FÃ"},
+    {"id": "shot_bank", "segment": "bank", "asset": "dolly_wildhorse", "source_start_seconds": 20.0, "source_end_seconds": 32.0, "motion": "hold", "transition_out": "cut", "highlight": "UMA FUNCIONÁRIA DO BANCO"},
+    {"id": "shot_joke", "segment": "joke", "asset": "country_guitar", "source_start_seconds": 0.0, "source_end_seconds": 12.0, "motion": "hold", "transition_out": "crossfade", "highlight": "VIROU PIADA ENTRE O CASAL"},
+    {"id": "shot_vulnerability", "segment": "vulnerability", "asset": "dolly_1970", "motion": "pull_out", "transition_out": "crossfade", "highlight": "CIÚME → VULNERABILIDADE"},
+    {"id": "shot_rival", "segment": "rival", "asset": "dolly_wildhorse", "source_start_seconds": 40.0, "source_end_seconds": 52.0, "motion": "hold", "transition_out": "cut", "highlight": "ELA ELOGIA A PRÓPRIA RIVAL"},
+    {"id": "shot_why", "segment": "why", "asset": "vinyl_spin", "source_start_seconds": 0.0, "source_end_seconds": 12.0, "motion": "hold", "transition_out": "cut", "highlight": "A FORÇA ESTÁ NA INSEGURANÇA"},
+    {"id": "shot_arrangement", "segment": "arrangement", "asset": "country_guitar", "source_start_seconds": 20.0, "source_end_seconds": 32.0, "motion": "hold", "transition_out": "crossfade", "highlight": "VIOLÕES + PULSAÇÃO REPETITIVA"},
+    {"id": "shot_release", "segment": "release", "asset": "rca_console", "motion": "pan_right", "transition_out": "cut", "highlight": "LANÇADA EM 1973"},
+    {"id": "shot_covers", "segment": "covers", "asset": "record_store", "source_start_seconds": 0.0, "source_end_seconds": 12.0, "motion": "hold", "transition_out": "crossfade", "highlight": "UM CLÁSSICO REINTERPRETADO"},
+    {"id": "shot_beyonce", "segment": "beyonce", "asset": "vinyl_spin", "source_start_seconds": 12.0, "source_end_seconds": 24.0, "motion": "hold", "transition_out": "cut", "highlight": "BEYONCÉ MUDOU O TOM"},
+    {"id": "shot_chart_2026", "segment": "chart_2026", "asset": "dolly_wildhorse", "source_start_seconds": 60.0, "source_end_seconds": 72.0, "motion": "hold", "transition_out": "cut", "highlight": "PRIMEIRO TOP 40 NO HOT 100"},
+    {"id": "shot_human", "segment": "human", "asset": "rca_console", "motion": "push_in", "transition_out": "crossfade", "highlight": "MAIS DE 50 ANOS DEPOIS"},
+    {"id": "shot_payoff", "segment": "payoff", "asset": "dolly_1970", "motion": "pull_out", "transition_out": "cut", "highlight": "O MEDO FALA MAIS ALTO"}
+  ]
+}
