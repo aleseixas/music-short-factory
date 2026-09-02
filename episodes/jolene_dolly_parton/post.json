@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "A RIVAL ERA REAL",
+    "source": {"type": "asset", "asset_id": "dolly_1970"}
+  },
+  "youtube": {
+    "title": "Jolene: a rival de Dolly Parton nasceu de duas pessoas reais",
+    "description": "“Jolene”, de Dolly Parton, ficou famosa como uma súplica desesperada para outra mulher não levar seu marido. Só que o nome e a personagem vieram de pessoas diferentes — e essa escolha ajuda a explicar por que a música soa tão vulnerável até hoje. Em 2026, a gravação original ainda ganhou um novo capítulo ao entrar pela primeira vez no Top 40 do Billboard Hot 100.\n\nBackground: “The Farmer (Acoustic Folk Instrumental)” — Infraction, CC BY 3.0, via Wikimedia Commons. Visuais e fontes completos em sources.txt.",
+    "hashtags": ["Jolene", "DollyParton", "CountryMusic", "HistoriaDaMusica", "Musica", "Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Jolene não nasceu de uma única “rival”. Dolly Parton juntou o nome de uma jovem fã com a história de uma funcionária de banco que chamava atenção de seu marido — e transformou ciúme em vulnerabilidade. Mais de 50 anos depois, a música ainda encontra novas leituras.\n\nCréditos e fontes completos em sources.txt.",
+    "hashtags": ["Jolene", "DollyParton", "CountryMusic", "HistoriaDaMusica", "Musica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "A “Jolene” de Dolly Parton nasceu da mistura de duas pessoas reais — e isso muda a forma de ouvir a música.",
+    "hashtags": ["Jolene", "DollyParton", "CountryMusic", "Musica", "Curiosidades"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
