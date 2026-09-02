@@ -24,7 +24,6 @@
     {"start_seconds":29.0,"end_seconds":32.5,"type":"slow_zoom_out","intensity":0.25},
     {"start_seconds":44.3,"end_seconds":44.8,"type":"punch_zoom","intensity":0.45},
     {"start_seconds":56.0,"end_seconds":59.5,"type":"slow_zoom_in","intensity":0.28},
-    {"start_seconds":66.3,"end_seconds":66.8,"type":"punch_zoom","intensity":0.48},
     {"start_seconds":71.0,"end_seconds":77.0,"type":"slow_zoom_in","intensity":0.30}
   ],
   "text_fx_cues": [
