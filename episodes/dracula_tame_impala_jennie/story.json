@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Tame Impala & JENNIE — Dracula: a festa que esconde uma história de amor",
+  "slug": "dracula_tame_impala_jennie",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Dracula, de Tame Impala com JENNIE, parece sobre vampiros — mas Kevin Parker disse que ela nasceu de algo menos sobrenatural: virar a noite."},
+    {"id":"night","text":"Drácula resume a sensação de ver o dia chegar e querer permanecer na madrugada."},
+    {"id":"romance","text":"Parker também enxerga romance no personagem: alguém destruído pela perda de um grande amor."},
+    {"id":"two_levels","text":"Por isso, a faixa funciona em dois níveis."},
+    {"id":"surface","text":"Na superfície, é festa e recusa de encerrar a noite."},
+    {"id":"underneath","text":"Por baixo, existe desejo: ficar perto de alguém quando a realidade começa a clarear."},
+    {"id":"production_bridge","text":"Essa ambiguidade aparece na produção."},
+    {"id":"raw_demo","text":"Dracula começou cedo nas sessões de Deadbeat como uma ideia crua e mínima."},
+    {"id":"pop_growth","text":"Segundo Parker, cresceu aos poucos até virar algo mais pop."},
+    {"id":"aarons","text":"Sarah Aarons ajudou a cortar desvios e decidir o que precisava ficar."},
+    {"id":"sound","text":"O resultado é uma batida noturna, enquanto a letra permanece insegura e apaixonada."},
+    {"id":"jennie","text":"Em 2026, JENNIE entrou no remix com versos novos, reforçando a energia da madrugada."},
+    {"id":"top10","text":"A parceria virou o primeiro Top 10 da Hot 100 para os dois artistas."},
+    {"id":"current_chart","text":"Na parada de 29 de agosto, Dracula seguia em oitavo lugar."},
+    {"id":"payoff","text":"O truque é usar um monstro clássico para falar de algo atual: querer que a noite dure porque o amanhecer obriga você a encarar o que sente."}
+  ]
+}

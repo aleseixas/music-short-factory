@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "DRACULA NÃO É SOBRE VAMPIROS",
+    "source": {"type":"asset","asset_id":"jennie_sofi"}
+  },
+  "youtube": {
+    "title": "DRACULA: por que Tame Impala transformou uma madrugada em hit",
+    "description": "Dracula parece sobre vampiros, mas Kevin Parker explicou que a ideia nasceu de virar a noite — e virou uma mistura de festa, desejo e coração partido. Em 2026, o remix com JENNIE levou a faixa ao Top 10 da Hot 100.\n\nVisuais: Wikimedia Commons — Editor (CC BY 3.0), JJMr19 e Netha Hussain (CC BY-SA 4.0), Aravind Samala (CC BY 2.0), Kennysun (CC BY-SA 3.0), theCwE (CC BY 3.0).",
+    "hashtags": ["TameImpala","JENNIE","Dracula","HistoriaDaMusica","Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Dracula parece uma música sobre vampiros. Kevin Parker contou que ela nasceu da sensação de virar a noite — mas também carrega romance e coração partido. O remix com JENNIE levou essa ideia ao Top 10.\n\nVisuais: Wikimedia Commons — Editor, JJMr19, Netha Hussain, Aravind Samala, Kennysun e theCwE (CC BY/CC BY-SA).",
+    "hashtags": ["TameImpala","JENNIE","Dracula","HistoriaDaMusica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "Dracula não é realmente sobre vampiros: Kevin Parker explicou que a música nasceu de virar a noite, com romance escondido por baixo da festa.",
+    "hashtags": ["TameImpala","JENNIE","Dracula","Musica"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

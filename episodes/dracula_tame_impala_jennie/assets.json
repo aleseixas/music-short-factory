@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"city_night","file":"city_at_night.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/City%20at%20night.webm","credit":"Editor / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"disco_lights","file":"rotating_disco_lights.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Rotating%20disco%20lights.webm","credit":"JJMr19 / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"sunrise_timelapse","file":"sunrise_time_lapse.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunrise%20time%20lapse.webm","credit":"Aravind Samala / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"concert_gothenburg","file":"concert_university_gothenburg.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Concert%20at%20University%20of%20Gothenburg.webm","credit":"Netha Hussain / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"tame_nyc","file":"tame_impala_performing_nyc.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Tame%20Impala%20Performing%20in%20NYC.jpg","credit":"Kennysun / Wikimedia Commons","license":"CC BY-SA 3.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"jennie_sofi","file":"jennie_like_jennie_sofi_03.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Jennie%20performs%20Like%20Jennie%20at%20SoFi%20Stadium%2003.png","credit":"theCwE / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.35}}
+  ]
+}

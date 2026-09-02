@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"dark_cinematic","volume":0.08},
+  "sfx_cues": [
+    {"time_seconds":0.18,"type":"impact","volume":0.16},
+    {"time_seconds":3.2,"type":"whoosh","volume":0.11},
+    {"time_seconds":7.8,"type":"heartbeat","volume":0.09},
+    {"time_seconds":12.6,"type":"pop","volume":0.10},
+    {"time_seconds":17.4,"type":"record_scratch","volume":0.11},
+    {"time_seconds":22.3,"type":"whoosh","volume":0.10},
+    {"time_seconds":27.1,"type":"ding","volume":0.09},
+    {"time_seconds":32.0,"type":"reverse_cymbal","volume":0.09},
+    {"time_seconds":37.2,"type":"impact","volume":0.13},
+    {"time_seconds":42.4,"type":"camera_flash","volume":0.09},
+    {"time_seconds":47.6,"type":"riser","volume":0.09},
+    {"time_seconds":52.8,"type":"crowd_gasp","volume":0.08},
+    {"time_seconds":58.1,"type":"crowd_cheer","volume":0.09},
+    {"time_seconds":64.2,"type":"ding","volume":0.09},
+    {"time_seconds":71.0,"type":"impact","volume":0.14}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.10,"end_seconds":0.55,"type":"punch_zoom","intensity":0.56},
+    {"start_seconds":15.0,"end_seconds":18.5,"type":"slow_zoom_in","intensity":0.28},
+    {"start_seconds":27.0,"end_seconds":30.5,"type":"slow_zoom_out","intensity":0.26},
+    {"start_seconds":37.0,"end_seconds":37.5,"type":"punch_zoom","intensity":0.46},
+    {"start_seconds":49.0,"end_seconds":53.0,"type":"slow_zoom_in","intensity":0.28},
+    {"start_seconds":59.0,"end_seconds":59.5,"type":"punch_zoom","intensity":0.48},
+    {"start_seconds":69.0,"end_seconds":75.0,"type":"slow_zoom_in","intensity":0.30}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.15,"duration_seconds":1.35,"text":"NÃO É SOBRE\nVAMPIROS","accent_text":"VAMPIROS","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"romance","offset_seconds":0.20,"duration_seconds":1.25,"text":"ROMANCE +\nTRAGÉDIA","accent_text":"TRAGÉDIA","animation":"fade_pop","position":"center","intensity":0.48},
+    {"segment":"surface","offset_seconds":0.15,"duration_seconds":1.10,"text":"FESTA ATÉ\nAMANHECER","accent_text":"AMANHECER","animation":"slide_up","position":"center","intensity":0.48},
+    {"segment":"raw_demo","offset_seconds":0.20,"duration_seconds":1.20,"text":"COMEÇOU\nCRUA E MÍNIMA","accent_text":"MÍNIMA","animation":"pop_in","position":"center","intensity":0.50},
+    {"segment":"jennie","offset_seconds":0.18,"duration_seconds":1.25,"text":"JENNIE ENTROU\nNO REMIX","accent_text":"JENNIE","animation":"scale_bounce","position":"center","intensity":0.56},
+    {"segment":"top10","offset_seconds":0.15,"duration_seconds":1.15,"text":"PRIMEIRO\nTOP 10 DOS DOIS","accent_text":"TOP 10","animation":"scale_bounce","position":"center","intensity":0.60},
+    {"segment":"payoff","offset_seconds":0.20,"duration_seconds":1.35,"text":"A NOITE ESCONDE\nO QUE VOCÊ SENTE","accent_text":"VOCÊ SENTE","animation":"fade_pop","position":"center","intensity":0.52}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"city_night","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_night","segment":"night","asset":"disco_lights","source_start_seconds":5.0,"source_end_seconds":19.0,"motion":"hold","transition_out":"crossfade","highlight":"VIRAR A NOITE"},
+    {"id":"shot_romance","segment":"romance","asset":"tame_nyc","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_two_levels","segment":"two_levels","asset":"concert_gothenburg","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_surface","segment":"surface","asset":"disco_lights","source_start_seconds":25.0,"source_end_seconds":39.0,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_underneath","segment":"underneath","asset":"jennie_sofi","motion":"pull_out","transition_out":"cut","highlight":"DESEJO POR BAIXO DA FESTA"},
+    {"id":"shot_production_bridge","segment":"production_bridge","asset":"city_night","source_start_seconds":14.0,"source_end_seconds":28.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_raw_demo","segment":"raw_demo","asset":"tame_nyc","motion":"pan_left","transition_out":"crossfade","highlight":"CRUA • MÍNIMA"},
+    {"id":"shot_pop_growth","segment":"pop_growth","asset":"concert_gothenburg","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_aarons","segment":"aarons","asset":"tame_nyc","motion":"pan_right","transition_out":"crossfade"},
+    {"id":"shot_sound","segment":"sound","asset":"disco_lights","source_start_seconds":45.0,"source_end_seconds":59.0,"motion":"hold","transition_out":"cut","highlight":"BATIDA NOTURNA"},
+    {"id":"shot_jennie","segment":"jennie","asset":"jennie_sofi","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_top10","segment":"top10","asset":"concert_gothenburg","source_start_seconds":0.5,"source_end_seconds":14.5,"motion":"hold","transition_out":"crossfade","highlight":"PRIMEIRO TOP 10"},
+    {"id":"shot_current_chart","segment":"current_chart","asset":"sunrise_timelapse","source_start_seconds":0.0,"source_end_seconds":16.0,"motion":"hold","transition_out":"cut","highlight":"#8 • HOT 100"},
+    {"id":"shot_payoff","segment":"payoff","asset":"sunrise_timelapse","source_start_seconds":1.0,"source_end_seconds":17.0,"motion":"hold","transition_out":"cut"}
+  ]
+}

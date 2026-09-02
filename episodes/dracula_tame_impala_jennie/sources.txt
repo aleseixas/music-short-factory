@@ -1,0 +1,19 @@
+Billboard Hot 100 — chart dated 2026-08-29; Dracula at #8: https://ca.billboard.com/charts/hot-100
+Junkee — Kevin Parker interview: Dracula came from the feeling of staying up all night; he describes the song as both a bender idea and a love song, and Dracula as a romantic figure marked by loss: https://junkee.com/articles/junkee-tame-impala-interview
+Coup De Main — Kevin Parker interview on Dracula, romance and tragedy: https://www.coupdemainmagazine.com/tame-impala/20202
+Pitchfork — Dracula was one of the oldest songs in the Deadbeat process, beginning raw/minimal and growing into a pop song: https://pitchfork.com/news/watch-tame-impala-video-for-new-song-dracula/
+Apple Music — Deadbeat album context and production direction: https://music.apple.com/us/album/dracula/1836226516
+ABC triple j — Kevin Parker on Sarah Aarons helping focus songs and decide what worked during production: https://www.abc.net.au/triplej/news/tame-impala-interview-deadbeat-new-album-lucy-smith/105905616
+Billboard Brasil — announcement/context of the Tame Impala + JENNIE collaboration: https://billboard.com.br/tame-impala-anuncia-colaboracao-com-jennie-do-blackpink/
+Billboard Brasil — Dracula remix became the first Billboard Hot 100 Top 10 for both artists: https://billboard.com.br/dracula-jennie-tame-impala-top-10-hot-100/
+SiriusXM — JENNIE discusses the Tame Impala collaboration: https://www.siriusxm.com/blog/jennie-tame-impala-new-song/
+
+Visuals — Wikimedia Commons:
+City at night.webm — Editor — CC BY 3.0 — 29 s, 1920x1080: https://commons.wikimedia.org/wiki/File:City_at_night.webm
+Rotating disco lights.webm — JJMr19 — CC BY-SA 4.0 — 1m44s, 640x480: https://commons.wikimedia.org/wiki/File:Rotating_disco_lights.webm
+Sunrise time lapse.webm — Aravind Samala — CC BY 2.0 — ~18.4 s, 1920x1080: https://commons.wikimedia.org/wiki/File:Sunrise_time_lapse.webm
+Concert at University of Gothenburg.webm — Netha Hussain — CC BY-SA 4.0 — 16 s, 1920x1080: https://commons.wikimedia.org/wiki/File:Concert_at_University_of_Gothenburg.webm
+Tame Impala Performing in NYC.jpg — Kennysun — CC BY-SA 3.0 — 5184x3456: https://commons.wikimedia.org/wiki/File:Tame_Impala_Performing_in_NYC.jpg
+Jennie performs Like Jennie at SoFi Stadium 03.png — theCwE — CC BY 3.0 — 2160x3840: https://commons.wikimedia.org/wiki/File:Jennie_performs_Like_Jennie_at_SoFi_Stadium_03.png
+
+Áudio: a busca external-first foi tentada com três variações para background (dark synthwave night; retro night dance instrumental; dark disco instrumental) e duas para SFX (whoosh impact; heartbeat sound effect). Nesta execução, a API direta do Openverse não pôde ser consultada com segurança pela ferramenta e os resultados indexados não forneceram uma candidata que pudesse ser confirmada simultaneamente em licença/origem, URL direta, formato e compatibilidade conforme docs/audio-search.md. Fallback usado: profile local dark_cinematic e SFX do catálogo local; nenhum binário externo foi adicionado.
