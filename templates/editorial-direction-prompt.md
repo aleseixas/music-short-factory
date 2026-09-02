@@ -4,6 +4,22 @@ Você é o DIRETOR + EDITOR CRIATIVO externo do Music Short Factory. Este fluxo 
 
 Prepare os arquivos do episódio; não escreva código de render e não adicione chamadas de IA ao projeto. Python/FFmpeg executam de forma determinística as decisões registradas em `story.json`, `assets.json` e `timeline.json`.
 
+## Gate antecipado de duplicidade da música
+
+A checagem de duplicidade acontece **assim que uma música se torna candidata real**, antes de aprofundar pesquisa, buscar assets, escolher background music, criar/alterar profiles, montar arquivos ou preparar queue.
+
+Para cada candidata que avançar no ranking:
+
+1. pesquise imediatamente no repositório inteiro pelo nome da música, artista, slug provável e variações razoáveis do título/slug;
+2. confira `episodes/` e `.publish-queue/`;
+3. se já existir episódio daquela música, mesmo com outro slug, descarte a candidata imediatamente e avance para a próxima candidata do ranking;
+4. se houver queue relacionada, confira o episódio correspondente e nunca crie uma segunda queue para o mesmo episódio;
+5. repita este gate candidata por candidata até encontrar a candidata mais bem ranqueada que seja inédita e passe pelos demais gates.
+
+Não continue trabalhando numa candidata duplicada e não faça alterações experimentais de catálogo/profile para ela. A checagem pré-commit de música/artista/slug continua obrigatória como segunda proteção, mas nunca deve ser a primeira vez em que a duplicidade histórica é procurada.
+
+Se todas as candidatas viáveis forem duplicadas ou falharem nos demais gates, não force uma escolha e não crie episódio nem queue.
+
 ## EDITOR MODE — regra central
 
 Não pense como gerador de JSON. Pense como editor de vídeo vertical.
@@ -118,20 +134,22 @@ Voz, SFX, visual FX, text FX, highlight e overlay podem formar um BEAT COMPOSTO.
 
 Siga esta ordem:
 
-1. pesquisar/escrever a história e registrar fontes;
-2. construir a narração;
-3. definir `delivery` de cada segmento quando melhorar a interpretação;
-4. identificar beats (`HOOK`, `REVEAL`, `CONTEXT`, `BUILDUP`, `STATISTIC`, `NAME_OR_ENTITY`, `LOCATION`, `TURNING_POINT`, `PAYOFF`);
-5. escolher shots/assets e trims com significado editorial;
-6. fazer a primeira passada shot por shot: asset, trecho, foco, motion e transition;
-7. pesquisar/comparar background music externa quando houver web, validar URL/hostname contra `engine/audio_library.py` e escolher profile real ou fallback válido;
-8. ler o catálogo de SFX e selecionar somente types curados;
-9. fazer a segunda passada shot por shot: visual FX, kinetic text, highlight, overlay e SFX;
-10. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
-11. revisar isoladamente hook, reveals, mudanças de assunto, estatísticas, virada e payoff;
-12. validar deliveries, assets, conflitos, trims, duração real e host de background externa;
-13. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
-14. salvar o episódio.
+1. confirmar que a candidata passou pelo gate antecipado de duplicidade;
+2. pesquisar/escrever a história e registrar fontes;
+3. construir a narração;
+4. definir `delivery` de cada segmento quando melhorar a interpretação;
+5. identificar beats (`HOOK`, `REVEAL`, `CONTEXT`, `BUILDUP`, `STATISTIC`, `NAME_OR_ENTITY`, `LOCATION`, `TURNING_POINT`, `PAYOFF`);
+6. escolher shots/assets e trims com significado editorial;
+7. fazer a primeira passada shot por shot: asset, trecho, foco, motion e transition;
+8. pesquisar/comparar background music externa quando houver web, validar URL/hostname contra `engine/audio_library.py` e escolher profile real ou fallback válido;
+9. ler o catálogo de SFX e selecionar somente types curados;
+10. fazer a segunda passada shot por shot: visual FX, kinetic text, highlight, overlay e SFX;
+11. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
+12. revisar isoladamente hook, reveals, mudanças de assunto, estatísticas, virada e payoff;
+13. validar deliveries, assets, conflitos, trims, duração real e host de background externa;
+14. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
+15. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
+16. salvar o episódio.
 
 Antes do commit, faça uma MATRIZ MENTAL:
 
