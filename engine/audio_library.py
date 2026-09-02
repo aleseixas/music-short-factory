@@ -33,6 +33,7 @@ MYINSTANTS_HOSTS = frozenset(
         "www.myinstants.com",
     }
 )
+MYINSTANTS_API_URL = "https://myinstants-api.vercel.app/detail"
 MAX_EXTERNAL_MUSIC_BYTES = 100 * 1024 * 1024
 MAX_EXTERNAL_SFX_BYTES = 25 * 1024 * 1024
 MYINSTANTS_PAGE_TIMEOUT_SECONDS = (10, 30)
@@ -188,30 +189,112 @@ def _resolve_manual_audio_url(url: str, label: str) -> str:
     return value
 
 
-def _resolve_myinstants_audio_url(page_url: str, label: str) -> str:
+def _myinstants_instant_id(page_url: str, label: str) -> str:
+    path_parts = [part for part in urlparse(page_url).path.split("/") if part]
+    try:
+        instant_index = next(
+            index for index, part in enumerate(path_parts) if part.casefold() == "instant"
+        )
+    except StopIteration as exc:
+        raise RuntimeError(f"URL MyInstants sem id em {label}.") from exc
+    if instant_index + 1 >= len(path_parts):
+        raise RuntimeError(f"URL MyInstants sem id em {label}.")
+    instant_id = unquote(path_parts[instant_index + 1]).strip()
+    if not instant_id:
+        raise RuntimeError(f"URL MyInstants sem id em {label}.")
+    return instant_id
+
+
+def _validate_myinstants_mp3_url(value: str, label: str) -> str:
+    audio_url = value.strip()
+    parsed_audio = urlparse(audio_url)
+    if (
+        parsed_audio.scheme.casefold() != "https"
+        or (parsed_audio.hostname or "").casefold() not in MYINSTANTS_HOSTS
+        or Path(unquote(parsed_audio.path)).suffix.lower() != ".mp3"
+        or "/media/sounds/" not in unquote(parsed_audio.path)
+    ):
+        raise RuntimeError(f"Link MP3 MyInstants invalido em {label}.")
+    return audio_url
+
+
+def _resolve_myinstants_via_api(page_url: str, label: str) -> str:
+    instant_id = _myinstants_instant_id(page_url, label)
     try:
         response = requests.get(
-            page_url,
+            MYINSTANTS_API_URL,
+            params={"id": instant_id},
             headers={
-                "User-Agent": (
-                    "MusicShortFactory/8.1 "
-                    "(+https://github.com/aleseixas/music-short-factory; sfx-catalog)"
-                ),
-                "Accept": "text/html,application/xhtml+xml",
+                "User-Agent": "MusicShortFactory/8.2 (curated-sfx-catalog)",
+                "Accept": "application/json",
             },
             timeout=MYINSTANTS_PAGE_TIMEOUT_SECONDS,
             allow_redirects=True,
         )
     except requests.RequestException as exc:
         raise RuntimeError(
-            f"Falha ao resolver pagina MyInstants em {label}: {type(exc).__name__}."
+            f"Falha na API MyInstants em {label}: {type(exc).__name__}."
         ) from exc
 
     try:
         status = int(response.status_code)
         if status >= 400:
+            raise RuntimeError(f"Falha na API MyInstants em {label}: HTTP {status}.")
+        try:
+            payload = response.json()
+        except ValueError as exc:
+            raise RuntimeError(f"Resposta invalida da API MyInstants em {label}.") from exc
+        if not isinstance(payload, dict):
+            raise RuntimeError(f"Resposta invalida da API MyInstants em {label}.")
+        data = payload.get("data")
+        if isinstance(data, list):
+            data = data[0] if data else None
+        if not isinstance(data, dict):
+            raise RuntimeError(f"API MyInstants sem dados em {label}.")
+        mp3 = data.get("mp3")
+        if not isinstance(mp3, str) or not mp3.strip():
+            raise RuntimeError(f"API MyInstants sem MP3 em {label}.")
+        return _validate_myinstants_mp3_url(mp3, label)
+    finally:
+        response.close()
+
+
+def _resolve_myinstants_audio_url(page_url: str, label: str) -> str:
+    api_error: RuntimeError | None = None
+    try:
+        return _resolve_myinstants_via_api(page_url, label)
+    except RuntimeError as exc:
+        api_error = exc
+
+    try:
+        response = requests.get(
+            page_url,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+                ),
+                "Accept": (
+                    "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                    "image/avif,image/webp,*/*;q=0.8"
+                ),
+                "Accept-Language": "en-US,en;q=0.9",
+            },
+            timeout=MYINSTANTS_PAGE_TIMEOUT_SECONDS,
+            allow_redirects=True,
+        )
+    except requests.RequestException as exc:
+        detail = f"; fallback anterior: {api_error}" if api_error else ""
+        raise RuntimeError(
+            f"Falha ao resolver pagina MyInstants em {label}: {type(exc).__name__}{detail}."
+        ) from exc
+
+    try:
+        status = int(response.status_code)
+        if status >= 400:
+            detail = f"; API: {api_error}" if api_error else ""
             raise RuntimeError(
-                f"Falha ao resolver pagina MyInstants em {label}: HTTP {status}."
+                f"Falha ao resolver pagina MyInstants em {label}: HTTP {status}{detail}."
             )
         final_url = str(getattr(response, "url", page_url) or page_url).strip()
         final = urlparse(final_url)
@@ -219,27 +302,16 @@ def _resolve_myinstants_audio_url(page_url: str, label: str) -> str:
             final.scheme.casefold() != "https"
             or (final.hostname or "").casefold() not in MYINSTANTS_HOSTS
         ):
-            raise RuntimeError(
-                f"Redirecionamento MyInstants invalido em {label}."
-            )
+            raise RuntimeError(f"Redirecionamento MyInstants invalido em {label}.")
 
         parser = _MyInstantsAudioLinkParser()
         parser.feed(response.text)
         if not parser.audio_href:
-            raise RuntimeError(
-                f"Pagina MyInstants sem link MP3 direto em {label}."
-            )
-        audio_url = urljoin(final_url, parser.audio_href)
-        parsed_audio = urlparse(audio_url)
-        if (
-            parsed_audio.scheme.casefold() != "https"
-            or (parsed_audio.hostname or "").casefold() not in MYINSTANTS_HOSTS
-            or Path(unquote(parsed_audio.path)).suffix.lower() != ".mp3"
-        ):
-            raise RuntimeError(
-                f"Link MP3 MyInstants invalido em {label}."
-            )
-        return audio_url
+            raise RuntimeError(f"Pagina MyInstants sem link MP3 direto em {label}.")
+        return _validate_myinstants_mp3_url(
+            urljoin(final_url, parser.audio_href),
+            label,
+        )
     finally:
         response.close()
 
