@@ -17,6 +17,7 @@ from .utils import load_json, validate_schema
 
 SFX_ROOT = Path("assets") / "audio" / "sfx"
 SFX_CATALOG = SFX_ROOT / "catalog.json"
+FULL_PLAYBACK_TYPE_PREFIXES = ("meme_br_",)
 
 
 def resolve_sfx_cues(
@@ -127,6 +128,15 @@ def _validate_trim_values(cue: SfxCue, cue_index: int) -> None:
         or cue.duration_seconds <= 0
     ):
         raise RuntimeError(f"{label}.duration_seconds precisa ser maior que zero.")
+
+    normalized_type = cue.type.casefold()
+    if normalized_type.startswith(FULL_PLAYBACK_TYPE_PREFIXES) and (
+        cue.source_start_seconds != 0 or cue.duration_seconds is not None
+    ):
+        raise RuntimeError(
+            f"{label} ({cue.type!r}) precisa tocar o meme completo: "
+            "use source_start_seconds=0 e omita duration_seconds."
+        )
 
 
 def _validate_trim_window(
