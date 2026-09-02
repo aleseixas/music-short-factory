@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "dolly_1970",
+      "file": "dolly_parton_1970.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dolly%20Parton%20-%20RCA%20Press%20Photo%20%281970%29.jpg",
+      "credit": "RCA Records / Wikimedia Commons",
+      "license": "Public domain (US)",
+      "focus": {"x": 0.5, "y": 0.36}
+    },
+    {
+      "id": "dolly_wildhorse",
+      "file": "dolly_parton_wildhorse_2009.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Dolly%20Parton%20Wildhorse%20Saloon%20Nashville%202-2-09.webm",
+      "credit": "nrppp / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {"x": 0.5, "y": 0.42}
+    },
+    {
+      "id": "country_guitar",
+      "file": "ljubljana_country_guitar.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ljubljana%20Street%20Country%20Guitar%20Performance.webm",
+      "credit": "Isak Zvegelj / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "vinyl_spin",
+      "file": "vinyl_record_spin.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beachfront%20B-Roll-%20Record%20Background%20%28Free%20to%20Use%20Stock%20Footage%29.webm",
+      "credit": "Beachfront B-Roll: Free Stock Footage / Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "record_store",
+      "file": "in_the_record_store.webm",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/In%20The%20Record%20Store.webm",
+      "credit": "Fredrik Johansson / Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    },
+    {
+      "id": "rca_console",
+      "file": "rca_studio_b_console.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/RCAStudioB%20Console%20-%20Recording%20Studios%20before%20Digital%20Era%20-%20RCA%20Studio%20B%20%282015-04-09%2010.29.25%20by%20prayitnophotography%29.jpg",
+      "credit": "prayitnophotography / Wikimedia Commons",
+      "license": "CC BY 2.0",
+      "focus": {"x": 0.5, "y": 0.5}
+    }
+  ]
+}
