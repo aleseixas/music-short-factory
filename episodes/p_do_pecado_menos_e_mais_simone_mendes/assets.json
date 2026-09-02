@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"menos_mais","file":"grupo_menos_e_mais.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Grupo_Menos_%C3%A9_Mais.png","credit":"Canal do Jeferson Almeida / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"simone_2026","file":"simone_mendes_2026.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Simone_Mendes_2026.png","credit":"Tupperware Brasil / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"concert_gothenburg","file":"concert_gothenburg.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Concert%20at%20University%20of%20Gothenburg.webm","credit":"Netha Hussain / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"street_traffic","file":"street_traffic.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Street%20traffic.webm","credit":"Editor / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
