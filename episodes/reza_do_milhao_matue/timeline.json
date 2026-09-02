@@ -27,7 +27,7 @@
   "text_fx_cues": [
     {"segment": "hook", "offset_seconds": 0.15, "duration_seconds": 1.55, "text": "NÃO É SÓ\nSOBRE DINHEIRO", "accent_text": "DINHEIRO", "animation": "scale_bounce", "position": "center", "intensity": 0.6},
     {"segment": "release", "offset_seconds": 0.18, "duration_seconds": 1.35, "text": "UM EP\nSURPRESA", "accent_text": "SURPRESA", "animation": "pop_in", "position": "center", "intensity": 0.5},
-    {"segment": "acronym", "offset_seconds": 0.15, "duration_seconds": 1.5, "text": "S O N Y", "accent_text": "SONY", "animation": "scale_bounce", "position": "center", "intensity": 0.64},
+    {"segment": "acronym", "offset_seconds": 0.15, "duration_seconds": 1.5, "text": "SONY", "accent_text": "SONY", "animation": "scale_bounce", "position": "center", "intensity": 0.64},
     {"segment": "no_promo", "offset_seconds": 0.18, "duration_seconds": 1.45, "text": "NÃO DIVULGUEM\nO PROJETO", "accent_text": "NÃO DIVULGUEM", "animation": "fade_pop", "position": "center", "intensity": 0.54},
     {"segment": "industry", "offset_seconds": 0.16, "duration_seconds": 1.4, "text": "DINHEIRO • TRAIÇÃO\nREPARAÇÃO", "accent_text": "REPARAÇÃO", "animation": "slide_up", "position": "center", "intensity": 0.54},
     {"segment": "marathon", "offset_seconds": 0.18, "duration_seconds": 1.4, "text": "VENCER A\nMARATONA", "accent_text": "MARATONA", "animation": "scale_bounce", "position": "center", "intensity": 0.56},
