@@ -1,0 +1,45 @@
+EPISODE: Cadeira Cativa — Zé Neto & Cristiano
+Research date: 2026-09-02
+
+MUSIC / CREDITS / RELEASE
+- Shazam — Cadeira Cativa (Ao Vivo): lançamento em 9 de abril de 2026; compositores Junior Gomes, Victor Reis, Edu Valim e Zé André; produção creditada a Zé Neto & Cristiano:
+  https://www.shazam.com/song/1889661531/cadeira-cativa-ao-vivo
+- Sua Música, 19 Mar 2026 — antes da gravação do DVD, Cadeira Cativa foi destacada entre as maiores apostas do repertório e descrita por Cauê Sertanejo como música com “cara, cheiro e jeito de hit”:
+  https://sls.suamusica.com.br/es/noticia/ze-neto-cristiano-soltam-spoiler-de-nova-musica
+- UOL, 9 Apr 2026 — Vocês & Deus foi gravado no Rio em março de 2026, com 21 músicas inéditas e lançamentos em etapas:
+  https://www.uol.com.br/splash/noticias/2026/04/09/ze-neto-e-cristiano-novo-dvd-vorcaro.amp.htm
+- Billboard Brasil, 1 Sep 2026 — Cadeira Cativa aparece em #2 no Hot 100 da semana de 31 de agosto:
+  https://billboard.com.br/sertanejo-15-musicas-mais-ouvidas-hot-100-semana/
+- O significado da letra é apresentado por paráfrase editorial, sem reprodução longa de letra protegida.
+
+BACKGROUND AUDIO — EXTERNAL-FIRST
+Buscas realizadas: acoustic sertanejo instrumental; country acoustic instrumental; romantic acoustic guitar instrumental.
+Candidatas consideradas: Warm Sunset (MusicLFiles, CC BY), Romance Anónimo (CC0), Romanza española (CC0), Infraction — The Farmer (CC BY 3.0; já usado em episódio anterior).
+Selecionada:
+- Romance Anónimo (Jeux interdits), performance de Jim Greeninger, CC0, duração aproximada 2:47:
+  https://commons.wikimedia.org/wiki/File:Romance_An%C3%B3nimo_(Jeux_interdits).ogg
+  Direct: https://upload.wikimedia.org/wikipedia/commons/3/33/Romance_An%C3%B3nimo_%28Jeux_interdits%29.ogg
+  License: https://creativecommons.org/publicdomain/zero/1.0/
+
+SFX — EXTERNAL SEARCH
+Buscas realizadas: whoosh CC0; ding/chime CC0.
+Candidatas consideradas: Airplane Chime Sound Effect (CC0), Sound Effects - Applause after a concert (CC0), Ba dum bum stings (CC0).
+Nenhuma foi usada: sem timeline de TTS resolvida, não havia beat visual específico que justificasse essas entradas com confiança. Pela orientação atual, omitir é preferível a preencher. O único SFX é `impact` do catálogo local, sincronizado ao punch zoom do hook.
+
+VISUALS
+- Ze Neto e Cristiano 2026.png — CC0:
+  https://commons.wikimedia.org/wiki/File:Ze_Neto_e_Cristiano_2026.png
+- Plastic chairs openair.jpg — Hrrg123, CC BY-SA 4.0:
+  https://commons.wikimedia.org/wiki/File:Plastic_chairs_openair.jpg
+- Rio de Janeiro 01.jpg — Gabriel Resende Veiga, CC BY-SA 4.0:
+  https://commons.wikimedia.org/wiki/File:Rio_de_Janeiro_01.jpg
+- Couple holding hands.webm — Editor, CC BY 3.0:
+  https://commons.wikimedia.org/wiki/File:Couple_holding_hands.webm
+- Ljubljana Street Country Guitar Performance.webm — Isak Zvegelj, CC BY 3.0:
+  https://commons.wikimedia.org/wiki/File:Ljubljana_Street_Country_Guitar_Performance.webm
+- Google Timelapse- Rio de Janeiro, Brazil.webm — Google Earth, CC BY 3.0:
+  https://commons.wikimedia.org/wiki/File:Google_Timelapse-_Rio_de_Janeiro,_Brazil.webm
+- Oasis - Morumbi - Live 2025.webm — Mtvdanilo, CC BY-SA 4.0:
+  https://commons.wikimedia.org/wiki/File:Oasis_-_Morumbi_-_Live_2025.webm
+
+No AI-generated visual asset was used.

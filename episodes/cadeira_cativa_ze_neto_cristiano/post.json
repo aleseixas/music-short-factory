@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "CADEIRA CATIVA JÁ ERA APOSTA ANTES DE SER GRAVADA",
+    "source": {"type":"asset","asset_id":"ze_neto_cristiano"}
+  },
+  "youtube": {
+    "title": "CADEIRA CATIVA: por que esse hit já parecia sucesso antes de ser gravado?",
+    "description": "Cadeira Cativa, de Zé Neto & Cristiano, transforma uma amizade indefinida numa ideia simples: talvez já exista um lugar reservado para o amor. A música foi apontada como aposta antes da gravação do projeto Vocês & Deus e chegou ao #2 do Billboard Brasil Hot 100 na semana de 31 de agosto de 2026.\n\nBackground: “Romance Anónimo (Jeux interdits)” — performance de Jim Greeninger (CC0, Wikimedia Commons). Visuais via Wikimedia Commons: Ze Neto e Cristiano 2026 (CC0), Hrrg123 (CC BY-SA 4.0), Gabriel Resende Veiga (CC BY-SA 4.0), Editor (CC BY 3.0), Isak Zvegelj (CC BY 3.0), Google Earth (CC BY 3.0), Mtvdanilo (CC BY-SA 4.0).",
+    "hashtags": ["ZeNetoECristiano","CadeiraCativa","Sertanejo","HistoriaDaMusica","Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Cadeira Cativa já era tratada como uma das grandes apostas do repertório antes mesmo da gravação — e meses depois chegou ao #2 do Hot 100 Brasil.\n\nBackground: “Romance Anónimo (Jeux interdits)” — Jim Greeninger (CC0). Visuais via Wikimedia Commons; créditos completos em sources.txt.",
+    "hashtags": ["ZeNetoECristiano","CadeiraCativa","Sertanejo","HistoriaDaMusica"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "Cadeira Cativa já parecia hit antes de ser gravada. Entenda a metáfora e como a previsão se confirmou.",
+    "hashtags": ["ZeNetoECristiano","CadeiraCativa","Sertanejo","Musica"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

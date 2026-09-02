@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"ze_neto_cristiano","file":"ze_neto_cristiano_2026.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ze%20Neto%20e%20Cristiano%202026.png","credit":"Wikimedia Commons contributors","license":"CC0","focus":{"x":0.5,"y":0.35}},
+    {"id":"plastic_chairs","file":"plastic_chairs_openair.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Plastic%20chairs%20openair.jpg","credit":"Hrrg123 / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"rio_aerial","file":"rio_de_janeiro_01.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Rio%20de%20Janeiro%2001.jpg","credit":"Gabriel Resende Veiga / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"couple_holding_hands","file":"couple_holding_hands.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Couple%20holding%20hands.webm","credit":"Editor / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"country_guitar","file":"ljubljana_country_guitar.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ljubljana%20Street%20Country%20Guitar%20Performance.webm","credit":"Isak Zvegelj / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"rio_timelapse","file":"rio_timelapse.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Google%20Timelapse-%20Rio%20de%20Janeiro%2C%20Brazil.webm","credit":"Google Earth / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"concert_crowd","file":"oasis_morumbi_2025.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Oasis%20-%20Morumbi%20-%20Live%202025.webm","credit":"Mtvdanilo / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

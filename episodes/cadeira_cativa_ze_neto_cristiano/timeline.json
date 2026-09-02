@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "external_cadeira_cativa_romance_anonimo",
+    "volume": 0.065
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.15,
+      "type": "impact",
+      "volume": 0.12
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.55,
+      "type": "punch_zoom",
+      "intensity": 0.52
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.12,
+      "duration_seconds": 1.2,
+      "text": "AMIZADE OU\nROMANCE?",
+      "accent_text": "ROMANCE",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.58
+    },
+    {
+      "segment": "metafora",
+      "offset_seconds": 0.12,
+      "duration_seconds": 1.1,
+      "text": "LUGAR\nRESERVADO",
+      "accent_text": "RESERVADO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.5
+    },
+    {
+      "segment": "aposta",
+      "offset_seconds": 0.12,
+      "duration_seconds": 1.15,
+      "text": "APOSTA ANTES\nDA GRAVAÇÃO",
+      "accent_text": "APOSTA",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.52
+    },
+    {
+      "segment": "sofrencia",
+      "offset_seconds": 0.12,
+      "duration_seconds": 1.1,
+      "text": "NÃO É\nSOFRÊNCIA",
+      "accent_text": "NÃO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.52
+    },
+    {
+      "segment": "top2",
+      "offset_seconds": 0.12,
+      "duration_seconds": 1.1,
+      "text": "#2 NO\nBRASIL",
+      "accent_text": "#2",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.6
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.12,
+      "duration_seconds": 1.15,
+      "text": "O AMOR JÁ\nESTAVA RESERVADO",
+      "accent_text": "RESERVADO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.54
+    }
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"ze_neto_cristiano","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_quase_casal","segment":"quase_casal","asset":"couple_holding_hands","source_start_seconds":0,"source_end_seconds":10,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_pacto","segment":"pacto","asset":"rio_aerial","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_metafora","segment":"metafora","asset":"plastic_chairs","motion":"push_in","transition_out":"cut","highlight":"CADEIRA CATIVA"},
+    {"id":"shot_humor","segment":"humor","asset":"couple_holding_hands","source_start_seconds":12,"source_end_seconds":22,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_compositores","segment":"compositores","asset":"country_guitar","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_rio","segment":"rio","asset":"rio_timelapse","source_start_seconds":0,"source_end_seconds":10,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_aposta","segment":"aposta","asset":"ze_neto_cristiano","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_refrao","segment":"refrao","asset":"country_guitar","source_start_seconds":20,"source_end_seconds":32,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_ao_vivo","segment":"ao_vivo","asset":"concert_crowd","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_sofrencia","segment":"sofrencia","asset":"couple_holding_hands","source_start_seconds":2,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_abril","segment":"abril","asset":"rio_aerial","motion":"push_in","transition_out":"cut","highlight":"ABRIL 2026"},
+    {"id":"shot_top2","segment":"top2","asset":"concert_crowd","source_start_seconds":20,"source_end_seconds":32,"motion":"hold","transition_out":"cut","highlight":"#2 HOT 100 BRASIL"},
+    {"id":"shot_previsao","segment":"previsao","asset":"country_guitar","source_start_seconds":40,"source_end_seconds":52,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_payoff","segment":"payoff","asset":"couple_holding_hands","source_start_seconds":13,"source_end_seconds":23,"motion":"hold","transition_out":"cut"}
+  ]
+}
