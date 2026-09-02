@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile": "external_reza_milhao_gangsta_synth", "volume": 0.06},
+  "sfx_cues": [
+    {"time_seconds": 0.12, "type": "bass_drop_cinematic", "volume": 0.12, "duration_seconds": 0.65},
+    {"time_seconds": 7.8, "type": "whoosh_fast", "volume": 0.08, "duration_seconds": 0.5},
+    {"time_seconds": 12.5, "type": "crowd_cheer", "volume": 0.07, "duration_seconds": 0.8},
+    {"time_seconds": 18.1, "type": "cash_register_short", "volume": 0.09, "duration_seconds": 0.7},
+    {"time_seconds": 23.7, "type": "record_scratch", "volume": 0.10, "duration_seconds": 0.7},
+    {"time_seconds": 28.0, "type": "notification_iphone", "volume": 0.07, "duration_seconds": 0.65},
+    {"time_seconds": 32.8, "type": "ding", "volume": 0.07, "duration_seconds": 0.55},
+    {"time_seconds": 37.2, "type": "suspense_build_up", "volume": 0.06, "duration_seconds": 1.15},
+    {"time_seconds": 45.6, "type": "whoosh_fast", "volume": 0.08, "duration_seconds": 0.5},
+    {"time_seconds": 54.7, "type": "riser_build_up", "volume": 0.07, "duration_seconds": 1.1},
+    {"time_seconds": 61.5, "type": "cash_register", "volume": 0.08, "duration_seconds": 0.85},
+    {"time_seconds": 73.0, "type": "impact", "volume": 0.11, "duration_seconds": 0.7}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds": 0.08, "end_seconds": 0.6, "type": "punch_zoom", "intensity": 0.58},
+    {"start_seconds": 18.0, "end_seconds": 19.35, "type": "slow_zoom_in", "intensity": 0.34},
+    {"start_seconds": 23.6, "end_seconds": 24.25, "type": "punch_zoom", "intensity": 0.44},
+    {"start_seconds": 37.1, "end_seconds": 38.45, "type": "slow_zoom_in", "intensity": 0.32},
+    {"start_seconds": 54.6, "end_seconds": 55.95, "type": "slow_zoom_in", "intensity": 0.34},
+    {"start_seconds": 61.4, "end_seconds": 62.05, "type": "punch_zoom", "intensity": 0.42},
+    {"start_seconds": 72.95, "end_seconds": 73.55, "type": "punch_zoom", "intensity": 0.5}
+  ],
+  "text_fx_cues": [
+    {"segment": "hook", "offset_seconds": 0.15, "duration_seconds": 1.55, "text": "NÃO É SÓ\nSOBRE DINHEIRO", "accent_text": "DINHEIRO", "animation": "scale_bounce", "position": "center", "intensity": 0.6},
+    {"segment": "release", "offset_seconds": 0.18, "duration_seconds": 1.35, "text": "UM EP\nSURPRESA", "accent_text": "SURPRESA", "animation": "pop_in", "position": "center", "intensity": 0.5},
+    {"segment": "acronym", "offset_seconds": 0.15, "duration_seconds": 1.5, "text": "S O N Y", "accent_text": "SONY", "animation": "scale_bounce", "position": "center", "intensity": 0.64},
+    {"segment": "no_promo", "offset_seconds": 0.18, "duration_seconds": 1.45, "text": "NÃO DIVULGUEM\nO PROJETO", "accent_text": "NÃO DIVULGUEM", "animation": "fade_pop", "position": "center", "intensity": 0.54},
+    {"segment": "industry", "offset_seconds": 0.16, "duration_seconds": 1.4, "text": "DINHEIRO • TRAIÇÃO\nREPARAÇÃO", "accent_text": "REPARAÇÃO", "animation": "slide_up", "position": "center", "intensity": 0.54},
+    {"segment": "marathon", "offset_seconds": 0.18, "duration_seconds": 1.4, "text": "VENCER A\nMARATONA", "accent_text": "MARATONA", "animation": "scale_bounce", "position": "center", "intensity": 0.56},
+    {"segment": "strategy", "offset_seconds": 0.18, "duration_seconds": 1.45, "text": "DEPOIS VEIO\n333", "accent_text": "333", "animation": "pop_in", "position": "center", "intensity": 0.58},
+    {"segment": "irony", "offset_seconds": 0.18, "duration_seconds": 1.45, "text": "O MILHÃO NÃO ERA\nA ÚNICA QUESTÃO", "accent_text": "NÃO ERA", "animation": "fade_pop", "position": "center", "intensity": 0.54},
+    {"segment": "payoff", "offset_seconds": 0.18, "duration_seconds": 1.55, "text": "UMA DECLARAÇÃO\nDE INDEPENDÊNCIA", "accent_text": "INDEPENDÊNCIA", "animation": "scale_bounce", "position": "center", "intensity": 0.62}
+  ],
+  "shots": [
+    {"id": "shot_hook", "segment": "hook", "asset": "matue_the_town", "motion": "push_in", "transition_out": "cut", "highlight": "REZA DO MILHÃO • MATUÊ"},
+    {"id": "shot_preview", "segment": "preview", "asset": "street_traffic", "source_start_seconds": 0.0, "source_end_seconds": 10.0, "motion": "hold", "transition_out": "crossfade", "highlight": "PRÉVIA DESDE 2020"},
+    {"id": "shot_release", "segment": "release", "asset": "concert_gothenburg", "source_start_seconds": 1.0, "source_end_seconds": 12.5, "motion": "hold", "transition_out": "cut", "highlight": "AGOSTO DE 2024"},
+    {"id": "shot_acronym", "segment": "acronym", "asset": "matue_planeta", "motion": "push_in", "transition_out": "cut", "highlight": "SABOR OVERDOSE NO YAKISOBA = SONY"},
+    {"id": "shot_exit", "segment": "exit", "asset": "contract_signing", "source_start_seconds": 1.0, "source_end_seconds": 10.0, "motion": "hold", "transition_out": "crossfade", "highlight": "RESTRIÇÕES E RECEITAS"},
+    {"id": "shot_no_promo", "segment": "no_promo", "asset": "matue_the_town", "motion": "pan_right", "transition_out": "cut", "highlight": "“NÃO DIVULGUEM”"},
+    {"id": "shot_meaning", "segment": "meaning", "asset": "coin_counter", "source_start_seconds": 0.0, "source_end_seconds": 9.5, "motion": "hold", "transition_out": "cut", "highlight": "FOCA NO MILHÃO"},
+    {"id": "shot_industry", "segment": "industry", "asset": "street_traffic", "source_start_seconds": 12.0, "source_end_seconds": 22.0, "motion": "hold", "transition_out": "crossfade", "highlight": "TRAIÇÃO • REPARAÇÃO"},
+    {"id": "shot_beyond", "segment": "beyond", "asset": "matue_planeta", "motion": "pull_out", "transition_out": "cut", "highlight": "ALÉM DO DINHEIRO"},
+    {"id": "shot_marathon", "segment": "marathon", "asset": "marathon_runners", "source_start_seconds": 1.0, "source_end_seconds": 12.5, "motion": "hold", "transition_out": "cut", "highlight": "VENCER A MARATONA"},
+    {"id": "shot_credits", "segment": "credits", "asset": "matue_the_town", "motion": "pan_left", "transition_out": "cut", "highlight": "MATUÊ + WIU"},
+    {"id": "shot_strategy", "segment": "strategy", "asset": "street_traffic", "source_start_seconds": 22.0, "source_end_seconds": 34.5, "motion": "hold", "transition_out": "crossfade", "highlight": "333 • 30PRAUM"},
+    {"id": "shot_irony", "segment": "irony", "asset": "coin_counter", "source_start_seconds": 0.0, "source_end_seconds": 9.5, "motion": "hold", "transition_out": "cut", "highlight": "NÃO ERA SÓ DINHEIRO"},
+    {"id": "shot_turn", "segment": "turn", "asset": "contract_signing", "source_start_seconds": 7.0, "source_end_seconds": 16.5, "motion": "hold", "transition_out": "cut", "highlight": "CONTROLE • AUTONOMIA"},
+    {"id": "shot_payoff", "segment": "payoff", "asset": "matue_planeta", "motion": "pull_out", "transition_out": "cut", "highlight": "DECLARAÇÃO DE INDEPENDÊNCIA"}
+  ]
+}
