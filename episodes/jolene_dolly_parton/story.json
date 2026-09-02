@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "Jolene — Dolly Parton: a rival feita de duas pessoas reais",
+  "slug": "jolene_dolly_parton",
+  "target_duration_seconds": 78,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Jolene, de Dolly Parton, parece uma súplica de ciúme. Mas a mulher da música nasceu da mistura de duas pessoas reais.",
+      "delivery": "hook"
+    },
+    {
+      "id": "name",
+      "text": "Após um show, Dolly conheceu uma menina ruiva chamada Jolene e guardou aquele nome para uma canção.",
+      "delivery": "curious"
+    },
+    {
+      "id": "bank",
+      "text": "A personagem veio de outro lugar: uma funcionária de banco que dava atenção demais ao marido dela, Carl Dean.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "joke",
+      "text": "Dolly disse que a situação virou uma piada entre o casal.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "vulnerability",
+      "text": "Na música, ela transforma esse incômodo em vulnerabilidade.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "rival",
+      "text": "Em vez de ameaçar a rival, a narradora elogia sua beleza e admite medo de perder quem ama.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "why",
+      "text": "É isso que torna Jolene tão poderosa: a tensão vem de insegurança, não de raiva.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "arrangement",
+      "text": "O arranjo country reforça isso com violões e pulsação repetitiva.",
+      "delivery": "curious"
+    },
+    {
+      "id": "release",
+      "text": "A faixa saiu em 1973 e virou um dos maiores clássicos de Dolly.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "covers",
+      "text": "Décadas depois, artistas diferentes continuaram reinterpretando a música.",
+      "delivery": "curious"
+    },
+    {
+      "id": "beyonce",
+      "text": "Beyoncé, em 2024, recriou Jolene com postura mais confrontadora.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "chart_2026",
+      "text": "Em 2026, após a morte de Dolly, a gravação original entrou pela primeira vez no Top 40 da Billboard Hot 100.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "human",
+      "text": "Mais de meio século depois, Jolene ainda funciona porque humaniza o ciúme.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "payoff",
+      "text": "O medo fala mais alto que o orgulho — e Dolly cantou isso.",
+      "delivery": "payoff"
+    }
+  ]
+}
