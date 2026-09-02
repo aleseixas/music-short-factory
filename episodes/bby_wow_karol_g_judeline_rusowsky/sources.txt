@@ -1,0 +1,23 @@
+HISTÓRIA / SIGNIFICADO / COMPOSIÇÃO
+- Rolling Stone Australia — “The Meaning Behind Every Song on Karol G's Most Personal Album, In Her Own Words” (12 Aug 2026): relato direto de Karol G sobre querer uma música de clube com emoção, a primeira versão solo e a decisão de chamar rusowsky e Judeline. https://au.rollingstone.com/music/music-features/karol-g-o-me-arrepiento-de-sentir-tanto-interview-meaning-99503/
+- LOS40 — “Letra y significado de 'BbY WOW'...” (7 Aug 2026): contexto do álbum, leitura de ausência/desejo e a associação de fãs entre “wow” e Feid; a matéria ressalta que Karol G não confirmou essa interpretação. https://los40.com/2026/08/07/letra-y-significado-de-bby-wow-la-cancion-de-karol-g-con-judeline-y-rusowsky-que-hace-referencia-a-una-de-las-senas-de-identidad-de-feid/
+- El País — “'BbY WOW', la ‘conjunción de astros’...” (2 Sep 2026): crescimento orgânico, produção de Tainy, viralização no TikTok e liderança global do Spotify. https://elpais.com/cultura/2026-09-02/bby-wow-la-conjuncion-de-astros-que-llevo-a-lo-mas-alto-la-cancion-de-judeline-con-karol-g.html
+
+CHARTS / MOMENTO CULTURAL
+- Billboard / Billboard Canada — Global charts dated Sep. 5, 2026: “BbY WOW” entrou no top 10 do Global 200; 24.1M streams no período medido. https://ca.billboard.com/music/chart-beat/shakira-burna-boy-global-charts-sept-5-1236329009/
+- Europa FM — 30 Aug 2026: faixa em #1 global no Spotify em 29 Aug e marco de Judeline como primeira artista espanhola feminina a liderar o ranking. https://www.europafm.com/noticias/musica/letra-significado-bby-wow-exito-karol-judeline-rusowsky_202608306a941c112bcaf82098f620f1.html
+
+BACKGROUND MUSIC EXTERNA
+- “3 am West End” — statusq. Wikimedia Commons / FreePD. CC0 1.0, licença revisada no Commons; 4m51s. Estética chill/electronic com synths e groove suave, escolhida para sustentar o contraste entre pista e melancolia sem competir com a voz. https://commons.wikimedia.org/wiki/File:Statusq_-_3_am_West_End.opus
+- Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/b/b0/Statusq_-_3_am_West_End.opus
+- Foram avaliadas também opções externas de synth-pop/dance e faixas melancólicas no Wikimedia Commons; “3 am West End” venceu por duração, CC0 revisado e encaixe emocional. Não foi usado preview comercial.
+
+VISUAIS
+- DJ set / público dançando — Agencia LUSA, CC BY 3.0; 1080x1920, 1m30s. https://commons.wikimedia.org/wiki/File:Dj_Set_do_padre_Guilherme_Peixoto_acordou_peregrinos_no_Parque_Tejo_(1080p).webm
+- Baile de marimba / pessoas dançando — ProtoplasmaKid, CC BY-SA 4.0; 1215x2160, 47.5s. https://commons.wikimedia.org/wiki/File:Baile_tradicional_de_marimba_en_el_kiosco_principal_de_San_Crist%C3%B3bal_de_las_Casas.webm
+- Home studio — Ieruca, CC BY 4.0; 1920x1080, 23s. https://commons.wikimedia.org/wiki/File:Home_studio.webm
+- City timelapse — Location Kenya, CC BY 3.0; 1920x1080, 1m16s. https://commons.wikimedia.org/wiki/File:City_timelapse_video.webm
+- SchwuZ Nightclub Berlin Dancing — JasonParis, CC BY 2.0; 3264x2448. https://commons.wikimedia.org/wiki/File:SchwuZ_Nightclub_Berlin_Dancing.jpg
+
+SFX
+- Apenas biblioteca curada já existente em assets/audio/sfx/catalog.json. Type usado: bass_drop_cinematic. Nenhum SFX externo foi pesquisado ou adicionado ao catálogo nesta criação.
