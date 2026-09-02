@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "external_oke_funkhouser",
+    "volume": 0.06
+  },
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.11},
+    {"time_seconds":7.9,"type":"whoosh_fast","volume":0.10},
+    {"time_seconds":17.05,"type":"whoosh_fire","volume":0.10},
+    {"time_seconds":23.25,"type":"camera_shutter","volume":0.09},
+    {"time_seconds":27.85,"type":"chime_sparkles","volume":0.08},
+    {"time_seconds":37.8,"type":"impact","volume":0.10},
+    {"time_seconds":48.15,"type":"record_scratch","volume":0.08},
+    {"time_seconds":59.35,"type":"crowd_cheer","volume":0.09},
+    {"time_seconds":65.15,"type":"dramatic_dun_dun","volume":0.08},
+    {"time_seconds":73.45,"type":"riser_build_up","volume":0.08}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.10,"end_seconds":0.55,"type":"punch_zoom","intensity":0.54},
+    {"start_seconds":17.10,"end_seconds":22.80,"type":"slow_zoom_in","intensity":0.34},
+    {"start_seconds":27.90,"end_seconds":33.20,"type":"pan_right","intensity":0.32},
+    {"start_seconds":37.85,"end_seconds":41.70,"type":"punch_zoom","intensity":0.46},
+    {"start_seconds":48.20,"end_seconds":54.40,"type":"pan_left","intensity":0.30},
+    {"start_seconds":59.40,"end_seconds":59.85,"type":"punch_zoom","intensity":0.50},
+    {"start_seconds":65.20,"end_seconds":68.95,"type":"slow_zoom_out","intensity":0.34},
+    {"start_seconds":73.50,"end_seconds":77.70,"type":"slow_zoom_in","intensity":0.38}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.35,"text":"NÃO É SÓ\nTRAVA-LÍNGUA","accent_text":"NÃO É SÓ","animation":"scale_bounce","position":"center","intensity":0.60},
+    {"segment":"seventeen","offset_seconds":0.15,"duration_seconds":1.15,"text":"17 ETNIAS","accent_text":"17","animation":"pop_in","position":"center","intensity":0.56},
+    {"segment":"forest_club","offset_seconds":0.15,"duration_seconds":1.20,"text":"FLORESTA VIROU\nPISTA","accent_text":"PISTA","animation":"slide_up","position":"center","intensity":0.54},
+    {"segment":"title_meaning","offset_seconds":0.12,"duration_seconds":1.15,"text":"OKÊ =\nANCESTRALIDADE","accent_text":"OKÊ","animation":"fade_pop","position":"center","intensity":0.50},
+    {"segment":"production","offset_seconds":0.12,"duration_seconds":1.05,"text":"FUNK 150 BPM","accent_text":"150 BPM","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"viral","offset_seconds":0.12,"duration_seconds":1.15,"text":"VIROU DESAFIO\nNO TIKTOK","accent_text":"TIKTOK","animation":"pop_in","position":"center","intensity":0.56},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.30,"text":"MEMÓRIA +\nFUTURO","accent_text":"FUTURO","animation":"fade_pop","position":"center","intensity":0.58}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"anitta_2026","motion":"push_in","transition_out":"cut","highlight":"OKÊ"},
+    {"id":"shot_seventeen","segment":"seventeen","asset":"indigenous_campaign","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_not_game","segment":"not_game","asset":"bro_mcs","motion":"pan_right","transition_out":"crossfade"},
+    {"id":"shot_forest_club","segment":"forest_club","asset":"forest_drone","source_start_seconds":18,"source_end_seconds":30,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_center","segment":"center","asset":"katu_mirim","motion":"push_in","transition_out":"cut","highlight":"BRÔ MC’S + KATÚ"},
+    {"id":"shot_title_meaning","segment":"title_meaning","asset":"indigenous_dance","source_start_seconds":35,"source_end_seconds":47,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_sample","segment":"sample","asset":"forest_drone","source_start_seconds":52,"source_end_seconds":64,"motion":"hold","transition_out":"crossfade","highlight":"CABOCLA DE PENA"},
+    {"id":"shot_production","segment":"production","asset":"dj_crowd","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_contrast","segment":"contrast","asset":"indigenous_dance","source_start_seconds":92,"source_end_seconds":104,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_invite","segment":"invite","asset":"bro_mcs","motion":"pull_out","transition_out":"cut","highlight":"PAPATINHO"},
+    {"id":"shot_visual_identity","segment":"visual_identity","asset":"indigenous_campaign","source_start_seconds":20,"source_end_seconds":32,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_viral","segment":"viral","asset":"dj_crowd","source_start_seconds":28,"source_end_seconds":40,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_reverse","segment":"reverse","asset":"anitta_2026","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_names","segment":"names","asset":"indigenous_campaign","source_start_seconds":42,"source_end_seconds":54,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_payoff","segment":"payoff","asset":"forest_drone","source_start_seconds":92,"source_end_seconds":106,"motion":"hold","transition_out":"cut"}
+  ]
+}
