@@ -104,14 +104,16 @@ Não crie um pacote completo em todos os beats. Varie a intensidade:
 - reveals: densidade pode subir por um intervalo curto;
 - payoff: encerre com clareza, sem empilhar tudo no último segundo.
 
-Para uma linguagem mais nativa de TikTok, Reels e Shorts, use microacentos de
-áudio para sustentar retenção: entrada do hook, mudanças de assunto, revelações,
-estatísticas, aparições de texto, transições visuais e payoff. O alvo é cerca de
-15 SFX em 60–90 segundos, distribuídos pela narrativa — aproximadamente um a
-cada 4–6 segundos como média, nunca como grade automática. Os primeiros três
-segundos podem ser mais densos; contexto emocional e frases importantes ainda
-precisam de espaço para respirar. Ritmo alto não significa volume alto nem um
-efeito em toda frase.
+Para uma linguagem mais nativa de TikTok, Reels e Shorts, trate SFX como reforço
+para a edição visual, não como camada de preenchimento. Sempre que possível, o
+SFX deve começar junto de uma mudança perceptível: troca de shot, corte,
+transição, entrada de kinetic text, overlay, punch zoom ou outro evento visual
+editorial relevante. Não existe frequência-alvo nem quantidade mínima. Muitos
+shots podem e devem ficar sem SFX quando a voz, a música e o próprio corte já
+sustentarem o momento. Antes de adicionar uma cue, pergunte: “o que acontece
+visualmente exatamente neste instante?”. Se nada relevante acontecer,
+normalmente omita o efeito. Risers e outros acentos puramente narrativos são
+exceções válidas quando houver intenção editorial clara.
 
 ## Editorial budget
 
@@ -119,7 +121,7 @@ Para vídeos de 60–90 segundos, use como referência:
 
 | Camada | Faixa editorial | Warning de excesso |
 | --- | ---: | ---: |
-| SFX | aproximadamente 15 (12–18) | mais de 25 |
+| SFX | sem mínimo; orientado por eventos visuais | mais de 25 |
 | visual FX explícitos | 6–10 | mais de 10 |
 | text FX | 5–9 | mais de 10 |
 | overlays | 2–5 | mais de 6 |
@@ -146,10 +148,16 @@ de arquivo em `profile`. Não altere ducking e não presuma normalização LUFS.
 
 Escolha pelo significado: `impact` para informação decisiva, `whoosh` para
 movimento, `pop` para detalhe curto e `riser` para expectativa são referências
-possíveis, não associações obrigatórias. Evite sequências repetitivas e clusters
-sem motivo editorial. Prefira uma paleta variada e sincronize os SFX com ações
-visuais ou mudanças semânticas reais. Sobreposição intencional é permitida em um
-mesmo editorial beat quando o mix continuar claro; evite sobreposição acidental.
+possíveis, não associações obrigatórias. O padrão é sincronizar o início do SFX
+com um evento visual perceptível do mesmo editorial beat, como corte/troca de
+shot, transição, punch zoom, entrada de texto ou overlay. Não adicione SFX para
+cumprir quantidade, preencher silêncio ou marcar automaticamente cada frase ou
+shot. Um shot sem SFX é perfeitamente válido e frequentemente preferível. Se não
+houver evento visual relevante no instante proposto, normalmente omita a cue;
+use exceções puramente narrativas apenas quando o efeito tiver função clara.
+Evite sequências repetitivas e clusters sem motivo editorial. Sobreposição
+intencional é permitida em um mesmo editorial beat quando o mix continuar claro;
+evite sobreposição acidental.
 
 Quando somente um trecho do arquivo for editorialmente útil, use
 `source_start_seconds` (padrão `0`) e `duration_seconds` (opcional). Consulte a
@@ -229,20 +237,10 @@ escolha editorial melhor.
   },
   "sfx_cues": [
     {"time_seconds": 0.25, "type": "impact", "volume": 0.35},
-    {"time_seconds": 3.1, "type": "whoosh", "volume": 0.2},
-    {"time_seconds": 8.1, "type": "pop", "volume": 0.18},
-    {"time_seconds": 13.6, "type": "camera_shutter", "volume": 0.16},
-    {"time_seconds": 19.4, "type": "ding", "volume": 0.18},
-    {"time_seconds": 24.2, "type": "whoosh", "volume": 0.2},
-    {"time_seconds": 30.7, "type": "riser", "volume": 0.18},
+    {"time_seconds": 19.5, "type": "whoosh", "volume": 0.2},
     {"time_seconds": 32.1, "type": "impact", "volume": 0.32},
-    {"time_seconds": 38.8, "type": "pop", "volume": 0.17},
-    {"time_seconds": 44.5, "type": "reverse_cymbal", "volume": 0.14},
-    {"time_seconds": 49.0, "type": "cinematic_piano", "volume": 0.1, "source_start_seconds": 1.5, "duration_seconds": 2.5},
-    {"time_seconds": 54.3, "type": "camera_flash", "volume": 0.15},
-    {"time_seconds": 60.1, "type": "crowd_gasp", "volume": 0.12},
-    {"time_seconds": 67.2, "type": "impact", "volume": 0.28},
-    {"time_seconds": 72.0, "type": "applause", "volume": 0.12}
+    {"time_seconds": 48.8, "type": "pop", "volume": 0.17},
+    {"time_seconds": 67.2, "type": "impact", "volume": 0.28}
   ],
   "visual_fx_cues": [
     {"start_seconds": 0.18, "end_seconds": 0.58, "type": "punch_zoom", "intensity": 0.58},
