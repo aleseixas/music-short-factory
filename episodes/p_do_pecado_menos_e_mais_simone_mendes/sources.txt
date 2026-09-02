@@ -1,0 +1,18 @@
+PESQUISA / CONTEXTO
+- Billboard Brasil — história de “P do Pecado”: composição inspirada em uma traição real, caminhos anteriores da faixa, sugestão de Dudu Borges e chegada ao Menos É Mais. https://billboard.com.br/
+- Billboard Brasil — Menos É Mais convida Simone Mendes para o projeto Molho, gravado em Campina Grande; composição creditada a Henrique Casttro, Elvis Elan, Ricardo e Ronael; faixa já viral antes do lançamento. https://billboard.com.br/
+- Billboard Brasil — retrospectiva de “P do Pecado”: lançamento em 29/04/2025, participação de Simone Mendes e premiações no Prêmio Multishow. https://billboard.com.br/
+- CNN Brasil — “P do Pecado” chegou a 105 dias / 15 semanas não consecutivas no topo do Spotify Brasil, recorde desde o início do Spotify Charts no país. https://www.cnnbrasil.com.br/
+- Billboard Brasil Hot 100 — semana de 31/08/2026: “P do Pecado” ainda aparecia no ranking, em #32. https://billboard.com.br/
+
+VISUAIS
+- Grupo Menos é Mais.png — Canal do Jeferson Almeida / Wikimedia Commons — CC BY 3.0. https://commons.wikimedia.org/wiki/File:Grupo_Menos_%C3%A9_Mais.png
+- Simone Mendes 2026.png — Tupperware Brasil / Wikimedia Commons — CC BY 3.0. https://commons.wikimedia.org/wiki/File:Simone_Mendes_2026.png
+- Concert at University of Gothenburg.webm — Netha Hussain / Wikimedia Commons — CC BY-SA 4.0. https://commons.wikimedia.org/wiki/File:Concert_at_University_of_Gothenburg.webm
+- Street traffic.webm — Editor / Wikimedia Commons — CC BY 3.0. https://commons.wikimedia.org/wiki/File:Street_traffic.webm
+
+BACKGROUND MUSIC
+- Infraction — Dance (Upbeat Creative Future Pop) — Wikimedia Commons — CC BY 3.0. https://commons.wikimedia.org/wiki/File:Infraction_-_Dance_(Upbeat_Creative_Future_Pop).ogg
+
+SFX
+- Apenas types já existentes em assets/audio/sfx/catalog.json na main no início da autoria.
