@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O MILHÃO NÃO ERA SÓ DINHEIRO",
+    "source": {"type":"asset","asset_id":"matue_planeta"}
+  },
+  "youtube": {
+    "title": "Reza do Milhão: o recado de independência escondido no hit do Matuê",
+    "description": "Reza do Milhão parece uma faixa sobre dinheiro e vitória, mas o contexto do lançamento muda a leitura. A música fechou o EP Sabor Overdose no Yakisoba — título cujas iniciais formam SONY — no momento em que Matuê encerrava sua relação com a gravadora antes de lançar 333 de forma independente pela 30PRAUM.\n\nBackground: “Friendly Evil Gangsta Synth Hip Hop” — Mesostic (CC0, Wikimedia Commons). Visuais via Wikimedia Commons: Feitidede (CC0), Governo RS / Vitor Rosa (CC BY-SA 4.0), Editor (CC BY 3.0), Netha Hussain (CC BY-SA 4.0), EU2016NL (CC BY 3.0), Jonashtand (CC BY-SA 4.0) e Legoktm (CC BY-SA 4.0).",
+    "hashtags": ["Matue","RezaDoMilhao","30PRAUM","TrapBrasil","HistoriaDaMusica","Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Reza do Milhão parece ser só sobre dinheiro. Mas quando você liga a letra ao EP Sabor Overdose no Yakisoba — S.O.N.Y. — a faixa ganha outra camada: autonomia, pressão e independência artística.\n\nBackground: “Friendly Evil Gangsta Synth Hip Hop” — Mesostic (CC0). Créditos visuais completos em sources.txt.",
+    "hashtags": ["Matue","RezaDoMilhao","30PRAUM","TrapBrasil","MusicaBrasileira"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "Reza do Milhão não é só sobre ficar rico. O contexto com a Sony muda a música inteira.",
+    "hashtags": ["Matue","RezaDoMilhao","30PRAUM","TrapBrasil","Musica"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
