@@ -5,7 +5,7 @@
     {"time_seconds": 0.12, "type": "bass_drop_cinematic", "volume": 0.09, "duration_seconds": 0.55},
     {"time_seconds": 7.0, "type": "whoosh_fast", "volume": 0.065, "duration_seconds": 0.4},
     {"time_seconds": 13.0, "type": "ding", "volume": 0.06, "duration_seconds": 0.4},
-    {"time_seconds": 23.0, "type": "heartbeat_slow", "volume": 0.045, "duration_seconds": 0.8},
+    {"time_seconds": 23.0, "type": "heartbeat_slow", "volume": 0.045, "duration_seconds": 0.70},
     {"time_seconds": 32.0, "type": "record_scratch", "volume": 0.065, "duration_seconds": 0.45},
     {"time_seconds": 41.0, "type": "whoosh_transition", "volume": 0.06, "duration_seconds": 0.45},
     {"time_seconds": 50.0, "type": "camera_flash", "volume": 0.055, "duration_seconds": 0.35},
