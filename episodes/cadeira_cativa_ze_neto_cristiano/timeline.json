@@ -94,7 +94,7 @@
     {"id":"shot_ao_vivo","segment":"ao_vivo","asset":"concert_crowd","source_start_seconds":0,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
     {"id":"shot_sofrencia","segment":"sofrencia","asset":"couple_holding_hands","source_start_seconds":2,"source_end_seconds":12,"motion":"hold","transition_out":"cut"},
     {"id":"shot_abril","segment":"abril","asset":"rio_aerial","motion":"push_in","transition_out":"cut","highlight":"ABRIL 2026"},
-    {"id":"shot_top2","segment":"top2","asset":"concert_crowd","source_start_seconds":20,"source_end_seconds":32,"motion":"hold","transition_out":"cut","highlight":"#2 HOT 100 BRASIL"},
+    {"id":"shot_top2","segment":"top2","asset":"concert_crowd","source_start_seconds":7,"source_end_seconds":15.8,"motion":"hold","transition_out":"cut","highlight":"#2 HOT 100 BRASIL"},
     {"id":"shot_previsao","segment":"previsao","asset":"country_guitar","source_start_seconds":40,"source_end_seconds":52,"motion":"hold","transition_out":"cut"},
     {"id":"shot_payoff","segment":"payoff","asset":"couple_holding_hands","source_start_seconds":13,"source_end_seconds":23,"motion":"hold","transition_out":"cut"}
   ]
