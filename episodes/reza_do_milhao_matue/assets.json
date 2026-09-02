@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id": "matue_the_town", "file": "matue_the_town_2025.jpg", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Matu%C3%AA.jpg", "credit": "Feitidede / Wikimedia Commons", "license": "CC0 1.0", "focus": {"x": 0.5, "y": 0.35}},
+    {"id": "matue_planeta", "file": "matue_planeta_atlantida_2026.jpg", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/31.01.2026%20%E2%80%93%20Matu%C3%AA%20participa%20da%20segunda%20noite%20do%20Planeta%20Atl%C3%A2ntida%20-%2055072476430.jpg", "credit": "Governo RS / Vitor Rosa / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.4}},
+    {"id": "street_traffic", "file": "street_traffic.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Street%20traffic.webm", "credit": "Editor / Wikimedia Commons", "license": "CC BY 3.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "concert_gothenburg", "file": "concert_gothenburg.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Concert%20at%20University%20of%20Gothenburg.webm", "credit": "Netha Hussain / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "contract_signing", "file": "paris_agreement_signed.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Paris%20agreement%20signed.webm", "credit": "EU2016NL / Wikimedia Commons", "license": "CC BY 3.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "coin_counter", "file": "coin_counter_vertical.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/201905%20Coin%20counter%20working.webm", "credit": "Jonashtand / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.5}},
+    {"id": "marathon_runners", "file": "columbus_marathon_runners.webm", "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/2018%20Columbus%20Marathon%20runners.webm", "credit": "Legoktm / Wikimedia Commons", "license": "CC BY-SA 4.0", "focus": {"x": 0.5, "y": 0.5}}
+  ]
+}
