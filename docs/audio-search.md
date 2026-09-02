@@ -3,8 +3,10 @@
 Esta capacidade existe para a etapa de **autoria**. Ela não roda no renderer e
 não escolhe áudio automaticamente. Quando houver acesso web, o GPT/agente segue
 uma política **external-first**: pesquisa e compara opções externas antes de
-aceitar o catálogo local, sem relaxar compatibilidade técnica ou verificação de
-direitos. O catálogo local continua sendo fallback seguro.
+aceitar o catálogo local. Adequação ao episódio, novidade, reconhecimento e risco
+operacional devem ser avaliados separadamente; metadados jurídicos incompletos no
+agregador não eliminam uma candidata da pesquisa. O catálogo local continua sendo
+o fallback local técnico, não a escolha automática por excesso de cautela.
 
 ## Caminho principal: tarefa agendada do ChatGPT
 
@@ -26,8 +28,10 @@ que o resultado é de fato um efeito sonoro.
 Em cada episódio, faça pelo menos três variações de consulta para background e
 duas para SFX. Compare 2–3 candidatas externas plausíveis por camada. Não use uma
 opção local só porque já é conhecida: use-a quando a busca falhar ou quando as
-candidatas externas perderem por licença, compatibilidade, qualidade, duração ou
-adequação editorial. Registre a razão concreta do fallback em `sources.txt`.
+candidatas externas perderem por compatibilidade, qualidade, duração, adequação
+editorial ou risco operacional concreto. Licença ausente ou inconsistente apenas
+no Openverse deve levar à página original antes de levar ao descarte. Registre a
+razão concreta do fallback em `sources.txt`.
 
 Para descobrir músicas comerciais/populares apenas como metadados, sem obter o
 áudio, o agente também pode consultar:
@@ -63,19 +67,34 @@ Considere apenas os seguintes campos informativos:
 - `duration` em milissegundos, `filetype`, `filesize` e `url`;
 - `tags`, apenas como palavras descritivas.
 
-Antes de escolher, confira a página original e a licença. O Openverse agrega
-metadados de terceiros e não garante que eles estejam corretos. Para aquisição
-automática, a implementação é conservadora e só sugere entrada de catálogo para
-`cc0`, `pdm` ou `by`, com página-fonte e licença presentes, URL HTTPS direta,
-formato suportado e host conhecido. `by` exige atribuição. Licenças `by-sa`,
-`nc`, `nd` ou informações incompletas exigem revisão de direitos fora da tarefa;
-sem essa confirmação, use o fallback local.
+Antes de decidir, confira a página original. O Openverse agrega metadados de
+terceiros e pode estar incompleto ou desatualizado; não trate um campo ausente no
+agregador como decisão final. Trabalhe em três etapas independentes:
+
+1. **shortlist editorial:** mantenha opções fortes mesmo quando forem populares,
+   reconhecíveis ou tiverem metadados incompletos;
+2. **risco operacional:** avalie sinais reais de claim, mute, bloqueio,
+   indisponibilidade regional e estabilidade do host;
+3. **aquisição técnica:** só registre `{file, url}` quando houver arquivo direto,
+   formato/host aceitos e evidência documentável na fonte original.
+
+Para aquisição automática, a implementação local continua deliberadamente
+restrita e só sugere entrada de catálogo para `cc0`, `pdm` ou `by`, com
+página-fonte e licença presentes, URL HTTPS direta, formato suportado e host
+conhecido. `by` exige atribuição. Essa limitação da ferramenta não é uma ordem
+para descartar editorialmente todo o restante: abra a origem, procure termos do
+criador ou fornecedor e tente encontrar uma versão utilizável com a mesma
+estética. Não exija parecer jurídico ou documentação duplicada quando uma fonte
+original confiável já apresentar termos claros e compatíveis com o uso.
 
 Reddit e fóruns de criadores podem ser consultados como termômetro secundário de
 Content ID, áudio silenciado, bloqueios ou desmonetização na prática. Registre
-link, plataforma e data quando esse sinal influenciar a escolha, e procure mais
-de um relato quando possível. Esses relatos nunca concedem licença; a ausência
-de reclamações também não prova que o uso é permitido.
+link, plataforma e data quando esse sinal influenciar a escolha. Múltiplos relatos
+recentes, coerentes e independentes devem pesar de verdade no **ranking de risco
+operacional**: relatos de uso estável reduzem o risco estimado; claims, mutes ou
+bloqueios recorrentes aumentam. Um comentário isolado vale pouco e ausência de
+relatos é sinal neutro. Esses relatos não alteram os termos da fonte nem devem ser
+descritos como licença.
 
 Os hosts aceitos para aquisição Openverse são `cdn.freesound.org` e
 `upload.wikimedia.org`; os formatos são AAC, FLAC, M4A, MP3, OGG, Opus e WAV. A
@@ -83,18 +102,22 @@ URL precisa terminar na extensão correspondente, sem credenciais embutidas. Um
 resultado fora dessas regras continua útil como metadado, mas não deve virar
 entrada remota do catálogo.
 
-Áudio comercial ou apenas reconhecível por estar em TikTok, Reels ou Shorts não
-se torna reutilizável por aparecer numa busca. Não baixe previews de serviços
-comerciais ou redes sociais, não faça scraping dessas plataformas e não use uma
-faixa comercial sem licença compatível para sincronização. O Openverse pode
-fornecer uma URL `/previews/` do Freesound como representação direta do áudio
-aberto; ela só é candidata quando a página original confirma que a mesma licença
-se aplica ao arquivo.
+Áudio comercial ou reconhecível por estar em TikTok, Reels ou Shorts pode
+continuar no shortlist como referência forte de estética, ritmo e familiaridade.
+Isso não transforma um preview em arquivo do renderer: não baixe previews de
+serviços comerciais, não faça scraping e não contorne controles de acesso. Em vez
+de abandonar a direção escolhida, procure uma fonte oficial utilizável ou um
+equivalente externo com a mesma função editorial. O Openverse pode fornecer uma
+URL `/previews/` do Freesound como representação direta do áudio aberto; ela é
+candidata quando a página original permite relacionar o arquivo aos termos
+registrados.
 
-`technically_downloadable` ou `candidate_catalog_entry` nunca significam direitos
-verificados: o valor `rights_verified` permanece `false`. Para CC BY, além de
-`sources.txt`, inclua a atribuição exigida nos metadados públicos adequados do
-`post.json` (descrição/caption) antes da publicação.
+`technically_downloadable` ou `candidate_catalog_entry` significam apenas que o
+resultado passou pelo contrato técnico; o projeto não atua como certificador e
+mantém `rights_verified: false`. Isso não é um veto editorial. Registre em
+`sources.txt` qual evidência foi consultada e qual risco operacional foi aceito.
+Para CC BY, além de `sources.txt`, inclua a atribuição exigida nos metadados
+públicos adequados do `post.json` (descrição/caption) antes da publicação.
 
 Esta integração foi feita usando a API do Openverse. Ela não é endossada nem
 certificada pelo Openverse. Consulte também os

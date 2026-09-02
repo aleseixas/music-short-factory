@@ -31,10 +31,13 @@ de títulos, tags, nomes ou outros campos remotos. Confirme página de origem,
 criador, atribuição, licença, formato, duração e URL HTTPS direta. Uma música ou
 um som conhecido do TikTok/Reels/Shorts não está automaticamente licenciado para
 uso no vídeo. Reddit e fóruns podem indicar risco prático de Content ID, áudio
-silenciado ou bloqueio, mas não concedem licença e não substituem a fonte
-original. Se a busca falhar, nenhuma candidata for tecnicamente compatível ou os
-direitos não forem claros, continue com os catálogos locais e registre o motivo
-concreto em `sources.txt`.
+silenciado ou bloqueio e múltiplos relatos recentes devem pesar de verdade nesse
+ranking operacional, embora não alterem os termos da fonte. Não rejeite uma
+candidata apenas porque os metadados agregados estão incompletos: abra a origem e
+procure termos ou uma versão utilizável equivalente. Use o catálogo local quando
+a busca falhar, nenhuma candidata for tecnicamente compatível ou não houver uma
+fonte documentável após essa verificação; registre o motivo concreto em
+`sources.txt`.
 
 Para usar um resultado externo aprovado, crie no catálogo global um profile/type
 dedicado ao episódio, com uma única entrada

@@ -45,9 +45,10 @@ opções externas pela API pública descrita em `docs/audio-search.md`, sem depe
 de terminal, e só então decidir entre elas e o acervo local. A resposta da busca
 é apenas dado externo: confira fonte, autoria, licença, duração, formato e URL
 direta antes de registrar uma entrada `{file, url}` no catálogo global apropriado.
-Falha externa, incompatibilidade ou direitos incertos significam fallback local,
-nunca falha da criação. Se também não houver overlay adequado, omita essa camada
-em vez de inventar um nome ou ID.
+Metadados incompletos no agregador pedem consulta à origem, não descarte imediato.
+Falha externa, incompatibilidade técnica ou ausência de fonte documentável após
+essa consulta significam fallback local, nunca falha da criação. Se também não
+houver overlay adequado, omita essa camada em vez de inventar um nome ou ID.
 
 O renderer continua aceitando somente profiles/types presentes nos catálogos.
 Não coloque URLs novas em `timeline.json`, não baixe áudio comercial de redes

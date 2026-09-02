@@ -579,8 +579,9 @@ escolher o catálogo local, usando a API pública do Openverse descrita em
 tarefa agendada do ChatGPT sem terminal local. Essa tarefa precisa ter rede/web
 ou uma skill/plugin equivalente habilitada; a conexão GitHub não concede HTTP
 genérico por si só. O catálogo local permanece como fallback quando a busca
-falhar ou nenhuma candidata externa passar em direitos, qualidade e
-compatibilidade técnica.
+falhar ou nenhuma candidata externa passar em qualidade, compatibilidade técnica
+e avaliação de risco operacional. Metadados incompletos no agregador devem levar
+à consulta da fonte original antes do descarte.
 
 Os resultados incluem nome, criador, fonte, página original, licença, duração,
 formato, tags e, quando seguro, uma sugestão `{file, url}` compatível com os
@@ -598,8 +599,9 @@ Para usar exatamente um resultado aprovado, o agente cria no catálogo global um
 profile/type dedicado ao episódio com uma única entrada, registra a fonte em
 `episodes/<slug>/sources.txt` e referencia essa chave em `timeline.json`. Uma
 chave com várias variantes mantém a seleção determinística por slug e não garante
-um arquivo específico. Se a busca falhar ou a licença não for clara, nada no
-episódio é bloqueado: use uma opção local ou omita a camada.
+um arquivo específico. Se a busca falhar ou nenhuma fonte documentável e
+tecnicamente compatível for encontrada após a verificação, nada no episódio é
+bloqueado: use uma opção local ou omita a camada.
 
 Existe também um espelho local e mockável para desenvolvimento:
 
