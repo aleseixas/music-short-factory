@@ -128,7 +128,13 @@ def validate_editorial_direction(
         label = f"visual_fx_cues[{index}]"
         if cue.type not in VISUAL_FX_TYPES:
             errors.append(f"{label}.type desconhecido: {cue.type!r}")
-        _check_interval(cue.start_seconds, cue.end_seconds, video_duration, label, errors)
+        _check_visual_interval(
+            cue.start_seconds,
+            cue.end_seconds,
+            video_duration,
+            label,
+            errors,
+        )
         _check_unit_interval(cue.intensity, f"{label}.intensity", errors)
 
     if len(text_fx_cues) != len(episode.text_fx_cues):
@@ -203,6 +209,26 @@ def _catalog_names(path: Path, key: str, label: str) -> frozenset[str]:
     if not isinstance(values, dict):
         raise RuntimeError(f"Catalogo de {label} precisa conter um objeto em {key!r}.")
     return frozenset(str(name) for name, files in values.items() if isinstance(files, list) and files)
+
+
+def _check_visual_interval(
+    start: float,
+    end: float,
+    duration: float,
+    label: str,
+    errors: list[str],
+) -> None:
+    """Allow visual FX to overrun the tail; timeline rendering clips them."""
+    if (
+        isinstance(start, bool)
+        or isinstance(end, bool)
+        or not math.isfinite(start)
+        or not math.isfinite(end)
+        or start < 0
+        or start >= duration
+        or end <= start
+    ):
+        errors.append(f"{label} precisa comecar dentro do video e ter intervalo valido")
 
 
 def _check_interval(
