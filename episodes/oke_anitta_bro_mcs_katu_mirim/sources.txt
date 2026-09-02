@@ -1,0 +1,26 @@
+HISTÓRIA / SIGNIFICADO / COMPOSIÇÃO
+- Billboard Brasil — “Qual o significado da letra de ‘OKÊ’, single de Anitta?” (18 Aug 2026): explica o trecho viral com 17 etnias, a proposta de combater apagamento histórico, o significado de “Okê” e o sample de “Cabocla de Pena”. https://billboard.com.br/significado-oke-anitta/
+- CNN Brasil — “Equilibrivm II: conheça as referências da música ‘Okê’, de Anitta” (11 Aug 2026): traz fala de Anitta sobre unir natureza e tecnologia, explicação de Carlos do Complexo sobre funk 150 BPM + eletrônica e relato de Alessandra Leão sobre “Cabocla de Pena”. https://www.cnnbrasil.com.br/pop/musica/equilibrium-ii-conheca-as-referencias-da-musica-oke-de-anitta/
+- Universal Music Brasil — “EQUILIBRIVM II: Anitta transforma brasilidade em poesia em novo álbum” (24 Jul 2026): fonte oficial com fala de Anitta sobre transformar a floresta em pista e de Kelvin Mbarete, do Brô MC’s, sobre identidade e presença indígena no audiovisual. https://www.universalmusic.com.br/2026/07/24/equilibrivm-ii-anitta-transforma-brasilidade-em-poesia-em-novo-album/
+- Teatrine TV — entrevista com Brô MC’s sobre a faixa: Bruno Veron conta que o convite chegou por Papatinho e fala sobre o alcance da parceria. https://www.teatrinetv.com.br/vida-de-artista/2026/07/22/sucesso-em-feat-com-anitta-bro-mcs-e-desprezado-em-ms.html
+
+MOMENTO CULTURAL / VIRAL
+- Billboard Brasil — show de Niterói, 27 Aug 2026: registra que o trecho com 17 etnias viralizou como desafio no TikTok e virou momento de coro nos shows. https://billboard.com.br/anitta-equilibrivm-niteroi-letra-publico-oke/
+- Billboard Brasil — página atual do Hot 100 e cobertura do álbum/turnê consultadas em 2 Sep 2026 para contexto de momento atual. https://billboard.com.br/
+
+BACKGROUND MUSIC EXTERNA
+- “The Funkhouser (Versión original)” — Sonatema / Lebrozu. Wikimedia Commons, CC0 1.0; 4m57s; faixa eletrônica rítmica com percussão, pratos, voz feminina e sequenciador robótico. Escolhida por combinar pulso eletrônico/percussivo com o conceito de natureza + tecnologia sem usar preview comercial. https://commons.wikimedia.org/wiki/File:Sonatema_-_The_Funkhouser_(Versi%C3%B3n_original).wav
+- Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/9/94/Sonatema_-_The_Funkhouser_%28Versi%C3%B3n_original%29.wav
+- Alternativas externas avaliadas: “El baile de los cyborgs” (Sonatema, CC0) e “Dance of the electronic fairies” (Monplaisir, CC0). “The Funkhouser” venceu por percussão mais marcada e encaixe melhor com funk/rave documental.
+
+VISUAIS
+- Anitta no Planeta Atlântida 2026 — Governo RS / Mauricio Tonetto / Secom, CC BY-SA 4.0, 1769x2654. https://commons.wikimedia.org/wiki/File:30.01.2026_%E2%80%93_Anitta_no_Planeta_Atl%C3%A2ntida,_em_Xangri-L%C3%A1_-_55070475213.jpg
+- Brô MC’s — Luan Iturve, CC BY-SA 4.0, 6720x4480. https://commons.wikimedia.org/wiki/File:Grupo_de_rap_ind%C3%ADgena_Br%C3%B4_Mc%27s_-_Foto_por_Luan_Iturve.jpg
+- Katú Mirim — Urubatão dos Santos Machado, CC BY-SA 4.0, 1080x1350. https://commons.wikimedia.org/wiki/File:Katu_mirim_.jpg
+- Fulni-ô — Dança-Canto do Gavião — Aline Paes, CC BY 3.0, 1280x720, 8m25s. https://commons.wikimedia.org/wiki/File:Fulnio-%C3%B4_-_Dan%C3%A7a-Canto_do_Gavi%C3%A3o.webm
+- Dia Nacional dos Povos Indígenas — Governo do Brasil, CC BY 3.0, 640x360, 60s. https://commons.wikimedia.org/wiki/File:DIA_NACIONAL_DOS_POVOS_IND%C3%8DGENAS_-_NUNCA_MAIS_UM_BRASIL_SEM_N%C3%93S.webm
+- Concessões florestais monitoradas por drones — TV BrasilGov, CC BY 3.0, 1280x720, 150s. https://commons.wikimedia.org/wiki/File:Concess%C3%B5es_florestais_ser%C3%A3o_monitoradas_por_drones.webm
+- DJ set no Parque Tejo — Agencia LUSA, CC BY 3.0, 1080x1920, ~90s. https://commons.wikimedia.org/wiki/File:Dj_Set_do_padre_Guilherme_Peixoto_acordou_peregrinos_no_Parque_Tejo_(1080p).webm
+
+SFX
+- Somente biblioteca curada existente em assets/audio/sfx/catalog.json. Nenhum SFX externo foi pesquisado ou adicionado ao catálogo nesta criação.
