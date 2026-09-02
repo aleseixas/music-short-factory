@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "title": "P do Pecado — Menos é Mais & Simone Mendes: o hit que mudou de gênero e venceu a rejeição",
+  "slug": "p_do_pecado_menos_e_mais_simone_mendes",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"P do Pecado, do Menos é Mais com Simone Mendes, parece um pagode feito para virar hit. Só que nasceu de uma traição real, começou em outro gênero e ainda foi recusada no caminho.","delivery":"hook"},
+    {"id":"real_story","text":"Henrique Casttro tirou a ideia da história de um amigo que descobriu uma traição.","delivery":"curious"},
+    {"id":"first_version","text":"E a primeira direção da música nem era pagode: ela foi pensada com uma pegada de reggaeton.","delivery":"reveal"},
+    {"id":"rejection","text":"Antes de chegar ao Menos é Mais, a faixa foi oferecida a Gusttavo Lima e não avançou.","delivery":"dramatic"},
+    {"id":"detour","text":"O compositor chegou a imaginar outros caminhos para a canção, até o produtor Dudu Borges sugerir uma mudança decisiva.","delivery":"curious"},
+    {"id":"menos","text":"Levar P do Pecado para o Menos é Mais. O grupo gostou tanto que pediu a música para o projeto.","delivery":"reveal"},
+    {"id":"simone","text":"Depois veio Simone Mendes. Ela entrou no feat e foi até Campina Grande gravar a participação em um dia que seria de folga.","delivery":"emotional"},
+    {"id":"recording","text":"A gravação aconteceu em abril de 2025, no projeto Molho, diante do público paraibano.","delivery":"neutral"},
+    {"id":"formula","text":"A mistura encaixou duas forças populares: o pagode do Menos é Mais e a voz sertaneja de Simone.","delivery":"reveal"},
+    {"id":"record","text":"O resultado ficou cento e cinco dias, em quinze semanas não consecutivas, no topo do Spotify Brasil — um recorde da era dos charts da plataforma.","delivery":"dramatic"},
+    {"id":"awards","text":"A faixa ainda venceu prêmios de Hit do Ano e Samba ou Pagode do Ano no Multishow.","delivery":"neutral"},
+    {"id":"longevity","text":"E o mais curioso é a duração do fenômeno: no fim de agosto de 2026, mais de um ano depois, ela ainda aparecia no Billboard Brasil Hot 100.","delivery":"curious"},
+    {"id":"payoff","text":"P do Pecado virou inevitável só depois de mudar de caminho. O hit que parece ter nascido pronto precisou de rejeição, outro gênero e das vozes certas para finalmente encontrar sua forma.","delivery":"payoff"}
+  ]
+}
