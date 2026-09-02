@@ -30,15 +30,51 @@ Para SFX, a regra é o oposto: `assets/audio/sfx/catalog.json` é a biblioteca
 curada e a fonte de verdade. Use SOMENTE `type` já existente nesse catálogo.
 NÃO pesquise novos SFX na web durante a criação de um episódio, NÃO adicione
 novos `type` ao catálogo por episódio e NÃO substitua um SFX curado por outro
-externo apenas por preferência. Se nenhum `type` existente combinar com o beat,
-omita o SFX. O catálogo já contém efeitos remotos que o engine baixa para cache
-quando usados; a timeline continua referenciando somente o `type`, nunca URL.
+externo apenas por preferência. O catálogo já contém efeitos remotos que o
+engine baixa para cache quando usados; a timeline continua referenciando somente
+o `type`, nunca URL.
 
 Escolha a variante semanticamente correta pelo comportamento do som, não apenas
 pela família. Exemplos: `heartbeat_slow` e `heartbeat_fast` têm intensidades e
 funções diferentes; o mesmo vale para `clock_ticking_slow`/`clock_ticking_fast`,
 whooshes, risers, impactos, crowds, notifications, DJ/music e sci-fi/energy.
 Leia os nomes reais do catálogo a cada episódio e nunca invente um `type`.
+
+SFX devem acompanhar e enriquecer a edição visual sempre que fizer sentido
+editorialmente. Em CADA SHOT, avalie se existe um evento visual ou narrativo
+claro que merece reforço sonoro: entrada/troca de shot, corte, transição, punch
+zoom, entrada de kinetic text, highlight, overlay, reveal, estatística, mudança
+de assunto, reação, surpresa, comparação, entrada de nome/entidade ou payoff.
+Quando houver um desses eventos e existir um `type` do catálogo que combine bem,
+PREFIRA reforçar o momento com SFX.
+
+Não existe obrigação de colocar SFX em todos os shots nem quantidade-alvo rígida,
+mas NÃO seja excessivamente conservador. O objetivo NÃO é minimizar SFX: é usar
+a biblioteca curada para tornar os beats importantes mais perceptíveis,
+satisfatórios e nativos de TikTok/Reels/YouTube Shorts, mantendo voz e música
+claras. É esperado que vários beats visuais importantes em um vídeo de 60–90s
+recebam reforço sonoro quando houver `type` adequado. Não deixe um beat forte sem
+SFX apenas por receio de quantidade.
+
+Priorize especialmente hook e primeiros segundos, primeira aparição de
+artista/música/entidade importante, mudanças claras de assunto, reveals e
+curiosidades fortes, estatísticas/rankings/números/recordes, entradas relevantes
+de kinetic text/highlight/overlay, transições visuais perceptíveis, punch zoom e
+impactos visuais, reação/comédia/surpresa quando o catálogo tiver efeito
+adequado, virada narrativa e payoff/final.
+
+Sincronize o início do SFX o mais próximo possível do evento visual/editorial
+que ele reforça. Evite repetir o mesmo efeito de forma previsível quando houver
+variantes melhores no catálogo. Não use SFX como preenchimento aleatório e não
+force `1 SFX por shot`, mas também não deixe a edição seca quando a biblioteca
+oferece um efeito claramente adequado.
+
+ANTES DO COMMIT, faça uma revisão SHOT POR SHOT e pergunte para cada um: “há
+alguma mudança visual ou editorial aqui que ficaria claramente melhor com SFX?”.
+Se SIM e houver um `type` adequado no catálogo, adicione ou mantenha a cue. Se
+NÃO, deixe o shot limpo. Depois faça uma revisão global para remover apenas
+efeitos realmente redundantes, conflitantes ou que prejudiquem a narração. O
+warning acima de 25 é apenas alerta de excesso e nunca uma meta.
 
 Tipos com prefixo `meme_br_` são intervenções editoriais completas: use com
 parcimônia, deixe o áudio tocar integralmente, use `source_start_seconds: 0` e
@@ -70,16 +106,15 @@ Siga exatamente esta ordem:
    profile real, ou usar `null`;
 7. ler `assets/audio/sfx/catalog.json` e selecionar apenas os `type` curados que
    realmente combinam com os beats;
-8. gerar SFX somente quando reforçarem um evento audiovisual concreto. Sempre que
-   possível, sincronize o início do SFX com troca de shot/corte, transição,
-   punch zoom, entrada de kinetic text, overlay ou outra mudança visual
-   perceptível. Não existe meta mínima de SFX e muitos shots podem ficar sem
-   efeito. Antes de adicionar uma cue, pergunte: “o que acontece visualmente
-   exatamente neste instante?”. Se a resposta for “nada relevante”, normalmente
-   omita o SFX. Exceções como risers ou acentos puramente narrativos são válidas
-   apenas quando houver motivo editorial claro. Use somente `type` real do
-   catálogo; quando o tipo permitir trim e você usar `source_start_seconds` ou
-   `duration_seconds`, mantenha o recorte dentro da duração real do arquivo;
+8. avaliar CADA SHOT para oportunidade de SFX. Quando houver evento visual ou
+   editorial claro e um `type` adequado no catálogo, prefira reforçar o beat com
+   SFX. Sincronize a cue com o evento perceptível. Não existe meta mínima e não
+   force `1 SFX por shot`, mas não seja conservador a ponto de deixar hook,
+   reveals, mudanças de assunto, entradas de texto/highlight, transições,
+   estatísticas, viradas ou payoff sem reforço quando houver efeito adequado.
+   Use somente `type` real do catálogo; quando o tipo permitir trim e você usar
+   `source_start_seconds` ou `duration_seconds`, mantenha o recorte dentro da
+   duração real do arquivo;
 9. gerar visual FX somente com tipos suportados;
 10. gerar kinetic text curto, com `accent_text` válido; quando ele acompanhar um
    segmento, usar `segment` + `offset_seconds` + `duration_seconds` para ancorar
@@ -87,7 +122,8 @@ Siga exatamente esta ordem:
    global e nunca misturar os dois modos na mesma cue;
 11. gerar overlays somente com IDs locais adequados;
 12. validar conflitos e duração real;
-13. revisar o editorial budget e repetições;
+13. revisar SHOT POR SHOT as oportunidades de SFX e depois revisar o editorial
+   budget/repetições de forma global;
 14. salvar o episódio.
 
 Pense em editorial beats: cues de áudio, câmera, texto e overlay que reforçam o
@@ -96,10 +132,12 @@ todo beat. Preserve trechos limpos, varie intensidade e reserve punch zoom,
 impact e scale bounce para momentos que mereçam ênfase.
 
 Para 60–90 segundos, não use quantidade-alvo de SFX: deixe a quantidade emergir
-dos eventos visuais e narrativos realmente importantes. O warning de quantidade
-de SFX começa somente acima de 25, em qualquer duração, mas esse número é apenas
-um alerta de excesso e nunca uma meta. Como referência para as demais camadas,
-use 6–10 visual FX, 5–9 text FX, 2–5 overlays e 2–4 punch zoom.
+dos eventos visuais e narrativos importantes. Porém, não interprete isso como
+instrução para economizar efeitos. Vários beats importantes devem receber SFX
+quando houver `type` adequado. O warning de quantidade de SFX começa somente
+acima de 25, em qualquer duração, mas esse número é apenas um alerta de excesso e
+nunca uma meta. Como referência para as demais camadas, use 6–10 visual FX, 5–9
+text FX, 2–5 overlays e 2–4 punch zoom.
 Busque ritmo de mini-documentário musical nativo de TikTok/Reels/Shorts, com
 mudanças visuais e editoriais frequentes, maior densidade no hook e variação no
 corpo. Não transforme retenção em grade automática nem use SFX para preencher
