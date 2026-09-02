@@ -1,0 +1,69 @@
+PESQUISA EDITORIAL
+
+1. UOL Splash — Lucas Pasin, 06/08/2024
+https://www.uol.com.br/splash/colunas/lucas-pasin/2024/08/06/insatisfeito-matue-deixa-sony-e-manda-mensagem-subliminar-veja-bastidores.htm
+Uso: contexto da saída da Sony, insatisfação com restrições contratuais e divisão de lucros/receitas.
+
+2. Billboard Brasil — “A 'escada' que Matuê construiu por cima da Sony Music”
+https://billboard.com.br/a-escada-que-matue-esta-construindo-para-ficar-por-cima-da-sony-music/
+Uso: leitura do EP como encerramento da relação com a Sony; acrônimo S.O.N.Y.; pedido público de Matuê para não divulgar o projeto; ponte para o lançamento de 333 pela 30PRAUM.
+
+3. Spotify — Sabor Overdose no Yakisoba
+https://open.spotify.com/intl-pt/album/1rTbSeEJ9D8doCj60u7RmG
+Uso: lançamento em 05/08/2024, tracklist e posição de “Reza do Milhão” como terceira faixa.
+
+4. Shazam — Reza do Milhão
+https://www.shazam.com/track/709633193/reza-do-milh%C3%A3o
+Uso: créditos de composição e produção para Matuê e WIU; lançamento em 05/08/2024.
+
+5. Jornal do Rap — “Matuê lança EP de surpresa Sabor Overdose No Yakisoba”
+https://www.jornaldorap.com.br/noticias/matue-lanca-ep-de-surpresa-sabor-overdose-no-yakisoba/
+Uso: “Reza do Milhão” como faixa de resiliência e reflexão sobre navegar a indústria musical; WIU no beat.
+
+6. Wikipédia — Sabor Overdose no Yakisoba
+https://pt.wikipedia.org/wiki/Sabor_Overdose_no_Yakisoba
+Uso secundário e qualificado: registro de que uma prévia de “Reza do Milhão” foi publicada por Matuê em story em 2020.
+
+INTERPRETAÇÃO DA LETRA
+A leitura editorial do episódio conecta dinheiro, obstáculos, traição, reparação, maratona e a ideia de que há algo além do dinheiro ao contexto documentado do fim da relação com a Sony. A conclusão sobre autonomia é uma interpretação contextual, não uma citação literal de Matuê sobre o significado da faixa.
+
+BACKGROUND MUSIC
+“Friendly Evil Gangsta Synth Hip Hop” — Mesostic
+Página: https://commons.wikimedia.org/wiki/File:Friendly_Evil_Gangsta_Synth_Hip_Hop.ogg
+Arquivo: https://upload.wikimedia.org/wikipedia/commons/1/10/Friendly_Evil_Gangsta_Synth_Hip_Hop.ogg
+Licença: CC0 1.0
+Duração verificada na página do Commons: ~375s.
+Escolha editorial: instrumental lento, synths dissonantes e atmosfera hip-hop mais dura combinam com o tom de confronto, dinheiro e independência sem competir com a narração.
+Profile: external_reza_milhao_gangsta_synth
+
+VISUAIS
+Matuê — Feitidede / Wikimedia Commons — CC0 1.0
+https://commons.wikimedia.org/wiki/File:Matu%C3%AA.jpg
+
+Matuê no Planeta Atlântida 2026 — Governo RS / Vitor Rosa / Wikimedia Commons — CC BY-SA 4.0
+https://commons.wikimedia.org/wiki/File:31.01.2026_%E2%80%93_Matu%C3%AA_participa_da_segunda_noite_do_Planeta_Atl%C3%A2ntida_-_55072476430.jpg
+
+Street traffic — Editor / Wikimedia Commons — CC BY 3.0
+https://commons.wikimedia.org/wiki/File:Street_traffic.webm
+1920x1080; ~35s.
+
+Concert at University of Gothenburg — Netha Hussain / Wikimedia Commons — CC BY-SA 4.0
+https://commons.wikimedia.org/wiki/File:Concert_at_University_of_Gothenburg.webm
+1920x1080; ~15.5s.
+
+Paris agreement signed — EU2016NL / Wikimedia Commons — CC BY 3.0
+https://commons.wikimedia.org/wiki/File:Paris_agreement_signed.webm
+1280x720; ~17s. Usado apenas como metáfora visual de contrato/assinatura.
+
+201905 Coin counter working — Jonashtand / Wikimedia Commons — CC BY-SA 4.0
+https://commons.wikimedia.org/wiki/File:201905_Coin_counter_working.webm
+1080x1920; ~10s.
+
+2018 Columbus Marathon runners — Legoktm / Wikimedia Commons — CC BY-SA 4.0
+https://commons.wikimedia.org/wiki/File:2018_Columbus_Marathon_runners.webm
+1920x1080; ~15.3s.
+
+SFX
+Todos os SFX usados vêm exclusivamente de assets/audio/sfx/catalog.json da main.
+Tipos: bass_drop_cinematic, whoosh_fast, crowd_cheer, cash_register_short, record_scratch, notification_iphone, ding, suspense_build_up, riser_build_up, cash_register e impact.
+Nenhum SFX externo novo foi adicionado.
