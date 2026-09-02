@@ -1,48 +1,15 @@
 {
   "schema_version": 1,
   "profiles": {
-    "ambient_calm": [
-      "ambient_calm/forest-walk-01.mp3",
-      "ambient_calm/serene-view-01.mp3",
-      "ambient_calm/valley-sunset-01.mp3"
-    ],
-    "bright_fun": [
-      "bright_fun/smile-01.mp3",
-      "bright_fun/summer-fun-01.mp3",
-      "bright_fun/tears-of-joy-01.mp3"
-    ],
-    "dark_cinematic": [
-      "dark_cinematic/fright-night-01.mp3",
-      "dark_cinematic/silent-descent-01.mp3",
-      "dark_cinematic/tapis-01.mp3"
-    ],
-    "emotional_piano": [
-      "emotional_piano/classical-vibes-01.mp3",
-      "emotional_piano/piano-reflections-01.mp3"
-    ],
-    "energetic_hype": [
-      "energetic_hype/sports-highlights-01.mp3"
-    ],
-    "hiphop_groove": [
-      "hiphop_groove/gimme-that-groove-01.mp3",
-      "hiphop_groove/hip-hop-02-01.mp3",
-      "hiphop_groove/praise-the-lord-01.mp3"
-    ],
-    "latin_pop_uplifting": [
-      "latin_pop_uplifting/esperanza-01.mp3",
-      "latin_pop_uplifting/reggaetton-01.mp3",
-      "latin_pop_uplifting/spanish-heart-01.mp3",
-      "latin_pop_uplifting/villa-penthouse-01.mp3"
-    ],
-    "uplifting_documentary": [
-      "uplifting_documentary/discover-01.mp3",
-      "uplifting_documentary/driving-ambition-01.mp3"
-    ],
-    "external_apt_monkeys_spinning_monkeys": [
-      {
-        "file": "external/openverse/monkeys-spinning-monkeys-kevin-macleod.mp3",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Monkeys_Spinning_Monkeys_%28ISRC_USUAN1400011%29.mp3"
-      }
-    ]
+    "ambient_calm": ["ambient_calm/forest-walk-01.mp3", "ambient_calm/serene-view-01.mp3", "ambient_calm/valley-sunset-01.mp3"],
+    "bright_fun": ["bright_fun/smile-01.mp3", "bright_fun/summer-fun-01.mp3", "bright_fun/tears-of-joy-01.mp3"],
+    "dark_cinematic": ["dark_cinematic/fright-night-01.mp3", "dark_cinematic/silent-descent-01.mp3", "dark_cinematic/tapis-01.mp3"],
+    "emotional_piano": ["emotional_piano/classical-vibes-01.mp3", "emotional_piano/piano-reflections-01.mp3"],
+    "energetic_hype": ["energetic_hype/sports-highlights-01.mp3"],
+    "hiphop_groove": ["hiphop_groove/gimme-that-groove-01.mp3", "hiphop_groove/hip-hop-02-01.mp3", "hiphop_groove/praise-the-lord-01.mp3"],
+    "latin_pop_uplifting": ["latin_pop_uplifting/esperanza-01.mp3", "latin_pop_uplifting/reggaetton-01.mp3", "latin_pop_uplifting/spanish-heart-01.mp3", "latin_pop_uplifting/villa-penthouse-01.mp3"],
+    "uplifting_documentary": ["uplifting_documentary/discover-01.mp3", "uplifting_documentary/driving-ambition-01.mp3"],
+    "external_apt_monkeys_spinning_monkeys": [{"file":"external/openverse/monkeys-spinning-monkeys-kevin-macleod.mp3","url":"https://upload.wikimedia.org/wikipedia/commons/e/e9/Monkeys_Spinning_Monkeys_%28ISRC_USUAN1400011%29.mp3"}],
+    "external_i_knew_it_taylor_warm_sunset": [{"file":"external/openverse/warm-sunset-musiclfiles.ogg","url":"https://upload.wikimedia.org/wikipedia/commons/4/45/Warm_Sunset_by_MusicLFiles.ogg"}]
   }
 }

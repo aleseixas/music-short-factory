@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"TAYLOR FEZ ESSA MÚSICA EM HORAS","source":{"type":"asset","asset_id":"taylor_portrait"}},
+  "youtube": {
+    "title":"TAYLOR SWIFT fez I KNEW IT, I KNEW YOU em poucas horas",
+    "description":"I Knew It, I Knew You nasceu da conexão de Taylor Swift com Jessie em Toy Story 5, virou uma volta às raízes country e foi escrita/produzida no mesmo dia da exibição que a inspirou.\n\nBackground: “Warm Sunset” — MusicLFiles (CC BY 4.0). Visuais: Isak Zvegelj (CC BY 3.0), Frank Vincentz (CC BY-SA 3.0), Netha Hussain (CC BY-SA 4.0), Aravind Samala (CC BY 2.0), Emazasm (CC BY 4.0), via Wikimedia Commons.",
+    "hashtags":["TaylorSwift","IKnewItIKnewYou","ToyStory5","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Taylor Swift viu Toy Story 5, se conectou com a história de Jessie e transformou isso em I Knew It, I Knew You — uma volta ao country criada em poucas horas.\n\nBackground: “Warm Sunset” — MusicLFiles (CC BY 4.0). Visuais: Isak Zvegelj (CC BY 3.0), Frank Vincentz (CC BY-SA 3.0), Netha Hussain (CC BY-SA 4.0), Aravind Samala (CC BY 2.0), Emazasm (CC BY 4.0), via Wikimedia Commons.",
+    "hashtags":["TaylorSwift","IKnewItIKnewYou","ToyStory5","HistoriaDaMusica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Taylor Swift viu Toy Story 5 e, poucas horas depois, I Knew It, I Knew You já tinha composição, produção e vocais principais.",
+    "hashtags":["TaylorSwift","IKnewItIKnewYou","ToyStory5","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Taylor Swift — I Knew It, I Knew You: a música de Toy Story 5 feita em poucas horas",
+  "slug": "i_knew_it_i_knew_you_taylor_swift",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"I Knew It, I Knew You, de Taylor Swift, nasceu depois de Toy Story 5 — e ficou pronta em poucas horas."},
+    {"id":"jessie","text":"A inspiração foi Jessie, a cowgirl marcada por abandono, memória e reencontros."},
+    {"id":"meaning","text":"Swift disse que se conectou imediatamente à jornada e às lembranças da personagem."},
+    {"id":"reunion","text":"A música transforma reencontro em perceber que alguém ainda vive dentro de você."},
+    {"id":"country","text":"O som acompanha isso, marcando uma volta deliberada às raízes country de Taylor."},
+    {"id":"home","text":"É uma volta para casa numa franquia que ela acompanha desde criança."},
+    {"id":"antonoff","text":"Taylor escreveu e produziu a faixa com Jack Antonoff, parceiro central de sua carreira."},
+    {"id":"screening","text":"A história da criação foi quase tão rápida quanto um filme."},
+    {"id":"eleven","text":"Ela começou a primeira exibição por volta das onze da manhã."},
+    {"id":"zoomies","text":"Saiu inspirada e entrou no que chamou de energia de compositora."},
+    {"id":"eight_hours","text":"Antes das nove da noite, composição, produção e vocais principais já estavam prontos."},
+    {"id":"number_one","text":"No lançamento, estreou em primeiro lugar na Hot 100, o décimo quinto número um de Taylor."},
+    {"id":"pixar","text":"Foi a primeira música ligada a um filme da Pixar a liderar a parada."},
+    {"id":"payoff","text":"Semanas depois, ainda estava no Top 3: uma música sobre um brinquedo virou uma história humana sobre memórias que nunca foram embora."}
+  ]
+}

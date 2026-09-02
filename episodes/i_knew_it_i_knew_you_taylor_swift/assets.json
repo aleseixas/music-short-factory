@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"country_guitar","file":"ljubljana_country_guitar.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ljubljana%20Street%20Country%20Guitar%20Performance.webm","credit":"Isak Zvegelj / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"kids_playing","file":"finchen_lotti_playing.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Finchen%2BLotti%20playing%2005%20%281%29%20ies.webm","credit":"Frank Vincentz / Wikimedia Commons","license":"CC BY-SA 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"concert_gothenburg","file":"concert_university_gothenburg.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Concert%20at%20University%20of%20Gothenburg.webm","credit":"Netha Hussain / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"sunrise_timelapse","file":"sunrise_time_lapse.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunrise%20time%20lapse.webm","credit":"Aravind Samala / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"taylor_portrait","file":"taylor_swift.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Taylor%20swift.jpg","credit":"Emazasm / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.32}}
+  ]
+}

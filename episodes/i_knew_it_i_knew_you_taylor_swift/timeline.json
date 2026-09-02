@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_i_knew_it_taylor_warm_sunset","volume":0.075},
+  "sfx_cues": [
+    {"time_seconds":0.18,"type":"external_i_knew_it_taylor_thud","volume":0.15},
+    {"time_seconds":3.3,"type":"whoosh","volume":0.10},
+    {"time_seconds":8.2,"type":"pop","volume":0.09},
+    {"time_seconds":13.1,"type":"external_i_knew_it_taylor_scratch","volume":0.10,"source_start_seconds":0.0,"duration_seconds":0.65},
+    {"time_seconds":18.0,"type":"ding","volume":0.09},
+    {"time_seconds":23.2,"type":"cinematic_piano","volume":0.08},
+    {"time_seconds":28.5,"type":"whoosh","volume":0.10},
+    {"time_seconds":34.0,"type":"clock_ticking","volume":0.08},
+    {"time_seconds":39.2,"type":"riser","volume":0.09},
+    {"time_seconds":44.6,"type":"external_i_knew_it_taylor_thud","volume":0.12},
+    {"time_seconds":50.0,"type":"reverse_cymbal","volume":0.09},
+    {"time_seconds":55.5,"type":"external_i_knew_it_taylor_success","volume":0.11},
+    {"time_seconds":61.0,"type":"crowd_cheer","volume":0.08},
+    {"time_seconds":66.6,"type":"external_i_knew_it_taylor_success","volume":0.10},
+    {"time_seconds":72.2,"type":"impact","volume":0.13}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.10,"end_seconds":0.55,"type":"punch_zoom","intensity":0.55},
+    {"start_seconds":14.0,"end_seconds":17.5,"type":"slow_zoom_in","intensity":0.27},
+    {"start_seconds":29.0,"end_seconds":32.5,"type":"slow_zoom_out","intensity":0.25},
+    {"start_seconds":44.3,"end_seconds":44.8,"type":"punch_zoom","intensity":0.45},
+    {"start_seconds":56.0,"end_seconds":59.5,"type":"slow_zoom_in","intensity":0.28},
+    {"start_seconds":66.3,"end_seconds":66.8,"type":"punch_zoom","intensity":0.48},
+    {"start_seconds":71.0,"end_seconds":77.0,"type":"slow_zoom_in","intensity":0.30}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.35,"text":"FEITA EM\nPOUCAS HORAS","accent_text":"POUCAS HORAS","animation":"scale_bounce","position":"center","intensity":0.60},
+    {"segment":"reunion","offset_seconds":0.18,"duration_seconds":1.20,"text":"REENCONTRO ≠\nSÓ NOSTALGIA","accent_text":"NOSTALGIA","animation":"fade_pop","position":"center","intensity":0.48},
+    {"segment":"country","offset_seconds":0.15,"duration_seconds":1.15,"text":"VOLTA AO\nCOUNTRY","accent_text":"COUNTRY","animation":"slide_up","position":"center","intensity":0.52},
+    {"segment":"screening","offset_seconds":0.15,"duration_seconds":1.10,"text":"UM FILME.\nUM DIA.","accent_text":"UM DIA","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"eight_hours","offset_seconds":0.18,"duration_seconds":1.25,"text":"ANTES DAS\n9 DA NOITE","accent_text":"9 DA NOITE","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"number_one","offset_seconds":0.15,"duration_seconds":1.20,"text":"15º NÚMERO 1\nDE TAYLOR","accent_text":"NÚMERO 1","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"payoff","offset_seconds":0.18,"duration_seconds":1.30,"text":"MEMÓRIAS QUE\nNÃO VÃO EMBORA","accent_text":"NÃO VÃO EMBORA","animation":"fade_pop","position":"center","intensity":0.54}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"country_guitar","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_jessie","segment":"jessie","asset":"kids_playing","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"crossfade","highlight":"MEMÓRIA • ABANDONO"},
+    {"id":"shot_meaning","segment":"meaning","asset":"taylor_portrait","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_reunion","segment":"reunion","asset":"kids_playing","source_start_seconds":14.0,"source_end_seconds":28.0,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_country","segment":"country","asset":"country_guitar","source_start_seconds":20.0,"source_end_seconds":34.0,"motion":"hold","transition_out":"cut","highlight":"RAÍZES COUNTRY"},
+    {"id":"shot_home","segment":"home","asset":"sunrise_timelapse","source_start_seconds":0.0,"source_end_seconds":16.0,"motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_antonoff","segment":"antonoff","asset":"concert_gothenburg","source_start_seconds":0.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_screening","segment":"screening","asset":"taylor_portrait","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_eleven","segment":"eleven","asset":"country_guitar","source_start_seconds":40.0,"source_end_seconds":54.0,"motion":"hold","transition_out":"crossfade","highlight":"11H DA MANHÃ"},
+    {"id":"shot_zoomies","segment":"zoomies","asset":"concert_gothenburg","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"cut"},
+    {"id":"shot_eight_hours","segment":"eight_hours","asset":"taylor_portrait","motion":"push_in","transition_out":"cut","highlight":"ANTES DAS 21H"},
+    {"id":"shot_number_one","segment":"number_one","asset":"concert_gothenburg","source_start_seconds":0.5,"source_end_seconds":14.5,"motion":"hold","transition_out":"crossfade","highlight":"15º #1"},
+    {"id":"shot_pixar","segment":"pixar","asset":"country_guitar","source_start_seconds":70.0,"source_end_seconds":84.0,"motion":"hold","transition_out":"cut","highlight":"PRIMEIRA DA PIXAR"},
+    {"id":"shot_payoff","segment":"payoff","asset":"sunrise_timelapse","source_start_seconds":1.0,"source_end_seconds":17.0,"motion":"hold","transition_out":"cut"}
+  ]
+}
