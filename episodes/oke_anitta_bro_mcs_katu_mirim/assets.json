@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"anitta_2026","file":"anitta_planeta_atlantida_2026.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/30.01.2026%20%E2%80%93%20Anitta%20no%20Planeta%20Atl%C3%A2ntida%2C%20em%20Xangri-L%C3%A1%20-%2055070475213.jpg","credit":"Governo RS / Mauricio Tonetto / Secom","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.34}},
+    {"id":"bro_mcs","file":"bro_mcs_luan_iturve.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Grupo%20de%20rap%20ind%C3%ADgena%20Br%C3%B4%20Mc%27s%20-%20Foto%20por%20Luan%20Iturve.jpg","credit":"Luan Iturve / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.45}},
+    {"id":"katu_mirim","file":"katu_mirim.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Katu%20mirim%20.jpg","credit":"Urubatão dos Santos Machado / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.35}},
+    {"id":"indigenous_dance","file":"fulnio_danca_canto_gaviao.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Fulnio-%C3%B4%20-%20Dan%C3%A7a-Canto%20do%20Gavi%C3%A3o.webm","credit":"Aline Paes / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"indigenous_campaign","file":"dia_povos_indigenas.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/DIA%20NACIONAL%20DOS%20POVOS%20IND%C3%8DGENAS%20-%20NUNCA%20MAIS%20UM%20BRASIL%20SEM%20N%C3%93S.webm","credit":"Governo do Brasil / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"forest_drone","file":"concessoes_florestais_drones.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Concess%C3%B5es%20florestais%20ser%C3%A3o%20monitoradas%20por%20drones.webm","credit":"TV BrasilGov / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"dj_crowd","file":"dj_set_parque_tejo.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dj%20Set%20do%20padre%20Guilherme%20Peixoto%20acordou%20peregrinos%20no%20Parque%20Tejo%20%281080p%29.webm","credit":"Agencia LUSA / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.45}}
+  ]
+}
