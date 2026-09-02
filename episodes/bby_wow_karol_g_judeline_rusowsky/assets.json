@@ -3,7 +3,7 @@
   "assets": [
     {"id":"dj_crowd_vertical","file":"dj_set_parque_tejo.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dj%20Set%20do%20padre%20Guilherme%20Peixoto%20acordou%20peregrinos%20no%20Parque%20Tejo%20%281080p%29.webm","credit":"Agencia LUSA / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.45}},
     {"id":"dance_crowd_vertical","file":"baile_marimba_san_cristobal.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Baile%20tradicional%20de%20marimba%20en%20el%20kiosco%20principal%20de%20San%20Crist%C3%B3bal%20de%20las%20Casas.webm","credit":"ProtoplasmaKid / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
-    {"id":"home_studio","file":"home_studio.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Home%20studio.webm","credit":"Ieruca / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"silent_disco","file":"silent_disco_madrid.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Silent%20disco%20for%20fitness%20in%20Madrid.webm","credit":"Horcrux / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},
     {"id":"city_timelapse","file":"city_timelapse_video.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/City%20timelapse%20video.webm","credit":"Location Kenya / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
     {"id":"club_dancing_image","file":"schwuz_nightclub_berlin_dancing.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/SchwuZ%20Nightclub%20Berlin%20Dancing.jpg","credit":"JasonParis / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.45}}
   ]
