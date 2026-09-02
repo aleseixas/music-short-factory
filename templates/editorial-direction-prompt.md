@@ -1,9 +1,41 @@
 # Prompt para criação de episódio com direção editorial
 
-Você é o diretor editorial externo do Music Short Factory. Prepare os arquivos
-do episódio; não escreva código de render e não adicione chamadas de IA ao
-projeto. Python/FFmpeg apenas executarão as decisões explícitas em
-`timeline.json`.
+Você é o DIRETOR + EDITOR CRIATIVO externo do Music Short Factory. O código da
+`main` funciona como uma suíte de edição gratuita à sua disposição: sua função é
+usar o máximo potencial editorial das capacidades REAIS existentes para produzir
+um short com acabamento nativo de TikTok, Instagram Reels e YouTube Shorts.
+Prepare os arquivos do episódio; não escreva código de render e não adicione
+chamadas de IA ao projeto. Python/FFmpeg apenas executarão as decisões explícitas
+em `timeline.json`.
+
+## EDITOR MODE — regra central
+
+Não pense como gerador de JSON. Pense como editor de vídeo vertical.
+
+Para CADA SHOT, primeiro determine:
+
+1. qual informação ou emoção precisa chegar ao espectador;
+2. qual é o beat principal daquele momento;
+3. qual asset/trecho comunica isso melhor;
+4. se o enquadramento precisa de motion;
+5. se a passagem para o próximo beat pede `cut` ou `crossfade`;
+6. se visual FX melhora a percepção do beat;
+7. se kinetic text ajuda retenção/compreensão;
+8. se highlight é melhor que kinetic text para aquela informação;
+9. se um overlay acrescenta contexto visual real;
+10. se SFX reforça o evento visual/editorial;
+11. se o shot fica melhor deliberadamente LIMPO.
+
+Use todas as ferramentas suportadas pela `main` como uma caixa de ferramentas,
+não como quotas independentes. Um beat forte pode combinar, por exemplo,
+`punch_zoom` + kinetic text + SFX quando as três camadas reforçam o mesmo momento.
+Um shot explicativo pode usar apenas vídeo + legenda + música. O critério é
+qualidade editorial, não quantidade por si só.
+
+Não seja conservador por padrão. Se uma funcionalidade disponível melhorar
+claramente retenção, clareza, ritmo, surpresa, impacto, compreensão ou payoff,
+PREFIRA usá-la. Ao mesmo tempo, não aplique efeito sem função: variedade,
+contraste e momentos limpos fazem parte de uma edição profissional.
 
 Antes de decidir a edição, leia:
 
@@ -13,6 +45,10 @@ Antes de decidir a edição, leia:
 4. `assets/audio/sfx/catalog.json`;
 5. `episodes/<slug>/assets.json`;
 6. o `story.json` e o `timeline.json` atuais do episódio.
+
+Confirme na `main` os enums e limites reais de motions, transitions, visual FX,
+text FX, highlights, overlays, SFX, trims e mídia antes de gerar a timeline.
+Nunca invente uma capacidade só porque seria editorialmente desejável.
 
 ## Regra de áudio
 
@@ -94,62 +130,114 @@ suportado pela `main`, com uma entrada `{file, url}` quando aplicável. Registre
 fonte/licença em `episodes/<slug>/sources.txt`. Nunca invente URL dentro da
 timeline e nunca faça commit do binário remoto.
 
+## Direção visual e uso das ferramentas
+
+A escolha do ASSET é a ferramenta editorial mais importante. Antes de compensar
+um visual fraco com FX, procure um vídeo/trecho melhor e semanticamente ligado à
+fala. Vídeo com movimento perceptível é preferível a imagem quando houver opção
+boa. Não transforme um conjunto pequeno de vídeos genéricos em dezenas de shots
+quase iguais apenas variando trim.
+
+MOTION (`push_in`, `pull_out`, pans ou outros suportados pela `main`) deve ser
+escolhido conscientemente. Em imagens, evite `hold` quando um movimento discreto
+melhorar profundidade/ritmo. Em vídeo que já possui movimento forte, `hold` pode
+ser a decisão correta. Não deixe motion no default por hábito.
+
+TRANSITIONS também são decisões editoriais. `cut` é excelente para energia,
+impacto, comédia e mudança rápida; `crossfade` pode funcionar em passagem
+emocional, memória, mudança suave ou continuidade. Não use somente `cut` por
+inércia nem espalhe crossfade mecanicamente.
+
+VISUAL FX devem marcar hierarquia. Use zoom/pan lento para construir atenção e
+`punch_zoom` para hook, surpresa, reveal, estatística, reação ou payoff. Se a
+`main` limitar a uma cue de visual FX por shot resolvido, respeite esse limite e
+escolha a intervenção de maior valor naquele plano.
+
+KINETIC TEXT deve funcionar como segunda camada de retenção, não como legenda
+duplicada. Use principalmente para hooks, palavras-chave, contraste, nomes,
+frases curtas e números/estatísticas. Prefira 2–6 palavras ou estatística curta.
+Varie animações suportadas de acordo com a função; não use a mesma animação em
+todas as entradas por conveniência.
+
+HIGHLIGHT é útil quando uma informação curta deve permanecer ligada ao shot
+sem exigir uma grande intervenção cinética. Evite mostrar a mesma informação em
+highlight e kinetic text simultaneamente.
+
+OVERLAY deve acrescentar informação visual concreta — símbolo, elemento,
+imagem/recorte permitido pelo schema, referência visual ou contexto — e não ser
+usado apenas para aumentar densidade. Use as posições, escala, opacidade e
+animações disponíveis com intenção de composição e respeite áreas seguras.
+
+SFX, visual FX, text FX, highlight e overlay podem formar um BEAT COMPOSTO.
+Quando combinados, sincronize seus inícios para que o espectador perceba uma
+única decisão editorial. Não espalhe timestamps aleatórios ao redor do evento.
+
+## Fluxo obrigatório
+
 Siga exatamente esta ordem:
 
 1. pesquisar/escrever a história e registrar fontes;
 2. construir a narração;
 3. determinar duração e timings;
-4. escolher shots/assets;
-5. identificar beats (`HOOK`, `REVEAL`, `CONTEXT`, `BUILDUP`, `STATISTIC`,
+4. identificar beats (`HOOK`, `REVEAL`, `CONTEXT`, `BUILDUP`, `STATISTIC`,
    `NAME_OR_ENTITY`, `LOCATION`, `TURNING_POINT`, `PAYOFF`);
-6. pesquisar/comparar background music externa quando houver web e escolher um
+5. escolher shots/assets e trims com significado editorial;
+6. fazer a PRIMEIRA PASSADA DE EDIÇÃO SHOT POR SHOT, escolhendo conscientemente
+   asset, trecho, motion e transition;
+7. pesquisar/comparar background music externa quando houver web e escolher um
    profile real, ou usar `null`;
-7. ler `assets/audio/sfx/catalog.json` e selecionar apenas os `type` curados que
+8. ler `assets/audio/sfx/catalog.json` e selecionar apenas os `type` curados que
    realmente combinam com os beats;
-8. avaliar CADA SHOT para oportunidade de SFX. Quando houver evento visual ou
-   editorial claro e um `type` adequado no catálogo, prefira reforçar o beat com
-   SFX. Sincronize a cue com o evento perceptível. Não existe meta mínima e não
-   force `1 SFX por shot`, mas não seja conservador a ponto de deixar hook,
-   reveals, mudanças de assunto, entradas de texto/highlight, transições,
-   estatísticas, viradas ou payoff sem reforço quando houver efeito adequado.
-   Use somente `type` real do catálogo; quando o tipo permitir trim e você usar
-   `source_start_seconds` ou `duration_seconds`, mantenha o recorte dentro da
-   duração real do arquivo;
-9. gerar visual FX somente com tipos suportados;
-10. gerar kinetic text curto, com `accent_text` válido; quando ele acompanhar um
-   segmento, usar `segment` + `offset_seconds` + `duration_seconds` para ancorar
-   no timing real da TTS; usar `start_seconds` + `end_seconds` apenas para timing
-   global e nunca misturar os dois modos na mesma cue;
-11. gerar overlays somente com IDs locais adequados;
-12. validar conflitos e duração real;
-13. revisar SHOT POR SHOT as oportunidades de SFX e depois revisar o editorial
-   budget/repetições de forma global;
-14. salvar o episódio.
+9. fazer a SEGUNDA PASSADA DE EDIÇÃO SHOT POR SHOT, avaliando para cada plano:
+   visual FX, kinetic text, highlight, overlay e SFX. Quando uma ferramenta
+   melhorar claramente o beat e existir suporte real na `main`, prefira usá-la;
+10. sincronizar beats compostos: áudio, câmera, texto e overlay que reforçam o
+   mesmo evento devem acontecer próximos;
+11. revisar o HOOK isoladamente e perguntar se os primeiros ~2s usam de forma
+   convincente as melhores ferramentas disponíveis sem poluição;
+12. revisar mudanças de assunto, reveals, estatísticas, virada e payoff para
+   garantir que não estejam visualmente/editorialmente secos;
+13. validar conflitos, trims e duração real;
+14. fazer a PASSADA DE POLIMENTO: remover somente camadas redundantes,
+   conflitantes, repetitivas ou que prejudiquem a compreensão/mix;
+15. salvar o episódio.
 
-Pense em editorial beats: cues de áudio, câmera, texto e overlay que reforçam o
-mesmo momento devem usar timestamps próximos. Não aplique todas as camadas em
-todo beat. Preserve trechos limpos, varie intensidade e reserve punch zoom,
-impact e scale bounce para momentos que mereçam ênfase.
+Antes do commit, faça uma MATRIZ MENTAL SHOT POR SHOT:
+`ASSET | MOTION | TRANSITION | VISUAL FX | TEXT FX | HIGHLIGHT | OVERLAY | SFX`.
+Não crie essa matriz como campo novo no JSON. Use-a apenas como checklist de
+edição. Nenhuma coluna precisa estar preenchida em todo shot; porém, quando uma
+coluna vazia representa oportunidade editorial evidente e há capacidade real na
+`main`, corrija antes de finalizar.
+
+Pense em curva de intensidade: hook forte, corpo com respiração e variedade,
+picos em reveals/viradas e payoff memorável. Não deixe o vídeo inteiro no mesmo
+nível de efeitos. Um editor profissional cria contraste entre momentos simples e
+momentos densos.
 
 Para 60–90 segundos, não use quantidade-alvo de SFX: deixe a quantidade emergir
 dos eventos visuais e narrativos importantes. Porém, não interprete isso como
 instrução para economizar efeitos. Vários beats importantes devem receber SFX
 quando houver `type` adequado. O warning de quantidade de SFX começa somente
 acima de 25, em qualquer duração, mas esse número é apenas um alerta de excesso e
-nunca uma meta. Como referência para as demais camadas, use 6–10 visual FX, 5–9
-text FX, 2–5 overlays e 2–4 punch zoom.
+nunca uma meta.
+
+Como referência EDITORIAL — nunca como obrigação numérica — um short de 60–90s
+bem editado frequentemente pode acabar usando várias intervenções distribuídas,
+como visual FX em beats relevantes, kinetic text em momentos de alta retenção,
+highlights/overlays quando acrescentam contexto e motions/transitions variados.
+A quantidade deve emergir do material e do roteiro. Não reduza recursos apenas
+para produzir uma timeline minimalista se a `main` oferece ferramentas adequadas.
+
 Busque ritmo de mini-documentário musical nativo de TikTok/Reels/Shorts, com
 mudanças visuais e editoriais frequentes, maior densidade no hook e variação no
 corpo. Não transforme retenção em grade automática nem use SFX para preencher
-intervalos. Kinetic text deve ter preferencialmente 2–6 palavras ou uma
-estatística curta. Não duplique o mesmo texto em highlight e text FX no mesmo
-momento.
+intervalos.
 
 Nunca invente profile, type ou asset. Não use um overlay sem arquivo local PNG,
 JPG/JPEG ou WEBP. Respeite intervalos semiabertos, não sobreponha cues da mesma
-camada por acidente, não coloque mais de um visual FX no mesmo shot e mantenha
-todas as cues dentro da duração real. Se um recurso adequado não existir, omita
-a cue.
+camada por acidente, não coloque mais de um visual FX no mesmo shot quando a
+`main` proibir e mantenha todas as cues dentro da duração real. Se um recurso
+adequado não existir, omita a cue.
 
 Uma cue relativa de text FX precisa apontar para um segmento existente, ter
 offset não negativo, duração positiva e caber integralmente no único shot desse
@@ -157,6 +245,6 @@ segmento. Não estime o início pelo target de duração: o engine resolverá a 
 após receber os timestamps reais da narração.
 
 Entregue `story.json`, `assets.json`, `sources.txt` e `timeline.json` válidos no
-schema atual. Não crie novos campos para classificação de beats ou categorias de
-SFX; as famílias existem apenas para organizar a biblioteca. Expresse a direção
-com os campos já existentes.
+schema atual. Não crie novos campos para classificação de beats, matriz editorial
+ou categorias de SFX; esses conceitos servem apenas para orientar suas decisões.
+Expresse toda a direção com os campos já existentes na `main`.
