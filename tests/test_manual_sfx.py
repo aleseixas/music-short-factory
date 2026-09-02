@@ -15,17 +15,24 @@ from engine.sfx import _validate_trim_values
 
 
 class ManualSfxTests(unittest.TestCase):
-    def test_myinstants_page_resolves_direct_mp3(self):
-        response = SimpleNamespace(
+    def test_myinstants_api_resolves_direct_mp3_without_opening_page(self):
+        api_response = SimpleNamespace(
             status_code=200,
-            url="https://www.myinstants.com/en/instant/demo-123/",
-            text=(
-                '<html><body><a href="/media/sounds/demo-effect.mp3">'
-                "Download MP3</a></body></html>"
+            json=Mock(
+                return_value={
+                    "status": 200,
+                    "data": {
+                        "id": "demo-123",
+                        "mp3": "https://www.myinstants.com/media/sounds/demo-effect.mp3",
+                    },
+                }
             ),
             close=Mock(),
         )
-        with patch("engine.audio_library.requests.get", return_value=response):
+        with patch(
+            "engine.audio_library.requests.get",
+            return_value=api_response,
+        ) as get:
             resolved = _resolve_myinstants_audio_url(
                 "https://www.myinstants.com/en/instant/demo-123/",
                 "type 'demo'",
@@ -35,7 +42,40 @@ class ManualSfxTests(unittest.TestCase):
             resolved,
             "https://www.myinstants.com/media/sounds/demo-effect.mp3",
         )
-        response.close.assert_called_once_with()
+        self.assertEqual(get.call_count, 1)
+        self.assertEqual(get.call_args.kwargs["params"], {"id": "demo-123"})
+        api_response.close.assert_called_once_with()
+
+    def test_myinstants_page_is_fallback_when_api_fails(self):
+        api_response = SimpleNamespace(
+            status_code=503,
+            close=Mock(),
+        )
+        page_response = SimpleNamespace(
+            status_code=200,
+            url="https://www.myinstants.com/en/instant/demo-123/",
+            text=(
+                '<html><body><a href="/media/sounds/demo-effect.mp3">'
+                "Download MP3</a></body></html>"
+            ),
+            close=Mock(),
+        )
+        with patch(
+            "engine.audio_library.requests.get",
+            side_effect=[api_response, page_response],
+        ) as get:
+            resolved = _resolve_myinstants_audio_url(
+                "https://www.myinstants.com/en/instant/demo-123/",
+                "type 'demo'",
+            )
+
+        self.assertEqual(
+            resolved,
+            "https://www.myinstants.com/media/sounds/demo-effect.mp3",
+        )
+        self.assertEqual(get.call_count, 2)
+        api_response.close.assert_called_once_with()
+        page_response.close.assert_called_once_with()
 
     def test_manual_sfx_uses_https_and_25mb_limit(self):
         with tempfile.TemporaryDirectory() as temp_dir:
