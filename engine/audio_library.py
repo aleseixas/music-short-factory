@@ -34,6 +34,12 @@ MYINSTANTS_HOSTS = frozenset(
     }
 )
 MYINSTANTS_API_URL = "https://myinstants-api.vercel.app/detail"
+MYINSTANTS_DIRECT_OVERRIDES = {
+    "cinematic-bass-drop": (
+        "https://www.myinstants.com/media/sounds/"
+        "169335__vibeenterprise__cinematic-deep-bass-hit.mp3"
+    ),
+}
 MAX_EXTERNAL_MUSIC_BYTES = 100 * 1024 * 1024
 MAX_EXTERNAL_SFX_BYTES = 25 * 1024 * 1024
 MYINSTANTS_PAGE_TIMEOUT_SECONDS = (10, 30)
@@ -260,6 +266,11 @@ def _resolve_myinstants_via_api(page_url: str, label: str) -> str:
 
 
 def _resolve_myinstants_audio_url(page_url: str, label: str) -> str:
+    instant_id = _myinstants_instant_id(page_url, label)
+    direct_override = MYINSTANTS_DIRECT_OVERRIDES.get(instant_id.casefold())
+    if direct_override:
+        return _validate_myinstants_mp3_url(direct_override, label)
+
     api_error: RuntimeError | None = None
     try:
         return _resolve_myinstants_via_api(page_url, label)
