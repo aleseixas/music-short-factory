@@ -1,0 +1,27 @@
+HISTÓRIA / LETRA / CONTEXTO
+- WNYC Studios — Dolly Parton's America, “The Only One For Me, Jolene”: relato direto de Dolly sobre a menina chamada Jolene que inspirou o nome. https://www.wnycstudios.org/podcasts/dolly-partons-america/episodes/only-one-me-jolene
+- NPR (7 Mar 2025) — relato de Dolly de que uma funcionária de banco tinha uma queda por Carl Dean; contexto real por trás da personagem. https://www.npr.org/2025/03/07/g-s1-52637/dolly-parton-husband-carl-dean-if-you-hadnt-been-there
+- TIME (12 Mar 2024) — contexto da origem de “Jolene” e da releitura de Beyoncé em Cowboy Carter. https://time.com/6899814/dolly-parton-beyonce-jolene-song-cover/
+- AllMusic — créditos do álbum/registro de Jolene, incluindo Dolly Parton como compositora/vocal e instrumentistas. https://www.allmusic.com/album/jolene-coat-of-many-colors-mw0000496657
+- Billboard (31 Aug 2026) — “Jolene” e “I Will Always Love You” entram pela primeira vez no Top 40 do Billboard Hot 100 após a morte de Dolly Parton. https://www.billboard.com/music/chart-beat/dolly-parton-hot-100-jolene-i-will-always-love-you-top-40-1236328923/
+
+MOMENTO / CHART
+- Billboard Hot 100, chart week of 5 Sep 2026 / matéria de 31 Aug 2026 citada acima. O episódio trata “Jolene” como revival atual, não como lançamento novo.
+
+VISUAIS
+- Dolly Parton — RCA Press Photo (1970), RCA Records, domínio público nos EUA: https://commons.wikimedia.org/wiki/File:Dolly_Parton_-_RCA_Press_Photo_(1970).jpg
+- Dolly Parton Wildhorse Saloon Nashville 2-2-09.webm, nrppp, CC BY 3.0; duração publicada 100.036 s: https://commons.wikimedia.org/wiki/File:Dolly_Parton_Wildhorse_Saloon_Nashville_2-2-09.webm
+- Ljubljana Street Country Guitar Performance.webm, Isak Zvegelj, CC BY 3.0; duração publicada 113.949 s: https://commons.wikimedia.org/wiki/File:Ljubljana_Street_Country_Guitar_Performance.webm
+- Beachfront B-Roll- Record Background.webm, Beachfront B-Roll, CC BY 3.0; duração publicada 30.127 s: https://commons.wikimedia.org/wiki/File:Beachfront_B-Roll-_Record_Background_(Free_to_Use_Stock_Footage).webm
+- In The Record Store.webm, Fredrik Johansson, CC BY 4.0; duração publicada 49 s: https://commons.wikimedia.org/wiki/File:In_The_Record_Store.webm
+- RCA Studio B console, prayitnophotography, CC BY 2.0, 5029×3353: https://commons.wikimedia.org/wiki/File:RCAStudioB_Console_-_Recording_Studios_before_Digital_Era_-_RCA_Studio_B_(2015-04-09_10.29.25_by_prayitnophotography).jpg
+
+BACKGROUND MUSIC
+- “The Farmer (Acoustic Folk Instrumental)” — Infraction, CC BY 3.0, Wikimedia Commons; duração publicada 151.041 s. URL direta usada pelo catálogo: https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus
+- Página de licença/metadados: https://commons.wikimedia.org/wiki/File:Infraction_-_The_Farmer_(Acoustic_Folk_Instrumental).opus
+- Host validado contra engine/audio_library.py nesta execução: upload.wikimedia.org está em OPENVERSE_AUDIO_DOWNLOAD_HOSTS.
+
+NOTAS DE VALIDAÇÃO
+- Imagens geradas por IA: 0.
+- Duração/metadata dos vídeos: VERIFICADO somente a partir das páginas Wikimedia listadas; inspeção audiovisual de movimento/qualidade: NÃO_VERIFICADO.
+- Background URL: host e HTTPS VERIFICADOS contra a allowlist atual da main.
