@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Reza do Milhão — Matuê: o milhão que virou independência",
+  "slug": "reza_do_milhao_matue",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id": "hook", "text": "Reza do Milhão, do Matuê, parece ser só sobre dinheiro — mas o contexto transforma o milhão em liberdade."},
+    {"id": "preview", "text": "A faixa já circulava em prévia desde 2020 e ficou anos guardada."},
+    {"id": "release", "text": "Ela saiu em agosto de 2024, fechando o EP surpresa Sabor Overdose no Yakisoba."},
+    {"id": "acronym", "text": "As iniciais do título formam SONY, a gravadora da qual Matuê estava se despedindo."},
+    {"id": "exit", "text": "Reportagens apontaram insatisfação com restrições contratuais e divisão de receitas."},
+    {"id": "no_promo", "text": "A provocação aumentou quando ele pediu aos fãs para não divulgarem o projeto."},
+    {"id": "meaning", "text": "Nesse cenário, focar no milhão deixa de soar como simples ostentação."},
+    {"id": "industry", "text": "A letra fala em obstáculos, dinheiro perdido, traição e reparação."},
+    {"id": "beyond", "text": "E Matuê avisa que existe coisa que vai além do dinheiro."},
+    {"id": "marathon", "text": "O milhão vira símbolo de independência: vencer a maratona sem outros controlarem a chegada."},
+    {"id": "credits", "text": "Matuê e WIU assinam composição e produção da faixa."},
+    {"id": "strategy", "text": "O EP encerrou a relação com a Sony antes de 333 sair de forma independente pela 30PRAUM."},
+    {"id": "irony", "text": "A ironia é forte: Reza do Milhão fecha um capítulo em que dinheiro não era a única questão."},
+    {"id": "turn", "text": "Era também sobre controle, autonomia e o destino da própria obra."},
+    {"id": "payoff", "text": "Reza do Milhão não é só uma oração para enriquecer. É Matuê transformando pressão e ambição em independência."}
+  ]
+}
