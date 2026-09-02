@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "O VIRAL QUE FAZ O BRASIL REPETIR 17 ETNIAS",
+    "source": {"type":"asset","asset_id":"anitta_2026"}
+  },
+  "youtube": {
+    "title": "OKÊ: o viral da Anitta que transforma 17 etnias em coro",
+    "description": "OKÊ, de Anitta com Brô MC’s e Katú Mirim, viralizou pelo trecho que cita 17 etnias indígenas — mas a ideia da faixa vai além do desafio. A música une funk 150 BPM, eletrônica, ancestralidade e artistas indígenas no centro da narrativa.\n\nBackground: “The Funkhouser (Versión original)” — Sonatema / Lebrozu (CC0, Wikimedia Commons). Visuais via Wikimedia Commons: Governo RS / Mauricio Tonetto / Secom (CC BY-SA 4.0), Luan Iturve (CC BY-SA 4.0), Urubatão dos Santos Machado (CC BY-SA 4.0), Aline Paes (CC BY 3.0), Governo do Brasil (CC BY 3.0), TV BrasilGov (CC BY 3.0) e Agencia LUSA (CC BY 3.0).",
+    "hashtags": ["Anitta","OKE","BroMCs","KatuMirim","MusicaBrasileira","Shorts"],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "OKÊ viralizou como desafio de 17 etnias, mas foi construída para falar de memória, ancestralidade e presença indígena no pop. Funk 150 BPM, eletrônica e floresta viram parte da mesma pista.\n\nBackground: “The Funkhouser” — Sonatema / Lebrozu (CC0). Créditos visuais completos em sources.txt.",
+    "hashtags": ["Anitta","OKE","BroMCs","KatuMirim","MusicaBrasileira"],
+    "share_to_feed": true,
+    "thumb_offset_ms": 700
+  },
+  "tiktok": {
+    "caption": "OKÊ parece só um trava-língua viral. O significado por trás das 17 etnias muda tudo.",
+    "hashtags": ["Anitta","OKE","BroMCs","KatuMirim","Musica"],
+    "privacy_level": "PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms": 700,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
