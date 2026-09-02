@@ -39,6 +39,44 @@ Campos úteis incluem `title`, `creator`, `source`, `provider`, `foreign_landing
 
 Abra a página original quando necessário para confirmar contexto e termos. Metadados incompletos no agregador não são decisão final.
 
+### Regra técnica obrigatória para URLs externas de Openverse/Wikimedia
+
+Antes de adicionar qualquer profile externo ao catálogo, confirme no código atual da `main` quais hosts estão aceitos por `engine/audio_library.py`.
+
+No estado atual da `main`, entradas com `file` começando por `external/openverse/` aceitam somente URLs HTTPS cujo host seja exatamente:
+
+- `cdn.freesound.org`
+- `upload.wikimedia.org`
+
+Portanto:
+
+- **NUNCA** use `commons.wikimedia.org/wiki/...` como `url` de áudio no catálogo;
+- **NUNCA** use `https://commons.wikimedia.org/wiki/Special:Redirect/file/...` em uma entrada `external/openverse/...`;
+- uma página de descrição, landing page ou redirect do Wikimedia Commons NÃO conta como arquivo direto;
+- para mídia hospedada no Wikimedia, obtenha e grave a URL final direta em `https://upload.wikimedia.org/...`;
+- para Freesound/Openverse, use somente a URL direta servida por `https://cdn.freesound.org/...` quando esse continuar sendo um host permitido pela `main`;
+- antes do commit, compare o hostname real da URL com a allowlist vigente no código. Não deduza compatibilidade apenas porque o arquivo veio de Openverse ou Wikimedia.
+
+Exemplo válido no estado atual:
+
+```json
+{
+  "file": "external/openverse/exemplo.ogg",
+  "url": "https://upload.wikimedia.org/wikipedia/commons/.../exemplo.ogg"
+}
+```
+
+Exemplo inválido:
+
+```json
+{
+  "file": "external/openverse/exemplo.ogg",
+  "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Exemplo.ogg"
+}
+```
+
+Se a candidata escolhida só fornecer uma página/redirect e não for possível resolver com segurança uma URL direta em host aprovado, rejeite essa candidata e tente outra. Se nenhuma opção externa compatível for encontrada dentro do limite de tentativas, use um profile local válido de `assets/audio/music/catalog.json`. **Não crie queue com um profile externo cujo host não tenha sido validado contra a `main`.**
+
 ### Serviços comerciais como referência
 
 Apple, TikTok, YouTube, Spotify e serviços semelhantes podem servir como referência editorial/metadado para popularidade, gênero, familiaridade, atmosfera e duração.
