@@ -91,6 +91,12 @@
         "file": "external/openverse/infraction-the-farmer-jolene.opus",
         "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus"
       }
+    ],
+    "external_iris_sincere_love": [
+      {
+        "file": "external/openverse/monplaisir-sincere-love.ogg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Monplaisir_-_02_-_Sincere_Love.ogg"
+      }
     ]
   }
 }
