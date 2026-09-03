@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"IRIS NASCEU COM SÓ 4 CORDAS?","source":{"type":"asset","asset_id":"artist_main"}},
+  "youtube": {
+    "title":"Iris: a guitarra quebrada por trás do hit do Goo Goo Dolls",
+    "description":"Iris nasceu para City of Angels durante uma fase turbulenta de John Rzeznik. A guitarra tinha só quatro cordas, a afinação saiu do acaso e a seção de cordas mudou completamente a música. Até o nome Iris tem uma origem inesperada.",
+    "hashtags":["GooGooDolls","Iris","JohnRzeznik","Rock","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Uma guitarra com duas cordas quebradas, um filme sobre um anjo abrindo mão da eternidade e um nome escolhido quase por acaso. A história de Iris é tão improvável quanto o tamanho que a música ganhou.",
+    "hashtags":["GooGooDolls","Iris","JohnRzeznik","Rock","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Iris nasceu de uma guitarra com só quatro cordas — e o nome da música veio de um lugar ainda mais inesperado.",
+    "hashtags":["GooGooDolls","Iris","Rock","Curiosidades","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
