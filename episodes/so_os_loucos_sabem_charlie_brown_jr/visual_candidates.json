@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id":"artist_main","required_seconds":8.0,"crossfade_seconds":0.35,"inspect_top":4,"min_visual_score":35,
+      "candidates":[
+        {"editorial_rank":1,"name":"Chorão during show 2012","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Chor%C3%A3o_-_Charlie_Brown_Jr..jpg","file":"chorao_charlie_brown_jr.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Chor%C3%A3o_-_Charlie_Brown_Jr..jpg","source":"wikimedia","provider_id":"commons-cbjr-1","credit":"Alex Carvalho / Wikimedia Commons","license":"CC BY-SA 2.0","width":3550,"height":2362,"focus":{"x":0.5,"y":0.42}},
+        {"editorial_rank":2,"name":"Charlie Brown Jr October 2012 portrait","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/3/3b/Charlie_Brown_Jr._-_Outubro_2012_%282%29.jpg","file":"charlie_brown_jr_2012_2.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr._-_Outubro_2012_(2).jpg","source":"wikimedia","provider_id":"commons-cbjr-2","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","width":1654,"height":2480,"focus":{"x":0.5,"y":0.45}},
+        {"editorial_rank":3,"name":"Charlie Brown Jr live 2012","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/4/46/Charlie_Brown_Jr._2012.jpg","file":"charlie_brown_jr_2012.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr._2012.jpg","source":"wikimedia","provider_id":"commons-cbjr-3","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","width":2048,"height":1366,"focus":{"x":0.5,"y":0.45}},
+        {"editorial_rank":4,"name":"Charlie Brown Jr live Flickr","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Charlie_Brown_Jr-_Flickr.jpg","file":"charlie_brown_jr_flickr.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr-_Flickr.jpg","source":"wikimedia","provider_id":"commons-cbjr-4","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","width":2480,"height":1654,"focus":{"x":0.5,"y":0.45}}
+      ]
+    },
+    {
+      "id":"band_live","required_seconds":8.0,"crossfade_seconds":0.35,"inspect_top":4,"min_visual_score":35,
+      "candidates":[
+        {"editorial_rank":1,"name":"Charlie Brown Jr October 2012 portrait","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/3/3b/Charlie_Brown_Jr._-_Outubro_2012_%282%29.jpg","file":"charlie_brown_jr_2012_2.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr._-_Outubro_2012_(2).jpg","source":"wikimedia","provider_id":"commons-band-1","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","width":1654,"height":2480,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Charlie Brown Jr live 2012","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/4/46/Charlie_Brown_Jr._2012.jpg","file":"charlie_brown_jr_2012.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr._2012.jpg","source":"wikimedia","provider_id":"commons-band-2","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","width":2048,"height":1366,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Charlie Brown Jr live Flickr","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Charlie_Brown_Jr-_Flickr.jpg","file":"charlie_brown_jr_flickr.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr-_Flickr.jpg","source":"wikimedia","provider_id":"commons-band-3","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","width":2480,"height":1654,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"Chorão during show 2012","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Chor%C3%A3o_-_Charlie_Brown_Jr..jpg","file":"chorao_charlie_brown_jr.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Chor%C3%A3o_-_Charlie_Brown_Jr..jpg","source":"wikimedia","provider_id":"commons-band-4","credit":"Alex Carvalho / Wikimedia Commons","license":"CC BY-SA 2.0","width":3550,"height":2362,"focus":{"x":0.5,"y":0.45}}
+      ]
+    },
+    {
+      "id":"santos_video","required_seconds":8.0,"crossfade_seconds":0.35,"inspect_top":2,"min_visual_score":35,
+      "candidates":[
+        {"editorial_rank":1,"name":"Ponta da Praia ressaca 2018","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/f/f8/Prefeitura_de_Santos_registra_ressaca_na_Ponta_da_Praia.webm","file":"santos_ressaca.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Prefeitura_de_Santos_registra_ressaca_na_Ponta_da_Praia.webm","source":"wikimedia","provider_id":"commons-santos-1","credit":"Prefeitura de Santos / Wikimedia Commons","license":"CC BY 3.0","width":640,"height":352,"duration_seconds":14.0,"source_start_seconds":0.0,"source_end_seconds":13.5,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Santos beach low tide 2017","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/f/fc/Mar%C3%A9_baixa-_Prefeitura_isola_%C3%A1rea_na_praia_com_destro%C3%A7os_de_embarca%C3%A7%C3%A3o.webm","file":"santos_mare_baixa.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Maré_baixa-_Prefeitura_isola_área_na_praia_com_destroços_de_embarcação.webm","source":"wikimedia","provider_id":"commons-santos-2","credit":"Prefeitura de Santos / Wikimedia Commons","license":"CC BY 3.0","width":1920,"height":1080,"duration_seconds":77.748,"source_start_seconds":2.0,"source_end_seconds":14.0,"focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id":"church_video","required_seconds":8.0,"crossfade_seconds":0.35,"inspect_top":2,"min_visual_score":35,
+      "candidates":[
+        {"editorial_rank":1,"name":"Church bell old St Andrews Basilica","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/2/2a/MVI_0416.webm","file":"church_bell.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:MVI_0416.webm","source":"wikimedia","provider_id":"commons-church-1","credit":"9kb / Wikimedia Commons","license":"CC0 1.0","width":1280,"height":720,"duration_seconds":8.449,"source_start_seconds":0.0,"source_end_seconds":8.0,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Vertical church vigil","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/2/2b/Church_vigil.webm","file":"church_vigil.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Church_vigil.webm","source":"wikimedia","provider_id":"commons-church-2","credit":"Wikimedia Commons contributor","license":"CC BY-SA 4.0","width":1080,"height":1920,"duration_seconds":51.142,"source_start_seconds":1.0,"source_end_seconds":12.0,"focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id":"skate_video","required_seconds":8.0,"crossfade_seconds":0.35,"inspect_top":1,"min_visual_score":35,
+      "candidates":[
+        {"editorial_rank":1,"name":"Kenyan skateboarding","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/3/33/Kenyan_skateboarding.webm","file":"kenyan_skateboarding.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Kenyan_skateboarding.webm","source":"wikimedia","provider_id":"commons-skate-1","credit":"Drewperez1 / Wikimedia Commons","license":"CC BY-SA 4.0","width":1280,"height":720,"duration_seconds":21.48,"source_start_seconds":1.0,"source_end_seconds":10.0,"focus":{"x":0.5,"y":0.5}}
+      ]
+    }
+  ]
+}
