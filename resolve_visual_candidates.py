@@ -11,6 +11,8 @@ from engine.visual_search import VisualSearchError, VisualSearchResult, inspect_
 APPROVED_VISUAL_HOSTS = frozenset({"upload.wikimedia.org", "live.staticflickr.com"})
 DEFAULT_REQUIRED_SECONDS = 8.0
 DEFAULT_CROSSFADE_SECONDS = 0.35
+DEFAULT_INSPECT_TOP = 4
+MAX_INSPECT_TOP = 8
 MIN_IMAGE_SCORE = 35.0
 MIN_VIDEO_SCORE = 45.0
 
@@ -26,10 +28,28 @@ def _load_json(path: Path) -> dict:
 
 
 def _write_json(path: Path, payload: dict) -> None:
-    path.write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def _number(value, default=0.0) -> float:
+    if isinstance(value, bool):
+        return default
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _metadata_priority(candidate: dict, index: int) -> tuple[float, float, float, float]:
+    """Cheap ranking used only to decide which candidates deserve download/FFmpeg inspection."""
+    width = _number(candidate.get("width"))
+    height = _number(candidate.get("height"))
+    pixels = width * height
+    ratio = width / height if width > 0 and height > 0 else 0.0
+    portrait_fit = max(0.0, 1.0 - abs(ratio - (9 / 16))) if ratio else 0.0
+    kind_bonus = 1.0 if str(candidate.get("kind") or "").lower() == "video" else 0.0
+    editorial_rank = max(1.0, _number(candidate.get("editorial_rank"), index))
+    return (kind_bonus, portrait_fit, pixels, -editorial_rank)
 
 
 def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearchResult:
@@ -38,9 +58,7 @@ def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearch
         raise RuntimeError(f"{slot_id}[{index}]: url HTTPS direta obrigatoria.")
     host = (urlparse(url).hostname or "").casefold()
     if host not in APPROVED_VISUAL_HOSTS:
-        raise RuntimeError(
-            f"{slot_id}[{index}]: host visual nao aprovado: {host or '<vazio>'}."
-        )
+        raise RuntimeError(f"{slot_id}[{index}]: host visual nao aprovado: {host or '<vazio>'}.")
 
     kind = str(candidate.get("kind") or "").strip().lower()
     if kind not in {"image", "video"}:
@@ -79,9 +97,7 @@ def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearch
 
 def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> dict:
     file_name = str(candidate.get("file") or result.suggested_file or f"{slot_id}.{result.file_format}")
-    focus = candidate.get("focus")
-    if not isinstance(focus, dict):
-        focus = {"x": 0.5, "y": 0.5}
+    focus = candidate.get("focus") if isinstance(candidate.get("focus"), dict) else {"x": 0.5, "y": 0.5}
     return {
         "id": slot_id,
         "file": file_name,
@@ -95,27 +111,25 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
 def _score_candidate(project_root: Path, slot: dict, candidate: dict, index: int):
     slot_id = str(slot.get("id") or "").strip()
     result = _candidate_result(candidate, slot_id, index)
-    required = slot.get("required_seconds", DEFAULT_REQUIRED_SECONDS)
-    crossfade = slot.get("crossfade_seconds", DEFAULT_CROSSFADE_SECONDS)
-    start = candidate.get("source_start_seconds", 0.0)
+    required = _number(slot.get("required_seconds"), DEFAULT_REQUIRED_SECONDS)
+    crossfade = _number(slot.get("crossfade_seconds"), DEFAULT_CROSSFADE_SECONDS)
+    start = _number(candidate.get("source_start_seconds"), 0.0)
     end = candidate.get("source_end_seconds")
 
     inspection = inspect_visual_result(
         project_root,
         result,
-        shot_duration_seconds=float(required) if result.kind == "video" else None,
-        source_start_seconds=float(start) if result.kind == "video" else 0.0,
-        source_end_seconds=float(end) if result.kind == "video" and end is not None else None,
-        crossfade_seconds=float(crossfade) if result.kind == "video" else 0.0,
+        shot_duration_seconds=required if result.kind == "video" else None,
+        source_start_seconds=start if result.kind == "video" else 0.0,
+        source_end_seconds=_number(end) if result.kind == "video" and end is not None else None,
+        crossfade_seconds=crossfade if result.kind == "video" else 0.0,
     )
-    minimum = slot.get(
-        "min_visual_score",
+    minimum = _number(
+        slot.get("min_visual_score"),
         MIN_VIDEO_SCORE if result.kind == "video" else MIN_IMAGE_SCORE,
     )
-    if inspection.visual_score < float(minimum):
-        raise VisualSearchError(
-            f"visual_score {inspection.visual_score:.1f} abaixo do minimo {float(minimum):.1f}"
-        )
+    if inspection.visual_score < minimum:
+        raise VisualSearchError(f"visual_score {inspection.visual_score:.1f} abaixo do minimo {minimum:.1f}")
     if result.kind == "video":
         if inspection.trim and inspection.trim.safe_for_shot is False:
             raise VisualSearchError("trim insuficiente para o shot sem loop")
@@ -157,23 +171,19 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         if not slot_id or not isinstance(candidates, list) or not candidates:
             raise RuntimeError("Cada slot visual precisa de id e candidates.")
 
+        inspect_top = int(max(1, min(MAX_INSPECT_TOP, _number(slot.get("inspect_top"), DEFAULT_INSPECT_TOP))))
+        indexed = [(index, candidate) for index, candidate in enumerate(candidates, start=1) if isinstance(candidate, dict)]
+        indexed.sort(key=lambda pair: _metadata_priority(pair[1], pair[0]), reverse=True)
+        shortlist = indexed[:inspect_top]
+        print(f"Visual slot {slot_id}: {len(candidates)} candidatos, inspecionando top {len(shortlist)}.")
+
         ranked = []
-        for index, candidate in enumerate(candidates, start=1):
-            if not isinstance(candidate, dict):
-                failures.append(f"{slot_id}[{index}]: candidato invalido")
-                continue
+        for index, candidate in shortlist:
             try:
                 result, inspection = _score_candidate(project_root, slot, candidate, index)
-                editorial_rank = candidate.get("editorial_rank", index)
-                try:
-                    editorial_rank = int(editorial_rank)
-                except (TypeError, ValueError):
-                    editorial_rank = index
+                editorial_rank = int(max(1, _number(candidate.get("editorial_rank"), index)))
                 ranked.append((inspection.visual_score, -editorial_rank, candidate, result, inspection))
-                print(
-                    f"Visual candidate OK {slot_id}[{index}]: "
-                    f"{result.kind} score={inspection.visual_score:.1f}"
-                )
+                print(f"Visual candidate OK {slot_id}[{index}]: {result.kind} score={inspection.visual_score:.1f}")
             except Exception as exc:
                 failures.append(f"{slot_id}[{index}]: {exc}")
                 print(f"Visual candidate FAIL {slot_id}[{index}]: {exc}")
@@ -216,10 +226,7 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         if selected["kind"] == "video":
             start = selected.get("source_start_seconds")
             end = selected.get("source_end_seconds")
-            if start is not None:
-                shot["source_start_seconds"] = float(start)
-            else:
-                shot.setdefault("source_start_seconds", 0.0)
+            shot["source_start_seconds"] = float(start) if start is not None else 0.0
             if end is not None:
                 shot["source_end_seconds"] = float(end)
         else:
@@ -229,9 +236,8 @@ def resolve_episode(project_root: Path, slug: str) -> int:
 
     _write_json(assets_path, assets)
     _write_json(timeline_path, timeline)
-    report_path = episode_dir / "visual_resolution_report.json"
     _write_json(
-        report_path,
+        episode_dir / "visual_resolution_report.json",
         {
             "schema_version": 1,
             "episode": slug,
@@ -244,13 +250,10 @@ def resolve_episode(project_root: Path, slug: str) -> int:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Inspeciona pools visuais e resolve o melhor candidato tecnico por slot."
-    )
+    parser = argparse.ArgumentParser(description="Inspeciona pools visuais e resolve o melhor candidato tecnico por slot.")
     parser.add_argument("episode", help="Slug do episodio")
     args = parser.parse_args()
-    project_root = Path(__file__).resolve().parent
-    return resolve_episode(project_root, args.episode)
+    return resolve_episode(Path(__file__).resolve().parent, args.episode)
 
 
 if __name__ == "__main__":
