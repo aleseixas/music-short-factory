@@ -122,7 +122,8 @@ Revise isoladamente hook, mudanças de assunto, reveals, estatísticas, virada n
 9. fazer acabamento shot por shot;
 10. fazer polimento global;
 11. validar schema, deliveries, catálogos, assets, tempos, trims e conflitos;
-12. salvar o episódio.
+12. revisar `post.json` para separar copy pública de créditos/fontes;
+13. salvar o episódio.
 
 A edição nasce a partir da história. Não distorça a narrativa apenas para encaixar um efeito ou preset de voz.
 
@@ -184,6 +185,16 @@ Durante a autoria de episódio:
 - não substitua um efeito curado por externo apenas por preferência.
 
 A timeline referencia apenas `type`. URLs/cache são responsabilidade do catálogo/engine.
+
+## Créditos, fontes e copy pública
+
+`sources.txt` é o registro de rastreabilidade do episódio. Guarde ali as fontes factuais e também proveniência de assets: URLs, autor/criador, provider, licença, página-fonte e observações necessárias para auditoria interna.
+
+Os campos públicos de `post.json` — como `youtube.description`, `instagram.caption` e `tiktok.caption` — são copy editorial para o público. Eles não devem carregar blocos técnicos de crédito ou rastreabilidade. Não inclua frases como `Créditos e fontes completos em sources.txt`, `Visuais via Wikimedia Commons`, `Background: ...`, nomes de licenças, URLs ou listas de autores/providers apenas para documentar a origem dos assets.
+
+Isso não elimina obrigações de licença. Se uma licença exigir atribuição pública vinculada à distribuição e não houver outro mecanismo público realmente suportado pela plataforma/`main`, o asset não é compatível com este fluxo de copy limpa e deve ser substituído. Prefira, quando fizer sentido, material CC0, domínio público ou outra licença que não exija inserir atribuição na legenda/descrição. Um `sources.txt` privado não deve ser tratado como substituto automático de atribuição pública exigida pela licença.
+
+Antes do commit, revise `post.json` e confirme que os textos públicos contêm somente conteúdo editorial, CTA quando útil e hashtags — sem créditos técnicos, referência a `sources.txt` ou notas de bastidor.
 
 ## Vocabulário atual conhecido
 
@@ -426,6 +437,8 @@ Depois faça uma revisão global para garantir:
 - SFX sincronizado;
 - voz dominante e mix legível;
 - payoff forte;
+- copy pública sem créditos técnicos nem referência a `sources.txt`;
+- licenças compatíveis com o modo de atribuição realmente suportado;
 - nenhum campo/capacidade inventado.
 
 O objetivo final é simples: **usar conscientemente todo o potencial real do editor — inclusive a interpretação da voz — para maximizar retenção, clareza, ritmo, emoção e impacto em TikTok, Reels e Shorts, sem adicionar nada que não melhore o vídeo.**
