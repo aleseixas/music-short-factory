@@ -1,0 +1,46 @@
+FACTUAL SOURCES
+- Rolling Stone / Cameron Crowe profile: https://au.rollingstone.com/music/music-news/harry-styles-new-direction-1749/ — 2017 interview; seven-minute voice note, mother/child premise, repeated hard times, equality context, Jeff Bhasker comment, album-title idea.
+- Rolling Stone Australia ranking: https://au.rollingstone.com/music/music-lists/-92214/sign-of-the-times-3-92267/ — career context and US peak #4.
+- Current chart signal checked 2026-09-03: https://www.kworb.net/itunes/artist/harrystyles.html — Sign of the Times #38 Spotify Worldwide at check time.
+
+BACKGROUND SEARCH (external-first; repo fallback selected)
+- https://commons.wikimedia.org/wiki/File:MusicLFiles_-_Painful_Path_to_the_Light.ogg — external candidate; not selected because attribution/public-copy compatibility was not preferred.
+- https://commons.wikimedia.org/wiki/File:Komiku_-_32_-_Sad_walk_with_sad_piano.ogg — CC0 candidate; not selected because Commons page reports license-review-needed metadata.
+- https://commons.wikimedia.org/wiki/File:Emotional_piano.wav — CC0 candidate; only 16 s, not selected for a ~80 s episode.
+- Selected fallback: repo profile emotional_piano from assets/audio/music/catalog.json.
+
+VISUAL SOURCES — all selected baselines and pool candidates are non-AI; only CC0/public-domain material was accepted for clean public copy.
+- https://commons.wikimedia.org/wiki/File:Harry_Styles_Campovolo_2023.jpg — VannaVallone — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:The_Newborn_Baby_MET_DP146497.jpg — Metropolitan Museum of Art — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Newborn_Baby_(Unsplash).jpg — Mindy Olson P — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:The_newborn_baby,_by_Matthijs_Naiveu.jpg — public domain.
+- https://commons.wikimedia.org/wiki/File:Yawning_newborn_baby.jpg — public domain.
+- https://commons.wikimedia.org/wiki/File:Baby_(20339).jpg — Pixabay/Wikimedia Commons — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Hands-music-musician-piano_(23958938169).jpg — Pixel.la Free Stock Photos — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:PianoKeyboard4.jpg — Raysonho — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:PianoKeyboard2.jpg — Raysonho — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Piano_keys_by_Hans_Braxmeier.jpg — Hans Braxmeier/Pixabay — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Pianist%27s_hands_in_black_and_white_(Unsplash).jpg — Jamille Queiroz — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Analog_clock_at_11_55.jpg — Damian Yerrick — public domain.
+- https://commons.wikimedia.org/wiki/File:Clock_analog_clock.jpg — Paolo Neo — public domain.
+- https://commons.wikimedia.org/wiki/File:24_Hour_Clock.JPG — Jcfrye — public domain.
+- https://commons.wikimedia.org/wiki/File:Schoolhouse_Regulator_Pendulum_Clock.jpg — Retro00064 — public domain.
+- https://commons.wikimedia.org/wiki/File:Clock_detailed_image.jpg — public domain.
+- https://commons.wikimedia.org/wiki/File:Flight_over_clouds.webm — L. Shyamal — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Sunrise_Glow_Over_Surf_Beach_with_Pink_Horizon_and_Vibrant_Sand_Tones.webm — JaredMcKenzie — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Golden_sunset_filmed_in_January.webm — Vicky Ponce — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:All4sounds_-_Cloud_Time_lapse.webm — All4sounds — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Train_street_20220807_1205.webm — L. Shyamal — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:DTLA_by_night,_Los_Angeles_July_2022.webm — Benoît Prieur — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Inside_Waymo,_DTLA,_Jan_2026.webm — Alexis Doine — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Sounds_of_Silence-_Cuba_Street_(Covid-19).webm — Riddell Productions — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Music_in_the_street,_Barcelona_01.webm — Nicolas Vigier — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:SaveThreads_Threads_Media_3958339277116411776_001_680p.webm — Châu Tuấn Hùng — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Entara.webm — RelanceK — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Relaxing_instrumental_music_video.webm — world for you — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Singer_In_Concert_(Unsplash).jpg — Austin Neill — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Dayseeker_Concert_Las_Vegas.jpg — Jprocko — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Performing_For_The_Crowd_(Unsplash_XUdIi04ohps).jpg — Axel Antas-Bergkvist — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Crowd_at_Tokio_Hotel_concert_at_Christopher_Street_Day_Berlin_2023-07-22_23.jpg — Leonhard Lenz — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Savic_Music_-_P%C3%BAblico_em_pista_durante_apresenta%C3%A7%C3%A3o_de_m%C3%BAsica_eletr%C3%B4nica.jpg — Victor samuel candido — CC0 1.0.
+- https://commons.wikimedia.org/wiki/File:Raindrops_against_the_window_in_the_night_city,_Las_Palmas.webm — Vjatseslav Robtsenkov — CC0 1.0.

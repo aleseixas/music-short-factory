@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"emotional_piano","volume":0.045},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.065},
+    {"time_seconds":5.4,"type":"whoosh_fast","volume":0.04},
+    {"time_seconds":10.8,"type":"camera_shutter","volume":0.038},
+    {"time_seconds":16.2,"type":"heartbeat_slow","volume":0.028},
+    {"time_seconds":21.5,"type":"clock_ticking_slow","volume":0.025},
+    {"time_seconds":27.0,"type":"chime_sparkles","volume":0.038},
+    {"time_seconds":32.4,"type":"dramatic_dun_dun","volume":0.04},
+    {"time_seconds":37.8,"type":"riser_build_up","volume":0.04},
+    {"time_seconds":43.2,"type":"ding","volume":0.036},
+    {"time_seconds":48.6,"type":"whoosh_transition","volume":0.04},
+    {"time_seconds":54.0,"type":"pop","volume":0.038},
+    {"time_seconds":59.5,"type":"crowd_cheer","volume":0.03},
+    {"time_seconds":65.0,"type":"riser_popular","volume":0.04},
+    {"time_seconds":71.0,"type":"impact","volume":0.055}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.52}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.3,"text":"A DESPEDIDA\nESCONDIDA","accent_text":"DESPEDIDA","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"voice","offset_seconds":0.12,"duration_seconds":1.15,"text":"7 MINUTOS\nNO CELULAR","accent_text":"7 MINUTOS","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"five","offset_seconds":0.12,"duration_seconds":1.2,"text":"SÓ 5 MINUTOS","accent_text":"5 MINUTOS","animation":"scale_bounce","position":"center","intensity":0.6},
+    {"segment":"production","offset_seconds":0.12,"duration_seconds":1.15,"text":"PIANO → ARENA","accent_text":"ARENA","animation":"slide_up","position":"center","intensity":0.55},
+    {"segment":"title","offset_seconds":0.12,"duration_seconds":1.15,"text":"SERIA O NOME\nDO ÁLBUM","accent_text":"DO ÁLBUM","animation":"fade_pop","position":"center","intensity":0.55},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.25,"text":"UM FIM VIROU\nCOMEÇO","accent_text":"COMEÇO","animation":"scale_bounce","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"SIGN OF THE TIMES • HARRY STYLES"},
+    {"id":"shot_solo","segment":"solo","asset":"concert_symbol","motion":"pull_out","transition_out":"cut","highlight":"PRIMEIRO SINGLE SOLO • 2017"},
+    {"id":"shot_voice","segment":"voice","asset":"piano_detail","motion":"pan_right","transition_out":"cut","highlight":"NOTA DE VOZ • ~7 MINUTOS"},
+    {"id":"shot_meaning","segment":"meaning","asset":"newborn_symbol","motion":"push_in","transition_out":"crossfade","highlight":"UMA MÃE • UM PARTO DIFÍCIL"},
+    {"id":"shot_five","segment":"five","asset":"clock_detail","motion":"push_in","transition_out":"cut","highlight":"CINCO MINUTOS"},
+    {"id":"shot_lesson","segment":"lesson","asset":"sky_video","source_start_seconds":0.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"A VIDA PRECISA CONTINUAR"},
+    {"id":"shot_world","segment":"world","asset":"rain_world","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"cut","highlight":"UM MUNDO QUE NÃO APRENDE"},
+    {"id":"shot_production","segment":"production","asset":"music_process","source_start_seconds":2.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut","highlight":"PIANO • BATERIA • GUITARRAS"},
+    {"id":"shot_bhasker","segment":"bhasker","asset":"piano_detail","motion":"pan_left","transition_out":"crossfade","highlight":"JEFF BHASKER"},
+    {"id":"shot_risk","segment":"risk","asset":"city_motion","source_start_seconds":0.5,"source_end_seconds":6.8,"motion":"hold","transition_out":"cut","highlight":"QUASE 6 MINUTOS"},
+    {"id":"shot_title","segment":"title","asset":"artist_main","motion":"pull_out","transition_out":"cut","highlight":"ELE QUERIA ESSE NOME NO ÁLBUM"},
+    {"id":"shot_charts","segment":"charts","asset":"concert_symbol","motion":"push_in","transition_out":"cut","highlight":"#4 NOS ESTADOS UNIDOS"},
+    {"id":"shot_revival","segment":"revival","asset":"sky_video","source_start_seconds":1.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"DE VOLTA ÀS PARADAS"},
+    {"id":"shot_contrast","segment":"contrast","asset":"newborn_symbol","motion":"pull_out","transition_out":"crossfade","highlight":"UM FIM APRESENTOU UM NOVO COMEÇO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"O COMEÇO SOLO DE HARRY"}
+  ]
+}

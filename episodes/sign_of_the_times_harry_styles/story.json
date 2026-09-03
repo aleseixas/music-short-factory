@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Sign of the Times — Harry Styles: a despedida escondida no primeiro single solo",
+  "slug": "sign_of_the_times_harry_styles",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"Sign of the Times, de Harry Styles, parece apocalíptica, mas nasceu de uma despedida entre mãe e filho.","delivery":"hook"},
+    {"id":"solo","text":"Em 2017, virou seu primeiro single solo após a pausa do One Direction.","delivery":"curious"},
+    {"id":"voice","text":"A música começou como uma nota de voz de sete minutos no celular.","delivery":"reveal"},
+    {"id":"meaning","text":"Harry imaginou uma mãe enfrentando uma complicação no parto.","delivery":"dramatic"},
+    {"id":"five","text":"O bebê sobreviveria, mas ela teria cinco minutos para deixar uma última mensagem.","delivery":"emotional"},
+    {"id":"lesson","text":"Daí vem o coração da música: tempos difíceis se repetem, mas a vida continua.","delivery":"emotional"},
+    {"id":"world","text":"Harry ligou a ideia à frustração com desigualdade e um mundo que não aprende.","delivery":"dramatic"},
+    {"id":"production","text":"A produção amplia tudo: piano, bateria, guitarras e escala de arena.","delivery":"reveal"},
+    {"id":"bhasker","text":"Jeff Bhasker disse que Harry liderou a direção da faixa e do álbum.","delivery":"neutral"},
+    {"id":"risk","text":"Era uma estreia incomum: quase seis minutos e dramática, longe de um pop imediato.","delivery":"curious"},
+    {"id":"title","text":"Harry queria até chamar o álbum de Sign of the Times.","delivery":"reveal"},
+    {"id":"charts","text":"A aposta chegou ao número quatro nos Estados Unidos e marcou sua carreira.","delivery":"reveal"},
+    {"id":"revival","text":"Anos depois, a faixa voltou a subir nas paradas globais.","delivery":"dramatic"},
+    {"id":"contrast","text":"A ironia: uma história sobre o fim de uma vida apresentou Harry sozinho ao mundo.","delivery":"emotional"},
+    {"id":"payoff","text":"Sign of the Times transformou uma despedida imaginária no começo da carreira solo de Harry Styles.","delivery":"payoff"}
+  ]
+}

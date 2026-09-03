@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_main","file":"harry_styles_campovolo_2023.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/9/97/Harry_Styles_Campovolo_2023.jpg","credit":"VannaVallone / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"newborn_symbol","file":"newborn_baby_met.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/9/90/The_Newborn_Baby_MET_DP146497.jpg","credit":"The Metropolitan Museum of Art / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"piano_detail","file":"piano_hands.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/c/c0/Hands-music-musician-piano_%2823958938169%29.jpg","credit":"Pixel.la Free Stock Photos / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"clock_detail","file":"analog_clock_1155.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/a/ad/Analog_clock_at_11_55.jpg","credit":"Damian Yerrick / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.5}},
+    {"id":"sky_video","file":"flight_over_clouds.webm","url":"https://upload.wikimedia.org/wikipedia/commons/2/2d/Flight_over_clouds.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"city_motion","file":"train_street_hanoi.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/62/Train_street_20220807_1205.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"music_process","file":"music_street_barcelona.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/ae/Music_in_the_street%2C_Barcelona_01.webm","credit":"Nicolas Vigier / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"rain_world","file":"rain_night_city.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/95/Raindrops_against_the_window_in_the_night_city%2C_Las_Palmas.webm","credit":"Vjatseslav Robtsenkov / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"concert_symbol","file":"singer_in_concert.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/56/Singer_In_Concert_%28Unsplash%29.jpg","credit":"Austin Neill / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.45}}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A DESPEDIDA ESCONDIDA EM SIGN OF THE TIMES","source":{"type":"asset","asset_id":"artist_main"}},
+  "youtube": {
+    "title":"Sign of the Times: a despedida escondida no primeiro single solo de Harry Styles",
+    "description":"Sign of the Times parece uma música sobre o fim do mundo, mas Harry Styles revelou uma origem muito mais íntima: uma mãe com poucos minutos para se despedir do filho. E esse não foi o único risco por trás do primeiro single da carreira solo dele.",
+    "hashtags":["HarryStyles","SignOfTheTimes","Musica","Curiosidades","Pop","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"O primeiro single solo de Harry Styles nasceu de uma despedida imaginária entre mãe e filho — e começou como uma nota de voz de sete minutos. A história muda completamente a forma de ouvir Sign of the Times.",
+    "hashtags":["HarryStyles","SignOfTheTimes","Musica","Curiosidades","Pop"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Sign of the Times esconde uma despedida muito mais pesada do que parece — e virou o começo perfeito da carreira solo de Harry Styles.",
+    "hashtags":["HarryStyles","SignOfTheTimes","Musica","Curiosidades","Pop"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
