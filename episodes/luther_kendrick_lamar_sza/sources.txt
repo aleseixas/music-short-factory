@@ -1,0 +1,20 @@
+FACTUAL RESEARCH
+- Billboard Brasil / Rolling Stone adaptation — story behind “Luther”, Sounwave’s interlude/sample origin, no-drums development, 13 weeks at #1 in 2025, year-end performance: https://billboard.com.br/tudo-sobre-luther-kendrick-lamar-sza/
+- AP — GNX surprise release context and “Luther” featuring SZA/sample of Luther Vandross & Cheryl Lynn: https://apnews.com/article/243dcef7e1efd6d82903bd51d4ab242c
+- Shazam — songwriting/production credits including Sounwave, Jack Antonoff, Roselilah, M-Tech, Scott Bridgeway and Kamasi Washington: https://www.shazam.com/song/1781270323/luther/
+
+BASE VISUALS
+- kendrick — U.S. Government / White House photographer — Public Domain — https://commons.wikimedia.org/wiki/File:Kendrick_Lamar_White_House_2016.jpg
+- luther_vandross — 1985 press photo — Public Domain / PD-US-1978-89 — https://commons.wikimedia.org/wiki/File:Luther_Vandross_1985.jpg
+- vinyl — Public Domain — https://commons.wikimedia.org/wiki/File:Vinyl_Record.png
+- microphone — public-domain dedication — https://commons.wikimedia.org/wiki/File:Microphone_studio.jpg
+- strings — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Genesis-Guerra_String_Orchestra.jpg
+- love — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Love-heart.jpg
+- la_night_image — CommunistSquared — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Los_Angeles_Nighttime_Griffith_Observatory.jpg
+- la_night_video — CC0 1.0 — https://commons.wikimedia.org/wiki/File:DTLA_by_night,_Los_Angeles_July_2022.webm
+
+VISUAL CANDIDATES
+- Full candidate-level source pages, credits, licenses and metadata are recorded in visual_candidates.json. Only public-domain/CC0 candidates are retained; a CC BY-SA microphone candidate found during research was rejected.
+
+BACKGROUND MUSIC
+- External-first research compared CC0 emotional/cinematic piano candidates on Freesound, including IDs 626252, 668907 and 679023. The accessible pages did not expose a safely validated direct cdn.freesound.org file URL for catalog use, so no external profile was created. Timeline uses existing repo profile emotional_piano as fallback.
