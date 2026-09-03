@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"taylor_concert","file":"taylor_swift_concert.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Taylor_Swift_Concert.jpg","credit":"Freyra-2426 / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.48}},
+    {"id":"red_scarf","file":"child_wearing_red_scarf.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/7/72/Edouard_Vuillard%2C_Child_Wearing_a_Red_Scarf%2C_c._1891%2C_NGA_52234.jpg","credit":"National Gallery of Art / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"notebook","file":"woman_writing_notebook.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Woman%20writing%20on%20a%20notebook%20with%20a%20pen.jpg","credit":"Kristin Hardwick / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"vinyl_store","file":"vinyl_records_display.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Vinyl%20records%20on%20display%20%28Unsplash%29.jpg","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
