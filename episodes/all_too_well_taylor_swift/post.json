@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O CACHECOL ERA UMA METÁFORA?","source":{"type":"asset","asset_id":"red_scarf"}},
+  "youtube": {
+    "title":"All Too Well: como um cachecol virou uma investigação dos Swifties",
+    "description":"All Too Well nasceu de um desabafo improvisado que passou de dez minutos, foi salva por uma gravação de ensaio e virou uma obsessão dos fãs. Anos depois, a versão completa chegou ao topo da Hot 100 — e Taylor ainda revelou um detalhe sobre o famoso cachecol que alimentou teorias por anos.",
+    "hashtags":["TaylorSwift","AllTooWell","Swifties","RedTaylorsVersion","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Um desabafo de mais de dez minutos, uma gravação de ensaio quase perdida e um cachecol que virou investigação coletiva. A história de All Too Well ficou ainda maior porque os Swifties se recusaram a esquecer a versão completa.",
+    "hashtags":["TaylorSwift","AllTooWell","Swifties","RedTaylorsVersion","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"O cachecol de All Too Well virou uma investigação dos Swifties — mas Taylor revelou um detalhe que muda a história.",
+    "hashtags":["TaylorSwift","AllTooWell","Swifties","Curiosidades","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
