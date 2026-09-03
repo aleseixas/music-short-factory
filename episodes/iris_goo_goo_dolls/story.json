@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Iris — Goo Goo Dolls: a guitarra quebrada por trás do hit",
+  "slug": "iris_goo_goo_dolls",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Iris, do Goo Goo Dolls, nasceu da ideia de um anjo trocando a eternidade por amor.","delivery":"hook"},
+    {"id":"movie","text":"Em 1998, John Rzeznik foi convidado a escrever para o filme City of Angels.","delivery":"curious"},
+    {"id":"hotel","text":"Ele atravessava um divórcio e vivia num hotel em Los Angeles.","delivery":"emotional"},
+    {"id":"perspective","text":"Após o filme, escreveu pela perspectiva de alguém disposto a aceitar dor e mortalidade.","delivery":"dramatic"},
+    {"id":"guitar","text":"O som começou estranho: a guitarra de John tinha só quatro cordas porque duas haviam quebrado.","delivery":"reveal"},
+    {"id":"tuning","text":"Numa afinação incomum, ele encontrou a progressão que virou a identidade de Iris.","delivery":"curious"},
+    {"id":"studio","text":"A demo chegou ao estúdio com o produtor Rob Cavallo.","delivery":"neutral"},
+    {"id":"strings","text":"John simulou cordas no sintetizador, mas uma seção real transformou a gravação.","delivery":"reveal"},
+    {"id":"turn","text":"A banda sentiu que estava virando uma esquina sonora e decidiu seguir.","delivery":"dramatic"},
+    {"id":"expectation","text":"John nem esperava um hit: queria dividir a trilha com U2, Peter Gabriel e Alanis Morissette.","delivery":"curious"},
+    {"id":"name","text":"Até o título surgiu por acaso: Iris não veio do filme nem de uma personagem.","delivery":"reveal"},
+    {"id":"dement","text":"Ele escolheu o nome após ver a cantora Iris DeMent anunciada num guia de shows.","delivery":"reveal"},
+    {"id":"revival","text":"Quase três décadas depois, Iris continua entre músicas mais ouvidas por novas gerações.","delivery":"dramatic"},
+    {"id":"payoff","text":"Talvez seja o segredo: uma música sobre sentir tudo sobreviveu porque ainda faz milhões sentirem tudo.","delivery":"payoff"}
+  ]
+}
