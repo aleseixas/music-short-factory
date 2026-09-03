@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-from engine.visual_search import VisualSearchError, VisualSearchResult, inspect_visual_result
+from engine.visual_search import VisualSearchResult, inspect_visual_result
 
 
 APPROVED_VISUAL_HOSTS = frozenset({"upload.wikimedia.org", "live.staticflickr.com"})
@@ -18,10 +18,7 @@ MIN_VIDEO_SCORE = 45.0
 
 
 def _load_json(path: Path) -> dict:
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
-        raise RuntimeError(f"Nao foi possivel ler {path}: {exc}") from exc
+    data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict):
         raise RuntimeError(f"JSON invalido em {path}: objeto esperado.")
     return data
@@ -41,7 +38,7 @@ def _number(value, default=0.0) -> float:
 
 
 def _metadata_priority(candidate: dict, index: int) -> tuple[float, float, float, float]:
-    """Cheap ranking used only to decide which candidates deserve download/FFmpeg inspection."""
+    """Cheap pre-ranking: decide which candidates deserve download/FFmpeg inspection."""
     width = _number(candidate.get("width"))
     height = _number(candidate.get("height"))
     pixels = width * height
@@ -108,7 +105,7 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
     }
 
 
-def _score_candidate(project_root: Path, slot: dict, candidate: dict, index: int):
+def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: int):
     slot_id = str(slot.get("id") or "").strip()
     result = _candidate_result(candidate, slot_id, index)
     required = _number(slot.get("required_seconds"), DEFAULT_REQUIRED_SECONDS)
@@ -124,18 +121,41 @@ def _score_candidate(project_root: Path, slot: dict, candidate: dict, index: int
         source_end_seconds=_number(end) if result.kind == "video" and end is not None else None,
         crossfade_seconds=crossfade if result.kind == "video" else 0.0,
     )
+
     minimum = _number(
         slot.get("min_visual_score"),
         MIN_VIDEO_SCORE if result.kind == "video" else MIN_IMAGE_SCORE,
     )
+    reasons: list[str] = []
     if inspection.visual_score < minimum:
-        raise VisualSearchError(f"visual_score {inspection.visual_score:.1f} abaixo do minimo {minimum:.1f}")
+        reasons.append(f"score_below_{minimum:.1f}")
     if result.kind == "video":
         if inspection.trim and inspection.trim.safe_for_shot is False:
-            raise VisualSearchError("trim insuficiente para o shot sem loop")
+            reasons.append("unsafe_trim")
         if inspection.is_practically_static is True:
-            raise VisualSearchError("video praticamente estatico")
-    return result, inspection
+            reasons.append("practically_static")
+
+    return result, inspection, reasons
+
+
+def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspection, reasons: list[str]) -> dict:
+    return {
+        "candidate_index": index,
+        "name": result.name,
+        "kind": result.kind,
+        "visual_score": inspection.visual_score,
+        "width": inspection.width,
+        "height": inspection.height,
+        "duration_seconds": inspection.duration_seconds,
+        "fps": inspection.fps,
+        "opening_motion_score": inspection.opening_motion_score,
+        "motion_score": inspection.motion_score,
+        "practically_static": inspection.is_practically_static,
+        "trim_safe": inspection.trim_safe,
+        "eligible_for_auto_selection": not reasons,
+        "warnings": reasons + list(inspection.warnings),
+        "editorial_rank": int(max(1, _number(candidate.get("editorial_rank"), index))),
+    }
 
 
 def resolve_episode(project_root: Path, slug: str) -> int:
@@ -145,31 +165,38 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         print(f"Visual candidates: {slug} sem pool; mantendo assets existentes.")
         return 0
 
-    pool = _load_json(pool_path)
-    slots = pool.get("slots")
-    if pool.get("schema_version") != 1 or not isinstance(slots, list) or not slots:
-        raise RuntimeError("visual_candidates.json invalido: schema_version=1 e slots obrigatorios.")
+    try:
+        pool = _load_json(pool_path)
+        slots = pool.get("slots")
+        if pool.get("schema_version") != 1 or not isinstance(slots, list) or not slots:
+            raise RuntimeError("schema_version=1 e slots obrigatorios")
 
-    assets_path = episode_dir / "assets.json"
-    timeline_path = episode_dir / "timeline.json"
-    assets = _load_json(assets_path)
-    timeline = _load_json(timeline_path)
-    original_assets = assets.get("assets")
-    shots = timeline.get("shots")
-    if not isinstance(original_assets, list) or not isinstance(shots, list):
-        raise RuntimeError("assets.json ou timeline.json invalido para resolucao visual.")
+        assets_path = episode_dir / "assets.json"
+        timeline_path = episode_dir / "timeline.json"
+        assets = _load_json(assets_path)
+        timeline = _load_json(timeline_path)
+        original_assets = assets.get("assets")
+        shots = timeline.get("shots")
+        if not isinstance(original_assets, list) or not isinstance(shots, list):
+            raise RuntimeError("assets.json ou timeline.json invalido")
+    except Exception as exc:
+        print(f"::warning::Visual candidate resolver ignorado: {exc}. Render continuara com assets existentes.")
+        return 0
 
     resolved_entries: dict[str, dict] = {}
     selections: dict[str, dict] = {}
+    candidate_scores: dict[str, list[dict]] = {}
     failures: list[str] = []
 
     for slot in slots:
         if not isinstance(slot, dict):
-            raise RuntimeError("Slot visual invalido.")
+            failures.append("slot invalido ignorado")
+            continue
         slot_id = str(slot.get("id") or "").strip()
         candidates = slot.get("candidates")
         if not slot_id or not isinstance(candidates, list) or not candidates:
-            raise RuntimeError("Cada slot visual precisa de id e candidates.")
+            failures.append(f"{slot_id or '<sem_id>'}: slot sem candidatos; mantendo asset existente")
+            continue
 
         inspect_top = int(max(1, min(MAX_INSPECT_TOP, _number(slot.get("inspect_top"), DEFAULT_INSPECT_TOP))))
         indexed = [(index, candidate) for index, candidate in enumerate(candidates, start=1) if isinstance(candidate, dict)]
@@ -177,26 +204,41 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         shortlist = indexed[:inspect_top]
         print(f"Visual slot {slot_id}: {len(candidates)} candidatos, inspecionando top {len(shortlist)}.")
 
-        ranked = []
+        inspected = []
         for index, candidate in shortlist:
             try:
-                result, inspection = _score_candidate(project_root, slot, candidate, index)
-                editorial_rank = int(max(1, _number(candidate.get("editorial_rank"), index)))
-                ranked.append((inspection.visual_score, -editorial_rank, candidate, result, inspection))
-                print(f"Visual candidate OK {slot_id}[{index}]: {result.kind} score={inspection.visual_score:.1f}")
+                result, inspection, reasons = _inspect_candidate(project_root, slot, candidate, index)
+                record = _score_record(index, candidate, result, inspection, reasons)
+                inspected.append((inspection.visual_score, -record["editorial_rank"], candidate, result, inspection, reasons, record))
+                status = "ELIGIBLE" if not reasons else "SCORED_ONLY"
+                print(f"Visual candidate {status} {slot_id}[{index}]: {result.kind} score={inspection.visual_score:.1f}")
             except Exception as exc:
                 failures.append(f"{slot_id}[{index}]: {exc}")
-                print(f"Visual candidate FAIL {slot_id}[{index}]: {exc}")
+                print(f"::warning::Visual candidate FAIL {slot_id}[{index}]: {exc}")
 
-        if not ranked:
-            details = "; ".join(item for item in failures if item.startswith(f"{slot_id}["))
-            raise RuntimeError(f"Nenhum candidato visual valido para {slot_id}. {details}")
+        inspected.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        candidate_scores[slot_id] = [item[6] for item in inspected]
+        eligible = [item for item in inspected if not item[5]]
 
-        ranked.sort(key=lambda item: (item[0], item[1]), reverse=True)
-        score, _rank, candidate, result, inspection = ranked[0]
+        if not eligible:
+            best_score = inspected[0][0] if inspected else None
+            selections[slot_id] = {
+                "status": "kept_existing_asset",
+                "visual_score": best_score,
+                "reason": "no_auto_eligible_candidate",
+            }
+            if best_score is None:
+                print(f"::warning::Visual slot {slot_id}: nenhum candidato inspecionado; mantendo asset existente.")
+            else:
+                print(f"::warning::Visual slot {slot_id}: melhor score={best_score:.1f}, mas nenhum candidato seguro; mantendo asset existente.")
+            continue
+
+        score, _rank, candidate, result, inspection, _reasons, _record = eligible[0]
         resolved_entries[slot_id] = _asset_entry(slot_id, candidate, result)
         selections[slot_id] = {
+            "status": "selected",
             "kind": result.kind,
+            "name": result.name,
             "visual_score": score,
             "width": inspection.width,
             "height": inspection.height,
@@ -221,7 +263,7 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             continue
         slot_id = str(shot.get("asset") or "")
         selected = selections.get(slot_id)
-        if not selected:
+        if not selected or selected.get("status") != "selected":
             continue
         if selected["kind"] == "video":
             start = selected.get("source_start_seconds")
@@ -236,21 +278,29 @@ def resolve_episode(project_root: Path, slug: str) -> int:
 
     _write_json(assets_path, assets)
     _write_json(timeline_path, timeline)
-    _write_json(
-        episode_dir / "visual_resolution_report.json",
-        {
-            "schema_version": 1,
-            "episode": slug,
-            "selections": selections,
-            "rejected_candidates": failures,
-        },
-    )
-    print(f"Visual resolution concluida: {len(selections)} slots selecionados.")
+    report = {
+        "schema_version": 1,
+        "episode": slug,
+        "selections": selections,
+        "candidate_scores": candidate_scores,
+        "inspection_failures": failures,
+    }
+    _write_json(episode_dir / "visual_resolution_report.json", report)
+
+    print("\n=== VISUAL SCORE SUMMARY ===")
+    for slot_id, scores in candidate_scores.items():
+        if not scores:
+            print(f"{slot_id}: sem score tecnico")
+            continue
+        best = scores[0]
+        suffix = "selecionavel" if best["eligible_for_auto_selection"] else "apenas informativo"
+        print(f"{slot_id}: melhor={best['visual_score']:.1f} ({best['name']}, {suffix})")
+    print(f"Visual resolution concluida: {len(resolved_entries)} slots substituidos; demais mantidos sem bloquear render.")
     return 0
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Inspeciona pools visuais e resolve o melhor candidato tecnico por slot.")
+    parser = argparse.ArgumentParser(description="Inspeciona pools visuais, informa scores e resolve candidatos sem bloquear o render.")
     parser.add_argument("episode", help="Slug do episodio")
     args = parser.parse_args()
     return resolve_episode(Path(__file__).resolve().parent, args.episode)
