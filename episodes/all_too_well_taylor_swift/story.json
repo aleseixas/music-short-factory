@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "title": "All Too Well — Taylor Swift: o cachecol que virou investigação de fã",
+  "slug": "all_too_well_taylor_swift",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"All Too Well, de Taylor Swift, virou uma obsessão dos fãs por causa de um cachecol. Mas a história começou com um desabafo que quase desapareceu.","delivery":"hook"},
+    {"id":"rehearsal","text":"Taylor contou que, durante um ensaio da Speak Now Tour, estava abalada e começou a repetir quatro acordes enquanto improvisava.","delivery":"emotional"},
+    {"id":"recording","text":"O desabafo passou de dez minutos. Um técnico de som gravou tudo — e aquela gravação salvou o momento.","delivery":"reveal"},
+    {"id":"liz_rose","text":"Depois, Taylor chamou a compositora Liz Rose para transformar a catarse enorme em uma música mais estruturada.","delivery":"neutral"},
+    {"id":"original","text":"A versão de 2012 tinha pouco mais de cinco minutos e nem foi lançada originalmente como single.","delivery":"neutral"},
+    {"id":"fans","text":"Mesmo assim, os Swifties adotaram All Too Well como favorita e passaram anos pedindo a lendária versão completa.","delivery":"curious"},
+    {"id":"ten_minutes","text":"Em 2021, Taylor finalmente entregou All Too Well (10 Minute Version), com dez minutos e treze segundos.","delivery":"reveal"},
+    {"id":"record","text":"E aconteceu o improvável: ela chegou ao número um da Billboard Hot 100 e virou, naquele momento, a música mais longa a alcançar o topo.","delivery":"dramatic"},
+    {"id":"scarf","text":"Aí existe o famoso cachecol. Fãs passaram anos discutindo onde ele estaria, com quem teria ficado e o que realmente significava.","delivery":"curious"},
+    {"id":"metaphor","text":"Só que Taylor revelou no Festival de Toronto: o cachecol é uma metáfora.","delivery":"reveal"},
+    {"id":"payoff","text":"Talvez essa seja a parte mais Swiftie da história: um detalhe virou investigação, a investigação virou mito, e os fãs ajudaram uma faixa de álbum a virar fenômeno quase dez anos depois.","delivery":"payoff"}
+  ]
+}
