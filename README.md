@@ -100,7 +100,8 @@ Publicação real exige `--live` e credenciais válidas.
 │   └── style.json
 ├── docs/
 │   ├── editorial-direction.md
-│   └── audio-search.md
+│   ├── audio-search.md
+│   └── visual-search.md
 ├── engine/
 │   ├── assets.py
 │   ├── audio.py
@@ -116,7 +117,8 @@ Publicação real exige `--live` e credenciais válidas.
 │   ├── sfx.py
 │   ├── text_fx.py
 │   ├── timeline.py
-│   └── tts.py
+│   ├── tts.py
+│   └── visual_search.py
 ├── episodes/
 ├── publishing/
 ├── templates/
@@ -126,6 +128,7 @@ Publicação real exige `--live` e credenciais válidas.
 ├── output/
 ├── generate.py
 ├── prepare_post.py
+├── search_visual.py
 └── publish.py
 ```
 
@@ -242,6 +245,19 @@ Exemplo:
 O projeto prioriza arquivos locais quando existem e usa cache para mídia remota quando necessário. URLs remotas precisam ser compatíveis com o downloader e com o tipo de mídia esperado.
 
 Para vídeos, o trecho escolhido precisa ser suficiente para a duração real do shot e para handles de crossfade quando aplicáveis. O renderer não deve usar loop para esconder um trecho insuficiente.
+
+Na autoria, a ferramenta de Visual Search permite ao GPT seguir o fluxo
+`pesquisar → comparar → inspecionar → ranquear → escolher` com Wikimedia Commons
+(imagens e vídeos) e Openverse Images (imagens). Quando movimento real acrescentar
+valor, procure vídeo antes de aceitar imagem, compare múltiplos candidatos e evite
+arquivos de vídeo praticamente estáticos. Scores de movimento/qualidade são sinais
+técnicos para comparação, não julgamento semântico, e não entram nos JSONs do
+episódio. Consulte [`docs/visual-search.md`](docs/visual-search.md).
+
+Essa busca só acontece durante a autoria. O renderer nunca consulta providers de
+busca; ele apenas usa o asset local ou a URL já escolhida em `assets.json`.
+Em um ambiente local/runner, comece com
+`python search_visual.py "consulta principal" "consulta alternativa" --kind any --external`.
 
 ## Background music: external-first
 
@@ -427,5 +443,6 @@ python -m unittest discover -s tests -v
 - [`docs/editorial-direction.md`](docs/editorial-direction.md): contrato de direção/Editor Mode.
 - [`templates/editorial-direction-prompt.md`](templates/editorial-direction-prompt.md): prompt usado como referência operacional.
 - [`docs/audio-search.md`](docs/audio-search.md): política de busca externa para background music e política fechada de SFX.
+- [`docs/visual-search.md`](docs/visual-search.md): busca, inspeção e seleção técnica de imagens/vídeos durante a autoria.
 
 Quando qualquer texto acima divergir do código atual, **a `main` continua sendo a fonte da verdade**.

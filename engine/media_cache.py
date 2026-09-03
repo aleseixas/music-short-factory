@@ -17,7 +17,7 @@ DOWNLOAD_HEADERS = {
         "MusicShortFactory/8.1 "
         "(+https://github.com/aleseixas/music-short-factory; remote-media-cache)"
     ),
-    "Accept": "video/*,audio/*,application/octet-stream,*/*;q=0.5",
+    "Accept": "video/*,audio/*,image/*,application/octet-stream,*/*;q=0.5",
 }
 SAME_HOST_INTERVAL_SECONDS = 0.25
 MAX_VALIDATED_REDIRECTS = 5
@@ -31,7 +31,7 @@ def media_cache_directory(
     cache_root: Path | None,
     category: str,
 ) -> Path:
-    if category not in {"video", "music", "sfx"}:
+    if category not in {"image", "video", "music", "sfx"}:
         raise RuntimeError(f"Categoria de cache de midia desconhecida: {category!r}.")
     project_root = project_root.resolve()
     configured_root = cache_root or Path("cache")

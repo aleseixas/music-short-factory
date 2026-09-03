@@ -4,7 +4,7 @@ Este é o contrato de autoria para o GPT/agente externo que prepara episódios d
 
 O agente é o **diretor + editor criativo**. Python/FFmpeg são o executor determinístico: validam e executam as decisões explícitas registradas nos arquivos do episódio. O objetivo não é “usar features”; é produzir o melhor short possível com as ferramentas reais disponíveis na `main`.
 
-O prompt operacional copiável fica em [`templates/editorial-direction-prompt.md`](../templates/editorial-direction-prompt.md). A política de áudio externo fica em [`docs/audio-search.md`](audio-search.md), e a direção de voz por segmento em [`docs/narration-delivery.md`](narration-delivery.md).
+O prompt operacional copiável fica em [`templates/editorial-direction-prompt.md`](../templates/editorial-direction-prompt.md). A política de áudio externo fica em [`docs/audio-search.md`](audio-search.md), a direção de voz por segmento em [`docs/narration-delivery.md`](narration-delivery.md), e o fluxo de pesquisa/inspeção de imagens e vídeos em [`docs/visual-search.md`](visual-search.md).
 
 ## Main é a fonte da verdade
 
@@ -115,13 +115,14 @@ Revise isoladamente hook, mudanças de assunto, reveals, estatísticas, virada n
 2. construir a narração;
 3. escolher `delivery` por segmento quando melhorar a interpretação;
 4. identificar editorial beats importantes;
-5. escolher assets e shots;
-6. escolher background music;
-7. fazer montagem shot por shot;
-8. fazer acabamento shot por shot;
-9. fazer polimento global;
-10. validar schema, deliveries, catálogos, assets, tempos, trims e conflitos;
-11. salvar o episódio.
+5. pesquisar, comparar, inspecionar e ranquear candidatos visuais;
+6. escolher assets, shots e trims;
+7. escolher background music;
+8. fazer montagem shot por shot;
+9. fazer acabamento shot por shot;
+10. fazer polimento global;
+11. validar schema, deliveries, catálogos, assets, tempos, trims e conflitos;
+12. salvar o episódio.
 
 A edição nasce a partir da história. Não distorça a narrativa apenas para encaixar um efeito ou preset de voz.
 
@@ -152,7 +153,17 @@ Antes de escrever cues, leia os arquivos reais do projeto:
 - deliveries: enums reais na `main`;
 - música: `assets/audio/music/catalog.json`;
 - SFX: `assets/audio/sfx/catalog.json`;
+- imagens/vídeos externos: `docs/visual-search.md` e os providers públicos descritos ali;
 - overlays: IDs válidos em `episodes/<slug>/assets.json` e arquivos compatíveis quando a `main` exigir local.
+
+### Imagens e vídeos
+
+Na etapa de autoria, siga `pesquisar → comparar → inspecionar → ranquear →
+escolher`. Use mais de uma consulta quando necessário, deduplique candidatos e
+compare Wikimedia Commons (imagem/vídeo) e Openverse Images (imagem). Quando um
+vídeo relevante com movimento perceptível melhorar o plano, prefira-o a uma
+imagem. Se providers ou inspeção falharem, continue com outro resultado ou com
+um asset local/relevante disponível; busca externa nunca roda no renderer.
 
 ### Background music
 
@@ -351,14 +362,24 @@ Warnings de excesso devem provocar revisão, não transformar estilo em hard err
 
 Vídeo real é prioridade quando houver material bom e reutilizável.
 
+- antes de escolher, faça múltiplas consultas e compare candidatos conforme `docs/visual-search.md`;
+- trate `opening_motion_score`, `motion_score`, `practically_static` e `visual_score` como sinais técnicos, nunca como decisão semântica;
+- não persista scores, ranking ou consultas em `assets.json`/`timeline.json`;
 - tente variedade real de assets;
 - não conte cortes diferentes do mesmo arquivo como vídeos distintos;
 - não use filler;
 - prefira movimento perceptível nos primeiros 1–2s do trecho usado;
+- evite `.mp4`, `.mov` ou `.webm` praticamente estático quando houver alternativa melhor;
 - quando duração real puder ser verificada, deixe margem suficiente após `source_start_seconds`;
 - se a autoria não puder verificar duração/metadata, não finja que verificou.
 
 Mídia remota deve seguir o formato atual da `main`, com URL direta quando aplicável. Não faça commit de cache ou mídia pesada desnecessária.
+
+O score técnico ajuda a ordenar a inspeção, mas não reconhece relevância para a
+fala. Escolha primeiro um asset semanticamente correto; só então use resolução,
+aspect ratio, movimento e segurança do trim para desempatar. Se a tarefa tiver
+somente GitHub + web, use metadados dos endpoints públicos e seja explícita sobre
+a ausência de análise FFmpeg local.
 
 ## Áudio e mix
 
