@@ -9,11 +9,30 @@ CACHECOL / FÃS
 - TIFF — contexto da conversa de Taylor Swift sobre All Too Well: The Short Film: https://www.tiff.net/press/news/tiff-announces-in-conversation-with-taylor-swift
 - E! — declaração de Taylor no TIFF de que o cachecol é uma metáfora: https://www.eonline.com/ca/news/1345752/taylor-swift-discusses-meaning-of-red-scarf-in-all-too-well
 
-VISUAIS — todos selecionados por licença sem obrigação de atribuição pública
+VISUAL INTELLIGENCE / VISUAL SEARCH
+Fluxo aplicado na autoria: pesquisar → comparar → inspecionar metadados → ranquear editorialmente → escolher.
+A inspeção técnica local por FFprobe/FFmpeg NÃO foi executada nesta sessão; motion_score/opening_motion_score permanecem NÃO_VERIFICADOS. Duração, resolução, formato e licença abaixo foram conferidos nas páginas de arquivo do Wikimedia Commons quando disponíveis.
+
+VISUAIS — imagens
 - Taylor Swift Concert.jpg — Freyra-2426 — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Taylor_Swift_Concert.jpg
 - Child Wearing a Red Scarf — National Gallery of Art — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Edouard_Vuillard,_Child_Wearing_a_Red_Scarf,_c._1891,_NGA_52234.jpg
-- Woman writing on a notebook with a pen — Kristin Hardwick — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Woman_writing_on_a_notebook_with_a_pen.jpg
+- Notebook writing.jpg — Jairus Monilla — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Notebook_writing.jpg
 - Vinyl records on display (Unsplash) — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Vinyl_records_on_display_(Unsplash).jpg
 
+VISUAIS — vídeos selecionados
+- Behind The Scenes: In Performance at The White House: Country Music — The White House — domínio público, obra do governo federal dos EUA — 3m50s, 1280x720 — https://commons.wikimedia.org/wiki/File:Behind_The_Scenes-_In_Performance_at_The_White_House-_Country_Music.webm
+  URL direta: https://upload.wikimedia.org/wikipedia/commons/a/a9/Behind_The_Scenes-_In_Performance_at_The_White_House-_Country_Music.webm
+- John Mellencamp Performs at the White House: 3 of 11 — The White House — domínio público, obra do governo federal dos EUA — 4m51s, 1280x720 — https://commons.wikimedia.org/wiki/File:John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm
+  URL direta: https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm
+- Writing the letter feng.webm — FonzuWiki — CC0 1.0 — 21.841s, 1920x1080 — https://commons.wikimedia.org/wiki/File:Writing_the_letter_feng.webm
+  URL direta: https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm
+- Scenes in New York City, 1903.webm — Framepool — domínio público (EUA) — 4m32s, 1920x1080 — https://commons.wikimedia.org/wiki/File:Scenes_in_New_York_City,_1903.webm
+  URL direta: https://upload.wikimedia.org/wikipedia/commons/a/af/Scenes_in_New_York_City%2C_1903.webm
+
+CANDIDATOS VISUAIS REJEITADOS
+- Falling autumn leaves.webm — rejeitado: licença CC BY-SA 3.0 exige atribuição pública.
+- No Boilerplate — Writing at the Speed of Thought.webm — rejeitado: aviso de elementos não totalmente livres e revisão de licença pendente.
+- Concert.webm (Lumière) — rejeitado: página informa obrigação de atribuição por direitos morais franceses.
+
 BACKGROUND
-- Profile local da repo: emotional_piano. Nenhuma mídia externa de background adicionada.
+- Profile local da repo: emotional_piano. Preferido nesta reconstrução para evitar inserir áudio externo com obrigação de atribuição pública incompatível com a copy editorial limpa.
