@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A HISTÓRIA REAL DE SÓ OS LOUCOS SABEM","source":{"type":"asset","asset_id":"artist_main"}},
+  "youtube": {
+    "title":"Só os Loucos Sabem: as duas histórias reais que inspiraram Chorão",
+    "description":"A letra de Só os Loucos Sabem nasceu de experiências reais que marcaram Chorão: uma homenagem entregue por uma fã e, anos depois, a transformação de um amigo que mudou sua visão sobre paz, medo e recomeço.",
+    "hashtags":["CharlieBrownJr","Chorao","SoOsLoucosSabem","RockNacional","Musica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Uma fã, um amigo que mudou completamente de vida e versos terminados depois de uma noite que mexeu com Chorão. A origem de Só os Loucos Sabem é muito mais pessoal do que parece.",
+    "hashtags":["CharlieBrownJr","Chorao","SoOsLoucosSabem","RockNacional","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Só os Loucos Sabem nasceu de duas histórias reais que mudaram a forma como Chorão enxergava medo, paz e recomeço.",
+    "hashtags":["CharlieBrownJr","Chorao","SoOsLoucosSabem","RockNacional","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
