@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_main","file":"chorao_charlie_brown_jr.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/a/aa/Chor%C3%A3o_-_Charlie_Brown_Jr..jpg","credit":"Alex Carvalho / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"band_live","file":"charlie_brown_jr_2012_2.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/3/3b/Charlie_Brown_Jr._-_Outubro_2012_%282%29.jpg","credit":"Editorial J / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"santos_beach","file":"praia_de_santos.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/7/7f/Praia_de_Santos.jpg","credit":"Wikimedia Commons contributor","license":"Public domain","focus":{"x":0.5,"y":0.5}},
+    {"id":"santos_video","file":"santos_ressaca.webm","url":"https://upload.wikimedia.org/wikipedia/commons/f/f8/Prefeitura_de_Santos_registra_ressaca_na_Ponta_da_Praia.webm","credit":"Prefeitura de Santos / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"church_video","file":"church_bell.webm","url":"https://upload.wikimedia.org/wikipedia/commons/2/2a/MVI_0416.webm","credit":"9kb / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"skate_video","file":"kenyan_skateboarding.webm","url":"https://upload.wikimedia.org/wikipedia/commons/3/33/Kenyan_skateboarding.webm","credit":"Drewperez1 / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
