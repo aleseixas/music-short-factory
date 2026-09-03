@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"johnny_cash","file":"president_richard_nixon_and_johnny_cash.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/4/4c/President_Richard_Nixon_and_Johnny_Cash.jpg","credit":"Executive Office of the President of the United States","license":"Public Domain — U.S. federal government","focus":{"x":0.72,"y":0.42}},
+    {"id":"johnny_performance","file":"johnny_cash_sings_duet_navy.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/c/c4/Johnny_Cash_sings_a_duet_with_a_Navy_lieutenant.jpg","credit":"PH1 Gary Rice, USN","license":"Public Domain — U.S. federal government","focus":{"x":0.42,"y":0.45}},
+    {"id":"johnny_portrait","file":"johnny_cash_1977.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/c/c2/Johnny_Cash_1977.jpg","credit":"CBS Television publicity photograph","license":"Public Domain — U.S. publication without copyright notice","focus":{"x":0.5,"y":0.35}},
+    {"id":"johnny_nixon","file":"johnny_cash_nixon.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/d/d1/Johnny_Cash-Nixon.jpg","credit":"Ollie Atkins / Executive Office of the President","license":"Public Domain — U.S. federal government","focus":{"x":0.62,"y":0.42}},
+    {"id":"johnny_june","file":"cash_june_ford.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/5f/Country_and_Western_Singers_Johnny_Cash_and_June_Carter_Cash_Visit_President_Gerald_R._Ford_at_the_White_House_-_NARA_-_6829577.jpg","credit":"White House Photographic Office / NARA","license":"Public Domain — U.S. federal government","focus":{"x":0.5,"y":0.45}},
+    {"id":"johnny_2002","file":"bush_laura_johnny_cash.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/a/aa/President_George_W._Bush_and_Laura_Bush_stand_with_Johnny_Cash.jpg","credit":"Paul Morse / White House Photo Office","license":"Public Domain — U.S. federal government","focus":{"x":0.68,"y":0.42}},
+    {"id":"writing","file":"writing_the_letter_feng.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm","credit":"FonzuWiki / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"performance_video","file":"john_mellencamp_white_house_performance.webm","url":"https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm","credit":"The White House","license":"Public Domain — U.S. federal government","focus":{"x":0.5,"y":0.5}}
+  ]
+}
