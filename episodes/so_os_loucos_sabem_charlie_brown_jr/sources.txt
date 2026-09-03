@@ -1,0 +1,16 @@
+FACTUAL
+- Billboard Brasil Hot 100 — Só os Loucos Sabem aparece atualmente no chart, posição 92, pico 70, 86 semanas: https://billboard.com.br/billboard-brasil-hot-100/
+- Juicy Santos — história da composição: fã em Araraquara, homenagem ao irmão morto aos 20 anos, rascunho no hotel, Glauco Veloso, evento com Rodolfo Abrantes e versos finalizados em um guardanapo: https://www.juicysantos.com.br/novo-na-regiao/so-os-loucos-sabem-conheca-a-historia-por-tras-da-musica-do-charlie-brown-jr/
+- Charlie Brown Jr. Official Artist Channel — performance oficial e créditos do repertório: https://www.youtube.com/watch?v=NFADwNLNSd4Y
+
+VISUAIS
+- Chorão durante show — Alex Carvalho / Wikimedia Commons — CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Chor%C3%A3o_-_Charlie_Brown_Jr..jpg
+- Charlie Brown Jr. outubro de 2012 — Editorial J / Wikimedia Commons — CC BY-SA 2.0: https://commons.wikimedia.org/wiki/File:Charlie_Brown_Jr._-_Outubro_2012_(2).jpg
+- Praia de Santos — Wikimedia Commons — domínio público: https://commons.wikimedia.org/wiki/File:Praia_de_Santos.jpg
+- Ressaca na Ponta da Praia — Prefeitura de Santos / Wikimedia Commons — CC BY 3.0: https://commons.wikimedia.org/wiki/File:Prefeitura_de_Santos_registra_ressaca_na_Ponta_da_Praia.webm
+- Church bell, St. Andrew's Basilica — 9kb / Wikimedia Commons — CC0 1.0: https://commons.wikimedia.org/wiki/File:MVI_0416.webm
+- Kenyan skateboarding — Drewperez1 / Wikimedia Commons — CC BY-SA 4.0: https://commons.wikimedia.org/wiki/File:Kenyan_skateboarding.webm
+
+ÁUDIO
+- Background: profile local `emotional_piano`, usado como fallback seguro e coerente com a narrativa reflexiva.
+- SFX: somente types existentes em assets/audio/sfx/catalog.json.
