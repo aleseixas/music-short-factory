@@ -12,7 +12,8 @@ class TikTokPublisher(Publisher):
 
     TOKEN_URL = "https://open.tiktokapis.com/v2/oauth/token/"
     CREATOR_URL = "https://open.tiktokapis.com/v2/post/publish/creator_info/query/"
-    INIT_URL = "https://open.tiktokapis.com/v2/post/publish/video/init/"
+    DIRECT_INIT_URL = "https://open.tiktokapis.com/v2/post/publish/video/init/"
+    DRAFT_INIT_URL = "https://open.tiktokapis.com/v2/post/publish/inbox/video/init/"
     STATUS_URL = "https://open.tiktokapis.com/v2/post/publish/status/fetch/"
     MAX_CHUNK_BYTES = 64_000_000
     CHUNK_BYTES = 10_000_000
@@ -33,9 +34,13 @@ class TikTokPublisher(Publisher):
             raise PublishingError(
                 f"TikTokPublisher: caption final excede {text_limit} unidades UTF-16."
             )
-        privacy = context.metadata.get("privacy_level", "SELF_ONLY")
-        if not isinstance(privacy, str) or not privacy:
-            raise PublishingError("TikTokPublisher: privacy_level invalido.")
+
+        post_mode = self._post_mode(context)
+        if post_mode == "direct":
+            privacy = context.metadata.get("privacy_level", "SELF_ONLY")
+            if not isinstance(privacy, str) or not privacy:
+                raise PublishingError("TikTokPublisher: privacy_level invalido.")
+
         if require_credentials:
             missing = self._missing_credentials()
             if missing:
@@ -47,49 +52,61 @@ class TikTokPublisher(Publisher):
     def upload(self, context: PublishContext) -> Mapping[str, Any]:
         self.validate(context, require_credentials=True)
         token = self._access_token()
-        creator = self._creator_info(token)
-        privacy = str(context.metadata.get("privacy_level", "SELF_ONLY"))
-        options = creator.get("privacy_level_options")
-        if isinstance(options, list) and privacy not in options:
-            raise PublishingError(
-                f"TikTokPublisher: privacy_level {privacy!r} nao esta liberado para esta conta. "
-                f"Opcoes da API: {', '.join(map(str, options))}."
-            )
+        post_mode = self._post_mode(context)
+
         file_size = context.video_path.stat().st_size
         if file_size > self.MAX_VIDEO_BYTES:
             raise PublishingError("TikTokPublisher: o video excede o limite oficial de 4 GB.")
         chunk_size, chunk_sizes = self._chunk_layout(file_size)
         total_chunks = len(chunk_sizes)
-        rendered = render_platform_text({"tiktok": context.metadata}, "tiktok")
-        post_info = {
-            "title": rendered["caption"],
-            "privacy_level": privacy,
-            "disable_duet": bool(rendered.get("disable_duet", False)),
-            "disable_comment": bool(rendered.get("disable_comment", False)),
-            "disable_stitch": bool(rendered.get("disable_stitch", False)),
-            "video_cover_timestamp_ms": int(
-                rendered.get("video_cover_timestamp_ms", 1000)
-            ),
-            "brand_content_toggle": bool(rendered.get("brand_content_toggle", False)),
-            "brand_organic_toggle": bool(rendered.get("brand_organic_toggle", False)),
-            "is_aigc": bool(rendered.get("is_aigc", False)),
+
+        source_info = {
+            "source": "FILE_UPLOAD",
+            "video_size": file_size,
+            "chunk_size": chunk_size,
+            "total_chunk_count": total_chunks,
         }
+
+        if post_mode == "draft":
+            init_url = self.DRAFT_INIT_URL
+            request_json: dict[str, Any] = {"source_info": source_info}
+        else:
+            creator = self._creator_info(token)
+            privacy = str(context.metadata.get("privacy_level", "SELF_ONLY"))
+            options = creator.get("privacy_level_options")
+            if isinstance(options, list) and privacy not in options:
+                raise PublishingError(
+                    f"TikTokPublisher: privacy_level {privacy!r} nao esta liberado para esta conta. "
+                    f"Opcoes da API: {', '.join(map(str, options))}."
+                )
+            rendered = render_platform_text({"tiktok": context.metadata}, "tiktok")
+            post_info = {
+                "title": rendered["caption"],
+                "privacy_level": privacy,
+                "disable_duet": bool(rendered.get("disable_duet", False)),
+                "disable_comment": bool(rendered.get("disable_comment", False)),
+                "disable_stitch": bool(rendered.get("disable_stitch", False)),
+                "video_cover_timestamp_ms": int(
+                    rendered.get("video_cover_timestamp_ms", 1000)
+                ),
+                "brand_content_toggle": bool(rendered.get("brand_content_toggle", False)),
+                "brand_organic_toggle": bool(rendered.get("brand_organic_toggle", False)),
+                "is_aigc": bool(rendered.get("is_aigc", False)),
+            }
+            init_url = self.DIRECT_INIT_URL
+            request_json = {
+                "post_info": post_info,
+                "source_info": source_info,
+            }
+
         response = self._request(
             "POST",
-            self.INIT_URL,
+            init_url,
             headers={
                 "Authorization": f"Bearer {token}",
                 "Content-Type": "application/json; charset=UTF-8",
             },
-            json={
-                "post_info": post_info,
-                "source_info": {
-                    "source": "FILE_UPLOAD",
-                    "video_size": file_size,
-                    "chunk_size": chunk_size,
-                    "total_chunk_count": total_chunks,
-                },
-            },
+            json=request_json,
         )
         payload = self._tiktok_json(response)
         data = payload.get("data")
@@ -124,7 +141,11 @@ class TikTokPublisher(Publisher):
             raise PublishingError(
                 f"TikTokPublisher: upload incompleto ({start} de {file_size} bytes)."
             )
-        return {"publish_id": publish_id}
+
+        return {
+            "publish_id": publish_id,
+            "post_mode": post_mode,
+        }
 
     def publish(
         self,
@@ -134,8 +155,11 @@ class TikTokPublisher(Publisher):
         publish_id = str(upload_result.get("publish_id", "")).strip()
         if not publish_id:
             raise PublishingError("TikTokPublisher: upload_result nao contem publish_id.")
-        # Direct Post has no separate finalize endpoint: video/init already started
-        # publication and completion of the byte transfer starts processing.
+        post_mode = str(upload_result.get("post_mode", self._post_mode(context))).strip()
+
+        # Both Content Posting flows start processing after the byte transfer.
+        # In draft mode TikTok sends the creator an inbox notification so the
+        # post can be edited and published manually in the TikTok app.
         try:
             status_payload = self.get_status(publish_id)
         except ApiError as exc:
@@ -146,7 +170,9 @@ class TikTokPublisher(Publisher):
                 details={
                     "publish_id": publish_id,
                     "warning": str(exc),
-                    "publication_started": True,
+                    "post_mode": post_mode,
+                    "publication_started": post_mode == "direct",
+                    "requires_user_action": post_mode == "draft",
                 },
             )
         status = str(status_payload.get("status", "processing")).lower()
@@ -158,7 +184,12 @@ class TikTokPublisher(Publisher):
             platform=self.platform,
             status=status,
             external_id=external_id,
-            details={"publish_id": publish_id, "platform_status": status_payload},
+            details={
+                "publish_id": publish_id,
+                "post_mode": post_mode,
+                "requires_user_action": post_mode == "draft",
+                "platform_status": status_payload,
+            },
         )
 
     def get_status(self, external_id: str) -> Mapping[str, Any]:
@@ -193,6 +224,23 @@ class TikTokPublisher(Publisher):
         if not isinstance(data, Mapping):
             raise ApiError("TikTokPublisher: creator_info nao retornou dados da conta.")
         return data
+
+    @staticmethod
+    def _post_mode(context: PublishContext) -> str:
+        raw = str(context.metadata.get("post_mode", "draft")).strip().lower()
+        aliases = {
+            "draft": "draft",
+            "upload": "draft",
+            "inbox": "draft",
+            "direct": "direct",
+            "publish": "direct",
+        }
+        try:
+            return aliases[raw]
+        except KeyError as exc:
+            raise PublishingError(
+                "TikTokPublisher: post_mode invalido. Use 'draft' ou 'direct'."
+            ) from exc
 
     def _missing_credentials(self) -> list[str]:
         if self.credentials.has("TIKTOK_ACCESS_TOKEN"):
