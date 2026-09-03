@@ -1,0 +1,19 @@
+STORY SOURCES
+- The Independent — The story behind Johnny Cash’s ‘Hurt’: https://www.independent.co.uk/arts-entertainment/music/features/the-story-behind-johnny-cash-s-hurt-still-the-saddest-music-video-of-all-time-a6683371.html
+- MusicRadar — Trent Reznor on first hearing Johnny Cash's Hurt: https://www.musicradar.com/news/johnny-cash-hurt-trent-reznor-rick-rubin
+- Louder — Trent Reznor reaction to Cash cover: https://www.loudersound.com/news/nine-inch-nails-trent-reznor-reveals-johnny-cash-hurt-reaction-2024
+- Southern Spaces — Gold Records in Deep Space / Hurt video analysis: https://southernspaces.org/2008/gold-records-deep-space/
+
+VISUAL SOURCES — all selected baseline visuals are public-domain/CC0 assets that do not require public attribution in post copy.
+- Johnny Cash with Richard Nixon, White House, public domain: https://commons.wikimedia.org/wiki/File:President_Richard_Nixon_and_Johnny_Cash.jpg
+- Johnny Cash performing for U.S. Navy personnel, public domain: https://commons.wikimedia.org/wiki/File:Johnny_Cash_sings_a_duet_with_a_Navy_lieutenant.jpg
+- Johnny Cash 1977 CBS publicity image, public domain: https://commons.wikimedia.org/wiki/File:Johnny_Cash_1977.jpg
+- Johnny Cash-Nixon, public domain: https://commons.wikimedia.org/wiki/File:Johnny_Cash-Nixon.jpg
+- Johnny Cash and June Carter Cash at White House, NARA, public domain: https://commons.wikimedia.org/wiki/File:Country_and_Western_Singers_Johnny_Cash_and_June_Carter_Cash_Visit_President_Gerald_R._Ford_at_the_White_House_-_NARA_-_6829577.jpg
+- Johnny Cash at 2002 National Medal of Arts ceremony, White House, public domain: https://commons.wikimedia.org/wiki/File:President_George_W._Bush_and_Laura_Bush_stand_with_Johnny_Cash.jpg
+- Writing the letter feng, CC0: https://commons.wikimedia.org/wiki/File:Writing_the_letter_feng.webm
+- John Mellencamp White House performance, U.S. federal government/public domain: https://commons.wikimedia.org/wiki/File:John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm
+
+AUTHORING NOTE
+- Visual candidate pool: 35 candidates across 7 important slots, 5 per slot.
+- FFprobe/FFmpeg visual scores are intentionally not claimed here; they are delegated to the GitHub Action resolver.
