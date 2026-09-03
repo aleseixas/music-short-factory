@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id": "artist_main",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 2,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"Goo Goo Dolls at Brixton O2 Academy 2010","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/5/51/Goo_Goo_Dolls_at_the_Brixton_O2_Academy_in_London_November_2010.jpg","file":"artist_main_2f3f967015d2.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Goo_Goo_Dolls_at_the_Brixton_O2_Academy_in_London_November_2010.jpg","source":"wikimedia","provider_id":"commons-artist-band","creator":"Lotte Geselle","credit":"Lotte Geselle / Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":3264,"height":2448,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"John Rzeznik Glasgow May 2006","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/b/b2/John_Rzeznik_-_Glasgow_-_May_2006.jpg","file":"artist_main_c05cabb8d8d9.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:John_Rzeznik_-_Glasgow_-_May_2006.jpg","source":"wikimedia","provider_id":"commons-artist-john","creator":"Caroline Malcolm","credit":"Caroline Malcolm / Wikimedia Commons","license":"Public domain","width":1152,"height":1949,"focus":{"x":0.5,"y":0.42}}
+      ]
+    },
+    {
+      "id": "angel_symbol",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"Angel statue under cloudy sky","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/3/35/Angel_statue_under_cloudy_sky.jpg","file":"angel_symbol_209150c20e16.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Angel_statue_under_cloudy_sky.jpg","source":"wikimedia","provider_id":"commons-angel-1","creator":"Pixabay contributor","credit":"Wikimedia Commons / Pixabay","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":6000,"height":4000,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Angel Statue with memorial plaques","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/e/e1/Angel_Statue_with_plaques_of_2_diseased_people.jpg","file":"angel_symbol_b066a2353bc4.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Angel_Statue_with_plaques_of_2_diseased_people.jpg","source":"wikimedia","provider_id":"commons-angel-2","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":3024,"height":4032,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Golden angel statue","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/6/60/Angel_statue_golden.jpg","file":"angel_symbol_1ae844baf1af.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Angel_statue_golden.jpg","source":"wikimedia","provider_id":"commons-angel-3","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":6024,"height":4020,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"Angel statue Oaxaca","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/c/ca/Angel-statue1-oaxaca-MX.jpg","file":"angel_symbol_ca793f50c6e4.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Angel-statue1-oaxaca-MX.jpg","source":"wikimedia","provider_id":"commons-angel-4","credit":"Wikimedia Commons","license":"Public domain","width":2304,"height":3072,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":5,"name":"Angel Statue Holy Family Cincinnati","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/8/8b/Angel_Statue%2C_Holy_Family_Catholic_Church%2C_East_Price_Hill%2C_Cincinnati%2C_OH_%2832486669527%29.jpg","file":"angel_symbol_0d9cc9253d7e.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Angel_Statue,_Holy_Family_Catholic_Church,_East_Price_Hill,_Cincinnati,_OH_(32486669527).jpg","source":"wikimedia","provider_id":"commons-angel-5","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id": "la_context",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"DTLA by night July 2022","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/9/92/DTLA_by_night%2C_Los_Angeles_July_2022.webm","file":"la_context_69c0e3fcc79d.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:DTLA_by_night,_Los_Angeles_July_2022.webm","source":"wikimedia","provider_id":"commons-la-video-1","creator":"Benoît Prieur","credit":"Benoît Prieur / Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":2160,"height":3840,"duration_seconds":14.0,"source_start_seconds":1.0,"source_end_seconds":12.0,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Inside Waymo DTLA January 2026","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/d/db/Inside_Waymo%2C_DTLA%2C_Jan_2026.webm","file":"la_context_d7d2d1ae5a46.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Inside_Waymo,_DTLA,_Jan_2026.webm","source":"wikimedia","provider_id":"commons-la-video-2","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":1080,"height":1920,"duration_seconds":10.806,"source_start_seconds":0.5,"source_end_seconds":10.2,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Los Angeles Skyline August 2022","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/a/a0/Los_Angeles_Skyline%3B_August_30%2C_2022.jpg","file":"la_context_2b2a946f52fd.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Los_Angeles_Skyline;_August_30,_2022.jpg","source":"wikimedia","provider_id":"commons-la-image-1","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":1234,"height":925,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"Los Angeles skyline","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/c/c5/Los_Angeles_skyline_%281%29.jpg","file":"la_context_66bd4459c9f7.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Los_Angeles_skyline_(1).jpg","source":"wikimedia","provider_id":"commons-la-image-2","credit":"Wikimedia Commons","license":"Public domain","width":1280,"height":960,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":5,"name":"Downtown Los Angeles skyline","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/d/df/Downtown_Los_Angeles_skyline2.jpg","file":"la_context_2bc786130ec4.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Downtown_Los_Angeles_skyline2.jpg","source":"wikimedia","provider_id":"commons-la-image-3","credit":"Wikimedia Commons","license":"Public domain","width":1804,"height":1216,"focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id": "guitar_detail",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"Close guitar playing video","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/e/e9/SaveThreads_Threads_Media_3958339277116411776_001_680p.webm","file":"guitar_detail_3a67d8c1a837.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:SaveThreads_Threads_Media_3958339277116411776_001_680p.webm","source":"wikimedia","provider_id":"commons-guitar-video","creator":"Châu Tuấn Hùng","credit":"Châu Tuấn Hùng / Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":1180,"height":678,"duration_seconds":80.0,"source_start_seconds":3.0,"source_end_seconds":18.0,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Guitar vertical closeup","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/3/36/Guitar_%2821758515013%29.jpg","file":"guitar_detail_ee47efbacd1c.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Guitar_(21758515013).jpg","source":"wikimedia","provider_id":"commons-guitar-image-1","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":3648,"height":5472,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Close-up of a guitar","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/0/05/Close-up_of_a_guitar.jpg","file":"guitar_detail_cefd99fb5951.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Close-up_of_a_guitar.jpg","source":"wikimedia","provider_id":"commons-guitar-image-2","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":4032,"height":3024,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"Acoustic guitar","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/c/c2/Acoustic_guitar.jpg","file":"guitar_detail_6dbda388b0f3.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Acoustic_guitar.jpg","source":"wikimedia","provider_id":"commons-guitar-image-3","credit":"Wikimedia Commons","license":"Public domain","width":1600,"height":1200,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":5,"name":"Stagg Acoustic Guitar","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/0/0b/Stagg_Acoustic_Guitar.JPG","file":"guitar_detail_921af1ddec87.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Stagg_Acoustic_Guitar.JPG","source":"wikimedia","provider_id":"commons-guitar-image-4","credit":"Wikimedia Commons","license":"Public domain","width":2448,"height":3264,"focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id": "writing_process",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"Writing the letter feng","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm","file":"writing_process_6dea818c212a.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Writing_the_letter_feng.webm","source":"wikimedia","provider_id":"commons-writing-video","creator":"FonzuWiki","credit":"FonzuWiki / Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","source_start_seconds":0.0,"source_end_seconds":12.0,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Pen writing notes studying","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/5/59/Pen-writing-notes-studying.jpg","file":"writing_process_5911da28994e.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Pen-writing-notes-studying.jpg","source":"wikimedia","provider_id":"commons-writing-image-1","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":4752,"height":3168,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Businessman writing notes in office","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Businessman_working_and_writing_notes_in_office_%28Unsplash%29.jpg","file":"writing_process_6afa077a7397.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Businessman_working_and_writing_notes_in_office_(Unsplash).jpg","source":"wikimedia","provider_id":"commons-writing-image-2","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":4200,"height":2800,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"Students writing notes","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/6/60/Students_writing_notes.jpg","file":"writing_process_7f700cba20b5.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Students_writing_notes.jpg","source":"wikimedia","provider_id":"commons-writing-image-3","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":1080,"height":607,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":5,"name":"Woman writing on a notebook","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/0/0a/Woman_writing_on_a_notebook_with_a_pen.jpg","file":"writing_process_23d3537424a2.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Woman_writing_on_a_notebook_with_a_pen.jpg","source":"wikimedia","provider_id":"commons-writing-image-4","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id": "strings_orchestra",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"Guerra String Orchestra","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/d/de/Guerra_String_Orchestra%2C_Yalil_Guerra%2C_conductor.jpg","file":"strings_orchestra_d7feb386bb74.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Guerra_String_Orchestra,_Yalil_Guerra,_conductor.jpg","source":"wikimedia","provider_id":"commons-orchestra-1","creator":"Rycy","credit":"Rycy / Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":8256,"height":5504,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Liepaja Symphony Orchestra","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Great_Amber_Concert_Hall_Liep%C4%81ja%2C_Liep%C4%81ja_Symphony_Orchestra%2C_Matthias_Manasi_during_Beethoven%27s_Piano_Concerto_No._0_in_E-flat_major%2C_WoO_4.jpg","file":"strings_orchestra_3c20553cea82.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Great_Amber_Concert_Hall_Liep%C4%81ja,_Liep%C4%81ja_Symphony_Orchestra,_Matthias_Manasi_during_Beethoven%27s_Piano_Concerto_No._0_in_E-flat_major,_WoO_4.jpg","source":"wikimedia","provider_id":"commons-orchestra-2","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":2000,"height":1200,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Seattle Symphony Orchestra","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/2/20/Seattle_Symphony_Orchestra.jpg","file":"strings_orchestra_107a313a7772.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Seattle_Symphony_Orchestra.jpg","source":"wikimedia","provider_id":"commons-orchestra-3","credit":"Wikimedia Commons","license":"Public domain","width":2448,"height":3264,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"London Symphony Orchestra","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/1/11/London_Symphony_Orchestra.jpg","file":"strings_orchestra_fd43947a2148.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:London_Symphony_Orchestra.jpg","source":"wikimedia","provider_id":"commons-orchestra-4","credit":"Wikimedia Commons","license":"Public domain","width":2603,"height":1464,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":5,"name":"Montenegrin Symphony Orchestra 2007","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/1/14/Montenegrin_Symphony_Orchestra_in_performance_%282007%29.jpg","file":"strings_orchestra_1c1ef9dd0199.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Montenegrin_Symphony_Orchestra_in_performance_(2007).jpg","source":"wikimedia","provider_id":"commons-orchestra-5","credit":"Wikimedia Commons","license":"Public domain","width":1063,"height":709,"focus":{"x":0.5,"y":0.5}}
+      ]
+    },
+    {
+      "id": "live_music",
+      "required_seconds": 8.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 35,
+      "candidates": [
+        {"editorial_rank":1,"name":"Live concert fragment 2025","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/6/6e/Concierto_Nelson_kanzela._un_fragmento._2025.webm","file":"live_music_9c7269bcca17.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Concierto_Nelson_kanzela._un_fragmento._2025.webm","source":"wikimedia","provider_id":"commons-live-video-1","creator":"Koffermejia","credit":"Koffermejia / Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":1920,"height":1080,"duration_seconds":15.0,"source_start_seconds":1.0,"source_end_seconds":13.0,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":2,"name":"Pixies concert ending live video","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/8/86/Fin_concert_Pixies_-_Forest_National_2026.webm","file":"live_music_2ec92a24109c.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Fin_concert_Pixies_-_Forest_National_2026.webm","source":"wikimedia","provider_id":"commons-live-video-2","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":1920,"height":1080,"duration_seconds":11.0,"source_start_seconds":0.0,"source_end_seconds":10.5,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":3,"name":"Le Badaboum Paris concert stage","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/a/a6/Le_Badaboum_Paris_concert_stage.jpg","file":"live_music_7825721e2af3.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Le_Badaboum_Paris_concert_stage.jpg","source":"wikimedia","provider_id":"commons-live-image-1","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":4,"name":"Man playing guitar","kind":"image","url":"https://upload.wikimedia.org/wikipedia/commons/c/c8/Man_playing_guitar.jpg","file":"live_music_9d9e26523eb1.jpg","source_page_url":"https://commons.wikimedia.org/wiki/File:Man_playing_guitar.jpg","source":"wikimedia","provider_id":"commons-live-image-2","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","width":8256,"height":5504,"focus":{"x":0.5,"y":0.5}},
+        {"editorial_rank":5,"name":"Playing requinto live","kind":"video","url":"https://upload.wikimedia.org/wikipedia/commons/5/5a/Tocando_el_Requinto_en_vivo.webm","file":"live_music_254a1dfc09b0.webm","source_page_url":"https://commons.wikimedia.org/wiki/File:Tocando_el_Requinto_en_vivo.webm","source":"wikimedia","provider_id":"commons-live-video-3","credit":"Wikimedia Commons","license":"CC0 1.0","license_url":"https://creativecommons.org/publicdomain/zero/1.0/","focus":{"x":0.5,"y":0.5}}
+      ]
+    }
+  ]
+}
