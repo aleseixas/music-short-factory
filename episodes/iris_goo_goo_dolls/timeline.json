@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_iris_sincere_love","volume":0.05},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.075},
+    {"time_seconds":5.5,"type":"whoosh_fast","volume":0.05},
+    {"time_seconds":11.0,"type":"heartbeat_slow","volume":0.035},
+    {"time_seconds":16.5,"type":"dramatic_dun_dun","volume":0.05},
+    {"time_seconds":22.0,"type":"record_scratch","volume":0.05},
+    {"time_seconds":27.5,"type":"swoosh","volume":0.045},
+    {"time_seconds":33.0,"type":"camera_shutter","volume":0.04},
+    {"time_seconds":38.5,"type":"riser_build_up","volume":0.045},
+    {"time_seconds":44.0,"type":"impact","volume":0.06},
+    {"time_seconds":49.5,"type":"crowd_cheer","volume":0.035},
+    {"time_seconds":55.0,"type":"pop","volume":0.045},
+    {"time_seconds":60.5,"type":"ding","volume":0.045},
+    {"time_seconds":66.0,"type":"riser_popular","volume":0.045},
+    {"time_seconds":72.0,"type":"impact","volume":0.065}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.55},
+    {"start_seconds":21.8,"end_seconds":22.4,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":43.8,"end_seconds":44.4,"type":"punch_zoom","intensity":0.4},
+    {"start_seconds":71.8,"end_seconds":72.5,"type":"punch_zoom","intensity":0.5}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.25,"text":"UM ANJO TROCOU\nA ETERNIDADE","accent_text":"ETERNIDADE","animation":"scale_bounce","position":"center","intensity":0.64},
+    {"segment":"guitar","offset_seconds":0.12,"duration_seconds":1.15,"text":"SÓ 4 CORDAS","accent_text":"4 CORDAS","animation":"pop_in","position":"center","intensity":0.62},
+    {"segment":"strings","offset_seconds":0.12,"duration_seconds":1.15,"text":"AS CORDAS\nMUDARAM TUDO","accent_text":"MUDARAM TUDO","animation":"slide_up","position":"center","intensity":0.58},
+    {"segment":"expectation","offset_seconds":0.12,"duration_seconds":1.2,"text":"ELE NÃO ESPERAVA\nUM HIT","accent_text":"UM HIT","animation":"fade_pop","position":"center","intensity":0.58},
+    {"segment":"name","offset_seconds":0.12,"duration_seconds":1.15,"text":"E O NOME\nIRIS?","accent_text":"IRIS","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.2,"text":"AINDA FAZ\nGENTE SENTIR","accent_text":"SENTIR","animation":"scale_bounce","position":"center","intensity":0.6}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"IRIS • GOO GOO DOLLS"},
+    {"id":"shot_movie","segment":"movie","asset":"la_context","source_start_seconds":1.0,"source_end_seconds":12.0,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"CITY OF ANGELS • 1998"},
+    {"id":"shot_hotel","segment":"hotel","asset":"artist_main","motion":"pull_out","transition_out":"crossfade","highlight":"HOTEL EM LOS ANGELES"},
+    {"id":"shot_perspective","segment":"perspective","asset":"angel_symbol","motion":"push_in","transition_out":"crossfade","highlight":"ABRIR MÃO DA ETERNIDADE"},
+    {"id":"shot_guitar","segment":"guitar","asset":"guitar_detail","source_start_seconds":3.0,"source_end_seconds":18.0,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"DUAS CORDAS HAVIAM QUEBRADO"},
+    {"id":"shot_tuning","segment":"tuning","asset":"guitar_detail","source_start_seconds":25.0,"source_end_seconds":40.0,"speed":1.08,"motion":"hold","transition_out":"cut","highlight":"AFINAÇÃO INCOMUM"},
+    {"id":"shot_studio","segment":"studio","asset":"writing_process","source_start_seconds":0.0,"source_end_seconds":12.0,"speed":1.0,"motion":"hold","transition_out":"crossfade","highlight":"ROB CAVALLO"},
+    {"id":"shot_strings","segment":"strings","asset":"strings_orchestra","motion":"push_in","transition_out":"crossfade","highlight":"A SEÇÃO DE CORDAS MUDOU A ESCALA"},
+    {"id":"shot_turn","segment":"turn","asset":"live_music","source_start_seconds":1.0,"source_end_seconds":13.0,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"A BANDA VIROU UMA ESQUINA"},
+    {"id":"shot_expectation","segment":"expectation","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"ELE NÃO ESPERAVA UM HIT"},
+    {"id":"shot_name","segment":"name","asset":"writing_process","source_start_seconds":0.0,"source_end_seconds":12.0,"speed":1.0,"motion":"hold","transition_out":"crossfade","highlight":"DE ONDE VEIO IRIS?"},
+    {"id":"shot_dement","segment":"dement","asset":"artist_main","motion":"pull_out","transition_out":"cut","highlight":"IRIS DEMENT"},
+    {"id":"shot_revival","segment":"revival","asset":"live_music","source_start_seconds":1.0,"source_end_seconds":13.0,"speed":1.08,"motion":"hold","transition_out":"cut","highlight":"QUASE 3 DÉCADAS DEPOIS"},
+    {"id":"shot_payoff","segment":"payoff","asset":"angel_symbol","motion":"push_in","transition_out":"cut","highlight":"UMA MÚSICA FEITA PARA SENTIR"}
+  ]
+}
