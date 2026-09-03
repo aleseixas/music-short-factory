@@ -1,0 +1,48 @@
+# Iris — Goo Goo Dolls
+
+## Pesquisa factual
+- GRAMMY.com — origem de Iris, City of Angels, guitarra com quatro cordas, Rob Cavallo e expectativas de John Rzeznik:
+https://www.grammy.com/news/goo-goo-dolls-songs-stories-iris-slide-name-chaos-in-bloom-new-album-2022-john-rzeznik-interview/
+
+- Songwriting Magazine — divórcio, período em hotel em Los Angeles e perspectiva emocional do personagem:
+https://www.songwritingmagazine.co.uk/interviews/iris-goo-goo-dolls
+
+- Guitar World — demo, seção de cordas e virada sonora da banda:
+https://www.guitarworld.com/features/goo-goo-dolls-dizzy-up-the-girl
+
+- The Guardian — origem do título Iris a partir do nome de Iris DeMent visto por John Rzeznik em um guia de shows:
+https://www.theguardian.com/culture/2026/mar/02/goo-goo-dolls-how-we-made-iris-taylor-swift
+
+- Kworb / Spotify track history — sinal editorial de tração recente da faixa:
+https://www.kworb.net/spotify/track/6Qyc6fS4DsZjB2mRW9DsQs.html
+
+## Background music
+- Monplaisir — Sincere Love — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Monplaisir_-_02_-_Sincere_Love.ogg
+Direto:
+https://upload.wikimedia.org/wikipedia/commons/2/29/Monplaisir_-_02_-_Sincere_Love.ogg
+
+## Visuais-base
+- artist_main — Goo Goo Dolls at the Brixton O2 Academy in London, November 2010 — Lotte Geselle — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Goo_Goo_Dolls_at_the_Brixton_O2_Academy_in_London_November_2010.jpg
+
+- angel_symbol — Angel statue under cloudy sky — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Angel_statue_under_cloudy_sky.jpg
+
+- la_context — DTLA by night, Los Angeles July 2022 — Benoît Prieur — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:DTLA_by_night,_Los_Angeles_July_2022.webm
+
+- guitar_detail — SaveThreads Threads Media 3958339277116411776 001 680p — Châu Tuấn Hùng — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:SaveThreads_Threads_Media_3958339277116411776_001_680p.webm
+
+- writing_process — Writing the letter feng — FonzuWiki — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Writing_the_letter_feng.webm
+
+- strings_orchestra — Guerra String Orchestra, Yalil Guerra, conductor — Rycy — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Guerra_String_Orchestra,_Yalil_Guerra,_conductor.jpg
+
+- live_music — Concierto Nelson kanzela. un fragmento. 2025 — Koffermejia — CC0 1.0:
+https://commons.wikimedia.org/wiki/File:Concierto_Nelson_kanzela._un_fragmento._2025.webm
+
+## Pool visual
+A proveniência, autor/crédito, licença, URL direta e source_page_url dos 32 candidatos estão registrados em visual_candidates.json. O pool usa somente URLs HTTPS diretas em host aceito pelo resolver e materiais marcados como CC0 ou domínio público na autoria.
