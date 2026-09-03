@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id": "concert_clip",
+      "required_seconds": 7.0,
+      "crossfade_seconds": 0.35,
+      "inspect_top": 4,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "editorial_rank": 1,
+          "name": "Relevant concert clip",
+          "kind": "video",
+          "url": "https://upload.wikimedia.org/.../concert.webm",
+          "file": "concert.webm",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Concert.webm",
+          "source": "wikimedia",
+          "provider_id": "commons-example",
+          "creator": "Creator",
+          "credit": "Creator / Wikimedia Commons",
+          "license": "CC0 1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "width": 1920,
+          "height": 1080,
+          "duration_seconds": 24.0,
+          "source_start_seconds": 2.0,
+          "source_end_seconds": 12.0,
+          "focus": {"x": 0.5, "y": 0.5}
+        }
+      ]
+    }
+  ]
+}
