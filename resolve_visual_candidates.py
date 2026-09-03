@@ -15,6 +15,8 @@ DEFAULT_INSPECT_TOP = 4
 MAX_INSPECT_TOP = 8
 MIN_IMAGE_SCORE = 35.0
 MIN_VIDEO_SCORE = 45.0
+IMAGE_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".webp", ".gif"})
+VIDEO_SUFFIXES = frozenset({".mp4", ".mov", ".webm", ".mkv", ".avi", ".m4v"})
 
 
 def _load_json(path: Path) -> dict:
@@ -35,6 +37,24 @@ def _number(value, default=0.0) -> float:
         return float(value)
     except (TypeError, ValueError):
         return default
+
+
+def _asset_kind(asset: dict | None) -> str | None:
+    if not isinstance(asset, dict):
+        return None
+
+    explicit = str(asset.get("kind") or "").strip().lower()
+    if explicit in {"image", "video"}:
+        return explicit
+
+    file_name = str(asset.get("file") or "").strip()
+    url = str(asset.get("url") or "").strip()
+    suffix = Path(file_name or urlparse(url).path).suffix.lower()
+    if suffix in IMAGE_SUFFIXES:
+        return "image"
+    if suffix in VIDEO_SUFFIXES:
+        return "video"
+    return None
 
 
 def _metadata_priority(candidate: dict, index: int) -> tuple[float, float, float, float]:
@@ -183,6 +203,12 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         print(f"::warning::Visual candidate resolver ignorado: {exc}. Render continuara com assets existentes.")
         return 0
 
+    original_assets_by_id = {
+        str(entry.get("id")): entry
+        for entry in original_assets
+        if isinstance(entry, dict) and entry.get("id")
+    }
+
     resolved_entries: dict[str, dict] = {}
     selections: dict[str, dict] = {}
     candidate_scores: dict[str, list[dict]] = {}
@@ -198,11 +224,44 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             failures.append(f"{slot_id or '<sem_id>'}: slot sem candidatos; mantendo asset existente")
             continue
 
+        current_asset = original_assets_by_id.get(slot_id)
+        target_kind = _asset_kind(current_asset)
+        if target_kind not in {"image", "video"}:
+            failures.append(f"{slot_id}: tipo do asset atual nao identificado; mantendo asset existente")
+            selections[slot_id] = {
+                "status": "kept_existing_asset",
+                "reason": "unknown_existing_asset_kind",
+            }
+            print(f"::warning::Visual slot {slot_id}: tipo atual desconhecido; mantendo asset existente.")
+            continue
+
         inspect_top = int(max(1, min(MAX_INSPECT_TOP, _number(slot.get("inspect_top"), DEFAULT_INSPECT_TOP))))
-        indexed = [(index, candidate) for index, candidate in enumerate(candidates, start=1) if isinstance(candidate, dict)]
+        indexed = [
+            (index, candidate)
+            for index, candidate in enumerate(candidates, start=1)
+            if isinstance(candidate, dict)
+            and str(candidate.get("kind") or "").strip().lower() == target_kind
+        ]
+
+        if not indexed:
+            candidate_scores[slot_id] = []
+            selections[slot_id] = {
+                "status": "kept_existing_asset",
+                "kind": target_kind,
+                "reason": "no_same_kind_candidate",
+            }
+            print(
+                f"::warning::Visual slot {slot_id}: nenhum candidato {target_kind}; "
+                "mantendo asset existente."
+            )
+            continue
+
         indexed.sort(key=lambda pair: _metadata_priority(pair[1], pair[0]), reverse=True)
         shortlist = indexed[:inspect_top]
-        print(f"Visual slot {slot_id}: {len(candidates)} candidatos, inspecionando top {len(shortlist)}.")
+        print(
+            f"Visual slot {slot_id}: {len(candidates)} candidatos totais, "
+            f"{len(indexed)} do tipo {target_kind}; inspecionando top {len(shortlist)}."
+        )
 
         inspected = []
         for index, candidate in shortlist:
@@ -220,23 +279,42 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         candidate_scores[slot_id] = [item[6] for item in inspected]
         eligible = [item for item in inspected if not item[5]]
 
-        if not eligible:
-            best_score = inspected[0][0] if inspected else None
-            selections[slot_id] = {
-                "status": "kept_existing_asset",
-                "visual_score": best_score,
-                "reason": "no_auto_eligible_candidate",
-            }
-            if best_score is None:
-                print(f"::warning::Visual slot {slot_id}: nenhum candidato inspecionado; mantendo asset existente.")
-            else:
-                print(f"::warning::Visual slot {slot_id}: melhor score={best_score:.1f}, mas nenhum candidato seguro; mantendo asset existente.")
-            continue
+        selection_mode = "eligible"
+        if eligible:
+            chosen = eligible[0]
+        else:
+            # Score baixo ou video praticamente estatico nao devem zerar o slot.
+            # Mantemos apenas a trava tecnica de trim inseguro para evitar quebra no render.
+            safe_fallback = [item for item in inspected if "unsafe_trim" not in item[5]]
+            if not safe_fallback:
+                best_score = inspected[0][0] if inspected else None
+                selections[slot_id] = {
+                    "status": "kept_existing_asset",
+                    "kind": target_kind,
+                    "visual_score": best_score,
+                    "reason": "no_render_safe_same_kind_candidate",
+                }
+                if best_score is None:
+                    print(f"::warning::Visual slot {slot_id}: nenhum candidato {target_kind} inspecionado; mantendo asset existente.")
+                else:
+                    print(
+                        f"::warning::Visual slot {slot_id}: candidatos {target_kind} avaliados, "
+                        "mas nenhum tem trim seguro; mantendo asset existente."
+                    )
+                continue
 
-        score, _rank, candidate, result, inspection, _reasons, _record = eligible[0]
+            chosen = safe_fallback[0]
+            selection_mode = "best_same_kind_fallback"
+            print(
+                f"::warning::Visual slot {slot_id}: nenhum candidato {target_kind} atingiu todos os gates; "
+                "usando o melhor candidato do mesmo tipo para nao perder o slot."
+            )
+
+        score, _rank, candidate, result, inspection, reasons, _record = chosen
         resolved_entries[slot_id] = _asset_entry(slot_id, candidate, result)
         selections[slot_id] = {
             "status": "selected",
+            "selection_mode": selection_mode,
             "kind": result.kind,
             "name": result.name,
             "visual_score": score,
@@ -247,10 +325,12 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             "opening_motion_score": inspection.opening_motion_score,
             "motion_score": inspection.motion_score,
             "practically_static": inspection.is_practically_static,
+            "warnings": reasons,
             "source_start_seconds": candidate.get("source_start_seconds"),
             "source_end_seconds": candidate.get("source_end_seconds"),
         }
-        print(f"Visual selected {slot_id}: {result.name} score={score:.1f}")
+        suffix = "" if selection_mode == "eligible" else " (fallback do mesmo tipo)"
+        print(f"Visual selected {slot_id}: {result.name} score={score:.1f}{suffix}")
 
     replaced_ids = set(resolved_entries)
     assets["assets"] = [
@@ -293,7 +373,12 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             print(f"{slot_id}: sem score tecnico")
             continue
         best = scores[0]
-        suffix = "selecionavel" if best["eligible_for_auto_selection"] else "apenas informativo"
+        selected = selections.get(slot_id, {})
+        if selected.get("status") == "selected":
+            mode = selected.get("selection_mode")
+            suffix = "selecionado" if mode == "eligible" else "selecionado como melhor fallback do mesmo tipo"
+        else:
+            suffix = "apenas informativo"
         print(f"{slot_id}: melhor={best['visual_score']:.1f} ({best['name']}, {suffix})")
     print(f"Visual resolution concluida: {len(resolved_entries)} slots substituidos; demais mantidos sem bloquear render.")
     return 0
