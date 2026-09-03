@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "title": "Só os Loucos Sabem — Charlie Brown Jr.: as duas histórias reais por trás da letra",
+  "slug": "so_os_loucos_sabem_charlie_brown_jr",
+  "target_duration_seconds": 82,
+  "segments": [
+    {"id":"hook","text":"Só os Loucos Sabem, do Charlie Brown Jr., nasceu de duas histórias reais que mexeram profundamente com Chorão.","delivery":"hook"},
+    {"id":"fan","text":"Uma começou em Araraquara, quando uma fã entregou ao cantor um folheto em homenagem ao irmão, morto aos vinte anos.","delivery":"curious"},
+    {"id":"lugar_ao_sol","text":"No verso estava a letra de Lugar ao Sol, a música favorita dele. Chorão ficou pensando nos sonhos que aquele garoto talvez não tivesse vivido.","delivery":"emotional"},
+    {"id":"hotel","text":"De volta ao hotel, começou a rascunhar ideias, enquanto Thiago Castanho criava a melodia.","delivery":"curious"},
+    {"id":"glauco","text":"Mas a música só ganhou forma anos depois, por causa de outro amigo de Chorão: Glauco Veloso.","delivery":"reveal"},
+    {"id":"change","text":"Glauco tinha uma vida explosiva, chegou a ser preso e depois mudou completamente ao se aproximar da fé.","delivery":"dramatic"},
+    {"id":"peace","text":"A transformação impressionou Chorão, que também atravessava uma fase difícil e começou a observar aquela paz com curiosidade.","delivery":"emotional"},
+    {"id":"rodolfo","text":"Glauco o levou então a um evento religioso com Rodolfo Abrantes, ex-Raimundos.","delivery":"curious"},
+    {"id":"event","text":"Chorão foi só para observar, tentou ficar discreto e acabou emocionado com o que viu.","delivery":"emotional"},
+    {"id":"napkin","text":"Naquela noite, depois do evento, terminou a letra durante um jantar, rabiscando versos num guardanapo.","delivery":"reveal"},
+    {"id":"meaning","text":"Por isso a música fala tanto de recomeço, medo, paz e saudade.","delivery":"dramatic"},
+    {"id":"payoff","text":"E talvez seja por isso que ainda funciona: não parece conselho pronto. Parece alguém tentando aprender a viver enquanto canta.","delivery":"payoff"}
+  ]
+}
