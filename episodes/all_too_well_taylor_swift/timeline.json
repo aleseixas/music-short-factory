@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"emotional_piano","volume":0.05},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.08},
+    {"time_seconds":7.0,"type":"whoosh_fast","volume":0.055},
+    {"time_seconds":14.0,"type":"camera_shutter","volume":0.05},
+    {"time_seconds":21.0,"type":"typing","volume":0.035},
+    {"time_seconds":29.0,"type":"record_scratch","volume":0.055},
+    {"time_seconds":37.0,"type":"crowd_cheer","volume":0.04},
+    {"time_seconds":45.0,"type":"riser_build_up","volume":0.045},
+    {"time_seconds":53.0,"type":"impact","volume":0.065},
+    {"time_seconds":61.0,"type":"suspense_build_up","volume":0.04},
+    {"time_seconds":68.0,"type":"ding","volume":0.05},
+    {"time_seconds":75.0,"type":"impact","volume":0.07}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.65,"type":"punch_zoom","intensity":0.52},
+    {"start_seconds":13.8,"end_seconds":14.45,"type":"punch_zoom","intensity":0.38},
+    {"start_seconds":44.8,"end_seconds":45.45,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":52.8,"end_seconds":53.45,"type":"punch_zoom","intensity":0.5},
+    {"start_seconds":67.8,"end_seconds":68.45,"type":"punch_zoom","intensity":0.48}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.35,"text":"O CACHECOL\nVIROU INVESTIGAÇÃO","accent_text":"INVESTIGAÇÃO","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"recording","offset_seconds":0.12,"duration_seconds":1.2,"text":"+10 MINUTOS\nDE DESABAFO","accent_text":"+10 MINUTOS","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"fans","offset_seconds":0.12,"duration_seconds":1.25,"text":"OS SWIFTIES\nNÃO ESQUECERAM","accent_text":"SWIFTIES","animation":"slide_up","position":"center","intensity":0.56},
+    {"segment":"record","offset_seconds":0.12,"duration_seconds":1.3,"text":"10:13\nNº 1","accent_text":"Nº 1","animation":"scale_bounce","position":"center","intensity":0.64},
+    {"segment":"metaphor","offset_seconds":0.12,"duration_seconds":1.25,"text":"O CACHECOL\nÉ METÁFORA","accent_text":"METÁFORA","animation":"fade_pop","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"red_scarf","motion":"push_in","transition_out":"cut","highlight":"ALL TOO WELL • TAYLOR SWIFT"},
+    {"id":"shot_rehearsal","segment":"rehearsal","asset":"taylor_concert","motion":"push_in","transition_out":"crossfade","highlight":"COMEÇOU NUM ENSAIO"},
+    {"id":"shot_recording","segment":"recording","asset":"notebook","motion":"pan_right","transition_out":"cut","highlight":"O ÁUDIO FOI GRAVADO"},
+    {"id":"shot_liz","segment":"liz_rose","asset":"notebook","motion":"pull_out","transition_out":"crossfade","highlight":"LIZ ROSE AJUDOU A EDITAR"},
+    {"id":"shot_original","segment":"original","asset":"vinyl_store","motion":"push_in","transition_out":"cut","highlight":"2012 • NÃO ERA SINGLE"},
+    {"id":"shot_fans","segment":"fans","asset":"taylor_concert","motion":"pull_out","transition_out":"cut","highlight":"OS FÃS ESCOLHERAM A FAIXA"},
+    {"id":"shot_ten","segment":"ten_minutes","asset":"vinyl_store","motion":"pan_right","transition_out":"cut","highlight":"10 MINUTOS E 13 SEGUNDOS"},
+    {"id":"shot_record","segment":"record","asset":"taylor_concert","motion":"push_in","transition_out":"cut","highlight":"Nº 1 NA HOT 100"},
+    {"id":"shot_scarf","segment":"scarf","asset":"red_scarf","motion":"pull_out","transition_out":"crossfade","highlight":"E O FAMOSO CACHECOL?"},
+    {"id":"shot_metaphor","segment":"metaphor","asset":"red_scarf","motion":"push_in","transition_out":"cut","highlight":"TAYLOR: É UMA METÁFORA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"taylor_concert","motion":"pull_out","transition_out":"cut","highlight":"OS FÃS TRANSFORMARAM EM MITO"}
+  ]
+}
