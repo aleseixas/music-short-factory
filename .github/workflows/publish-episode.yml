@@ -93,6 +93,9 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Resolve and validate visual candidates
+        run: python resolve_visual_candidates.py "$EPISODE"
+
       - name: Render episode
         run: python generate.py "$EPISODE"
 
