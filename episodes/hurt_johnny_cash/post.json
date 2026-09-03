@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A MÚSICA NÃO ERA DELE","source":{"type":"asset","asset_id":"johnny_cash"}},
+  "youtube": {
+    "title":"Hurt: como Johnny Cash transformou um cover em despedida",
+    "description":"Hurt nasceu com o Nine Inch Nails, mas Johnny Cash transformou a música em algo que parecia contar a própria vida. O clipe filmado em um museu deteriorado mudou até a reação de Trent Reznor e virou um dos retratos mais fortes da fase final de Cash.",
+    "hashtags":["JohnnyCash","Hurt","NineInchNails","TrentReznor","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Johnny Cash não escreveu Hurt. Mesmo assim, sua versão ficou tão ligada à fase final da vida dele que o próprio autor passou a enxergar a música de outra forma depois do clipe.",
+    "hashtags":["JohnnyCash","Hurt","NineInchNails","Musica","Curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Hurt não era de Johnny Cash — mas a versão dele transformou a música em algo que parecia uma despedida.",
+    "hashtags":["JohnnyCash","Hurt","NineInchNails","Musica","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
