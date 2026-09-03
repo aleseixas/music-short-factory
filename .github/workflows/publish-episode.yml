@@ -93,8 +93,42 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Resolve and validate visual candidates
+      - name: Score and resolve visual candidates
+        id: visuals
+        continue-on-error: true
         run: python resolve_visual_candidates.py "$EPISODE"
+
+      - name: Add visual scores to job summary
+        if: always()
+        shell: bash
+        run: |
+          report="episodes/$EPISODE/visual_resolution_report.json"
+          if [[ ! -f "$report" ]]; then
+            echo "## Visual scores" >> "$GITHUB_STEP_SUMMARY"
+            echo "No visual candidate report was produced; existing assets were kept." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          python - "$report" "$GITHUB_STEP_SUMMARY" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          report = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          out = Path(sys.argv[2])
+          lines = ["## Visual scores", "", "| Slot | Best score | Candidate | Auto-selected |", "| --- | ---: | --- | --- |"]
+          scores = report.get("candidate_scores", {})
+          selections = report.get("selections", {})
+          for slot, candidates in scores.items():
+              if candidates:
+                  best = candidates[0]
+                  selected = selections.get(slot, {}).get("status") == "selected"
+                  lines.append(f"| {slot} | {best.get('visual_score', 'N/A')} | {best.get('name', 'N/A')} | {'yes' if selected else 'no; existing asset kept'} |")
+              else:
+                  lines.append(f"| {slot} | N/A | N/A | no; existing asset kept |")
+          if not scores:
+              lines.append("| N/A | N/A | N/A | existing assets kept |")
+          out.write_text(out.read_text(encoding="utf-8") + "\n".join(lines) + "\n", encoding="utf-8")
+          PY
 
       - name: Render episode
         run: python generate.py "$EPISODE"
