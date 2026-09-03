@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_main","file":"artemas_singer_2025.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/3/37/Artemas_singer_2025.jpg","credit":"ManoSolo13241324 / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"la_night","file":"dtla_by_night.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/92/DTLA_by_night%2C_Los_Angeles_July_2022.webm","credit":"Benoît Prieur / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"creative_space","file":"last_bookstore_la.webm","url":"https://upload.wikimedia.org/wikipedia/commons/8/8a/The_Last_Bookstore_%28Los_Angeles%29_July_2022.webm","credit":"Benoît Prieur / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"la_motion","file":"inside_waymo_dtla.webm","url":"https://upload.wikimedia.org/wikipedia/commons/d/db/Inside_Waymo%2C_DTLA%2C_Jan_2026.webm","credit":"Alexis Doine / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

@@ -1,0 +1,28 @@
+FATOS / PESQUISA
+- Music Week, entrevista com o produtor Toby Daintree: a faixa nasceu em Los Angeles no terceiro dia de uma semana de composição; o beat começou em half-time; Eyedress e Mareux/The Perfect Girl ajudaram a direcionar o darkwave; acordes + melodia improvisada + drums em double-time formaram a base; a gravação foi rápida; os vocais foram registrados dois semitons abaixo e depois elevados; a versão acelerada/pitched foi testada no CapCut/TikTok e preservada após a reação do público; o murmúrio da intro foi gravado no fim do dia enquanto esperavam o Uber; a música foi finalizada em cerca de três dias.
+https://www.musicweek.com/interviews/read/hitmakers-producer-toby-daintree-on-the-making-of-artemas-i-like-the-way-you-kiss-me/089913
+
+- UOL/Toca, entrevista com Artemas: ele relata surpresa com o tamanho do sucesso e diz que não é possível prever quando uma faixa vai realmente estourar.
+https://www.uol.com.br/toca/noticias/2025/03/27/atracao-do-lollapalooza-artemas-gosta-de-pop-que-deixa-pessoas-confusas.htm
+
+- Wikimedia/Wikipedia para dados de lançamento e desempenho: lançada em 19 de março de 2024; pico #3 no UK Singles Chart; top 20 nos EUA e #1 em vários mercados europeus.
+https://en.wikipedia.org/wiki/I_Like_the_Way_You_Kiss_Me
+
+VISUAIS
+- Artemas singer 2025 — ManoSolo13241324 — CC0 1.0 — 3072x4080.
+https://commons.wikimedia.org/wiki/File:Artemas_singer_2025.jpg
+
+- DTLA by night, Los Angeles July 2022 — Benoît Prieur — CC0 1.0 — 2160x3840 — 13.636s.
+https://commons.wikimedia.org/wiki/File:DTLA_by_night,_Los_Angeles_July_2022.webm
+
+- The Last Bookstore (Los Angeles) July 2022 — Benoît Prieur — CC0 1.0 — 2160x3840 — 20.649s.
+https://commons.wikimedia.org/wiki/File:The_Last_Bookstore_(Los_Angeles)_July_2022.webm
+
+- Inside Waymo, DTLA, Jan 2026 — Alexis Doine — CC0 1.0 — 1080x1920 — 10.806s.
+https://commons.wikimedia.org/wiki/File:Inside_Waymo,_DTLA,_Jan_2026.webm
+
+BACKGROUND
+- Profile local `dark_cinematic` do catálogo atual da repo; usado como fallback seguro sem alteração de catálogo.
+
+NOTA EDITORIAL
+Os vídeos de Los Angeles são contexto/atmosfera e não são apresentados como imagens reais da sessão de Artemas. O take de `artist_main` mostra Artemas claramente e é usado no hook.

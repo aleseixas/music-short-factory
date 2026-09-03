@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "I Like the Way You Kiss Me — Artemas: o detalhe improvisado que virou hit",
+  "slug": "i_like_the_way_you_kiss_me_artemas",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"I Like the Way You Kiss Me, de Artemas, virou fenômeno com uma música quase acidental.","delivery":"hook"},
+    {"id":"la_week","text":"Em Los Angeles, Artemas e os produtores passaram uma semana compondo em ritmo intenso.","delivery":"curious"},
+    {"id":"halftime","text":"No terceiro dia, o beat começou em half-time e tinha uma energia bem diferente.","delivery":"curious"},
+    {"id":"darkwave","text":"Referências como Eyedress e The Perfect Girl, de Mareux, empurraram tudo para o darkwave.","delivery":"reveal"},
+    {"id":"pulse","text":"Toby Daintree montou acordes, Artemas improvisou a melodia e drums acelerados definiram a pulsação.","delivery":"neutral"},
+    {"id":"simple","text":"A filosofia era cortar excessos: melodias simples seriam mais difíceis de esquecer.","delivery":"curious"},
+    {"id":"meaning","text":"E a letra contrasta desejo físico com distância emocional, longe de uma declaração romântica.","delivery":"dramatic"},
+    {"id":"transform","text":"Mas o som mais reconhecível ainda passaria por uma transformação decisiva.","delivery":"reveal"},
+    {"id":"pitch","text":"Os vocais foram gravados dois semitons abaixo e depois elevados para criar aquela textura.","delivery":"reveal"},
+    {"id":"capcut","text":"Eles testaram essa versão no CapCut antes de divulgar um trecho no TikTok.","delivery":"curious"},
+    {"id":"reaction","text":"Quando o público respondeu, decidiram manter aquele pitch e tempo na versão final.","delivery":"dramatic"},
+    {"id":"uber","text":"Até o murmúrio da introdução nasceu no fim da sessão, enquanto esperavam o Uber.","delivery":"curious"},
+    {"id":"sofa","text":"Artemas gravou do sofá, e aquele detalhe improvisado virou parte marcante do começo.","delivery":"reveal"},
+    {"id":"payoff","text":"Pronta em cerca de três dias, a faixa chegou ao top 3 britânico: o improviso virou assinatura do hit.","delivery":"payoff"}
+  ]
+}

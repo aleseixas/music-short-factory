@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"dark_cinematic","volume":0.045},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.07},
+    {"time_seconds":5.5,"type":"whoosh_fast","volume":0.045},
+    {"time_seconds":11.0,"type":"record_scratch","volume":0.045},
+    {"time_seconds":16.5,"type":"riser_build_up","volume":0.04},
+    {"time_seconds":22.0,"type":"impact","volume":0.05},
+    {"time_seconds":27.5,"type":"pop_sfx","volume":0.04},
+    {"time_seconds":33.0,"type":"heartbeat_slow","volume":0.03},
+    {"time_seconds":38.5,"type":"dramatic_dun_dun","volume":0.045},
+    {"time_seconds":44.0,"type":"swoosh","volume":0.04},
+    {"time_seconds":49.5,"type":"mouse_click","volume":0.04},
+    {"time_seconds":55.0,"type":"notification_iphone","volume":0.035},
+    {"time_seconds":60.5,"type":"whoosh_simple","volume":0.04},
+    {"time_seconds":66.0,"type":"ding","volume":0.04},
+    {"time_seconds":72.0,"type":"impact","volume":0.06}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.55},
+    {"start_seconds":22.0,"end_seconds":22.6,"type":"punch_zoom","intensity":0.4},
+    {"start_seconds":44.0,"end_seconds":44.6,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":71.8,"end_seconds":72.5,"type":"punch_zoom","intensity":0.5}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.25,"text":"QUASE NASCEU\nPOR ACIDENTE","accent_text":"ACIDENTE","animation":"scale_bounce","position":"center","intensity":0.64},
+    {"segment":"darkwave","offset_seconds":0.12,"duration_seconds":1.15,"text":"O BEAT MUDOU\nDE DIREÇÃO","accent_text":"MUDOU","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"pitch","offset_seconds":0.12,"duration_seconds":1.2,"text":"2 SEMITONS\nABAIXO","accent_text":"2 SEMITONS","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"capcut","offset_seconds":0.12,"duration_seconds":1.15,"text":"TESTADO NO\nCAPCUT","accent_text":"CAPCUT","animation":"slide_up","position":"center","intensity":0.58},
+    {"segment":"uber","offset_seconds":0.12,"duration_seconds":1.15,"text":"ESPERANDO\nO UBER","accent_text":"UBER","animation":"fade_pop","position":"center","intensity":0.58},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.2,"text":"O IMPROVISO\nVIROU O HIT","accent_text":"VIROU O HIT","animation":"scale_bounce","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"ARTEMAS • I LIKE THE WAY YOU KISS ME"},
+    {"id":"shot_la_week","segment":"la_week","asset":"la_night","source_start_seconds":1.0,"source_end_seconds":12.5,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"LOS ANGELES"},
+    {"id":"shot_halftime","segment":"halftime","asset":"creative_space","source_start_seconds":1.0,"source_end_seconds":15.0,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"O BEAT COMEÇOU EM HALF-TIME"},
+    {"id":"shot_darkwave","segment":"darkwave","asset":"la_motion","source_start_seconds":0.5,"source_end_seconds":10.2,"speed":1.1,"motion":"hold","transition_out":"cut","highlight":"EYEDRESS • MAREUX • DARKWAVE"},
+    {"id":"shot_pulse","segment":"pulse","asset":"creative_space","source_start_seconds":4.0,"source_end_seconds":18.0,"speed":1.08,"motion":"hold","transition_out":"crossfade","highlight":"ACORDES + MELODIA + DRUMS"},
+    {"id":"shot_simple","segment":"simple","asset":"artist_main","motion":"pull_out","transition_out":"cut","highlight":"MENOS ELEMENTOS, MAIS MEMÓRIA"},
+    {"id":"shot_meaning","segment":"meaning","asset":"la_night","source_start_seconds":1.0,"source_end_seconds":12.5,"speed":1.0,"motion":"hold","transition_out":"crossfade","highlight":"DESEJO SEM ROMANCE"},
+    {"id":"shot_transform","segment":"transform","asset":"la_motion","source_start_seconds":0.5,"source_end_seconds":10.2,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"A TRANSFORMAÇÃO DECISIVA"},
+    {"id":"shot_pitch","segment":"pitch","asset":"creative_space","source_start_seconds":2.0,"source_end_seconds":16.0,"speed":1.08,"motion":"hold","transition_out":"cut","highlight":"VOCAL: 2 SEMITONS ABAIXO"},
+    {"id":"shot_capcut","segment":"capcut","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"CAPCUT → TIKTOK"},
+    {"id":"shot_reaction","segment":"reaction","asset":"la_motion","source_start_seconds":0.5,"source_end_seconds":10.2,"speed":1.1,"motion":"hold","transition_out":"crossfade","highlight":"O PÚBLICO ESCOLHEU O PITCH"},
+    {"id":"shot_uber","segment":"uber","asset":"la_night","source_start_seconds":1.0,"source_end_seconds":12.5,"speed":1.05,"motion":"hold","transition_out":"cut","highlight":"ESPERANDO O UBER"},
+    {"id":"shot_sofa","segment":"sofa","asset":"artist_main","motion":"pull_out","transition_out":"cut","highlight":"GRAVADO QUASE DO SOFÁ"},
+    {"id":"shot_payoff","segment":"payoff","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"3 DIAS → TOP 3 NO REINO UNIDO"}
+  ]
+}
