@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_main","file":"artist_main_2f3f967015d2.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/51/Goo_Goo_Dolls_at_the_Brixton_O2_Academy_in_London_November_2010.jpg","credit":"Lotte Geselle / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"angel_symbol","file":"angel_symbol_209150c20e16.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/3/35/Angel_statue_under_cloudy_sky.jpg","credit":"Wikimedia Commons / Pixabay","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"la_context","file":"la_context_69c0e3fcc79d.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/92/DTLA_by_night,_Los_Angeles_July_2022.webm","credit":"Benoît Prieur / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"guitar_detail","file":"guitar_detail_3a67d8c1a837.webm","url":"https://upload.wikimedia.org/wikipedia/commons/e/e9/SaveThreads_Threads_Media_3958339277116411776_001_680p.webm","credit":"Châu Tuấn Hùng / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"writing_process","file":"writing_process_6dea818c212a.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm","credit":"FonzuWiki / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"strings_orchestra","file":"strings_orchestra_d7feb386bb74.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/d/de/Guerra_String_Orchestra,_Yalil_Guerra,_conductor.jpg","credit":"Rycy / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"live_music","file":"live_music_9c7269bcca17.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6e/Concierto_Nelson_kanzela._un_fragmento._2025.webm","credit":"Koffermejia / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
