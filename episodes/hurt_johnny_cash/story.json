@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Hurt: quando Johnny Cash transformou um cover em despedida",
+  "slug": "hurt_johnny_cash",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Hurt, de Johnny Cash, parece uma despedida escrita por ele. Só que a música era do Nine Inch Nails.","delivery":"hook"},
+    {"id":"rubin","text":"Foi Rick Rubin quem sugeriu que Cash encarasse a canção de Trent Reznor.","delivery":"curious"},
+    {"id":"resistance","text":"A escolha parecia improvável: rock industrial nas mãos de uma lenda country já perto dos setenta anos.","delivery":"curious"},
+    {"id":"change","text":"Mas a voz envelhecida de Cash mudou o centro emocional da música: dor virou balanço de uma vida inteira.","delivery":"emotional"},
+    {"id":"reznor_first","text":"Quando Reznor ouviu a gravação, estranhou profundamente outra pessoa ocupando uma composição tão pessoal.","delivery":"dramatic"},
+    {"id":"video","text":"Então veio o clipe de Mark Romanek, e tudo ganhou outra dimensão.","delivery":"reveal"},
+    {"id":"museum","text":"Romanek filmou no House of Cash, antigo museu do cantor que estava fechado, deteriorado e marcado por danos de enchente.","delivery":"dramatic"},
+    {"id":"contrast","text":"Ele colocou o Johnny Cash frágil de 2002 diante de imagens do artista jovem, famoso e cheio de energia.","delivery":"emotional"},
+    {"id":"symbols","text":"Discos quebrados, lembranças abandonadas e uma mesa luxuosa vazia transformaram fama e sucesso em coisas temporárias.","delivery":"dramatic"},
+    {"id":"june","text":"June Carter Cash aparece observando o marido, deixando a cena ainda mais íntima.","delivery":"emotional"},
+    {"id":"reznor_video","text":"Depois de assistir ao vídeo, Reznor finalmente entendeu a interpretação e reconheceu a força daquela nova leitura.","delivery":"reveal"},
+    {"id":"timing","text":"O peso ficou maior porque June morreu poucos meses depois das filmagens, e Johnny morreu ainda naquele ano.","delivery":"dramatic"},
+    {"id":"legacy","text":"O cover deixou de soar como simples regravação e passou a funcionar quase como um retrato final da carreira de Cash.","delivery":"emotional"},
+    {"id":"payoff","text":"Talvez seja por isso que Hurt assusta tanto: a letra não mudou de autor, mas na voz de Johnny Cash parece ter mudado de vida.","delivery":"payoff"}
+  ]
+}
