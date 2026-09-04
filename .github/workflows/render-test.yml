@@ -3,7 +3,7 @@ name: Render test only
 on:
   push:
     branches:
-      - main
+      - test/beat-it-v2-new-prompt
     paths:
       - ".render-test/*.txt"
 
