@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_drop_dead_synth_pop","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.055},
+    {"time_seconds":6.0,"type":"whoosh_fast","volume":0.035},
+    {"time_seconds":13.0,"type":"pop","volume":0.03},
+    {"time_seconds":20.0,"type":"chime_sparkles","volume":0.03},
+    {"time_seconds":29.0,"type":"riser_build_up","volume":0.033},
+    {"time_seconds":38.0,"type":"camera_shutter","volume":0.03},
+    {"time_seconds":47.0,"type":"whoosh_transition","volume":0.032},
+    {"time_seconds":57.0,"type":"crowd_cheer","volume":0.025},
+    {"time_seconds":66.0,"type":"riser_popular","volume":0.032},
+    {"time_seconds":74.0,"type":"impact","volume":0.045}
+  ],
+  "visual_fx_cues": [{"start_seconds":0.05,"end_seconds":0.55,"type":"punch_zoom","intensity":0.48}],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.08,"duration_seconds":1.2,"text":"NÃO É TÉRMINO","accent_text":"TÉRMINO","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"cure","offset_seconds":0.08,"duration_seconds":1.1,"text":"THE CURE NO MEIO","accent_text":"THE CURE","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"versailles","offset_seconds":0.08,"duration_seconds":1.1,"text":"VERSALHES","accent_text":"VERSALHES","animation":"slide_up","position":"center","intensity":0.54},
+    {"segment":"debut","offset_seconds":0.08,"duration_seconds":1.15,"text":"#1 NA HOT 100","accent_text":"#1","animation":"scale_bounce","position":"center","intensity":0.56}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"cover","motion":"push_in","transition_out":"cut","highlight":"DROP DEAD • OLIVIA RODRIGO"},
+    {"id":"shot_wrong_story","segment":"wrong_story","asset":"artist_feature","motion":"pull_out","transition_out":"cut","highlight":"O TÍTULO ENGANA"},
+    {"id":"shot_connection","segment":"connection","asset":"phone_connection","motion":"pan_right","transition_out":"crossfade","highlight":"PRIMEIRO ENCONTRO"},
+    {"id":"shot_adult","segment":"adult","asset":"adult_notebook","motion":"push_in","transition_out":"cut","highlight":"AMOR ADULTO"},
+    {"id":"shot_prove","segment":"prove","asset":"phone_proof","motion":"pan_left","transition_out":"cut","highlight":"NÃO PRECISA SER MISERÁVEL"},
+    {"id":"shot_fear","segment":"fear","asset":"headphones_fear","motion":"pull_out","transition_out":"crossfade","highlight":"FELICIDADE + MEDO"},
+    {"id":"shot_sound","segment":"sound","asset":"synth","motion":"push_in","transition_out":"cut","highlight":"SYNTHS SONHADORES"},
+    {"id":"shot_team","segment":"team","asset":"mixing_console","motion":"pan_right","transition_out":"cut","highlight":"DAN NIGRO • AMY ALLEN"},
+    {"id":"shot_cure","segment":"cure","asset":"guitar_cure","motion":"pull_out","transition_out":"cut","highlight":"THE CURE"},
+    {"id":"shot_smith","segment":"smith","asset":"pub_smith","motion":"pan_left","transition_out":"crossfade","highlight":"JUST LIKE HEAVEN"},
+    {"id":"shot_not_shown","segment":"not_shown","asset":"studio_not_shown","motion":"push_in","transition_out":"cut","highlight":"ELA NEM MOSTROU PRA ELE"},
+    {"id":"shot_versailles","segment":"versailles","asset":"versailles_hall1","motion":"pull_out","transition_out":"crossfade","highlight":"PALÁCIO DE VERSALHES"},
+    {"id":"shot_collins","segment":"collins","asset":"versailles_hall2","motion":"pan_right","transition_out":"cut","highlight":"PETRA COLLINS"},
+    {"id":"shot_props","segment":"props","asset":"versailles_guitar","motion":"push_in","transition_out":"cut","highlight":"ROSA + ROCOCÓ"},
+    {"id":"shot_image_meaning","segment":"image_meaning","asset":"versailles_hall3","motion":"pan_left","transition_out":"crossfade","highlight":"EXAGERO ROMÂNTICO"},
+    {"id":"shot_chapter","segment":"chapter","asset":"versailles_bedroom","motion":"pull_out","transition_out":"cut","highlight":"PRIMEIRO CAPÍTULO"},
+    {"id":"shot_coachella","segment":"coachella","asset":"coachella_stage","motion":"push_in","transition_out":"cut","highlight":"COACHELLA"},
+    {"id":"shot_addison","segment":"addison","asset":"coachella_duet","motion":"pan_right","transition_out":"cut","highlight":"ADDISON RAE"},
+    {"id":"shot_debut","segment":"debut","asset":"coachella_crowd","motion":"pull_out","transition_out":"cut","highlight":"#1 NA HOT 100"},
+    {"id":"shot_current","segment":"current","asset":"current_crowd","motion":"push_in","transition_out":"crossfade","highlight":"TOP 15 MESES DEPOIS"},
+    {"id":"shot_payoff","segment":"payoff","asset":"versailles_payoff","motion":"pan_left","transition_out":"cut","highlight":"PAIXÃO QUE ASSUSTA"},
+    {"id":"shot_cta","segment":"cta","asset":"versailles_cta","motion":"push_in","transition_out":"cut","highlight":"VOCÊ TAMBÉM ACHOU?"}
+  ]
+}
