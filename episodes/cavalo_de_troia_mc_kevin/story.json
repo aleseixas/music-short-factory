@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "title": "Cavalo de Tróia — MC Kevin: o hit que MC IG escreveu",
+  "slug": "cavalo_de_troia_mc_kevin",
+  "target_duration_seconds": 76,
+  "segments": [
+    {"id":"hook","text":"Cavalo de Tróia, do MC Kevin, tem um segredo: ele não escreveu o hit.","delivery":"hook"},
+    {"id":"ig","text":"Quem compôs foi MC IG, outro nome do funk paulista.","delivery":"reveal"},
+    {"id":"gift","text":"E IG deixou o amigo Kevin interpretar a faixa.","delivery":"reveal"},
+    {"id":"release","text":"Ela saiu em dezembro de 2018, produzida por Djay W.","delivery":"neutral"},
+    {"id":"persist","text":"Só que não começa no luxo: começa falando de persistência.","delivery":"curious"},
+    {"id":"dream","text":"A ideia é sonhar com uma vida que parece impossível.","delivery":"curious"},
+    {"id":"before","text":"Kevin celebra a conquista, lembrando que nem sempre foi assim.","delivery":"emotional"},
+    {"id":"money","text":"Dinheiro vira símbolo de quem conseguiu mudar de realidade.","delivery":"dramatic"},
+    {"id":"fourm","text":"Aí entra o 4M, identidade daquela ascensão no funk.","delivery":"curious"},
+    {"id":"capital","text":"Chegar à capital vira uma declaração de presença.","delivery":"dramatic"},
+    {"id":"car","text":"E o carro vira personagem: Kevin era apaixonado por máquinas.","delivery":"curious"},
+    {"id":"ferrari","text":"Essa imagem continuou fora da música, inclusive com Ferrari.","delivery":"neutral"},
+    {"id":"sc","text":"A faixa leva a vitória para Santa Catarina.","delivery":"curious"},
+    {"id":"contrast","text":"Mas olha o contraste: ele lembra que não nasceu com cifrão.","delivery":"dramatic"},
+    {"id":"vila","text":"Kevin veio da Vila Ede e começou no funk adolescente.","delivery":"emotional"},
+    {"id":"beforehits","text":"Antes, já tinha Veracruz e O Menino Encantou a Quebrada.","delivery":"neutral"},
+    {"id":"hit","text":"Cavalo de Tróia virou um dos maiores hits da carreira.","delivery":"reveal"},
+    {"id":"livever","text":"E ganhou versão ao vivo no Estúdio Showlivre, em 2019.","delivery":"neutral"},
+    {"id":"meaning","text":"Então tem ostentação, amizade, autoria e sonho.","delivery":"payoff"},
+    {"id":"legacy","text":"Talvez por isso ainda soe como hino de conquista.","delivery":"emotional"},
+    {"id":"cta","text":"Você sabia que Cavalo de Tróia foi composta pelo MC IG?","delivery":"payoff"}
+  ]
+}
