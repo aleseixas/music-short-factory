@@ -11,6 +11,7 @@ import resolve_visual_candidates_web as resolver
 
 
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
+COOKIE_FALLBACK_CLIENTS = ("default", "web_embedded")
 AUTH_ERROR_MARKERS = (
     "sign in to confirm you're not a bot",
     "sign in to confirm you’re not a bot",
@@ -73,18 +74,39 @@ def _prepare_cookie_file() -> Path | None:
     return cookie_file
 
 
+def _with_cookie_fallback_options(params: dict | None, cookie_file: Path) -> dict:
+    patched = dict(params or {})
+    patched["cookiefile"] = str(cookie_file)
+
+    raw_extractor_args = patched.get("extractor_args")
+    extractor_args = dict(raw_extractor_args) if isinstance(raw_extractor_args, dict) else {}
+
+    raw_youtube = extractor_args.get("youtube")
+    youtube_args = dict(raw_youtube) if isinstance(raw_youtube, dict) else {}
+    youtube_args["player_client"] = list(COOKIE_FALLBACK_CLIENTS)
+    extractor_args["youtube"] = youtube_args
+
+    # The cookie retry intentionally does not inherit the bgutil/mweb provider path.
+    # It is a separate auth strategy after the primary PO-token attempt fails.
+    extractor_args.pop("youtubepot-bgutilhttp", None)
+    patched["extractor_args"] = extractor_args
+    return patched
+
+
 def _install_cookie_fallback() -> None:
     cookie_file = _prepare_cookie_file()
     if cookie_file is None:
         return
 
-    # At this point resolve_visual_candidates_web already installed the PO-token
-    # patch when available. Wrapping the current API means the primary request is
-    # still PO/default; only the retry receives cookiefile.
+    # At this point the primary API is the current PO-token path when available.
+    # Keep it for attempt 1, but use the original raw yt-dlp API for the cookie retry
+    # so mweb/bgutil options cannot leak into attempt 2.
     primary_api = web_engine._yt_dlp_api
+    cookie_api = getattr(web_engine, "_yt_dlp_api_original", primary_api)
 
     def patched_api():
         PrimaryYoutubeDL, DownloadError = primary_api()
+        CookieYoutubeDL, _CookieDownloadError = cookie_api()
 
         class CookieFallbackYoutubeDL(PrimaryYoutubeDL):
             def __init__(self, params=None, auto_init=True):
@@ -100,11 +122,14 @@ def _install_cookie_fallback() -> None:
 
                     print(
                         "YouTube web: tentativa primaria bloqueada; "
-                        "repetindo candidato com cookies de fallback."
+                        "repetindo candidato com cookies de fallback "
+                        "(clients default,web_embedded)."
                     )
-                    fallback_params = dict(self._cookie_fallback_params)
-                    fallback_params["cookiefile"] = str(cookie_file)
-                    with PrimaryYoutubeDL(fallback_params) as fallback_ydl:
+                    fallback_params = _with_cookie_fallback_options(
+                        self._cookie_fallback_params,
+                        cookie_file,
+                    )
+                    with CookieYoutubeDL(fallback_params) as fallback_ydl:
                         return fallback_ydl.extract_info(url, *args, **kwargs)
 
         return CookieFallbackYoutubeDL, DownloadError
