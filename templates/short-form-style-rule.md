@@ -74,13 +74,16 @@ Se um shot se aproximar de 4s sem razão forte, procure outro visual semanticame
 
 Não pesquise apenas a quantidade de assets que entrará no render.
 
-Para cada take/slot importante, mire em média **4 candidatos reais**, normalmente 3–5 conforme disponibilidade.
+Para cada take/slot importante, mire em média **4–5 candidatos reais**, normalmente 3–6 conforme disponibilidade.
 
-Com 20–30 takes finais, a referência normal passa a ser:
+Para episódios com 20–30 takes finais:
 
-- aproximadamente **80–140 candidatos visuais totais**;
-- alvo prático frequente em um vídeo de ~24–26 takes: **~90–110 candidatos**;
-- seleção final feita só depois de comparar os candidatos por slot.
+- o **alvo editorial padrão é 100–120 candidatos visuais totais**;
+- **80 candidatos é o mínimo aceitável** quando a disponibilidade real limitar a busca;
+- em temas ricos visualmente, pode ultrapassar 120 quando isso melhorar de verdade a seleção;
+- a seleção final só acontece depois de comparar os candidatos por slot.
+
+Não confunda `assets finais usados no render` com `candidatos pesquisados`. Um vídeo pode terminar com 22–28 assets/takes e ainda assim ter partido de um pool de 100–120 opções reais.
 
 O pool deve ser WEB-FIRST e seguir `docs/visual-search.md`.
 
