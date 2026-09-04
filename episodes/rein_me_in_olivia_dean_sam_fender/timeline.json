@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"emotional_piano","volume":0.045},
+  "sfx_cues": [
+    {"time_seconds":0.10,"type":"bass_drop_cinematic","volume":0.06},
+    {"time_seconds":5.4,"type":"whoosh_fast","volume":0.04},
+    {"time_seconds":10.8,"type":"camera_shutter","volume":0.035},
+    {"time_seconds":16.2,"type":"pop","volume":0.04},
+    {"time_seconds":21.6,"type":"ding","volume":0.038},
+    {"time_seconds":27.0,"type":"heartbeat_slow","volume":0.028},
+    {"time_seconds":32.4,"type":"riser_build_up","volume":0.038},
+    {"time_seconds":37.8,"type":"dramatic_dun_dun","volume":0.04},
+    {"time_seconds":43.2,"type":"whoosh_transition","volume":0.04},
+    {"time_seconds":48.6,"type":"crowd_cheer","volume":0.03},
+    {"time_seconds":54.0,"type":"impact","volume":0.05},
+    {"time_seconds":59.4,"type":"riser_popular","volume":0.038},
+    {"time_seconds":65.0,"type":"correct_ding","volume":0.035},
+    {"time_seconds":71.0,"type":"impact","volume":0.055}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.52}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.10,"duration_seconds":1.25,"text":"UM DESABAFO\nVIROU DIÁLOGO","accent_text":"DIÁLOGO","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"rewrite","offset_seconds":0.12,"duration_seconds":1.15,"text":"OLIVIA RESPONDEU","accent_text":"RESPONDEU","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"opening","offset_seconds":0.12,"duration_seconds":1.15,"text":"MUDANÇA DE\nÚLTIMA HORA","accent_text":"ÚLTIMA HORA","animation":"slide_up","position":"center","intensity":0.58},
+    {"segment":"debut","offset_seconds":0.12,"duration_seconds":1.15,"text":"ESTREIA AO VIVO","accent_text":"AO VIVO","animation":"fade_pop","position":"center","intensity":0.56},
+    {"segment":"climb","offset_seconds":0.12,"duration_seconds":1.15,"text":"35 SEMANAS\nATÉ O #1","accent_text":"35 SEMANAS","animation":"scale_bounce","position":"center","intensity":0.60},
+    {"segment":"record","offset_seconds":0.12,"duration_seconds":1.20,"text":"RECORDE HISTÓRICO","accent_text":"RECORDE","animation":"scale_bounce","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"REIN ME IN • SAM FENDER + OLIVIA DEAN"},
+    {"id":"shot_origin","segment":"origin","asset":"sam_main","motion":"push_in","transition_out":"crossfade","highlight":"ARREPENDIMENTO • EXCESSO"},
+    {"id":"shot_album","segment":"album","asset":"guitar_detail","source_start_seconds":3.0,"source_end_seconds":18.0,"motion":"hold","transition_out":"cut","highlight":"PEOPLE WATCHING • 2025"},
+    {"id":"shot_choice","segment":"choice","asset":"artist_main","motion":"pull_out","transition_out":"cut","highlight":"OLIVIA ESCOLHEU ESSA FAIXA"},
+    {"id":"shot_rewrite","segment":"rewrite","asset":"writing_process","motion":"push_in","transition_out":"cut","highlight":"NOVO VERSO • MAX WOLFGANG"},
+    {"id":"shot_meaning","segment":"meaning","asset":"emotional_motion","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"crossfade","highlight":"DE FUGIR DA DOR A ACEITAR CUIDADO"},
+    {"id":"shot_production","segment":"production","asset":"music_process","source_start_seconds":2.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut","highlight":"DUAS VOZES • UMA CONVERSA"},
+    {"id":"shot_coincidence","segment":"coincidence","asset":"concert_symbol","motion":"push_in","transition_out":"cut","highlight":"E QUASE FOI DIFERENTE"},
+    {"id":"shot_opening","segment":"opening","asset":"live_event","source_start_seconds":1.0,"source_end_seconds":13.0,"motion":"hold","transition_out":"cut","highlight":"LONDON STADIUM"},
+    {"id":"shot_replacement","segment":"replacement","asset":"artist_main","motion":"pan_right","transition_out":"cut","highlight":"SUBSTITUTA DE ÚLTIMA HORA"},
+    {"id":"shot_debut","segment":"debut","asset":"music_process","source_start_seconds":2.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut","highlight":"ESTREIA ANTES DO LANÇAMENTO"},
+    {"id":"shot_viral","segment":"viral","asset":"live_event","source_start_seconds":1.0,"source_end_seconds":13.0,"motion":"hold","transition_out":"cut","highlight":"O VÍDEO EXPLODIU ONLINE"},
+    {"id":"shot_climb","segment":"climb","asset":"rise_motion","source_start_seconds":0.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"35 SEMANAS ATÉ O #1"},
+    {"id":"shot_record","segment":"record","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"22 SEMANAS NO TOPO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"sam_main","motion":"pull_out","transition_out":"cut","highlight":"OUTRA VOZ MUDOU TUDO"}
+  ]
+}
