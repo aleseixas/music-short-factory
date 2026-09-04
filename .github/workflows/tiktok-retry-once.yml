@@ -1,0 +1,79 @@
+name: Retry TikTok only
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".publish-tiktok-retry/*.txt"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  publish-tiktok:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Resolve retry request
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t trigger_files < <(
+            git show --pretty='' --name-only --diff-filter=A "${GITHUB_SHA}" -- '.publish-tiktok-retry/*.txt'
+          )
+          if [[ ${#trigger_files[@]} -ne 1 ]]; then
+            echo "::error::Expected exactly one TikTok retry trigger file."
+            exit 1
+          fi
+          trigger_file="${trigger_files[0]}"
+          episode="$(basename "$trigger_file" .txt | sed -E 's/-[0-9]+$//')"
+          source_run_id="$(tr -d '\r\n ' < "$trigger_file")"
+          if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+            echo "::error::Invalid episode slug."
+            exit 1
+          fi
+          if [[ ! "$source_run_id" =~ ^[0-9]+$ ]]; then
+            echo "::error::Invalid source run id."
+            exit 1
+          fi
+          echo "EPISODE=$episode" >> "$GITHUB_ENV"
+          echo "SOURCE_RUN_ID=$source_run_id" >> "$GITHUB_ENV"
+          echo "Retrying TikTok only for $episode using artifact from run $source_run_id"
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Download rendered MP4 from original run
+        uses: actions/download-artifact@v7
+        with:
+          name: rendered-${{ env.EPISODE }}
+          path: output
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ env.SOURCE_RUN_ID }}
+
+      - name: Prepare publishing metadata and cover
+        run: python prepare_post.py "$EPISODE"
+
+      - name: Upload TikTok draft only
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+        run: python publish.py "$EPISODE" --platform tiktok --live
