@@ -99,9 +99,30 @@ Delivery pode mudar a duração real da narração. Use os timings reais do pipe
 
 Background music e SFX seguem estratégias diferentes.
 
-Para BACKGROUND MUSIC, quando houver acesso HTTP/web, pesquise externamente primeiro. Faça variações de consulta, compare candidatas plausíveis e siga `docs/audio-search.md`. Openverse pode fornecer música aberta; Apple/TikTok/YouTube/Spotify podem servir como referência editorial/metadado. Não use preview comercial protegido como fonte automática do arquivo.
+### BACKGROUND MUSIC — INTERNET-FIRST E VARIEDADE OBRIGATÓRIA
 
-**Regra técnica obrigatória para background music externa:** antes de salvar qualquer profile, leia a allowlist vigente em `engine/audio_library.py` e compare o hostname real da URL. No estado atual, entradas `external/openverse/...` aceitam somente `cdn.freesound.org` e `upload.wikimedia.org`. `commons.wikimedia.org` NÃO é host aprovado para esse fluxo e `commons.wikimedia.org/wiki/Special:Redirect/file/...` NÃO deve ser usado como URL do catálogo. Para Wikimedia, resolva a URL final direta em `https://upload.wikimedia.org/...`. Se não conseguir obter uma URL direta em host permitido, descarte a candidata e use outra ou faça fallback para profile local. Nunca crie queue com host externo não validado contra a `main`.
+Quando houver acesso HTTP/web, a background music deve ser tratada como uma escolha editorial NOVA por episódio. **NUNCA escolha imediatamente um profile local apenas por conveniência.** O catálogo local da repo é fallback de último recurso.
+
+Antes de escolher a background:
+
+1. leia `docs/audio-search.md`, `engine/audio_library.py` e `assets/audio/music/catalog.json`;
+2. quando for possível determinar pelo histórico, confira aproximadamente os últimos 15 episódios e identifique os backgrounds/profiles/arquivos externos usados recentemente;
+3. evite reutilizar a mesma faixa, o mesmo arquivo remoto ou o mesmo profile recente;
+4. não reutilize a mesma background em episódios consecutivos ou próximos, salvo último recurso após buscas externas reais falharem.
+
+Faça **no mínimo 5 consultas semanticamente diferentes**, não apenas pequenas variações da mesma frase. Varie clima, gênero, instrumentação, energia, estética, andamento percebido e função narrativa. Exemplos de eixos possíveis: `dark cinematic tension`, `melancholic guitar documentary`, `upbeat latin instrumental`, `dreamy ambient pop`, `hip hop documentary beat`, `retro synth emotional`, sempre adaptando ao episódio.
+
+Pesquise em **mais de uma fonte quando disponível**. Não trate Openverse/Wikimedia como universo único. Openverse, Wikimedia/Freesound e outras fontes compatíveis podem fornecer o arquivo; Apple/TikTok/YouTube/Spotify podem servir como referência editorial/metadado de estética, familiaridade e tendência. Compare **pelo menos 4–6 candidatas externas plausíveis** antes de desistir da internet. Não aceite a primeira candidata só porque tecnicamente funciona.
+
+Variedade é parte da decisão editorial: background muito parecida com as usadas recentemente deve perder prioridade. A escolha deve combinar especificamente com a história do episódio, e não apenas com o gênero da música principal. Alterne famílias sonoras quando fizer sentido — eletrônico, orgânico, piano, guitarra, hip-hop instrumental, ambient, cinematic, latin, funk/soul, synth, acústico, percussion-driven etc. Não recaia automaticamente em profiles genéricos como `dark_cinematic`, `hiphop_groove`, `uplifting_documentary`, `emotional_piano`, `latin_pop_uplifting` ou equivalentes só porque “funcionam”.
+
+**Regra técnica obrigatória para background music externa:** confirme formatos, limites, prefixos e comportamento reais em `engine/audio_library.py`. Entradas `external/openverse/...` devem respeitar a allowlist vigente; no estado atual, aceitam URLs HTTPS diretas em `cdn.freesound.org` e `upload.wikimedia.org`. `commons.wikimedia.org` e landing pages/redirects não devem ser usados como arquivo do catálogo; para Wikimedia, resolva a URL final direta em `https://upload.wikimedia.org/...`.
+
+**Não trate a allowlist de `external/openverse/...` como limitação geral do sistema.** Se a `main` continuar suportando `external/manual/...`, esse caminho pode usar outra URL HTTPS direta compatível, desde que seja realmente um arquivo de áudio direto, com extensão/formato aceitos e passe pelas validações atuais do engine. Nunca use página HTML como arquivo de áudio. Não use preview comercial protegido como fonte automática e não contorne controles de acesso.
+
+Falha de UMA fonte, UMA query ou UMA candidata não autoriza fallback local. Troque query, estilo e fonte. Só use profile da repo depois de esgotar as buscas externas reais acima. Se precisar usar REPO, escolha o profile menos repetido e mais adequado entre os válidos e registre em `sources.txt` o motivo concreto do fallback. “Fallback” sozinho não é justificativa suficiente.
+
+Se uma background externa for aprovada, crie apenas o profile dedicado necessário no catálogo, preferencialmente com uma única entrada `{file, url}` para seleção determinística, sem binário remoto no commit. `timeline.json` referencia apenas o profile. Registre origem, autoria e metadata/licença relevante em `sources.txt`.
 
 Para SFX, `assets/audio/sfx/catalog.json` é a biblioteca curada e a fonte de verdade. Use SOMENTE `type` já existente nesse catálogo. NÃO pesquise novos SFX na web durante a criação do episódio, NÃO crie novos `type` e NÃO altere o catálogo.
 
@@ -198,7 +219,7 @@ Siga esta ordem:
    melhores, usar o ranking técnico como apoio e só então escolher assets/trims;
 7. escolher shots/assets e trims com significado editorial, reservando cada visual escolhido para um único shot;
 8. fazer a primeira passada shot por shot: asset, trecho, foco, motion e transition;
-9. pesquisar/comparar background music externa quando houver web, validar URL/hostname contra `engine/audio_library.py` e escolher profile real ou fallback válido;
+9. pesquisar background music externa de forma internet-first com no mínimo 5 queries semanticamente diferentes, comparar 4–6 candidatas plausíveis, evitar backgrounds recentes/repetidas, validar o caminho técnico correto (`external/openverse/...` ou `external/manual/...` quando suportado) e só então escolher profile externo ou fallback local realmente justificado;
 10. ler o catálogo de SFX e selecionar somente types curados;
 11. fazer a segunda passada shot por shot: visual FX, kinetic text, highlight, overlay e SFX;
 12. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
