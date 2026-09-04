@@ -180,8 +180,11 @@ def _draw_headline(
     boxes = [draw.textbbox((0, 0), line, font=font, stroke_width=0) for line in lines]
     line_heights = [box[3] - box[1] for box in boxes]
     block_height = sum(line_heights) + line_gap * (len(lines) - 1)
-    x = int(width * 0.12)
-    y = min(int(height * 0.70), height - block_height - int(height * 0.11))
+
+    # Keep the whole headline panel in the visual center of a vertical short.
+    # This avoids platform-specific top/bottom crops and UI overlays hiding the title.
+    x = (width - max_width) // 2
+    y = (height - block_height) // 2
     padding_x = int(width * 0.035)
     padding_y = int(height * 0.025)
     draw.rounded_rectangle(
@@ -207,9 +210,11 @@ def _draw_headline(
     )
     current_y = y
     stroke = max(1, int(font.size * 0.035))
-    for line, line_height in zip(lines, line_heights):
+    for line, line_height, box in zip(lines, line_heights, boxes):
+        line_width = box[2] - box[0]
+        line_x = x + (max_width - line_width) // 2 - box[0]
         draw.text(
-            (x, current_y),
+            (line_x, current_y),
             line,
             font=font,
             fill=text_color,
