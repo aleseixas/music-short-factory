@@ -70,7 +70,7 @@ jobs:
       - name: Build 115-candidate WEB-FIRST visual pool
         env:
           EPISODE: ${{ steps.episode.outputs.slug }}
-        run: python scripts/build_beat_it_v3_visual_pool.py "$EPISODE"
+        run: PYTHONPATH=. python scripts/build_beat_it_v3_visual_pool.py "$EPISODE"
 
       - name: Create valid branded end card for test workspace
         env:
