@@ -154,7 +154,9 @@ jobs:
       - name: Score and resolve visual candidates
         id: visuals
         continue-on-error: true
-        run: python resolve_visual_candidates_web.py "${{ needs.prepare.outputs.episode }}"
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python resolve_visual_candidates_web_auth.py "${{ needs.prepare.outputs.episode }}"
 
       - name: Stage resolved visual handoff
         if: always()
