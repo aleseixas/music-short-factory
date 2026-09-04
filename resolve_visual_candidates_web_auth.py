@@ -74,8 +74,17 @@ def _prepare_cookie_file() -> Path | None:
     return cookie_file
 
 
-def _with_cookie_fallback_options(params: dict | None, cookie_file: Path) -> dict:
+def _with_node_ejs_options(params: dict | None) -> dict:
     patched = dict(params or {})
+    raw_runtimes = patched.get("js_runtimes")
+    runtimes = dict(raw_runtimes) if isinstance(raw_runtimes, dict) else {}
+    runtimes["node"] = {}
+    patched["js_runtimes"] = runtimes
+    return patched
+
+
+def _with_cookie_fallback_options(params: dict | None, cookie_file: Path) -> dict:
+    patched = _with_node_ejs_options(params)
     patched["cookiefile"] = str(cookie_file)
 
     raw_extractor_args = patched.get("extractor_args")
@@ -111,7 +120,10 @@ def _install_cookie_fallback() -> None:
         class CookieFallbackYoutubeDL(PrimaryYoutubeDL):
             def __init__(self, params=None, auto_init=True):
                 self._cookie_fallback_params = dict(params or {})
-                super().__init__(params, auto_init=auto_init)
+                super().__init__(
+                    _with_node_ejs_options(params),
+                    auto_init=auto_init,
+                )
 
             def extract_info(self, url, *args, **kwargs):
                 try:
@@ -123,7 +135,7 @@ def _install_cookie_fallback() -> None:
                     print(
                         "YouTube web: tentativa primaria bloqueada; "
                         "repetindo candidato com cookies de fallback "
-                        "(client web_embedded)."
+                        "(client web_embedded + Node EJS)."
                     )
                     fallback_params = _with_cookie_fallback_options(
                         self._cookie_fallback_params,
@@ -137,7 +149,7 @@ def _install_cookie_fallback() -> None:
     web_engine._yt_dlp_api = patched_api
     print(
         "YouTube web: cookies de fallback configurados; "
-        "PO/default continua sendo a primeira tentativa."
+        "PO/default continua sendo a primeira tentativa; Node EJS habilitado."
     )
 
 
