@@ -129,7 +129,7 @@ jobs:
       - name: Score and resolve visual candidates
         id: visuals
         continue-on-error: true
-        run: python resolve_visual_candidates.py "$EPISODE"
+        run: python resolve_visual_candidates_web.py "$EPISODE"
 
       - name: Add visual scores to job summary
         if: always()
