@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_main","file":"olivia_dean_4323.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/4/40/Olivia_Dean_-_4323.jpg","credit":"Harald Krichel / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"sam_main","file":"sam_fender_2021.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/2/24/Sam_Fender_%282021%29.jpg","credit":"Raph_PH / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"live_event","file":"live_event_nelson_kanzela.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6e/Concierto_Nelson_kanzela._un_fragmento._2025.webm","credit":"Koffermejia / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"guitar_detail","file":"guitar_detail.webm","url":"https://upload.wikimedia.org/wikipedia/commons/e/e9/SaveThreads_Threads_Media_3958339277116411776_001_680p.webm","credit":"Châu Tuấn Hùng / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"music_process","file":"music_street_barcelona.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/ae/Music_in_the_street%2C_Barcelona_01.webm","credit":"Nicolas Vigier / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"emotional_motion","file":"rain_night_city.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/95/Raindrops_against_the_window_in_the_night_city%2C_Las_Palmas.webm","credit":"Vjatseslav Robtsenkov / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"rise_motion","file":"flight_over_clouds.webm","url":"https://upload.wikimedia.org/wikipedia/commons/2/2d/Flight_over_clouds.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"concert_symbol","file":"singer_in_concert.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/56/Singer_In_Concert_%28Unsplash%29.jpg","credit":"Austin Neill / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.45}},
+    {"id":"writing_process","file":"pen_writing_notes.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/59/Pen-writing-notes-studying.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
