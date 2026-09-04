@@ -25,7 +25,7 @@ BASELINE VISUALS
   Items marked CC0 1.0 were selected from Commons file pages carrying CC0/public-domain-compatible metadata during research.
 
 VISUAL CANDIDATE NOTES
-- visual_candidates.json contains 110 same-type image candidate records across 22 slots (5 per slot).
+- visual_candidates.json contains 88 same-type image candidate records across 22 slots (4 per slot), above the 80-candidate minimum used when a larger pool would require semantically weak filler.
 - Olivia Rodrigo Lollapalooza screenshots are all derived from the same original YouTube upload (sAl1a4auovE), so they share provider_id intentionally for global reservation/deduplication. Their CC BY 3.0 attribution requirement makes them operationally restricted for this clean-public-copy flow.
 - Versailles, studio, smartphone, guitar/headphone and Coachella candidates were grouped only where they reinforce the narration theme for the slot.
 - No AI-generated image is used.
