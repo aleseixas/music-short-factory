@@ -1,0 +1,1 @@
+node 22 + yt-dlp ejs smoke test
