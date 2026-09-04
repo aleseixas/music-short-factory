@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Beat It — Michael Jackson: o solo que quase desmontou a fita",
+  "slug": "beat_it_michael_jackson",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Beat It, de Michael Jackson, nasceu de um pedido de Quincy Jones: criar rock para Thriller.","delivery":"hook"},
+    {"id":"mj_rock","text":"Michael levou o pedido a sério e escreveu a faixa sem abandonar sua identidade pop.","delivery":"curious"},
+    {"id":"anti_violence","text":"A letra transforma sair de uma briga em inteligência, não em covardia.","delivery":"dramatic"},
+    {"id":"eddie_call","text":"Para dar peso à faixa, Quincy chamou Eddie Van Halen para gravar o solo.","delivery":"reveal"},
+    {"id":"free_solo","text":"Eddie estranhou a ligação, mas aceitou e participou sem cobrar cachê.","delivery":"reveal"},
+    {"id":"tape_change","text":"Ele mudou a seção do solo e a estrutura da fita para deixá-lo mais interessante.","delivery":"dramatic"},
+    {"id":"rebuild","text":"Steve Lukather e Jeff Porcaro reconstruíram a faixa ao redor dessa mudança.","delivery":"curious"},
+    {"id":"too_heavy","text":"Lukather contou que sua primeira guitarra ficou pesada demais para Quincy.","delivery":"dramatic"},
+    {"id":"crossover","text":"O produtor pediu menos metal: precisava soar rock e funcionar também no pop e R&B.","delivery":"reveal"},
+    {"id":"drumcase","text":"Até Michael virou percussionista: os créditos de Thriller o listam batendo numa caixa de bateria.","delivery":"curious"},
+    {"id":"genre_mix","text":"O resultado uniu pop, R&B e hard rock sem parecer uma colagem.","delivery":"neutral"},
+    {"id":"victory","text":"Em 1984, Eddie apareceu na Victory Tour e tocou Beat It ao vivo com Michael.","delivery":"reveal"},
+    {"id":"grammy","text":"A faixa chegou ao número um nos Estados Unidos e ganhou o Grammy de Gravação do Ano.","delivery":"dramatic"},
+    {"id":"payoff","text":"Beat It mostrou que Michael não precisou virar roqueiro: fez públicos diferentes ouvirem a mesma música.","delivery":"payoff"}
+  ]
+}
