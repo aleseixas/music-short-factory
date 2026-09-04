@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"mj_image","file":"michael_jackson_1988.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/3/31/Michael_Jackson1_1988.jpg","credit":"Zoran Veselinovic / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"eddie_image","file":"eddie_van_halen_1984.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/f/f9/Los_Angeles-based_band_Van_Halen%2C_guitarist_Eddie_Van_Halen_airborne_during_performance_in_Los_Angeles%2C_Calif.%2C_1984_%2822195741815%29.jpg","credit":"UCLA Library Special Collections / Los Angeles Times Photographic Archive / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.45}},
+    {"id":"quincy_image","file":"quincy_jones_studio.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/b/b2/Quincy_Jones_studio.jpg","credit":"Los Angeles Times Photographic Collection / UCLA Library / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"video_mj_performance","file":"mellencamp_white_house.webm","url":"https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm","credit":"The White House / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.5,"y":0.5}},
+    {"id":"video_eddie","file":"white_house_country_bts.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Behind_The_Scenes-_In_Performance_at_The_White_House-_Country_Music.webm","credit":"The White House / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.5,"y":0.5}},
+    {"id":"video_studio","file":"writing_the_letter_feng.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm","credit":"FonzuWiki / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"video_payoff","file":"scenes_new_york_1903.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/af/Scenes_in_New_York_City%2C_1903.webm","credit":"Framepool / Wikimedia Commons","license":"Public domain (US)","focus":{"x":0.5,"y":0.5}}
+  ]
+}
