@@ -18,8 +18,11 @@ permissions:
   contents: read
 
 jobs:
-  publish:
+  prepare:
     runs-on: ubuntu-latest
+    outputs:
+      episode: ${{ steps.episode.outputs.slug }}
+      trigger_kind: ${{ steps.episode.outputs.trigger_kind }}
 
     steps:
       - name: Check out repository
@@ -107,10 +110,99 @@ jobs:
             exit 1
           fi
 
-          echo "EPISODE=$episode" >> "$GITHUB_ENV"
           echo "slug=$episode" >> "$GITHUB_OUTPUT"
           echo "trigger_kind=$trigger_kind" >> "$GITHUB_OUTPUT"
           echo "Publishing episode: $episode (trigger: $trigger_kind)"
+
+  visuals:
+    needs: prepare
+    runs-on: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' && 'self-hosted' || 'ubuntu-latest' }}
+    env:
+      EPISODE: ${{ needs.prepare.outputs.episode }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install FFmpeg on GitHub-hosted runner
+        if: ${{ vars.USE_SELF_HOSTED_VISUALS != 'true' }}
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Verify FFmpeg on self-hosted runner
+        if: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' }}
+        run: ffmpeg -version
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Show visual runner mode
+        run: python -c "import os, socket; print('Visual runner:', 'self-hosted/residential' if os.getenv('USE_SELF_HOSTED_VISUALS') == 'true' else 'github-hosted'); print('Host:', socket.gethostname())"
+        env:
+          USE_SELF_HOSTED_VISUALS: ${{ vars.USE_SELF_HOSTED_VISUALS }}
+
+      - name: Score and resolve visual candidates
+        id: visuals
+        continue-on-error: true
+        run: python resolve_visual_candidates_web.py "${{ needs.prepare.outputs.episode }}"
+
+      - name: Stage resolved visual handoff
+        if: always()
+        run: python scripts/stage_visual_handoff.py
+
+      - name: Upload resolved visual handoff
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: visual-handoff-${{ needs.prepare.outputs.episode }}
+          path: .visual-handoff
+          if-no-files-found: ignore
+          retention-days: 1
+          compression-level: 0
+
+  publish:
+    needs:
+      - prepare
+      - visuals
+    if: ${{ always() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    env:
+      EPISODE: ${{ needs.prepare.outputs.episode }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Download resolved visual handoff
+        id: visual_handoff
+        continue-on-error: true
+        uses: actions/download-artifact@v7
+        with:
+          name: visual-handoff-${{ needs.prepare.outputs.episode }}
+          path: .visual-handoff
+
+      - name: Apply resolved visual handoff
+        if: ${{ steps.visual_handoff.outcome == 'success' }}
+        shell: bash
+        run: |
+          if [[ -d ".visual-handoff/episodes/$EPISODE" ]]; then
+            cp -R ".visual-handoff/episodes/$EPISODE/." "episodes/$EPISODE/"
+            echo "Applied visual handoff for $EPISODE."
+          else
+            echo "::warning::Visual handoff artifact had no episode payload; using repository assets."
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -125,11 +217,6 @@ jobs:
 
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
-
-      - name: Score and resolve visual candidates
-        id: visuals
-        continue-on-error: true
-        run: python resolve_visual_candidates_web.py "$EPISODE"
 
       - name: Add visual scores to job summary
         if: always()
@@ -169,8 +256,8 @@ jobs:
       - name: Upload rendered MP4
         uses: actions/upload-artifact@v7
         with:
-          name: rendered-${{ steps.episode.outputs.slug }}
-          path: output/${{ steps.episode.outputs.slug }}.mp4
+          name: rendered-${{ needs.prepare.outputs.episode }}
+          path: output/${{ needs.prepare.outputs.episode }}.mp4
           if-no-files-found: error
           retention-days: 3
           compression-level: 0
