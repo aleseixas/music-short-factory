@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O DUETO QUE QUEBROU 73 ANOS DE RECORDE","source":{"type":"asset","asset_id":"duo_moment"}},
+  "youtube": {
+    "title":"Rein Me In: como Sam Fender e Olivia Dean quebraram um recorde de 73 anos",
+    "description":"Rein Me In começou como uma faixa de Sam Fender, ganhou um novo verso de Olivia Dean e virou uma conversa entre duas perspectivas. Depois de uma estreia ao vivo em estádio e uma ascensão lenta nas paradas, o dueto entrou para a história britânica.",
+    "hashtags":["SamFender","OliviaDean","ReinMeIn","Musica","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Uma faixa que nem parecia single ganhou um novo ponto de vista, explodiu depois de um estádio e terminou quebrando um recorde que resistia havia 73 anos. A história de Rein Me In é uma aula de como uma colaboração pode mudar completamente uma música.",
+    "hashtags":["SamFender","OliviaDean","ReinMeIn","Musica","Curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Rein Me In virou outra música quando Olivia Dean respondeu ao lado de Sam Fender — e o resultado derrubou um recorde de 73 anos.",
+    "hashtags":["SamFender","OliviaDean","ReinMeIn","Musica","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_sam","file":"sam_fender_2021_cropped.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/57/Sam_Fender_%282021%29_%28cropped%29.jpg","credit":"Raph_PH / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"artist_olivia","file":"olivia_dean_4359.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/0/05/Olivia_Dean_-_4359.jpg","credit":"Harald Krichel / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"duo_moment","file":"sam_olivia_stage_hug.jpg","url":"https://musictalkers.com/images/new/tour-11.jpg","credit":"MusicTalkers / web","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"guitar_detail","file":"guitar_detail.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/3/36/Guitar_%2821758515013%29.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"performance_motion","file":"music_street_barcelona.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/ae/Music_in_the_street%2C_Barcelona_01.webm","credit":"Nicolas Vigier / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"city_motion","file":"train_street_hanoi.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/62/Train_street_20220807_1205.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"rain_motion","file":"rain_night_city.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/95/Raindrops_against_the_window_in_the_night_city%2C_Las_Palmas.webm","credit":"Vjatseslav Robtsenkov / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"sky_motion","file":"flight_over_clouds.webm","url":"https://upload.wikimedia.org/wikipedia/commons/2/2d/Flight_over_clouds.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

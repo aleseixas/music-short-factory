@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "Rein Me In — Sam Fender e Olivia Dean: o dueto que quebrou um recorde de 73 anos",
+  "slug": "rein_me_in_sam_fender_olivia_dean",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"Rein Me In, de Sam Fender e Olivia Dean, virou recorde histórico depois de nascer como faixa que Sam não via como single.","delivery":"hook"},
+    {"id":"origin","text":"Ele escreveu a música anos antes sobre alguém que deseja conexão, mas recua quando o amor fica sério.","delivery":"curious"},
+    {"id":"collab","text":"Sam prefere que colaboradores escrevam algo novo, em vez de apenas repetir sua parte.","delivery":"neutral"},
+    {"id":"favorite","text":"Olivia escolheu Rein Me In, sua favorita do álbum, e fez mais que dividir os vocais.","delivery":"reveal"},
+    {"id":"verse","text":"Ela escreveu um verso novo, trazendo outra perspectiva e transformando o monólogo em conversa.","delivery":"reveal"},
+    {"id":"stadium","text":"A dupla estreou essa versão no London Stadium, em junho de 2025.","delivery":"dramatic"},
+    {"id":"viral","text":"Os vídeos ganharam tração online, e a versão de estúdio saiu naquele mês.","delivery":"reveal"},
+    {"id":"production","text":"A produção reforça a ideia: Sam criou uma frase de guitarra como resposta às vozes.","delivery":"curious"},
+    {"id":"guitar","text":"Nos bastidores, começou numa Les Paul e terminou numa Gretsch White Falcon.","delivery":"reveal"},
+    {"id":"climb","text":"Levou 35 semanas para alcançar o número um britânico.","delivery":"dramatic"},
+    {"id":"returns","text":"Depois, voltou ao topo quatro vezes na mesma trajetória, algo inédito.","delivery":"reveal"},
+    {"id":"record","text":"Em 2026, somou 19 semanas em primeiro lugar e derrubou um recorde de 73 anos.","delivery":"dramatic"},
+    {"id":"contrast","text":"O contraste explica o impacto: ele recua, ela responde, e a produção mantém a tensão.","delivery":"emotional"},
+    {"id":"payoff","text":"Rein Me In deixou de ser só a confissão de Sam e virou conversa que milhões reconheceram.","delivery":"payoff"}
+  ]
+}

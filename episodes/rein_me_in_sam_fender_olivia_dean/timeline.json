@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"emotional_piano","volume":0.045},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.06},
+    {"time_seconds":5.6,"type":"whoosh_fast","volume":0.04},
+    {"time_seconds":11.2,"type":"pop","volume":0.035},
+    {"time_seconds":16.8,"type":"chime_sparkles","volume":0.035},
+    {"time_seconds":22.4,"type":"whoosh_transition","volume":0.04},
+    {"time_seconds":28.0,"type":"crowd_cheer","volume":0.03},
+    {"time_seconds":33.6,"type":"riser_build_up","volume":0.04},
+    {"time_seconds":39.2,"type":"camera_shutter","volume":0.034},
+    {"time_seconds":44.8,"type":"record_scratch","volume":0.038},
+    {"time_seconds":50.4,"type":"clock_ticking_slow","volume":0.026},
+    {"time_seconds":56.0,"type":"ding","volume":0.035},
+    {"time_seconds":61.6,"type":"dramatic_dun_dun","volume":0.04},
+    {"time_seconds":67.2,"type":"riser_popular","volume":0.04},
+    {"time_seconds":73.0,"type":"impact","volume":0.055}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.52}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.25,"text":"73 ANOS DE\nRECORDE CAÍRAM","accent_text":"73 ANOS","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"verse","offset_seconds":0.12,"duration_seconds":1.15,"text":"ELA ESCREVEU\nOUTRO LADO","accent_text":"OUTRO LADO","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"stadium","offset_seconds":0.12,"duration_seconds":1.15,"text":"LONDON STADIUM","accent_text":"LONDON","animation":"slide_up","position":"center","intensity":0.56},
+    {"segment":"guitar","offset_seconds":0.12,"duration_seconds":1.15,"text":"LES PAUL →\nWHITE FALCON","accent_text":"WHITE FALCON","animation":"fade_pop","position":"center","intensity":0.55},
+    {"segment":"climb","offset_seconds":0.12,"duration_seconds":1.15,"text":"35 SEMANAS\nATÉ O #1","accent_text":"35 SEMANAS","animation":"scale_bounce","position":"center","intensity":0.6},
+    {"segment":"record","offset_seconds":0.12,"duration_seconds":1.2,"text":"19 SEMANAS\nNO TOPO","accent_text":"19 SEMANAS","animation":"pop_in","position":"center","intensity":0.6},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.2,"text":"DE CONFISSÃO\nA CONVERSA","accent_text":"CONVERSA","animation":"scale_bounce","position":"center","intensity":0.6}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_sam","motion":"push_in","transition_out":"cut","highlight":"REIN ME IN • SAM FENDER + OLIVIA DEAN"},
+    {"id":"shot_origin","segment":"origin","asset":"rain_motion","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"crossfade","highlight":"CONEXÃO X MEDO"},
+    {"id":"shot_collab","segment":"collab","asset":"artist_sam","motion":"pull_out","transition_out":"cut","highlight":"FAZER ALGO NOVO"},
+    {"id":"shot_favorite","segment":"favorite","asset":"artist_olivia","motion":"push_in","transition_out":"cut","highlight":"A FAVORITA DE OLIVIA"},
+    {"id":"shot_verse","segment":"verse","asset":"duo_moment","motion":"push_in","transition_out":"crossfade","highlight":"UMA NOVA PERSPECTIVA"},
+    {"id":"shot_stadium","segment":"stadium","asset":"performance_motion","source_start_seconds":2.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut","highlight":"LONDON STADIUM • JUNHO 2025"},
+    {"id":"shot_viral","segment":"viral","asset":"city_motion","source_start_seconds":0.5,"source_end_seconds":6.8,"motion":"hold","transition_out":"cut","highlight":"OS VÍDEOS GANHARAM TRAÇÃO"},
+    {"id":"shot_production","segment":"production","asset":"guitar_detail","motion":"pan_right","transition_out":"crossfade","highlight":"GUITARRA RESPONDENDO À VOZ"},
+    {"id":"shot_guitar","segment":"guitar","asset":"guitar_detail","motion":"push_in","transition_out":"cut","highlight":"LES PAUL → GRETSCH WHITE FALCON"},
+    {"id":"shot_climb","segment":"climb","asset":"sky_motion","source_start_seconds":0.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"35 SEMANAS ATÉ O #1"},
+    {"id":"shot_returns","segment":"returns","asset":"performance_motion","source_start_seconds":1.0,"source_end_seconds":13.0,"motion":"hold","transition_out":"cut","highlight":"VOLTOU AO #1 QUATRO VEZES"},
+    {"id":"shot_record","segment":"record","asset":"duo_moment","motion":"pull_out","transition_out":"cut","highlight":"19 SEMANAS • RECORDE DE 73 ANOS"},
+    {"id":"shot_contrast","segment":"contrast","asset":"rain_motion","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"crossfade","highlight":"ELE RECUA • ELA RESPONDE"},
+    {"id":"shot_payoff","segment":"payoff","asset":"artist_olivia","motion":"push_in","transition_out":"cut","highlight":"UMA CONFISSÃO VIROU CONVERSA"}
+  ]
+}

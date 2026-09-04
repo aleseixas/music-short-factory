@@ -1,0 +1,68 @@
+REIN ME IN — PESQUISA EDITORIAL
+
+NME — lançamento da versão com Olivia Dean; declaração de Sam Fender sobre preferir que colaboradores escrevam partes novas; Olivia confirma que Rein Me In era sua música favorita do álbum e que escreveu um novo verso de perspectiva feminina:
+https://www.nme.com/news/music/sam-fender-and-olivia-dean-officially-release-rein-me-in-duet-3871433
+
+NME — primeira apresentação conjunta no London Stadium em 6 de junho de 2025:
+https://www.nme.com/news/music/watch-olivia-dean-join-sam-fender-to-perform-rein-me-in-at-his-biggest-headline-show-to-date-3868014
+
+MusicRadar — making-of: Sam Fender trabalhou a guitarra como resposta aos vocais; começou numa Gibson Les Paul Deluxe e passou para uma Gretsch White Falcon; faixa escrita anos antes; tração social após London Stadium:
+https://www.musicradar.com/artists/every-time-i-play-a-les-paul-or-anything-i-just-wanna-do-like-ac-dc-sam-fender-releases-behind-the-scenes-footage-of-him-working-on-a-guitar-part-for-rein-me-in-his-hit-single-with-olivia-dean
+
+Reuters — 31/07/2026: Rein Me In chegou a 19 semanas no número 1 britânico, superando o recorde de 18 semanas que vinha de 1953:
+https://www.reuters.com/world/uk/sam-fender-olivia-dean-duet-becomes-longest-running-top-single-uk-2026-07-31/
+
+Guinness World Records — 04/08/2026: recorde histórico, 19 semanas não consecutivas no topo e longa escalada até o número 1:
+https://www.guinnessworldrecords.com/news/2026/8/history-of-the-uks-longest-running-no1-as-sam-fender-and-olivia-dean-smash-chart-record
+
+NME — 31/07/2026: 19 semanas no topo, 35 semanas até o número 1 e quatro retornos ao topo durante a mesma trajetória:
+https://www.nme.com/news/music/sam-fender-and-olivia-deans-rein-me-in-becomes-longest-running-uk-number-one-single-of-all-time-3960116
+
+Universal Music Brasil — lançamento da versão com Olivia e confirmação do verso novo:
+https://www.universalmusic.com.br/2025/06/20/sam-fender-e-olivia-dean-estao-juntos-no-lancamento-de-rein-me-in/
+
+BACKGROUND MUSIC
+Foram comparadas buscas externas por indie rock emocional instrumental, guitarra/piano melancólicos e cinematic indie rock. Nenhuma candidata pesquisada ofereceu nesta autoria um arquivo direto em host permitido e perfil já existente sem exigir alteração de catálogo global/atribuição operacional. Fallback escolhido: profile local emotional_piano, presente em assets/audio/music/catalog.json.
+
+ASSETS-BASE
+Sam Fender, Wikimedia Commons, Raph_PH, CC BY 2.0:
+https://commons.wikimedia.org/wiki/File:Sam_Fender_(2021)_(cropped).jpg
+https://upload.wikimedia.org/wikipedia/commons/5/57/Sam_Fender_%282021%29_%28cropped%29.jpg
+
+Olivia Dean, Wikimedia Commons, Harald Krichel, CC BY-SA 4.0:
+https://commons.wikimedia.org/wiki/File:Olivia_Dean_-_4359.jpg
+https://upload.wikimedia.org/wikipedia/commons/0/05/Olivia_Dean_-_4359.jpg
+
+Duo no palco, MusicTalkers; direitos não claros (rights_status unknown):
+https://musictalkers.com/latest-news/10156-sam-fender-and-olivia-dean-finally-hit-uk-number-1-after-35-week-climb-with-%E2%80%9Crein-me-in%E2%80%9D
+https://musictalkers.com/images/new/tour-11.jpg
+
+Guitarra, Wikimedia Commons, CC0:
+https://upload.wikimedia.org/wikipedia/commons/3/36/Guitar_%2821758515013%29.jpg
+
+Vídeos-base simbólicos, Wikimedia Commons, CC0; usados como fallback e não apresentados como gravações do evento real:
+https://upload.wikimedia.org/wikipedia/commons/a/ae/Music_in_the_street%2C_Barcelona_01.webm
+https://upload.wikimedia.org/wikipedia/commons/6/62/Train_street_20220807_1205.webm
+https://upload.wikimedia.org/wikipedia/commons/9/95/Raindrops_against_the_window_in_the_night_city%2C_Las_Palmas.webm
+https://upload.wikimedia.org/wikipedia/commons/2/2d/Flight_over_clouds.webm
+
+VISUAL DISCOVERY — YOUTUBE/WEB
+https://www.youtube.com/watch?v=yszWh_7xYrs
+https://www.youtube.com/watch?v=0smp4kJmBmI
+https://www.youtube.com/watch?v=L5bqy0XkaeE
+https://www.youtube.com/watch?v=2pKkCSNEuwc
+https://www.youtube.com/watch?v=Rm-yC_xsBlg
+https://www.youtube.com/watch?v=SHPRIbp2CLk
+https://www.youtube.com/watch?v=fpqOQEQy1E8
+https://www.youtube.com/watch?v=BDqbljOgHIk
+https://www.youtube.com/watch?v=zKd3lusxoVw
+https://www.youtube.com/watch?v=r21NaezcnBU
+https://www.youtube.com/watch?v=aTRz-QZC7KI
+https://www.youtube.com/watch?v=EcsYSMmCDaM
+https://images.universal-music.de/img/assets/521/521586/4/1200/sam-fender-2021.jpg
+https://static.independent.co.uk/2022/06/24/21/07294783f6f52791a618c12102883690Y29udGVudHNlYXJjaGFwaSwxNjU2MTg4MDU3-2.67579533.jpg?fit=crop&height=1200&width=1200
+https://cdn.apollo.audio/one/media/6144/5bc8/e58d/0fd6/1bb7/bcd8/sam-fender-isle-of-wight-festival.jpg
+https://www.rte.ie/images/00230eaa-800.jpg
+https://parade.com/.image/ODowMDAwMDAwMDAxNDQ5MjQ2/gettyimages-2240573718.jpg
+https://cms-assets.nporadio.nl/npoRadio2/_articleHeaderS/Schermafbeelding-2026-03-19-om-15.01.24.png
+https://tgtumixhqhzrjubppeep.supabase.co/storage/v1/object/public/media/wordpress-imports/aeb988a5-91b3-47cc-b0f8-1e166d362ff3/sam-olivia-.jpg
