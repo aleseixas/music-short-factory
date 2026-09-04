@@ -1,13 +1,18 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 import shutil
+import socket
+import subprocess
+import time
 from pathlib import Path
 import re
 import sys
 from urllib.parse import unquote, urlparse
 
 import resolve_visual_candidates as legacy
+import engine.visual_search_web as web_engine
 
 from engine.models import VIDEO_ASSET_EXTENSIONS
 from engine.visual_search import VisualInspection, VisualSearchResult
@@ -24,6 +29,11 @@ CURRENT_EPISODE = ""
 WEB_DOWNLOADED_PATHS: dict[str, Path] = {}
 IMAGE_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".webp"})
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
+YOUTUBE_PO_PROVIDER_IMAGE = "brainicism/bgutil-ytdlp-pot-provider:1.3.2"
+YOUTUBE_PO_PROVIDER_CONTAINER = "music-short-factory-bgutil"
+YOUTUBE_PO_PROVIDER_HOST = "127.0.0.1"
+YOUTUBE_PO_PROVIDER_PORT = 4416
+YOUTUBE_PO_PROVIDER_URL = f"http://{YOUTUBE_PO_PROVIDER_HOST}:{YOUTUBE_PO_PROVIDER_PORT}"
 
 
 @dataclass(frozen=True)
@@ -293,7 +303,134 @@ def _metadata_priority(candidate: dict, index: int):
     return legacy._metadata_priority_original(candidate, index)
 
 
+def _port_is_open(host: str, port: int) -> bool:
+    try:
+        with socket.create_connection((host, port), timeout=0.5):
+            return True
+    except OSError:
+        return False
+
+
+def _warn(message: str) -> None:
+    if str(os.getenv("GITHUB_ACTIONS") or "").casefold() == "true":
+        print(f"::warning::{message}")
+    else:
+        print(f"WARNING: {message}")
+
+
+def _ensure_youtube_po_provider() -> str | None:
+    """Start a local bgutil provider on GitHub Actions; failure remains non-blocking."""
+    if str(os.getenv("YOUTUBE_PO_TOKEN_DISABLED") or "").casefold() in {"1", "true", "yes"}:
+        return None
+    if str(os.getenv("GITHUB_ACTIONS") or "").casefold() != "true":
+        return None
+    if _port_is_open(YOUTUBE_PO_PROVIDER_HOST, YOUTUBE_PO_PROVIDER_PORT):
+        return YOUTUBE_PO_PROVIDER_URL
+
+    docker = shutil.which("docker")
+    if not docker:
+        _warn("YouTube PO Token provider: Docker indisponivel; usando yt-dlp padrao.")
+        return None
+
+    subprocess.run(
+        [docker, "rm", "-f", YOUTUBE_PO_PROVIDER_CONTAINER],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    started = subprocess.run(
+        [
+            docker,
+            "run",
+            "--detach",
+            "--rm",
+            "--name",
+            YOUTUBE_PO_PROVIDER_CONTAINER,
+            "--publish",
+            f"{YOUTUBE_PO_PROVIDER_HOST}:{YOUTUBE_PO_PROVIDER_PORT}:{YOUTUBE_PO_PROVIDER_PORT}",
+            YOUTUBE_PO_PROVIDER_IMAGE,
+            "--host",
+            "0.0.0.0",
+        ],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        check=False,
+    )
+    if started.returncode != 0:
+        detail = (started.stderr or started.stdout or "erro desconhecido").strip().splitlines()[-1]
+        _warn(f"YouTube PO Token provider nao iniciou ({detail}); usando yt-dlp padrao.")
+        return None
+
+    for _ in range(30):
+        if _port_is_open(YOUTUBE_PO_PROVIDER_HOST, YOUTUBE_PO_PROVIDER_PORT):
+            return YOUTUBE_PO_PROVIDER_URL
+        time.sleep(0.5)
+
+    subprocess.run(
+        [docker, "rm", "-f", YOUTUBE_PO_PROVIDER_CONTAINER],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    _warn("YouTube PO Token provider nao ficou pronto; usando yt-dlp padrao.")
+    return None
+
+
+def _with_youtube_po_options(params: dict | None, provider_url: str) -> dict:
+    patched = dict(params or {})
+    raw_extractor_args = patched.get("extractor_args")
+    extractor_args = dict(raw_extractor_args) if isinstance(raw_extractor_args, dict) else {}
+
+    raw_youtube = extractor_args.get("youtube")
+    youtube_args = dict(raw_youtube) if isinstance(raw_youtube, dict) else {}
+    raw_clients = youtube_args.get("player_client")
+    if isinstance(raw_clients, (list, tuple)):
+        clients = [str(value) for value in raw_clients if str(value).strip()]
+    elif raw_clients:
+        clients = [str(raw_clients)]
+    else:
+        clients = []
+    if "mweb" not in clients:
+        clients.insert(0, "mweb")
+    youtube_args["player_client"] = clients
+    extractor_args["youtube"] = youtube_args
+
+    raw_bgutil = extractor_args.get("youtubepot-bgutilhttp")
+    bgutil_args = dict(raw_bgutil) if isinstance(raw_bgutil, dict) else {}
+    bgutil_args["base_url"] = [provider_url]
+    extractor_args["youtubepot-bgutilhttp"] = bgutil_args
+    patched["extractor_args"] = extractor_args
+    return patched
+
+
+def _install_youtube_po_patch() -> None:
+    provider_url = _ensure_youtube_po_provider()
+    if not provider_url:
+        return
+
+    if not hasattr(web_engine, "_yt_dlp_api_original"):
+        web_engine._yt_dlp_api_original = web_engine._yt_dlp_api
+    original_api = web_engine._yt_dlp_api_original
+
+    def patched_api():
+        YoutubeDL, DownloadError = original_api()
+
+        class PoTokenYoutubeDL(YoutubeDL):
+            def __init__(self, params=None, auto_init=True):
+                super().__init__(
+                    _with_youtube_po_options(params, provider_url),
+                    auto_init=auto_init,
+                )
+
+        return PoTokenYoutubeDL, DownloadError
+
+    web_engine._yt_dlp_api = patched_api
+    print("YouTube web: client mweb + PO Token provider habilitados (sem cookies/conta).")
+
+
 def _install_patches() -> None:
+    _install_youtube_po_patch()
     if not hasattr(legacy, "_metadata_priority_original"):
         legacy._metadata_priority_original = legacy._metadata_priority
     legacy._candidate_result = _candidate_result
