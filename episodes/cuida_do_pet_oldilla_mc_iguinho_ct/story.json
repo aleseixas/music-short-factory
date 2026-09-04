@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "title": "Cuida do Pet — Oldilla e MC Iguinho CT: como 7:39 virou #1",
+  "slug": "cuida_do_pet_oldilla_mc_iguinho_ct",
+  "target_duration_seconds": 80,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Cuida do Pet, de Oldilla, liderou o Brasil com uma escolha absurda: sete vozes em 7:39.",
+      "delivery": "hook"
+    },
+    {
+      "id": "selo",
+      "text": "E ela inaugurou a Oldilla Records.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "beat",
+      "text": "O beat estava quase pronto quando MC Negão Original chegou.",
+      "delivery": "curious"
+    },
+    {
+      "id": "vivencia",
+      "text": "Segundo Oldilla, Negão escreveu sobre algo que estava vivendo.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "construcao",
+      "text": "Depois, cada convidado acrescentou identidade.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "time",
+      "text": "Vieram Iguinho CT, MC Willian, Aaron Modesto, DU'L e Aladin GDB.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "estrutura",
+      "text": "A duração gigante nasce dessa troca de perspectivas.",
+      "delivery": "curious"
+    },
+    {
+      "id": "sentido",
+      "text": "A letra vira uma novela: afastamento, recaída e orgulho.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "independencia",
+      "text": "Ela tenta parecer independente e seguir a rotina.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "contraste",
+      "text": "Só que ligações e saudade mostram que nada foi resolvido.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "pet",
+      "text": "O pet vira o detalhe cotidiano que amarra a confusão.",
+      "delivery": "curious"
+    },
+    {
+      "id": "producao",
+      "text": "Oldilla assina produção, mixagem e masterização; Aladin produz.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "previas",
+      "text": "Antes do lançamento, prévias já circulavam nas redes.",
+      "delivery": "curious"
+    },
+    {
+      "id": "tiktok",
+      "text": "Uma delas, com Iguinho CT, ganhou força no TikTok.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "lancamento",
+      "text": "A faixa saiu em 29 de maio de 2026.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "crescimento",
+      "text": "E foi subindo semana após semana.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "youtube",
+      "text": "Primeiro veio a liderança no YouTube Music Brasil.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "spotify",
+      "text": "Depois, o topo do Spotify Brasil.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "billboard",
+      "text": "Em agosto, chegou ao topo do Billboard Brasil Hot 100.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "global",
+      "text": "E entrou no ranking global do Spotify.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "paradoxo",
+      "text": "Pensa nisso: numa era de faixas curtas, 7:39 virou hit massivo.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "payoff",
+      "text": "Cuida do Pet venceu parecendo uma roda de histórias do funk.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "cta",
+      "text": "Você prefere sets longos ou músicas curtas? Comenta.",
+      "delivery": "payoff"
+    }
+  ]
+}
