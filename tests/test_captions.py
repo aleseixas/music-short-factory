@@ -2,9 +2,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from engine.captions import ass_time, write_ass_captions
-from engine.config import CaptionStyle
+from engine.captions import _group_words, ass_time, write_ass_captions
+from engine.config import CaptionStyle, load_style_config
 from engine.models import WordTiming
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 class CaptionTests(unittest.TestCase):
@@ -43,6 +46,22 @@ class CaptionTests(unittest.TestCase):
         self.assertIn(r"\c&H3BD4FF&", content)
         self.assertIn("MarginV", content)
         self.assertNotIn("0:00:00.80,0:00:00.30", content)
+
+    def test_channel_caption_defaults_are_large_high_and_short(self):
+        style = load_style_config(PROJECT_ROOT / "config" / "style.json").captions
+        self.assertEqual(style.font_size, 60)
+        self.assertEqual(style.margin_bottom, 380)
+        self.assertEqual(style.max_words, 3)
+        self.assertEqual(style.max_chars, 22)
+        self.assertAlmostEqual(style.max_duration, 1.35)
+
+        words = tuple(
+            WordTiming(text, index * 0.22, (index + 1) * 0.22)
+            for index, text in enumerate(("essa", "música", "esconde", "uma", "história", "absurda"))
+        )
+        groups = _group_words(words, style)
+        self.assertTrue(groups)
+        self.assertLessEqual(max(len(group) for group in groups), 3)
 
 
 if __name__ == "__main__":
