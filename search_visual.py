@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from engine.visual_search import main
+from engine.visual_search_web import main
 
 
 if __name__ == "__main__":
