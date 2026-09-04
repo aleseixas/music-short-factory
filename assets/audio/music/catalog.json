@@ -103,6 +103,12 @@
         "file": "external/manual/to_ouvindo/lostsomewhere.mp3",
         "url": "https://opengameart.org/sites/default/files/lostsomewhere_0.mp3"
       }
+    ],
+    "external_drop_dead_synth_pop": [
+      {
+        "file": "external/openverse/drop-dead-synth-pop-4floor.ogg",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Synth_pop_with_4_on_the_floor.ogg"
+      }
     ]
   }
 }
