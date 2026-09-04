@@ -1,1 +1,1 @@
-node 22 + yt-dlp ejs smoke test
+youtube cookie identity diagnostic
