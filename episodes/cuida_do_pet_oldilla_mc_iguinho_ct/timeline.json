@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"hiphop_groove","volume":0.055},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.055},
+    {"time_seconds":7.2,"type":"whoosh_fast","volume":0.032},
+    {"time_seconds":14.8,"type":"pop","volume":0.03},
+    {"time_seconds":22.0,"type":"camera_shutter","volume":0.032},
+    {"time_seconds":30.2,"type":"dramatic_dun_dun","volume":0.03},
+    {"time_seconds":38.0,"type":"riser_build_up","volume":0.03},
+    {"time_seconds":46.2,"type":"ding","volume":0.028},
+    {"time_seconds":54.0,"type":"whoosh_transition","volume":0.03},
+    {"time_seconds":62.0,"type":"crowd_cheer","volume":0.024},
+    {"time_seconds":70.0,"type":"impact","volume":0.045}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.05,"end_seconds":0.55,"type":"punch_zoom","intensity":0.48}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.06,"duration_seconds":1.15,"text":"7 VOZES\n7:39","accent_text":"7:39","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"selo","offset_seconds":0.05,"duration_seconds":1.0,"text":"NASCEU UM SELO","accent_text":"SELO","animation":"pop_in","position":"center","intensity":0.5},
+    {"segment":"tiktok","offset_seconds":0.05,"duration_seconds":1.1,"text":"VIRAL ANTES\nDO LANÇAMENTO","accent_text":"VIRAL","animation":"slide_up","position":"center","intensity":0.52},
+    {"segment":"billboard","offset_seconds":0.05,"duration_seconds":1.0,"text":"#1 NO HOT 100","accent_text":"#1","animation":"scale_bounce","position":"center","intensity":0.56},
+    {"segment":"paradoxo","offset_seconds":0.05,"duration_seconds":1.05,"text":"7:39 VIROU HIT","accent_text":"7:39","animation":"fade_pop","position":"center","intensity":0.52}
+  ],
+  "overlay_cues": [],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"a01_cover","motion":"push_in","transition_out":"cut","highlight":"7 VOZES • 7:39"},
+    {"id":"shot_selo","segment":"selo","asset":"a02_record_store","motion":"hold","transition_out":"crossfade","highlight":"OLDILLA RECORDS"},
+    {"id":"shot_beat","segment":"beat","asset":"a03_writing","motion":"pan_right","transition_out":"cut","highlight":"O BEAT JÁ ESTAVA QUASE PRONTO"},
+    {"id":"shot_vivencia","segment":"vivencia","asset":"a04_negao_studio","motion":"push_in","transition_out":"cut","highlight":"UMA HISTÓRIA QUE ELE ESTAVA VIVENDO"},
+    {"id":"shot_construcao","segment":"construcao","asset":"a05_bts","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_time","segment":"time","asset":"a06_djset","motion":"hold","transition_out":"cut"},
+    {"id":"shot_estrutura","segment":"estrutura","asset":"a07_baile","motion":"hold","transition_out":"cut"},
+    {"id":"shot_sentido","segment":"sentido","asset":"a08_storm","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_independencia","segment":"independencia","asset":"a09_city","motion":"hold","transition_out":"cut"},
+    {"id":"shot_contraste","segment":"contraste","asset":"a10_lightning","motion":"hold","transition_out":"cut"},
+    {"id":"shot_pet","segment":"pet","asset":"a11_pet","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_producao","segment":"producao","asset":"a12_studio","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_previas","segment":"previas","asset":"a13_tiktok_phone","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_tiktok","segment":"tiktok","asset":"a14_social_motion","motion":"hold","transition_out":"cut","highlight":"PRÉVIAS ANTES DO LANÇAMENTO"},
+    {"id":"shot_lancamento","segment":"lancamento","asset":"a15_lyric_thumb","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_crescimento","segment":"crescimento","asset":"a16_clouds","motion":"hold","transition_out":"cut"},
+    {"id":"shot_youtube","segment":"youtube","asset":"a17_performance","motion":"hold","transition_out":"cut"},
+    {"id":"shot_spotify","segment":"spotify","asset":"a18_spotify_phone","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_billboard","segment":"billboard","asset":"a19_flower","motion":"hold","transition_out":"cut","highlight":"#1 BILLBOARD BRASIL HOT 100"},
+    {"id":"shot_global","segment":"global","asset":"a20_nyc","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_paradoxo","segment":"paradoxo","asset":"a21_vinyl","motion":"hold","transition_out":"cut","highlight":"7:39 EM PLENA ERA DOS VÍDEOS CURTOS"},
+    {"id":"shot_payoff","segment":"payoff","asset":"a22_negao_portrait","motion":"push_in","transition_out":"cut","highlight":"UMA RODA DE HISTÓRIAS DO FUNK"},
+    {"id":"shot_cta","segment":"cta","asset":"a23_official_clip","motion":"push_in","transition_out":"cut"}
+  ]
+}
