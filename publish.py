@@ -7,7 +7,9 @@ import re
 import sys
 from collections.abc import Mapping, Sequence
 from typing import Any
+from uuid import uuid4
 
+from cloudinary import uploader as cloudinary_uploader
 import requests
 
 from publishing.base import ApiError, PublishContext, Publisher, PublishingError
@@ -77,6 +79,103 @@ def build_context(project_root: Path, episode: str, platform: str) -> PublishCon
     )
 
 
+def _prepare_instagram_cover(
+    context: PublishContext,
+    credentials: CredentialStore,
+) -> tuple[PublishContext, str | None]:
+    """Temporarily host the generated JPEG so Meta can use it as Reel cover."""
+
+    existing_cover_url = str(context.metadata.get("cover_url", "")).strip()
+    if existing_cover_url:
+        return context, None
+
+    if credentials.get("INSTAGRAM_VIDEO_HOST").strip().lower() != "cloudinary":
+        return context, None
+
+    required = (
+        "CLOUDINARY_CLOUD_NAME",
+        "CLOUDINARY_API_KEY",
+        "CLOUDINARY_API_SECRET",
+    )
+    if any(not credentials.has(key) for key in required):
+        return context, None
+
+    public_id = f"instagram/{context.episode}/cover-{uuid4().hex}"
+    try:
+        result = cloudinary_uploader.upload(
+            str(context.cover_path),
+            resource_type="image",
+            public_id=public_id,
+            overwrite=False,
+            cloud_name=credentials.get("CLOUDINARY_CLOUD_NAME"),
+            api_key=credentials.get("CLOUDINARY_API_KEY"),
+            api_secret=credentials.get("CLOUDINARY_API_SECRET"),
+            timeout=90.0,
+        )
+        if not isinstance(result, Mapping):
+            raise ValueError("unexpected Cloudinary response")
+        cover_url = str(result.get("secure_url", "")).strip()
+        if not cover_url.startswith("https://"):
+            raise ValueError("Cloudinary secure_url is not HTTPS")
+    except Exception as exc:
+        print(
+            "[instagram] cover warning: upload temporario falhou "
+            f"({exc.__class__.__name__}); usando thumb_offset.",
+            file=sys.stderr,
+        )
+        return context, None
+
+    metadata = dict(context.metadata)
+    metadata["cover_url"] = cover_url
+    print(f"[cloudinary] uploaded cover: {public_id}")
+    return (
+        PublishContext(
+            episode=context.episode,
+            video_path=context.video_path,
+            cover_path=context.cover_path,
+            metadata=metadata,
+        ),
+        public_id,
+    )
+
+
+def _cleanup_instagram_cover(
+    public_id: str,
+    credentials: CredentialStore,
+) -> None:
+    try:
+        result = cloudinary_uploader.destroy(
+            public_id,
+            resource_type="image",
+            type="upload",
+            invalidate=True,
+            cloud_name=credentials.get("CLOUDINARY_CLOUD_NAME"),
+            api_key=credentials.get("CLOUDINARY_API_KEY"),
+            api_secret=credentials.get("CLOUDINARY_API_SECRET"),
+            timeout=90.0,
+        )
+    except Exception as exc:
+        print(
+            "[instagram] cover cleanup warning: falhou "
+            f"({exc.__class__.__name__}).",
+            file=sys.stderr,
+        )
+        return
+
+    outcome = (
+        str(result.get("result", "")).strip().casefold()
+        if isinstance(result, Mapping)
+        else ""
+    )
+    if outcome == "ok":
+        print(f"[cloudinary] deleted cover: {public_id}")
+    elif outcome != "not found":
+        print(
+            "[instagram] cover cleanup warning: Cloudinary nao confirmou a remocao.",
+            file=sys.stderr,
+        )
+
+
 def main(
     argv: Sequence[str] | None = None,
     default_project_root: Path | None = None,
@@ -126,6 +225,7 @@ def main(
     failed = False
     for platform in platforms:
         publisher = create_publisher(platform, credentials)
+        hosted_cover_public_id: str | None = None
         try:
             context = build_context(project_root, args.episode, platform)
             if dry_run:
@@ -135,12 +235,20 @@ def main(
                     print(credential_warning)
             else:
                 publisher.validate(context, require_credentials=True)
+                if platform == "instagram":
+                    context, hosted_cover_public_id = _prepare_instagram_cover(
+                        context,
+                        credentials,
+                    )
                 uploaded = publisher.upload(context)
                 result = publisher.publish(context, uploaded)
             print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2, default=str))
         except (PublishingError, RuntimeError, ApiError) as exc:
             failed = True
             print(f"ERRO: {exc}", file=sys.stderr)
+        finally:
+            if hosted_cover_public_id:
+                _cleanup_instagram_cover(hosted_cover_public_id, credentials)
     return 1 if failed else 0
 
 
