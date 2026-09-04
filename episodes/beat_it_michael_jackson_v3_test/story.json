@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "title": "Beat It — Michael Jackson: o solo que virou parte da história",
+  "slug": "beat_it_michael_jackson_v3_test",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Beat It, do Michael Jackson, nasceu de uma missão absurda: colocar rock pesado dentro de Thriller.","delivery":"hook"},
+    {"id":"quincy","text":"Quincy Jones queria atingir públicos que quase nunca se misturavam.","delivery":"curious"},
+    {"id":"michael","text":"Só que Michael não tentou copiar banda nenhuma.","delivery":"neutral"},
+    {"id":"message","text":"Ele escreveu sobre fugir da briga antes da tragédia.","delivery":"dramatic"},
+    {"id":"twist","text":"E aí a gravação ficou muito mais maluca.","delivery":"reveal"},
+    {"id":"eddie_call","text":"Quincy chamou Eddie Van Halen para o solo.","delivery":"reveal"},
+    {"id":"trote","text":"Eddie achou que o convite era trote.","delivery":"curious"},
+    {"id":"free","text":"Mesmo assim, foi ao estúdio sem cobrar.","delivery":"reveal"},
+    {"id":"edit","text":"Só que ele mexeu na seção do solo.","delivery":"dramatic"},
+    {"id":"tape","text":"Isso afetou a própria estrutura da fita.","delivery":"dramatic"},
+    {"id":"lukather","text":"Lukather contou que partes precisaram ser reconstruídas.","delivery":"curious"},
+    {"id":"porcaro","text":"Jeff Porcaro também entrou nesse quebra-cabeça.","delivery":"neutral"},
+    {"id":"heavy","text":"A guitarra ficou pesada demais para Quincy.","delivery":"reveal"},
+    {"id":"reduce","text":"A ordem: menos metal, sem perder impacto.","delivery":"curious"},
+    {"id":"fusion","text":"Daí veio o encontro entre pop, R&B e rock.","delivery":"payoff"},
+    {"id":"drumcase","text":"Detalhe: Michael aparece nos créditos como drum case beater.","delivery":"curious"},
+    {"id":"meaning","text":"Isso ajuda a explicar por que Beat It soa física.","delivery":"neutral"},
+    {"id":"live","text":"Em 1984, Eddie tocou Beat It com Michael.","delivery":"reveal"},
+    {"id":"crossover","text":"A faixa atravessou rádios, gêneros e públicos.","delivery":"dramatic"},
+    {"id":"number_one","text":"E chegou ao número um nos Estados Unidos.","delivery":"reveal"},
+    {"id":"grammy","text":"Depois, ganhou o Grammy de Gravação do Ano.","delivery":"reveal"},
+    {"id":"payoff","text":"O mais doido? Michael trouxe o rock para o universo dele.","delivery":"payoff"},
+    {"id":"final_thought","text":"Depois disso, o solo deixa de ser detalhe e vira história.","delivery":"payoff"},
+    {"id":"cta","text":"Agora escolhe: em Beat It, riff ou solo?","delivery":"curious"}
+  ]
+}
