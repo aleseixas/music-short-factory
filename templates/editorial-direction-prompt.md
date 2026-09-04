@@ -152,6 +152,26 @@ A escolha do ASSET é uma das decisões mais importantes. Antes de compensar vis
 
 Não transforme poucos vídeos genéricos em dezenas de shots quase iguais apenas mudando o trim.
 
+### RITMO E DENSIDADE DOS TAKES — BOM SENSO EDITORIAL
+
+A duração dos shots deve seguir a força do material e a função narrativa, não uma grade fixa. O objetivo é manter renovação visual real sem transformar o vídeo em uma sequência nervosa de cortes arbitrários.
+
+Use estas faixas apenas como REFERÊNCIA editorial:
+
+- um take comum costuma funcionar bem por aproximadamente **2–4s**;
+- um take excepcionalmente forte, emocional, raro, informativo ou importante pode respirar por aproximadamente **4–6s** quando houver motivo claro;
+- cortes de aproximadamente **1–2s** podem funcionar em hooks, reveals, listas, reações, montagens e acelerações deliberadas;
+- nos primeiros **15–20s**, prefira densidade visual maior e seja especialmente rigoroso com planos longos ou genéricos;
+- para um vídeo de **60–90s**, algo em torno de **18–25 visuais principais distintos** é um sanity check útil, NÃO uma quota nem um requisito mecânico.
+
+Nunca prolongue um shot apenas porque faltou material. Quando um take estiver ficando longo sem ganhar força narrativa, primeiro procure outro visual semanticamente relevante do mesmo tipo antes de tentar “salvá-lo” com efeitos.
+
+**Renovação visual real significa trocar o visual principal.** Zoom, crop, focus, speed, motion, transition, visual FX, kinetic text, highlight, overlay ou SFX aplicados sobre o mesmo asset NÃO contam, por si só, como um novo take nem como renovação suficiente do visual principal.
+
+Antes de aceitar qualquer shot acima de ~4s, pergunte mentalmente: **este material merece realmente permanecer tanto tempo na tela?** Se a resposta for não, troque o asset/trecho. Se a resposta for sim — por performance forte do artista, emoção, informação relevante, raridade do material ou necessidade de compreensão — deixe o plano respirar.
+
+Não corte apenas para atingir números. Prefira **16 takes excelentes a 24 medíocres** quando o material realmente justificar; da mesma forma, se houver material forte suficiente para 20–25+ visuais distintos, não seja conservador e não deixe o vídeo visualmente pobre por hábito.
+
 ### REGRA CRÍTICA — NÃO REPETIR VISUAIS
 
 Cada shot deve usar um visual principal único dentro do episódio.
@@ -239,7 +259,7 @@ Não crie essa matriz como campo novo. Nenhuma coluna precisa estar preenchida e
 
 Pense em curva de intensidade: hook forte, corpo com respiração e variedade, picos em reveals/viradas e payoff memorável. A voz também participa dessa curva; não deixe todo o vídeo com a mesma intenção, mas também não mude delivery sem motivo.
 
-Para 60–90 segundos, não use quotas rígidas de efeitos. A densidade deve emergir da história, dos assets e dos beats. Não transforme retenção em grade automática.
+Para 60–90 segundos, não use quotas rígidas de efeitos. A densidade deve emergir da história, dos assets e dos beats. Não transforme retenção em grade automática. Use a faixa de 18–25 visuais principais apenas como sanity check editorial: poucos visuais podem indicar montagem pobre; muitos podem indicar cortes sem propósito.
 
 Nunca invente `delivery`, profile, type ou asset. Não use overlay sem formato compatível. Não sobreponha cues da mesma camada por acidente, não ultrapasse limites do renderer e mantenha cues dentro da duração real.
 
