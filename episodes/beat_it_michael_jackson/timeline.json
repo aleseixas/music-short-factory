@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"energetic_hype","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.07},
+    {"time_seconds":5.7,"type":"whoosh_fast","volume":0.045},
+    {"time_seconds":11.3,"type":"record_scratch","volume":0.045},
+    {"time_seconds":16.9,"type":"camera_shutter","volume":0.04},
+    {"time_seconds":22.5,"type":"impact","volume":0.055},
+    {"time_seconds":28.1,"type":"tape_stop","volume":0.045},
+    {"time_seconds":33.7,"type":"riser_build_up","volume":0.045},
+    {"time_seconds":39.3,"type":"whoosh_transition","volume":0.045},
+    {"time_seconds":44.9,"type":"dramatic_dun_dun","volume":0.045},
+    {"time_seconds":50.5,"type":"ding","volume":0.04},
+    {"time_seconds":56.1,"type":"crowd_cheer","volume":0.04},
+    {"time_seconds":61.7,"type":"whoosh_fast","volume":0.045},
+    {"time_seconds":67.3,"type":"impact","volume":0.055},
+    {"time_seconds":73.0,"type":"crowd_cheer","volume":0.045}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.65,"type":"punch_zoom","intensity":0.55},
+    {"start_seconds":22.0,"end_seconds":22.7,"type":"punch_zoom","intensity":0.38},
+    {"start_seconds":44.0,"end_seconds":44.8,"type":"slow_zoom_in","intensity":0.3},
+    {"start_seconds":67.0,"end_seconds":67.7,"type":"punch_zoom","intensity":0.46}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.2,"text":"O SOLO QUE\nMUDOU A FITA","accent_text":"MUDOU A FITA","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"free_solo","offset_seconds":0.12,"duration_seconds":1.1,"text":"EDDIE TOCOU\nSEM CACHÊ","accent_text":"SEM CACHÊ","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"tape_change","offset_seconds":0.12,"duration_seconds":1.15,"text":"CORTARAM A\nFITA MASTER","accent_text":"FITA MASTER","animation":"slide_up","position":"center","intensity":0.62},
+    {"segment":"crossover","offset_seconds":0.12,"duration_seconds":1.15,"text":"ROCK + POP\n+ R&B","accent_text":"R&B","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"grammy","offset_seconds":0.12,"duration_seconds":1.1,"text":"Nº 1 +\nRECORD OF THE YEAR","accent_text":"RECORD OF THE YEAR","animation":"fade_pop","position":"center","intensity":0.58},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.15,"text":"UMA MÚSICA\nVÁRIOS PÚBLICOS","accent_text":"VÁRIOS PÚBLICOS","animation":"scale_bounce","position":"center","intensity":0.6}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"mj_image","motion":"push_in","transition_out":"cut","highlight":"BEAT IT • MICHAEL JACKSON"},
+    {"id":"shot_mj_rock","segment":"mj_rock","asset":"video_mj_performance","motion":"hold","transition_out":"cut","highlight":"QUINCY PEDIU ROCK"},
+    {"id":"shot_anti","segment":"anti_violence","asset":"video_mj_performance","motion":"hold","transition_out":"crossfade","highlight":"SAIR DA BRIGA ≠ COVARDIA"},
+    {"id":"shot_eddie","segment":"eddie_call","asset":"eddie_image","motion":"push_in","transition_out":"cut","highlight":"EDDIE VAN HALEN"},
+    {"id":"shot_free","segment":"free_solo","asset":"video_eddie","motion":"hold","transition_out":"cut","highlight":"O SOLO FOI UM FAVOR"},
+    {"id":"shot_tape","segment":"tape_change","asset":"video_studio","motion":"hold","transition_out":"cut","highlight":"ELE MEXEU NA FITA"},
+    {"id":"shot_rebuild","segment":"rebuild","asset":"video_studio","motion":"hold","transition_out":"crossfade","highlight":"LUKATHER + PORCARO"},
+    {"id":"shot_heavy","segment":"too_heavy","asset":"video_studio","motion":"hold","transition_out":"cut","highlight":"GUITARRA PESADA DEMAIS"},
+    {"id":"shot_cross","segment":"crossover","asset":"quincy_image","motion":"push_in","transition_out":"cut","highlight":"ROCK + POP + R&B"},
+    {"id":"shot_drum","segment":"drumcase","asset":"mj_image","motion":"pull_out","transition_out":"crossfade","highlight":"MICHAEL: DRUM CASE BEATER"},
+    {"id":"shot_mix","segment":"genre_mix","asset":"video_mj_performance","motion":"hold","transition_out":"cut","highlight":"UM CROSSOVER REAL"},
+    {"id":"shot_victory","segment":"victory","asset":"video_eddie","motion":"hold","transition_out":"cut","highlight":"EDDIE NO PALCO COM MICHAEL"},
+    {"id":"shot_grammy","segment":"grammy","asset":"video_payoff","motion":"hold","transition_out":"crossfade","highlight":"Nº 1 + RECORD OF THE YEAR"},
+    {"id":"shot_payoff","segment":"payoff","asset":"video_payoff","motion":"hold","transition_out":"cut","highlight":"PÚBLICOS DIFERENTES • MESMA MÚSICA"}
+  ]
+}
