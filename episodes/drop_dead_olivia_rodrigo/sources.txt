@@ -1,0 +1,37 @@
+FACTUAL SOURCES
+- Dazed, Olivia Rodrigo: A breakup can be an opportunity to redirect your life — https://www.dazeddigital.com/music/article/70335/1/olivia-rodrigo-dazed-summer-2026-action-issue-album-interview
+  Used for: first adult relationship; Drop Dead as a synthy love song about the excitement/nerves of a new connection; Olivia's own explanation of that feeling.
+- Pitchfork, Olivia Rodrigo Gets Versailles to Herself in New “Drop Dead” Video — https://pitchfork.com/news/olivia-rodrigo-gets-versailles-to-herself-in-new-drop-dead-video/
+  Used for: Petra Collins direction, Palace of Versailles, Dan Nigro production, Amy Allen co-writing, The Cure/Just Like Heaven reference, pink guitar/headphones.
+- NME, Olivia Rodrigo takes over Versailles for 'Drop Dead' music video — https://www.nme.com/news/music/olivia-rodrigo-takes-over-versailles-for-drop-dead-music-video-3940834
+  Used for: dreamy synth/harmonies; first-chapter framing; Versailles visual context.
+- NME, Olivia Rodrigo didn’t play ‘Drop Dead’ for Robert Smith — https://www.nme.com/news/music/olivia-rodrigo-didnt-play-drop-dead-for-robert-smith-despite-referencing-the-cure-icon-i-played-him-a-bunch-of-other-songs-3941181
+  Used for: she did not play Drop Dead to Robert Smith; earlier Glastonbury connection.
+- Pitchfork, Olivia Rodrigo Performs with Addison Rae at Coachella — https://pitchfork.com/news/olivia-rodrigo-performs-with-addison-rae-at-coachella/
+  Used for: first live performance of Drop Dead at Coachella and Addison Rae appearance.
+- Vogue, Game Time! Olivia Rodrigo... — https://www.vogue.com/article/olivia-rodrigo-fc-barcelona-spotify-you-seem-pretty-sad-for-a-girl-so-in-love
+  Used for: Drop Dead debuted at No. 1 on Billboard Hot 100.
+- People, Grammy Museum performance, 2026-09-01 — https://people.com/olivia-rodrigo-wardrobe-malfunction-grammy-museum-performance-12076640
+  Used as current cultural-moment confirmation that Drop Dead remained in active live promotion in September 2026.
+
+BASELINE VISUALS
+- Official Drop Dead cover artwork source page: https://www.thecrimson.com/image/2026/4/21/olivia-rodrigo-drop-dead-cover/
+  Direct image: https://media.thecrimson.com/photos/2026/04/21/194212_1385854.png
+  Credit/source: Courtesy Olivia Rodrigo / Geffen Records. License not explicitly identified in source.
+- Olivia Rodrigo / Drop Dead feature image source: Billboard Philippines.
+  Direct image: https://assets.billboardphilippines.com/wp-content/uploads/2026/04/olivia-rodrigo-drop-dead-ftr-1600x838.jpg
+  Credit/source: Billboard Philippines / Geffen-Interscope source. License not explicitly identified.
+- Remaining baseline images: Wikimedia Commons Special:Redirect/file URLs recorded in assets.json.
+  Items marked CC0 1.0 were selected from Commons file pages carrying CC0/public-domain-compatible metadata during research.
+
+VISUAL CANDIDATE NOTES
+- visual_candidates.json contains 110 same-type image candidate records across 22 slots (5 per slot).
+- Olivia Rodrigo Lollapalooza screenshots are all derived from the same original YouTube upload (sAl1a4auovE), so they share provider_id intentionally for global reservation/deduplication. Their CC BY 3.0 attribution requirement makes them operationally restricted for this clean-public-copy flow.
+- Versailles, studio, smartphone, guitar/headphone and Coachella candidates were grouped only where they reinforce the narration theme for the slot.
+- No AI-generated image is used.
+
+BACKGROUND MUSIC
+- Mesostic, “Synth pop with 4 on the floor” — Wikimedia Commons.
+  Direct audio: https://upload.wikimedia.org/wikipedia/commons/c/c2/Synth_pop_with_4_on_the_floor.ogg
+  License: CC0 1.0.
+  Function: synth-pop pulse supporting the dreamy-synth production discussion without using protected commercial preview audio.
