@@ -196,3 +196,10 @@ jobs:
           META_GRAPH_API_VERSION: v26.0
           INSTAGRAM_VIDEO_HOST: cloudinary
         run: python publish.py "$EPISODE" --platform instagram --live
+
+      - name: Upload TikTok draft
+        env:
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+        run: python publish.py "$EPISODE" --platform tiktok --live
