@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"ambient_calm","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.06},
+    {"time_seconds":5.3,"type":"whoosh_fast","volume":0.038},
+    {"time_seconds":10.7,"type":"pop","volume":0.034},
+    {"time_seconds":16.0,"type":"camera_shutter","volume":0.036},
+    {"time_seconds":21.4,"type":"dramatic_dun_dun","volume":0.035},
+    {"time_seconds":26.8,"type":"chime_sparkles","volume":0.034},
+    {"time_seconds":32.2,"type":"riser_build_up","volume":0.036},
+    {"time_seconds":37.6,"type":"ding","volume":0.032},
+    {"time_seconds":43.0,"type":"whoosh_transition","volume":0.036},
+    {"time_seconds":48.4,"type":"heartbeat_slow","volume":0.024},
+    {"time_seconds":53.8,"type":"camera_flash","volume":0.03},
+    {"time_seconds":59.2,"type":"crowd_cheer","volume":0.026},
+    {"time_seconds":65.0,"type":"riser_popular","volume":0.035},
+    {"time_seconds":72.2,"type":"impact","volume":0.05}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.06,"end_seconds":0.58,"type":"punch_zoom","intensity":0.5}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.08,"duration_seconds":1.25,"text":"TÉRMINO OU\nFAMA?","accent_text":"FAMA","animation":"scale_bounce","position":"center","intensity":0.6},
+    {"segment":"petal","offset_seconds":0.1,"duration_seconds":1.15,"text":"ROMPER VÍNCULOS","accent_text":"VÍNCULOS","animation":"pop_in","position":"center","intensity":0.55},
+    {"segment":"flower","offset_seconds":0.1,"duration_seconds":1.2,"text":"VIDA ENTRE\nRACHADURAS","accent_text":"RACHADURAS","animation":"slide_up","position":"center","intensity":0.56},
+    {"segment":"chart","offset_seconds":0.1,"duration_seconds":1.1,"text":"#1 NA HOT 100","accent_text":"#1","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.25,"text":"QUEM DEFINE\nARIANA?","accent_text":"ARIANA","animation":"fade_pop","position":"center","intensity":0.6}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"HATE THAT I MADE YOU LOVE ME • ARIANA GRANDE"},
+    {"id":"shot_petal","segment":"petal","asset":"flower_crack","motion":"pull_out","transition_out":"crossfade","highlight":"PETAL • VÍNCULOS NEGATIVOS"},
+    {"id":"shot_template","segment":"template","asset":"writing_video","source_start_seconds":0.0,"source_end_seconds":12.0,"motion":"hold","transition_out":"cut","highlight":"HISTÓRIAS ABERTAS"},
+    {"id":"shot_reading","segment":"reading","asset":"crowd_phones","motion":"pan_right","transition_out":"cut","highlight":"EX • PÚBLICO • MÍDIA • EXPECTATIVAS"},
+    {"id":"shot_title","segment":"title","asset":"broken_chain","motion":"push_in","transition_out":"cut","highlight":"DESCULPA OU DESAFIO?"},
+    {"id":"shot_voice","segment":"voice","asset":"microphone_studio","motion":"pull_out","transition_out":"crossfade","highlight":"MENOS EXIBIÇÃO • MAIS TENSÃO"},
+    {"id":"shot_flower","segment":"flower","asset":"flower_bloom_video","source_start_seconds":1.0,"source_end_seconds":12.5,"motion":"hold","transition_out":"crossfade","highlight":"CRESCER ATRAVÉS DO DIFÍCIL"},
+    {"id":"shot_production","segment":"production","asset":"rehearsal_video","motion":"hold","transition_out":"cut","highlight":"ARIANA • ILYA • MAX MARTIN"},
+    {"id":"shot_limits","segment":"limits","asset":"eclipse_symbol","motion":"push_in","transition_out":"cut","highlight":"LIMITES E PROJEÇÃO"},
+    {"id":"shot_video","segment":"video","asset":"rain_city_video","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"cut","highlight":"BRESLAUER • KAMINSKI"},
+    {"id":"shot_favorite","segment":"favorite","asset":"piano_hands","motion":"pan_left","transition_out":"crossfade","highlight":"UMA DAS FAVORITAS QUE ELA JÁ ESCREVEU"},
+    {"id":"shot_chart","segment":"chart","asset":"concert_symbol","motion":"push_in","transition_out":"cut","highlight":"TOPO DA HOT 100"},
+    {"id":"shot_contradiction","segment":"contradiction","asset":"nyc_video","motion":"hold","transition_out":"cut","highlight":"ESCAPAR DA PROJEÇÃO • SER MAIS OBSERVADA"},
+    {"id":"shot_strength","segment":"strength","asset":"sky_video","source_start_seconds":0.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"VULNERABILIDADE COM CONTROLE"},
+    {"id":"shot_payoff","segment":"payoff","asset":"vinyl_store","motion":"push_in","transition_out":"cut","highlight":"QUEM DEFINE ARIANA GRANDE?"}
+  ]
+}
