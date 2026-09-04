@@ -151,6 +151,57 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Ensure cover source is available
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - "$EPISODE" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          episode = sys.argv[1]
+          episode_dir = Path("episodes") / episode
+          post_path = episode_dir / "post.json"
+          post = json.loads(post_path.read_text(encoding="utf-8"))
+          source = post.get("cover", {}).get("source", {})
+
+          if source.get("type") == "asset":
+              asset_id = str(source.get("asset_id", "")).strip()
+              assets_path = episode_dir / "assets.json"
+              asset_exists = False
+              if assets_path.is_file():
+                  catalog = json.loads(assets_path.read_text(encoding="utf-8"))
+                  for item in catalog.get("assets", []):
+                      if isinstance(item, dict) and item.get("id") == asset_id:
+                          file_name = str(item.get("file", "")).strip()
+                          if file_name and (episode_dir / "assets" / file_name).is_file():
+                              asset_exists = True
+                          break
+
+              if not asset_exists:
+                  instagram_ms = post.get("instagram", {}).get("thumb_offset_ms")
+                  tiktok_ms = post.get("tiktok", {}).get("video_cover_timestamp_ms")
+                  raw_ms = instagram_ms if isinstance(instagram_ms, int) else tiktok_ms
+                  timestamp = max(0.0, float(raw_ms) / 1000.0) if isinstance(raw_ms, int) else 0.7
+                  post.setdefault("cover", {})["source"] = {
+                      "type": "video_frame",
+                      "timestamp_seconds": timestamp,
+                  }
+                  post_path.write_text(
+                      json.dumps(post, ensure_ascii=False, indent=2) + "\n",
+                      encoding="utf-8",
+                  )
+                  print(
+                      f"Cover asset {asset_id!r} is unavailable in this publish-only run; "
+                      f"using rendered video frame at {timestamp:.3f}s instead."
+                  )
+              else:
+                  print(f"Cover asset {asset_id!r} is available; keeping original cover source.")
+          else:
+              print("Cover already uses video_frame; no fallback needed.")
+          PY
+
       - name: Prepare publishing metadata and cover
         run: python prepare_post.py "$EPISODE"
 
