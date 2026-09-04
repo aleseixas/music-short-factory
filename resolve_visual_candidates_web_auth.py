@@ -11,7 +11,7 @@ import resolve_visual_candidates_web as resolver
 
 
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
-COOKIE_FALLBACK_CLIENTS = ("default", "web_embedded")
+COOKIE_FALLBACK_CLIENTS = ("web_embedded",)
 AUTH_ERROR_MARKERS = (
     "sign in to confirm you're not a bot",
     "sign in to confirm you’re not a bot",
@@ -123,7 +123,7 @@ def _install_cookie_fallback() -> None:
                     print(
                         "YouTube web: tentativa primaria bloqueada; "
                         "repetindo candidato com cookies de fallback "
-                        "(clients default,web_embedded)."
+                        "(client web_embedded)."
                     )
                     fallback_params = _with_cookie_fallback_options(
                         self._cookie_fallback_params,
