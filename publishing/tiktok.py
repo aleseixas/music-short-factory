@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import time
 from typing import Any, Mapping
 
 from .base import ApiError, PublishContext, PublishResult, Publisher, PublishingError
@@ -18,6 +19,12 @@ class TikTokPublisher(Publisher):
     MAX_CHUNK_BYTES = 64_000_000
     CHUNK_BYTES = 10_000_000
     MAX_VIDEO_BYTES = 4_000_000_000
+
+    STATUS_POLL_INTERVAL_SECONDS = 5.0
+    STATUS_POLL_MAX_ATTEMPTS = 25
+    TERMINAL_STATUSES = frozenset({"SEND_TO_USER_INBOX", "PUBLISH_COMPLETE", "FAILED"})
+    DRAFT_SUCCESS_STATUSES = frozenset({"SEND_TO_USER_INBOX", "PUBLISH_COMPLETE"})
+    DIRECT_SUCCESS_STATUSES = frozenset({"PUBLISH_COMPLETE"})
 
     def __init__(self, *args: Any, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
@@ -157,37 +164,47 @@ class TikTokPublisher(Publisher):
             raise PublishingError("TikTokPublisher: upload_result nao contem publish_id.")
         post_mode = str(upload_result.get("post_mode", self._post_mode(context))).strip()
 
-        # Both Content Posting flows start processing after the byte transfer.
-        # In draft mode TikTok sends the creator an inbox notification so the
-        # post can be edited and published manually in the TikTok app.
-        try:
-            status_payload = self.get_status(publish_id)
-        except ApiError as exc:
-            return PublishResult(
-                platform=self.platform,
-                status="status_unknown",
-                external_id=publish_id,
-                details={
-                    "publish_id": publish_id,
-                    "warning": str(exc),
-                    "post_mode": post_mode,
-                    "publication_started": post_mode == "direct",
-                    "requires_user_action": post_mode == "draft",
-                },
+        # A successful byte transfer is not a successful TikTok delivery yet.
+        # Match the web app behavior: keep checking TikTok until the request reaches
+        # a terminal state. Drafts are only considered delivered after
+        # SEND_TO_USER_INBOX (or PUBLISH_COMPLETE if the user finished unusually
+        # quickly); Direct Post is only successful after PUBLISH_COMPLETE.
+        status_payload = self._wait_for_terminal_status(publish_id)
+        raw_status = str(status_payload.get("status", "")).strip().upper()
+
+        if raw_status == "FAILED":
+            fail_reason = str(status_payload.get("fail_reason", "")).strip()
+            detail = f"; motivo={fail_reason[:300]}" if fail_reason else ""
+            raise PublishingError(
+                "TikTokPublisher: TikTok marcou o processamento como FAILED "
+                f"(publish_id={publish_id}{detail})."
             )
-        status = str(status_payload.get("status", "processing")).lower()
+
+        success_statuses = (
+            self.DRAFT_SUCCESS_STATUSES
+            if post_mode == "draft"
+            else self.DIRECT_SUCCESS_STATUSES
+        )
+        if raw_status not in success_statuses:
+            raise PublishingError(
+                "TikTokPublisher: estado terminal inesperado "
+                f"{raw_status!r} para post_mode={post_mode!r} "
+                f"(publish_id={publish_id})."
+            )
+
         public_ids = status_payload.get("publicaly_available_post_id")
         external_id = publish_id
         if isinstance(public_ids, list) and public_ids:
             external_id = str(public_ids[0])
         return PublishResult(
             platform=self.platform,
-            status=status,
+            status=raw_status.lower(),
             external_id=external_id,
             details={
                 "publish_id": publish_id,
                 "post_mode": post_mode,
                 "requires_user_action": post_mode == "draft",
+                "confirmed_terminal": True,
                 "platform_status": status_payload,
             },
         )
@@ -207,7 +224,35 @@ class TikTokPublisher(Publisher):
         )
         payload = self._tiktok_json(response)
         data = payload.get("data")
-        return dict(data) if isinstance(data, Mapping) else {}
+        if not isinstance(data, Mapping):
+            raise ApiError("TikTokPublisher: status/fetch nao retornou objeto data.")
+        result = dict(data)
+        status = str(result.get("status", "")).strip()
+        if not status:
+            raise ApiError("TikTokPublisher: status/fetch nao retornou status.")
+        return result
+
+    def _wait_for_terminal_status(self, publish_id: str) -> Mapping[str, Any]:
+        last_status = "UNKNOWN"
+        for attempt in range(self.STATUS_POLL_MAX_ATTEMPTS):
+            status_payload = self.get_status(publish_id)
+            last_status = str(status_payload.get("status", "")).strip().upper()
+            if last_status in self.TERMINAL_STATUSES:
+                return status_payload
+            if attempt + 1 < self.STATUS_POLL_MAX_ATTEMPTS:
+                time.sleep(self.STATUS_POLL_INTERVAL_SECONDS)
+
+        waited_seconds = (
+            max(0, self.STATUS_POLL_MAX_ATTEMPTS - 1)
+            * self.STATUS_POLL_INTERVAL_SECONDS
+        )
+        raise PublishingError(
+            "TikTokPublisher: TikTok nao confirmou um estado terminal apos "
+            f"aproximadamente {waited_seconds:.0f}s "
+            f"(publish_id={publish_id}; ultimo_status={last_status}). "
+            "O upload nao deve ser considerado entregue/publicado. Consulte este "
+            "publish_id antes de reenviar para evitar duplicata."
+        )
 
     def _creator_info(self, token: str) -> Mapping[str, Any]:
         response = self._request(
