@@ -1,0 +1,34 @@
+BEAT IT V2 — TESTE EDITORIAL SEM PUBLICAÇÃO
+
+FONTES DA HISTÓRIA
+https://www.thriller40.com/music/beat-it/ — créditos, contexto da faixa, Billboard #1, Grammy Record of the Year, pedido de Quincy por rock, Eddie Van Halen e drum case beater.
+https://www.stevelukather.com/music/discography/1982/thriller.aspx — relato de Steve Lukather sobre a edição da fita, reconstrução e guitarra pesada demais.
+https://www.musicradar.com/news/eddie-van-halen-beat-it-solo — contexto técnico do solo e da reconstrução.
+https://www.guitarworld.com/features/the-story-of-michael-jackson-beat-it-eddie-van-halen-steve-lukather — relato sobre mudanças feitas na seção do solo.
+https://au.rollingstone.com/music/music-news/thriller-how-michael-jackson-and-quincy-jones-made-the-bestselling-album-of-all-time-2180/ — contexto do crossover e participação de Eddie sem pagamento.
+
+BACKGROUND EXTERNO
+https://commons.wikimedia.org/wiki/File:Big_Rock_(ISRC_USUAN1100305).mp3 — Big Rock, Kevin MacLeod; rock instrumental; CC BY 3.0.
+Arquivo direto: https://upload.wikimedia.org/wikipedia/commons/c/c3/Big_Rock_%28ISRC_USUAN1100305%29.mp3
+
+VISUAIS PRINCIPAIS — TODOS OS SHOTS USAM FONTE PRINCIPAL DIFERENTE
+https://commons.wikimedia.org/wiki/File:Michael_Jackson1_1988.jpg
+https://commons.wikimedia.org/wiki/File:Quincy_Jones_studio.jpg
+https://commons.wikimedia.org/wiki/File:Los_Angeles-based_band_Van_Halen,_guitarist_Eddie_Van_Halen_airborne_during_performance_in_Los_Angeles,_Calif.,_1984_(22195741815).jpg
+https://commons.wikimedia.org/wiki/File:Michaeljacksonphoto_drewcohen.JPG
+https://commons.wikimedia.org/wiki/File:Michael_Jackson_with_Grammy_Awards_in_1984.jpg
+https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm
+https://upload.wikimedia.org/wikipedia/commons/1/17/Stevie_Ray_Vaughan_soundcheck_in_the_studio_in_1989.webm
+https://upload.wikimedia.org/wikipedia/commons/2/22/AIWA_Micro_Cassette_Recorder.webm
+https://upload.wikimedia.org/wikipedia/commons/4/4e/Randy_Moore_tracking_guitars_with_MBOX_Studio_Sam_Pura.webm
+https://upload.wikimedia.org/wikipedia/commons/a/a9/Behind_The_Scenes-_In_Performance_at_The_White_House-_Country_Music.webm
+https://upload.wikimedia.org/wikipedia/commons/0/04/Live_band_performs_on_stage..webm
+https://upload.wikimedia.org/wikipedia/commons/c/c4/Drumming.webm
+https://upload.wikimedia.org/wikipedia/commons/0/04/Concert.webm
+https://upload.wikimedia.org/wikipedia/commons/5/58/FAST_GUITAR_SOLO.webm
+
+BRANDING
+assets/branding/end_card_template.jpg — template canônico Além do Hit; reutilizado sem alteração apenas no último shot.
+
+NOTA DE TESTE
+Este episódio existe somente no branch de teste para comparar o novo prompt, nova hierarquia de texto, captions e end card. Nenhuma publish queue deve ser criada.
