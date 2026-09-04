@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "Olivia Rodrigo — Drop Dead: a música que parece término, mas nasceu de um primeiro encontro",
+  "slug": "drop_dead_olivia_rodrigo",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Drop Dead, da Olivia Rodrigo, parece término — mas nasceu da euforia de um primeiro encontro.","delivery":"hook"},
+    {"id":"wrong_story","text":"Cara, o título faz você imaginar a história errada.","delivery":"reveal"},
+    {"id":"connection","text":"Olivia queria capturar a eletricidade de uma conexão começando.","delivery":"curious"},
+    {"id":"adult","text":"O álbum acompanha seu primeiro relacionamento realmente adulto.","delivery":"neutral"},
+    {"id":"prove","text":"E ela queria provar que não precisava estar miserável.","delivery":"reveal"},
+    {"id":"fear","text":"Só que até a felicidade dela vem com medo.","delivery":"emotional"},
+    {"id":"sound","text":"Por isso a faixa aposta em synths sonhadores.","delivery":"neutral"},
+    {"id":"team","text":"Dan Nigro produziu; Amy Allen também compôs.","delivery":"neutral"},
+    {"id":"cure","text":"A letra ainda coloca The Cure nessa paixão.","delivery":"curious"},
+    {"id":"smith","text":"Olivia já tinha cantado Just Like Heaven com Robert Smith.","delivery":"reveal"},
+    {"id":"not_shown","text":"Detalhe: depois, admitiu que nem mostrou Drop Dead para ele.","delivery":"dramatic"},
+    {"id":"versailles","text":"O clipe leva essa paixão direto ao Palácio de Versalhes.","delivery":"reveal"},
+    {"id":"collins","text":"Petra Collins filma Olivia correndo pelos salões dourados.","delivery":"neutral"},
+    {"id":"props","text":"Fones rosa, guitarra rosa e rococó entram na história.","delivery":"curious"},
+    {"id":"image_meaning","text":"Versalhes transforma o exagero romântico em imagem.","delivery":"reveal"},
+    {"id":"chapter","text":"A própria Olivia chamou a faixa de primeiro capítulo.","delivery":"neutral"},
+    {"id":"coachella","text":"No dia seguinte, ela estreou a música no Coachella.","delivery":"reveal"},
+    {"id":"addison","text":"E dividiu o palco com Addison Rae.","delivery":"neutral"},
+    {"id":"debut","text":"Depois, Drop Dead estreou em primeiro na Hot 100.","delivery":"dramatic"},
+    {"id":"current","text":"Meses depois, segue entre os quinze maiores hits americanos.","delivery":"neutral"},
+    {"id":"payoff","text":"Então Drop Dead não é ameaça: é paixão que assusta.","delivery":"payoff"},
+    {"id":"cta","text":"Comenta: você também jurou que era música de término?","delivery":"payoff"}
+  ]
+}
