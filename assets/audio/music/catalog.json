@@ -39,70 +39,40 @@
       "uplifting_documentary/driving-ambition-01.mp3"
     ],
     "external_apt_monkeys_spinning_monkeys": [
-      {
-        "file": "external/openverse/monkeys-spinning-monkeys-kevin-macleod.mp3",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Monkeys_Spinning_Monkeys_%28ISRC_USUAN1400011%29.mp3"
-      }
+      {"file":"external/openverse/monkeys-spinning-monkeys-kevin-macleod.mp3","url":"https://upload.wikimedia.org/wikipedia/commons/e/e9/Monkeys_Spinning_Monkeys_%28ISRC_USUAN1400011%29.mp3"}
     ],
     "external_i_knew_it_taylor_warm_sunset": [
-      {
-        "file": "external/openverse/warm-sunset-musiclfiles.ogg",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Warm_Sunset_by_MusicLFiles.ogg"
-      }
+      {"file":"external/openverse/warm-sunset-musiclfiles.ogg","url":"https://upload.wikimedia.org/wikipedia/commons/4/45/Warm_Sunset_by_MusicLFiles.ogg"}
     ],
     "external_boston_stella_the_farmer": [
-      {
-        "file": "external/openverse/infraction-the-farmer.opus",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus"
-      }
+      {"file":"external/openverse/infraction-the-farmer.opus","url":"https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus"}
     ],
     "external_cadeira_cativa_romance_anonimo": [
-      {
-        "file": "external/openverse/romance-anonimo-jeux-interdits.ogg",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Romance_An%C3%B3nimo_%28Jeux_interdits%29.ogg"
-      }
+      {"file":"external/openverse/romance-anonimo-jeux-interdits.ogg","url":"https://upload.wikimedia.org/wikipedia/commons/3/33/Romance_An%C3%B3nimo_%28Jeux_interdits%29.ogg"}
     ],
     "external_bby_wow_3am_west_end": [
-      {
-        "file": "external/openverse/statusq-3-am-west-end.opus",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Statusq_-_3_am_West_End.opus"
-      }
+      {"file":"external/openverse/statusq-3-am-west-end.opus","url":"https://upload.wikimedia.org/wikipedia/commons/b/b0/Statusq_-_3_am_West_End.opus"}
     ],
     "external_oke_funkhouser": [
-      {
-        "file": "external/openverse/sonatema-the-funkhouser.wav",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Sonatema_-_The_Funkhouser_%28Versi%C3%B3n_original%29.wav"
-      }
+      {"file":"external/openverse/sonatema-the-funkhouser.wav","url":"https://upload.wikimedia.org/wikipedia/commons/9/94/Sonatema_-_The_Funkhouser_%28Versi%C3%B3n_original%29.wav"}
     ],
     "external_reza_milhao_gangsta_synth": [
-      {
-        "file": "external/openverse/friendly-evil-gangsta-synth-hip-hop.ogg",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Friendly_Evil_Gangsta_Synth_Hip_Hop.ogg"
-      }
+      {"file":"external/openverse/friendly-evil-gangsta-synth-hip-hop.ogg","url":"https://upload.wikimedia.org/wikipedia/commons/1/10/Friendly_Evil_Gangsta_Synth_Hip_Hop.ogg"}
     ],
     "external_p_do_pecado_dance": [
-      {
-        "file": "external/openverse/infraction-dance-upbeat-pop.ogg",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Infraction_-_Dance_%28Upbeat_Creative_Future_Pop%29.ogg"
-      }
+      {"file":"external/openverse/infraction-dance-upbeat-pop.ogg","url":"https://upload.wikimedia.org/wikipedia/commons/a/ad/Infraction_-_Dance_%28Upbeat_Creative_Future_Pop%29.ogg"}
     ],
     "external_jolene_the_farmer": [
-      {
-        "file": "external/openverse/infraction-the-farmer-jolene.opus",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus"
-      }
+      {"file":"external/openverse/infraction-the-farmer-jolene.opus","url":"https://upload.wikimedia.org/wikipedia/commons/b/b5/Infraction_-_The_Farmer_%28Acoustic_Folk_Instrumental%29.opus"}
     ],
     "external_iris_sincere_love": [
-      {
-        "file": "external/openverse/monplaisir-sincere-love.ogg",
-        "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Monplaisir_-_02_-_Sincere_Love.ogg"
-      }
+      {"file":"external/openverse/monplaisir-sincere-love.ogg","url":"https://upload.wikimedia.org/wikipedia/commons/2/29/Monplaisir_-_02_-_Sincere_Love.ogg"}
     ],
     "external_to_ouvindo_lost_somewhere": [
-      {
-        "file": "external/manual/to_ouvindo/lostsomewhere.mp3",
-        "url": "https://opengameart.org/sites/default/files/lostsomewhere_0.mp3"
-      }
+      {"file":"external/manual/to_ouvindo/lostsomewhere.mp3","url":"https://opengameart.org/sites/default/files/lostsomewhere_0.mp3"}
+    ],
+    "external_beat_it_big_rock": [
+      {"file":"external/openverse/big-rock-kevin-macleod.mp3","url":"https://upload.wikimedia.org/wikipedia/commons/c/c3/Big_Rock_%28ISRC_USUAN1100305%29.mp3"}
     ]
   }
 }
