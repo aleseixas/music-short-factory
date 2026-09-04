@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "title": "Risk It All — Bruno Mars: o hit que ficou maior quando desacelerou",
+  "slug": "risk_it_all_bruno_mars",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"Risk It All, do Bruno Mars, quase nasceu acelerada — e virou hit quando ele pisou no freio.","delivery":"hook"},
+    {"id":"versions","text":"Bruno e D’Mile testaram versões funky e rápidas.","delivery":"curious"},
+    {"id":"meaning","text":"Nada combinava com uma letra de devoção total.","delivery":"emotional"},
+    {"id":"turn","text":"A virada veio quando Bruno percebeu: precisava soar romântico.","delivery":"reveal"},
+    {"id":"guitar","text":"D’Mile pegou o violão e Bruno improvisou.","delivery":"curious"},
+    {"id":"bolero","text":"E aí apareceu o caminho do bolero.","delivery":"reveal"},
+    {"id":"growth","text":"A produção cresceu sem perder delicadeza.","delivery":"neutral"},
+    {"id":"instruments","text":"Entraram congas, trompetes, sax, violinos, violas e cello.","delivery":"neutral"},
+    {"id":"contrast","text":"Olha o contraste: um popstar global abrindo o álbum com serenata.","delivery":"curious"},
+    {"id":"clip","text":"E o clipe leva essa escolha mais longe.","delivery":"dramatic"},
+    {"id":"mariachi","text":"Bruno aparece com o Mariachi Los Criollos de Guadalajara.","delivery":"reveal"},
+    {"id":"mime","text":"O mais doido: eles só precisariam simular.","delivery":"dramatic"},
+    {"id":"learned","text":"Mas a banda aprendeu a música de verdade.","delivery":"reveal"},
+    {"id":"jam","text":"Nos intervalos, puxaram boleros — e Bruno entrou na roda.","delivery":"curious"},
+    {"id":"wedding","text":"Depois, a promessa vira uma cerimônia de casamento.","delivery":"emotional"},
+    {"id":"director","text":"O vídeo foi dirigido por Bruno e Daniel Ramos.","delivery":"neutral"},
+    {"id":"album","text":"Risk It All abre The Romantic, primeiro solo em uma década.","delivery":"reveal"},
+    {"id":"hot100","text":"A faixa estreou em quarto lugar na Hot 100.","delivery":"reveal"},
+    {"id":"global","text":"E chegou ao número um da Billboard Global 200.","delivery":"reveal"},
+    {"id":"spanish","text":"Depois veio Lo Arriesgo Todo, versão em espanhol.","delivery":"curious"},
+    {"id":"firstspanish","text":"Foi a primeira gravação de estúdio de Bruno em espanhol.","delivery":"reveal"},
+    {"id":"payoff","text":"No fim, desacelerar fez a promessa soar maior.","delivery":"payoff"},
+    {"id":"cta","text":"Comenta: inglês ou espanhol?","delivery":"payoff"}
+  ]
+}
