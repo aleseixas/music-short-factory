@@ -1,28 +1,36 @@
-# Regra de end card + CTA contextual — Além do Hit
+# Regra de CTA contextual final — Além do Hit
 
 Esta regra complementa `templates/editorial-direction-prompt.md` e deve ser aplicada na criação de novos episódios sempre que a `main` atual continuar compatível com o contrato descrito abaixo.
 
 ## Objetivo
 
-Todo episódio deve terminar com uma assinatura visual curta do **Além do Hit**, usando o template de marca aprovado em `assets/branding/end_card_template.jpg`, acompanhada por **um único CTA contextual** ligado diretamente ao conteúdo daquele episódio.
+Todo episódio deve terminar com **um único CTA contextual**, curto e diretamente ligado à história daquele episódio.
 
-O CTA não é um bloco publicitário genérico. Ele deve parecer a última batida editorial da história.
+O CTA deve parecer a última batida editorial da narrativa — não um bloco publicitário genérico.
 
-## Posição da end card — regra absoluta
+## Regra absoluta — sem end card visual
 
-A end card canônica é **somente para o final do vídeo**.
+A arte `assets/branding/end_card_template.jpg` fica **DESATIVADA para novos episódios**.
 
-- NÃO usar como primeiro shot;
-- NÃO usar no hook;
-- NÃO usar no meio da narrativa;
-- NÃO usar como fundo recorrente;
-- usar **somente no último shot/segmento** como assinatura final da marca.
+- NÃO copiar esse arquivo para `episodes/<slug>/assets/`;
+- NÃO adicionar esse asset ao `assets.json`;
+- NÃO usar essa imagem no primeiro shot;
+- NÃO usar essa imagem no meio do vídeo;
+- NÃO usar essa imagem no último shot;
+- NÃO gerar uma nova end card por episódio;
+- NÃO substituir por outra arte genérica de branding.
 
-O primeiro visual do episódio deve seguir `templates/short-form-style-rule.md`: capa oficial da música/álbum/single OU artista principal claramente reconhecível nos primeiros 0,0–1,5s.
+O arquivo pode continuar existindo na repo apenas por histórico/compatibilidade. Sua presença na `main` NÃO significa autorização editorial para usá-lo.
 
-Fluxo editorial esperado:
+## Primeiro visual
 
-`capa/artista reconhecível → história visual contextual → payoff → CTA contextual curto → end card final`
+O primeiro visual continua seguindo `templates/short-form-style-rule.md`: nos primeiros 0,0–1,5s, mostrar capa oficial da música/álbum/single OU artista principal claramente reconhecível.
+
+## Fluxo editorial esperado
+
+`capa/artista reconhecível → história visual contextual → payoff → CTA contextual curto sobre o último visual da história`
+
+O último visual deve continuar pertencendo ao conteúdo do episódio. Prefira um asset forte e semanticamente ligado ao payoff, à música ou ao artista.
 
 ## Regra principal do CTA
 
@@ -45,88 +53,54 @@ O texto deve ser específico para o episódio. Exemplos de direção — NÃO co
 - `Você interpreta essa letra do mesmo jeito?`
 - `Qual hit dessa era ainda está na sua playlist?`
 
-Evite frases vazias como `Comenta aí`, `Compartilha`, `Segue para mais` sem contexto.
+Evite frases vazias como `Comenta aí`, `Compartilha` ou `Segue para mais` sem contexto.
 
 ## Integração narrativa
 
 O payoff da história continua sendo prioridade. Não sacrifique a conclusão factual/emocional só para encaixar CTA.
 
-Quando o contrato atual continuar `1 segment = 1 shot`, faça o **último segmento** ser curto e servir de CTA contextual, imediatamente depois do payoff. Esse último segmento deve usar a end card como visual principal.
+Quando o contrato atual continuar `1 segment = 1 shot`, faça o último segmento ser curto e servir de CTA contextual imediatamente depois do payoff, mantendo como visual principal um asset normal do episódio.
 
-A narração do CTA deve ser curta e natural. Prefira aproximadamente 4–10 palavras quando isso funcionar; uma pergunta curta pode ocupar mais palavras se continuar ágil. Não estenda artificialmente o vídeo para explicar o CTA.
+A narração do CTA deve ser curta e natural. Prefira aproximadamente 4–10 palavras quando isso funcionar; uma pergunta curta pode ocupar mais palavras se continuar ágil.
 
-Se o CTA falado soar forçado, use uma frase mínima na voz e deixe a formulação principal no kinetic text da end card, respeitando o schema atual.
+Não estenda artificialmente o vídeo para explicar o CTA.
 
-## Template visual fixo
+## CTA visual com text FX
 
-Fonte canônica da marca:
+Quando a `main` suportar `text_fx_cues` relativos por segmento, o CTA pode aparecer sobre o último visual do episódio.
 
-`assets/branding/end_card_template.jpg`
+Prefira:
 
-O template é um **asset gráfico de branding pré-aprovado**, não um visual factual do episódio. Portanto ele é uma exceção explícita à regra que proíbe imagens geradas por IA como conteúdo visual. Essa exceção vale SOMENTE para este arquivo de identidade visual fixo; fotos, vídeos, eventos, artistas e demais visuais de conteúdo continuam proibidos de ser gerados por IA.
+- `segment`: último segmento;
+- `offset_seconds`: próximo de `0` ou depois do payoff, conforme a fala;
+- `duration_seconds`: suficiente para leitura sem ultrapassar o segmento;
+- `position`: `center` ou outra zona que NÃO conflite com legenda falada;
+- animação curta e discreta compatível com o tom;
+- texto aproximadamente 4–10 palavras.
 
-Não gere uma nova end card por episódio. Não altere logo, paleta, ícones ou layout do template.
-
-## Como usar no episódio
-
-O renderer atual só resolve assets principais dentro de `episodes/<slug>/assets/`. Portanto, antes de finalizar o episódio:
-
-1. confirme que `assets/branding/end_card_template.jpg` existe na `main`;
-2. copie/reutilize o blob EXATO desse arquivo em `episodes/<slug>/assets/end_card_template.jpg` sem recomprimir nem gerar variante;
-3. adicione um asset local dedicado em `episodes/<slug>/assets.json`, por exemplo `end_card_brand`, apontando para `end_card_template.jpg` e sem URL remota;
-4. use `end_card_brand` **somente no último shot/segmento**;
-5. nunca use `end_card_brand` no primeiro shot ou em qualquer shot intermediário;
-6. `motion` deve ser discreto, preferencialmente `hold`, e `transition_out` do último shot deve continuar `cut` se essa for a exigência atual da `main`.
-
-A cópia do mesmo blob de branding ENTRE episódios é permitida e esperada. A regra de zero reuso visual continua valendo para conteúdo principal dentro de um episódio; a end card de branding não deve aparecer mais de uma vez no mesmo episódio.
-
-Se a ferramenta GitHub permitir operações de árvore/blob, prefira reutilizar o SHA do blob já existente no arquivo canônico, em vez de recodificar a imagem.
-
-## Texto dinâmico sobre a end card
-
-Use `text_fx_cues` para escrever o CTA no grande espaço vazio central do template quando a `main` atual suportar essa capacidade.
-
-Quando timing relativo por segmento estiver disponível, prefira:
-
-- `segment`: ID do último segmento;
-- `offset_seconds`: próximo de `0`;
-- `duration_seconds`: cobrindo a maior parte do último segmento sem ultrapassá-lo;
-- `position`: `center`;
-- animação curta compatível com a `main`, normalmente `pop_in`, `scale_bounce` ou `fade_in`, escolhida conforme o tom;
-- `accent_text`: opcional e somente quando aparecer literalmente no texto.
-
-Headline visual ideal: aproximadamente **4–10 palavras**, em uma ou duas linhas. Pode chegar a três linhas somente se a leitura continuar imediata.
-
-O texto deve ser facilmente entendido sem depender da legenda da voz.
-
-Não cubra o logo superior nem os ícones inferiores. Use o espaço vazio central como área principal do CTA.
+A legenda falada continua tendo prioridade conforme `templates/caption-layout-rule.md`. Se o CTA visual competir com a legenda, reduza, atrase ou omita o `text_fx` e mantenha apenas o CTA falado.
 
 ## Duração e ritmo
 
-Não imponha uma duração rígida independente da narração, porque a duração real dos shots deriva dos timings de voz.
+O CTA final deve ser rápido. Como referência editorial, mire normalmente algo próximo de **1–2,5 segundos** quando a frase permitir, sem criar uma pausa morta no final.
 
-Como referência editorial, a end card deve ser percebida como uma assinatura rápida — normalmente algo próximo de **1–2 segundos** quando a frase curta permitir. Não deixe a tela parada por vários segundos sem necessidade.
-
-Evite crossfade lento para a saída. Prefira entrada/corte limpo e final ágil.
+O último visual pode durar mais se já estiver sustentando o payoff e tiver contexto real, respeitando as regras de pacing de `templates/short-form-style-rule.md`.
 
 ## SFX
 
-SFX na end card é opcional. Se usado, escolha apenas type existente no catálogo e mantenha volume discreto. Não use SFX apenas para preencher a tela final.
+SFX no CTA é opcional. Se usado, escolha apenas type existente no catálogo e mantenha volume discreto. Não use SFX apenas para preencher o encerramento.
 
 ## Validação obrigatória antes da queue
 
 Confirme:
 
-- o primeiro visual do episódio NÃO é a end card;
 - existe exatamente um CTA contextual final;
 - o CTA pede apenas uma ação principal;
 - o CTA é específico da música/artista/história do episódio;
 - o payoff narrativo veio antes e não foi substituído por propaganda;
-- `end_card_template.jpg` usado no episódio é cópia/reuso do asset canônico de branding;
-- a end card aparece somente no último shot;
+- `assets/branding/end_card_template.jpg` NÃO foi usado no episódio;
+- nenhuma outra end card genérica foi criada para substituí-lo;
+- o último visual pertence à história e tem relação semântica clara com o encerramento;
 - o último shot continua respeitando `1 segment = 1 shot` e demais constraints atuais;
-- o kinetic text cabe no centro e não invade logo/ícones;
-- não foi gerada nova imagem de end card nem usado branding diferente;
-- nenhuma outra imagem de conteúdo foi gerada por IA.
-
-Se o arquivo canônico de branding estiver ausente na `main`, NÃO invente uma imagem substituta e NÃO bloqueie a criação inteira do episódio por isso: omita apenas a end card visual, mantenha um CTA contextual curto na narração quando editorialmente adequado e reporte a ausência do template no resumo operacional se houver campo apropriado.
+- CTA visual não disputa espaço com legenda falada;
+- nenhuma imagem de conteúdo foi gerada por IA.
