@@ -24,7 +24,7 @@ jobs:
         run: |
           set -euo pipefail
           mapfile -t trigger_files < <(
-            git show --pretty='' --name-only --diff-filter=A "${GITHUB_SHA}" -- '.publish-tiktok-retry/*.txt'
+            git show --pretty='' --name-only --diff-filter=A HEAD | grep -E '^\.publish-tiktok-retry/.*\.txt$' || true
           )
           if [[ ${#trigger_files[@]} -ne 1 ]]; then
             echo "::error::Expected exactly one TikTok retry trigger file."
