@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O SOLO QUE MUDOU A FITA","source":{"type":"asset","asset_id":"mj_hook"}},
+  "youtube": {
+    "title":"Beat It: o solo que mudou a gravação de Michael Jackson",
+    "description":"Teste editorial do Além do Hit sobre como Beat It juntou Michael Jackson, Quincy Jones, Eddie Van Halen e músicos do Toto em um crossover improvável.",
+    "hashtags":["MichaelJackson","BeatIt","Thriller","EddieVanHalen","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Beat It parece simples até você descobrir o que aconteceu com o solo, a fita e as guitarras da gravação.",
+    "hashtags":["MichaelJackson","BeatIt","Thriller","EddieVanHalen","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"O solo de Beat It mexeu na própria estrutura da gravação. Riff ou solo?",
+    "hashtags":["MichaelJackson","BeatIt","Thriller","EddieVanHalen","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
