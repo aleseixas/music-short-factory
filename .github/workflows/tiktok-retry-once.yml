@@ -68,8 +68,14 @@ jobs:
           repository: ${{ github.repository }}
           run-id: ${{ env.SOURCE_RUN_ID }}
 
-      - name: Prepare publishing metadata and cover
-        run: python prepare_post.py "$EPISODE"
+      - name: Create validation cover from rendered video
+        shell: bash
+        run: |
+          set -euo pipefail
+          ffmpeg -hide_banner -loglevel error -y \
+            -ss 1 -i "output/${EPISODE}.mp4" -frames:v 1 \
+            "output/${EPISODE}_cover.jpg"
+          test -s "output/${EPISODE}_cover.jpg"
 
       - name: Upload TikTok draft only
         env:
