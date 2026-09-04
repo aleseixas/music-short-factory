@@ -152,6 +152,41 @@ A escolha do ASSET é uma das decisões mais importantes. Antes de compensar vis
 
 Não transforme poucos vídeos genéricos em dezenas de shots quase iguais apenas mudando o trim.
 
+### REGRA CRÍTICA — COERÊNCIA SEMÂNTICA ENTRE NARRAÇÃO E VISUAL
+
+A prioridade número 1 de cada shot é **fazer sentido com a frase que o espectador está ouvindo naquele exato momento**. Um visual tecnicamente bonito, dinâmico, famoso ou de alta qualidade NÃO é uma boa escolha se sua relação com a narração for fraca.
+
+Antes de aceitar qualquer asset, faça mentalmente a pergunta: **“por que este visual está na tela enquanto esta frase é narrada?”** A resposta precisa ser específica e imediata. Se a justificativa for apenas “é do mesmo artista”, “combina com a vibe”, “é bonito”, “tem movimento” ou “é relacionado à música em geral”, a pertinência é insuficiente quando existe opção mais direta.
+
+Para cada frase/beat, extraia primeiro os elementos concretos da narração — pessoa, artista, colaborador, instrumento, objeto, lugar, época, evento, ação, documento, prêmio, show, estúdio, álbum, videoclipe, conflito, detalhe visual ou consequência — e derive as queries a partir DISSO. Não pesquise apenas `artista + música`, `performance`, `music video` ou termos amplos se a frase fala de algo mais específico.
+
+Use esta ordem de preferência:
+
+1. **evidência direta / sujeito exato**: a pessoa, evento, objeto, instrumento, lugar, documento, performance, cena ou fato mencionado;
+2. **contexto específico**: material do mesmo acontecimento, período, sessão, turnê, álbum, gravação ou situação narrada;
+3. **contexto próximo**: visual do artista ou universo da música que ajude realmente a compreender a frase;
+4. **visual metafórico ou atmosférico**: somente quando um visual literal/específico não existir ou quando a metáfora for editorialmente clara;
+5. **B-roll genérico**: último recurso, nunca escolha principal por conveniência.
+
+Exemplos de raciocínio obrigatório:
+
+- se a narração cita uma pessoa específica, procure primeiro essa pessoa, não apenas o artista principal;
+- se fala de guitarra, solo, bateria, estúdio ou gravação, procure o músico/instrumento/sessão correspondente antes de usar um retrato genérico;
+- se fala de prêmio, show, videoclipe, entrevista, capa, fita, contrato, carta ou notícia, procure material daquele objeto/evento;
+- se fala de uma época, o visual deve ser temporalmente plausível; não use imagem recente do artista para ilustrar automaticamente um fato de décadas atrás;
+- se fala de uma cidade, lugar ou palco específico, material daquele local é preferível a paisagem genérica;
+- se a frase contém uma ação concreta, prefira um visual que mostre ou represente diretamente essa ação.
+
+**Relevância semântica vence `visual_score`, motion, resolução e estética.** Entre um vídeo excelente mas vagamente relacionado e uma imagem estática que mostra exatamente o elemento narrado, escolha a imagem exata quando ela comunicar melhor a informação. Movimento é vantagem apenas entre candidatos semanticamente adequados.
+
+Nunca use um visual que possa fazer o espectador inferir uma relação factual falsa. Um asset não pode sugerir que determinada imagem é do evento, gravação, pessoa, época ou situação mencionada quando não é.
+
+Quando nenhum candidato fizer sentido suficiente, NÃO aceite o “menos ruim” imediatamente. Reformule a busca usando nomes próprios, ações, objetos, datas/períodos, locais e sinônimos extraídos da própria frase. Faça novas queries e procure outra fonte antes de recorrer a B-roll genérico.
+
+Um mesmo visual pode permanecer por mais de uma frase adjacente somente quando ele continuar semanticamente correto para todas elas. Não mantenha um take apenas porque ainda está bonito na tela depois que a narração mudou de assunto.
+
+No polimento final, revise o vídeo mentalmente **frase por frase / shot por shot** e elimine qualquer momento em que o espectador possa pensar “o que essa imagem tem a ver com o que ele está falando?”. Esse teste de coerência é obrigatório e tem prioridade sobre variedade visual pura.
+
 ### RITMO E DENSIDADE DOS TAKES — BOM SENSO EDITORIAL
 
 A duração dos shots deve seguir a força do material e a função narrativa, não uma grade fixa. O objetivo é manter renovação visual real sem transformar o vídeo em uma sequência nervosa de cortes arbitrários.
@@ -235,27 +270,28 @@ Siga esta ordem:
 3. construir a narração;
 4. definir `delivery` de cada segmento quando melhorar a interpretação;
 5. identificar beats (`HOOK`, `REVEAL`, `CONTEXT`, `BUILDUP`, `STATISTIC`, `NAME_OR_ENTITY`, `LOCATION`, `TURNING_POINT`, `PAYOFF`);
-6. pesquisar visuais com múltiplas queries, comparar candidatos, inspecionar os
-   melhores, usar o ranking técnico como apoio e só então escolher assets/trims;
-7. escolher shots/assets e trims com significado editorial, reservando cada visual escolhido para um único shot;
-8. fazer a primeira passada shot por shot: asset, trecho, foco, motion e transition;
-9. pesquisar background music externa de forma internet-first com no mínimo 5 queries semanticamente diferentes, comparar 4–6 candidatas plausíveis, evitar backgrounds recentes/repetidas, validar o caminho técnico correto (`external/openverse/...` ou `external/manual/...` quando suportado) e só então escolher profile externo ou fallback local realmente justificado;
-10. ler o catálogo de SFX e selecionar somente types curados;
-11. fazer a segunda passada shot por shot: visual FX, kinetic text, highlight, overlay e SFX;
-12. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
-13. revisar isoladamente hook, reveals, mudanças de assunto, estatísticas, virada e payoff;
-14. validar deliveries, assets, conflitos, trims de vídeo e SFX contra suas durações reais, duração final e host de background externa;
-15. fazer deduplicação GLOBAL dos visuais finais e substituir qualquer imagem ou vídeo-fonte repetido antes do commit;
-16. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
-17. revisar `post.json` para garantir que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
-18. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
-19. salvar o episódio.
+6. para cada frase/beat, definir mentalmente a INTENÇÃO VISUAL concreta antes da busca: quem/o quê/qual evento/qual objeto/qual lugar/qual época/qual ação deveria aparecer para que a imagem faça sentido com a narração;
+7. pesquisar visuais com queries derivadas da própria frase, usando nomes próprios, ações, objetos, locais e períodos; comparar candidatos, inspecionar os melhores, usar o ranking técnico apenas como apoio e só então escolher assets/trims;
+8. escolher shots/assets e trims priorizando coerência semântica com a narração, reservando cada visual escolhido para um único shot;
+9. fazer a primeira passada shot por shot: frase narrada → intenção visual → asset/trecho → foco → motion → transition; rejeitar qualquer asset cuja relação com a frase seja apenas genérica;
+10. pesquisar background music externa de forma internet-first com no mínimo 5 queries semanticamente diferentes, comparar 4–6 candidatas plausíveis, evitar backgrounds recentes/repetidas, validar o caminho técnico correto (`external/openverse/...` ou `external/manual/...` quando suportado) e só então escolher profile externo ou fallback local realmente justificado;
+11. ler o catálogo de SFX e selecionar somente types curados;
+12. fazer a segunda passada shot por shot: visual FX, kinetic text, highlight, overlay e SFX;
+13. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
+14. revisar isoladamente hook, reveals, mudanças de assunto, estatísticas, virada e payoff;
+15. fazer uma AUDITORIA SEMÂNTICA obrigatória: percorrer cada shot junto da frase narrada e substituir qualquer visual que não tenha relação específica, clara e imediata com o que está sendo dito;
+16. validar deliveries, assets, conflitos, trims de vídeo e SFX contra suas durações reais, duração final e host de background externa;
+17. fazer deduplicação GLOBAL dos visuais finais e substituir qualquer imagem ou vídeo-fonte repetido antes do commit;
+18. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
+19. revisar `post.json` para garantir que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
+20. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
+21. salvar o episódio.
 
 Antes do commit, faça uma MATRIZ MENTAL:
 
-`VOICE DELIVERY | ASSET | TRIM | MOTION | TRANSITION | VISUAL FX | TEXT FX | HIGHLIGHT | OVERLAY | SFX`
+`FRASE NARRADA | INTENÇÃO VISUAL | ASSET | VOICE DELIVERY | TRIM | MOTION | TRANSITION | VISUAL FX | TEXT FX | HIGHLIGHT | OVERLAY | SFX`
 
-Não crie essa matriz como campo novo. Nenhuma coluna precisa estar preenchida em todo momento; porém, uma oportunidade editorial evidente não deve ficar vazia apenas por conservadorismo.
+Não crie essa matriz como campo novo. Para cada shot, `FRASE NARRADA → INTENÇÃO VISUAL → ASSET` deve formar uma relação clara. Nenhuma outra coluna precisa estar preenchida em todo momento; porém, uma oportunidade editorial evidente não deve ficar vazia apenas por conservadorismo.
 
 Pense em curva de intensidade: hook forte, corpo com respiração e variedade, picos em reveals/viradas e payoff memorável. A voz também participa dessa curva; não deixe todo o vídeo com a mesma intenção, mas também não mude delivery sem motivo.
 
