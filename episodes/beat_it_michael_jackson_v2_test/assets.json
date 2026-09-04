@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"mj_hook","file":"michael_jackson_1988.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/3/31/Michael_Jackson1_1988.jpg","credit":"Zoran Veselinovic / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.38}},
+    {"id":"quincy_studio","file":"quincy_jones_studio.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/b/b2/Quincy_Jones_studio.jpg","credit":"Los Angeles Times Photographic Collection / UCLA / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.4}},
+    {"id":"anti_violence_video","file":"mellencamp_white_house.webm","url":"https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm","credit":"The White House / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.5,"y":0.42}},
+    {"id":"eddie_airborne","file":"eddie_van_halen_1984.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/f/f9/Los_Angeles-based_band_Van_Halen%2C_guitarist_Eddie_Van_Halen_airborne_during_performance_in_Los_Angeles%2C_Calif.%2C_1984_%2822195741815%29.jpg","credit":"UCLA Library Special Collections / Los Angeles Times Photographic Archive / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"solo_studio_video","file":"stevie_ray_studio.webm","url":"https://upload.wikimedia.org/wikipedia/commons/1/17/Stevie_Ray_Vaughan_soundcheck_in_the_studio_in_1989.webm","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"tape_video","file":"aiwa_micro_cassette.webm","url":"https://upload.wikimedia.org/wikipedia/commons/2/22/AIWA_Micro_Cassette_Recorder.webm","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rebuild_video","file":"studio_tracking.webm","url":"https://upload.wikimedia.org/wikipedia/commons/4/4e/Randy_Moore_tracking_guitars_with_MBOX_Studio_Sam_Pura.webm","credit":"Avid / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"behind_scenes_video","file":"white_house_country_bts.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/a9/Behind_The_Scenes-_In_Performance_at_The_White_House-_Country_Music.webm","credit":"The White House / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.5,"y":0.42}},
+    {"id":"crossover_video","file":"live_band_stage.webm","url":"https://upload.wikimedia.org/wikipedia/commons/0/04/Live_band_performs_on_stage..webm","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"drumming_video","file":"drumming.webm","url":"https://upload.wikimedia.org/wikipedia/commons/c/c4/Drumming.webm","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"mix_concert_video","file":"concert.webm","url":"https://upload.wikimedia.org/wikipedia/commons/0/04/Concert.webm","credit":"Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.42}},
+    {"id":"victory_guitar_video","file":"fast_guitar_solo.webm","url":"https://upload.wikimedia.org/wikipedia/commons/5/58/FAST_GUITAR_SOLO.webm","credit":"Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"awards_photo","file":"michael_jackson_grammys_1984.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/4/45/Michael_Jackson_with_Grammy_Awards_in_1984.jpg","credit":"United Press International / Wikimedia Commons","license":"Public domain (US)","focus":{"x":0.5,"y":0.42}},
+    {"id":"mj_payoff","file":"michael_jackson_drew_cohen.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/d/dd/Michaeljacksonphoto_drewcohen.JPG","credit":"Drew H. Cohen / Wikimedia Commons","license":"CC BY-SA","focus":{"x":0.5,"y":0.4}},
+    {"id":"end_card_brand","file":"end_card_template.jpg","credit":"Além do Hit","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
