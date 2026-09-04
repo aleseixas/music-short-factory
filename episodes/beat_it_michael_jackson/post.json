@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O SOLO QUE QUASE DESMONTOU BEAT IT","source":{"type":"asset","asset_id":"mj_image"}},
+  "youtube": {
+    "title":"Beat It: o solo de Eddie Van Halen que mudou a música de Michael Jackson",
+    "description":"Quincy Jones queria uma faixa rock para Thriller. Michael Jackson escreveu Beat It, Eddie Van Halen entrou para o solo e uma mudança na fita obrigou Steve Lukather e Jeff Porcaro a reconstruir partes da gravação. A história mostra por que Beat It virou um crossover tão incomum.",
+    "hashtags":["MichaelJackson","BeatIt","Thriller","EddieVanHalen","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Beat It juntou Michael Jackson, Quincy Jones, Eddie Van Halen e músicos do Toto numa gravação que ficou ainda mais maluca depois que a estrutura da fita mudou. E o resultado virou um dos maiores crossovers do pop.",
+    "hashtags":["MichaelJackson","BeatIt","Thriller","EddieVanHalen","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"O solo de Eddie Van Halen mudou mais do que a guitarra de Beat It — mexeu na própria estrutura da gravação.",
+    "hashtags":["MichaelJackson","BeatIt","Thriller","EddieVanHalen","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
