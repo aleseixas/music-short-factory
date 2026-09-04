@@ -23,14 +23,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mapfile -t trigger_files < <(
-            git show --pretty='' --name-only --diff-filter=A HEAD | grep -E '^\.publish-tiktok-retry/.*\.txt$' || true
-          )
-          if [[ ${#trigger_files[@]} -ne 1 ]]; then
-            echo "::error::Expected exactly one TikTok retry trigger file."
-            exit 1
-          fi
-          trigger_file="${trigger_files[0]}"
+          trigger_file="$(python - <<'PY'
+          import json, os
+          from pathlib import Path
+          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+          added = [
+              p for p in event.get('head_commit', {}).get('added', [])
+              if p.startswith('.publish-tiktok-retry/') and p.endswith('.txt')
+          ]
+          if len(added) != 1:
+              raise SystemExit(f'Expected exactly one TikTok retry trigger file, found {len(added)}')
+          print(added[0])
+          PY
+          )"
           episode="$(basename "$trigger_file" .txt | sed -E 's/-[0-9]+$//')"
           source_run_id="$(tr -d '\r\n ' < "$trigger_file")"
           if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
