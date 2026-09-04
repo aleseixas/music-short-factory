@@ -7,6 +7,7 @@ from .assets import AssetManager
 from .audio import resolve_audio, validate_audio_duration
 from .captions import create_highlight_overlay, write_ass_captions
 from .config import load_project_config, load_style_config
+from .cover_intro import embed_episode_cover_intro
 from .episode import load_episode
 from .editorial import load_editorial_catalogs, validate_editorial_direction
 from .ffmpeg import preflight
@@ -256,6 +257,17 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         f"{episode.story.slug}.mp4",
         background_music=background_music,
         sfx_cues=sfx_cues,
+    )
+    print("[capa] gerando capa e incorporando abertura padrao...")
+    output, cover_path, cover_duration = embed_episode_cover_intro(
+        project_root,
+        episode.directory,
+        output,
+        config,
+    )
+    print(
+        f"[capa] abertura={cover_duration:.2f}s | "
+        f"arquivo={cover_path.relative_to(project_root).as_posix()}"
     )
     print(f"[pronto] {output}")
     return output
