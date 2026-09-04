@@ -5,11 +5,15 @@ on:
     branches:
       - main
     paths:
-      - ".publish-tiktok-retry/*.txt"
+      - ".publish-tiktok-retry/fallen_angel_jennie-5.txt"
 
 permissions:
   contents: read
   actions: read
+
+env:
+  EPISODE: fallen_angel_jennie
+  SOURCE_RUN_ID: "33857070005"
 
 jobs:
   publish-tiktok:
@@ -18,37 +22,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
-
-      - name: Resolve retry request
-        shell: bash
-        run: |
-          set -euo pipefail
-          trigger_file="$(python - <<'PY'
-          import json, os
-          from pathlib import Path
-          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
-          added = [
-              p for p in event.get('head_commit', {}).get('added', [])
-              if p.startswith('.publish-tiktok-retry/') and p.endswith('.txt')
-          ]
-          if len(added) != 1:
-              raise SystemExit(f'Expected exactly one TikTok retry trigger file, found {len(added)}')
-          print(added[0])
-          PY
-          )"
-          episode="$(basename "$trigger_file" .txt | sed -E 's/-[0-9]+$//')"
-          source_run_id="$(tr -d '\r\n ' < "$trigger_file")"
-          if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
-            echo "::error::Invalid episode slug."
-            exit 1
-          fi
-          if [[ ! "$source_run_id" =~ ^[0-9]+$ ]]; then
-            echo "::error::Invalid source run id."
-            exit 1
-          fi
-          echo "EPISODE=$episode" >> "$GITHUB_ENV"
-          echo "SOURCE_RUN_ID=$source_run_id" >> "$GITHUB_ENV"
-          echo "Retrying TikTok only for $episode using artifact from run $source_run_id"
 
       - name: Set up Python
         uses: actions/setup-python@v7
