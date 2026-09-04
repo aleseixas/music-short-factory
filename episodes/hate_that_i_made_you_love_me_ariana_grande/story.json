@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Hate That I Made You Love Me — Ariana Grande: o término que também fala sobre fama",
+  "slug": "hate_that_i_made_you_love_me_ariana_grande",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"Hate That I Made You Love Me, de Ariana Grande, parece um término, mas também rompe com a fama.","delivery":"hook"},
+    {"id":"petal","text":"Ariana apresentou Petal como um disco sobre abandonar vínculos negativos.","delivery":"curious"},
+    {"id":"template","text":"Ela queria escrever histórias abertas, que outras pessoas aplicassem às próprias vidas.","delivery":"neutral"},
+    {"id":"reading","text":"Por isso, ex, público, mídia e expectativas podem ocupar o mesmo lugar.","delivery":"curious"},
+    {"id":"title","text":"O título parece um pedido de desculpas, mas a atitude é quase desafiadora.","delivery":"reveal"},
+    {"id":"voice","text":"Em vez de grandes agudos, Ariana segura a voz e deixa a tensão no espaço.","delivery":"emotional"},
+    {"id":"flower","text":"Isso combina com Petal, descrito como vida crescendo através de algo frio.","delivery":"emotional"},
+    {"id":"production","text":"A produção reúne Ariana, ILYA e Max Martin, mas prefere uma atmosfera contida.","delivery":"neutral"},
+    {"id":"limits","text":"Assim, uma separação vira também uma conversa sobre limites e projeção.","delivery":"reveal"},
+    {"id":"video","text":"O clipe reforça a inquietação: Christian Breslauer dirigiu, com fotografia de Janusz Kaminski.","delivery":"dramatic"},
+    {"id":"favorite","text":"Ariana chamou a faixa de uma das favoritas que já escreveu.","delivery":"reveal"},
+    {"id":"chart","text":"E funcionou: ela chegou ao topo da Hot 100 e segue no top cinco.","delivery":"reveal"},
+    {"id":"contradiction","text":"A contradição é perfeita: quanto mais tenta escapar da projeção, mais gente observa.","delivery":"dramatic"},
+    {"id":"strength","text":"Petal transforma essa tensão em força — vulnerabilidade sem entregar o controle.","delivery":"emotional"},
+    {"id":"payoff","text":"Hate That I Made You Love Me termina como pergunta: quem ainda pode definir Ariana Grande?","delivery":"payoff"}
+  ]
+}
