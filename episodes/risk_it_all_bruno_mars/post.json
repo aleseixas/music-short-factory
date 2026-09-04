@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O HIT QUE CRESCEU AO DESACELERAR","source":{"type":"asset","asset_id":"album_cover"}},
+  "youtube": {
+    "title":"Risk It All: o hit de Bruno Mars que ficou maior quando desacelerou",
+    "description":"Risk It All quase seguiu por um caminho mais rápido e funky. A grande virada veio quando Bruno Mars e D’Mile perceberam que a promessa da letra pedia espaço, romance e um bolero muito mais lento. E a história ficou ainda melhor quando o mariachi do clipe resolveu aprender a música de verdade.",
+    "hashtags":["BrunoMars","RiskItAll","TheRomantic","Musica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Risk It All quase nasceu mais rápida e funky. Só que Bruno Mars e D’Mile perceberam que a letra pedia outra coisa — e o bolero mudou tudo. Até o mariachi do clipe entrou de verdade na história.",
+    "hashtags":["BrunoMars","RiskItAll","TheRomantic","Musica","Curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Risk It All quase teve outra cara. Bruno Mars desacelerou a música, encontrou o bolero — e o resultado virou uma das histórias mais legais de The Romantic.",
+    "hashtags":["BrunoMars","RiskItAll","TheRomantic","Musica","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
