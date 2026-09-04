@@ -1,20 +1,20 @@
-# Regra obrigatória — linguagem de alta retenção + ritmo visual agressivo
+# Regra obrigatória — linguagem de alta retenção + ritmo visual contextual
 
 Esta regra complementa `templates/editorial-direction-prompt.md` e deve ser aplicada na autoria de novos episódios enquanto a `main` continuar compatível com os contratos abaixo.
 
-## 1) Linguagem: sensacionalista na forma, factual no conteúdo
+## 1) Objetivo editorial
 
-O objetivo editorial é maximizar retenção, curiosidade, comentários e compartilhamentos.
+O objetivo é maximizar retenção, curiosidade, comentários, compartilhamentos e reconhecimento imediato da música sem sacrificar factualidade.
 
-O roteiro PODE e DEVE usar framing forte, suspense, contraste, surpresa e energia de TikTok/Reels/Shorts. Não suavize uma história boa só para parecer documental ou institucional.
+O episódio deve parecer um Short/Reel/TikTok pensado por um editor agressivo em retenção: história forte, hook imediato, progressão constante e visual que realmente ajude a contar o que está sendo narrado.
 
-A única barreira é factual: não invente fatos, não distorça fonte, não transforme teoria em certeza e não prometa algo que o episódio não entrega.
+Sensacionalismo é desejado na forma. A barreira é factual: não invente fatos, não distorça fonte, não transforme teoria em certeza e não prometa algo que o episódio não entrega.
 
-### Proporção de tom
+## 2) Linguagem: 80% narrativa + 20% reação/conversa
 
 Mire aproximadamente:
 
-- 80% narrativa clara e eficiente;
+- 80% narrativa clara, eficiente e progressiva;
 - 20% reação/conversa.
 
 Use com naturalidade, sem quota mecânica, expressões como:
@@ -35,9 +35,9 @@ Evite linguagem acadêmica, enciclopédica, institucional ou excessivamente neut
 
 ### Hook
 
-A primeira frase continua identificando música + artista, mas deve abrir a tensão ou a promessa imediatamente.
+A primeira frase deve identificar música + artista e já abrir tensão, conflito, consequência, surpresa ou uma promessa forte.
 
-Prefira premissa, conflito, consequência ou detalhe inesperado em vez de resumo seco.
+Prefira premissa inesperada em vez de resumo seco.
 
 Exemplo de direção:
 
@@ -53,24 +53,44 @@ Transforme informação em progressão narrativa:
 
 Evite sequência de fatos independentes. Use conectores conversados quando ajudarem a empurrar a história adiante.
 
-## 2) Ritmo visual: agressivo, 20–30 takes
+## 3) Primeiro visual — reconhecimento obrigatório
 
-Para Shorts/Reels/TikTok na faixa de aproximadamente 60–90 segundos, o padrão editorial deve ser agressivo.
+Nos primeiros **0,0–1,5 segundos**, o primeiro visual deve mostrar claramente uma destas opções:
 
-- mire normalmente **20–30 takes principais**;
-- em um episódio de ~72–82s, prefira normalmente **22–28 takes**;
-- um take comum deve durar aproximadamente **2,0–3,5s**;
-- **4,0s é o teto editorial normal**, não a meta;
-- hooks, reveals, montagens, reações e viradas podem usar **1–2,5s**;
-- somente um take excepcionalmente forte pode ultrapassar ~4s, e precisa existir motivo editorial claro.
+1. **capa oficial do single, música ou álbum** relacionado ao episódio; ou
+2. **artista principal/banda principal claramente reconhecível**.
 
-O objetivo é sensação constante de avanço visual, sem transformar o vídeo em cortes aleatórios.
+Essa regra existe para o espectador entender instantaneamente sobre qual música/artista o vídeo fala.
+
+Não abra com B-roll genérico, multidão, instrumento aleatório, rua, estúdio vazio, paisagem, texto abstrato ou outro visual que obrigue o espectador a esperar para reconhecer o assunto.
+
+Quando houver uma boa capa oficial e uma boa imagem/vídeo do artista, escolha o que gerar reconhecimento mais imediato e combinar melhor com o hook.
+
+## 4) Ritmo visual: agressivo, mas não aleatório
+
+Para Shorts/Reels/TikTok na faixa de aproximadamente 60–90 segundos, mire normalmente **20–30 takes principais**. Em um episódio de ~72–82s, prefira normalmente **22–28 takes**, ajustando quando a duração real da narração e a qualidade dos visuais justificarem.
+
+O objetivo é sensação constante de avanço visual, mas **contexto vale mais do que troca vazia de imagem**.
+
+### Imagens
+
+- devem normalmente permanecer entre **2 e 4 segundos**;
+- 2–3,5s é a faixa mais comum;
+- evite segurar imagem estática além de 4s sem motivo editorial forte;
+- se a imagem não sustentar o trecho, troque por outro visual contextual em vez de depender apenas de zoom/crop.
+
+### Vídeos
+
+- podem durar **até 6 segundos** quando houver movimento útil, contexto real e relação clara com a narração;
+- não alongue vídeo só por ser vídeo;
+- vídeo genérico, pouco relacionado ou semanticamente fraco deve ser curto, rebaixado ou substituído;
+- um vídeo de 5–6s deve estar mostrando algo que vale acompanhar: performance específica, entrevista, bastidor, ação, reação, trecho de evento, demonstração, contexto histórico ou outra informação visual relevante.
+
+Hooks, reveals, montagens, reações e viradas podem usar **1–2,5s** quando isso aumentar retenção.
 
 `motion`, zoom, crop, speed, transição, text FX, highlight, overlay ou SFX sobre o mesmo asset NÃO contam como troca de take.
 
-Se um shot se aproximar de 4s sem razão forte, procure outro visual semanticamente relevante e divida a ideia em mais de um take. Prefira **novo asset real** a tentar salvar um shot longo apenas com efeito.
-
-## 3) Pool visual proporcional ao número de takes
+## 5) Pool visual: 100–120 candidatos e relevância temática obrigatória
 
 Não pesquise apenas a quantidade de assets que entrará no render.
 
@@ -81,30 +101,108 @@ Para episódios com 20–30 takes finais:
 - o **alvo editorial padrão é 100–120 candidatos visuais totais**;
 - **80 candidatos é o mínimo aceitável** quando a disponibilidade real limitar a busca;
 - em temas ricos visualmente, pode ultrapassar 120 quando isso melhorar de verdade a seleção;
-- a seleção final só acontece depois de comparar os candidatos por slot.
+- a seleção final só acontece depois de comparar candidatos do mesmo tipo por slot.
 
-Não confunda `assets finais usados no render` com `candidatos pesquisados`. Um vídeo pode terminar com 22–28 assets/takes e ainda assim ter partido de um pool de 100–120 opções reais.
+Não confunda `assets finais usados no render` com `candidatos pesquisados`.
+
+### Regra crítica: o pool deve contar a história
+
+O pool visual NÃO pode ser inflado com material genérico apenas para bater quantidade.
+
+Cada candidato precisa ter relação clara com pelo menos um elemento relevante do episódio, como:
+
+- a própria música;
+- o artista ou banda;
+- capa do single/álbum;
+- videoclipe ou performance da música;
+- pessoa citada na narração;
+- produtor, compositor, músico ou colaborador citado;
+- bastidor de gravação;
+- entrevista relacionada;
+- época ou evento específico;
+- objeto, instrumento ou lugar citado;
+- prêmio, chart, show, turnê ou acontecimento mencionado;
+- conceito visual que represente diretamente o que está sendo explicado naquele take.
+
+Antes de buscar cada slot, pergunte editorialmente:
+
+**`O que está sendo dito neste exato momento e qual visual prova, mostra ou reforça essa ideia?`**
+
+Só depois considere estética.
+
+### Rebaixamento obrigatório de visuais sem contexto
+
+Rebaixe fortemente candidatos que sejam:
+
+- genéricos;
+- abstratos;
+- decorativos;
+- apenas vagamente ligados ao artista;
+- performances aleatórias que não ajudam a história;
+- multidões/palcos/estúdios sem ligação com o trecho narrado;
+- vídeos visualmente bonitos, mas semanticamente vazios;
+- imagens de qualidade técnica alta que poderiam servir para qualquer música.
+
+Em caso de dúvida, prefira **um asset mais contextual e menos bonito** a um asset mais bonito que não tenha conexão clara com a história.
+
+Qualidade visual é importante, mas a ordem editorial é:
+
+1. **relevância semântica para o take**;
+2. **reconhecimento e clareza**;
+3. **qualidade técnica/visual**;
+4. **movimento/estética**.
 
 O pool deve ser WEB-FIRST e seguir `docs/visual-search.md`.
 
 Vídeo compete com vídeo e imagem compete com imagem. Reserve o vencedor de cada slot e faça deduplicação global antes da queue.
 
-## 4) Proporção de vídeo e imagem
+## 6) Proporção de vídeo e imagem
 
-Priorize material com movimento real.
+Como referência editorial, tente fechar aproximadamente **60–80% dos takes finais com vídeo** e **20–40% com imagem**, mas somente quando os vídeos realmente agregarem contexto.
 
-Como referência editorial, tente fechar aproximadamente **60–80% dos takes finais com vídeo** e **20–40% com imagem**, sem transformar isso em bloqueio quando a disponibilidade real justificar outra composição.
+Em ~24 takes, algo como **15–19 vídeos e 5–9 imagens** é uma referência, não hard gate.
 
-Em ~24 takes, algo como **15–19 vídeos e 5–9 imagens** é uma boa referência.
+Não escolha vídeo inferior apenas para cumprir proporção. Se imagens mais contextuais contarem melhor determinado trecho, use imagens.
 
-Todo episódio continua precisando de pelo menos um take em que o artista principal seja claramente reconhecível.
+Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — além da regra específica do primeiro visual.
 
-## 5) Relação com texto na tela
+Nunca reutilize a mesma imagem nem o mesmo vídeo-fonte em dois shots, mesmo com trim/crop/FX diferentes.
+
+## 7) Relação com texto na tela
 
 A maior densidade de cortes não autoriza poluição textual.
 
 Siga `templates/caption-layout-rule.md`: legenda falada tem prioridade; text FX/highlight/overlay devem respeitar as zonas e sair do caminho quando disputarem leitura.
 
-## 6) End card
+Não use texto editorial para compensar um visual fraco ou sem contexto.
 
-A end card/CTA final segue `templates/end-card-cta-rule.md` e não conta como desculpa para alongar o take anterior. O payoff deve vir antes, seguido de CTA curto e assinatura final da marca.
+## 8) End card — somente no final
+
+A end card/CTA segue `templates/end-card-cta-rule.md`.
+
+A arte canônica de branding **NUNCA deve ser usada como primeiro visual ou no meio do episódio**. Ela existe para funcionar como assinatura final da marca e deve aparecer **somente no último shot**.
+
+Fluxo esperado:
+
+`hook reconhecível → história visual contextual → payoff → CTA contextual curto → end card final`
+
+O payoff deve vir antes do CTA. A end card não conta como desculpa para alongar o take anterior.
+
+## 9) Checklist editorial antes da queue
+
+Antes de finalizar, confirme obrigatoriamente:
+
+- primeiro visual = capa oficial ou artista principal claramente reconhecível;
+- 20–30 takes quando a duração do episódio comportar esse ritmo;
+- imagens normalmente entre 2–4s;
+- vídeos com no máximo ~6s e somente quando o contexto justificar;
+- pool normalmente entre 100–120 candidatos;
+- pool não foi inflado com visuais genéricos;
+- cada slot possui candidatos relacionados ao que está sendo narrado;
+- visuais genéricos/sem contexto foram rebaixados;
+- maioria dos takes finais é vídeo quando houver vídeos contextuais suficientes;
+- zero reuso de conteúdo visual;
+- artista principal aparece claramente;
+- legenda/texto editorial não competem;
+- end card aparece somente no último shot;
+- CTA final é contextual e curto.
