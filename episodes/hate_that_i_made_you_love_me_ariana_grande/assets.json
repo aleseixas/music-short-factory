@@ -2,7 +2,7 @@
   "schema_version": 1,
   "assets": [
     {"id":"artist_main","file":"ariana_grande_wicked_sg_2025.png","url":"https://upload.wikimedia.org/wikipedia/commons/3/37/Ariana_Grande_at_Wicked-For_Good_Premiere_in_SG-3.png","credit":"Irene Suwandi / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
-    {"id":"flower_crack","file":"resilient_flower_concrete.jpg","url":"https://media.licdn.com/dms/image/v2/D4E22AQGl_bw3NmIK2A/feedshare-shrink_800/feedshare-shrink_800/0/1718628128762?e=2147483647&t=vrdozU4bzUF_qfkixWctOXOkjsa-nNwd4mleYXDF3YY&v=beta","credit":"LinkedIn source / Lesley Linn","license":"Unknown","focus":{"x":0.5,"y":0.48}},
+    {"id":"flower_crack","file":"flower_crack_islamazeri.jpg","url":"https://islamazeri.com/image/haber/das-uzerinde-cicek-ibrtamiz-3403.jpg","credit":"IslamAzeri source","license":"Unknown","focus":{"x":0.5,"y":0.48}},
     {"id":"crowd_phones","file":"crowd_phones.jpg","url":"https://www.irishexaminer.com/cms_media/module_img/6793/3396776_7_org_GettyImages-1407536627_1_.jpg","credit":"Irish Examiner / Getty Images source","license":"Unknown","focus":{"x":0.5,"y":0.5}},
     {"id":"broken_chain","file":"broken_chain.jpg","url":"https://images.unsplash.com/photo-1520359319979-f360d010d777?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJyZWFraW5nJTIwY2hhaW5zfGVufDB8fDB8fHww&ixlib=rb-4.1.0&q=60&w=3000","credit":"Unsplash source","license":"Unknown","focus":{"x":0.5,"y":0.5}},
     {"id":"microphone_studio","file":"studio_microphone.jpg","url":"https://images.unsplash.com/photo-1561726976-e4fb49f9813b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D&ixlib=rb-4.1.0&q=60&w=3000","credit":"CHUTTERSNAP / Unsplash","license":"Unsplash License","focus":{"x":0.5,"y":0.5}},
