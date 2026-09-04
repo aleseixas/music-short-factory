@@ -5,15 +5,15 @@ on:
     branches:
       - main
     paths:
-      - ".publish-tiktok-retry/fallen_angel_jennie-5.txt"
+      - ".publish-tiktok-retry/beat_it_michael_jackson-polling-test.txt"
 
 permissions:
   contents: read
   actions: read
 
 env:
-  EPISODE: fallen_angel_jennie
-  SOURCE_RUN_ID: "33857070005"
+  EPISODE: beat_it_michael_jackson
+  SOURCE_RUN_ID: "33828058837"
 
 jobs:
   publish-tiktok:
