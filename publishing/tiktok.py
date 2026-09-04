@@ -296,7 +296,11 @@ class TikTokPublisher(Publisher):
             payload = self._json(response, self.display_name)
             token = str(payload.get("access_token", "")).strip()
             if not token:
-                raise ApiError("TikTokPublisher: OAuth nao retornou access_token.")
+                detail = self._oauth_error_detail(payload)
+                raise ApiError(
+                    "TikTokPublisher: OAuth nao retornou access_token"
+                    + (f" ({detail})." if detail else ".")
+                )
 
             # TikTok may rotate refresh_token during refresh. Persist the new value
             # when this CredentialStore came from a project .env. In ephemeral CI
@@ -323,6 +327,55 @@ class TikTokPublisher(Publisher):
             "TikTokPublisher: credenciais nao configuradas "
             f"(faltando: {', '.join(missing)})."
         )
+
+    def _oauth_error_detail(self, payload: Mapping[str, Any]) -> str:
+        raw_error = payload.get("error")
+        if isinstance(raw_error, Mapping):
+            code = str(raw_error.get("code") or raw_error.get("type") or "").strip()
+            description = str(
+                raw_error.get("message")
+                or raw_error.get("description")
+                or payload.get("error_description")
+                or payload.get("message")
+                or ""
+            ).strip()
+            log_id = str(raw_error.get("log_id") or payload.get("log_id") or "").strip()
+        else:
+            code = str(raw_error or payload.get("error_code") or "").strip()
+            description = str(
+                payload.get("error_description")
+                or payload.get("description")
+                or payload.get("message")
+                or ""
+            ).strip()
+            log_id = str(payload.get("log_id") or "").strip()
+
+        parts: list[str] = []
+        if code:
+            parts.append(f"error={code}")
+        if description:
+            parts.append(f"error_description={description[:300]}")
+        if log_id:
+            parts.append(f"log_id={log_id[:120]}")
+
+        code_lower = code.lower()
+        if code_lower == "invalid_client":
+            parts.append("verifique TIKTOK_CLIENT_KEY e TIKTOK_CLIENT_SECRET")
+        elif code_lower == "invalid_grant":
+            parts.append(
+                "verifique TIKTOK_REFRESH_TOKEN e se ele foi emitido para este mesmo client"
+            )
+
+        detail = "; ".join(parts)
+        for secret in (
+            self.credentials.get("TIKTOK_CLIENT_KEY"),
+            self.credentials.get("TIKTOK_CLIENT_SECRET"),
+            self.credentials.get("TIKTOK_REFRESH_TOKEN"),
+            self.credentials.get("TIKTOK_ACCESS_TOKEN"),
+        ):
+            if secret:
+                detail = detail.replace(secret, "[REDACTED]")
+        return detail[:600]
 
     def _tiktok_json(self, response: Any) -> dict[str, Any]:
         payload = self._json(response, self.display_name)
