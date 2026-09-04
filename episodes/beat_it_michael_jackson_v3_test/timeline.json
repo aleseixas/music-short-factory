@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_oke_funkhouser","volume":0.038},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.060},
+    {"time_seconds":4.2,"type":"whoosh_fast","volume":0.038},
+    {"time_seconds":8.8,"type":"record_scratch","volume":0.038},
+    {"time_seconds":13.2,"type":"impact","volume":0.045},
+    {"time_seconds":17.6,"type":"camera_shutter","volume":0.032},
+    {"time_seconds":22.0,"type":"whoosh_transition","volume":0.035},
+    {"time_seconds":26.4,"type":"tape_stop","volume":0.038},
+    {"time_seconds":31.0,"type":"impact","volume":0.045},
+    {"time_seconds":35.6,"type":"riser_build_up","volume":0.035},
+    {"time_seconds":40.2,"type":"dramatic_dun_dun","volume":0.034},
+    {"time_seconds":45.0,"type":"ding","volume":0.030},
+    {"time_seconds":50.0,"type":"whoosh_fast","volume":0.035},
+    {"time_seconds":55.0,"type":"crowd_cheer","volume":0.030},
+    {"time_seconds":60.0,"type":"impact","volume":0.042},
+    {"time_seconds":66.0,"type":"whoosh_transition","volume":0.035}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.55,"type":"punch_zoom","intensity":0.50}
+  ],
+  "text_fx_cues": [
+    {"segment":"twist","offset_seconds":0.05,"duration_seconds":0.8,"text":"AÍ FICOU\nMALUCO","accent_text":"MALUCO","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"free","offset_seconds":0.05,"duration_seconds":0.8,"text":"SEM\nCOBRAR","accent_text":"COBRAR","animation":"pop_in","position":"center","intensity":0.56},
+    {"segment":"heavy","offset_seconds":0.05,"duration_seconds":0.85,"text":"PESADA\nDEMAIS","accent_text":"DEMAIS","animation":"pop_in","position":"center","intensity":0.56},
+    {"segment":"payoff","offset_seconds":0.05,"duration_seconds":0.95,"text":"O ROCK ENTROU\nNO MUNDO DELE","accent_text":"MUNDO DELE","animation":"fade_pop","position":"center","intensity":0.58},
+    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"RIFF OU\nSOLO?","accent_text":"SOLO?","animation":"pop_in","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"img_hook","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_quincy","segment":"quincy","asset":"img_quincy","motion":"pan_left","transition_out":"cut","highlight":"QUINCY QUERIA ROCK"},
+    {"id":"shot_michael","segment":"michael","asset":"img_michael","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_message","segment":"message","asset":"vid_message","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_twist","segment":"twist","asset":"vid_twist","motion":"hold","transition_out":"cut"},
+    {"id":"shot_eddie_call","segment":"eddie_call","asset":"vid_eddie_call","motion":"hold","transition_out":"cut","highlight":"EDDIE VAN HALEN"},
+    {"id":"shot_trote","segment":"trote","asset":"img_trote","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_free","segment":"free","asset":"vid_free","motion":"hold","transition_out":"cut"},
+    {"id":"shot_edit","segment":"edit","asset":"vid_edit","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_tape","segment":"tape","asset":"vid_tape","motion":"hold","transition_out":"cut","highlight":"A FITA MUDOU"},
+    {"id":"shot_lukather","segment":"lukather","asset":"vid_lukather","motion":"hold","transition_out":"cut","highlight":"RECONSTRUIR PARTES"},
+    {"id":"shot_porcaro","segment":"porcaro","asset":"vid_porcaro","motion":"hold","transition_out":"cut"},
+    {"id":"shot_heavy","segment":"heavy","asset":"vid_heavy","motion":"hold","transition_out":"cut"},
+    {"id":"shot_reduce","segment":"reduce","asset":"vid_reduce","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_fusion","segment":"fusion","asset":"vid_fusion","motion":"hold","transition_out":"cut"},
+    {"id":"shot_drumcase","segment":"drumcase","asset":"img_drumcase","motion":"pull_out","transition_out":"cut","highlight":"DRUM CASE BEATER"},
+    {"id":"shot_meaning","segment":"meaning","asset":"vid_meaning","motion":"hold","transition_out":"cut"},
+    {"id":"shot_live","segment":"live","asset":"vid_live","motion":"hold","transition_out":"cut"},
+    {"id":"shot_crossover","segment":"crossover","asset":"vid_crossover","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_number_one","segment":"number_one","asset":"vid_number_one","motion":"hold","transition_out":"cut","highlight":"Nº 1 NOS EUA"},
+    {"id":"shot_grammy","segment":"grammy","asset":"img_grammy","motion":"push_in","transition_out":"cut","highlight":"GRAVAÇÃO DO ANO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"img_payoff","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_final_thought","segment":"final_thought","asset":"vid_final_thought","motion":"hold","transition_out":"cut"},
+    {"id":"shot_cta","segment":"cta","asset":"end_card_brand","motion":"hold","transition_out":"cut"}
+  ]
+}
