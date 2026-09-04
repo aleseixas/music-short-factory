@@ -176,17 +176,21 @@ Siga `templates/caption-layout-rule.md`: legenda falada tem prioridade; text FX/
 
 Não use texto editorial para compensar um visual fraco ou sem contexto.
 
-## 8) End card — somente no final
+## 8) Fechamento — CTA contextual sem end card visual
 
-A end card/CTA segue `templates/end-card-cta-rule.md`.
+O fechamento segue `templates/end-card-cta-rule.md`, que apesar do nome histórico do arquivo agora define **CTA contextual sem end card visual**.
 
-A arte canônica de branding **NUNCA deve ser usada como primeiro visual ou no meio do episódio**. Ela existe para funcionar como assinatura final da marca e deve aparecer **somente no último shot**.
+A arte `assets/branding/end_card_template.jpg` está **desativada para novos episódios** e não deve ser usada, copiada para a pasta do episódio nem substituída por outra arte genérica.
 
 Fluxo esperado:
 
-`hook reconhecível → história visual contextual → payoff → CTA contextual curto → end card final`
+`hook reconhecível → história visual contextual → payoff → CTA contextual curto sobre o último visual da própria história`
 
-O payoff deve vir antes do CTA. A end card não conta como desculpa para alongar o take anterior.
+O payoff deve vir antes do CTA.
+
+O último visual deve continuar sendo um asset real e relevante do episódio — idealmente algo forte ligado à música, ao artista ou ao payoff. O CTA pode ser falado e, quando houver espaço visual claro, reforçado com `text_fx` curto.
+
+Escolha apenas UMA ação principal no CTA, priorizando comentário ou compartilhamento. Não encerre com pedido triplo genérico.
 
 ## 9) Checklist editorial antes da queue
 
@@ -204,5 +208,7 @@ Antes de finalizar, confirme obrigatoriamente:
 - zero reuso de conteúdo visual;
 - artista principal aparece claramente;
 - legenda/texto editorial não competem;
-- end card aparece somente no último shot;
-- CTA final é contextual e curto.
+- `assets/branding/end_card_template.jpg` NÃO foi usado;
+- não foi criada end card genérica substituta;
+- CTA final é contextual, curto e pede uma única ação;
+- último visual continua pertencendo à história e reforça o encerramento.
