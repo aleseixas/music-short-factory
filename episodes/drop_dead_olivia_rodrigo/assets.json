@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"cover","file":"drop_dead_cover.png","url":"https://media.thecrimson.com/photos/2026/04/21/194212_1385854.png","credit":"Courtesy Olivia Rodrigo / Geffen Records","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"artist_feature","file":"olivia_drop_dead_feature.jpg","url":"https://assets.billboardphilippines.com/wp-content/uploads/2026/04/olivia-rodrigo-drop-dead-ftr-1600x838.jpg","credit":"Billboard Philippines / Geffen-Interscope source","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"phone_connection","file":"phone_connection.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Checking%20Her%20Smartphone%20(Unsplash).jpg","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"adult_notebook","file":"adult_notebook.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Hands-woman-laptop-notebook%20(24217008462).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"phone_proof","file":"phone_proof.jpeg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Woman%20using%20smartphone.jpeg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"headphones_fear","file":"headphones_fear.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Headphones%20(56330).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"synth","file":"synth.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/RCA%20Mark%20II%20Sound%20Synthesizer.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"mixing_console","file":"mixing_console.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mixing%20console%20(Unsplash).jpg","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"guitar_cure","file":"guitar_cure.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Guitar%20(21758515013).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"pub_smith","file":"pub_smith.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/John%20Snow%20Pub%20interior%20upstairs1.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"studio_not_shown","file":"studio_not_shown.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/MARK%20JENKINS%2C%20LONDON%20STUDIO%202005.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_hall1","file":"versailles_hall1.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Foudre%20Hall%20of%20Mirrors%20Versailles.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_hall2","file":"versailles_hall2.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace%20of%20Versailles%20Hall%20of%20Mirrors%20(27738999444).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_guitar","file":"versailles_guitar.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace%20of%20Versailles%20Hall%20of%20Mirrors%20(28355541195).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_hall3","file":"versailles_hall3.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace%20of%20Versailles%20Hall%20of%20Mirrors%20(9812081913).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_bedroom","file":"versailles_bedroom.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace%20of%20Versailles%20King's%20Bedroom%20(28071122490).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"coachella_stage","file":"coachella_stage.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/M%C3%98%20at%20Coachella%202015.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"coachella_duet","file":"coachella_duet.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/H.E.R%20and%20Daniel%20Caesar%20performing%20at%20Coachella.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"coachella_crowd","file":"coachella_crowd.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Kamasi%20Washington%20Coachella.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"current_crowd","file":"current_crowd.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ratatat%20(17113709506).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_payoff","file":"versailles_payoff.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace%20of%20Versailles%20(28367159795).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"versailles_cta","file":"versailles_cta.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Palace%20of%20Versailles%20Garden%20(28332471116).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
