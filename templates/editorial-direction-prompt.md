@@ -131,6 +131,21 @@ A escolha do ASSET é uma das decisões mais importantes. Antes de compensar vis
 
 Não transforme poucos vídeos genéricos em dezenas de shots quase iguais apenas mudando o trim.
 
+### REGRA CRÍTICA — NÃO REPETIR VISUAIS
+
+Cada shot deve usar um visual principal único dentro do episódio.
+
+- a mesma imagem nunca pode aparecer em dois shots;
+- o mesmo vídeo-fonte nunca pode aparecer em dois shots;
+- usar outro trecho/trim do mesmo vídeo continua sendo repetição e não é permitido;
+- crop, focus, speed, motion, transition, visual FX, overlay ou qualquer tratamento diferente NÃO transforma o mesmo visual em asset novo;
+- URLs diferentes que resolvam para o mesmo arquivo, upload, `provider_id`, página-fonte ou conteúdo visual devem ser consideradas duplicatas;
+- depois que um visual é escolhido para um shot, ele fica reservado para aquele shot e não pode ser escolhido novamente;
+- faça deduplicação GLOBAL dos visuais finais antes de salvar `assets.json`/`timeline.json`;
+- se um candidato já foi usado, escolha o próximo melhor candidato válido do mesmo tipo e, se necessário, faça nova busca.
+
+Repetição só pode existir como último fallback se, depois de buscas reais, for tecnicamente impossível achar qualquer alternativa válida. Nunca repita por conveniência, economia de busca ou porque outro trim/crop/FX parece diferente.
+
 MOTION (`push_in`, `pull_out`, pans ou outros suportados pela `main`) deve ser escolhido conscientemente. Em imagens, movimento discreto costuma ajudar. Em vídeo já dinâmico, `hold` pode ser a melhor decisão.
 
 TRANSITIONS também são decisões editoriais: `cut` funciona para energia/impacto; `crossfade` para passagem suave, emocional ou contemplativa quando fizer sentido.
@@ -181,7 +196,7 @@ Siga esta ordem:
 5. identificar beats (`HOOK`, `REVEAL`, `CONTEXT`, `BUILDUP`, `STATISTIC`, `NAME_OR_ENTITY`, `LOCATION`, `TURNING_POINT`, `PAYOFF`);
 6. pesquisar visuais com múltiplas queries, comparar candidatos, inspecionar os
    melhores, usar o ranking técnico como apoio e só então escolher assets/trims;
-7. escolher shots/assets e trims com significado editorial;
+7. escolher shots/assets e trims com significado editorial, reservando cada visual escolhido para um único shot;
 8. fazer a primeira passada shot por shot: asset, trecho, foco, motion e transition;
 9. pesquisar/comparar background music externa quando houver web, validar URL/hostname contra `engine/audio_library.py` e escolher profile real ou fallback válido;
 10. ler o catálogo de SFX e selecionar somente types curados;
@@ -189,10 +204,11 @@ Siga esta ordem:
 12. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
 13. revisar isoladamente hook, reveals, mudanças de assunto, estatísticas, virada e payoff;
 14. validar deliveries, assets, conflitos, trims de vídeo e SFX contra suas durações reais, duração final e host de background externa;
-15. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
-16. revisar `post.json` para garantir que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
-17. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
-18. salvar o episódio.
+15. fazer deduplicação GLOBAL dos visuais finais e substituir qualquer imagem ou vídeo-fonte repetido antes do commit;
+16. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
+17. revisar `post.json` para garantir que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
+18. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
+19. salvar o episódio.
 
 Antes do commit, faça uma MATRIZ MENTAL:
 
