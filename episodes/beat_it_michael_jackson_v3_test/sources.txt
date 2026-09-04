@@ -1,0 +1,13 @@
+BEAT IT — FONTES EDITORIAIS DO TESTE V3
+
+https://www.thriller40.com/music/beat-it/ — créditos originais, pedido de Quincy Jones por uma faixa rock, Eddie Van Halen no solo, drum case beater, desempenho comercial e Grammy.
+https://www.stevelukather.com/music/discography/1982/thriller.aspx — relato de Steve Lukather sobre a gravação, a alteração da fita e a reconstrução de partes ao redor do solo.
+https://www.musicradar.com/news/eddie-van-halen-beat-it-solo — contexto técnico do solo e da reconstrução.
+https://www.guitarworld.com/features/the-story-of-michael-jackson-beat-it-eddie-van-halen-steve-lukather — relato sobre Eddie alterar a seção do solo.
+https://au.rollingstone.com/music/music-news/thriller-how-michael-jackson-and-quincy-jones-made-the-bestselling-album-of-all-time-2180/ — contexto de crossover e Eddie não cobrar pelo solo.
+https://www.youtube.com/watch?v=zwWfm-EY4aU — entrevista de Steve Lukather / Musicians Hall of Fame.
+
+VISUAIS
+Este episódio de teste constrói o pool visual WEB-FIRST durante a GitHub Action a partir de 23 intenções visuais distintas.
+Alvo do teste: 5 candidatos por slot = 115 candidatos visuais totais, com deduplicação global antes da seleção.
+visual_candidates.json e visual_resolution_report.json são gerados no workspace da Action e enviados junto ao artifact de teste.
