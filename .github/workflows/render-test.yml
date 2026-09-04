@@ -1,0 +1,102 @@
+name: Render test only
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".render-test/*.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Resolve episode slug
+        id: episode
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            mapfile -t trigger_files < <(
+              git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.render-test/*.txt'
+            )
+          else
+            mapfile -t trigger_files < <(
+              git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.render-test/*.txt'
+            )
+          fi
+
+          if [[ ${#trigger_files[@]} -ne 1 ]]; then
+            echo "::error::Expected exactly one new render-test trigger, found ${#trigger_files[@]}."
+            exit 1
+          fi
+
+          trigger_file="${trigger_files[0]}"
+          episode="$(tr -d '\r\n' < "$trigger_file" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+
+          if [[ -z "$episode" ]]; then
+            episode="$(basename "$trigger_file" .txt)"
+          fi
+
+          if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+            echo "::error::Invalid episode slug."
+            exit 1
+          fi
+
+          if [[ ! -d "episodes/$episode" ]]; then
+            echo "::error::Episode directory episodes/$episode does not exist."
+            exit 1
+          fi
+
+          echo "slug=$episode" >> "$GITHUB_OUTPUT"
+          echo "Render-only episode: $episode"
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Set up Node.js for yt-dlp EJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Render episode only
+        env:
+          EPISODE: ${{ steps.episode.outputs.slug }}
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python generate.py "$EPISODE"
+
+      - name: Upload rendered MP4
+        uses: actions/upload-artifact@v7
+        with:
+          name: render-test-${{ steps.episode.outputs.slug }}
+          path: output/${{ steps.episode.outputs.slug }}.mp4
+          if-no-files-found: error
+          retention-days: 3
+          compression-level: 0
+
+      - name: Confirm no publishing
+        run: echo "Render test complete. No publish command was executed."
