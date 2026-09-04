@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O TÉRMINO QUE TAMBÉM FALA DE FAMA","source":{"type":"asset","asset_id":"artist_main"}},
+  "youtube": {
+    "title":"Hate That I Made You Love Me: o término de Ariana Grande que também fala sobre fama",
+    "description":"Hate That I Made You Love Me parece uma música de término, mas a ideia de Petal abre uma leitura maior: romper com vínculos, projeções e vozes externas. A produção contida e a nova postura de Ariana Grande tornam essa tensão ainda mais clara.",
+    "hashtags":["ArianaGrande","HateThatIMadeYouLoveMe","Petal","Musica","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Hate That I Made You Love Me parece um término — até você conectar a faixa à ideia de Petal e ao desejo de Ariana Grande de romper com vínculos e projeções. A música muda completamente de leitura.",
+    "hashtags":["ArianaGrande","HateThatIMadeYouLoveMe","Petal","Musica","Curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Hate That I Made You Love Me não fala só de um término. A ideia por trás de Petal deixa uma leitura muito maior sobre Ariana Grande, fama e projeção.",
+    "hashtags":["ArianaGrande","HateThatIMadeYouLoveMe","Petal","Musica","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
