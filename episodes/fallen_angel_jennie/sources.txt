@@ -1,0 +1,21 @@
+RESEARCH / STORY
+- Billboard Brasil — JENNIE lança EP “Fallen Angel”, com MV ambientado em conto de fadas sombrio (2026-08-28): https://billboard.com.br/jennie-ep-fallen-angel-com-mv/
+- Billboard Brasil — JENNIE anuncia EP “Fallen Angel” e libera teaser (2026-08-21): https://billboard.com.br/jennie-blackpink-ep-fallen-angel/
+- Sony Music Japan — JENNIE “Fallen Angel” release note (2026-08-31): https://www.sonymusic.co.jp/artist/JENNIE/info/586389
+- Neon Music — JENNIE’s “FALLEN ANGEL” Finds Beauty in a Surreal Fantasy (2026-08-28): https://neonmusic.co.uk/jennies-fallen-angel-finds-beauty-in-a-surreal-fantasy
+- Official music video / web-video discovery: https://www.youtube.com/watch?v=s466YCiHfKw
+
+BACKGROUND MUSIC
+- External-first searches compared: “acoustic emotional guitar instrumental fallen angel mood”; “dreamy acoustic pop instrumental guitar”; “ethereal emotional ambient guitar music”.
+- No external candidate was adopted because a direct, technically compatible file on a currently allowed audio host was not verified with enough confidence.
+- Fallback selected from repository catalog: emotional_piano.
+
+VISUAL BASELINES / CANDIDATE PROVENANCE
+- JENNIE 2026 photos: https://commons.wikimedia.org/wiki/File:20260526_Jennie_Kim_08.jpg ; https://commons.wikimedia.org/wiki/File:20260526_Jennie_Kim_04.jpg ; https://commons.wikimedia.org/wiki/File:20260526_Jennie_Kim_03.jpg ; https://commons.wikimedia.org/wiki/File:20260526_Jennie_Kim_06.jpg ; https://commons.wikimedia.org/wiki/File:Jennie_2026_GDA_1.jpg
+- Angel/wings: https://commons.wikimedia.org/wiki/File:Beautiful_Feathery_Angel_Wings.JPG ; https://commons.wikimedia.org/wiki/File:Angel%27s_Wings_Thomas_Heatherwick.jpg ; https://commons.wikimedia.org/wiki/File:Angel_Statue.JPG ; https://commons.wikimedia.org/wiki/File:Angel_statue_under_cloudy_sky.jpg
+- Roses: https://commons.wikimedia.org/wiki/File:Rose_Blossom_Closeup.jpg ; https://commons.wikimedia.org/wiki/File:Pretty_Pink_Rose_Closeup.jpg ; https://commons.wikimedia.org/wiki/File:Dark_rose_close_up.jpg ; https://commons.wikimedia.org/wiki/File:Rose_flower.jpg
+- Guitar: https://commons.wikimedia.org/wiki/File:Close-up_of_a_guitar.jpg ; https://commons.wikimedia.org/wiki/File:Close-up_Acoustic_Guitar.jpg ; https://commons.wikimedia.org/wiki/File:Ibanez_TCY20EVV_Talman_Acoustic-Electric_Guitar_(Vintage_Violin_finish)_close-up.jpg ; https://commons.wikimedia.org/wiki/File:Anchor_on_acoustic_guitar_closeup.jpg
+- Lake / atmosphere: https://commons.wikimedia.org/wiki/File:Close_up_of_lake.webm ; https://commons.wikimedia.org/wiki/File:Meikarta_Lake_(video).webm ; https://commons.wikimedia.org/wiki/File:Mpape_Water_lake_Abuja.webm
+- Studio / guitar video: https://commons.wikimedia.org/wiki/File:Randy_Moore_tracking_guitars_with_MBOX_Studio_Sam_Pura.webm ; https://commons.wikimedia.org/wiki/File:Madame_Sidney_Pratten%27s_Guitar.webm
+- Night / clouds: https://commons.wikimedia.org/wiki/File:Night_sky_time_lapse.webm ; https://commons.wikimedia.org/wiki/File:Milky_Way_Night_Sky.webm ; https://commons.wikimedia.org/wiki/File:Clouds_(time_lapse).webm
+- Web-video candidates without clear license metadata are recorded as rights_status=unknown and remain subject to Action resolution/ranking.
