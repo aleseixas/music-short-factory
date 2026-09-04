@@ -8,6 +8,22 @@ Todo episódio deve terminar com uma assinatura visual curta do **Além do Hit**
 
 O CTA não é um bloco publicitário genérico. Ele deve parecer a última batida editorial da história.
 
+## Posição da end card — regra absoluta
+
+A end card canônica é **somente para o final do vídeo**.
+
+- NÃO usar como primeiro shot;
+- NÃO usar no hook;
+- NÃO usar no meio da narrativa;
+- NÃO usar como fundo recorrente;
+- usar **somente no último shot/segmento** como assinatura final da marca.
+
+O primeiro visual do episódio deve seguir `templates/short-form-style-rule.md`: capa oficial da música/álbum/single OU artista principal claramente reconhecível nos primeiros 0,0–1,5s.
+
+Fluxo editorial esperado:
+
+`capa/artista reconhecível → história visual contextual → payoff → CTA contextual curto → end card final`
+
 ## Regra principal do CTA
 
 Nunca encerre automaticamente com `curta, compartilhe e comente` ou pedido triplo equivalente.
@@ -23,7 +39,7 @@ Prioridade editorial normal: `comment` ou `share` > `follow`.
 O texto deve ser específico para o episódio. Exemplos de direção — NÃO copiar mecanicamente:
 
 - `Qual faixa desse álbum é a melhor?`
-- `Você acha que o Ye passou do limite?`
+- `Você acha que ele passou do limite?`
 - `Manda praquele amigo que ainda defende essa música.`
 - `Qual música dela merece o próximo vídeo?`
 - `Você interpreta essa letra do mesmo jeito?`
@@ -58,8 +74,9 @@ O renderer atual só resolve assets principais dentro de `episodes/<slug>/assets
 1. confirme que `assets/branding/end_card_template.jpg` existe na `main`;
 2. copie/reutilize o blob EXATO desse arquivo em `episodes/<slug>/assets/end_card_template.jpg` sem recomprimir nem gerar variante;
 3. adicione um asset local dedicado em `episodes/<slug>/assets.json`, por exemplo `end_card_brand`, apontando para `end_card_template.jpg` e sem URL remota;
-4. use `end_card_brand` SOMENTE no último shot/segmento;
-5. `motion` deve ser discreto, preferencialmente `hold`, e `transition_out` do último shot deve continuar `cut` se essa for a exigência atual da `main`.
+4. use `end_card_brand` **somente no último shot/segmento**;
+5. nunca use `end_card_brand` no primeiro shot ou em qualquer shot intermediário;
+6. `motion` deve ser discreto, preferencialmente `hold`, e `transition_out` do último shot deve continuar `cut` se essa for a exigência atual da `main`.
 
 A cópia do mesmo blob de branding ENTRE episódios é permitida e esperada. A regra de zero reuso visual continua valendo para conteúdo principal dentro de um episódio; a end card de branding não deve aparecer mais de uma vez no mesmo episódio.
 
@@ -100,6 +117,7 @@ SFX na end card é opcional. Se usado, escolha apenas type existente no catálog
 
 Confirme:
 
+- o primeiro visual do episódio NÃO é a end card;
 - existe exatamente um CTA contextual final;
 - o CTA pede apenas uma ação principal;
 - o CTA é específico da música/artista/história do episódio;
