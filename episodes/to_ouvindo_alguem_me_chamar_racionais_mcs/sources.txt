@@ -1,0 +1,212 @@
+TÔ OUVINDO ALGUÉM ME CHAMAR — PESQUISA EDITORIAL
+
+FONTES FACTUAIS
+
+Estudos de Literatura Brasileira Contemporânea / SciELO — Henrique Marques Samyn
+Análise acadêmica da faixa: composição de Mano Brown, quarta faixa de Sobrevivendo no Inferno, abertura in medias res, Guina como parceiro/mestre/modelo e leitura do protagonista como anti-herói de uma narrativa de denúncia.
+https://www.scielo.br/j/elbc/a/P83B6Vn3bjkGzhr5QC4MPrp/?lang=pt
+
+Universidade de Brasília — versão do artigo de Henrique Marques Samyn
+Texto integral da análise acadêmica da narrativa, incluindo o início caótico e a trajetória do narrador.
+https://periodicos.unb.br/index.php/estudos/article/view/15632/15720
+
+Billboard Brasil — Guina, o personagem “quase real” dos Racionais MCs, vira tema de livro
+Guina é uma criação de Mano Brown construída a partir de múltiplas histórias; o personagem ganhou dimensão “quase real” no imaginário.
+https://billboard.com.br/guina-o-personagem-quase-real-dos-racionais-mcs-vira-tema-de-livro/
+
+Folha de S.Paulo — Racionais MC's fazem o retrato mais áspero de São Paulo (03/11/1997)
+Contexto contemporâneo ao lançamento de Sobrevivendo no Inferno e menção à faixa como narrativa de alguém vendo a própria vida escorrer.
+https://www1.folha.uol.com.br/fsp/1997/11/03/folhateen/16.html
+
+Folha de S.Paulo — RACIONAIS MC's (23/12/1997)
+Contexto de recepção e alcance inicial de Sobrevivendo no Inferno em 1997.
+https://www1.folha.uol.com.br/fsp/1997/12/23/ilustrada/1.html
+
+Wikipedia — Tô Ouvindo Alguém me Chamar
+Fonte secundária para o sample de “Charisma”, de Tom Browne, e para o efeito de batimento cardíaco associado a KL Jay; usada somente como apoio às fontes acadêmicas.
+https://pt.wikipedia.org/wiki/T%C3%B4_Ouvindo_Algu%C3%A9m_me_Chamar
+
+WhoSampled — cadeia de samples da faixa
+Referência secundária para “Charisma”, de Tom Browne.
+https://www.whosampled.com/sample/612447/Fac%C3%ADnora-MC%27s-R%C3%A9u-Prim%C3%A1rio-Racionais-MC%27s-T%C3%B4-Ouvindo-Algu%C3%A9m-Me-Chamar/
+
+Racionais TV / YouTube — Tô Ouvindo Alguém Me Chamar
+Áudio oficial da obra.
+https://www.youtube.com/watch?v=tPVX6VYLI1A
+
+Racionais TV / YouTube — Tô Ouvindo Alguém Me Chamar, Racionais 3 Décadas
+Referência visual oficial.
+https://www.youtube.com/watch?v=GA0XyVllORw
+
+Racionais TV / YouTube — Mano Brown, um sobrevivente do inferno
+Referência visual de Mano Brown.
+https://www.youtube.com/watch?v=gMT9cXizDYQ
+
+BACKGROUND MUSIC — PESQUISA EXTERNA
+
+Consultas editoriais usadas:
+1. dark atmospheric CC0 music
+2. instrumental hip-hop CC0 music
+3. suspense / impending doom CC0 music
+4. dark piano CC0 music
+5. dark ambient / industrial CC0 music
+
+Candidatas comparadas:
+- Lost somewhere — iamoneabe — CC0 — dark, atmospheric, loopable, ~120 BPM
+  https://opengameart.org/content/lost-somewhere
+- Suspense — wipics — CC0 / Public Domain
+  https://opengameart.org/content/suspense-0
+- Instrumental Hip-Hop theme — obscure music — CC0 / Public Domain
+  https://opengameart.org/content/instrumental-hip-hop-theme
+- lofi hip hop — omfgdude — CC0
+  https://opengameart.org/content/lofi-hip-hop
+- Factory ambiance — yd — CC0
+  https://opengameart.org/content/factory-ambiance
+- Night of the Streets [Horror/Suspense] — nene — CC0
+  https://opengameart.org/content/night-of-the-streets-horrorsuspense
+
+Selecionada: Lost somewhere — iamoneabe
+Licença: CC0 / Public Domain
+Página-fonte:
+https://opengameart.org/content/lost-somewhere
+Arquivo MP3 direto:
+https://opengameart.org/sites/default/files/lostsomewhere_0.mp3
+Profile: external_to_ouvindo_lost_somewhere
+Motivo: tensão atmosférica, pulso estável e clima escuro combinam com memória, paranoia e consequência sem repetir backgrounds recentes da repo.
+
+VISUAIS BASE
+
+Os takes de Racionais/Mano Brown usam thumbnails oficiais do canal Racionais TV como material de direitos não explicitamente classificados (rights=unknown). Não foi inferida licença aberta.
+Os apoios genéricos foram limitados a CC0 ou domínio público.
+Cada URL final é única dentro do episódio.
+
+artist_main
+Fonte: https://www.youtube.com/watch?v=GA0XyVllORw
+Asset: https://i.ytimg.com/vi/GA0XyVllORw/hqdefault.jpg
+rights_status: unknown
+
+chaos_rain_video — CC0 1.0
+https://commons.wikimedia.org/wiki/File:Raindrops_against_the_window_in_the_night_city,_Las_Palmas.webm
+
+guina_group
+Fonte: https://www.youtube.com/watch?v=dmWuW0xclHo
+Asset: https://i.ytimg.com/vi/dmWuW0xclHo/hqdefault.jpg
+rights_status: unknown
+
+entry_group
+Fonte: https://www.youtube.com/watch?v=TB_D-BfHkr4
+Asset: https://i.ytimg.com/vi/TB_D-BfHkr4/hqdefault.jpg
+rights_status: unknown
+
+betrayal_prison — Public domain
+https://commons.wikimedia.org/wiki/File:Carleton_County_Gaol_-_Prison_cell_1895.jpg
+
+present_city_video — CC0 1.0
+https://commons.wikimedia.org/wiki/File:Train_street_20220807_1205.webm
+
+memory_video — CC0 1.0
+https://commons.wikimedia.org/wiki/File:Flight_over_clouds.webm
+
+heartbeat_ecg — Public domain
+https://commons.wikimedia.org/wiki/File:Wireless_ECG_Monitor.jpg
+
+sample_turntable — CC0 1.0
+https://commons.wikimedia.org/wiki/File:Turntable-1328823.jpg
+
+regret_mano
+Fonte: https://www.youtube.com/watch?v=gMT9cXizDYQ
+Asset: https://i.ytimg.com/vi/gMT9cXizDYQ/hqdefault.jpg
+rights_status: unknown
+
+antihero_group
+Fonte: https://www.youtube.com/watch?v=DaCK8snx9ac
+Asset: https://i.ytimg.com/vi/DaCK8snx9ac/hqdefault.jpg
+rights_status: unknown
+
+guina_legacy
+Fonte: https://www.youtube.com/watch?v=rkD8k_jW1YQ
+Asset: https://i.ytimg.com/vi/rkD8k_jW1YQ/hqdefault.jpg
+rights_status: unknown
+
+album_group
+Fonte: https://www.youtube.com/watch?v=Cyz8ydKBCYw
+Asset: https://i.ytimg.com/vi/Cyz8ydKBCYw/hqdefault.jpg
+rights_status: unknown
+
+payoff_video — CC0 1.0
+https://commons.wikimedia.org/wiki/File:Music_in_the_street,_Barcelona_01.webm
+
+POOL VISUAL
+30 candidatos / 6 slots; pools disjuntos por provider_id. O mesmo source não aparece em dois pools selecionáveis.
+
+SLOT artist_main
+- rank 1 | ytthumb-GA0XyVllORw | Tô Ouvindo Alguém Me Chamar — Racionais 3 Décadas | image | rights=unknown
+  https://www.youtube.com/watch?v=GA0XyVllORw
+- rank 2 | ytthumb-cCTjsnVnbOs | Homem na Estrada — Racionais 3 Décadas | image | rights=unknown
+  https://www.youtube.com/watch?v=cCTjsnVnbOs
+- rank 3 | ytthumb-ov-Accod_yM | A Vida é Desafio — Racionais 3 Décadas | image | rights=unknown
+  https://www.youtube.com/watch?v=ov-Accod_yM
+- rank 4 | ytthumb-bWP8LcnjtNY | Fórmula Mágica da Paz — Racionais 3 Décadas | image | rights=unknown
+  https://www.youtube.com/watch?v=bWP8LcnjtNY
+- rank 5 | ytthumb-pthtGqlrRTw | Jorge da Capadócia / Mágico de Oz — Racionais 3 Décadas | image | rights=unknown
+  https://www.youtube.com/watch?v=pthtGqlrRTw
+
+SLOT guina_group
+- rank 1 | ytthumb-dmWuW0xclHo | O nascimento do grupo | image | rights=unknown
+  https://www.youtube.com/watch?v=dmWuW0xclHo
+- rank 2 | ytthumb-mrAT_xG-opk | Negro Drama — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=mrAT_xG-opk
+- rank 3 | ytthumb-Qv9ayypY1dQ | Vida Loka Parte 2 — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=Qv9ayypY1dQ
+- rank 4 | ytthumb-txSXj-F7VX8 | Tô Ouvindo Alguém Me Chamar — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=txSXj-F7VX8
+- rank 5 | ytthumb-9nUHk06-bX4 | Fórmula Mágica da Paz — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=9nUHk06-bX4
+
+SLOT entry_group
+- rank 1 | ytthumb-TB_D-BfHkr4 | A origem do nome Racionais MC's | image | rights=unknown
+  https://www.youtube.com/watch?v=TB_D-BfHkr4
+- rank 2 | ytthumb-HlHN8VSIRwE | Da Ponte Pra Cá — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=HlHN8VSIRwE
+- rank 3 | ytthumb-27c_CPWdARU | Expresso da Meia-Noite — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=27c_CPWdARU
+- rank 4 | ytthumb-RqceePoSzwg | Diário de um Detento — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=RqceePoSzwg
+- rank 5 | ytthumb-4PNmrGkiXUE | A Vida é Desafio — Mil Trutas Mil Tretas | image | rights=unknown
+  https://www.youtube.com/watch?v=4PNmrGkiXUE
+
+SLOT betrayal_prison
+- rank 1 | commons-prison-1 | Carleton County Gaol cell | image | rights=verified
+  https://commons.wikimedia.org/wiki/File:Carleton_County_Gaol_-_Prison_cell_1895.jpg
+- rank 2 | commons-prison-2 | Victoria Prison cell | image | rights=verified
+  https://commons.wikimedia.org/wiki/File:Vprisoncell.jpg
+- rank 3 | commons-prison-3 | Reading Gaol prison cell | image | rights=verified
+  https://commons.wikimedia.org/wiki/File:Oscar_Wilde_Prison_Cell_Reading_2016.jpg
+- rank 4 | commons-prison-4 | Atlanta Penitentiary cell block | image | rights=verified
+  https://commons.wikimedia.org/wiki/File:Photo_of_prison-_cell_block,_Atlanta_Penitentiary_LCCN2006677365.jpg
+- rank 5 | commons-prison-5 | Fort Leavenworth prison cell | image | rights=verified
+  https://commons.wikimedia.org/wiki/File:Prison_cell,_Fort_Leavenworth.jpg
+
+SLOT memory_video
+- rank 1 | 7l-tp7yyJaE | 1 por Amor, 2 por Dinheiro — Mil Trutas Mil Tretas | video | rights=unknown
+  https://www.youtube.com/watch?v=7l-tp7yyJaE
+- rank 2 | 1Q7xbzQK5YA | Vida Loka Parte 1 — Mil Trutas Mil Tretas | video | rights=unknown
+  https://www.youtube.com/watch?v=1Q7xbzQK5YA
+- rank 3 | b-nIr_AOyo | A Vítima — Mil Trutas Mil Tretas | video | rights=unknown
+  https://www.youtube.com/watch?v=b-nIr_AOyo
+- rank 4 | Hqp_LkLzFFM | Jesus Chorou — Mil Trutas Mil Tretas | video | rights=unknown
+  https://www.youtube.com/watch?v=Hqp_LkLzFFM
+- rank 5 | slwalSi03g8 | Extra — Mil Trutas Mil Tretas | video | rights=unknown
+  https://www.youtube.com/watch?v=slwalSi03g8
+
+SLOT payoff_video
+- rank 1 | tPVX6VYLI1A | Tô Ouvindo Alguém Me Chamar — áudio oficial | video | rights=unknown
+  https://www.youtube.com/watch?v=tPVX6VYLI1A
+- rank 2 | 52NT9cSWC_8 | A Vida é um Desafio — introdução ao vivo | video | rights=unknown
+  https://www.youtube.com/watch?v=52NT9cSWC_8
+- rank 3 | VDYRbLOdTAI | Da Ponte Pra Cá | video | rights=unknown
+  https://www.youtube.com/watch?v=VDYRbLOdTAI
+- rank 4 | b3iIet2Lels | Vida Loka Pt. 1 — Racionais 3 Décadas | video | rights=unknown
+  https://www.youtube.com/watch?v=b3iIet2Lels
+- rank 5 | LnOgC4Al9y0 | Mil Faces de um Homem Leal — Racionais 3 Décadas | video | rights=unknown
+  https://www.youtube.com/watch?v=LnOgC4Al9y0

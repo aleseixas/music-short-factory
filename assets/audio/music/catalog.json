@@ -97,6 +97,12 @@
         "file": "external/openverse/monplaisir-sincere-love.ogg",
         "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Monplaisir_-_02_-_Sincere_Love.ogg"
       }
+    ],
+    "external_to_ouvindo_lost_somewhere": [
+      {
+        "file": "external/manual/to_ouvindo/lostsomewhere.mp3",
+        "url": "https://opengameart.org/sites/default/files/lostsomewhere_0.mp3"
+      }
     ]
   }
 }

@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_to_ouvindo_lost_somewhere","volume":0.045},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.055},
+    {"time_seconds":5.6,"type":"whoosh_fast","volume":0.035},
+    {"time_seconds":11.2,"type":"record_scratch","volume":0.032},
+    {"time_seconds":16.8,"type":"impact","volume":0.042},
+    {"time_seconds":22.4,"type":"dramatic_dun_dun","volume":0.035},
+    {"time_seconds":28.0,"type":"whoosh_transition","volume":0.035},
+    {"time_seconds":39.2,"type":"heartbeat_slow","volume":0.028},
+    {"time_seconds":45.0,"type":"tape_stop","volume":0.03},
+    {"time_seconds":56.0,"type":"suspense_build_up","volume":0.03},
+    {"time_seconds":62.0,"type":"riser_build_up","volume":0.034}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.62,"type":"punch_zoom","intensity":0.55}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"ELE JÁ ESTAVA\nBALEADO","accent_text":"BALEADO","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"guina","offset_seconds":0.1,"duration_seconds":1.15,"text":"GUINA:\nPROFESSOR NO CRIME","accent_text":"GUINA","animation":"pop_in","position":"center","intensity":0.56},
+    {"segment":"betrayal","offset_seconds":0.1,"duration_seconds":1.15,"text":"PARCEIROS VIRAM\nAMEAÇA","accent_text":"AMEAÇA","animation":"slide_up","position":"center","intensity":0.58},
+    {"segment":"heartbeat","offset_seconds":0.1,"duration_seconds":1.2,"text":"O BATIMENTO\nATRAVESSA A FAIXA","accent_text":"BATIMENTO","animation":"scale_bounce","position":"center","intensity":0.6},
+    {"segment":"sample","offset_seconds":0.1,"duration_seconds":1.1,"text":"SAMPLE:\nCHARISMA","accent_text":"CHARISMA","animation":"fade_pop","position":"center","intensity":0.54},
+    {"segment":"antihero","offset_seconds":0.1,"duration_seconds":1.2,"text":"ANTI-HERÓI:\nFASCÍNIO → CONSEQUÊNCIA","accent_text":"ANTI-HERÓI","animation":"pop_in","position":"center","intensity":0.56},
+    {"segment":"album","offset_seconds":0.1,"duration_seconds":1.2,"text":"SOBREVIVENDO\nNO INFERNO • 1997","accent_text":"1997","animation":"slide_up","position":"center","intensity":0.58},
+    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.2,"text":"A CONTA\nESTÁ CHEGANDO","accent_text":"CONTA","animation":"scale_bounce","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"TÔ OUVINDO ALGUÉM ME CHAMAR • RACIONAIS MC'S"},
+    {"id":"shot_chaos","segment":"chaos","asset":"chaos_rain_video","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"crossfade","highlight":"A HISTÓRIA COMEÇA NO CAOS"},
+    {"id":"shot_guina","segment":"guina","asset":"guina_group","motion":"push_in","transition_out":"cut","highlight":"GUINA • PARCEIRO E PROFESSOR"},
+    {"id":"shot_entry","segment":"entry","asset":"entry_group","motion":"pan_right","transition_out":"cut","highlight":"ENTRAR NO CRIME"},
+    {"id":"shot_betrayal","segment":"betrayal","asset":"betrayal_prison","motion":"push_in","transition_out":"crossfade","highlight":"SUSPEITA • TRAIÇÃO"},
+    {"id":"shot_present","segment":"present","asset":"present_city_video","source_start_seconds":0.5,"source_end_seconds":6.8,"motion":"hold","transition_out":"cut","highlight":"OS PARCEIROS VIRAM AMEAÇA"},
+    {"id":"shot_memory","segment":"memory","asset":"memory_video","source_start_seconds":0.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"PASSADO ↔ PRESENTE"},
+    {"id":"shot_heartbeat","segment":"heartbeat","asset":"heartbeat_ecg","motion":"push_in","transition_out":"cut","highlight":"BATIMENTO CARDÍACO"},
+    {"id":"shot_sample","segment":"sample","asset":"sample_turntable","motion":"pan_left","transition_out":"cut","highlight":"CHARISMA • TOM BROWNE"},
+    {"id":"shot_regret","segment":"regret","asset":"regret_mano","motion":"pull_out","transition_out":"crossfade","highlight":"TRABALHAR • ESTUDAR • SAIR"},
+    {"id":"shot_antihero","segment":"antihero","asset":"antihero_group","motion":"push_in","transition_out":"cut","highlight":"ANTI-HERÓI • CONSEQUÊNCIA"},
+    {"id":"shot_guina_real","segment":"guina_real","asset":"guina_legacy","motion":"pan_right","transition_out":"cut","highlight":"PERSONAGEM QUASE REAL"},
+    {"id":"shot_album","segment":"album","asset":"album_group","motion":"push_in","transition_out":"crossfade","highlight":"SOBREVIVENDO NO INFERNO • 1997"},
+    {"id":"shot_payoff","segment":"payoff","asset":"payoff_video","source_start_seconds":2.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut","highlight":"A CONTA CHEGANDO"}
+  ]
+}

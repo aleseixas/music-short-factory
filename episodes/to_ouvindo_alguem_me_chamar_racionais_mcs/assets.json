@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"artist_main","file":"racionais_to_ouvindo_live_thumb.jpg","url":"https://i.ytimg.com/vi/GA0XyVllORw/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"chaos_rain_video","file":"rain_night_city.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/95/Raindrops_against_the_window_in_the_night_city%2C_Las_Palmas.webm","credit":"Vjatseslav Robtsenkov / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"guina_group","file":"racionais_nascimento_thumb.jpg","url":"https://i.ytimg.com/vi/dmWuW0xclHo/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"entry_group","file":"racionais_origem_nome_thumb.jpg","url":"https://i.ytimg.com/vi/TB_D-BfHkr4/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"betrayal_prison","file":"carleton_county_gaol_cell_1895.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Carleton%20County%20Gaol%20-%20Prison%20cell%201895.jpg","credit":"William James Topley / Library and Archives Canada / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.52}},
+    {"id":"present_city_video","file":"train_street.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/62/Train_street_20220807_1205.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"memory_video","file":"flight_over_clouds.webm","url":"https://upload.wikimedia.org/wikipedia/commons/2/2d/Flight_over_clouds.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"heartbeat_ecg","file":"wireless_ecg_monitor.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/6/6e/Wireless_ECG_Monitor.jpg","credit":"かっぱー / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.5}},
+    {"id":"sample_turntable","file":"turntable_1328823.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Turntable-1328823.jpg","credit":"Egle P. / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"regret_mano","file":"mano_brown_survivor_thumb.jpg","url":"https://i.ytimg.com/vi/gMT9cXizDYQ/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"antihero_group","file":"racionais_negro_drama_thumb.jpg","url":"https://i.ytimg.com/vi/DaCK8snx9ac/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"guina_legacy","file":"racionais_vida_loka_thumb.jpg","url":"https://i.ytimg.com/vi/rkD8k_jW1YQ/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"album_group","file":"racionais_cap4_thumb.jpg","url":"https://i.ytimg.com/vi/Cyz8ydKBCYw/hqdefault.jpg","credit":"Racionais TV / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"payoff_video","file":"music_street_barcelona.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/ae/Music_in_the_street%2C_Barcelona_01.webm","credit":"Nicolas Vigier / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

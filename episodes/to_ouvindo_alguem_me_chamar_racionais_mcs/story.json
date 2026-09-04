@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "title": "Tô Ouvindo Alguém Me Chamar — Racionais MC's: a história de um homem baleado",
+  "slug": "to_ouvindo_alguem_me_chamar_racionais_mcs",
+  "target_duration_seconds": 80,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Tô Ouvindo Alguém Me Chamar, dos Racionais MC's, começa com um homem baleado revendo a vida.",
+      "delivery": "hook"
+    },
+    {
+      "id": "chaos",
+      "text": "A história entra no caos: alguém diz que Guina mandou um recado, e tudo confunde.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "guina",
+      "text": "Guina surge como parceiro e professor no crime, símbolo de dinheiro e poder.",
+      "delivery": "curious"
+    },
+    {
+      "id": "entry",
+      "text": "O narrador lembra como entrou nesse mundo e passou a enxergar violência como caminho.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "betrayal",
+      "text": "Guina é preso, surge suspeita de delação e antigos aliados viram ameaça.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "present",
+      "text": "Então fica claro: o narrador foi atacado pelos homens que chamava de parceiros.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "memory",
+      "text": "Enquanto perde força, passado e presente se misturam como cenas quebradas de um filme.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "heartbeat",
+      "text": "KL Jay reforça isso com um batimento cardíaco atravessando a faixa, marcando o fim.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "sample",
+      "text": "A base inclui o sample de Charisma, de Tom Browne, sob a tensão.",
+      "delivery": "curious"
+    },
+    {
+      "id": "regret",
+      "text": "O personagem não glorifica o crime: pensa em trabalhar, estudar e sair daquele ciclo.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "antihero",
+      "text": "Pesquisadores leem a faixa como narrativa de anti-herói: fascínio, consequência e denúncia.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "guina_real",
+      "text": "Guina ficou tão marcante que décadas depois ainda é chamado de personagem quase real.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "album",
+      "text": "A música integra Sobrevivendo no Inferno, álbum de 1997 que projetou os Racionais nacionalmente.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "payoff",
+      "text": "Quando o chamado volta no final, soa menos como voz distante e mais como a conta chegando.",
+      "delivery": "payoff"
+    }
+  ]
+}
