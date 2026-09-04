@@ -31,7 +31,7 @@
   "shots": [
     {"id":"shot_hook","segment":"hook","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"REIN ME IN • SAM FENDER + OLIVIA DEAN"},
     {"id":"shot_origin","segment":"origin","asset":"sam_main","motion":"push_in","transition_out":"crossfade","highlight":"ARREPENDIMENTO • EXCESSO"},
-    {"id":"shot_album","segment":"album","asset":"guitar_detail","source_start_seconds":3.0,"source_end_seconds":18.0,"motion":"hold","transition_out":"cut","highlight":"PEOPLE WATCHING • 2025"},
+    {"id":"shot_album","segment":"album","asset":"guitar_detail","source_start_seconds":3.0,"source_end_seconds":14.8,"motion":"hold","transition_out":"cut","highlight":"PEOPLE WATCHING • 2025"},
     {"id":"shot_choice","segment":"choice","asset":"artist_main","motion":"pull_out","transition_out":"cut","highlight":"OLIVIA ESCOLHEU ESSA FAIXA"},
     {"id":"shot_rewrite","segment":"rewrite","asset":"writing_process","motion":"push_in","transition_out":"cut","highlight":"NOVO VERSO • MAX WOLFGANG"},
     {"id":"shot_meaning","segment":"meaning","asset":"emotional_motion","source_start_seconds":1.0,"source_end_seconds":15.0,"motion":"hold","transition_out":"crossfade","highlight":"DE FUGIR DA DOR A ACEITAR CUIDADO"},
@@ -41,7 +41,7 @@
     {"id":"shot_replacement","segment":"replacement","asset":"artist_main","motion":"pan_right","transition_out":"cut","highlight":"SUBSTITUTA DE ÚLTIMA HORA"},
     {"id":"shot_debut","segment":"debut","asset":"music_process","source_start_seconds":2.0,"source_end_seconds":14.0,"motion":"hold","transition_out":"cut","highlight":"ESTREIA ANTES DO LANÇAMENTO"},
     {"id":"shot_viral","segment":"viral","asset":"live_event","source_start_seconds":1.0,"source_end_seconds":13.0,"motion":"hold","transition_out":"cut","highlight":"O VÍDEO EXPLODIU ONLINE"},
-    {"id":"shot_climb","segment":"climb","asset":"rise_motion","source_start_seconds":0.0,"source_end_seconds":11.5,"motion":"hold","transition_out":"crossfade","highlight":"35 SEMANAS ATÉ O #1"},
+    {"id":"shot_climb","segment":"climb","asset":"rise_motion","source_start_seconds":0.0,"source_end_seconds":10.3,"motion":"hold","transition_out":"crossfade","highlight":"35 SEMANAS ATÉ O #1"},
     {"id":"shot_record","segment":"record","asset":"artist_main","motion":"push_in","transition_out":"cut","highlight":"22 SEMANAS NO TOPO"},
     {"id":"shot_payoff","segment":"payoff","asset":"sam_main","motion":"pull_out","transition_out":"cut","highlight":"OUTRA VOZ MUDOU TUDO"}
   ]
