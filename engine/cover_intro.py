@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from publishing.cover import generate_cover
+from publishing.metadata import build_post_defaults
 
 from .config import ProjectConfig
 from .ffmpeg import probe_duration, probe_video_frame_count, run_ffmpeg
@@ -184,21 +185,50 @@ def _load_cover_post(episode_dir: Path) -> Mapping[str, Any]:
     post_path = episode_dir / "post.json"
     try:
         data = json.loads(post_path.read_text(encoding="utf-8-sig"))
-    except FileNotFoundError as exc:
-        raise RuntimeError(
-            f"post.json ausente em {episode_dir}; a abertura de capa precisa de cover.headline/source."
-        ) from exc
+    except FileNotFoundError:
+        return _default_cover_post(episode_dir)
     except json.JSONDecodeError as exc:
         raise RuntimeError(
             f"JSON invalido em {post_path} (linha {exc.lineno}, coluna {exc.colno}): {exc.msg}"
         ) from exc
+
     if not isinstance(data, Mapping):
-        raise RuntimeError(f"O arquivo {post_path} precisa conter um objeto JSON.")
+        return _default_cover_post(episode_dir)
     cover = data.get("cover")
     if not isinstance(cover, Mapping):
-        raise RuntimeError(f"cover ausente ou invalido em {post_path}.")
+        return _default_cover_post(episode_dir)
     if not str(cover.get("headline", "")).strip():
-        raise RuntimeError(f"cover.headline ausente em {post_path}.")
+        return _default_cover_post(episode_dir)
     if not isinstance(cover.get("source"), Mapping):
-        raise RuntimeError(f"cover.source ausente ou invalido em {post_path}.")
+        return _default_cover_post(episode_dir)
+    return data
+
+
+def _default_cover_post(episode_dir: Path) -> Mapping[str, Any]:
+    story = _load_json(episode_dir / "story.json")
+    timeline = _load_json(episode_dir / "timeline.json")
+    shots = timeline.get("shots")
+    if not isinstance(shots, list) or not shots or not isinstance(shots[0], Mapping):
+        raise RuntimeError(
+            f"Nao foi possivel criar a capa padrao: timeline sem primeiro shot em {episode_dir}."
+        )
+    first_asset = str(shots[0].get("asset", "")).strip()
+    if not first_asset:
+        raise RuntimeError(
+            f"Nao foi possivel criar a capa padrao: primeiro shot sem asset em {episode_dir}."
+        )
+    return build_post_defaults(story, first_asset)
+
+
+def _load_json(path: Path) -> Mapping[str, Any]:
+    try:
+        data = json.loads(path.read_text(encoding="utf-8-sig"))
+    except FileNotFoundError as exc:
+        raise RuntimeError(f"Arquivo obrigatorio ausente para gerar capa: {path}") from exc
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(
+            f"JSON invalido em {path} (linha {exc.lineno}, coluna {exc.colno}): {exc.msg}"
+        ) from exc
+    if not isinstance(data, Mapping):
+        raise RuntimeError(f"O arquivo {path} precisa conter um objeto JSON.")
     return data
