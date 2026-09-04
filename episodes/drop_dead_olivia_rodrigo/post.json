@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"PARECE TÉRMINO. NÃO É.","source":{"type":"asset","asset_id":"cover"}},
+  "youtube": {
+    "title":"Drop Dead: a música de Olivia Rodrigo que parece término — mas nasceu de um primeiro encontro",
+    "description":"Drop Dead soa como ameaça no título, mas Olivia Rodrigo explicou que a música nasceu da eletricidade, nervosismo e euforia de uma conexão começando. A história ainda passa por The Cure, Versalhes, Coachella e uma estreia no topo da Hot 100.",
+    "hashtags":["OliviaRodrigo","DropDead","Musica","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Drop Dead parece título de música de término. Só que Olivia Rodrigo explicou justamente o contrário: ela queria capturar a euforia e o medo de uma conexão começando — e levou essa sensação até Versalhes.",
+    "hashtags":["OliviaRodrigo","DropDead","Musica","Curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Drop Dead parece término, mas nasceu da euforia de um primeiro encontro. E a história ainda conecta Olivia Rodrigo, The Cure, Versalhes e Coachella.",
+    "hashtags":["OliviaRodrigo","DropDead","Musica","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
