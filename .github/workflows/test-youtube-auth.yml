@@ -30,6 +30,7 @@ jobs:
 
       - name: Test PO token then cookie fallback
         env:
+          PYTHONPATH: .
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
           YOUTUBE_AUTH_TEST_URL: https://www.youtube.com/watch?v=yszWh_7xYrs
         run: python scripts/test_youtube_auth.py
