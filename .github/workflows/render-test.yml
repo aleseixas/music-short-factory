@@ -3,7 +3,7 @@ name: Render test only
 on:
   push:
     branches:
-      - main
+      - test/beat-it-v3-current-prompt
     paths:
       - ".render-test/*.txt"
 
@@ -28,39 +28,23 @@ jobs:
           AFTER_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-
-          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
-            mapfile -t trigger_files < <(
-              git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.render-test/*.txt'
-            )
-          else
-            mapfile -t trigger_files < <(
-              git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.render-test/*.txt'
-            )
-          fi
-
+          mapfile -t trigger_files < <(
+            git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.render-test/*.txt'
+          )
           if [[ ${#trigger_files[@]} -ne 1 ]]; then
             echo "::error::Expected exactly one new render-test trigger, found ${#trigger_files[@]}."
             exit 1
           fi
-
           trigger_file="${trigger_files[0]}"
           episode="$(tr -d '\r\n' < "$trigger_file" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
-
-          if [[ -z "$episode" ]]; then
-            episode="$(basename "$trigger_file" .txt)"
-          fi
-
           if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
             echo "::error::Invalid episode slug."
             exit 1
           fi
-
           if [[ ! -d "episodes/$episode" ]]; then
             echo "::error::Episode directory episodes/$episode does not exist."
             exit 1
           fi
-
           echo "slug=$episode" >> "$GITHUB_OUTPUT"
           echo "Render-only episode: $episode"
 
@@ -83,20 +67,60 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Build 115-candidate WEB-FIRST visual pool
+        env:
+          EPISODE: ${{ steps.episode.outputs.slug }}
+        run: python scripts/build_beat_it_v3_visual_pool.py "$EPISODE"
+
+      - name: Create valid branded end card for test workspace
+        env:
+          EPISODE: ${{ steps.episode.outputs.slug }}
+        run: python scripts/create_test_end_card.py "$EPISODE"
+
+      - name: Verify current-prompt targets
+        env:
+          EPISODE: ${{ steps.episode.outputs.slug }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          ep = Path('episodes') / os.environ['EPISODE']
+          story = json.loads((ep/'story.json').read_text(encoding='utf-8'))
+          timeline = json.loads((ep/'timeline.json').read_text(encoding='utf-8'))
+          pool = json.loads((ep/'visual_candidates.json').read_text(encoding='utf-8'))
+          takes = len(timeline['shots'])
+          candidates = sum(len(slot['candidates']) for slot in pool['slots'])
+          words = len(' '.join(seg['text'] for seg in story['segments']).split())
+          print(f'TAKES={takes} CANDIDATES={candidates} WORDS={words}')
+          assert 20 <= takes <= 30
+          assert 100 <= candidates <= 120
+          assert words <= 205
+          PY
+
+      - name: Score and resolve visual candidates
+        continue-on-error: true
+        env:
+          EPISODE: ${{ steps.episode.outputs.slug }}
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python resolve_visual_candidates_web_auth.py "$EPISODE"
+
       - name: Render episode only
         env:
           EPISODE: ${{ steps.episode.outputs.slug }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         run: python generate.py "$EPISODE"
 
-      - name: Upload rendered MP4
+      - name: Upload test package
         uses: actions/upload-artifact@v7
         with:
-          name: render-test-${{ steps.episode.outputs.slug }}
-          path: output/${{ steps.episode.outputs.slug }}.mp4
-          if-no-files-found: error
+          name: beat-it-v3-current-prompt
+          path: |
+            output/${{ steps.episode.outputs.slug }}.mp4
+            episodes/${{ steps.episode.outputs.slug }}/visual_candidates.json
+            episodes/${{ steps.episode.outputs.slug }}/visual_resolution_report.json
+          if-no-files-found: warn
           retention-days: 3
           compression-level: 0
 
       - name: Confirm no publishing
-        run: echo "Render test complete. No publish command was executed."
+        run: echo "Render test complete. No publish.py command, no queue and no platform upload were executed."
