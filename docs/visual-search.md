@@ -111,6 +111,23 @@ A resolução de candidatos preserva a regra atual:
 
 Nunca deixe uma imagem vencer um pool de vídeos ou um vídeo vencer um pool de imagens apenas por score.
 
+## REGRA CRÍTICA: nunca repetir imagem ou vídeo entre shots
+
+Cada shot deve terminar com um visual principal ÚNICO no episódio.
+
+- a mesma imagem NÃO pode ser usada em dois shots;
+- o mesmo vídeo-fonte NÃO pode ser usado em dois shots;
+- mudar `source_start_seconds`, `source_end_seconds`, crop, focus, speed, motion, transition, visual FX, overlay ou qualquer outro tratamento NÃO transforma o mesmo arquivo/fonte em um novo asset;
+- URLs diferentes que resolvem para o mesmo arquivo, upload, `provider_id`, página-fonte ou conteúdo visual devem ser tratadas como duplicata;
+- candidatos podem aparecer em pools de pesquisa enquanto a seleção ainda não foi fechada, mas depois que um visual vence um slot ele fica reservado e não pode vencer outro slot;
+- antes de finalizar `assets.json`/`timeline.json`, faça deduplicação GLOBAL dos visuais escolhidos, não apenas dentro de cada pool;
+- se o melhor candidato de um slot já tiver sido usado, escolha o próximo melhor candidato válido daquele mesmo tipo;
+- prefira procurar uma nova alternativa relevante a reciclar um visual já usado.
+
+A regra vale para imagens e vídeos principais do episódio. Reutilizar o mesmo vídeo com outro trecho também é repetição e é proibido.
+
+Somente se for tecnicamente impossível obter qualquer alternativa válida depois de buscas reais e o episódio precisar continuar por fallback, uma repetição pode ser aceita como ÚLTIMO RECURSO. Nesse caso, a repetição deve ser minimizada e nunca pode acontecer por conveniência, economia de busca ou porque outro trim parece diferente.
+
 ## Pool visual recomendado
 
 Para cada necessidade visual importante:
@@ -123,7 +140,8 @@ Para cada necessidade visual importante:
 6. compare semanticamente antes de olhar apenas o score técnico;
 7. forme shortlist por tipo de mídia;
 8. inspecione os melhores candidatos;
-9. escolha o melhor take real.
+9. escolha o melhor take real;
+10. reserve o visual vencedor para aquele slot e remova-o da disputa dos demais slots.
 
 O objetivo normal do episódio continua sendo aproximadamente 30–50 candidatos distribuídos pelos slots importantes, tipicamente 4–6 por slot quando houver material suficiente.
 
