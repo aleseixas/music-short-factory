@@ -282,14 +282,20 @@ Para linguagem nativa de TikTok, Reels e Shorts:
 - impacto perceptível nos primeiros ~0,5s;
 - hook completo até ~2s;
 - promessa narrativa até ~5s;
-- mudança visual/editorial perceptível aproximadamente a cada 4–6s quando fizer sentido;
+- take comum normalmente funciona bem por aproximadamente **2–4s**;
+- take excepcionalmente forte, emocional, raro ou informativo pode permanecer por aproximadamente **4–6s** quando houver motivo narrativo claro;
+- cortes de aproximadamente **1–2s** podem funcionar em hook, reveal, lista, reação, montagem ou aceleração deliberada;
+- nos primeiros **15–20s**, prefira maior densidade visual e seja mais rigoroso com planos longos ou genéricos;
+- para vídeos de **60–90s**, algo em torno de **18–25 visuais principais distintos** é um sanity check útil, não uma quota;
 - evite composições estáticas por ~3–4s quando existe alternativa melhor;
 - prefira trocar asset/trecho antes de apenas adicionar efeito;
-- não reutilize o mesmo asset principal consecutivamente sem motivo narrativo;
+- zoom, crop, focus, speed, motion, transition, visual FX, kinetic text, highlight, overlay ou SFX sobre o mesmo asset **não contam, por si só, como renovação do visual principal**;
+- antes de aceitar um shot acima de ~4s, avalie se aquele material realmente merece permanecer tanto tempo na tela;
+- se um shot estiver longo apenas por falta de material, faça nova busca e troque o visual em vez de compensar com FX;
 - mantenha payoff visual/editorial forte nos últimos 5–8s;
 - use variação de delivery para reforçar a curva narrativa, não para criar oscilação artificial a cada frase.
 
-Esses tempos são guias, não uma grade mecânica.
+Esses tempos são guias, não uma grade mecânica. Prefira 16 takes excelentes a 24 medíocres quando o material realmente justificar, mas não aceite um vídeo visualmente pobre por conservadorismo se houver material forte suficiente para renovar a montagem.
 
 ## Regras por camada
 
@@ -366,6 +372,8 @@ Isso é uma decisão editorial única. Não espalhe as camadas de forma aleatór
 ## Densidade e warnings
 
 Não use quantidade mínima rígida para nenhuma camada ou delivery. A densidade deve emergir da história, dos assets e dos beats.
+
+Para visuais principais, a faixa aproximada de 18–25 em vídeos de 60–90s funciona apenas como diagnóstico editorial: abaixo disso, revise se a montagem ficou pobre ou com shots longos por falta de material; acima disso, revise se há cortes sem propósito. Não transforme a faixa em hard error.
 
 Warnings de excesso devem provocar revisão, não transformar estilo em hard error. Preserve contraste entre trechos mais densos e trechos limpos.
 
