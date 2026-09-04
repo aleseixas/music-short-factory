@@ -1,0 +1,176 @@
+name: Publish existing rendered artifact
+
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Episode slug
+        required: true
+        type: string
+      platform:
+        description: Platform to publish
+        required: true
+        type: choice
+        options:
+          - youtube
+          - instagram
+          - tiktok
+      source_run_id:
+        description: Workflow run ID that contains rendered-<episode>
+        required: true
+        type: string
+  push:
+    branches:
+      - main
+    paths:
+      - ".publish-only/*.json"
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    outputs:
+      episode: ${{ steps.resolve.outputs.episode }}
+      platform: ${{ steps.resolve.outputs.platform }}
+      source_run_id: ${{ steps.resolve.outputs.source_run_id }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Resolve publish-only request
+        id: resolve
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          MANUAL_EPISODE: ${{ inputs.episode }}
+          MANUAL_PLATFORM: ${{ inputs.platform }}
+          MANUAL_SOURCE_RUN_ID: ${{ inputs.source_run_id }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            episode="$(printf '%s' "$MANUAL_EPISODE" | xargs)"
+            platform="$(printf '%s' "$MANUAL_PLATFORM" | xargs)"
+            source_run_id="$(printf '%s' "$MANUAL_SOURCE_RUN_ID" | xargs)"
+          else
+            if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+              mapfile -t trigger_files < <(git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.publish-only/*.json')
+            else
+              mapfile -t trigger_files < <(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.publish-only/*.json')
+            fi
+
+            if [[ ${#trigger_files[@]} -ne 1 ]]; then
+              echo "::error::Expected exactly one newly added .publish-only/*.json trigger, found ${#trigger_files[@]}."
+              exit 1
+            fi
+
+            trigger_file="${trigger_files[0]}"
+            readarray -t values < <(python - "$trigger_file" <<'PY'
+          import json, sys
+          from pathlib import Path
+
+          data = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
+          print(str(data.get("episode", "")).strip())
+          print(str(data.get("platform", "")).strip())
+          print(str(data.get("source_run_id", "")).strip())
+          PY
+            )
+            episode="${values[0]:-}"
+            platform="${values[1]:-}"
+            source_run_id="${values[2]:-}"
+          fi
+
+          if [[ ! "$episode" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+            echo "::error::Invalid episode slug: $episode"
+            exit 1
+          fi
+          if [[ "$platform" != "youtube" && "$platform" != "instagram" && "$platform" != "tiktok" ]]; then
+            echo "::error::Platform must be youtube, instagram, or tiktok."
+            exit 1
+          fi
+          if [[ ! "$source_run_id" =~ ^[0-9]+$ ]]; then
+            echo "::error::source_run_id must be numeric."
+            exit 1
+          fi
+          if [[ ! -d "episodes/$episode" ]]; then
+            echo "::error::Episode directory episodes/$episode does not exist."
+            exit 1
+          fi
+
+          echo "episode=$episode" >> "$GITHUB_OUTPUT"
+          echo "platform=$platform" >> "$GITHUB_OUTPUT"
+          echo "source_run_id=$source_run_id" >> "$GITHUB_OUTPUT"
+          echo "Publish-only request: episode=$episode platform=$platform source_run_id=$source_run_id"
+
+  publish-only:
+    needs: resolve
+    runs-on: ubuntu-latest
+    env:
+      EPISODE: ${{ needs.resolve.outputs.episode }}
+      PLATFORM: ${{ needs.resolve.outputs.platform }}
+      SOURCE_RUN_ID: ${{ needs.resolve.outputs.source_run_id }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+
+      - name: Download existing rendered artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: rendered-${{ needs.resolve.outputs.episode }}
+          path: .rendered-artifact
+          run-id: ${{ needs.resolve.outputs.source_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Stage rendered MP4
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p output
+          mp4="$(find .rendered-artifact -type f -name '*.mp4' -print -quit)"
+          if [[ -z "$mp4" ]]; then
+            echo "::error::Rendered artifact did not contain an MP4."
+            exit 1
+          fi
+          cp "$mp4" "output/$EPISODE.mp4"
+          ls -lh "output/$EPISODE.mp4"
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Prepare publishing metadata and cover
+        run: python prepare_post.py "$EPISODE"
+
+      - name: Publish only selected platform
+        shell: bash
+        env:
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
+          CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+          INSTAGRAM_API_HOST: graph.instagram.com
+          META_GRAPH_API_VERSION: v26.0
+          INSTAGRAM_VIDEO_HOST: cloudinary
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+        run: |
+          set -euo pipefail
+          python publish.py "$EPISODE" --platform "$PLATFORM" --live
