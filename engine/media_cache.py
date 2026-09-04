@@ -7,7 +7,7 @@ import math
 from pathlib import Path
 import threading
 import time
-from urllib.parse import unquote, urljoin, urlparse
+from urllib.parse import urljoin, urlparse
 
 import requests
 
@@ -58,7 +58,13 @@ def download_to_cache(
     require_https: bool = False,
     max_bytes: int | None = None,
 ) -> Path:
-    """Download one direct media URL atomically, or reuse its non-empty cache file."""
+    """Download one remote media URL atomically, or reuse its non-empty cache file.
+
+    The remote URL does not need to expose the media extension in its path. Many
+    legitimate CDNs (for example Unsplash and LinkedIn) serve media from opaque
+    paths or query-string based URLs. The downloaded payload is validated by the
+    media-specific consumer (Pillow for images, ffprobe for video, etc.).
+    """
     if attempts < 1:
         raise RuntimeError("A quantidade de tentativas de download precisa ser positiva.")
     if max_bytes is not None and (
@@ -294,21 +300,19 @@ def _validate_direct_file_url(
 ) -> None:
     value = url.strip()
     parsed = urlparse(value)
-    url_suffix = Path(unquote(parsed.path)).suffix.lower()
     host = (parsed.hostname or "").casefold()
     if (
         parsed.scheme not in ({"https"} if require_https else {"http", "https"})
         or not parsed.netloc
         or parsed.username is not None
         or parsed.password is not None
-        or not Path(unquote(parsed.path)).name
+        or not parsed.path
         or not expected_suffix
-        or url_suffix != expected_suffix.lower()
         or (allowed_hosts is not None and host not in allowed_hosts)
     ):
         raise RuntimeError(
-            f"URL invalida para {label}: use uma URL HTTP(S) direta para um arquivo "
-            f"{expected_suffix or 'de midia'} sem credenciais embutidas."
+            f"URL invalida para {label}: use uma URL HTTP(S) de midia sem "
+            "credenciais embutidas e respeitando os hosts permitidos."
         )
 
 
