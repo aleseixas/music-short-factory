@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A RESPOSTA QUE VIROU UM RECORDE","source":{"type":"asset","asset_id":"artist_main"}},
+  "youtube": {
+    "title":"Rein Me In: como Olivia Dean transformou a música de Sam Fender em um recorde",
+    "description":"Rein Me In começou como um desabafo de Sam Fender. Quando Olivia Dean escreveu uma resposta para o narrador, a música ganhou outro significado. Uma troca de última hora num show de estádio ajudou a transformar essa versão em um fenômeno histórico.",
+    "hashtags":["SamFender","OliviaDean","ReinMeIn","Musica","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Sam Fender escreveu Rein Me In como um desabafo. Olivia Dean entrou na música respondendo ao narrador — e uma substituição de última hora em um show ajudou essa versão a virar um fenômeno histórico.",
+    "hashtags":["SamFender","OliviaDean","ReinMeIn","Musica","Curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Rein Me In mudou completamente quando Olivia Dean escreveu a resposta que faltava ao desabafo de Sam Fender.",
+    "hashtags":["SamFender","OliviaDean","ReinMeIn","Musica","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
