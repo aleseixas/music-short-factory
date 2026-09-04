@@ -114,6 +114,34 @@ jobs:
           echo "trigger_kind=$trigger_kind" >> "$GITHUB_OUTPUT"
           echo "Publishing episode: $episode (trigger: $trigger_kind)"
 
+      - name: Enforce single queue cooldown
+        if: ${{ github.event_name == 'push' && steps.episode.outputs.trigger_kind == 'queue' }}
+        shell: bash
+        env:
+          AFTER_SHA: ${{ github.sha }}
+          QUEUE_COOLDOWN_SECONDS: "5400"
+        run: |
+          set -euo pipefail
+
+          current_ts="$(git show -s --format=%ct "$AFTER_SHA")"
+          previous_line="$(git log "$AFTER_SHA^" --diff-filter=A --format='%H %ct' -- '.publish-queue/*.txt' | head -n 1 || true)"
+
+          if [[ -z "$previous_line" ]]; then
+            echo "No previous publish queue found; queue accepted."
+            exit 0
+          fi
+
+          read -r previous_sha previous_ts <<< "$previous_line"
+          delta=$(( current_ts - previous_ts ))
+
+          if (( delta < QUEUE_COOLDOWN_SECONDS )); then
+            remaining=$(( QUEUE_COOLDOWN_SECONDS - delta ))
+            echo "::error::Queue blocked by single-run guard. Another publish queue was created ${delta}s ago (${previous_sha}). Wait at least ${remaining}s before a new episode queue. Retries are not affected."
+            exit 1
+          fi
+
+          echo "Queue accepted: previous queue was ${delta}s ago."
+
   visuals:
     needs: prepare
     runs-on: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' && 'self-hosted' || 'ubuntu-latest' }}
