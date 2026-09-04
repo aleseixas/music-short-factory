@@ -1,0 +1,36 @@
+FACTUAL / EDITORIAL
+- Billboard Brasil — "Cuida do Pet" no topo do Hot 100 Brasil:
+  https://billboard.com.br/cuida-do-pet-topo-hot-100-brasil/
+- GR6 — origem da faixa, experiência pessoal de MC Negão Original e construção colaborativa:
+  https://www.gr6.com.br/cuida-do-pet-e-a-nova-numero-1-do-hot-100-brasil-e-o-funk-domina-o-pais/
+- A Gazeta do Paraná — estreia da Oldilla Records, beat e processo colaborativo:
+  https://agazetadoparana.com.br/oldilla-estreia-selo-proprio-com-cuida-do-pet-faixa-inedita-com-mc-negao-original-aaron-modesto-mc-willian-dj-aladin-gdb-mc-iguinho-ct-e-dul/
+- Qobuz — créditos e data de lançamento:
+  https://www.qobuz.com/se-en/album/cuida-do-pet-oldilla-mc-iguinho-ct-mc-willian-aaron-modesto-feat-mc-negao-original-dul-dj-aladin-gdb/xnd5jb6atk7ok
+- Clipe oficial:
+  https://www.youtube.com/watch?v=-fK39F0VKto
+- Lyric video oficial:
+  https://www.youtube.com/watch?v=_CE2dTBjNGU
+- Áudio oficial:
+  https://www.youtube.com/watch?v=nNHVTuST8eA
+
+BACKGROUND MUSIC
+- Busca externa feita antes do fallback: Brazilian funk / urban hip-hop / Brazilian phonk / royalty-free funk / Openverse-Freesound.
+- Opções externas encontradas tinham atribuição pública obrigatória, download não direto/login ou aquisição técnica inadequada para o fluxo de copy pública limpa.
+- Fallback escolhido: profile local hiphop_groove, por coerência rítmica com a história e compatibilidade técnica já validada pela main.
+
+VISUAIS
+- Capa/artist artwork: https://i.scdn.co/image/ab67616d0000b27362ebc728c3d0139fe985e1ee
+- MC Negão Original / Rap Dab: https://www.rapdab.com.br/wp-content/uploads/2025/02/874_MC-NEGAO-ORIGINAL-01-scaled-e1738946516989.jpg
+- MC Negão Original / artist image: https://i.scdn.co/image/ab6761610000e5eb586a95e5e39c5bf560ef4648
+- OldillaVEVO thumbnail: https://i.ytimg.com/vi/-fK39F0VKto/maxresdefault.jpg
+- Official lyric thumbnail: https://i.ytimg.com/vi/_CE2dTBjNGU/maxresdefault.jpg
+- Greenhouse Studios: https://greenhousestudios.com.br/wp-content/uploads/2016/09/servicos-greehousestudio-768x515.jpg
+- TikTok contextual image / SVT: https://www.svtstatic.se/image-news/992/1%3A1/0.76/0.36/f4b95c4a000367d09cc0cebdac06ac4c69f6f67338bd10b61d3aafe948b9062e
+- Spotify contextual image / TechTudo: https://s2-techtudo.glbimg.com/puYmlj1VWAzKY6FfhDDKtpmfSeQ%3D/308x478%3A2591x4557/smart/filters%3Astrip_icc%28%29/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2024/W/R/RCex9YQCO1o7luDu2BtA/tt-72.jpg
+- Pet contextual image / Unsplash: https://images.unsplash.com/photo-1552053831-71594a27632d
+- Wikimedia Commons video sources estão registrados diretamente em assets.json e visual_candidates.json com a metadata conhecida na autoria.
+
+RIGHTS / PROVENANCE
+- Web visual rights not explicitly established are treated as unknown, not invented as verified.
+- No AI-generated image is used.
