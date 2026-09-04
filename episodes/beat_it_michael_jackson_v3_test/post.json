@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O SOLO QUE MUDOU BEAT IT","source":{"type":"asset","asset_id":"img_hook"}},
+  "youtube": {
+    "title":"Beat It: o solo de Eddie Van Halen que mudou a gravação de Michael Jackson",
+    "description":"Beat It nasceu para misturar mundos que quase nunca se encontravam. O solo de Eddie Van Halen virou parte de uma gravação muito mais maluca do que parece.",
+    "hashtags":["MichaelJackson","BeatIt","EddieVanHalen","Thriller","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Beat It parece simples até você descobrir o que aconteceu quando Eddie Van Halen entrou no estúdio. A gravação virou um quebra-cabeça — e isso ajuda a explicar por que a faixa soa tão diferente.",
+    "hashtags":["MichaelJackson","BeatIt","EddieVanHalen","Thriller","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"O solo de Beat It não foi só um solo. Ele mexeu na própria gravação.",
+    "hashtags":["MichaelJackson","BeatIt","EddieVanHalen","Thriller","Curiosidades"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
