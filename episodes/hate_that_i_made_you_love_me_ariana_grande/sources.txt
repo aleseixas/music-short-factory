@@ -1,0 +1,43 @@
+PESQUISA EDITORIAL
+- Universal Music Brasil — lançamento do single, créditos de composição/produção e equipe do clipe: https://www.universalmusic.com.br/2026/05/29/ariana-grande-lanca-o-aguardado-single-hate-that-i-made-you-love-me/
+- Billboard Brasil — lançamento, créditos e contexto de Petal: https://billboard.com.br/ariana-grande-hate-that-i-made-you-love-me/
+- Billboard Brasil — anúncio de Petal e nova fase: https://billboard.com.br/ariana-grande-anuncia-petal-e-nova-fase/
+- Pitchfork — anúncio de Petal e contexto de crescimento/renovação: https://pitchfork.com/news/ariana-grande-announces-new-album-petal
+- People — conceito de Petal como crescimento através de circunstâncias difíceis: https://people.com/ariana-grande-announces-new-album-petal-11946928
+- AP — review de Petal; produção mais contida, introspectiva e vocais menos exibicionistas: https://apnews.com/article/6c689addb7892b2f08aa57568e722bb2
+- Yahoo / ABC Audio — post de Ariana chamando a faixa de uma das favoritas que escreveria e citando ILYA, Max Martin e ela mesma na produção: https://www.yahoo.com/entertainment/music/article/ariana-grande-announces-1st-single-hate-that-i-made-you-love-me-off-new-album-petal-163500978.html
+- Hypebeast — estética inquietante do clipe e equipe criativa: https://hypebeast.com/2026/5/ariana-grande-eighth-studio-album-petal-new-single-hate-that-i-made-you-love-me-release
+- Billboard Canada Hot 100 — sinal atual de reconhecimento; faixa no top 5 e pico em #1 na semana de 5 de setembro de 2026: https://ca.billboard.com/charts/hot-100
+- The Guardian — contexto recente de escrutínio público e pausa da vida pública, usado apenas como contexto contemporâneo para a leitura qualificada sobre fama/projeção: https://www.theguardian.com/music/2026/aug/03/ariana-grande-statement-step-back-public-life-eternal-sunshine-tour
+
+OBSERVAÇÃO EDITORIAL
+A leitura de que a faixa também pode dialogar com público, mídia, fama e projeção é apresentada como interpretação, não como destinatário factual único. O conceito declarado de Petal foi usado como base para essa leitura aberta.
+
+BACKGROUND MUSIC — BUSCA EXTERNA
+Foram comparadas opções externas antes do fallback local, incluindo:
+- Scott Buckley — The Long Dark: https://www.scottbuckley.com.au/library/the-long-dark/
+- Kjartan Abel — In the Desert: https://commons.wikimedia.org/wiki/File:In-the-desert-by-Kjartan-Abel.ogg
+- MusicLFiles — Placid Ambient: https://commons.wikimedia.org/wiki/File:Placid_Ambient_by_MusicLFiles.ogg
+- maximo dark — Vastopia: https://commons.wikimedia.org/wiki/File:Vastopia_-_Dark_Ambient_Music_for_Deep_Relaxation_and_Focus.ogg
+- Scott Buckley — Sleep: https://soundcloud.com/scottbuckley/sleep-cc-by
+As candidatas externas exigiriam novo profile global e/ou atribuição pública incompatível com a regra desta execução de não alterar catálogos globais/copy pública. Foi mantido o profile existente ambient_calm da repo como fallback operacional.
+
+VISUAIS BASE
+- Ariana Grande — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Ariana_Grande_at_Wicked-For_Good_Premiere_in_SG-3.png — Irene Suwandi — CC BY 3.0.
+- Flor em rachadura — LinkedIn source: https://www.linkedin.com/posts/lesleymadewell_resilience-adaptability-perseverance-activity-7208448843053449217-eg_q — direitos não claros (unknown).
+- Multidão com celulares — Irish Examiner: https://www.irishexaminer.com/opinion/commentanalysis/arid-41056538.html — direitos não claros (unknown).
+- Corrente quebrada — Unsplash discovery: https://images.unsplash.com/photo-1520359319979-f360d010d777 — direitos não confirmados nesta execução (unknown).
+- Microfone — Unsplash: https://unsplash.com/photos/selective-focus-of-white-metal-part-photo-YOwiXX0ebJA — CHUTTERSNAP — Unsplash License.
+- Eclipse — Unsplash direct discovery: https://images.unsplash.com/photo-1532893890977-95acae8b13fc — direitos não confirmados nesta execução (unknown).
+- Piano — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Hands-music-musician-piano_(23958938169).jpg — Pixel.la Free Stock Photos — CC0 1.0.
+- Singer in Concert — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Singer_In_Concert_(Unsplash).jpg — Austin Neill — CC0 1.0.
+- Vinyl records display — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Vinyl_records_on_display_(Unsplash).jpg — CC0 1.0.
+- Writing the letter feng — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Writing_the_letter_feng.webm — FonzuWiki — CC0 1.0.
+- Time-lapse of a flower blooming — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Time-lapse_of_a_flower_blooming.webm — Ajith Samuel — CC BY 3.0.
+- Behind The Scenes: In Performance at the White House: Country Music — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Behind_The_Scenes-_In_Performance_at_The_White_House-_Country_Music.webm — The White House — domínio público federal dos EUA.
+- Raindrops against the window in the night city, Las Palmas — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Raindrops_against_the_window_in_the_night_city,_Las_Palmas.webm — Vjatseslav Robtsenkov — CC0 1.0.
+- Scenes in New York City, 1903 — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Scenes_in_New_York_City,_1903.webm — domínio público nos EUA.
+- Flight over clouds — Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Flight_over_clouds.webm — L. Shyamal — CC0 1.0.
+
+CANDIDATOS VISUAIS WEB
+As páginas/fontes adicionais dos 32 candidatos estão registradas diretamente em visual_candidates.json, incluindo Wikimedia Commons, YouTube, Billboard Canada, Metrópoles, Eventbrite, Unsplash, LinkedIn, Irish Examiner, Tasting Table, Wimp e outras páginas de discovery. Rights status unknown foi preservado onde a licença não estava explícita; nenhuma licença foi inferida como verified sem evidência.
