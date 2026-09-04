@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Beat It — Michael Jackson: o solo que mudou a fita",
+  "slug": "beat_it_michael_jackson_v2_test",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Beat It, de Michael Jackson, nasceu de uma missão: colocar rock dentro do universo pop de Thriller.","delivery":"hook"},
+    {"id":"quincy_request","text":"Quincy Jones pediu uma faixa rock que ainda soasse como Michael.","delivery":"curious"},
+    {"id":"anti_violence","text":"Michael respondeu com uma letra anti-briga: sair da violência é inteligência, não covardia.","delivery":"dramatic"},
+    {"id":"eddie_call","text":"Para a guitarra virar protagonista, Quincy chamou Eddie Van Halen para o solo.","delivery":"reveal"},
+    {"id":"free_solo","text":"Eddie achou que era trote, mas aceitou sem cobrar cachê.","delivery":"reveal"},
+    {"id":"tape_edit","text":"Ele mudou a seção do solo para deixá-la mais dramática.","delivery":"dramatic"},
+    {"id":"rebuild","text":"A alteração mexeu na fita, e Steve Lukather com Jeff Porcaro reconstruíram partes ao redor.","delivery":"curious"},
+    {"id":"too_heavy","text":"Lukather contou que sua primeira guitarra ficou pesada demais para Quincy.","delivery":"dramatic"},
+    {"id":"crossover","text":"A ordem foi reduzir o metal sem perder impacto: rock, pop e R&B juntos.","delivery":"reveal"},
+    {"id":"drumcase","text":"Nos créditos de Thriller, Michael aparece como 'drum case beater', batendo numa caixa de bateria.","delivery":"curious"},
+    {"id":"mix","text":"Beat It não soa como enxerto: guitarra, groove e voz parecem nascer juntos.","delivery":"neutral"},
+    {"id":"victory","text":"Em 1984, Eddie apareceu na Victory Tour e tocou Beat It ao vivo com Michael.","delivery":"reveal"},
+    {"id":"awards","text":"A música foi número um nos Estados Unidos e ganhou o Grammy de Gravação do Ano.","delivery":"dramatic"},
+    {"id":"payoff","text":"O truque foi esse: Michael não virou roqueiro; fez públicos diferentes cantarem a mesma música.","delivery":"payoff"},
+    {"id":"cta","text":"Em Beat It: riff ou solo?","delivery":"curious"}
+  ]
+}
