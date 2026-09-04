@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "title": "Rein Me In — Sam Fender com Olivia Dean: a resposta que transformou a música em recorde",
+  "slug": "rein_me_in_olivia_dean_sam_fender",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"Rein Me In, de Sam Fender com Olivia Dean, virou um recorde porque Olivia transformou um desabafo solitário em diálogo.","delivery":"hook"},
+    {"id":"origin","text":"Sam escreveu a ideia original anos antes, inspirado por arrependimento e excessos da própria vida.","delivery":"emotional"},
+    {"id":"album","text":"A versão solo entrou em People Watching, seu álbum de 2025.","delivery":"neutral"},
+    {"id":"choice","text":"Quando enviou o disco para Olivia, ela escolheu justamente essa faixa.","delivery":"curious"},
+    {"id":"rewrite","text":"Com Max Wolfgang, Olivia escreveu um novo verso que responde ao narrador.","delivery":"reveal"},
+    {"id":"meaning","text":"Isso muda o sentido: da autopiedade de alguém fugindo da dor para a possibilidade de aceitar cuidado.","delivery":"emotional"},
+    {"id":"production","text":"O rock de andamento médio deixa espaço para as duas vozes e faz a tensão soar como conversa.","delivery":"reveal"},
+    {"id":"coincidence","text":"Mas a colaboração quase teve outro destino.","delivery":"curious"},
+    {"id":"opening","text":"The War on Drugs abriria o London Stadium, mas saiu do show.","delivery":"dramatic"},
+    {"id":"replacement","text":"Olivia entrou como substituta de última hora e Sam a chamou ao palco.","delivery":"reveal"},
+    {"id":"debut","text":"Ali eles estrearam a versão juntos antes mesmo do lançamento.","delivery":"reveal"},
+    {"id":"viral","text":"As imagens explodiram na internet; duas semanas depois, a gravação chegou aos streamings.","delivery":"dramatic"},
+    {"id":"climb","text":"Foram 35 semanas de subida até o primeiro lugar britânico.","delivery":"reveal"},
+    {"id":"record","text":"Em 2026, Rein Me In chegou a vinte e duas semanas no topo, ampliando um recorde histórico no Reino Unido.","delivery":"dramatic"},
+    {"id":"payoff","text":"A ironia perfeita: a música cresceu quando outra voz apareceu para responder.","delivery":"payoff"}
+  ]
+}
