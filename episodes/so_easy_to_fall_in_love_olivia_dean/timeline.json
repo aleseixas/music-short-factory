@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"bright_fun","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"chime_sparkles","volume":0.045},
+    {"time_seconds":5.8,"type":"whoosh_fast","volume":0.03},
+    {"time_seconds":12.0,"type":"pop_sfx","volume":0.03},
+    {"time_seconds":18.5,"type":"correct_ding","volume":0.03},
+    {"time_seconds":27.0,"type":"camera_shutter","volume":0.025},
+    {"time_seconds":35.0,"type":"swoosh_alt","volume":0.028},
+    {"time_seconds":43.0,"type":"riser_popular","volume":0.028},
+    {"time_seconds":52.0,"type":"ding","volume":0.028},
+    {"time_seconds":62.0,"type":"whoosh_simple","volume":0.028},
+    {"time_seconds":73.0,"type":"impact","volume":0.04}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.05,"end_seconds":0.55,"type":"punch_zoom","intensity":0.42}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.08,"duration_seconds":1.15,"text":"ELA VIROU O PRIMEIRO ENCONTRO","accent_text":"PRIMEIRO ENCONTRO","animation":"scale_bounce","position":"center","intensity":0.55},
+    {"segment":"choosing","offset_seconds":0.05,"duration_seconds":1.05,"text":"VOCÊ TAMBÉM ESCOLHE","accent_text":"TAMBÉM ESCOLHE","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"bossa","offset_seconds":0.08,"duration_seconds":1.1,"text":"JAZZ POP + BOSSA NOVA","accent_text":"BOSSA NOVA","animation":"slide_up","position":"center","intensity":0.5},
+    {"segment":"craft","offset_seconds":0.08,"duration_seconds":1.05,"text":"AMOR É PRÁTICA","accent_text":"PRÁTICA","animation":"pop_in","position":"center","intensity":0.52}
+  ],
+  "overlay_cues": [],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"cover","motion":"push_in","transition_out":"cut","highlight":"SO EASY • OLIVIA DEAN"},
+    {"id":"shot_friends","segment":"friends","asset":"friends","motion":"pan_right","transition_out":"cut","highlight":"SERÁ QUE VÃO GOSTAR DE MIM?"},
+    {"id":"shot_opposite","segment":"opposite","asset":"opposite","motion":"pull_out","transition_out":"crossfade","highlight":"FALTAVA OUTRA PERGUNTA"},
+    {"id":"shot_choosing","segment":"choosing","asset":"choosing","motion":"pan_left","transition_out":"cut","highlight":"VOCÊ TAMBÉM ESCOLHE"},
+    {"id":"shot_heart","segment":"heart","asset":"heart","motion":"push_in","transition_out":"cut","highlight":"CONFIANÇA SEM ARROGÂNCIA"},
+    {"id":"shot_push","segment":"push","asset":"push","motion":"pull_out","transition_out":"crossfade","highlight":"UM EMPURRÃO ANTES DO DATE"},
+    {"id":"shot_fit","segment":"fit","asset":"fit","motion":"pan_right","transition_out":"cut","highlight":"NÃO TENTE CABER"},
+    {"id":"shot_choose","segment":"choose","asset":"choose","motion":"push_in","transition_out":"cut","highlight":"VOCÊ ESCOLHE"},
+    {"id":"shot_production","segment":"production","asset":"production","motion":"pan_left","transition_out":"crossfade","highlight":"A PRODUÇÃO ENTENDE A IDEIA"},
+    {"id":"shot_light","segment":"light","asset":"light","motion":"pull_out","transition_out":"cut","highlight":"TUDO SOA LEVE"},
+    {"id":"shot_bossa","segment":"bossa","asset":"bossa","motion":"push_in","transition_out":"cut","highlight":"JAZZ POP • BOSSA NOVA"},
+    {"id":"shot_instruments","segment":"instruments","asset":"instruments","motion":"pan_right","transition_out":"crossfade","highlight":"BATERIA • PIANO • TROMPETE"},
+    {"id":"shot_natural","segment":"natural","asset":"natural","motion":"pan_left","transition_out":"cut","highlight":"CONFIANÇA SEM ESFORÇO"},
+    {"id":"shot_writers","segment":"writers","asset":"writers","motion":"pull_out","transition_out":"cut","highlight":"JOHN RYAN NOS CRÉDITOS"},
+    {"id":"shot_producers","segment":"producers","asset":"producers","motion":"push_in","transition_out":"crossfade","highlight":"JULIAN BUNETTA"},
+    {"id":"shot_credits","segment":"credits","asset":"credits","motion":"pan_right","transition_out":"cut","highlight":"ZACH NAHOME + EQUIPE"},
+    {"id":"shot_trumpet","segment":"trumpet","asset":"trumpet","motion":"pan_left","transition_out":"cut","highlight":"MARK RUDIN • TROMPETE"},
+    {"id":"shot_release","segment":"release","asset":"release","motion":"push_in","transition_out":"crossfade","highlight":"SETEMBRO DE 2025"},
+    {"id":"shot_album","segment":"album","asset":"album","motion":"pull_out","transition_out":"cut","highlight":"THE ART OF LOVING"},
+    {"id":"shot_craft","segment":"craft","asset":"craft","motion":"pan_right","transition_out":"cut","highlight":"AMOR COMO HABILIDADE"},
+    {"id":"shot_selfworth","segment":"selfworth","asset":"selfworth","motion":"push_in","transition_out":"crossfade","highlight":"AUTOESTIMA NO PRIMEIRO ENCONTRO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"payoff","motion":"pull_out","transition_out":"cut","highlight":"VOCÊ TAMBÉM ESCOLHE"}
+  ]
+}
