@@ -1,0 +1,71 @@
+name: Episode media preflight
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".episode-check/*.json"
+
+permissions:
+  contents: read
+
+jobs:
+  media-preflight:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Resolve preflight request
+        id: request
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            mapfile -t files < <(git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.episode-check/*.json')
+          else
+            mapfile -t files < <(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.episode-check/*.json')
+          fi
+          if [[ ${#files[@]} -ne 1 ]]; then
+            echo "::error::Expected exactly one new .episode-check request; found ${#files[@]}."
+            exit 1
+          fi
+          file="${files[0]}"
+          slug="$(python - "$file" <<'PY'
+          import json, sys
+          from pathlib import Path
+          data=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
+          slug=str(data.get('slug','')).strip()
+          print(slug)
+          PY
+          )"
+          if [[ ! "$slug" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+            echo "::error::Invalid episode slug in request."
+            exit 1
+          fi
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+          echo "Media preflight episode: $slug"
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Validate episode media
+        run: python check_episode_media.py "${{ steps.request.outputs.slug }}"
