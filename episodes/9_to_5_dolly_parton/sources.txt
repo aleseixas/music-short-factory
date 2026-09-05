@@ -37,4 +37,5 @@ BACKGROUND SEARCH
 - External-first searches compared upbeat country, retro-office comedy, acoustic workday, documentary and country-pop instrumentals.
 - Pixabay “Acoustic Upbeat Indie Corporate - Believer (No Drums)” was rejected because its source page marks Content ID Registered.
 - Other search results required paid/subscription licenses, public description credit, or did not expose a directly compatible source for the current resolver.
-- Selected curated fallback profile fallback_social_fun as the first compatible repo fallback after external search.
+- The first curated fallback, fallback_social_fun, was rejected by the mandatory media preflight because every remote Pixabay candidate returned HTTP 403.
+- Final background: repo profile bright_fun; the second media preflight resolved assets/audio/music/bright_fun/summer-fun-01.mp3 successfully.
