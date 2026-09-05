@@ -4,9 +4,11 @@ Esta regra complementa `templates/editorial-direction-prompt.md` e deve ser apli
 
 ## Objetivo
 
-Todo episódio deve terminar com **um único CTA contextual**, curto e diretamente ligado à história daquele episódio.
+Todo episódio deve terminar com **um único CTA contextual obrigatório**, curto e diretamente ligado à história daquele episódio.
 
 O CTA deve parecer a última batida editorial da narrativa — não um bloco publicitário genérico.
+
+**Nenhum novo episódio pode terminar apenas no payoff sem CTA.** Depois do payoff, deve existir uma chamada clara de engajamento. A ação principal deve ser preferencialmente **comentar** ou **compartilhar o vídeo**; `follow` pode ser usado com menor frequência quando for claramente mais natural para o fechamento.
 
 ## Regra absoluta — sem end card visual
 
@@ -38,17 +40,18 @@ Nunca encerre automaticamente com `curta, compartilhe e comente` ou pedido tripl
 
 Escolha apenas **UMA ação principal** por episódio:
 
-- `comment`: quando houver pergunta/opinião natural sobre música, álbum, artista, letra, teoria, ranking ou decisão criativa;
-- `share`: quando a história tiver surpresa, polêmica, identificação, nostalgia ou algo que faça sentido mandar para um amigo/fã;
+- `comment`: opção prioritária quando houver pergunta/opinião natural sobre música, álbum, artista, letra, teoria, ranking, decisão criativa ou a própria história;
+- `share`: opção prioritária quando a história tiver surpresa, polêmica, identificação, nostalgia ou algo que faça sentido mandar para um amigo/fã;
 - `follow`: use com menor frequência, apenas quando o fechamento naturalmente convidar para outra história/música.
 
-Prioridade editorial normal: `comment` ou `share` > `follow`.
+Prioridade editorial normal: **`comment` ou `share` > `follow`**. Entre duas opções igualmente boas, escolha comentário ou compartilhamento. O importante é nunca deixar o episódio sem uma ação clara de engajamento no fechamento.
 
 O texto deve ser específico para o episódio. Exemplos de direção — NÃO copiar mecanicamente:
 
 - `Qual faixa desse álbum é a melhor?`
 - `Você acha que ele passou do limite?`
-- `Manda praquele amigo que ainda defende essa música.`
+- `Manda esse vídeo praquele amigo que é fã dele.`
+- `Compartilha com alguém que não sabia dessa história.`
 - `Qual música dela merece o próximo vídeo?`
 - `Você interpreta essa letra do mesmo jeito?`
 - `Qual hit dessa era ainda está na sua playlist?`
@@ -94,8 +97,9 @@ SFX no CTA é opcional. Se usado, escolha apenas type existente no catálogo e m
 
 Confirme:
 
-- existe exatamente um CTA contextual final;
+- existe exatamente um CTA contextual final e ele é obrigatório;
 - o CTA pede apenas uma ação principal;
+- a ação é preferencialmente comentar ou compartilhar; `follow` só entra quando for mais natural;
 - o CTA é específico da música/artista/história do episódio;
 - o payoff narrativo veio antes e não foi substituído por propaganda;
 - `assets/branding/end_card_template.jpg` NÃO foi usado no episódio;
