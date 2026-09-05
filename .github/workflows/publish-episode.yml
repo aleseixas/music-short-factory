@@ -87,8 +87,8 @@ jobs:
                   exit 1
                 fi
 
-                if [[ "$retry_name" != "${episode}-retry-1" && "$retry_name" != "${episode}-retry-2" ]]; then
-                  echo "::error::Retry filename must be <slug>-retry-1.txt or <slug>-retry-2.txt."
+                if [[ "$retry_name" != "${episode}-retry-1" && "$retry_name" != "${episode}-retry-2" && "$retry_name" != "${episode}-retry-3" ]]; then
+                  echo "::error::Retry filename must be <slug>-retry-1.txt, <slug>-retry-2.txt or <slug>-retry-3.txt."
                   exit 1
                 fi
                 ;;
