@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"VOCÊ TAMBÉM ESCOLHE","source":{"type":"asset","asset_id":"cover"}},
+  "youtube": {
+    "title":"So Easy: Olivia Dean virou a lógica do primeiro encontro",
+    "description":"So Easy (To Fall In Love) parte de uma inversão simples: em vez de só pensar se o outro vai gostar de você, lembrar que você também está escolhendo. Olivia Dean transforma essa ideia em uma faixa leve, com jazz pop, bossa nova, piano, bateria e trompete.",
+    "hashtags":["OliviaDean","SoEasy","TheArtOfLoving","Musica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"So Easy (To Fall In Love) parece só uma música confiante sobre conhecer alguém. A virada é mais interessante: Olivia Dean escreveu pensando em lembrar que, num primeiro encontro, você também está escolhendo. E a produção leve acompanha exatamente essa ideia.",
+    "hashtags":["OliviaDean","SoEasy","TheArtOfLoving","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"So Easy, da Olivia Dean, muda uma pergunta do primeiro encontro: você também está escolhendo.",
+    "hashtags":["OliviaDean","SoEasy","TheArtOfLoving","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
