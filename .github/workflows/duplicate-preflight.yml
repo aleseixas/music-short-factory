@@ -18,7 +18,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Resolve preflight request
         id: request
@@ -70,8 +70,61 @@ jobs:
               handle.write(f"request_file={request_file.as_posix()}\n")
           PY
 
+      - name: Enforce one episode per scheduled execution window
+        id: execution_guard
+        shell: bash
+        env:
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          commit_epoch="$(git show -s --format=%ct "$AFTER_SHA")"
+          local_date="$(TZ=America/Sao_Paulo date -d "@$commit_epoch" +%F)"
+          local_hour="$(TZ=America/Sao_Paulo date -d "@$commit_epoch" +%H)"
+          hour=$((10#$local_hour))
+
+          # Janelas das três execuções diárias do agendamento principal.
+          # 08h: 06:00–09:59 | 11h: 10:00–15:59 | 19h: 16:00–23:59.
+          if (( hour < 10 )); then
+            slot="08"
+            slot_start="$local_date 06:00:00 -0300"
+          elif (( hour < 16 )); then
+            slot="11"
+            slot_start="$local_date 10:00:00 -0300"
+          else
+            slot="19"
+            slot_start="$local_date 16:00:00 -0300"
+          fi
+
+          mapfile -t queues_in_slot < <(
+            git log \
+              --since="$slot_start" \
+              --until="@$commit_epoch" \
+              --diff-filter=A \
+              --name-only \
+              --format='' \
+              -- '.publish-queue/*.txt' \
+            | sed '/^[[:space:]]*$/d' \
+            | sort -u
+          )
+
+          echo "slot=$slot" >> "$GITHUB_OUTPUT"
+          echo "slot_start=$slot_start" >> "$GITHUB_OUTPUT"
+
+          if [[ ${#queues_in_slot[@]} -gt 0 ]]; then
+            echo "PREFLIGHT_RESULT=EXECUTION_ALREADY_COMPLETED"
+            echo "result=EXECUTION_ALREADY_COMPLETED" >> "$GITHUB_OUTPUT"
+            echo "::error::A publish queue already exists in scheduled execution window $slot. Refusing a second episode."
+            printf 'Existing queue: %s\n' "${queues_in_slot[@]}"
+            exit 0
+          fi
+
+          echo "result=OPEN" >> "$GITHUB_OUTPUT"
+          echo "Execution window $slot is open for one episode."
+
       - name: Check candidate duplicate
         id: duplicate
+        if: ${{ steps.execution_guard.outputs.result == 'OPEN' }}
         shell: bash
         env:
           SONG: ${{ steps.request.outputs.song }}
@@ -104,15 +157,22 @@ jobs:
         if: always()
         shell: bash
         env:
-          RESULT: ${{ steps.duplicate.outputs.result }}
+          GUARD_RESULT: ${{ steps.execution_guard.outputs.result }}
+          DUPLICATE_RESULT: ${{ steps.duplicate.outputs.result }}
+          SLOT: ${{ steps.execution_guard.outputs.slot }}
           SONG: ${{ steps.request.outputs.song }}
           ARTIST: ${{ steps.request.outputs.artist }}
           SLUG: ${{ steps.request.outputs.slug }}
         run: |
+          result="$DUPLICATE_RESULT"
+          if [[ "$GUARD_RESULT" == "EXECUTION_ALREADY_COMPLETED" ]]; then
+            result="EXECUTION_ALREADY_COMPLETED"
+          fi
           {
             echo "## Duplicate candidate preflight"
             echo
-            echo "- Result: ${RESULT:-INFRA_FAILURE}"
+            echo "- Result: ${result:-INFRA_FAILURE}"
+            echo "- Scheduled window: ${SLOT:-N/A}"
             echo "- Song: $SONG"
             echo "- Artist: $ARTIST"
             echo "- Slug: $SLUG"
