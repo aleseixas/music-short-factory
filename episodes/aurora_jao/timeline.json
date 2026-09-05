@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"fallback_social_chill","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"dramatic_dun_dun","volume":0.05},
+    {"time_seconds":6.0,"type":"whoosh_simple","volume":0.032},
+    {"time_seconds":13.0,"type":"punch","volume":0.038},
+    {"time_seconds":20.0,"type":"chime_sparkles","volume":0.03},
+    {"time_seconds":28.0,"type":"camera_shutter","volume":0.028},
+    {"time_seconds":36.0,"type":"record_scratch","volume":0.026},
+    {"time_seconds":44.0,"type":"suspense_build_up","volume":0.03},
+    {"time_seconds":53.0,"type":"correct_ding","volume":0.03},
+    {"time_seconds":64.0,"type":"riser_popular","volume":0.032},
+    {"time_seconds":74.0,"type":"impact","volume":0.043}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.05,"end_seconds":0.55,"type":"punch_zoom","intensity":0.48}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.08,"duration_seconds":1.2,"text":"NASCIDA DO LUTO","accent_text":"LUTO","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"aurora_symbol","offset_seconds":0.08,"duration_seconds":1.1,"text":"AURORA = RECOMEÇO","accent_text":"RECOMEÇO","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"flute","offset_seconds":0.08,"duration_seconds":1.15,"text":"FLAUTA COMO MENSAGEIRA","accent_text":"MENSAGEIRA","animation":"slide_up","position":"center","intensity":0.52},
+    {"segment":"hot100","offset_seconds":0.08,"duration_seconds":1.1,"text":"HOT 100 BRASIL","accent_text":"HOT 100","animation":"scale_bounce","position":"center","intensity":0.55}
+  ],
+  "overlay_cues": [],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"cover","motion":"push_in","transition_out":"cut","highlight":"AURORA • JÃO"},
+    {"id":"shot_return","segment":"return","asset":"return_portrait","motion":"pull_out","transition_out":"cut","highlight":"ELE VOLTOU"},
+    {"id":"shot_father","segment":"father","asset":"father_album","motion":"pan_right","transition_out":"crossfade","highlight":"A PERDA ATRAVESSA O DISCO"},
+    {"id":"shot_turning_point","segment":"turning_point","asset":"turning_point","motion":"pan_left","transition_out":"cut","highlight":"A DOR MUDA"},
+    {"id":"shot_no_erasure","segment":"no_erasure","asset":"no_erasure","motion":"push_in","transition_out":"cut","highlight":"NÃO APAGA O PASSADO"},
+    {"id":"shot_identity","segment":"identity","asset":"loss_identity","motion":"pull_out","transition_out":"crossfade","highlight":"A PERDA VIRA PARTE DELE"},
+    {"id":"shot_aurora_symbol","segment":"aurora_symbol","asset":"aurora_symbol","motion":"pan_right","transition_out":"cut","highlight":"AURORA = RECOMEÇO"},
+    {"id":"shot_night","segment":"night","asset":"night_horizon","motion":"pan_left","transition_out":"crossfade","highlight":"ANTES DA LUZ, A NOITE"},
+    {"id":"shot_happy_again","segment":"happy_again","asset":"happy_again","motion":"push_in","transition_out":"cut","highlight":"SER FELIZ DE NOVO"},
+    {"id":"shot_smile","segment":"smile","asset":"smile","motion":"pull_out","transition_out":"cut","highlight":"SEM CULPA"},
+    {"id":"shot_relearn","segment":"relearn","asset":"relearn","motion":"pan_right","transition_out":"crossfade","highlight":"REAPRENDER A FELICIDADE"},
+    {"id":"shot_body","segment":"body","asset":"body_signal","motion":"pan_left","transition_out":"cut","highlight":"O CORPO DECIDE"},
+    {"id":"shot_production","segment":"production","asset":"production","motion":"push_in","transition_out":"cut","highlight":"A PRODUÇÃO TAMBÉM CRESCE"},
+    {"id":"shot_growth","segment":"growth","asset":"guitar_growth","motion":"pull_out","transition_out":"crossfade","highlight":"GUITARRA • PERCUSSÃO • VOZ"},
+    {"id":"shot_flute","segment":"flute","asset":"flute","motion":"pan_right","transition_out":"cut","highlight":"UMA FLAUTA MENSAGEIRA"},
+    {"id":"shot_brazilian","segment":"brazilian","asset":"brazilian_timbre","motion":"pan_left","transition_out":"cut","highlight":"SINGELA E BRASILEIRA"},
+    {"id":"shot_words","segment":"words","asset":"words_meaning","motion":"push_in","transition_out":"crossfade","highlight":"RESSIGNIFICAR COM PALAVRAS"},
+    {"id":"shot_elements","segment":"elements","asset":"four_elements","motion":"pull_out","transition_out":"cut","highlight":"FIM DOS QUATRO ELEMENTOS"},
+    {"id":"shot_event","segment":"event","asset":"anhangabau_event","motion":"pan_right","transition_out":"cut","highlight":"MAIS DE 11 MIL PESSOAS"},
+    {"id":"shot_live","segment":"live","asset":"aurora_live","motion":"pan_left","transition_out":"crossfade","highlight":"AURORA AO VIVO"},
+    {"id":"shot_hot100","segment":"hot100","asset":"hot100","motion":"push_in","transition_out":"cut","highlight":"BILLBOARD BRASIL HOT 100"},
+    {"id":"shot_payoff","segment":"payoff","asset":"payoff","motion":"pull_out","transition_out":"cut","highlight":"A NOITE VIRA COMEÇO"}
+  ]
+}

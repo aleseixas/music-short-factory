@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A LUZ SÓ VEM DEPOIS","source":{"type":"asset","asset_id":"cover"}},
+  "youtube": {
+    "title":"Aurora: o recomeço de Jão que só existe depois da noite",
+    "description":"Aurora transforma luto em recomeço dentro de Memórias Póstumas. A história passa pela perda que marcou o disco, pela produção que cresce junto com a letra, pela flauta escolhida como mensageira e pela chegada da faixa ao Billboard Brasil Hot 100.",
+    "hashtags":["Jao","Aurora","MemoriasPostumas","Musica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Aurora parece uma música sobre recomeçar. Só que, no universo de Memórias Póstumas, essa luz só faz sentido porque vem depois de uma noite pesada. Jão transforma luto, produção e até uma flauta delicada em parte dessa virada.",
+    "hashtags":["Jao","Aurora","MemoriasPostumas","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Aurora, do Jão, não apaga a noite: transforma ela em começo. E até a produção acompanha essa mudança.",
+    "hashtags":["Jao","Aurora","MemoriasPostumas","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

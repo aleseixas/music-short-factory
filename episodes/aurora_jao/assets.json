@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"cover","file":"memorias_postumas_cover.jpg","url":"https://s2-gq.glbimg.com/k52ZlDttfrToXyJqwKRphNiym68=/0x0:3000x3000/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_71a8fe14ac6d40bd993eb59f7203fe6f/internal_photos/bs/2026/3/A/kyB4B3SOOmBhB8REbcLw/jao-memorias-postumas.jpg","credit":"GQ Brasil / divulgação","license":"Unknown","focus":{"x":0.5,"y":0.5}},
+    {"id":"return_portrait","file":"jao_album_portrait.jpg","url":"https://novabrasilfm.com.br/app/uploads/2026/07/Jao_Div_Novabrasil_-1.jpg","credit":"Novabrasil / divulgação","license":"Unknown","focus":{"x":0.5,"y":0.42}},
+    {"id":"father_album","file":"jao_portrait_immub.jpg","url":"https://pub-24ea3407a0f24c8394eadaa45a05aa0c.r2.dev/artista/artista_17140.jpg","credit":"IMMuB","license":"Unknown","focus":{"x":0.5,"y":0.42}},
+    {"id":"turning_point","file":"jao_live_jovem_pan.png","url":"https://jpimg.com.br/uploads/2024/01/fotografia-3-8.png","credit":"Jovem Pan","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"no_erasure","file":"jao_fib_2024.webp","url":"https://cdn.ibahia.com/img/inline/320000/1210x720/FIB-2024-veja-galeria-de-fotos-do-show-de-Jao0032505207202408252305-3.webp?fallback=https%3A%2F%2Fcdn.ibahia.com%2Fimg%2Finline%2F320000%2FFIB-2024-veja-galeria-de-fotos-do-show-de-Jao0032505207202408252305.jpg%3Fxid%3D1779143&xid=1779143","credit":"iBahia","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"loss_identity","file":"jao_papelpop.jpeg","url":"https://assets.papelpop.com/wp-content/uploads/2022/07/WhatsApp-Image-2022-07-25-at-11.44.31.jpeg","credit":"Papelpop","license":"Unknown","focus":{"x":0.5,"y":0.42}},
+    {"id":"aurora_symbol","file":"jao_billboard.png","url":"https://billboard.com.br/wp-content/uploads/2024/01/Design-sem-nome.png","credit":"Billboard Brasil","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"night_horizon","file":"horizon_unsplash.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Horizon%20(Unsplash).jpg","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"happy_again","file":"jao_lolla_2022.png","url":"https://upload.wikimedia.org/wikipedia/commons/f/f1/J%C3%A3o_Lollapalooza_Brazil_2022_%2801%29.png","credit":"Wikimedia Commons","license":"Unknown","focus":{"x":0.5,"y":0.42}},
+    {"id":"smile","file":"jao_notas_prosas.jpg","url":"https://notaseprosas.com.br/wp-content/uploads/2025/01/JAO.jpg","credit":"Notas e Prosas","license":"Unknown","focus":{"x":0.5,"y":0.42}},
+    {"id":"relearn","file":"jao_super_turne.jpg","url":"https://s2-quem.glbimg.com/4ZUhvU94hwCz3s7CuP-bFLXbzNY=/0x0:2048x1368/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/p/B/X5Z9ceQAqkKgmHFXqbWw/jao-super-turne-13-.jpg","credit":"Quem / divulgação","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"body_signal","file":"jao_r7.jpg","url":"https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/ENKRSBC3ORN4JJ7AMP2SDQ7GXM.jpg?auth=76b8b4ccc73682e0452c4f1a04035a10e58fc01f02564b09084b9110628684fd&height=630&smart=true&width=1200","credit":"R7","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"production","file":"mixing_console.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Mixing%20console%20(Unsplash).jpg","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"guitar_growth","file":"electric_guitar.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Electric%20guitar%20(477101105).jpg","credit":"Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"flute","file":"flute_instrument.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Flute%20instrument.jpg","credit":"Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"brazilian_timbre","file":"vale_anhangabau.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Vale%20do%20Anhangab%C3%BA%20Sao%20Paulo.jpg","credit":"Wikimedia Commons","license":"Unknown","focus":{"x":0.5,"y":0.5}},
+    {"id":"words_meaning","file":"machado_assis.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Machado%20de%20Assis%2025%20anos.jpg","credit":"Wikimedia Commons","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"four_elements","file":"red_sky_sunset.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Red%20sky%20sunset%20(Unsplash).jpg","credit":"Wikimedia Commons / Unsplash","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"anhangabau_event","file":"coachella_crowd.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Kamasi%20Washington%20Coachella.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"aurora_live","file":"jao_emotional_live.jpg","url":"https://pbs.twimg.com/ext_tw_video_thumb/1905743054360944640/pu/img/J7y1_qPc26xGj_Ff.jpg","credit":"X / vídeo público","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"hot100","file":"headphones.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Headphones%20(56330).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff","file":"guitar.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Guitar%20(21758515013).jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

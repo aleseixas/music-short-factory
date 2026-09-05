@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "Jão — Aurora: o recomeço que só existe depois da noite",
+  "slug": "aurora_jao",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Aurora, do Jão, parece recomeço — mas nasce diretamente do luto.","delivery":"hook"},
+    {"id":"return","text":"Depois de mais de um ano afastado, ele voltou.","delivery":"neutral"},
+    {"id":"father","text":"A morte do pai atravessa todo Memórias Póstumas.","delivery":"dramatic"},
+    {"id":"turning_point","text":"E Aurora vira o ponto em que a dor muda.","delivery":"reveal"},
+    {"id":"no_erasure","text":"A letra não tenta apagar o que aconteceu.","delivery":"emotional"},
+    {"id":"identity","text":"Ela transforma a perda em parte da própria identidade.","delivery":"emotional"},
+    {"id":"aurora_symbol","text":"Por isso a imagem da aurora funciona tão bem.","delivery":"curious"},
+    {"id":"night","text":"A luz só aparece porque antes existe uma noite.","delivery":"reveal"},
+    {"id":"happy_again","text":"E o refrão insiste em ser feliz de novo.","delivery":"emotional"},
+    {"id":"smile","text":"Sem culpa, sem se punir por voltar a sorrir.","delivery":"emotional"},
+    {"id":"relearn","text":"Olha isso: até a felicidade precisa ser reaprendida.","delivery":"reveal"},
+    {"id":"body","text":"Jão também deixa o corpo decidir quando seguir.","delivery":"curious"},
+    {"id":"production","text":"E a produção acompanha exatamente esse movimento emocional.","delivery":"neutral"},
+    {"id":"growth","text":"A faixa cresce com guitarras, percussão e voz expansiva.","delivery":"reveal"},
+    {"id":"flute","text":"Uma flauta delicada ainda aparece como espécie de mensageira.","delivery":"curious"},
+    {"id":"brazilian","text":"Jão escolheu esse timbre por soar singelo e brasileiro.","delivery":"neutral"},
+    {"id":"words","text":"É a lógica do disco: ressignificar coisas com palavras.","delivery":"reveal"},
+    {"id":"elements","text":"Também rompe com os quatro elementos das eras anteriores.","delivery":"neutral"},
+    {"id":"event","text":"Em julho, reuniu mais de 11 mil pessoas.","delivery":"reveal"},
+    {"id":"live","text":"Depois lançou Aurora ao vivo antes da turnê.","delivery":"neutral"},
+    {"id":"hot100","text":"E a faixa entrou no Hot 100 brasileiro.","delivery":"dramatic"},
+    {"id":"payoff","text":"Aurora não apaga a noite: transforma ela em começo. Comenta: essa leitura mudou a música pra você?","delivery":"payoff"}
+  ]
+}
