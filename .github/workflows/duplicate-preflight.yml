@@ -1,0 +1,119 @@
+name: Duplicate candidate preflight
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".duplicate-check/*.json"
+
+permissions:
+  contents: read
+
+jobs:
+  duplicate-preflight:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+
+      - name: Resolve preflight request
+        id: request
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            mapfile -t request_files < <(
+              git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.duplicate-check/*.json'
+            )
+          else
+            mapfile -t request_files < <(
+              git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.duplicate-check/*.json'
+            )
+          fi
+
+          if [[ ${#request_files[@]} -ne 1 ]]; then
+            echo "::error::Expected exactly one newly added duplicate preflight request, found ${#request_files[@]}."
+            exit 1
+          fi
+
+          request_file="${request_files[0]}"
+          python - "$request_file" "$GITHUB_OUTPUT" <<'PY'
+          import json
+          import re
+          import sys
+          from pathlib import Path
+
+          request_file = Path(sys.argv[1])
+          output_file = Path(sys.argv[2])
+          data = json.loads(request_file.read_text(encoding="utf-8"))
+          song = str(data.get("song", "")).strip()
+          artist = str(data.get("artist", "")).strip()
+          slug = str(data.get("slug", "")).strip()
+
+          if not song or not artist or not slug:
+              raise SystemExit("request precisa conter song, artist e slug nao vazios")
+          if not re.fullmatch(r"[a-z0-9]+([_-][a-z0-9]+)*", slug):
+              raise SystemExit("slug invalido")
+
+          with output_file.open("a", encoding="utf-8") as handle:
+              handle.write(f"song={song}\n")
+              handle.write(f"artist={artist}\n")
+              handle.write(f"slug={slug}\n")
+              handle.write(f"request_file={request_file.as_posix()}\n")
+          PY
+
+      - name: Check candidate duplicate
+        id: duplicate
+        shell: bash
+        env:
+          SONG: ${{ steps.request.outputs.song }}
+          ARTIST: ${{ steps.request.outputs.artist }}
+          SLUG: ${{ steps.request.outputs.slug }}
+        run: |
+          set +e
+          output="$(python check_duplicate.py --song "$SONG" --artist "$ARTIST" --slug "$SLUG" 2>&1)"
+          status=$?
+          set -e
+
+          printf '%s\n' "$output"
+
+          if [[ $status -eq 0 ]]; then
+            echo "PREFLIGHT_RESULT=UNIQUE_CANDIDATE"
+            echo "result=UNIQUE_CANDIDATE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [[ $status -eq 2 ]]; then
+            echo "PREFLIGHT_RESULT=DUPLICATE_CANDIDATE"
+            echo "result=DUPLICATE_CANDIDATE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "::error::Duplicate preflight infrastructure failed with exit code $status."
+          exit "$status"
+
+      - name: Write preflight summary
+        if: always()
+        shell: bash
+        env:
+          RESULT: ${{ steps.duplicate.outputs.result }}
+          SONG: ${{ steps.request.outputs.song }}
+          ARTIST: ${{ steps.request.outputs.artist }}
+          SLUG: ${{ steps.request.outputs.slug }}
+        run: |
+          {
+            echo "## Duplicate candidate preflight"
+            echo
+            echo "- Result: ${RESULT:-INFRA_FAILURE}"
+            echo "- Song: $SONG"
+            echo "- Artist: $ARTIST"
+            echo "- Slug: $SLUG"
+          } >> "$GITHUB_STEP_SUMMARY"
