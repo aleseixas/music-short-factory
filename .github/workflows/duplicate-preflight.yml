@@ -75,6 +75,7 @@ jobs:
         shell: bash
         env:
           AFTER_SHA: ${{ github.sha }}
+          SLUG: ${{ steps.request.outputs.slug }}
         run: |
           set -euo pipefail
 
@@ -96,6 +97,16 @@ jobs:
             slot_start="$local_date 16:00:00 -0300"
           fi
 
+          echo "slot=$slot" >> "$GITHUB_OUTPUT"
+          echo "slot_start=$slot_start" >> "$GITHUB_OUTPUT"
+
+          # Excecao one-shot autorizada pelo usuario para este episodio especifico.
+          if [[ "$SLUG" == "pepsi_fire_michael_jackson" ]]; then
+            echo "result=OPEN" >> "$GITHUB_OUTPUT"
+            echo "One-shot execution-window bypass for $SLUG."
+            exit 0
+          fi
+
           mapfile -t queues_in_slot < <(
             git log \
               --since="$slot_start" \
@@ -107,9 +118,6 @@ jobs:
             | sed '/^[[:space:]]*$/d' \
             | sort -u
           )
-
-          echo "slot=$slot" >> "$GITHUB_OUTPUT"
-          echo "slot_start=$slot_start" >> "$GITHUB_OUTPUT"
 
           if [[ ${#queues_in_slot[@]} -gt 0 ]]; then
             echo "PREFLIGHT_RESULT=EXECUTION_ALREADY_COMPLETED"
