@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"fallback_social_fun","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"typewriter_key","volume":0.06},
+    {"time_seconds":6.3,"type":"camera_shutter","volume":0.04},
+    {"time_seconds":16.0,"type":"pop_sfx","volume":0.045},
+    {"time_seconds":22.0,"type":"typing","volume":0.04},
+    {"time_seconds":35.0,"type":"record_scratch","volume":0.04},
+    {"time_seconds":48.0,"type":"correct_ding","volume":0.04},
+    {"time_seconds":61.0,"type":"applause","volume":0.035},
+    {"time_seconds":71.5,"type":"chime_sparkles","volume":0.035}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.7,"type":"punch_zoom","intensity":0.52},
+    {"start_seconds":18.0,"end_seconds":18.7,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":42.0,"end_seconds":42.8,"type":"slow_zoom_in","intensity":0.28},
+    {"start_seconds":64.0,"end_seconds":64.8,"type":"punch_zoom","intensity":0.4}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.15,"text":"O RITMO NASCEU\nNAS UNHAS","accent_text":"NAS UNHAS","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"typewriter","offset_seconds":0.1,"duration_seconds":1.1,"text":"PARECIA UMA\nMÁQUINA DE ESCREVER","accent_text":"MÁQUINA DE ESCREVER","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"credit","offset_seconds":0.1,"duration_seconds":1.1,"text":"NAILS BY DOLLY","accent_text":"DOLLY","animation":"fade_pop","position":"center","intensity":0.58},
+    {"segment":"anthem","offset_seconds":0.1,"duration_seconds":1.1,"text":"RECLAMAÇÃO → HINO","accent_text":"HINO","animation":"slide_up","position":"center","intensity":0.58},
+    {"segment":"awards","offset_seconds":0.1,"duration_seconds":1.1,"text":"OSCAR + GRAMMYS","accent_text":"GRAMMYS","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"revival","offset_seconds":0.1,"duration_seconds":1.1,"text":"VOLTOU AO HOT 100","accent_text":"HOT 100","animation":"fade_pop","position":"center","intensity":0.56}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"dolly_phone","motion":"push_in","transition_out":"cut","highlight":"9 TO 5 • DOLLY PARTON"},
+    {"id":"shot_fonda","segment":"fonda","asset":"trio_office","motion":"push_in","transition_out":"cut","highlight":"JANE FONDA CHAMOU DOLLY"},
+    {"id":"shot_theme","segment":"theme","asset":"film_poster","motion":"pull_out","transition_out":"crossfade","highlight":"ELA QUERIA ESCREVER O TEMA"},
+    {"id":"shot_film","segment":"film","asset":"office_rebellion","motion":"push_in","transition_out":"cut","highlight":"TRÊS MULHERES CONTRA O CHEFE"},
+    {"id":"shot_breaks","segment":"breaks","asset":"dolly_1980_guitar","motion":"push_in","transition_out":"crossfade","highlight":"SEM VIOLÃO NO SET"},
+    {"id":"shot_nails","segment":"nails","asset":"acrylic_nails","motion":"push_in","transition_out":"cut","highlight":"UNHAS VIRARAM PERCUSSÃO"},
+    {"id":"shot_typewriter","segment":"typewriter","asset":"typewriter_desk","motion":"push_in","transition_out":"cut","highlight":"SOM DE MÁQUINA DE ESCREVER"},
+    {"id":"shot_office","segment":"office","asset":"dolly_typewriter","motion":"push_in","transition_out":"cut","highlight":"O RITMO NASCEU NO CENÁRIO"},
+    {"id":"shot_observe","segment":"observe","asset":"doralee_desk","motion":"pull_out","transition_out":"crossfade","highlight":"ELA ESCREVIA ENTRE AS CENAS"},
+    {"id":"shot_hotel","segment":"hotel","asset":"dolly_1983","motion":"push_in","transition_out":"crossfade","highlight":"DEPOIS IA PRO VIOLÃO"},
+    {"id":"shot_routine","segment":"routine","asset":"office_1980s","motion":"pan_right","transition_out":"cut","highlight":"A ROTINA VIROU LETRA"},
+    {"id":"shot_recording_turn","segment":"recording_turn","asset":"dolly_burnett","motion":"push_in","transition_out":"cut","highlight":"E NÃO PAROU NA COMPOSIÇÃO"},
+    {"id":"shot_recording","segment":"recording","asset":"dolly_set_typewriter","motion":"pull_out","transition_out":"crossfade","highlight":"O CLIQUE FOI PRA GRAVAÇÃO"},
+    {"id":"shot_credit","segment":"credit","asset":"dolly_1970","motion":"push_in","transition_out":"cut","highlight":"NAILS BY DOLLY"},
+    {"id":"shot_meaning","segment":"meaning","asset":"office_keyboard","motion":"pan_left","transition_out":"crossfade","highlight":"A PIADA COMBINAVA COM O TEMA"},
+    {"id":"shot_exploitation","segment":"exploitation","asset":"pay_gap_sign","motion":"push_in","transition_out":"cut","highlight":"TRABALHO DEMAIS • RECONHECIMENTO DE MENOS"},
+    {"id":"shot_contrast","segment":"contrast","asset":"equal_pay_banner","motion":"pull_out","transition_out":"cut","highlight":"LETRA DURA • SOM BRILHANTE"},
+    {"id":"shot_anthem","segment":"anthem","asset":"womens_march","motion":"pan_right","transition_out":"crossfade","highlight":"VIROU HINO TRABALHISTA"},
+    {"id":"shot_debut","segment":"debut","asset":"dolly_1980_guitar","motion":"push_in","transition_out":"cut","highlight":"PRIMEIRO FILME DE DOLLY"},
+    {"id":"shot_charts","segment":"charts","asset":"dolly_2023","motion":"push_in","transition_out":"cut","highlight":"POP + COUNTRY NO TOPO"},
+    {"id":"shot_awards","segment":"awards","asset":"grammy","motion":"push_in","transition_out":"cut","highlight":"GRAMMYS + INDICAÇÃO AO OSCAR"},
+    {"id":"shot_legacy","segment":"legacy","asset":"musical_poster","motion":"pull_out","transition_out":"crossfade","highlight":"FILME → MUSICAL → DOCUMENTÁRIO"},
+    {"id":"shot_revival","segment":"revival","asset":"equal_pay_rally","motion":"push_in","transition_out":"crossfade","highlight":"O HINO CONTINUA VIVO"},
+    {"id":"shot_cta","segment":"cta","asset":"oscar","motion":"slow_zoom_in","transition_out":"cut","highlight":"VOCÊ JÁ SABIA DESSA?"}
+  ]
+}
