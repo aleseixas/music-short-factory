@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"A TRETA VIROU REENCONTRO","source":{"type":"asset","asset_id":"big_sean"}},
+  "youtube": {
+    "title":"Big Sean e Kanye West: a reconciliação que ninguém esperava",
+    "description":"Depois de anos de ataques públicos, dinheiro pendente e até um vazamento alegado, Big Sean reapareceu ao lado de Kanye West no Soldier Field. O detalhe mais irônico foi o repertório escolhido para a reconciliação.",
+    "hashtags":["BigSean","KanyeWest","HipHop","HistoriaDaMusica","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Big Sean e Kanye West dividiram o palco de novo depois de anos de tensão pública. E a escolha das músicas deixou a reconciliação ainda mais irônica.",
+    "hashtags":["BigSean","KanyeWest","HipHop","HistoriaDaMusica","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Big Sean e Kanye West fizeram as pazes no palco — e o repertório tornou tudo ainda mais irônico.",
+    "hashtags":["BigSean","KanyeWest","HipHop","HistoriaDaMusica","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

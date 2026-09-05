@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"fallback_social_urban","volume":0.045},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop","volume":0.055},
+    {"time_seconds":7.5,"type":"crowd_cheer","volume":0.035},
+    {"time_seconds":15.0,"type":"whoosh_wind","volume":0.035},
+    {"time_seconds":23.0,"type":"record_scratch","volume":0.04},
+    {"time_seconds":31.0,"type":"dramatic_dun_dun","volume":0.04},
+    {"time_seconds":39.0,"type":"cash_register_short","volume":0.035},
+    {"time_seconds":47.0,"type":"tape_stop","volume":0.035},
+    {"time_seconds":55.0,"type":"riser_popular","volume":0.035},
+    {"time_seconds":63.0,"type":"chime_sparkles","volume":0.035},
+    {"time_seconds":72.0,"type":"ding","volume":0.03}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.75,"type":"punch_zoom","intensity":0.55},
+    {"start_seconds":23.0,"end_seconds":23.7,"type":"punch_zoom","intensity":0.4},
+    {"start_seconds":47.0,"end_seconds":47.8,"type":"punch_zoom","intensity":0.42},
+    {"start_seconds":63.0,"end_seconds":64.0,"type":"slow_zoom_in","intensity":0.3}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"BIG SEAN + YE\nJUNTOS DE NOVO","accent_text":"JUNTOS DE NOVO","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"stadium","offset_seconds":0.1,"duration_seconds":1.0,"text":"SOLDIER FIELD\nCHICAGO","accent_text":"CHICAGO","animation":"pop_in","position":"center","intensity":0.5},
+    {"segment":"idfw","offset_seconds":0.1,"duration_seconds":1.0,"text":"A IRONIA\nFICOU GIGANTE","accent_text":"FICOU GIGANTE","animation":"slide_up","position":"center","intensity":0.55},
+    {"segment":"y2021","offset_seconds":0.1,"duration_seconds":1.0,"text":"2021\nA TRETA EXPLODE","accent_text":"A TRETA EXPLODE","animation":"fade_pop","position":"center","intensity":0.55},
+    {"segment":"leak","offset_seconds":0.1,"duration_seconds":1.0,"text":"2024\nVAZAMENTO ALEGADO","accent_text":"VAZAMENTO ALEGADO","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"seanlove","offset_seconds":0.1,"duration_seconds":1.0,"text":"SEAN:\nEU TE AMO","accent_text":"EU TE AMO","animation":"scale_bounce","position":"center","intensity":0.52},
+    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.15,"text":"DA TRETA\nÀ RECONCILIAÇÃO","accent_text":"À RECONCILIAÇÃO","animation":"scale_bounce","position":"center","intensity":0.6},
+    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"ESSA TRÉGUA DURA?","accent_text":"TRÉGUA","animation":"pop_in","position":"center","intensity":0.48}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"big_sean","motion":"push_in","transition_out":"cut","highlight":"BIG SEAN + YE"},
+    {"id":"shot_stadium","segment":"stadium","asset":"soldier_field","motion":"hold","transition_out":"cut","highlight":"SOLDIER FIELD • CHICAGO"},
+    {"id":"shot_surprise","segment":"surprise","asset":"night_chicago","motion":"push_in","transition_out":"crossfade","highlight":"SURPRESA • 3 DE SETEMBRO"},
+    {"id":"shot_clique","segment":"clique","asset":"kanye_allstate","motion":"pull_out","transition_out":"cut","highlight":"CLIQUE • G.O.O.D. MUSIC"},
+    {"id":"shot_mercy","segment":"mercy","asset":"live_band","motion":"hold","transition_out":"cut","highlight":"MERCY • 2 CHAINZ"},
+    {"id":"shot_idfw","segment":"idfw","asset":"kanye_pablo","motion":"push_in","transition_out":"crossfade","highlight":"I DON'T... • IRONIA"},
+    {"id":"shot_idfw2","segment":"idfw2","asset":"concert_gothenburg","motion":"hold","transition_out":"cut","highlight":"BIG SEAN + YE"},
+    {"id":"shot_history","segment":"history","asset":"vinyl_spin","motion":"push_in","transition_out":"cut","highlight":"5 ANOS DE TENSÃO"},
+    {"id":"shot_y2021","segment":"y2021","asset":"kanye_2006","motion":"pull_out","transition_out":"crossfade","highlight":"2021 • DRINK CHAMPS"},
+    {"id":"shot_regret","segment":"regret","asset":"contract_signing","motion":"hold","transition_out":"cut","highlight":"GRANDE ARREPENDIMENTO"},
+    {"id":"shot_response","segment":"response","asset":"guitar_detail","motion":"push_in","transition_out":"cut","highlight":"RESPOSTA DE SEAN"},
+    {"id":"shot_money","segment":"money","asset":"coin_counter","motion":"hold","transition_out":"crossfade","highlight":"MILHÕES PENDENTES"},
+    {"id":"shot_cold","segment":"cold","asset":"rain_city","motion":"push_in","transition_out":"cut","highlight":"ANOS DE DISTÂNCIA"},
+    {"id":"shot_leak","segment":"leak","asset":"record_store","motion":"push_in","transition_out":"cut","highlight":"2024 • VAZAMENTO ALEGADO"},
+    {"id":"shot_reason","segment":"reason","asset":"street_traffic","motion":"hold","transition_out":"crossfade","highlight":"A BRIGA CONTINUOU"},
+    {"id":"shot_return","segment":"return","asset":"exploring_chicago","motion":"push_in","transition_out":"cut","highlight":"CHICAGO • 2026"},
+    {"id":"shot_turn","segment":"turn","asset":"flight_clouds","motion":"pull_out","transition_out":"cut","highlight":"A VIRADA"},
+    {"id":"shot_seanlove","segment":"seanlove","asset":"country_guitar","motion":"hold","transition_out":"crossfade","highlight":"SEAN: GRATIDÃO"},
+    {"id":"shot_yelove","segment":"yelove","asset":"music_street","motion":"push_in","transition_out":"cut","highlight":"YE: FAMÍLIA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"soldier_aerial","motion":"push_in","transition_out":"crossfade","highlight":"RECONCILIAÇÃO NO PALCO"},
+    {"id":"shot_cta","segment":"cta","asset":"soldier_alt","motion":"hold","transition_out":"cut","highlight":"ESSA TRÉGUA DURA?"}
+  ]
+}

@@ -1,0 +1,35 @@
+EDITORIAL / FACT CHECK
+- Rolling Stone Canada — Big Sean and Kanye West end feud with surprise performance in Chicago (2026-09-04):
+https://ca.rollingstone.com/music/big-sean-kanye-west-end-feud-surprise-performance-chicago/
+- Complex — Ye Soldier Field Chicago Night 1 / Big Sean surprise appearance (2026-09-04):
+https://www.complex.com/music/a/tracewilliamcowen/ye-soldier-field-chicago-night-1-big-sean
+- Complex — Big Sean Drink Champs: response to Kanye/Ye comments (2021-12-17):
+https://www.complex.com/music/a/backwoodsaltar/big-sean-drink-champs-things-we-learned
+- Complex — Big Sean reacts to Kanye Drink Champs comments:
+https://www.complex.com/music/a/brad-callas/big-sean-what-kanye-west-said-on-drink-champs-was-bitch-ass-shit
+- Complex — Big Sean discusses money allegedly owed in connection with Kanye/GOOD Music:
+https://www.complex.com/music/a/tracewilliamcowen/big-sean-speaks-on-allegedly-being-owed-millions-by-kanye-west
+
+RECENT VISUAL DISCOVERY
+- YouTube public result — Big Sean pulls up on Kanye West at Soldier Field:
+https://www.youtube.com/watch?v=SJiwJ6m4pso
+rights_status: unknown
+- YouTube public result — Ye Chicago shows commentary/report:
+https://www.youtube.com/watch?v=13Rm5Q8oX6k
+rights_status: unknown
+- Remaining base visuals are Wikimedia Commons files recorded in assets.json. They are fallbacks/context and are not presented as footage of the 2026 reunion unless explicitly tied to Chicago/Soldier Field.
+
+BACKGROUND MUSIC SEARCH — EXTERNAL-FIRST ATTEMPTS
+Queries explored before fallback:
+1. dark urban documentary instrumental no copyright
+2. cinematic hip hop instrumental documentary
+3. lofi urban documentary beat
+4. trap cinematic suspense instrumental
+5. emotional hip hop instrumental background
+Plausible candidate checked:
+- Eden_Enterprises_Music — The Throne - Cinematic Hip Hop Instrumental, Pixabay:
+https://pixabay.com/music/beats-the-throne-cinematic-hip-hop-instrumental-124577/
+The external candidate was not selected because a new dedicated profile/direct acquisition was not fully validated in this authorship run. Fallback selected: repo profile fallback_social_urban, whose current catalog is curated for social/urban documentary use.
+
+EDITORIAL NOTE
+The 2024 album-leak detail is deliberately qualified as alleged/reported. No fan post or Reddit item is used as the sole factual basis for a strong claim.

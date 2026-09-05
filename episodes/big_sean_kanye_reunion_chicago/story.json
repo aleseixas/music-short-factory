@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "title": "Big Sean e Kanye West — a reconciliação que ninguém esperava",
+  "slug": "big_sean_kanye_reunion_chicago",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Big Sean voltou ao palco com Kanye West cinco anos depois de Ye dizer que contratá-lo tinha sido um grande erro.","delivery":"hook"},
+    {"id":"stadium","text":"Foi no Soldier Field, em Chicago, diante de um estádio lotado.","delivery":"neutral"},
+    {"id":"surprise","text":"Sean entrou de surpresa no show de 3 de setembro.","delivery":"reveal"},
+    {"id":"clique","text":"Os dois abriram com “Clique”, da era G.O.O.D. Music.","delivery":"neutral"},
+    {"id":"mercy","text":"Depois veio “Mercy”, com 2 Chainz no palco.","delivery":"reveal"},
+    {"id":"idfw","text":"Só que a faixa seguinte deixou tudo mais irônico.","delivery":"curious"},
+    {"id":"idfw2","text":"Sean cantou “I Don’t Fuck With You” ao lado de Ye.","delivery":"reveal"},
+    {"id":"history","text":"Cara, olha o histórico por trás dessa cena.","delivery":"curious"},
+    {"id":"y2021","text":"Em 2021, Kanye atacou Sean no Drink Champs.","delivery":"dramatic"},
+    {"id":"regret","text":"Disse que contratá-lo tinha sido um grande arrependimento.","delivery":"dramatic"},
+    {"id":"response","text":"Sean respondeu que amava Kanye, mas chamou a fala de desrespeitosa.","delivery":"emotional"},
+    {"id":"money","text":"E afirmou que havia milhões de dólares pendentes.","delivery":"dramatic"},
+    {"id":"cold","text":"A relação esfriou por anos.","delivery":"emotional"},
+    {"id":"leak","text":"Em 2024, um fã de Ye teria vazado parte de um álbum inédito de Sean.","delivery":"dramatic"},
+    {"id":"reason","text":"O motivo alegado era outra provocação nessa briga.","delivery":"curious"},
+    {"id":"return","text":"Agora corta para Chicago, em 2026: juntos de novo.","delivery":"reveal"},
+    {"id":"turn","text":"E aí veio a virada depois de tanta troca pública.","delivery":"curious"},
+    {"id":"seanlove","text":"Sean disse que amava Ye e agradecia por ele.","delivery":"emotional"},
+    {"id":"yelove","text":"Ye respondeu chamando Sean de família.","delivery":"reveal"},
+    {"id":"payoff","text":"Depois de anos de ataques, a reconciliação aconteceu cantando músicas da própria parceria.","delivery":"payoff"},
+    {"id":"cta","text":"Você acha que essa trégua dura? Comenta.","delivery":"curious"}
+  ]
+}
