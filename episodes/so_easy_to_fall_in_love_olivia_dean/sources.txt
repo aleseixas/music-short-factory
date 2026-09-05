@@ -1,0 +1,30 @@
+EDITORIAL SOURCES
+
+ELLE — Olivia Dean interview; origin of the first-date perspective behind So Easy (To Fall In Love):
+https://www.elle.com/culture/music/a68068522/olivia-dean-interview/
+
+Universal Music Brasil — The Art of Loving release, So Easy context and album concept:
+https://www.universalmusic.com.br/2025/09/26/olivia-dean-lanca-seu-novo-album-the-art-of-loving-incluindo-o-single-principal-so-easy-to-fall-in-love-e-os-hits-man-i-need-e-nice-to-each-other/
+
+Shazam — song credits for writers, producers, instrumentation and horn arrangement:
+https://www.shazam.com/en-us/song/1817609507/so-easy-to-fall-in-love
+
+METALOCUS — So Easy video, Jake Erland, visual concept and musical context:
+https://www.metalocus.es/en/news/when-feelings-flow-so-easy-fall-love-olivia-dean
+
+Promonews — So Easy video production and matchmaking narrative:
+https://www.promonews.tv/videos/2025/10/08/olivia-dean-so-easy-jake-erland/92812
+
+UPI — album and So Easy video release on September 26, 2025:
+https://www.upi.com/Entertainment_News/Music/2025/09/26/olivia-dean-the-art-of-loving/2151758907929/
+
+Apple Music — official So Easy music-video listing:
+https://music.apple.com/us/music-video/so-easy-to-fall-in-love/1841944840
+
+VISUAL RESEARCH
+
+Web-first visual discovery covered the official music video/stills, The Art of Loving artwork, Olivia Dean interviews and portraits, studio/producer material, live performance imagery, jazz/bossa instrumentation and first-date context. Final assets and their direct source URLs, credits and rights status are recorded in assets.json. Repeated source content was excluded from the final 22-shot sequence.
+
+BACKGROUND RESEARCH
+
+External-first search compared bossa nova, jazz-pop, Motown/soul and light romantic instrumental candidates on public music libraries. A new external profile would require editing the global music catalog, which is outside episode-local authorship for this run, so timeline.json uses the existing repo profile bright_fun as the compatible fallback.
