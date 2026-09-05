@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "title": "9 to 5 — Dolly Parton: o ritmo nasceu nas unhas",
+  "slug": "9_to_5_dolly_parton",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"9 to 5, da Dolly Parton, nasceu das próprias unhas dela.","delivery":"hook"},
+    {"id":"fonda","text":"Jane Fonda chamou Dolly para estrear no cinema.","delivery":"curious"},
+    {"id":"theme","text":"E ela quis também escrever a música-tema.","delivery":"curious"},
+    {"id":"film","text":"O filme mostrava mulheres enfrentando um chefe sexista.","delivery":"dramatic"},
+    {"id":"breaks","text":"Nos intervalos, Dolly evitava tocar violão no set.","delivery":"curious"},
+    {"id":"nails","text":"Então começou a bater as unhas acrílicas.","delivery":"reveal"},
+    {"id":"typewriter","text":"E percebeu: o clique parecia uma máquina de escrever.","delivery":"reveal"},
+    {"id":"office","text":"Olha isso: o ritmo nasceu dentro daquele escritório cenográfico.","delivery":"reveal"},
+    {"id":"observe","text":"Durante o dia, ela observava cenas e criava linhas.","delivery":"curious"},
+    {"id":"hotel","text":"À noite, levava tudo para o violão no hotel.","delivery":"neutral"},
+    {"id":"routine","text":"Pouco a pouco, a rotina virou letra.","delivery":"curious"},
+    {"id":"recording_turn","text":"E as unhas não ficaram só na composição.","delivery":"dramatic"},
+    {"id":"recording","text":"Dolly levou o clique para a gravação final.","delivery":"reveal"},
+    {"id":"credit","text":"Nos créditos, elas aparecem como 'Nails by Dolly'.","delivery":"reveal"},
+    {"id":"meaning","text":"Mas a curiosidade combina perfeitamente com a mensagem.","delivery":"curious"},
+    {"id":"exploitation","text":"A faixa fala de exploração e pouco reconhecimento.","delivery":"dramatic"},
+    {"id":"contrast","text":"Só que soa acelerada, brilhante e quase divertida.","delivery":"curious"},
+    {"id":"anthem","text":"Esse contraste transformou reclamação em um hino.","delivery":"payoff"},
+    {"id":"debut","text":"E detalhe: aquele era o primeiro longa de Dolly.","delivery":"reveal"},
+    {"id":"charts","text":"Mesmo assim, a música liderou paradas pop e country.","delivery":"reveal"},
+    {"id":"awards","text":"Também foi indicada ao Oscar e venceu Grammys.","delivery":"reveal"},
+    {"id":"legacy","text":"Depois virou musical, documentário e símbolo trabalhista.","delivery":"payoff"},
+    {"id":"revival","text":"Após a morte de Dolly em agosto de 2026, voltou ao Hot 100.","delivery":"emotional"},
+    {"id":"cta","text":"Você sabia que esse ritmo famoso começou nas unhas?","delivery":"payoff"}
+  ]
+}
