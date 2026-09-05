@@ -90,24 +90,45 @@ def resolve_background_music(
     digest = hashlib.sha256(
         f"{spec.profile}\0{episode_slug}".encode("utf-8")
     ).digest()
-    selected_entry = candidates[int.from_bytes(digest[:8], "big") % len(candidates)]
-    selected, downloaded = materialize_audio_catalog_entry(
-        selected_entry,
-        media_cache_directory(project_root, cache_root, "music"),
-        f"profile {spec.profile!r}",
-        "background music",
-    )
-    if downloaded:
+    start_index = int.from_bytes(digest[:8], "big") % len(candidates)
+    ordered_candidates = candidates[start_index:] + candidates[:start_index]
+    cache_dir = media_cache_directory(project_root, cache_root, "music")
+    failures: list[str] = []
+
+    for attempt, selected_entry in enumerate(ordered_candidates, start=1):
         try:
-            probe_audio_duration(selected)
+            selected, downloaded = materialize_audio_catalog_entry(
+                selected_entry,
+                cache_dir,
+                f"profile {spec.profile!r}",
+                "background music",
+            )
+            if downloaded:
+                try:
+                    probe_audio_duration(selected)
+                except RuntimeError as exc:
+                    selected.unlink(missing_ok=True)
+                    raise RuntimeError(f"audio remoto invalido: {exc}") from exc
+            if attempt > 1:
+                print(
+                    f"[musica] profile={spec.profile} recuperado com alternativa "
+                    f"{selected_entry.relative_file} apos {attempt - 1} falha(s)."
+                )
+            return ResolvedBackgroundMusic(
+                profile=spec.profile,
+                path=selected,
+                volume=spec.volume,
+            )
         except RuntimeError as exc:
-            selected.unlink(missing_ok=True)
-            raise RuntimeError(
-                f"Background music remota invalida no profile {spec.profile!r} "
-                f"({selected_entry.relative_file}): {exc}"
-            ) from exc
-    return ResolvedBackgroundMusic(
-        profile=spec.profile,
-        path=selected,
-        volume=spec.volume,
+            failures.append(f"{selected_entry.relative_file}: {exc}")
+            if attempt < len(ordered_candidates):
+                print(
+                    f"[musica] faixa {selected_entry.relative_file} falhou; "
+                    "tentando outra do mesmo profile."
+                )
+
+    details = "; ".join(failures)
+    raise RuntimeError(
+        f"Nenhuma faixa do profile de background music {spec.profile!r} "
+        f"pode ser resolvida. {details}"
     )
