@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from html import unescape
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 from urllib.parse import unquote, urljoin, urlparse
 
 import requests
@@ -33,6 +35,13 @@ MYINSTANTS_HOSTS = frozenset(
         "www.myinstants.com",
     }
 )
+PIXABAY_PAGE_HOSTS = frozenset(
+    {
+        "pixabay.com",
+        "www.pixabay.com",
+    }
+)
+PIXABAY_AUDIO_HOSTS = frozenset({"cdn.pixabay.com"})
 MYINSTANTS_API_URL = "https://myinstants-api.vercel.app/detail"
 MYINSTANTS_DIRECT_OVERRIDES = {
     "cinematic-bass-drop": (
@@ -43,6 +52,11 @@ MYINSTANTS_DIRECT_OVERRIDES = {
 MAX_EXTERNAL_MUSIC_BYTES = 100 * 1024 * 1024
 MAX_EXTERNAL_SFX_BYTES = 25 * 1024 * 1024
 MYINSTANTS_PAGE_TIMEOUT_SECONDS = (10, 30)
+PIXABAY_PAGE_TIMEOUT_SECONDS = (10, 30)
+PIXABAY_MP3_PATTERN = re.compile(
+    r"https://cdn\.pixabay\.com/[^\s\"'<>]+?\.mp3(?:\?[^\s\"'<>]*)?",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -73,6 +87,34 @@ class _MyInstantsAudioLinkParser(HTMLParser):
             path = unquote(urlparse(value).path)
             if "/media/sounds/" in path and Path(path).suffix.lower() == ".mp3":
                 self.audio_href = value
+                return
+
+
+class _PixabayAudioLinkParser(HTMLParser):
+    def __init__(self) -> None:
+        super().__init__()
+        self.audio_href: str | None = None
+
+    def handle_starttag(
+        self,
+        tag: str,
+        attrs: list[tuple[str, str | None]],
+    ) -> None:
+        if self.audio_href is not None:
+            return
+        values = dict(attrs)
+        for attribute in ("href", "src", "data-src"):
+            raw_value = values.get(attribute)
+            if not isinstance(raw_value, str):
+                continue
+            candidate = _normalize_embedded_url(raw_value)
+            parsed = urlparse(candidate)
+            if (
+                parsed.scheme.casefold() == "https"
+                and (parsed.hostname or "").casefold() in PIXABAY_AUDIO_HOSTS
+                and Path(unquote(parsed.path)).suffix.lower() == ".mp3"
+            ):
+                self.audio_href = candidate
                 return
 
 
@@ -160,6 +202,7 @@ def materialize_audio_catalog_entry(
             ),
         }
     elif relative_file.startswith(MANUAL_EXTERNAL_PREFIX):
+        source_host = (urlparse(download_url).hostname or "").casefold()
         download_url = _resolve_manual_audio_url(download_url, label)
         download_options = {
             "require_https": True,
@@ -169,6 +212,10 @@ def materialize_audio_catalog_entry(
                 else MAX_EXTERNAL_MUSIC_BYTES
             ),
         }
+        if source_host in PIXABAY_PAGE_HOSTS:
+            download_options["allowed_hosts"] = PIXABAY_AUDIO_HOSTS
+        elif source_host in MYINSTANTS_HOSTS:
+            download_options["allowed_hosts"] = MYINSTANTS_HOSTS
 
     return (
         download_to_cache(
@@ -192,7 +239,81 @@ def _resolve_manual_audio_url(url: str, label: str) -> str:
         and "/instant/" in parsed.path.casefold()
     ):
         return _resolve_myinstants_audio_url(value, label)
+    if (
+        parsed.scheme.casefold() == "https"
+        and host in PIXABAY_PAGE_HOSTS
+        and "/music/" in parsed.path.casefold()
+    ):
+        return _resolve_pixabay_audio_url(value, label)
     return value
+
+
+def _normalize_embedded_url(value: str) -> str:
+    return unescape(value.strip()).replace("\\/", "/").replace("\\u0026", "&")
+
+
+def _validate_pixabay_mp3_url(value: str, label: str) -> str:
+    audio_url = _normalize_embedded_url(value)
+    parsed_audio = urlparse(audio_url)
+    if (
+        parsed_audio.scheme.casefold() != "https"
+        or (parsed_audio.hostname or "").casefold() not in PIXABAY_AUDIO_HOSTS
+        or Path(unquote(parsed_audio.path)).suffix.lower() != ".mp3"
+    ):
+        raise RuntimeError(f"Link MP3 Pixabay invalido em {label}.")
+    return audio_url
+
+
+def _resolve_pixabay_audio_url(page_url: str, label: str) -> str:
+    try:
+        response = requests.get(
+            page_url,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                    "(KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+                ),
+                "Accept": (
+                    "text/html,application/xhtml+xml,application/xml;q=0.9,"
+                    "image/avif,image/webp,*/*;q=0.8"
+                ),
+                "Accept-Language": "en-US,en;q=0.9",
+            },
+            timeout=PIXABAY_PAGE_TIMEOUT_SECONDS,
+            allow_redirects=True,
+        )
+    except requests.RequestException as exc:
+        raise RuntimeError(
+            f"Falha ao resolver pagina Pixabay em {label}: {type(exc).__name__}."
+        ) from exc
+
+    try:
+        status = int(response.status_code)
+        if status >= 400:
+            raise RuntimeError(
+                f"Falha ao resolver pagina Pixabay em {label}: HTTP {status}."
+            )
+        final_url = str(getattr(response, "url", page_url) or page_url).strip()
+        final = urlparse(final_url)
+        if (
+            final.scheme.casefold() != "https"
+            or (final.hostname or "").casefold() not in PIXABAY_PAGE_HOSTS
+            or "/music/" not in final.path.casefold()
+        ):
+            raise RuntimeError(f"Redirecionamento Pixabay invalido em {label}.")
+
+        parser = _PixabayAudioLinkParser()
+        parser.feed(response.text)
+        if parser.audio_href:
+            return _validate_pixabay_mp3_url(parser.audio_href, label)
+
+        normalized_html = _normalize_embedded_url(response.text)
+        match = PIXABAY_MP3_PATTERN.search(normalized_html)
+        if not match:
+            raise RuntimeError(f"Pagina Pixabay sem link MP3 direto em {label}.")
+        return _validate_pixabay_mp3_url(match.group(0), label)
+    finally:
+        response.close()
 
 
 def _myinstants_instant_id(page_url: str, label: str) -> str:
