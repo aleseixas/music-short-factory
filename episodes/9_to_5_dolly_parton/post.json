@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O RITMO NASCEU NAS UNHAS","source":{"type":"asset","asset_id":"dolly_phone"}},
+  "youtube": {
+    "title":"9 to 5: o ritmo que Dolly Parton criou com as próprias unhas",
+    "description":"Dolly Parton estava estreando no cinema em 9 to 5 quando transformou o clique das unhas acrílicas em parte do ritmo da música. O detalhe combinava com o escritório do filme e ajudou a transformar uma crítica à exploração no trabalho em um hino pop e country.",
+    "hashtags":["DollyParton","9to5","HistoriaDaMusica","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"O ritmo de 9 to 5 começou com Dolly Parton batendo as próprias unhas acrílicas e percebendo que o som lembrava uma máquina de escrever. O detalhe foi parar na gravação — e a música virou muito maior que o filme.",
+    "hashtags":["DollyParton","9to5","HistoriaDaMusica","Curiosidades","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"Dolly Parton transformou o som das próprias unhas no ritmo de 9 to 5 — e o clique chegou à gravação final.",
+    "hashtags":["DollyParton","9to5","HistoriaDaMusica","Curiosidades","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
