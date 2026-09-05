@@ -13,17 +13,63 @@ A tarefa agendada deve tratar a `main` como fonte da verdade. Se schema, enums o
 
 ## Background music — external-first
 
-Quando houver acesso web, pesquise opções externas antes de aceitar um profile local apenas por conveniência.
+Quando houver acesso web, pesquise opções externas antes de aceitar um profile da biblioteca curada apenas por conveniência.
 
-Faça pelo menos três variações de consulta e compare 2–3 candidatas plausíveis. Avalie separadamente:
+Faça pelo menos três variações de consulta e compare 2–3 candidatas plausíveis. Se `templates/editorial-direction-prompt.md` exigir quantidade maior de consultas/candidatas, a regra mais rigorosa prevalece. Avalie separadamente:
 
 1. adequação editorial e emocional ao episódio;
 2. qualidade/estética e familiaridade para TikTok, Reels e Shorts;
 3. origem, autoria, licença/termos e atribuição quando disponíveis;
 4. risco operacional real de Content ID, mute, bloqueio e desmonetização;
-5. aquisição técnica: formato suportado, URL HTTPS direta, host compatível e duração adequada.
+5. aquisição técnica: formato suportado, URL HTTPS direta ou página suportada pelo resolver, host compatível e duração adequada.
 
 A busca externa é etapa de autoria; ela não roda automaticamente no renderer.
+
+### Ordem de fallback quando a busca externa falhar
+
+A biblioteca de música agora possui profiles curados `fallback_social_*` com várias faixas remotas por clima. Eles existem justamente para impedir que uma falha de busca faça o canal repetir sempre os poucos MP3 antigos.
+
+Use esta ordem:
+
+1. **busca externa nova e específica para o episódio**;
+2. se ela falhar de verdade, escolha o `fallback_social_*` semanticamente mais adequado e menos repetido no histórico recente;
+3. só depois, se o profile curado também estiver indisponível ou inadequado, use os profiles locais antigos (`ambient_calm`, `dark_cinematic`, `hiphop_groove` etc.).
+
+Profiles curados atuais incluem famílias como:
+
+- `fallback_social_dark` — tensão, mistério, conflito, histórias pesadas;
+- `fallback_social_chill` — reflexão, contexto, emoção leve, narração tranquila;
+- `fallback_social_urban` — hip-hop/R&B/beat, artistas contemporâneos e narrativa urbana;
+- `fallback_social_modern` — pop/electronic/lofi moderno e conteúdo social neutro;
+- `fallback_social_fun` — histórias leves, curiosas, funky ou irônicas;
+- `fallback_social_cinematic` — dramaticidade, buildup, viradas e histórias com peso.
+
+Cada profile contém múltiplas faixas. O engine escolhe uma delas deterministicamente pelo par `profile + episode_slug`, então episódios diferentes naturalmente distribuem as escolhas sem exigir um campo novo no schema.
+
+Essas faixas são **fallback**, não justificativa para pular a pesquisa externa. O agente continua obrigado a tentar uma escolha nova antes.
+
+### Pixabay curado e resolução de página
+
+Entradas curadas do Pixabay podem usar `file` sob `external/manual/pixabay/` e guardar no campo `url` a **página canônica da música**, por exemplo:
+
+```json
+{
+  "file": "external/manual/pixabay/minha-faixa.mp3",
+  "url": "https://pixabay.com/music/.../",
+  "source": "pixabay",
+  "creator": "...",
+  "license": "Pixabay Content License",
+  "content_id_status": "explicit_no_content_id"
+}
+```
+
+No estado atual da `main`, `engine/audio_library.py` reconhece páginas HTTPS de `pixabay.com/music/...`, extrai o MP3 hospedado em `cdn.pixabay.com`, restringe o download a esse host e grava o arquivo apenas no cache. O binário não precisa entrar no Git.
+
+O catálogo pode manter metadata editorial adicional (`source`, `creator`, `license`, `content_id_status`); o resolver usa `file` e `url`, enquanto os demais campos ajudam auditoria e curadoria.
+
+Para fallback automático, prefira faixas cuja página não esteja marcada como `Content ID Registered`, dando prioridade extra às que declaram explicitamente `No Content Id`. Isso reduz atrito operacional, mas **não é garantia eterna de ausência de claim**: status de Content ID e situações de terceiros podem mudar. O fato de uma música estar no Pixabay também não autoriza redistribuir o MP3 isoladamente; ela deve permanecer incorporada ao vídeo/projeto.
+
+Não use no fallback curado uma faixa cujo próprio criador imponha atribuição pública obrigatória ou termos adicionais incompatíveis com o fluxo, mesmo se ela for popular. Músicas comerciais famosas liberadas apenas dentro da biblioteca de uma plataforma também não entram aqui, pois o vídeo é publicado em TikTok, Reels e Shorts.
 
 ### Openverse
 
@@ -75,7 +121,7 @@ Exemplo inválido:
 }
 ```
 
-Se a candidata escolhida só fornecer uma página/redirect e não for possível resolver com segurança uma URL direta em host aprovado, rejeite essa candidata e tente outra. Se nenhuma opção externa compatível for encontrada dentro do limite de tentativas, use um profile local válido de `assets/audio/music/catalog.json`. **Não crie queue com um profile externo cujo host não tenha sido validado contra a `main`.**
+Se a candidata escolhida só fornecer uma página/redirect e não for possível resolver com segurança uma URL direta em host aprovado — salvo uma página que tenha resolver explícito na `main`, como Pixabay — rejeite essa candidata e tente outra. Se nenhuma opção externa compatível for encontrada dentro do limite de tentativas, siga a ordem de fallback acima. **Não crie queue com um profile externo cujo host não tenha sido validado contra a `main`.**
 
 ### Serviços comerciais como referência
 
@@ -93,7 +139,7 @@ Se a fonte oficial ou os termos do próprio áudio proibirem explicitamente o us
 
 ### Aprovação e catálogo
 
-Se uma background music externa for aprovada e a `main` suportar o fluxo remoto, adicione apenas o profile/chave dedicada necessária no catálogo de música, preferencialmente com uma única entrada `{file, url}` para garantir seleção determinística.
+Se uma background music externa nova for aprovada e a `main` suportar o fluxo remoto, adicione apenas o profile/chave dedicada necessária no catálogo de música, preferencialmente com uma única entrada `{file, url}` para garantir seleção determinística daquela escolha editorial.
 
 Exemplo conceitual:
 
@@ -112,9 +158,9 @@ Exemplo conceitual:
 
 `timeline.json` deve continuar referenciando somente o `profile`, nunca a URL.
 
-Registre em `episodes/<slug>/sources.txt` a origem realmente usada, autoria, atribuição/licença quando aplicável e evidência operacional relevante.
+Registre em `episodes/<slug>/sources.txt` a origem realmente usada, autoria, atribuição/licença quando aplicável e evidência operacional relevante. Para um `fallback_social_*` já curado, não é necessário refazer toda a pesquisa da faixa a cada episódio; registre a escolha conforme as regras atuais de proveniência do projeto.
 
-Se a busca externa falhar por rede, qualidade, compatibilidade, licença/termos, duração ou aquisição técnica, use um profile existente em `assets/audio/music/catalog.json`. A falha externa não deve impedir a criação do episódio quando houver fallback válido.
+Se a busca externa falhar por rede, qualidade, compatibilidade, licença/termos, duração ou aquisição técnica, use a biblioteca curada e depois o fallback local antigo. A falha externa não deve impedir a criação do episódio quando houver fallback válido.
 
 ---
 
