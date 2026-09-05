@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "Olivia Dean — So Easy: a música que virou a lógica do primeiro encontro",
+  "slug": "so_easy_to_fall_in_love_olivia_dean",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"So Easy (To Fall In Love), da Olivia Dean, virou a lógica do primeiro encontro.","delivery":"hook"},
+    {"id":"friends","text":"Ela via amigas presas numa pergunta: será que ele vai gostar de mim?","delivery":"curious"},
+    {"id":"opposite","text":"Só que faltava a pergunta oposta.","delivery":"reveal"},
+    {"id":"choosing","text":"E se você também estiver escolhendo?","delivery":"reveal"},
+    {"id":"heart","text":"Daí nasce o coração da música: confiança sem arrogância.","delivery":"emotional"},
+    {"id":"push","text":"Olivia chamou a faixa de um empurrão antes do primeiro encontro.","delivery":"neutral"},
+    {"id":"fit","text":"Você não precisa tentar caber na vida de alguém.","delivery":"dramatic"},
+    {"id":"choose","text":"Você também escolhe.","delivery":"reveal"},
+    {"id":"production","text":"E aqui a produção fica esperta.","delivery":"curious"},
+    {"id":"light","text":"Em vez de autoestima virar hino enorme, tudo soa leve.","delivery":"neutral"},
+    {"id":"bossa","text":"A faixa mistura jazz pop e bossa nova.","delivery":"reveal"},
+    {"id":"instruments","text":"Bateria, piano e trompete sustentam esse balanço.","delivery":"neutral"},
+    {"id":"natural","text":"A confiança parece natural, quase sem esforço.","delivery":"emotional"},
+    {"id":"writers","text":"Olivia compôs com John Ryan, Max Wolfgang e Amy Allen.","delivery":"neutral"},
+    {"id":"producers","text":"Na produção estão John Ryan, Julian Bunetta e Zach Nahome.","delivery":"neutral"},
+    {"id":"credits","text":"Amy Allen e Max Wolfgang também aparecem nos créditos.","delivery":"neutral"},
+    {"id":"trumpet","text":"Mark Rudin toca trompete e assina o arranjo de metais.","delivery":"reveal"},
+    {"id":"release","text":"A música chegou com The Art of Loving, em setembro de 2025.","delivery":"neutral"},
+    {"id":"album","text":"O álbum trata amor menos como mágica e mais como prática.","delivery":"curious"},
+    {"id":"craft","text":"Para Olivia, amar é uma habilidade que exige tempo.","delivery":"reveal"},
+    {"id":"selfworth","text":"So Easy transforma isso em autoestima para conhecer alguém.","delivery":"payoff"},
+    {"id":"payoff","text":"E virou hit global. Comenta: essa perspectiva muda a música pra você?","delivery":"payoff"}
+  ]
+}
