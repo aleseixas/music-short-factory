@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -31,6 +32,12 @@ def _write_catalog(path: Path, profiles: dict[str, list[object]]) -> None:
     )
 
 
+def _expected_first(files: list[str], profile: str, episode_slug: str) -> str:
+    ordered = sorted(files, key=str.casefold)
+    digest = hashlib.sha256(f"{profile}\0{episode_slug}".encode("utf-8")).digest()
+    return ordered[int.from_bytes(digest[:8], "big") % len(ordered)]
+
+
 class ExpandedMusicFallbackTests(unittest.TestCase):
     def test_reusable_fallback_library_has_at_least_100_tracks(self):
         base = json.loads(
@@ -57,17 +64,20 @@ class ExpandedMusicFallbackTests(unittest.TestCase):
         self.assertGreaterEqual(len(files), 100)
         self.assertEqual(len(files), len(set(files)))
 
-    def test_supplemental_catalog_is_merged_and_safe_track_is_preferred(self):
+    def test_supplemental_catalog_is_merged_with_base_catalog(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             music_root = root / "assets/audio/music"
+            profile = "fallback_social_dark"
+            base_file = "external/manual/pixabay/base.mp3"
+            extra_file = "external/manual/pixabay/extra.mp3"
             _write_catalog(
                 music_root / "catalog.json",
                 {
-                    "fallback_social_dark": [
+                    profile: [
                         {
-                            "file": "external/manual/pixabay/registered.mp3",
-                            "url": "https://pixabay.com/music/demo-1/",
+                            "file": base_file,
+                            "url": "https://pixabay.com/music/demo-base/",
                             "content_id_status": "registered",
                         }
                     ]
@@ -76,19 +86,21 @@ class ExpandedMusicFallbackTests(unittest.TestCase):
             _write_catalog(
                 music_root / "fallback_social_extra.json",
                 {
-                    "fallback_social_dark": [
+                    profile: [
                         {
-                            "file": "external/manual/pixabay/safe.mp3",
-                            "url": "https://pixabay.com/music/demo-2/",
+                            "file": extra_file,
+                            "url": "https://pixabay.com/music/demo-extra/",
                             "content_id_status": "explicit_no_content_id",
                         }
                     ]
                 },
             )
-            resolved_path = root / "cache/music/safe.mp3"
+            slug = "episode-a"
+            expected = _expected_first([base_file, extra_file], profile, slug)
+            resolved_path = root / "cache/music/resolved.mp3"
 
             def materialize(entry, *_args, **_kwargs):
-                self.assertEqual(entry.relative_file, "external/manual/pixabay/safe.mp3")
+                self.assertEqual(entry.relative_file, expected)
                 return resolved_path, True
 
             with (
@@ -97,41 +109,99 @@ class ExpandedMusicFallbackTests(unittest.TestCase):
             ):
                 result = resolve_background_music(
                     root,
-                    BackgroundMusicSpec("fallback_social_dark", 0.1),
-                    "episode-a",
+                    BackgroundMusicSpec(profile, 0.1),
+                    slug,
                 )
 
         self.assertEqual(result.path, resolved_path)
 
-    def test_registered_track_is_deep_fallback_after_safe_failure(self):
+    def test_content_id_status_does_not_change_selection_order(self):
+        profile = "fallback_social_dark"
+        slug = "episode-same-order"
+        files = [
+            "external/manual/pixabay/a.mp3",
+            "external/manual/pixabay/b.mp3",
+            "external/manual/pixabay/c.mp3",
+        ]
+        expected = _expected_first(files, profile, slug)
+        observed: list[str] = []
+
+        for statuses in (
+            ["registered", "explicit_no_content_id", "registered"],
+            ["explicit_no_content_id", "registered", "explicit_no_content_id"],
+        ):
+            with tempfile.TemporaryDirectory() as temp_dir:
+                root = Path(temp_dir)
+                music_root = root / "assets/audio/music"
+                _write_catalog(
+                    music_root / "catalog.json",
+                    {
+                        profile: [
+                            {
+                                "file": file,
+                                "url": f"https://pixabay.com/music/demo-{index}/",
+                                "content_id_status": status,
+                            }
+                            for index, (file, status) in enumerate(zip(files, statuses), start=1)
+                        ]
+                    },
+                )
+                resolved_path = root / "cache/music/resolved.mp3"
+
+                def materialize(entry, *_args, **_kwargs):
+                    observed.append(entry.relative_file)
+                    return resolved_path, True
+
+                with (
+                    patch(
+                        "engine.music.materialize_audio_catalog_entry",
+                        side_effect=materialize,
+                    ),
+                    patch("engine.music.probe_audio_duration", return_value=3.0),
+                ):
+                    resolve_background_music(
+                        root,
+                        BackgroundMusicSpec(profile, 0.1),
+                        slug,
+                    )
+
+        self.assertEqual(observed, [expected, expected])
+
+    def test_failed_track_falls_back_to_next_rotated_candidate(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             music_root = root / "assets/audio/music"
+            profile = "fallback_social_dark"
+            files = [
+                "external/manual/pixabay/a.mp3",
+                "external/manual/pixabay/b.mp3",
+            ]
             _write_catalog(
                 music_root / "catalog.json",
                 {
-                    "fallback_social_dark": [
+                    profile: [
                         {
-                            "file": "external/manual/pixabay/safe.mp3",
-                            "url": "https://pixabay.com/music/demo-safe/",
-                            "content_id_status": "explicit_no_content_id",
-                        },
-                        {
-                            "file": "external/manual/pixabay/registered.mp3",
-                            "url": "https://pixabay.com/music/demo-registered/",
-                            "content_id_status": "registered",
-                        },
+                            "file": file,
+                            "url": f"https://pixabay.com/music/demo-{index}/",
+                            "content_id_status": (
+                                "registered" if index == 1 else "explicit_no_content_id"
+                            ),
+                        }
+                        for index, file in enumerate(files, start=1)
                     ]
                 },
             )
+            slug = "episode-fallback"
+            first = _expected_first(files, profile, slug)
+            second = files[1] if first == files[0] else files[0]
             calls: list[str] = []
-            registered_path = root / "cache/music/registered.mp3"
+            resolved_path = root / "cache/music/resolved.mp3"
 
             def materialize(entry, *_args, **_kwargs):
                 calls.append(entry.relative_file)
-                if entry.relative_file.endswith("safe.mp3"):
-                    raise RuntimeError("safe source unavailable")
-                return registered_path, True
+                if len(calls) == 1:
+                    raise RuntimeError("source unavailable")
+                return resolved_path, True
 
             with (
                 patch("engine.music.materialize_audio_catalog_entry", side_effect=materialize),
@@ -139,18 +209,12 @@ class ExpandedMusicFallbackTests(unittest.TestCase):
             ):
                 result = resolve_background_music(
                     root,
-                    BackgroundMusicSpec("fallback_social_dark", 0.1),
-                    "episode-b",
+                    BackgroundMusicSpec(profile, 0.1),
+                    slug,
                 )
 
-        self.assertEqual(
-            calls,
-            [
-                "external/manual/pixabay/safe.mp3",
-                "external/manual/pixabay/registered.mp3",
-            ],
-        )
-        self.assertEqual(result.path, registered_path)
+        self.assertEqual(calls, [first, second])
+        self.assertEqual(result.path, resolved_path)
 
 
 if __name__ == "__main__":
