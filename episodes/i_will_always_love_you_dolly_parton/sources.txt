@@ -1,0 +1,22 @@
+EDITORIAL / FACT-CHECK
+https://dollyparton.com/ — memorial oficial; saída de Porter Wagoner e origem de I Will Always Love You; histórico de charts.
+https://www.loc.gov/collections/dolly-parton-and-the-roots-of-country-music/articles-and-essays/dolly-parton-timeline/ — Library of Congress; cronologia Porter Wagoner, saída em 1974 e #1 country.
+https://www.countrymusichalloffame.org/hall-of-fame/dolly-parton — Country Music Hall of Fame; farewell para Porter Wagoner.
+https://www.pbs.org/video/dolly-parton-here-i-am-hyuj9q/ — Dolly explica que preservou o publishing quando Elvis quis gravar; fala sobre a versão de Whitney.
+https://www.grammy.com/news/whitney-houston-i-will-always-love-you-grammys-win-1994-dolly-parton-video-rewind/ — Whitney agradecendo Dolly e contexto do Grammy.
+https://people.com/whitney-houston-i-will-always-love-you-surprising-details-12069326 — contexto recente sobre Porter, Elvis e Whitney.
+https://www.billboard.com/music/chart-beat/dolly-parton-hot-100-jolene-i-will-always-love-you-top-40-1236328923/ — retorno de I Will Always Love You ao Hot 100 em 2026.
+https://www.dollydiscography.com/i-will-always-love-you-1974-single.html — data de gravação, RCA Studio B, produção de Bob Ferguson e histórico do single.
+
+VISUAL DISCOVERY / TRACEABILITY
+https://commons.wikimedia.org/wiki/Category:Dolly_Parton
+https://commons.wikimedia.org/wiki/Category:Porter_Wagoner
+https://commons.wikimedia.org/wiki/Category:Whitney_Houston
+https://commons.wikimedia.org/wiki/Category:Elvis_Presley
+https://commons.wikimedia.org/wiki/Category:RCA_Studio_B
+https://commons.wikimedia.org/wiki/Category:Grand_Ole_Opry_House
+Candidatos individuais e suas páginas-fonte estão registrados em visual_candidates.json. Direitos não inferidos foram marcados como unknown.
+
+BACKGROUND SEARCH
+Consultas externas realizadas: acoustic country documentary warm guitar instrumental; folk acoustic emotional storytelling instrumental; americana acoustic guitar background; nostalgic country guitar instrumental; warm piano acoustic documentary instrumental.
+Foram comparadas opções Pixabay de Americana, Acoustic Folk, Documentary Piano, Nostalgic Country e Country Nostalgia. Como a URL MP3 final não pôde ser validada no runtime desta autoria, foi usado o profile curado fallback_social_chill da main, seguindo docs/audio-search.md.
