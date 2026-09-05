@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "background_music": {"profile":"fallback_social_urban","volume":0.045},
+  "background_music": {"profile":"external_reza_milhao_gangsta_synth","volume":0.045},
   "sfx_cues": [
     {"time_seconds":0.08,"type":"bass_drop","volume":0.055},
     {"time_seconds":7.5,"type":"crowd_cheer","volume":0.035},
