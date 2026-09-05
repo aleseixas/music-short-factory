@@ -61,6 +61,12 @@ Confirme na `main` todos os enums e limites reais de delivery/TTS, motions, tran
 
 A voz é parte da direção editorial.
 
+### NOME DO ARTISTA — FALAR COMO QUEM CONHECE O FANDOM
+
+O roteiro não precisa repetir o nome artístico completo toda vez. Depois de apresentar claramente quem é a pessoa, use também, quando for natural e realmente reconhecido pelo público, o **nome curto, primeiro nome, apelido artístico ou forma carinhosa pela qual fãs costumam chamar aquele artista**. Isso ajuda a narração a soar mais próxima de quem acompanha música de verdade.
+
+Antes de usar essa forma familiar, confirme que ela é genuinamente comum e inequívoca no fandom ou na cobertura pública. Não invente apelidos, não force intimidade e não use um nome curto que possa confundir o espectador. Alterne naturalmente entre nome completo/artístico e forma familiar conforme o contexto; a clareza vem primeiro. Exemplos de lógica: apresentar `Ariana Grande` e depois poder dizer `Ariana` quando estiver claro de quem se fala; apresentar `Lady Gaga` e usar `Gaga` quando natural. A regra é **soar como alguém que conhece o artista e seus fãs, sem virar caricatura**.
+
 Depois de escrever o texto de cada segmento, escolha conscientemente `delivery` em `story.json` quando isso melhorar a interpretação.
 
 No estado atual, os valores suportados são:
@@ -127,6 +133,14 @@ Se uma background externa for aprovada, crie apenas o profile dedicado necessár
 Para SFX, `assets/audio/sfx/catalog.json` é a biblioteca curada e a fonte de verdade. Use SOMENTE `type` já existente nesse catálogo. NÃO pesquise novos SFX na web durante a criação do episódio, NÃO crie novos `type` e NÃO altere o catálogo.
 
 Escolha semanticamente entre os types reais. SFX devem reforçar eventos concretos: hook, corte, transition, punch zoom, kinetic text, highlight, overlay, reveal, estatística, mudança de assunto, reação, surpresa, comparação, virada ou payoff.
+
+### SFX — VARIEDADE OBRIGATÓRIA DENTRO DO CATÁLOGO
+
+O catálogo é grande: **não recaia automaticamente nos mesmos 2–4 SFX familiares só porque eles funcionaram antes**. Para cada cue, examine alternativas reais do catálogo com a mesma função editorial e use variedade de famílias/texturas quando elas continuarem semanticamente adequadas — por exemplo, diferentes transitions/whooshes, impacts, risers, UI/notification sounds, reactions, tension, foley, comedy, music/DJ, textures ou outras famílias que existam de fato na `main`.
+
+Dentro de um mesmo episódio, evite repetir o mesmo `type` várias vezes quando houver alternativas equivalentes boas. Repetição deliberada só é desejável quando funcionar como motivo/assinatura editorial clara ou quando aquele som for realmente a melhor opção para eventos diferentes. **Variedade não significa aleatoriedade:** pertinência ao beat vem primeiro; entre duas opções igualmente boas, prefira a menos usada.
+
+Quando o histórico recente estiver acessível, confira aproximadamente os últimos 10 episódios e identifique os `type`/famílias de SFX mais usados. Rebaixe esses efeitos na escolha do episódio atual e explore partes menos usadas do catálogo. Não banir um SFX popular: apenas impedir que `whoosh_fast`, `bass_drop_cinematic` ou qualquer outro favorito vire resposta padrão para quase todo hook, reveal ou transição.
 
 Não existe obrigação de `1 SFX por shot` nem quantidade-alvo rígida. Não economize por medo de quantidade, mas não use SFX como preenchimento. O warning acima de 25 é apenas alerta de excesso.
 
@@ -275,7 +289,7 @@ Siga esta ordem:
 8. escolher shots/assets e trims priorizando coerência semântica com a narração, reservando cada visual escolhido para um único shot;
 9. fazer a primeira passada shot por shot: frase narrada → intenção visual → asset/trecho → foco → motion → transition; rejeitar qualquer asset cuja relação com a frase seja apenas genérica;
 10. pesquisar background music externa de forma internet-first com no mínimo 5 queries semanticamente diferentes, comparar 4–6 candidatas plausíveis, evitar backgrounds recentes/repetidas, validar o caminho técnico correto (`external/openverse/...` ou `external/manual/...` quando suportado) e só então escolher profile externo ou fallback local realmente justificado;
-11. ler o catálogo de SFX e selecionar somente types curados;
+11. ler o catálogo de SFX por inteiro/relevância, considerar alternativas de famílias diferentes e, quando o histórico estiver acessível, rebaixar types/famílias usados demais nos episódios recentes;
 12. fazer a segunda passada shot por shot: visual FX, kinetic text, highlight, overlay e SFX;
 13. sincronizar beats compostos entre voz, câmera, texto, overlay e áudio;
 14. revisar isoladamente hook, reveals, mudanças de assunto, estatísticas, virada e payoff;
