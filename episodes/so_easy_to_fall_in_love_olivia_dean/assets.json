@@ -2,7 +2,7 @@
   "schema_version": 1,
   "assets": [
     {"id":"cover","file":"the_art_of_loving_cover.jpg","url":"https://carolinasoul.com/cdn/shop/files/35207368_1.jpg?v=1761498803","credit":"Capitol/Polydor artwork via Carolina Soul","license":"Unknown","focus":{"x":0.5,"y":0.5}},
-    {"id":"friends","file":"so_easy_flower_dance.jpg","url":"https://www.metalocus.es/sites/default/files/styles/mopis_home_news_category_slider_desktop/public/2025-12/metalocus_Olivia-Dean_So-Easy_07_p.jpg?h=3b4e7bc7&itok=M69nNc9T","credit":"So Easy video still / METALOCUS","license":"Unknown","focus":{"x":0.5,"y":0.45}},
+    {"id":"friends","file":"olivia_bst_hyde_park.jpg","url":"https://cdn.craft.cloud/3747bbfe-07db-499d-aa3d-b239ba21c062/assets/galleries/2025/bst-hyde-park-2025-sabrina-carpenter-photos/bst_2025_olivia-dean_burak-cingi01.jpg?fit=cover&s=6f1ZmRA8mbiS_ozyyZrOZeUPJ9hbPqJa215070RKDKI&width=2400","credit":"Burak Cingi / The Line of Best Fit","license":"Unknown","focus":{"x":0.5,"y":0.42}},
     {"id":"opposite","file":"so_easy_office.png","url":"https://admin.promonews.tv/sites/default/files/Olivia%20Dean%20%27So%20Easy%27%20by%20Jake%20Erland2.png","credit":"So Easy video still / Promonews","license":"Unknown","focus":{"x":0.5,"y":0.45}},
     {"id":"choosing","file":"so_easy_taxi.jpg","url":"https://www.metalocus.es/sites/default/files/styles/mopis_news_carousel_item_desktop/public/2025-12/metalocus_Olivia-Dean_So-Easy_06.jpg?itok=XWK5GnUy","credit":"So Easy video still / METALOCUS","license":"Unknown","focus":{"x":0.5,"y":0.48}},
     {"id":"heart","file":"so_easy_flower.jpg","url":"https://www.metalocus.es/sites/default/files/2025-12/metalocus_Olivia-Dean_So-Easy_04.jpg","credit":"So Easy video still / METALOCUS","license":"Unknown","focus":{"x":0.5,"y":0.45}},
