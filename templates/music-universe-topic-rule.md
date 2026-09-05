@@ -154,7 +154,20 @@ Busque mistura de:
 - aproximadamente 40–60% assuntos atuais/recentes;
 - aproximadamente 40–60% histórias fortes de catálogo/passado.
 
-Busque variedade de artistas, gêneros, épocas, Brasil e internacional.
+### Mix Brasil x internacional
+
+Como **meta editorial de longo prazo**, tente manter aproximadamente:
+
+- **65% de conteúdo brasileiro**;
+- **35% de conteúdo internacional/gringo**.
+
+Essa proporção deve orientar o histórico recente do canal, e não funcionar como quota rígida de cada execução ou de cada pool. Quando o histórico estiver acessível, observe aproximadamente os últimos 15–20 episódios: se um dos lados estiver claramente abaixo da meta, aumente a prioridade de boas candidatas desse grupo até o mix voltar a se aproximar de 65/35.
+
+Nos dois grupos, dê forte preferência a **cantores, artistas e bandas famosos, populares ou amplamente reconhecíveis pelo público**. Não use artista obscuro apenas para cumprir a proporção. Ao mesmo tempo, fama sozinha não basta: o assunto escolhido sobre esse artista ainda precisa ser não óbvio, forte e passar por todos os gates editoriais.
+
+A meta 65/35 é uma preferência, não uma trava. Se a melhor história disponível for claramente superior e pertencer ao lado momentaneamente mais representado, ela ainda pode vencer; evite sacrificar qualidade apenas para fechar uma conta exata.
+
+Dentro desse mix, continue buscando variedade de artistas, gêneros e épocas.
 
 Avalie cada tema em 0–10:
 
