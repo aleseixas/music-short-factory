@@ -20,20 +20,6 @@ MUSIC_CATALOG = MUSIC_ROOT / "catalog.json"
 MUSIC_FALLBACK_CATALOG = MUSIC_ROOT / "fallback_social_extra.json"
 SUPPORTED_MUSIC_SUFFIXES = SUPPORTED_AUDIO_SUFFIXES
 
-_SAFE_CONTENT_ID_STATUSES = frozenset(
-    {
-        "explicit_no_content_id",
-        "not_registered_on_source_page_when_curated",
-        "creator_states_no_content_id_registration",
-    }
-)
-_REGISTERED_CONTENT_ID_STATUSES = frozenset(
-    {
-        "registered",
-        "content_id_registered",
-    }
-)
-
 
 def _load_music_profiles(project_root: Path, music_root: Path) -> dict[str, list[object]]:
     catalog_paths = [project_root / MUSIC_CATALOG]
@@ -55,7 +41,9 @@ def _load_music_profiles(project_root: Path, music_root: Path) -> dict[str, list
         validate_schema(data, resolved)
         profiles = data.get("profiles")
         if not isinstance(profiles, dict):
-            raise RuntimeError(f"{catalog_path.as_posix()} precisa conter um objeto em 'profiles'.")
+            raise RuntimeError(
+                f"{catalog_path.as_posix()} precisa conter um objeto em 'profiles'."
+            )
 
         for profile, raw_files in profiles.items():
             if not isinstance(profile, str) or not profile.strip():
@@ -69,32 +57,14 @@ def _load_music_profiles(project_root: Path, music_root: Path) -> dict[str, list
     return merged
 
 
-def _content_id_risk(raw_entry: object) -> int:
-    """Prefer safer curated tracks; keep registered tracks as deep fallback."""
-    if not isinstance(raw_entry, dict):
-        return 1
-    raw_status = raw_entry.get("content_id_status")
-    if raw_status is None:
-        return 1
-    if not isinstance(raw_status, str):
-        raise RuntimeError("content_id_status precisa ser texto quando informado.")
-    status = raw_status.strip().casefold()
-    if status in _SAFE_CONTENT_ID_STATUSES:
-        return 0
-    if status in _REGISTERED_CONTENT_ID_STATUSES:
-        return 2
-    return 1
-
-
 def _rotate_candidates(
     candidates: list[AudioCatalogEntry],
     profile: str,
     episode_slug: str,
-    risk: int,
 ) -> list[AudioCatalogEntry]:
     candidates.sort(key=lambda entry: entry.relative_file.casefold())
     digest = hashlib.sha256(
-        f"{profile}\0{episode_slug}\0{risk}".encode("utf-8")
+        f"{profile}\0{episode_slug}".encode("utf-8")
     ).digest()
     start_index = int.from_bytes(digest[:8], "big") % len(candidates)
     return candidates[start_index:] + candidates[:start_index]
@@ -132,7 +102,7 @@ def resolve_background_music(
             f"{MUSIC_FALLBACK_CATALOG.as_posix()}."
         )
 
-    candidates_by_risk: dict[int, list[AudioCatalogEntry]] = {0: [], 1: [], 2: []}
+    candidates: list[AudioCatalogEntry] = []
     seen: set[str] = set()
     for index, raw_entry in enumerate(raw_files, start=1):
         label = f"profiles.{spec.profile}[{index}]"
@@ -154,16 +124,9 @@ def resolve_background_music(
                 f"Arquivo local do profile {spec.profile!r} nao encontrado: "
                 f"{entry.relative_file}."
             )
-        candidates_by_risk[_content_id_risk(raw_entry)].append(entry)
+        candidates.append(entry)
 
-    ordered_candidates: list[AudioCatalogEntry] = []
-    for risk in (0, 1, 2):
-        group = candidates_by_risk[risk]
-        if group:
-            ordered_candidates.extend(
-                _rotate_candidates(group, spec.profile, episode_slug, risk)
-            )
-
+    ordered_candidates = _rotate_candidates(candidates, spec.profile, episode_slug)
     cache_dir = media_cache_directory(project_root, cache_root, "music")
     failures: list[str] = []
 
