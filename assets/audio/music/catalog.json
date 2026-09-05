@@ -38,6 +38,194 @@
       "uplifting_documentary/discover-01.mp3",
       "uplifting_documentary/driving-ambition-01.mp3"
     ],
+    "fallback_social_dark": [
+      {
+        "file": "external/manual/pixabay/dark-ambient-sad-melody-silentvoice.mp3",
+        "url": "https://pixabay.com/music/ambient-dark-ambient-sad-melody-250941/",
+        "source": "pixabay",
+        "creator": "Silentvoice",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/the-paranormal-is-real-leonellcassio.mp3",
+        "url": "https://pixabay.com/music/future-bass-leonell-cassio-the-paranormal-is-real-ft-carrie-163742/",
+        "source": "pixabay",
+        "creator": "LeonellCassio",
+        "license": "Pixabay Content License",
+        "content_id_status": "creator_states_no_content_id_registration"
+      },
+      {
+        "file": "external/manual/pixabay/dragonstudio-classic-trance-beat.mp3",
+        "url": "https://pixabay.com/music/techno-trance-dragonstudio-classic-trance-beat-344249/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/battle-music-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/rock-battle-music-316528/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      }
+    ],
+    "fallback_social_chill": [
+      {
+        "file": "external/manual/pixabay/morning-fog-silentvoice.mp3",
+        "url": "https://pixabay.com/music/ambient-morning-fog-263352/",
+        "source": "pixabay",
+        "creator": "Silentvoice",
+        "license": "Pixabay Content License",
+        "content_id_status": "explicit_no_content_id"
+      },
+      {
+        "file": "external/manual/pixabay/abstract-piano-silentvoice.mp3",
+        "url": "https://pixabay.com/music/modern-classical-abstract-piano-392339/",
+        "source": "pixabay",
+        "creator": "Silentvoice",
+        "license": "Pixabay Content License",
+        "content_id_status": "explicit_no_content_id"
+      },
+      {
+        "file": "external/manual/pixabay/chill-abstract-lofi-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/beats-chill-abstract-lofi-317563/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/elevator-chill-lofi-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/beats-elevator-music-chill-lofi-beat-background-music-317572/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      }
+    ],
+    "fallback_social_urban": [
+      {
+        "file": "external/manual/pixabay/edgy-rock-rnb-beats-monolithaudio.mp3",
+        "url": "https://pixabay.com/music/beats-edgy-rock-rnb-beats-230018/",
+        "source": "pixabay",
+        "creator": "MonolithAudio",
+        "license": "Pixabay Content License",
+        "content_id_status": "explicit_no_content_id"
+      },
+      {
+        "file": "external/manual/pixabay/background-reels-54s-loksii.mp3",
+        "url": "https://pixabay.com/music/beats-background-reels-music-54-seconds-232689/",
+        "source": "pixabay",
+        "creator": "Loksii",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/instagram-kulakovka.mp3",
+        "url": "https://pixabay.com/music/beats-instagram-291452/",
+        "source": "pixabay",
+        "creator": "Kulakovka",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/the-zodiac-xhowiexo.mp3",
+        "url": "https://pixabay.com/music/beats-madewithlove-the-zodiac-149319/",
+        "source": "pixabay",
+        "creator": "xhowiexo",
+        "license": "Pixabay Content License",
+        "content_id_status": "explicit_no_content_id"
+      }
+    ],
+    "fallback_social_modern": [
+      {
+        "file": "external/manual/pixabay/youtube-background-lofi-delosound.mp3",
+        "url": "https://pixabay.com/music/beats-youtube-background-music-lofi-398315/",
+        "source": "pixabay",
+        "creator": "DELOSound",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/dreamfish-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/upbeat-351118/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/guidelines-magiksolo.mp3",
+        "url": "https://pixabay.com/music/corporate-guidelines-137755/",
+        "source": "pixabay",
+        "creator": "Magiksolo",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/lofi-guitar-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/beats-lofi-guitar-chill-beat-background-music-317540/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      }
+    ],
+    "fallback_social_fun": [
+      {
+        "file": "external/manual/pixabay/happy-funky-polka-folk-monolithaudio.mp3",
+        "url": "https://pixabay.com/music/folk-happy-funky-polka-folk-230649/",
+        "source": "pixabay",
+        "creator": "MonolithAudio",
+        "license": "Pixabay Content License",
+        "content_id_status": "explicit_no_content_id"
+      },
+      {
+        "file": "external/manual/pixabay/night-patrol-monolithaudio.mp3",
+        "url": "https://pixabay.com/music/funk-night-patrol-230379/",
+        "source": "pixabay",
+        "creator": "MonolithAudio",
+        "license": "Pixabay Content License",
+        "content_id_status": "explicit_no_content_id"
+      },
+      {
+        "file": "external/manual/pixabay/nu-disco-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/disco-nu-disco-584761/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      }
+    ],
+    "fallback_social_cinematic": [
+      {
+        "file": "external/manual/pixabay/knife-magiksolo.mp3",
+        "url": "https://pixabay.com/music/modern-classical-magiksolo-knife-425649/",
+        "source": "pixabay",
+        "creator": "Magiksolo",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/dark-chill-piano-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/modern-classical-dark-chill-ambient-piano-music-316537/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      },
+      {
+        "file": "external/manual/pixabay/trance-copyright-free-dragon-studio.mp3",
+        "url": "https://pixabay.com/music/techno-trance-trance-music-copyright-free-584760/",
+        "source": "pixabay",
+        "creator": "DRAGON-STUDIO",
+        "license": "Pixabay Content License",
+        "content_id_status": "not_registered_on_source_page_when_curated"
+      }
+    ],
     "external_apt_monkeys_spinning_monkeys": [
       {
         "file": "external/openverse/monkeys-spinning-monkeys-kevin-macleod.mp3",
