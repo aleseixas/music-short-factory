@@ -24,6 +24,7 @@
     {"id":"broadway","file":"orpheum_theatre_marquee.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/OrpheumTheatreMarquee.jpg","credit":"Justin / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},
     {"id":"equal_pay_rally","file":"equal_pay_rally.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Singer%20Tatiana%20Hazel%20Equal%20Pay%20For%20Women%20Rally%20Chicago%20Illinois%203-28-19%206714%20%2832548751537%29.jpg","credit":"Charles Edward Miller / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.45}},
     {"id":"musical_poster","file":"9to5_musical.jpg","url":"https://images.squarespace-cdn.com/content/v1/59ed3dfad0e6280748cd507f/712355f5-cf2c-46a2-941f-d5e5f847408a/9%2Bto%2B5%2B.jpg","credit":"9 to 5 musical promotional image","license":"Unknown","focus":{"x":0.5,"y":0.5}},
-    {"id":"dolly_2023","file":"dolly_parton_2023.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dolly%20Parton%202023.jpg","credit":"Wikimedia Commons","license":"Unknown","focus":{"x":0.5,"y":0.36}}
+    {"id":"dolly_2023","file":"dolly_parton_2023.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dolly%20Parton%202023.jpg","credit":"Wikimedia Commons","license":"Unknown","focus":{"x":0.5,"y":0.36}},
+    {"id":"dolly_2000","file":"dolly_parton_2000.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Dolly%20Parton%20in%202000.jpg","credit":"John Mathew Smith / Wikimedia Commons","license":"CC BY-SA 2.0","focus":{"x":0.5,"y":0.36}}
   ]
 }
