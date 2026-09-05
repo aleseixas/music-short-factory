@@ -212,3 +212,33 @@ Antes de finalizar, confirme obrigatoriamente:
 - não foi criada end card genérica substituta;
 - CTA final é contextual, curto e pede uma única ação;
 - último visual continua pertencendo à história e reforça o encerramento.
+
+## 10) HARD GATE técnico — duplicate preflight por GitHub Action
+
+Antes da PRIMEIRA escrita em `episodes/<slug>/`, a candidata deve passar também pelo preflight técnico de duplicidade da `main`.
+
+Fluxo obrigatório para o agente que opera via GitHub, sem terminal local:
+
+1. depois da checagem determinística de `episodes/`, `.publish-queue/` e `.publish-retry/`, escolha uma candidata real e defina `song`, `artist` e `slug`;
+2. crie exatamente UM arquivo novo `.duplicate-check/<slug>-<nonce>.json` com este formato:
+
+```json
+{
+  "song": "Nome exato da música",
+  "artist": "Nome do artista",
+  "slug": "slug_normalizado"
+}
+```
+
+3. essa escrita deve disparar `.github/workflows/duplicate-preflight.yml`;
+4. localize a execução `Duplicate candidate preflight` associada ao commit que criou o arquivo e leia o job/log da Action;
+5. só existem dois resultados editoriais válidos:
+   - `PREFLIGHT_RESULT=UNIQUE_CANDIDATE`: a candidata passou; somente então a autoria em `episodes/<slug>/` pode começar;
+   - `PREFLIGHT_RESULT=DUPLICATE_CANDIDATE`: descarte SOMENTE essa candidata e avance para a próxima música do pool, sem criar `episodes/<slug>/` nem `.publish-queue/<slug>.txt`;
+6. se a Action falhar por infraestrutura, request malformado ou não produzir um dos dois markers acima, considere o preflight `BLOQUEADO` para aquela candidata e NÃO autorize a autoria com base em suposição;
+7. um `GitHub.search` vazio, uma listagem aparentemente vazia ou ausência do slug exato NÃO substituem o preflight técnico;
+8. o arquivo `.duplicate-check/*.json` é apenas um registro de consulta e NÃO conta como episódio criado nem como `.publish-queue`;
+9. não reutilize o mesmo nome de request; use um `<nonce>` curto e único para cada candidata consultada;
+10. HARD GATE: sem evidência real de `PREFLIGHT_RESULT=UNIQUE_CANDIDATE`, é proibido escrever qualquer arquivo em `episodes/<slug>/`.
+
+Se o resultado for `DUPLICATE_CANDIDATE`, isso NÃO encerra a execução: continue para a próxima candidata do pool até encontrar uma inédita que passe pelos demais gates ou até esgotar o pool real.
