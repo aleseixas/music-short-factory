@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"external_drop_dead_synth_pop","volume":0.04},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.07},
+    {"time_seconds":7.0,"type":"whoosh_transition","volume":0.045},
+    {"time_seconds":14.0,"type":"dramatic_dun_dun","volume":0.05},
+    {"time_seconds":21.0,"type":"tape_stop","volume":0.045},
+    {"time_seconds":28.0,"type":"record_scratch","volume":0.045},
+    {"time_seconds":35.0,"type":"riser_build_up","volume":0.045},
+    {"time_seconds":43.0,"type":"impact","volume":0.055},
+    {"time_seconds":51.0,"type":"ding","volume":0.04}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.7,"type":"punch_zoom","intensity":0.58},
+    {"start_seconds":14.0,"end_seconds":14.8,"type":"punch_zoom","intensity":0.4},
+    {"start_seconds":35.0,"end_seconds":35.8,"type":"slow_zoom_in","intensity":0.3},
+    {"start_seconds":50.0,"end_seconds":50.8,"type":"punch_zoom","intensity":0.48}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.25,"text":"MICHAEL\nPEGOU FOGO","accent_text":"PEGOU FOGO","animation":"scale_bounce","position":"center","intensity":0.65},
+    {"segment":"shoot","offset_seconds":0.12,"duration_seconds":1.15,"text":"27 JAN 1984","accent_text":"1984","animation":"pop_in","position":"center","intensity":0.55},
+    {"segment":"expectation","offset_seconds":0.12,"duration_seconds":1.1,"text":"TODOS ESPERAVAM\nUM PROCESSO","accent_text":"UM PROCESSO","animation":"slide_up","position":"center","intensity":0.6},
+    {"segment":"turn","offset_seconds":0.12,"duration_seconds":1.15,"text":"MAS ELE\nVIROU O JOGO","accent_text":"VIROU O JOGO","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"donation","offset_seconds":0.12,"duration_seconds":1.15,"text":"US$ 1,5 MILHÃO","accent_text":"1,5 MILHÃO","animation":"fade_pop","position":"center","intensity":0.62},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.2,"text":"DO ACIDENTE\nPARA UM BURN CENTER","accent_text":"BURN CENTER","animation":"scale_bounce","position":"center","intensity":0.62}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"mj_1984","motion":"push_in","transition_out":"cut","highlight":"MICHAEL JACKSON • PEPSI"},
+    {"id":"shot_shoot","segment":"shoot","asset":"fire_context","motion":"hold","transition_out":"cut","highlight":"EFEITO PIROTÉCNICO • CONTEXTO VISUAL"},
+    {"id":"shot_dance","segment":"dance","asset":"mj_grammys","motion":"push_in","transition_out":"crossfade","highlight":"ELE CONTINUOU DANÇANDO"},
+    {"id":"shot_injury","segment":"injury","asset":"ambulance_context","motion":"hold","transition_out":"cut","highlight":"HOSPITALIZAÇÃO"},
+    {"id":"shot_expectation","segment":"expectation","asset":"pepsi_challenge","motion":"push_in","transition_out":"cut","highlight":"PEPSI • ANOS 1980"},
+    {"id":"shot_turn","segment":"turn","asset":"live_context","motion":"hold","transition_out":"cut","highlight":"A HISTÓRIA VIROU"},
+    {"id":"shot_donation","segment":"donation","asset":"pepsi_retro","motion":"pull_out","transition_out":"crossfade","highlight":"US$ 1,5 MILHÃO"},
+    {"id":"shot_payoff","segment":"payoff","asset":"hospital_context","motion":"hold","transition_out":"cut","highlight":"MICHAEL JACKSON BURN CENTER"}
+  ]
+}

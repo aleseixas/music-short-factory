@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"O ACIDENTE QUE VIROU AJUDA","source":{"type":"asset","asset_id":"mj_1984"}},
+  "youtube": {
+    "title":"Michael Jackson: o acidente da Pepsi que teve uma virada inesperada",
+    "description":"Em 1984, um efeito pirotécnico incendiou o cabelo de Michael Jackson durante a gravação de um comercial da Pepsi. O que aconteceu depois transformou uma tragédia de bastidor em uma história muito menos conhecida de sua carreira.",
+    "hashtags":["MichaelJackson","Pepsi","HistoriaDaMusica","Curiosidades","Shorts"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Um comercial da Pepsi terminou com Michael Jackson hospitalizado em 1984. Só que a maior virada veio depois: dinheiro recebido da empresa foi destinado a um centro para vítimas de queimaduras.",
+    "hashtags":["MichaelJackson","Pepsi","HistoriaDaMusica","Curiosidades","Musica"],
+    "share_to_feed":true,
+    "thumb_offset_ms":700
+  },
+  "tiktok": {
+    "caption":"O acidente da Pepsi que queimou Michael Jackson teve um final que quase nunca contam.",
+    "hashtags":["MichaelJackson","Pepsi","HistoriaDaMusica","Curiosidades","Musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":700,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}

@@ -1,0 +1,21 @@
+FONTES EDITORIAIS
+https://www.latimes.com/archives/la-xpm-2009-jun-26-me-jackson-obit26-story.html — Los Angeles Times: linha do tempo registra hospitalização em 27/01/1984 após queimadura no couro cabeludo durante gravação da campanha da Pepsi.
+https://www.latimes.com/local/lanow/la-me-ln-pepsi-fire--jackson-20130509-story.html — Los Angeles Times: testemunho de Karen Faye sobre Michael continuar dançando por alguns segundos e sobre a expectativa de processo contra a Pepsi; tratar como testemunho, não como observação independente do jornal.
+https://www.latimes.com/archives/la-xpm-2009-jul-08-et-cause8-story.html — Los Angeles Times: registra doação de US$ 1,5 milhão recebidos de endorsements da Pepsi ao Michael Jackson Burn Center for Children no Brotman Medical Center.
+https://www.latimes.com/archives/la-xpm-2005-mar-22-me-jackson22-story.html — Los Angeles Times: registra queimadura de terceiro grau em uma pequena área do couro cabeludo; roteiro usa a formulação conservadora 'queimaduras graves'.
+
+DIREÇÃO FACTUAL
+O episódio evita afirmar que o acidente causou dependência química ou outras consequências médicas contestadas. A virada editorial é exclusivamente documentada: acidente grave -> dinheiro da Pepsi destinado ao centro de queimados.
+
+BASELINES VISUAIS
+https://commons.wikimedia.org/wiki/File:Michael_Jackson_1984_(enhanced).jpg — Michael Jackson em 1984; White House Photo Office; domínio público nos EUA.
+https://commons.wikimedia.org/wiki/File:Fire_burning.webm — fogo; Gpkp; CC BY-SA 4.0. B-roll contextual, NÃO é imagem do acidente de 1984.
+https://commons.wikimedia.org/wiki/File:Michael_Jackson_with_Grammy_Awards_in_1984.jpg — Michael Jackson em 1984; United Press International; status de domínio público conforme página do Commons.
+https://commons.wikimedia.org/wiki/File:Ambulance_running_on_road.webm — ambulância; Free Video Library; CC BY 3.0. B-roll contextual.
+https://commons.wikimedia.org/wiki/File:Pepsi_Challenge.jpg — material promocional Pepsi do início dos anos 1980; TeemPlayer; CC BY-SA 3.0/GFDL.
+https://commons.wikimedia.org/wiki/File:Live_band_performs_on_stage..webm — performance musical genérica; Leticia Nabunje; CC BY-SA 4.0. B-roll contextual.
+https://commons.wikimedia.org/wiki/File:Pepsistuff1970-80s.jpg — estética Pepsi retrô; ARMcgrath; CC BY-SA 4.0.
+https://commons.wikimedia.org/wiki/File:Interior_View_of_Chelsea_and_Westminster_Hospital,_London.webm — hospital genérico; Fabiovieiramd; CC BY-SA 4.0. B-roll contextual, NÃO é Brotman Medical Center.
+
+BACKGROUND MUSIC — PESQUISA WEB-FIRST
+Consultas realizadas: dark cinematic tension instrumental; suspense documentary instrumental; tense ambient piano; retro synth tension; dramatic investigative underscore. Foram comparadas candidatas externas incluindo Komiku - Tension, PeriTune - Suspense, Tamlin Lollis Love - Suspense, Post Apocalypse by WinnieTheMoog, Sacred Battle Loop by MusicLFiles e Face to face tension by Komiku. Como o catálogo atual já possui um profile externo funcional e não era necessário alterar o engine, o episódio referencia external_drop_dead_synth_pop; nenhum binário remoto é commitado.

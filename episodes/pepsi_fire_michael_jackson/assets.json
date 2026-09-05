@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"mj_1984","file":"michael_jackson_1984_enhanced.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Michael_Jackson_1984_%28enhanced%29.jpg","credit":"White House Photo Office / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.52,"y":0.36}},
+    {"id":"fire_context","file":"fire_burning.webm","url":"https://upload.wikimedia.org/wikipedia/commons/7/74/Fire_burning.webm","credit":"Gpkp / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"mj_grammys","file":"michael_jackson_grammys_1984.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/4/45/Michael_Jackson_with_Grammy_Awards_in_1984.jpg","credit":"United Press International / Wikimedia Commons","license":"Public domain in the United States per Commons file page","focus":{"x":0.52,"y":0.34}},
+    {"id":"ambulance_context","file":"ambulance_running_on_road.webm","url":"https://upload.wikimedia.org/wikipedia/commons/b/bd/Ambulance_running_on_road.webm","credit":"Free Video Library / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"pepsi_challenge","file":"pepsi_challenge.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/c/c3/Pepsi_Challenge.jpg","credit":"TeemPlayer / Wikimedia Commons","license":"CC BY-SA 3.0 / GFDL","focus":{"x":0.42,"y":0.5}},
+    {"id":"live_context","file":"live_band_performs_on_stage.webm","url":"https://upload.wikimedia.org/wikipedia/commons/0/04/Live_band_performs_on_stage..webm","credit":"Leticia Nabunje / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"pepsi_retro","file":"pepsistuff_1970_80s.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/1/1b/Pepsistuff1970-80s.jpg","credit":"ARMcgrath / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},
+    {"id":"hospital_context","file":"hospital_interior_london.webm","url":"https://upload.wikimedia.org/wikipedia/commons/1/17/Interior_View_of_Chelsea_and_Westminster_Hospital%2C_London.webm","credit":"Fabiovieiramd / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}

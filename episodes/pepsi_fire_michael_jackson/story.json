@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "title": "Michael Jackson — o acidente da Pepsi que terminou em uma virada inesperada",
+  "slug": "pepsi_fire_michael_jackson",
+  "target_duration_seconds": 62,
+  "segments": [
+    {"id":"hook","text":"Um comercial da Pepsi colocou Michael Jackson literalmente em chamas — mas o mais inesperado veio depois do acidente.","delivery":"hook"},
+    {"id":"shoot","text":"Era 27 de janeiro de 1984. Michael gravava uma campanha da Pepsi quando um efeito pirotécnico incendiou seu cabelo.","delivery":"dramatic"},
+    {"id":"dance","text":"Segundo uma testemunha que trabalhou com ele, Michael ainda continuou dançando por alguns segundos sem perceber que estava queimando.","delivery":"dramatic"},
+    {"id":"injury","text":"Ele foi hospitalizado com queimaduras graves no couro cabeludo. Anos depois, médicos ainda tratariam cicatrizes deixadas pelo acidente.","delivery":"emotional"},
+    {"id":"expectation","text":"A essa altura, todo mundo esperava uma batalha contra a Pepsi. A própria equipe achava que ele processaria a empresa.","delivery":"curious"},
+    {"id":"turn","text":"Só que a história virou: em vez de transformar o caso apenas numa disputa, Michael direcionou dinheiro recebido da Pepsi para vítimas de queimaduras.","delivery":"reveal"},
+    {"id":"donation","text":"O Los Angeles Times registrou que foram 1,5 milhão de dólares para o Michael Jackson Burn Center for Children, no Brotman Medical Center.","delivery":"reveal"},
+    {"id":"payoff","text":"Ou seja: a propaganda que queimou Michael acabou ajudando a financiar um lugar criado para tratar outras pessoas queimadas. Essa foi a virada que quase nunca contam.","delivery":"payoff"}
+  ]
+}
