@@ -2,10 +2,10 @@
   "schema_version": 1,
   "background_music": {"profile":"fallback_social_fun","volume":0.04},
   "sfx_cues": [
-    {"time_seconds":0.08,"type":"typewriter_key","volume":0.06},
+    {"time_seconds":0.08,"type":"typing","volume":0.06},
     {"time_seconds":6.3,"type":"camera_shutter","volume":0.04},
     {"time_seconds":16.0,"type":"pop_sfx","volume":0.045},
-    {"time_seconds":22.0,"type":"typing","volume":0.04},
+    {"time_seconds":22.0,"type":"mouse_click","volume":0.04},
     {"time_seconds":35.0,"type":"record_scratch","volume":0.04},
     {"time_seconds":48.0,"type":"correct_ding","volume":0.04},
     {"time_seconds":61.0,"type":"applause","volume":0.035},
@@ -44,11 +44,11 @@
     {"id":"shot_exploitation","segment":"exploitation","asset":"pay_gap_sign","motion":"push_in","transition_out":"cut","highlight":"TRABALHO DEMAIS • RECONHECIMENTO DE MENOS"},
     {"id":"shot_contrast","segment":"contrast","asset":"equal_pay_banner","motion":"pull_out","transition_out":"cut","highlight":"LETRA DURA • SOM BRILHANTE"},
     {"id":"shot_anthem","segment":"anthem","asset":"womens_march","motion":"pan_right","transition_out":"crossfade","highlight":"VIROU HINO TRABALHISTA"},
-    {"id":"shot_debut","segment":"debut","asset":"dolly_1980_guitar","motion":"push_in","transition_out":"cut","highlight":"PRIMEIRO FILME DE DOLLY"},
+    {"id":"shot_debut","segment":"debut","asset":"dolly_2000","motion":"push_in","transition_out":"cut","highlight":"PRIMEIRO FILME DE DOLLY"},
     {"id":"shot_charts","segment":"charts","asset":"dolly_2023","motion":"push_in","transition_out":"cut","highlight":"POP + COUNTRY NO TOPO"},
     {"id":"shot_awards","segment":"awards","asset":"grammy","motion":"push_in","transition_out":"cut","highlight":"GRAMMYS + INDICAÇÃO AO OSCAR"},
     {"id":"shot_legacy","segment":"legacy","asset":"musical_poster","motion":"pull_out","transition_out":"crossfade","highlight":"FILME → MUSICAL → DOCUMENTÁRIO"},
     {"id":"shot_revival","segment":"revival","asset":"equal_pay_rally","motion":"push_in","transition_out":"crossfade","highlight":"O HINO CONTINUA VIVO"},
-    {"id":"shot_cta","segment":"cta","asset":"oscar","motion":"slow_zoom_in","transition_out":"cut","highlight":"VOCÊ JÁ SABIA DESSA?"}
+    {"id":"shot_cta","segment":"cta","asset":"oscar","motion":"push_in","transition_out":"cut","highlight":"VOCÊ JÁ SABIA DESSA?"}
   ]
 }
