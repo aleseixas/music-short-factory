@@ -50,6 +50,91 @@ Essas relações são guias editoriais, não regras rígidas. O texto continua s
 
 Não alterne deliveries apenas para criar variedade. Uma sequência pode permanecer `neutral` ou usar o mesmo delivery em mais de um segmento quando essa for a melhor decisão.
 
+## Seleção da história — escolha o assunto antes de tentar salvar o roteiro
+
+Uma música famosa não é automaticamente uma boa candidata a episódio. Antes de aprofundar roteiro, assets ou edição, procure **qual é a história forte daquela música** e compare a força desse ângulo com as outras candidatas disponíveis.
+
+Não escolha uma música só porque ela é popular e depois tente transformar fatos fracos em narrativa. Quando houver várias candidatas viáveis, favoreça a que tiver uma história mais clara, humana, surpreendente, visualizável e com consequência real.
+
+### Archetypes de história com prioridade alta
+
+Procure especialmente por histórias que contenham um ou mais destes motores narrativos:
+
+- **quase não aconteceu:** música quase descartada, recusada, perdida, não lançada, retirada do álbum ou salva no último momento;
+- **decisão pequena que mudou tudo:** troca de uma palavra, refrão, arranjo, sample, instrumento, produtor, colaborador, velocidade, estrutura ou performance que alterou radicalmente o resultado;
+- **segredo ou detalhe escondido:** vocal, sample, pessoa, ruído, mensagem, referência, gravação, crédito, easter egg ou detalhe que a maioria do público não percebe;
+- **significado inesperado:** letra, título ou conceito que parece falar de uma coisa mas tem origem, alvo ou contexto diferente;
+- **mito vs. realidade:** uma interpretação popular ou história repetida sobre a música que muda quando as fontes primárias/secundárias confiáveis são examinadas;
+- **conflito humano:** artista vs. gravadora, produtor, colaborador, ex-parceiro, família, imprensa, público ou outro personagem relevante;
+- **personagem inesperado:** alguém pouco associado à música entra na história e muda seu rumo — músico de sessão, produtor, compositor, executivo, fã, diretor, parceiro, técnico, amigo etc.;
+- **transformação:** demo muito diferente → versão final, música pequena → fenômeno, faixa rejeitada → hit, artista desconhecido → virada de carreira;
+- **colaboração improvável:** encontro de universos, artistas ou produtores que parecia pouco provável e produziu um resultado marcante;
+- **consequência grande a partir de um evento específico:** uma escolha, apresentação, ligação, vazamento, entrevista, acidente, rejeição ou oportunidade que desencadeou algo muito maior;
+- **objeto/pista concreta:** fita, carta, mensagem, demo, instrumento, arquivo, contrato, gravação, áudio, foto ou outro elemento físico/digital que permita contar a história por evidências;
+- **origem pessoal forte:** experiência real, relacionamento, perda, medo, fama, pressão, rejeição, família ou acontecimento que esteja diretamente ligado à composição e seja sustentado por fonte confiável.
+
+Esses archetypes não são uma checklist nem garantia automática de bom episódio. A prioridade continua sendo a **força específica da história encontrada**.
+
+### Histórias de prioridade média
+
+Podem funcionar muito bem quando houver consequência, personagem ou detalhe memorável:
+
+- bastidor técnico de produção;
+- origem da composição;
+- mudança de arranjo ou gravação;
+- colaboração;
+- performance importante;
+- contexto cultural;
+- sample/interpolação;
+- estratégia de lançamento;
+- recepção inicial muito diferente do resultado posterior.
+
+Um bastidor técnico só deve ganhar prioridade se puder ser explicado de forma simples e se mudar a maneira como o público entende ou ouve a música.
+
+### Sinais de história fraca
+
+Rebaixe candidatas cuja pesquisa produz principalmente:
+
+- data de lançamento;
+- posição em charts;
+- número de streams;
+- certificações;
+- lista de prêmios;
+- descrição genérica do gênero/álbum;
+- sequência de fatos cronológicos sem conflito, surpresa, decisão ou consequência;
+- curiosidades que poderiam ser trocadas por qualquer outra música sem mudar muito o vídeo.
+
+**“Foi lançada em X, chegou a Y e ganhou Z” não é história suficiente por si só.** Esses dados podem reforçar uma narrativa forte, mas não devem ser o coração do episódio.
+
+Se depois de pesquisa real a melhor história continuar fraca, descarte essa candidata e avance. Não force episódio só porque a música é famosa.
+
+### Pesquisa para descobrir o melhor ângulo
+
+Não pesquise apenas `história da música` ou `significado da letra`. Expanda a investigação conforme a candidata:
+
+- entrevistas do artista, compositor, produtor e colaboradores;
+- making of, track-by-track e comentários de estúdio;
+- créditos oficiais e bancos de composição quando relevantes;
+- demos, versões iniciais, remixes e performances antigas;
+- samples, interpolações e músicos de sessão;
+- matérias da época e entrevistas posteriores olhando para trás;
+- controvérsias, recusas, mudanças de gravadora/álbum, conflitos e decisões de lançamento;
+- videoclipes, diretores, objetos ou cenas citadas na história;
+- relatos de fãs/Reddit como **pistas para investigação**, nunca como confirmação factual isolada;
+- falas públicas do fandom que ajudem a descobrir perguntas recorrentes, mitos ou detalhes pouco conhecidos.
+
+Quando uma pista parecer forte, procure confirmação em fonte melhor antes de transformá-la em afirmação no roteiro.
+
+### Critério de escolha entre candidatas
+
+Antes de decidir definitivamente pela música, faça uma comparação mental simples:
+
+`FORÇA DO HOOK | HISTÓRIA HUMANA | SURPRESA | PROGRESSÃO | EVIDÊNCIA | CONSEQUÊNCIA | PAYOFF | POTENCIAL VISUAL`
+
+Não persista esse score como campo novo. Ele serve apenas para evitar que fama da música substitua qualidade narrativa.
+
+Entre duas músicas com popularidade semelhante, prefira a que tiver melhor história. Entre uma música gigantesca com história fraca e uma música ainda reconhecível com história excepcional, a segunda pode ser a melhor candidata editorial.
+
 ## Retenção aplicada ao roteiro curto
 
 O objetivo não é escrever o roteiro mais bonito, mais rebuscado ou mais “documental”. O objetivo é produzir o **melhor short possível para TikTok, Reels e YouTube Shorts**. Clareza, curiosidade, progressão e payoff vêm antes de floreio.
@@ -146,16 +231,19 @@ Providers que não suportarem tradução de delivery podem usar seus controles n
 
 Ao criar um episódio novo:
 
-1. escreva primeiro um roteiro natural e factual;
-2. gere mentalmente múltiplos hooks, escolha o melhor e alinhe hook, promessa e payoff;
-3. identifique a função narrativa de cada segmento e elimine preparação repetitiva ou sem entrega;
-4. distribua progressão, micro-payoffs e re-engagements de conteúdo ao longo do roteiro;
-5. faça uma auditoria de retenção segmento por segmento, perguntando por que o espectador continuaria;
-6. escolha `delivery` somente entre os valores reais da `main`;
-7. use mudanças de delivery quando elas reforçarem a curva narrativa;
-8. preserve contraste entre momentos fortes e momentos neutros;
-9. coordene voz, asset, motion, text FX, SFX e música quando fizerem parte do mesmo beat;
-10. encerre logo após um payoff forte, sem recapitulação ou despedida longa;
-11. deixe o pipeline determinar a duração e os timings reais.
+1. antes de aprofundar uma candidata, descubra e compare a força real da história dela; fama da música não substitui narrativa;
+2. procure primeiro archetypes fortes como quase-não-aconteceu, decisão que mudou tudo, segredo/detalhe escondido, significado inesperado, mito vs. realidade, conflito humano, personagem inesperado, transformação ou consequência marcante;
+3. descarte candidatas cuja melhor história continue sendo apenas lançamento/charts/prêmios depois de pesquisa real;
+4. escreva um roteiro natural e factual somente depois que a candidata tiver um ângulo forte;
+5. gere mentalmente múltiplos hooks, escolha o melhor e alinhe hook, promessa e payoff;
+6. identifique a função narrativa de cada segmento e elimine preparação repetitiva ou sem entrega;
+7. distribua progressão, micro-payoffs e re-engagements de conteúdo ao longo do roteiro;
+8. faça uma auditoria de retenção segmento por segmento, perguntando por que o espectador continuaria;
+9. escolha `delivery` somente entre os valores reais da `main`;
+10. use mudanças de delivery quando elas reforçarem a curva narrativa;
+11. preserve contraste entre momentos fortes e momentos neutros;
+12. coordene voz, asset, motion, text FX, SFX e música quando fizerem parte do mesmo beat;
+13. encerre logo após um payoff forte, sem recapitulação ou despedida longa;
+14. deixe o pipeline determinar a duração e os timings reais.
 
 A voz deve ajudar retenção e emoção sem virar caricatura ou competir com clareza.
