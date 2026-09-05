@@ -242,3 +242,27 @@ Fluxo obrigatório para o agente que opera via GitHub, sem terminal local:
 10. HARD GATE: sem evidência real de `PREFLIGHT_RESULT=UNIQUE_CANDIDATE`, é proibido escrever qualquer arquivo em `episodes/<slug>/`.
 
 Se o resultado for `DUPLICATE_CANDIDATE`, isso NÃO encerra a execução: continue para a próxima candidata do pool até encontrar uma inédita que passe pelos demais gates ou até esgotar o pool real.
+
+## 11) HARD GATE técnico — media preflight antes da publish queue
+
+Depois que o episódio estiver completamente autorado e imediatamente ANTES de criar `.publish-queue/<slug>.txt`, execute obrigatoriamente o preflight técnico real de mídia.
+
+Fluxo obrigatório:
+
+1. crie exatamente UM arquivo novo `.episode-check/<slug>-<nonce>.json` com:
+
+```json
+{
+  "slug": "slug_normalizado"
+}
+```
+
+2. essa escrita dispara `.github/workflows/episode-media-preflight.yml`;
+3. localize a Action `Episode media preflight` associada ao commit exato do request e leia o job/log;
+4. o preflight usa `check_episode_media.py`, que carrega o episódio com os parsers reais do engine, baixa/valida todos os assets com o mesmo `AssetManager` usado no render e resolve o background music com o mesmo `resolve_background_music` usado no pipeline;
+5. só `MEDIA_PREFLIGHT_RESULT=PASS` autoriza criar `.publish-queue/<slug>.txt`;
+6. HTTP 403, 404, 429, 5xx/525, payload inválido, imagem que o Pillow não reconhece, vídeo inválido no ffprobe, profile de música sem faixa resolvível ou qualquer outra falha de mídia = NÃO criar queue ainda;
+7. quando o preflight falhar, corrija apenas os assets/background do mesmo episódio e rode um NOVO `.episode-check/<slug>-<nonce>.json`; isso não conta como queue nem retry de publicação;
+8. nunca crie `.publish-queue` por suposição, mesmo que as URLs pareçam válidas no navegador;
+9. após um PASS, não altere `assets.json`, `timeline.json` ou o background antes da queue; se alterar, rode o media preflight novamente;
+10. objetivo: erros de download/mídia devem ser descobertos antes da primeira tentativa de publicação, preservando queue/retry para falhas reais posteriores.
