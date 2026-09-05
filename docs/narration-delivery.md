@@ -50,6 +50,65 @@ Essas relações são guias editoriais, não regras rígidas. O texto continua s
 
 Não alterne deliveries apenas para criar variedade. Uma sequência pode permanecer `neutral` ou usar o mesmo delivery em mais de um segmento quando essa for a melhor decisão.
 
+## Retenção aplicada ao roteiro curto
+
+O objetivo não é escrever o roteiro mais bonito, mais rebuscado ou mais “documental”. O objetivo é produzir o **melhor short possível para TikTok, Reels e YouTube Shorts**. Clareza, curiosidade, progressão e payoff vêm antes de floreio.
+
+### Abertura e promessa
+
+Antes de fechar o roteiro, crie mentalmente pelo menos **3 opções de hook** com ângulos diferentes — por exemplo: conflito/contradição, revelação surpreendente, pergunta intrigante, consequência inesperada ou detalhe escondido — e escolha a mais forte que continue factual. Não persista as alternativas no episódio.
+
+A abertura deve:
+
+- gerar interesse perceptível imediatamente, sem saudação, apresentação do canal ou contexto burocrático;
+- deixar claro muito cedo qual é a curiosidade, conflito, descoberta ou promessa narrativa;
+- combinar com título/capa/headline e com o que o vídeo realmente entrega; nunca aumente artificialmente a promessa e depois entregue algo menor;
+- preferir informação concreta, contraste, consequência, pergunta forte ou imagem mental específica a frases vagas como “essa história é incrível”;
+- começar já dentro da história. Se uma frase pode ser removida sem prejudicar entendimento, provavelmente não deve estar antes do primeiro fato interessante.
+
+Para Shorts, não trate CTR de thumbnail como equivalente ao long-form. Quando analytics estiverem disponíveis, dê mais peso à capacidade de **fazer a pessoa permanecer após os segundos iniciais**, além de AVD/AVP e retenção ao longo do vídeo. Não invente métricas quando elas não estiverem disponíveis.
+
+### Progressão, micro-payoffs e re-engagement
+
+Depois do hook, pare de apenas prometer e **comece a entregar**. Cada segmento deve acrescentar pelo menos uma destas coisas: informação nova, consequência, conflito, evidência, contexto indispensável, surpresa, emoção, comparação ou avanço real em direção ao payoff.
+
+Evite duas ou três frases consecutivas que apenas reformulem a mesma ideia. Se um trecho só “prepara” e não entrega nada novo, compacte, una a outro segmento ou corte.
+
+Para vídeos de aproximadamente 60–90s, pense em progressão como uma escada, não como linha reta. Além do payoff final, distribua **micro-payoffs** e momentos de re-engagement ao longo do corpo. Re-engagement significa conteúdo novo que renova a curiosidade — uma virada, pergunta, evidência, frase forte, estatística, contradição, mudança de perspectiva ou novo personagem — e não simplesmente um zoom, SFX ou corte aleatório.
+
+Não transforme isso em cronômetro rígido. Como sanity check, um vídeo longo dentro do formato short não deve atravessar grandes blocos de tempo sem introduzir uma nova razão para continuar assistindo.
+
+### Simplicidade de primeira escuta
+
+Escreva para ser entendido **na primeira vez, em velocidade normal, no celular**.
+
+- uma frase deve ter uma função narrativa principal;
+- prefira ordem direta e palavras comuns quando duas formulações dizem a mesma coisa;
+- datas, cargos, nomes completos e números só entram quando ajudam a história ou tornam o fato mais convincente;
+- se houver muitos nomes, reapresente a relação relevante em vez de exigir memória do espectador;
+- não confunda profundidade com excesso de contexto;
+- preserve nuance factual, mas explique ideias complexas da forma mais simples possível.
+
+### Sem momentos mortos
+
+Faça uma auditoria negativa de cada segmento: **“por que alguém continuaria assistindo depois desta frase?”** Se a resposta for apenas “porque a próxima frase é melhor”, o segmento atual precisa ser melhorado, fundido ou removido.
+
+“Sem momento morto” não significa gritar, acelerar tudo ou colocar efeito em cada segundo. Um momento calmo pode ser excelente se tiver emoção, tensão, informação ou expectativa. O problema é o trecho sem função.
+
+### Payoff e final
+
+A promessa do hook precisa receber resposta clara. O payoff final deve parecer consequência natural da progressão anterior, não uma conclusão genérica adicionada porque o vídeo acabou.
+
+Sempre que a história permitir, guarde a **melhor formulação da conclusão** para o final, mas não esconda todo o valor até lá: o corpo precisa continuar entregando micro-payoffs.
+
+Depois do payoff, encerre rápido. Evite recapitulação longa, “e é isso”, despedida ou um novo bloco explicativo. Se houver CTA por estratégia do episódio, ele deve ser curto e não atrasar nem substituir o payoff.
+
+### Frescor entre episódios
+
+Quando o histórico recente estiver acessível, confira aproximadamente os últimos 10 episódios e evite repetir em sequência o mesmo molde de abertura ou de progressão. Varie naturalmente entre conflito, origem, bastidor, mito vs. realidade, consequência, pergunta, objeto/pista, citação, comparação, cronologia, revelação etc.
+
+Não varie por obrigação se um formato continuar sendo claramente o melhor. O objetivo é evitar que o canal pareça um template que apenas troca artista e música.
+
 ## Como o engine traduz a intenção
 
 O schema de `story.json` permanece independente do provider. Cada provider pode traduzir um delivery apenas para os controles que suporta.
@@ -88,11 +147,15 @@ Providers que não suportarem tradução de delivery podem usar seus controles n
 Ao criar um episódio novo:
 
 1. escreva primeiro um roteiro natural e factual;
-2. identifique a função narrativa de cada segmento;
-3. escolha `delivery` somente entre os valores reais da `main`;
-4. use mudanças de delivery quando elas reforçarem a curva narrativa;
-5. preserve contraste entre momentos fortes e momentos neutros;
-6. coordene voz, asset, motion, text FX, SFX e música quando fizerem parte do mesmo beat;
-7. deixe o pipeline determinar a duração e os timings reais.
+2. gere mentalmente múltiplos hooks, escolha o melhor e alinhe hook, promessa e payoff;
+3. identifique a função narrativa de cada segmento e elimine preparação repetitiva ou sem entrega;
+4. distribua progressão, micro-payoffs e re-engagements de conteúdo ao longo do roteiro;
+5. faça uma auditoria de retenção segmento por segmento, perguntando por que o espectador continuaria;
+6. escolha `delivery` somente entre os valores reais da `main`;
+7. use mudanças de delivery quando elas reforçarem a curva narrativa;
+8. preserve contraste entre momentos fortes e momentos neutros;
+9. coordene voz, asset, motion, text FX, SFX e música quando fizerem parte do mesmo beat;
+10. encerre logo após um payoff forte, sem recapitulação ou despedida longa;
+11. deixe o pipeline determinar a duração e os timings reais.
 
 A voz deve ajudar retenção e emoção sem virar caricatura ou competir com clareza.
