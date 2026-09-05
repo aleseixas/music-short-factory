@@ -176,6 +176,68 @@ def _cleanup_instagram_cover(
         )
 
 
+def _log_instagram_container_diagnostics(
+    error: Exception,
+    credentials: CredentialStore,
+) -> None:
+    """Best-effort diagnostics for terminal Instagram container failures."""
+
+    match = re.search(r"container\s+(\d+)", str(error), flags=re.IGNORECASE)
+    if not match:
+        return
+    container_id = match.group(1)
+    token = credentials.get("INSTAGRAM_ACCESS_TOKEN").strip()
+    version = credentials.get("META_GRAPH_API_VERSION").strip()
+    host = credentials.get("INSTAGRAM_API_HOST", "graph.facebook.com").strip()
+    if not token or not version or host not in {"graph.facebook.com", "graph.instagram.com"}:
+        return
+
+    url = f"https://{host}/{version}/{container_id}"
+    try:
+        if host == "graph.instagram.com":
+            response = requests.get(
+                url,
+                params={
+                    "fields": "status_code,status",
+                    "access_token": token,
+                },
+                timeout=30.0,
+            )
+        else:
+            response = requests.get(
+                url,
+                params={"fields": "status_code,status"},
+                headers={"Authorization": f"Bearer {token}"},
+                timeout=30.0,
+            )
+        response.raise_for_status()
+        payload = response.json()
+    except Exception as exc:
+        print(
+            "[instagram] diagnostics warning: nao foi possivel consultar o container "
+            f"{container_id} ({exc.__class__.__name__}).",
+            file=sys.stderr,
+        )
+        return
+
+    if not isinstance(payload, Mapping):
+        return
+    status_code = str(payload.get("status_code", "")).strip() or "desconhecido"
+    status_detail = str(payload.get("status", "")).strip()
+    if status_detail:
+        print(
+            f"[instagram] container {container_id} diagnostic: "
+            f"status_code={status_code}; status={status_detail}",
+            file=sys.stderr,
+        )
+    else:
+        print(
+            f"[instagram] container {container_id} diagnostic: "
+            f"status_code={status_code}; status_sem_detalhe",
+            file=sys.stderr,
+        )
+
+
 def main(
     argv: Sequence[str] | None = None,
     default_project_root: Path | None = None,
@@ -245,6 +307,8 @@ def main(
             print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2, default=str))
         except (PublishingError, RuntimeError, ApiError) as exc:
             failed = True
+            if platform == "instagram" and not dry_run:
+                _log_instagram_container_diagnostics(exc, credentials)
             print(f"ERRO: {exc}", file=sys.stderr)
         finally:
             if hosted_cover_public_id:
