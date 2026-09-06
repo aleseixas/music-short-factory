@@ -164,6 +164,14 @@ Prefira títulos curtos, fortes e curiosos, normalmente entre 3 e 6 palavras. N�
 
 Antes do commit/queue, conte explicitamente as palavras de `youtube.title` e confirme: `word_count <= 6`.
 
+### TÍTULO DA CAPA — 3 A 4 PALAVRAS, MÁXIMO 4
+
+O campo `cover.headline` de `post.json` deve ser **curtíssimo e imediatamente legível**. Mire em **3–4 palavras** e trate **4 palavras como limite máximo absoluto**. Se o primeiro headline tiver 5 palavras ou mais, reescreva-o antes de salvar o arquivo.
+
+A capa não deve tentar explicar a história inteira. Use uma frase de impacto, curiosidade, contraste ou promessa que funcione visualmente em tela pequena. Preserve apenas as palavras essenciais; não use subtítulo para contornar o limite e não mantenha palavras dispensáveis só para dar contexto.
+
+Antes do commit/queue, conte explicitamente as palavras de `cover.headline` e confirme: `word_count <= 4`.
+
 ### HASHTAGS — SEMPRE MINÚSCULAS + `#curiosidade`
 
 Todas as hashtags de `post.json`, em todas as plataformas, devem ser escritas **sempre em letras minúsculas**. Isso é obrigatório. Nunca use capitalização de nome próprio, CamelCase ou variações como `TaylorSwift`, `HistoriaDaMusica`, `Shorts` etc.; normalize tudo para minúsculas antes de salvar.
@@ -315,7 +323,7 @@ Siga esta ordem:
 16. validar deliveries, assets, conflitos, trims de vídeo e SFX contra suas durações reais, duração final e host de background externa;
 17. fazer deduplicação GLOBAL dos visuais finais e substituir qualquer imagem ou vídeo-fonte repetido antes do commit;
 18. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
-19. revisar `post.json` para garantir que `youtube.title` tenha no máximo 6 palavras, que todas as hashtags estejam em minúsculas, que `curiosidade` substitua `historiadamusica`, que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
+19. revisar `post.json` para garantir que `youtube.title` tenha no máximo 6 palavras, que `cover.headline` tenha no máximo 4 palavras, que todas as hashtags estejam em minúsculas, que `curiosidade` substitua `historiadamusica`, que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
 20. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
 21. salvar o episódio.
 
