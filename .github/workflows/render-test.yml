@@ -87,6 +87,7 @@ jobs:
         env:
           EPISODE: ${{ steps.episode.outputs.slug }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python generate.py "$EPISODE"
 
       - name: Upload rendered MP4
