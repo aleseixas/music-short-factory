@@ -2,7 +2,7 @@
   "schema_version": 1,
   "assets": [
     {"id":"taylor_concert","file":"taylor_swift_concert.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/9/9f/Taylor_Swift_Concert.jpg","credit":"Freyra-2426 / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.48}},
-    {"id":"nilton_eras","file":"eras_tour_nilton_santos.jpg","url":"https://upload.wikimedia.org/wikipedia/commons/5/50/The_Eras_Tour_-_Est%C3%A1dio_Nilton_Santos.jpg","credit":"Wikimedia Commons","license":"Commons license","focus":{"x":0.5,"y":0.5}},
+    {"id":"nilton_eras","file":"taylor_nilton_santos_2023.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Taylor%20Swift%20-%20Est%C3%A1dio%20Ol%C3%ADmpico%20Nilton%20Santos.jpg","credit":"Pribruder / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
     {"id":"taylor_midnights","file":"taylor_eras_midnights.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Taylor%20Swift%20The%20Eras%20Tour%20Midnights%20Era%20Set%20%2853109044972%29.jpg","credit":"Paolo V / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.38}},
     {"id":"taylor_folklore","file":"taylor_eras_folklore.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Taylor%20Swift%20The%20Eras%20Tour%20The%20Folklore%20Set%20Era%20%2853108930977%29.jpg","credit":"Paolo V / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.4}},
     {"id":"drinking_fountain","file":"drinking_water_fountain.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Drinking%20Water%20Fountain.jpg","credit":"Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
