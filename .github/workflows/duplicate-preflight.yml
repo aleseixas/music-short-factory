@@ -70,7 +70,7 @@ jobs:
               handle.write(f"request_file={request_file.as_posix()}\n")
           PY
 
-      - name: Enforce execution continuity and one episode per window
+      - name: Enforce unfinished episode continuity
         id: execution_guard
         shell: bash
         env:
@@ -78,59 +78,29 @@ jobs:
         run: |
           set -euo pipefail
 
-          commit_epoch="$(git show -s --format=%ct "$AFTER_SHA")"
-          local_date="$(TZ=America/Sao_Paulo date -d "@$commit_epoch" +%F)"
-          local_hour="$(TZ=America/Sao_Paulo date -d "@$commit_epoch" +%H)"
-          hour=$((10#$local_hour))
-
-          # Janelas das três execuções diárias do agendamento principal.
-          # 08h: 06:00–09:59 | 11h: 10:00–15:59 | 19h: 16:00–23:59.
-          if (( hour < 10 )); then
-            slot="08"
-            slot_start="$local_date 06:00:00 -0300"
-          elif (( hour < 16 )); then
-            slot="11"
-            slot_start="$local_date 10:00:00 -0300"
-          else
-            slot="19"
-            slot_start="$local_date 16:00:00 -0300"
-          fi
-
-          mapfile -t queues_in_slot < <(
-            git log \
-              --since="$slot_start" \
-              --until="@$commit_epoch" \
-              --diff-filter=A \
-              --name-only \
-              --format='' \
-              -- '.publish-queue/*.txt' \
-            | sed '/^[[:space:]]*$/d' \
-            | sort -u
-          )
-
-          echo "slot=$slot" >> "$GITHUB_OUTPUT"
-          echo "slot_start=$slot_start" >> "$GITHUB_OUTPUT"
-
-          if [[ ${#queues_in_slot[@]} -gt 0 ]]; then
-            echo "PREFLIGHT_RESULT=EXECUTION_ALREADY_COMPLETED"
-            echo "result=EXECUTION_ALREADY_COMPLETED" >> "$GITHUB_OUTPUT"
-            echo "::error::A publish queue already exists in scheduled execution window $slot. Refusing a second episode."
-            printf 'Existing queue: %s\n' "${queues_in_slot[@]}"
-            exit 0
-          fi
-
-          # Continuidade entre chamadas/execuções: qualquer episódio novo iniciado
-          # depois da publish queue mais recente deve ser concluído antes que uma
-          # nova candidata possa ser autorizada.
+          # A publish queue de uma execução anterior NÃO bloqueia uma nova execução.
+          # Ela serve apenas como fronteira para descobrir trabalho iniciado depois
+          # dela que ainda precisa ser concluído antes de autorizar outra candidata.
           latest_queue_commit="$(git log -1 --format=%H --diff-filter=A -- '.publish-queue/*.txt' || true)"
+          echo "latest_queue_commit=$latest_queue_commit" >> "$GITHUB_OUTPUT"
 
           if [[ -n "$latest_queue_commit" ]]; then
+            history_range="$latest_queue_commit..$AFTER_SHA"
             mapfile -t authored_story_files < <(
-              git log "$latest_queue_commit..$AFTER_SHA" \
+              git log "$history_range" \
                 --diff-filter=A \
                 --name-only \
                 --format='' \
                 -- 'episodes/*/story.json' \
+              | sed '/^[[:space:]]*$/d' \
+              | sort -u
+            )
+            mapfile -t episode_checks_after_queue < <(
+              git log "$history_range" \
+                --diff-filter=A \
+                --name-only \
+                --format='' \
+                -- '.episode-check/*.json' \
               | sed '/^[[:space:]]*$/d' \
               | sort -u
             )
@@ -144,21 +114,16 @@ jobs:
               | sed '/^[[:space:]]*$/d' \
               | sort -u
             )
+            mapfile -t episode_checks_after_queue < <(
+              git log "$AFTER_SHA" \
+                --diff-filter=A \
+                --name-only \
+                --format='' \
+                -- '.episode-check/*.json' \
+              | sed '/^[[:space:]]*$/d' \
+              | sort -u
+            )
           fi
-
-          # Um media preflight criado na janela atual também é evidência forte de
-          # continuidade, inclusive se a autoria começou pouco antes da janela.
-          mapfile -t episode_checks_in_slot < <(
-            git log \
-              --since="$slot_start" \
-              --until="@$commit_epoch" \
-              --diff-filter=A \
-              --name-only \
-              --format='' \
-              -- '.episode-check/*.json' \
-            | sed '/^[[:space:]]*$/d' \
-            | sort -u
-          )
 
           declare -A active_slug_map=()
 
@@ -172,7 +137,7 @@ jobs:
             fi
           done
 
-          for check_file in "${episode_checks_in_slot[@]}"; do
+          for check_file in "${episode_checks_after_queue[@]}"; do
             [[ -f "$check_file" ]] || continue
             slug="$(python - "$check_file" <<'PY'
           import json
@@ -212,20 +177,20 @@ jobs:
             echo "RESUME_SLUG=$resume_slug"
             echo "result=RESUME_EXISTING_EPISODE" >> "$GITHUB_OUTPUT"
             echo "resume_slug=$resume_slug" >> "$GITHUB_OUTPUT"
-            echo "::warning::Episode $resume_slug was already started and has no publish queue. Ignore the new candidate and resume this slug until media preflight PASS and queue creation."
+            echo "::warning::Episode $resume_slug was already started after the latest publish queue and still has no queue. Ignore the new candidate and resume this slug until media preflight PASS and queue creation."
             exit 0
           fi
 
           if [[ ${#active_slugs[@]} -gt 1 ]]; then
             echo "PREFLIGHT_RESULT=CONTINUITY_CONFLICT"
             echo "result=CONTINUITY_CONFLICT" >> "$GITHUB_OUTPUT"
-            echo "::error::Multiple unfinished episodes were found. Refusing to authorize another candidate."
+            echo "::error::Multiple unfinished episodes were found after the latest publish queue. Refusing to authorize another candidate."
             printf 'Unfinished episode: %s\n' "${active_slugs[@]}"
             exit 0
           fi
 
           echo "result=OPEN" >> "$GITHUB_OUTPUT"
-          echo "Execution window $slot is open and no unfinished episode is pending."
+          echo "No unfinished episode exists after the latest publish queue. Candidate preflight is open."
 
       - name: Check candidate duplicate
         id: duplicate
@@ -264,7 +229,7 @@ jobs:
         env:
           GUARD_RESULT: ${{ steps.execution_guard.outputs.result }}
           DUPLICATE_RESULT: ${{ steps.duplicate.outputs.result }}
-          SLOT: ${{ steps.execution_guard.outputs.slot }}
+          LATEST_QUEUE_COMMIT: ${{ steps.execution_guard.outputs.latest_queue_commit }}
           RESUME_SLUG: ${{ steps.execution_guard.outputs.resume_slug }}
           CONTINUITY_SLUGS: ${{ steps.execution_guard.outputs.continuity_slugs }}
           SONG: ${{ steps.request.outputs.song }}
@@ -279,7 +244,7 @@ jobs:
             echo "## Duplicate candidate preflight"
             echo
             echo "- Result: ${result:-INFRA_FAILURE}"
-            echo "- Scheduled window: ${SLOT:-N/A}"
+            echo "- Latest publish queue boundary: ${LATEST_QUEUE_COMMIT:-NONE}"
             echo "- Requested song: $SONG"
             echo "- Requested artist: $ARTIST"
             echo "- Requested slug: $SLUG"
