@@ -4,6 +4,50 @@ Esta regra define a direção editorial atual do **Além do Hit / Music Short Fa
 
 Ela não altera schemas nem capacidades técnicas da `main`. Quando houver conflito técnico, a `main` continua sendo a fonte da verdade.
 
+## 0. Continuidade operacional obrigatória — termine o episódio ativo antes de escolher outro
+
+Esta checagem acontece **ANTES de pesquisar temas, montar pool, aprofundar candidata ou criar um novo `.duplicate-check`**.
+
+A execução deve primeiro verificar se existe um **EPISÓDIO ATIVO SEM QUEUE**. Para esta regra, considere ativo um slug novo que começou a ser autorado depois da publish queue mais recente e que já possui `episodes/<slug>/story.json` (ou outros arquivos do episódio), mas ainda não possui `.publish-queue/<slug>.txt`.
+
+Se existir exatamente um episódio ativo sem queue:
+
+- NÃO pesquise um novo tema;
+- NÃO monte novo pool de candidatas;
+- NÃO crie outro slug;
+- NÃO crie outro duplicate-check;
+- NÃO reavalie se o tema antigo ainda seria o vencedor;
+- retome exclusivamente o mesmo slug e leve-o até o próximo estado válido do pipeline.
+
+Use esta ordem de retomada:
+
+1. se os arquivos do episódio estiverem incompletos, complete/corrija somente o mesmo slug;
+2. se ainda não houver media preflight, crie `.episode-check/<slug>-<nonce>.json` e acompanhe a Action exata;
+3. se o último media preflight falhou, corrija somente o mesmo episódio e rode novo media preflight;
+4. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, confirme que `assets.json`, `timeline.json`, background e demais arquivos relevantes NÃO foram alterados depois desse PASS;
+5. se nada relevante mudou após o PASS, leia a política de publicação atual, confirme que a queue ainda não existe e crie `.publish-queue/<slug>.txt` com conteúdo exatamente `<slug>`;
+6. depois da criação bem-sucedida da queue, encerre imediatamente a execução.
+
+Se qualquer asset, timeline ou background tiver sido alterado depois do último PASS, o media preflight deve ser executado novamente antes da queue.
+
+Se `.publish-queue/<slug>.txt` já existir, o episódio não está mais pendente: não recrie a queue e encerre conforme o estado real.
+
+Se forem encontrados **dois ou mais episódios ativos sem queue** no mesmo estado de continuidade, não escolha arbitrariamente entre eles. Trate como conflito operacional e reporte `BLOQUEADO` para evitar criar/publicar um terceiro episódio.
+
+O workflow `Duplicate candidate preflight` também possui uma segunda camada de proteção. Se, apesar desta checagem inicial, um novo duplicate-check for criado enquanto existe um episódio ativo, a Action pode retornar:
+
+- `PREFLIGHT_RESULT=RESUME_EXISTING_EPISODE` — pare de trabalhar na nova candidata e retome imediatamente o slug informado por `RESUME_SLUG`;
+- `PREFLIGHT_RESULT=CONTINUITY_CONFLICT` — não autorize nenhuma nova candidata e reporte bloqueio;
+- `PREFLIGHT_RESULT=EXECUTION_ALREADY_COMPLETED` — uma queue já foi criada na janela atual; encerre imediatamente.
+
+`RESUME_EXISTING_EPISODE` não significa candidata duplicada e não autoriza um novo episódio. Ele significa: **há trabalho anterior já iniciado que deve ser concluído antes de qualquer nova seleção editorial**.
+
+Fluxo de continuidade obrigatório:
+
+`episódio iniciado -> concluir arquivos -> media preflight PASS -> queue -> STOP`
+
+Somente quando NÃO existir episódio ativo sem queue a execução pode seguir para a seleção normal de tema descrita abaixo.
+
 ## 1. Escopo editorial
 
 O episódio não precisa mais partir de uma música específica.
@@ -253,6 +297,8 @@ Se uma música tiver a melhor história do pool, produza sobre ela normalmente. 
 
 Confirme:
 
+- a checagem de continuidade foi feita antes de qualquer novo tema/duplicate-check;
+- não existe episódio ativo sem queue; se existir, ele está sendo retomado em vez de criar outro;
 - o tema é realmente interessante e não apenas famoso;
 - o fato central não é óbvio para o público médio;
 - o hook entrega a curiosidade/tensão no primeiro beat;
@@ -262,7 +308,7 @@ Confirme:
 - fatos atuais têm fontes recentes;
 - temas extraordinários têm sustentação suficiente;
 - a mesma história não foi publicada antes;
-- o duplicate preflight técnico passou;
+- o duplicate preflight técnico passou para uma nova candidata OU a execução está retomando um slug previamente autorizado;
 - as regras atuais de roteiro, visual, áudio, CTA e mídia continuam respeitadas;
 - `MEDIA_PREFLIGHT_RESULT=PASS` existe antes da publish queue.
 
@@ -271,7 +317,7 @@ Confirme:
 Em conflito EDITORIAL com regras antigas, aplique esta ordem:
 
 1. `main` para capacidades e contratos técnicos;
-2. esta regra para **escopo de tema, escolha editorial, hook e duplicidade por história**;
+2. esta regra para **continuidade operacional antes da seleção**, escopo de tema, escolha editorial, hook e duplicidade por história;
 3. demais templates para edição, pacing, visual, áudio, legenda, CTA e publicação.
 
 Qualquer instrução antiga equivalente a `todo episódio deve ser sobre uma música`, `escolha obrigatoriamente uma música` ou `a primeira frase deve identificar música + artista` deve ser considerada substituída por esta regra.
