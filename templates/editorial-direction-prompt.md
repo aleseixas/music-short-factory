@@ -105,6 +105,25 @@ Delivery pode mudar a duração real da narração. Use os timings reais do pipe
 
 Background music e SFX seguem estratégias diferentes.
 
+### VOLUME DO MIX — MÚSICA E SFX DEVEM SER CLARAMENTE AUDÍVEIS
+
+A voz continua sendo a camada principal, mas **não trate background music e SFX como ruído quase imperceptível**. Nos episódios recentes os valores ficaram conservadores demais; a partir de agora, música e efeitos devem ter presença clara em alto-falantes de celular sem encobrir a narração.
+
+Use estas faixas como referência inicial, ajustando conforme a intensidade real de cada arquivo:
+
+- **background music:** normalmente mire em `0.08–0.12`, com `0.10` como ponto de partida razoável;
+- **SFX leves / transitions / whooshes:** normalmente `0.07–0.11`;
+- **SFX comuns de destaque:** normalmente `0.09–0.15`;
+- **impacts, bass drops, reveals e efeitos que precisam ser sentidos:** podem ficar aproximadamente em `0.12–0.20` quando o material suportar.
+
+**Não escolha automaticamente `0.03–0.05` para música ou SFX.** Valores abaixo de aproximadamente `0.07` devem ser exceção deliberada para um momento que realmente peça sutileza ou para um arquivo cuja gravação já seja naturalmente muito alta.
+
+Considere que o engine pode aplicar ducking/compressão na música durante a voz. Portanto, não reduza preventivamente a background a ponto de ela desaparecer antes mesmo do ducking. O objetivo final é: **voz perfeitamente inteligível + música perceptível durante todo o vídeo + SFX claramente reconhecíveis nos beats importantes**.
+
+As faixas acima não são quotas matemáticas nem compensam arquivos com loudness diferente. Se um asset específico for muito mais alto ou mais baixo que os demais, adapte o valor. Porém, na dúvida entre um mix quase inaudível e um mix presente sem competir com a voz, prefira o segundo.
+
+Antes do commit/queue, revise `background_music.volume` e todos os `sfx_cues[].volume` do episódio. Se a maioria estiver novamente na faixa de `0.03–0.05`, considere isso um sinal de mix subdimensionado e corrija conscientemente.
+
 ### BACKGROUND MUSIC — INTERNET-FIRST E VARIEDADE OBRIGATÓRIA
 
 Quando houver acesso HTTP/web, a background music deve ser tratada como uma escolha editorial NOVA por episódio. **NUNCA escolha imediatamente um profile local apenas por conveniência.** O catálogo local da repo é fallback de último recurso.
