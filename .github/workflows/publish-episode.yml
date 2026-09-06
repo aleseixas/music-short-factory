@@ -185,6 +185,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EPISODE: ${{ needs.prepare.outputs.episode }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
     steps:
       - name: Check out repository
