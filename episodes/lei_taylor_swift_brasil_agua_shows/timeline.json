@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "background_music": {"profile":"fallback_social_cinematic","volume":0.095},
+  "background_music": {"profile":"external_drop_dead_synth_pop","volume":0.095},
   "sfx_cues": [
     {"time_seconds":0.08,"type":"bass_drop","volume":0.13},
     {"time_seconds":8.5,"type":"heartbeat_slow","volume":0.08},
