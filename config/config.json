@@ -21,8 +21,8 @@
   "tts": {
     "custom_audio": "assets/custom_voice.mp3",
     "custom_timings": "assets/custom_voice.srt",
-    "provider": "edge",
-    "fallback_provider": null,
+    "provider": "gemini",
+    "fallback_provider": "edge",
     "reuse_generated_audio": true,
     "allow_estimated_custom_timings": false,
     "edge_voice": "pt-BR-AntonioNeural",
