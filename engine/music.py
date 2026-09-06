@@ -70,14 +70,15 @@ def _rotate_candidates(
     return candidates[start_index:] + candidates[:start_index]
 
 
-def resolve_background_music(
+def background_music_candidates(
     project_root: Path,
     spec: BackgroundMusicSpec | None,
     episode_slug: str,
-    cache_root: Path | None = None,
-) -> ResolvedBackgroundMusic | None:
+) -> tuple[AudioCatalogEntry, ...]:
+    """Return the deterministic candidate order without downloading any audio."""
+
     if spec is None:
-        return None
+        return ()
 
     project_root = project_root.resolve()
     music_root = (project_root / MUSIC_ROOT).resolve()
@@ -126,7 +127,20 @@ def resolve_background_music(
             )
         candidates.append(entry)
 
-    ordered_candidates = _rotate_candidates(candidates, spec.profile, episode_slug)
+    return tuple(_rotate_candidates(candidates, spec.profile, episode_slug))
+
+
+def resolve_background_music(
+    project_root: Path,
+    spec: BackgroundMusicSpec | None,
+    episode_slug: str,
+    cache_root: Path | None = None,
+) -> ResolvedBackgroundMusic | None:
+    if spec is None:
+        return None
+
+    project_root = project_root.resolve()
+    ordered_candidates = background_music_candidates(project_root, spec, episode_slug)
     cache_dir = media_cache_directory(project_root, cache_root, "music")
     failures: list[str] = []
 
