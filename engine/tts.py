@@ -6,6 +6,7 @@ from typing import Protocol, runtime_checkable
 
 from .config import TTSSettings
 from .delivery import DEFAULT_DELIVERY, get_delivery_preset
+from .gemini_tts import GeminiTTSProvider
 from .models import WordTiming
 
 
@@ -101,8 +102,9 @@ class EdgeTTSProvider:
 
 
 def built_in_providers(settings: TTSSettings) -> dict[str, TTSProvider]:
+    gemini = GeminiTTSProvider()
     edge = EdgeTTSProvider(settings.edge_voice, settings.edge_rate)
-    return {edge.name: edge}
+    return {gemini.name: gemini, edge.name: edge}
 
 
 def _parse_percentage(value: str, label: str) -> int:
