@@ -183,13 +183,21 @@ Prefira títulos curtos, fortes e curiosos, normalmente entre 3 e 6 palavras. N�
 
 Antes do commit/queue, conte explicitamente as palavras de `youtube.title` e confirme: `word_count <= 6`.
 
-### TÍTULO DA CAPA — 3 A 4 PALAVRAS, MÁXIMO 4
+### TÍTULO DA CAPA — 3 A 4 PALAVRAS, MÁXIMO 4, E PRECISA SER CLICÁVEL
 
-O campo `cover.headline` de `post.json` deve ser **curtíssimo e imediatamente legível**. Mire em **3–4 palavras** e trate **4 palavras como limite máximo absoluto**. Se o primeiro headline tiver 5 palavras ou mais, reescreva-o antes de salvar o arquivo.
+O campo `cover.headline` de `post.json` deve ser **curtíssimo, imediatamente legível e altamente clicável**. Mire em **3–4 palavras** e trate **4 palavras como limite máximo absoluto**. Se o primeiro headline tiver 5 palavras ou mais, reescreva-o antes de salvar o arquivo.
 
-A capa não deve tentar explicar a história inteira. Use uma frase de impacto, curiosidade, contraste ou promessa que funcione visualmente em tela pequena. Preserve apenas as palavras essenciais; não use subtítulo para contornar o limite e não mantenha palavras dispensáveis só para dar contexto.
+A função da capa é fazer a pessoa parar e pensar **“como assim?”** ou **“o que aconteceu?”**. Ela precisa criar curiosidade instantânea sobre um fato REAL do episódio. Prefira headline concreta a frase genérica: nome conhecido + ação inesperada, consequência forte, conflito, contradição, acidente, rejeição, descoberta ou detalhe surpreendente costuma funcionar muito melhor.
 
-Antes do commit/queue, conte explicitamente as palavras de `cover.headline` e confirme: `word_count <= 4`.
+Exemplo de referência de estrutura: **`MICHAEL JACKSON PEGOU FOGO`**. É forte porque diz quem, mostra um acontecimento concreto e inesperado e deixa uma pergunta óbvia na cabeça do espectador: como isso aconteceu e qual é a história por trás? Use essa lógica editorial quando houver um fato equivalente no episódio; não copie a mesma fórmula mecanicamente.
+
+Evite capas vagas como `A HISTÓRIA POR TRÁS`, `VOCÊ NÃO SABIA`, `ISSO MUDOU TUDO` ou frases que poderiam servir para qualquer artista. Se houver um acontecimento específico mais curioso, coloque esse acontecimento na capa. Entre uma frase elegante porém abstrata e uma frase concreta que desperta curiosidade real, prefira a concreta.
+
+A capa e a imagem escolhida devem trabalhar juntas para aumentar a curiosidade, sem revelar tudo de uma vez. O headline não precisa resumir a história inteira; precisa vender o ponto mais intrigante que o vídeo realmente entrega.
+
+**Clicável não significa clickbait falso.** Nunca invente, distorça, exagere ou retire contexto a ponto de a promessa ficar maior que o fato. O vídeo precisa responder ou explicar claramente a curiosidade criada pela capa.
+
+Antes do commit/queue, faça dois testes explícitos: `word_count <= 4` e **“uma pessoa que não conhece esta história teria vontade de clicar para entender o que aconteceu?”**. Se a resposta ao segundo teste for não, reescreva o headline usando o fato concreto mais curioso do episódio.
 
 ### HASHTAGS — SEMPRE MINÚSCULAS + `#curiosidade`
 
@@ -342,7 +350,7 @@ Siga esta ordem:
 16. validar deliveries, assets, conflitos, trims de vídeo e SFX contra suas durações reais, duração final e host de background externa;
 17. fazer deduplicação GLOBAL dos visuais finais e substituir qualquer imagem ou vídeo-fonte repetido antes do commit;
 18. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
-19. revisar `post.json` para garantir que `youtube.title` tenha no máximo 6 palavras, que `cover.headline` tenha no máximo 4 palavras, que todas as hashtags estejam em minúsculas, que `curiosidade` substitua `historiadamusica`, que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
+19. revisar `post.json` para garantir que `youtube.title` tenha no máximo 6 palavras, que `cover.headline` tenha no máximo 4 palavras **e seja concreto, clicável, curioso e fiel ao fato que o vídeo entrega**, que todas as hashtags estejam em minúsculas, que `curiosidade` substitua `historiadamusica`, que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
 20. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
 21. salvar o episódio.
 
