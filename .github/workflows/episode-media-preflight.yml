@@ -8,7 +8,7 @@ on:
       - ".episode-check/*.json"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   media-preflight:
@@ -59,6 +59,11 @@ jobs:
           python-version: "3.13"
           cache: pip
 
+      - name: Set up Node.js for visual recovery
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: Install FFmpeg
         run: |
           sudo apt-get update
@@ -67,5 +72,100 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Validate episode media
-        run: python check_episode_media.py "${{ steps.request.outputs.slug }}"
+      - name: Validate and auto-repair episode media
+        id: repair
+        shell: bash
+        env:
+          EPISODE: ${{ steps.request.outputs.slug }}
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          set -uo pipefail
+          max_attempts=5
+
+          for attempt in $(seq 1 "$max_attempts"); do
+            echo "===== MEDIA PREFLIGHT attempt $attempt/$max_attempts ====="
+            log_file="$(mktemp)"
+
+            set +e
+            python check_episode_media.py "$EPISODE" 2>&1 | tee "$log_file"
+            status=${PIPESTATUS[0]}
+            set -e
+
+            if [[ $status -eq 0 ]] && grep -q 'MEDIA_PREFLIGHT_RESULT=PASS' "$log_file"; then
+              echo "MEDIA_AUTO_RECOVERY=PASS attempt=$attempt"
+              rm -f "$log_file"
+              exit 0
+            fi
+
+            if [[ $attempt -ge $max_attempts ]]; then
+              echo "::error::Media preflight failed after $max_attempts attempts."
+              cat "$log_file"
+              rm -f "$log_file"
+              exit 1
+            fi
+
+            repaired=0
+
+            if grep -Eq 'BACKGROUND_REUSE_BLOCKED|Nenhuma faixa do profile de background music|background music.*(falhou|invalido|ausente)|Profile de background music inexistente' "$log_file"; then
+              echo "Recoverable background failure detected; selecting another local profile."
+              if python scripts/repair_background_music.py "$EPISODE"; then
+                repaired=1
+              fi
+            fi
+
+            if grep -Eq 'Asset .*ausente|Asset de video .*ausente|Asset de video invalido|Arquivo nao e uma imagem valida|asset de imagem|asset de video|HTTP Error|HTTP [45][0-9][0-9]|404|403' "$log_file"; then
+              echo "Recoverable visual asset failure detected; trying candidate reselection."
+              python resolve_visual_candidates.py "$EPISODE" || true
+              python resolve_visual_candidates_web_auth.py "$EPISODE" || true
+              if ! git diff --quiet -- "episodes/$EPISODE"; then
+                repaired=1
+              fi
+            fi
+
+            rm -f "$log_file"
+
+            if [[ $repaired -ne 1 ]]; then
+              echo "::error::Preflight failure was not auto-repairable with the known recovery strategies."
+              exit 1
+            fi
+
+            echo "Recovery applied; re-running the full media preflight."
+          done
+
+          echo "::error::Unexpected recovery loop termination."
+          exit 1
+
+      - name: Persist repairs and create publish queue
+        shell: bash
+        env:
+          EPISODE: ${{ steps.request.outputs.slug }}
+        run: |
+          set -euo pipefail
+
+          queue_file=".publish-queue/$EPISODE.txt"
+          mkdir -p .publish-queue
+
+          if [[ ! -f "$queue_file" ]]; then
+            printf '%s\n' "$EPISODE" > "$queue_file"
+            echo "Created publish queue: $queue_file"
+          else
+            echo "Publish queue already exists: $queue_file"
+          fi
+
+          if git diff --quiet && git diff --cached --quiet && [[ -z "$(git status --porcelain)" ]]; then
+            echo "Nothing to persist."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "episodes/$EPISODE" "$queue_file"
+
+          if git diff --cached --quiet; then
+            echo "No episode/queue changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Auto-repair media and queue $EPISODE"
+          git pull --rebase origin main
+          git push origin HEAD:main
