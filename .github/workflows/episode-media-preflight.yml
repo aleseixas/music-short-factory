@@ -137,6 +137,7 @@ jobs:
           exit 1
 
       - name: Persist repairs and create publish queue
+        id: queue
         shell: bash
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
@@ -145,13 +146,16 @@ jobs:
 
           queue_file=".publish-queue/$EPISODE.txt"
           mkdir -p .publish-queue
+          should_dispatch=false
 
           if [[ ! -f "$queue_file" ]]; then
             printf '%s\n' "$EPISODE" > "$queue_file"
+            should_dispatch=true
             echo "Created publish queue: $queue_file"
           else
-            echo "Publish queue already exists: $queue_file"
+            echo "Publish queue already exists: $queue_file; publication will not be dispatched again."
           fi
+          echo "should_dispatch=$should_dispatch" >> "$GITHUB_OUTPUT"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -167,6 +171,7 @@ jobs:
           git push origin HEAD:main
 
       - name: Dispatch publish workflow
+        if: ${{ steps.queue.outputs.should_dispatch == 'true' }}
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
