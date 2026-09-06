@@ -72,21 +72,33 @@ Para Shorts/Reels/TikTok na faixa de aproximadamente 60–90 segundos, mire norm
 
 O objetivo é sensação constante de avanço visual, mas **contexto vale mais do que troca vazia de imagem**.
 
-### Imagens
+### HARD GATE — imagens estáticas obrigatoriamente entre 2 e 4 segundos
 
-- devem normalmente permanecer entre **2 e 4 segundos**;
-- 2–3,5s é a faixa mais comum;
-- evite segurar imagem estática além de 4s sem motivo editorial forte;
-- se a imagem não sustentar o trecho, troque por outro visual contextual em vez de depender apenas de zoom/crop.
+Esta é uma **regra obrigatória de pacing**, não uma recomendação. Ela prevalece sobre qualquer redação genérica ou antiga do projeto que diga `normalmente 2–4s`, que permita imagem estática longa por “força editorial” ou que trate 2–4s apenas como referência.
 
-### Vídeos
+Para TODO shot cujo asset principal seja uma **imagem estática**:
 
-- podem durar **até 6 segundos** quando houver movimento útil, contexto real e relação clara com a narração;
+- a duração final do shot deve ficar **entre 2,0s e 4,0s**;
+- **nunca** mantenha uma imagem estática por mais de 4,0s;
+- **nunca** use uma imagem estática por menos de 2,0s apenas para acelerar artificialmente o vídeo;
+- zoom, crop, pan, `push_in`, `pull_out`, text FX, highlight, overlay, transição ou SFX sobre a mesma imagem **não reiniciam a contagem** e não autorizam ultrapassar 4,0s;
+- se a fala associada a uma imagem ficaria acima de 4s, **divida a narração em segmentos menores antes de finalizar `story.json`/`timeline.json` e use outro visual principal no segmento seguinte**;
+- no contrato atual `1 segment = 1 shot`, a segmentação do roteiro deve ser planejada para tornar essa regra possível; não aceite um segmento longo com imagem e espere que motion/FX resolvam o pacing;
+- se houver dúvida entre prolongar a imagem e trocar para outro asset semanticamente correto, **troque a imagem**.
+
+O primeiro visual continua precisando aparecer imediatamente nos primeiros 0,0–1,5s; se ele for imagem estática, pode começar em 0,0s e permanecer até completar a janela obrigatória de 2–4s.
+
+### Vídeos — podem respirar mais
+
+Vídeo **não usa o hard cap de 4s das imagens**. Pode permanecer por mais tempo quando houver movimento útil, contexto real e relação clara com a narração.
+
+- 4–6s continua sendo uma faixa comum para vídeos fortes;
+- vídeos podem passar de 6s quando a ação/performance/entrevista/bastidor/demonstração realmente sustentar o plano e a narração continuar semanticamente alinhada;
 - não alongue vídeo só por ser vídeo;
 - vídeo genérico, pouco relacionado ou semanticamente fraco deve ser curto, rebaixado ou substituído;
-- um vídeo de 5–6s deve estar mostrando algo que vale acompanhar: performance específica, entrevista, bastidor, ação, reação, trecho de evento, demonstração, contexto histórico ou outra informação visual relevante.
+- um vídeo longo deve estar mostrando algo que vale acompanhar: performance específica, entrevista, bastidor, ação, reação, trecho de evento, demonstração, contexto histórico ou outra informação visual relevante.
 
-Hooks, reveals, montagens, reações e viradas podem usar **1–2,5s** quando isso aumentar retenção.
+Hooks, reveals, montagens, reações e viradas podem usar cortes mais rápidos quando isso aumentar retenção, mas **uma imagem estática individual continua sujeita ao mínimo obrigatório de 2,0s**.
 
 `motion`, zoom, crop, speed, transição, text FX, highlight, overlay ou SFX sobre o mesmo asset NÃO contam como troca de take.
 
@@ -198,8 +210,9 @@ Antes de finalizar, confirme obrigatoriamente:
 
 - primeiro visual = capa oficial ou artista principal claramente reconhecível;
 - 20–30 takes quando a duração do episódio comportar esse ritmo;
-- imagens normalmente entre 2–4s;
-- vídeos com no máximo ~6s e somente quando o contexto justificar;
+- **toda imagem estática dura entre 2,0s e 4,0s, sem exceção editorial acima de 4s**;
+- quando uma imagem exigiria >4s, o roteiro foi dividido em segmentos menores e houve troca real do visual principal;
+- vídeos podem durar mais que imagens e podem ultrapassar ~6s somente quando movimento/contexto real sustentarem o plano;
 - pool normalmente entre 100–120 candidatos;
 - pool não foi inflado com visuais genéricos;
 - cada slot possui candidatos relacionados ao que está sendo narrado;
