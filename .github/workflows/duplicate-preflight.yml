@@ -70,7 +70,7 @@ jobs:
               handle.write(f"request_file={request_file.as_posix()}\n")
           PY
 
-      - name: Enforce one episode per scheduled execution window
+      - name: Enforce execution continuity and one episode per window
         id: execution_guard
         shell: bash
         env:
@@ -119,8 +119,113 @@ jobs:
             exit 0
           fi
 
+          # Continuidade entre chamadas/execuções: qualquer episódio novo iniciado
+          # depois da publish queue mais recente deve ser concluído antes que uma
+          # nova candidata possa ser autorizada.
+          latest_queue_commit="$(git log -1 --format=%H --diff-filter=A -- '.publish-queue/*.txt' || true)"
+
+          if [[ -n "$latest_queue_commit" ]]; then
+            mapfile -t authored_story_files < <(
+              git log "$latest_queue_commit..$AFTER_SHA" \
+                --diff-filter=A \
+                --name-only \
+                --format='' \
+                -- 'episodes/*/story.json' \
+              | sed '/^[[:space:]]*$/d' \
+              | sort -u
+            )
+          else
+            mapfile -t authored_story_files < <(
+              git log "$AFTER_SHA" \
+                --diff-filter=A \
+                --name-only \
+                --format='' \
+                -- 'episodes/*/story.json' \
+              | sed '/^[[:space:]]*$/d' \
+              | sort -u
+            )
+          fi
+
+          # Um media preflight criado na janela atual também é evidência forte de
+          # continuidade, inclusive se a autoria começou pouco antes da janela.
+          mapfile -t episode_checks_in_slot < <(
+            git log \
+              --since="$slot_start" \
+              --until="@$commit_epoch" \
+              --diff-filter=A \
+              --name-only \
+              --format='' \
+              -- '.episode-check/*.json' \
+            | sed '/^[[:space:]]*$/d' \
+            | sort -u
+          )
+
+          declare -A active_slug_map=()
+
+          for story_file in "${authored_story_files[@]}"; do
+            slug="${story_file#episodes/}"
+            slug="${slug%/story.json}"
+            if [[ "$slug" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]] \
+              && [[ -f "episodes/$slug/story.json" ]] \
+              && [[ ! -f ".publish-queue/$slug.txt" ]]; then
+              active_slug_map["$slug"]=1
+            fi
+          done
+
+          for check_file in "${episode_checks_in_slot[@]}"; do
+            [[ -f "$check_file" ]] || continue
+            slug="$(python - "$check_file" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          path = Path(sys.argv[1])
+          try:
+              data = json.loads(path.read_text(encoding="utf-8"))
+          except Exception:
+              print("")
+              raise SystemExit(0)
+          print(str(data.get("slug", "")).strip())
+          PY
+            )"
+            if [[ "$slug" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]] \
+              && [[ -f "episodes/$slug/story.json" ]] \
+              && [[ ! -f ".publish-queue/$slug.txt" ]]; then
+              active_slug_map["$slug"]=1
+            fi
+          done
+
+          active_slugs=()
+          if (( ${#active_slug_map[@]} > 0 )); then
+            mapfile -t active_slugs < <(printf '%s\n' "${!active_slug_map[@]}" | sort)
+          fi
+
+          continuity_slugs=""
+          if (( ${#active_slugs[@]} > 0 )); then
+            continuity_slugs="$(IFS=,; echo "${active_slugs[*]}")"
+          fi
+          echo "continuity_slugs=$continuity_slugs" >> "$GITHUB_OUTPUT"
+
+          if [[ ${#active_slugs[@]} -eq 1 ]]; then
+            resume_slug="${active_slugs[0]}"
+            echo "PREFLIGHT_RESULT=RESUME_EXISTING_EPISODE"
+            echo "RESUME_SLUG=$resume_slug"
+            echo "result=RESUME_EXISTING_EPISODE" >> "$GITHUB_OUTPUT"
+            echo "resume_slug=$resume_slug" >> "$GITHUB_OUTPUT"
+            echo "::warning::Episode $resume_slug was already started and has no publish queue. Ignore the new candidate and resume this slug until media preflight PASS and queue creation."
+            exit 0
+          fi
+
+          if [[ ${#active_slugs[@]} -gt 1 ]]; then
+            echo "PREFLIGHT_RESULT=CONTINUITY_CONFLICT"
+            echo "result=CONTINUITY_CONFLICT" >> "$GITHUB_OUTPUT"
+            echo "::error::Multiple unfinished episodes were found. Refusing to authorize another candidate."
+            printf 'Unfinished episode: %s\n' "${active_slugs[@]}"
+            exit 0
+          fi
+
           echo "result=OPEN" >> "$GITHUB_OUTPUT"
-          echo "Execution window $slot is open for one episode."
+          echo "Execution window $slot is open and no unfinished episode is pending."
 
       - name: Check candidate duplicate
         id: duplicate
@@ -160,20 +265,24 @@ jobs:
           GUARD_RESULT: ${{ steps.execution_guard.outputs.result }}
           DUPLICATE_RESULT: ${{ steps.duplicate.outputs.result }}
           SLOT: ${{ steps.execution_guard.outputs.slot }}
+          RESUME_SLUG: ${{ steps.execution_guard.outputs.resume_slug }}
+          CONTINUITY_SLUGS: ${{ steps.execution_guard.outputs.continuity_slugs }}
           SONG: ${{ steps.request.outputs.song }}
           ARTIST: ${{ steps.request.outputs.artist }}
           SLUG: ${{ steps.request.outputs.slug }}
         run: |
-          result="$DUPLICATE_RESULT"
-          if [[ "$GUARD_RESULT" == "EXECUTION_ALREADY_COMPLETED" ]]; then
-            result="EXECUTION_ALREADY_COMPLETED"
+          result="$GUARD_RESULT"
+          if [[ "$GUARD_RESULT" == "OPEN" ]]; then
+            result="$DUPLICATE_RESULT"
           fi
           {
             echo "## Duplicate candidate preflight"
             echo
             echo "- Result: ${result:-INFRA_FAILURE}"
             echo "- Scheduled window: ${SLOT:-N/A}"
-            echo "- Song: $SONG"
-            echo "- Artist: $ARTIST"
-            echo "- Slug: $SLUG"
+            echo "- Requested song: $SONG"
+            echo "- Requested artist: $ARTIST"
+            echo "- Requested slug: $SLUG"
+            echo "- Resume slug: ${RESUME_SLUG:-N/A}"
+            echo "- Continuity slugs: ${CONTINUITY_SLUGS:-N/A}"
           } >> "$GITHUB_STEP_SUMMARY"
