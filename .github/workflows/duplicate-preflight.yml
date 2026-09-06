@@ -70,7 +70,7 @@ jobs:
               handle.write(f"request_file={request_file.as_posix()}\n")
           PY
 
-      - name: Enforce unfinished episode continuity
+      - name: Enforce unfinished episode continuity and candidate cap
         id: execution_guard
         shell: bash
         env:
@@ -79,8 +79,9 @@ jobs:
           set -euo pipefail
 
           # A publish queue de uma execução anterior NÃO bloqueia uma nova execução.
-          # Ela serve apenas como fronteira para descobrir trabalho iniciado depois
-          # dela que ainda precisa ser concluído antes de autorizar outra candidata.
+          # Ela serve como fronteira da execução atual: tentativas de candidata,
+          # autoria e media preflights posteriores pertencem à rodada corrente até
+          # que uma nova publish queue seja criada.
           latest_queue_commit="$(git log -1 --format=%H --diff-filter=A -- '.publish-queue/*.txt' || true)"
           echo "latest_queue_commit=$latest_queue_commit" >> "$GITHUB_OUTPUT"
 
@@ -104,6 +105,17 @@ jobs:
               | sed '/^[[:space:]]*$/d' \
               | sort -u
             )
+            mapfile -t candidate_requests_after_queue < <(
+              git log "$history_range" \
+                --diff-filter=A \
+                --name-only \
+                --format='' \
+                -- '.duplicate-check/*.json' \
+              | sed '/^[[:space:]]*$/d' \
+              | grep -v -- '-guardfix-test\.json$' \
+              | sort -u \
+              || true
+            )
           else
             mapfile -t authored_story_files < <(
               git log "$AFTER_SHA" \
@@ -123,7 +135,22 @@ jobs:
               | sed '/^[[:space:]]*$/d' \
               | sort -u
             )
+            mapfile -t candidate_requests_after_queue < <(
+              git log "$AFTER_SHA" \
+                --diff-filter=A \
+                --name-only \
+                --format='' \
+                -- '.duplicate-check/*.json' \
+              | sed '/^[[:space:]]*$/d' \
+              | grep -v -- '-guardfix-test\.json$' \
+              | sort -u \
+              || true
+            )
           fi
+
+          candidate_attempts=${#candidate_requests_after_queue[@]}
+          echo "candidate_attempts=$candidate_attempts" >> "$GITHUB_OUTPUT"
+          echo "candidate_limit=15" >> "$GITHUB_OUTPUT"
 
           declare -A active_slug_map=()
 
@@ -171,6 +198,8 @@ jobs:
           fi
           echo "continuity_slugs=$continuity_slugs" >> "$GITHUB_OUTPUT"
 
+          # Continuidade tem precedência sobre o limite: se um episódio já começou,
+          # ele deve ser concluído, não abandonado por ter havido muitas candidatas.
           if [[ ${#active_slugs[@]} -eq 1 ]]; then
             resume_slug="${active_slugs[0]}"
             echo "PREFLIGHT_RESULT=RESUME_EXISTING_EPISODE"
@@ -189,8 +218,19 @@ jobs:
             exit 0
           fi
 
+          # O request atual já está incluído na contagem. Assim, as tentativas
+          # 1..15 são permitidas; a 16ª é bloqueada antes do duplicate check.
+          if (( candidate_attempts > 15 )); then
+            echo "PREFLIGHT_RESULT=CANDIDATE_LIMIT_REACHED"
+            echo "FINAL_STATUS=SEM_CANDIDATO"
+            echo "CANDIDATE_ATTEMPTS=$candidate_attempts"
+            echo "result=CANDIDATE_LIMIT_REACHED" >> "$GITHUB_OUTPUT"
+            echo "::warning::Candidate limit reached: no more than 15 candidates may be evaluated in one execution. Stop without authoring an episode or creating a queue and report STATUS: SEM_CANDIDATO."
+            exit 0
+          fi
+
           echo "result=OPEN" >> "$GITHUB_OUTPUT"
-          echo "No unfinished episode exists after the latest publish queue. Candidate preflight is open."
+          echo "Candidate preflight is open (attempt $candidate_attempts of 15)."
 
       - name: Check candidate duplicate
         id: duplicate
@@ -232,6 +272,8 @@ jobs:
           LATEST_QUEUE_COMMIT: ${{ steps.execution_guard.outputs.latest_queue_commit }}
           RESUME_SLUG: ${{ steps.execution_guard.outputs.resume_slug }}
           CONTINUITY_SLUGS: ${{ steps.execution_guard.outputs.continuity_slugs }}
+          CANDIDATE_ATTEMPTS: ${{ steps.execution_guard.outputs.candidate_attempts }}
+          CANDIDATE_LIMIT: ${{ steps.execution_guard.outputs.candidate_limit }}
           SONG: ${{ steps.request.outputs.song }}
           ARTIST: ${{ steps.request.outputs.artist }}
           SLUG: ${{ steps.request.outputs.slug }}
@@ -245,9 +287,13 @@ jobs:
             echo
             echo "- Result: ${result:-INFRA_FAILURE}"
             echo "- Latest publish queue boundary: ${LATEST_QUEUE_COMMIT:-NONE}"
+            echo "- Candidate attempts: ${CANDIDATE_ATTEMPTS:-N/A}/${CANDIDATE_LIMIT:-15}"
             echo "- Requested song: $SONG"
             echo "- Requested artist: $ARTIST"
             echo "- Requested slug: $SLUG"
             echo "- Resume slug: ${RESUME_SLUG:-N/A}"
             echo "- Continuity slugs: ${CONTINUITY_SLUGS:-N/A}"
+            if [[ "$result" == "CANDIDATE_LIMIT_REACHED" ]]; then
+              echo "- Final status: SEM_CANDIDATO"
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
