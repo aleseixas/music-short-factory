@@ -10,6 +10,8 @@ Esta checagem acontece **ANTES de pesquisar temas, montar pool, aprofundar candi
 
 A execução deve primeiro verificar se existe um **EPISÓDIO ATIVO SEM QUEUE**. Para esta regra, considere ativo um slug novo que começou a ser autorado depois da publish queue mais recente e que já possui `episodes/<slug>/story.json` (ou outros arquivos do episódio), mas ainda não possui `.publish-queue/<slug>.txt`.
 
+**Uma publish queue criada por uma execução anterior NÃO bloqueia uma nova execução.** Não use hora do relógio, bloco 08h/11h/19h, dia ou outra janela temporal como identidade da execução. A queue mais recente serve apenas como fronteira de continuidade para descobrir se algum episódio começou depois dela e ficou incompleto.
+
 Se existir exatamente um episódio ativo sem queue:
 
 - NÃO pesquise um novo tema;
@@ -30,17 +32,18 @@ Use esta ordem de retomada:
 
 Se qualquer asset, timeline ou background tiver sido alterado depois do último PASS, o media preflight deve ser executado novamente antes da queue.
 
-Se `.publish-queue/<slug>.txt` já existir, o episódio não está mais pendente: não recrie a queue e encerre conforme o estado real.
+Se `.publish-queue/<slug>.txt` já existir para o MESMO slug que estava sendo retomado, o episódio não está mais pendente: não recrie a queue. Isso não significa que uma execução nova, iniciada depois dessa queue, esteja bloqueada.
 
 Se forem encontrados **dois ou mais episódios ativos sem queue** no mesmo estado de continuidade, não escolha arbitrariamente entre eles. Trate como conflito operacional e reporte `BLOQUEADO` para evitar criar/publicar um terceiro episódio.
 
 O workflow `Duplicate candidate preflight` também possui uma segunda camada de proteção. Se, apesar desta checagem inicial, um novo duplicate-check for criado enquanto existe um episódio ativo, a Action pode retornar:
 
 - `PREFLIGHT_RESULT=RESUME_EXISTING_EPISODE` — pare de trabalhar na nova candidata e retome imediatamente o slug informado por `RESUME_SLUG`;
-- `PREFLIGHT_RESULT=CONTINUITY_CONFLICT` — não autorize nenhuma nova candidata e reporte bloqueio;
-- `PREFLIGHT_RESULT=EXECUTION_ALREADY_COMPLETED` — uma queue já foi criada na janela atual; encerre imediatamente.
+- `PREFLIGHT_RESULT=CONTINUITY_CONFLICT` — não autorize nenhuma nova candidata e reporte bloqueio.
 
 `RESUME_EXISTING_EPISODE` não significa candidata duplicada e não autoriza um novo episódio. Ele significa: **há trabalho anterior já iniciado que deve ser concluído antes de qualquer nova seleção editorial**.
+
+Uma queue anterior à execução atual nunca deve ser reinterpretada como `EXECUTION_ALREADY_COMPLETED`. O agente só considera a execução atual concluída quando **ele próprio acabou de criar com sucesso a nova `.publish-queue/<slug>.txt` desta execução**.
 
 Fluxo de continuidade obrigatório:
 
@@ -193,10 +196,35 @@ Para fato recente, use evidência recente.
 
 Antes da autoria, considere um pool real de aproximadamente **10–15 temas**, não necessariamente 10–15 músicas.
 
+Esse pool de 10–15 é o **pool inicial para ranking**, não um limite máximo de tentativas. A execução não deve morrer apenas porque as primeiras candidatas eram repetidas.
+
 Busque mistura de:
 
 - aproximadamente 40–60% assuntos atuais/recentes;
 - aproximadamente 40–60% histórias fortes de catálogo/passado.
+
+### Loop obrigatório de candidatas até produção
+
+Depois de ranquear o pool, processe as candidatas em ordem de qualidade:
+
+1. faça a checagem editorial de história e o duplicate preflight técnico da melhor candidata ainda não testada;
+2. se retornar `PREFLIGHT_RESULT=DUPLICATE_CANDIDATE`, descarte **SOMENTE aquela candidata**;
+3. avance imediatamente para a próxima candidata melhor ranqueada, sem encerrar a execução e sem retornar `BLOQUEADO`;
+4. se uma candidata falhar em score, fontes, factualidade, potencial visual ou outro gate editorial, descarte apenas ela e avance;
+5. se o pool inicial for consumido principalmente por duplicatas ou reprovações, **pesquise e acrescente novas candidatas** em vez de encerrar automaticamente;
+6. continue esse ciclo até encontrar uma candidata inédita que passe pelos gates e possa seguir para autoria;
+7. depois que uma candidata receber `UNIQUE_CANDIDATE`, pare de avaliar outras, autorize somente esse slug e conduza-o até `MEDIA_PREFLIGHT_RESULT=PASS` e criação da queue;
+8. depois da criação bem-sucedida da nova queue desta execução, STOP.
+
+`DUPLICATE_CANDIDATE` é um resultado normal de filtragem, não um erro de execução. Uma queue de execução anterior também não é um erro nem motivo de bloqueio.
+
+`BLOQUEADO` deve ficar reservado a impedimentos operacionais reais, como `CONTINUITY_CONFLICT`, falha de infraestrutura sem resultado confiável ou outra condição técnica que torne inseguro continuar.
+
+`SEM_CANDIDATO` só deve ser usado depois de pesquisa realmente ampla e expansão razoável além do pool inicial quando necessário. **Não use `SEM_CANDIDATO` ou `BLOQUEADO` só porque a primeira, segunda ou várias candidatas eram duplicadas.**
+
+Objetivo operacional normal:
+
+`pool -> candidata 1 duplicada? próxima -> candidata 2 falhou gate? próxima -> ampliar pool se necessário -> UNIQUE -> autoria -> media preflight PASS -> queue -> STOP`
 
 ### Mix Brasil x internacional
 
@@ -273,6 +301,8 @@ Não publique a mesma curiosidade novamente apenas mudando hook, título ou mús
 
 O duplicate preflight técnico existente continua obrigatório. Se ele ainda exigir `song`, `artist` e `slug`, use a melhor representação compatível com o contrato atual sem inventar novos campos; a checagem editorial por TEMA complementa o gate técnico.
 
+Se o duplicate preflight acusar repetição, isso encerra somente a candidatura atual. Volte ao ranking e continue o loop descrito na seção 6.
+
 ## 9. Visuais
 
 Nos primeiros 0,0–1,5s, mostre preferencialmente o artista/banda central claramente reconhecível ou um visual diretamente ligado ao fato principal.
@@ -299,6 +329,9 @@ Confirme:
 
 - a checagem de continuidade foi feita antes de qualquer novo tema/duplicate-check;
 - não existe episódio ativo sem queue; se existir, ele está sendo retomado em vez de criar outro;
+- uma queue de execução anterior NÃO foi usada para bloquear indevidamente a execução atual;
+- candidatas duplicadas foram descartadas individualmente e a seleção continuou;
+- se o pool inicial foi consumido por duplicatas/reprovações, novas candidatas foram pesquisadas antes de considerar `SEM_CANDIDATO`;
 - o tema é realmente interessante e não apenas famoso;
 - o fato central não é óbvio para o público médio;
 - o hook entrega a curiosidade/tensão no primeiro beat;
