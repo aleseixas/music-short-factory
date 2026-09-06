@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 from collections.abc import Mapping, Sequence
 from typing import Any
@@ -238,6 +239,205 @@ def _log_instagram_container_diagnostics(
         )
 
 
+_INSTAGRAM_MAX_ATTEMPTS = 3
+
+
+def _without_instagram_cover(context: PublishContext) -> PublishContext:
+    metadata = dict(context.metadata)
+    metadata.pop("cover_url", None)
+    return PublishContext(
+        episode=context.episode,
+        video_path=context.video_path,
+        cover_path=context.cover_path,
+        metadata=metadata,
+    )
+
+
+def _is_retryable_instagram_processing_error(error: Exception) -> bool:
+    return bool(
+        re.search(
+            r"InstagramPublisher:\s+container\s+\d+\s+terminou\s+com\s+status\s+ERROR\b",
+            str(error),
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def _fraction_to_float(value: object) -> float | None:
+    text = str(value or "").strip()
+    if not text or text in {"0/0", "N/A"}:
+        return None
+    try:
+        if "/" in text:
+            numerator, denominator = text.split("/", 1)
+            denominator_value = float(denominator)
+            if denominator_value == 0:
+                return None
+            return float(numerator) / denominator_value
+        return float(text)
+    except (TypeError, ValueError):
+        return None
+
+
+def _log_instagram_video_preflight(video_path: Path) -> None:
+    """Log Instagram-relevant MP4 properties without making ffprobe a hard dependency."""
+
+    command = [
+        "ffprobe",
+        "-v",
+        "error",
+        "-show_entries",
+        (
+            "format=duration,bit_rate:"
+            "stream=codec_type,codec_name,width,height,r_frame_rate,avg_frame_rate,"
+            "sample_rate,bit_rate"
+        ),
+        "-of",
+        "json",
+        str(video_path),
+    ]
+    try:
+        completed = subprocess.run(
+            command,
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        payload = json.loads(completed.stdout)
+    except FileNotFoundError:
+        print(
+            "[instagram] preflight warning: ffprobe nao encontrado; seguindo sem diagnostico.",
+            file=sys.stderr,
+        )
+        return
+    except subprocess.TimeoutExpired:
+        print(
+            "[instagram] preflight warning: ffprobe excedeu 30s; seguindo sem diagnostico.",
+            file=sys.stderr,
+        )
+        return
+    except (subprocess.CalledProcessError, json.JSONDecodeError, OSError) as exc:
+        print(
+            "[instagram] preflight warning: nao foi possivel inspecionar o MP4 "
+            f"({exc.__class__.__name__}); seguindo com a publicacao.",
+            file=sys.stderr,
+        )
+        return
+
+    if not isinstance(payload, Mapping):
+        return
+    streams = payload.get("streams", [])
+    if not isinstance(streams, list):
+        streams = []
+    video_stream = next(
+        (
+            stream
+            for stream in streams
+            if isinstance(stream, Mapping) and stream.get("codec_type") == "video"
+        ),
+        {},
+    )
+    audio_stream = next(
+        (
+            stream
+            for stream in streams
+            if isinstance(stream, Mapping) and stream.get("codec_type") == "audio"
+        ),
+        {},
+    )
+    format_info = payload.get("format", {})
+    if not isinstance(format_info, Mapping):
+        format_info = {}
+
+    duration = _fraction_to_float(format_info.get("duration"))
+    fps = _fraction_to_float(
+        video_stream.get("avg_frame_rate") or video_stream.get("r_frame_rate")
+    )
+    video_bitrate = _fraction_to_float(
+        video_stream.get("bit_rate") or format_info.get("bit_rate")
+    )
+    video_codec = str(video_stream.get("codec_name", "")).strip().lower() or "desconhecido"
+    audio_codec = str(audio_stream.get("codec_name", "")).strip().lower() or "sem_audio"
+    sample_rate = _fraction_to_float(audio_stream.get("sample_rate"))
+    width = video_stream.get("width", "?")
+    height = video_stream.get("height", "?")
+
+    details = [
+        f"codec={video_codec}",
+        f"resolution={width}x{height}",
+        f"fps={fps:.2f}" if fps is not None else "fps=?",
+        f"audio={audio_codec}",
+        f"sample_rate={int(sample_rate)}Hz" if sample_rate is not None else "sample_rate=?",
+        f"duration={duration:.2f}s" if duration is not None else "duration=?",
+        (
+            f"video_bitrate={video_bitrate / 1_000_000:.2f}Mbps"
+            if video_bitrate is not None
+            else "video_bitrate=?"
+        ),
+    ]
+    print("[instagram] video preflight: " + "; ".join(details))
+
+    warnings: list[str] = []
+    if video_codec not in {"h264", "hevc", "h265"}:
+        warnings.append(f"codec de video inesperado: {video_codec}")
+    if fps is not None and not 23.0 <= fps <= 60.0:
+        warnings.append(f"fps fora da faixa 23-60: {fps:.2f}")
+    if audio_stream and audio_codec != "aac":
+        warnings.append(f"codec de audio inesperado: {audio_codec}")
+    if audio_stream and sample_rate is not None and int(sample_rate) != 48_000:
+        warnings.append(f"sample rate diferente de 48000 Hz: {int(sample_rate)}")
+    if duration is not None and duration < 3.0:
+        warnings.append(f"duracao menor que 3s: {duration:.2f}s")
+    if video_bitrate is not None and video_bitrate > 25_000_000:
+        warnings.append(
+            f"bitrate de video acima de 25 Mbps: {video_bitrate / 1_000_000:.2f} Mbps"
+        )
+    for warning in warnings:
+        print(f"[instagram] preflight warning: {warning}", file=sys.stderr)
+
+
+def _publish_instagram_with_retries(
+    publisher: Publisher,
+    context: PublishContext,
+    credentials: CredentialStore,
+):
+    _log_instagram_video_preflight(context.video_path)
+    attempt_context = context
+
+    for attempt in range(1, _INSTAGRAM_MAX_ATTEMPTS + 1):
+        using_cover = bool(str(attempt_context.metadata.get("cover_url", "")).strip())
+        cover_mode = "cover_url" if using_cover else "thumb_offset"
+        print(
+            f"[instagram] attempt {attempt}/{_INSTAGRAM_MAX_ATTEMPTS}: "
+            f"criando novo container ({cover_mode})."
+        )
+        try:
+            uploaded = publisher.upload(attempt_context)
+            return publisher.publish(attempt_context, uploaded)
+        except ApiError as exc:
+            _log_instagram_container_diagnostics(exc, credentials)
+            if (
+                not _is_retryable_instagram_processing_error(exc)
+                or attempt >= _INSTAGRAM_MAX_ATTEMPTS
+            ):
+                raise
+
+            if using_cover:
+                attempt_context = _without_instagram_cover(attempt_context)
+                print(
+                    "[instagram] processing ERROR; retrying with a new container "
+                    "without cover_url."
+                )
+            else:
+                print(
+                    "[instagram] processing ERROR; retrying with a new container "
+                    "using thumb_offset."
+                )
+
+    raise ApiError("InstagramPublisher: retries esgotados sem resultado.")
+
+
 def main(
     argv: Sequence[str] | None = None,
     default_project_root: Path | None = None,
@@ -302,12 +502,22 @@ def main(
                         context,
                         credentials,
                     )
-                uploaded = publisher.upload(context)
-                result = publisher.publish(context, uploaded)
+                    result = _publish_instagram_with_retries(
+                        publisher,
+                        context,
+                        credentials,
+                    )
+                else:
+                    uploaded = publisher.upload(context)
+                    result = publisher.publish(context, uploaded)
             print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2, default=str))
         except (PublishingError, RuntimeError, ApiError) as exc:
             failed = True
-            if platform == "instagram" and not dry_run:
+            if (
+                platform == "instagram"
+                and not dry_run
+                and not _is_retryable_instagram_processing_error(exc)
+            ):
                 _log_instagram_container_diagnostics(exc, credentials)
             print(f"ERRO: {exc}", file=sys.stderr)
         finally:
