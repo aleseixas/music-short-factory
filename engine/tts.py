@@ -102,9 +102,12 @@ class EdgeTTSProvider:
 
 
 def built_in_providers(settings: TTSSettings) -> dict[str, TTSProvider]:
-    gemini = GeminiTTSProvider()
     edge = EdgeTTSProvider(settings.edge_voice, settings.edge_rate)
-    return {gemini.name: gemini, edge.name: edge}
+    providers: dict[str, TTSProvider] = {edge.name: edge}
+    if "gemini" in {settings.provider, settings.fallback_provider}:
+        gemini = GeminiTTSProvider()
+        providers[gemini.name] = gemini
+    return providers
 
 
 def _parse_percentage(value: str, label: str) -> int:
