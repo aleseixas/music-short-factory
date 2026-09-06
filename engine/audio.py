@@ -187,6 +187,23 @@ async def _synthesize_segments(
 ) -> tuple[tuple[WordTiming, ...], float]:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.unlink(missing_ok=True)
+
+    bulk_synthesize = getattr(provider, "synthesize_segments", None)
+    if callable(bulk_synthesize):
+        print(
+            f"[tts] provider={provider.name} sintetizando {len(segments)} segmentos "
+            "em uma unica chamada."
+        )
+        words = await bulk_synthesize(segments, output)
+        duration = probe_audio_duration(output)
+        words = _validate_timing_sequence(
+            tuple(words),
+            timings_path,
+            narration,
+            duration,
+        )
+        return words, duration
+
     global_words: list[WordTiming] = []
     offset = 0.0
 
