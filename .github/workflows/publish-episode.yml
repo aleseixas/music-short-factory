@@ -281,6 +281,7 @@ jobs:
         run: python publish.py "$EPISODE" --platform youtube --live
 
       - name: Publish to Instagram
+        if: ${{ !cancelled() }}
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
@@ -293,6 +294,7 @@ jobs:
         run: python publish.py "$EPISODE" --platform instagram --live
 
       - name: Upload TikTok draft
+        if: ${{ !cancelled() }}
         env:
           TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
