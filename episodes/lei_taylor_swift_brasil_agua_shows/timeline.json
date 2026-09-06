@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"fallback_social_cinematic","volume":0.095},
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop","volume":0.13},
+    {"time_seconds":8.5,"type":"heartbeat_slow","volume":0.08},
+    {"time_seconds":17.0,"type":"whoosh_wind","volume":0.08},
+    {"time_seconds":29.0,"type":"dramatic_dun_dun","volume":0.09},
+    {"time_seconds":48.0,"type":"cash_register_short","volume":0.08},
+    {"time_seconds":61.0,"type":"riser_popular","volume":0.08},
+    {"time_seconds":73.0,"type":"ding","volume":0.07}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.78,"type":"punch_zoom","intensity":0.58},
+    {"start_seconds":8.5,"end_seconds":9.2,"type":"slow_zoom_in","intensity":0.28},
+    {"start_seconds":29.0,"end_seconds":29.7,"type":"punch_zoom","intensity":0.45},
+    {"start_seconds":61.0,"end_seconds":62.0,"type":"slow_zoom_in","intensity":0.30},
+    {"start_seconds":70.5,"end_seconds":71.2,"type":"punch_zoom","intensity":0.42}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.08,"duration_seconds":1.25,"text":"TAYLOR SWIFT\nVIROU NOME DE REGRA","accent_text":"VIROU NOME DE REGRA","animation":"scale_bounce","position":"center","intensity":0.64},
+    {"segment":"laudo","offset_seconds":0.08,"duration_seconds":1.0,"text":"CALOR EXTREMO","accent_text":"CALOR EXTREMO","animation":"fade_pop","position":"center","intensity":0.55},
+    {"segment":"decretos","offset_seconds":0.08,"duration_seconds":1.1,"text":"LEI TAYLOR SWIFT","accent_text":"TAYLOR SWIFT","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"agua_gratis","offset_seconds":0.05,"duration_seconds":1.0,"text":"ÁGUA GRATUITA","accent_text":"ÁGUA GRATUITA","animation":"scale_bounce","position":"center","intensity":0.55},
+    {"segment":"ingressos","offset_seconds":0.05,"duration_seconds":1.0,"text":"INGRESSOS TAMBÉM MUDARAM","accent_text":"INGRESSOS","animation":"slide_up","position":"center","intensity":0.50},
+    {"segment":"payoff","offset_seconds":0.05,"duration_seconds":1.15,"text":"DO PALCO\nÀ POLÍTICA PÚBLICA","accent_text":"POLÍTICA PÚBLICA","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.0,"text":"ISSO DEVERIA SER GLOBAL?","accent_text":"GLOBAL","animation":"pop_in","position":"center","intensity":0.50}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"taylor_concert","motion":"push_in","transition_out":"cut","highlight":"TAYLOR SWIFT • REGRA FEDERAL"},
+    {"id":"shot_ana","segment":"ana","asset":"nilton_eras","motion":"hold","transition_out":"crossfade","highlight":"ANA CLARA • RIO 2023"},
+    {"id":"shot_laudo","segment":"laudo","asset":"taylor_midnights","motion":"pull_out","transition_out":"cut","highlight":"LAUDO • CALOR EXTREMO"},
+    {"id":"shot_calor","segment":"calor","asset":"city_night","motion":"push_in","transition_out":"cut","highlight":"PERTO DE 40°C"},
+    {"id":"shot_agua_dificil","segment":"agua_dificil","asset":"water_flow","motion":"hold","transition_out":"crossfade","highlight":"ÁGUA VIROU QUESTÃO CENTRAL"},
+    {"id":"shot_emergencia","segment":"emergencia","asset":"water_fountain_video","motion":"push_in","transition_out":"cut","highlight":"REGRAS EMERGENCIAIS"},
+    {"id":"shot_tres_anos","segment":"tres_anos","asset":"rain_city","motion":"pull_out","transition_out":"crossfade","highlight":"QUASE 3 ANOS DEPOIS"},
+    {"id":"shot_decretos","segment":"decretos","asset":"contract_signing","motion":"hold","transition_out":"cut","highlight":"LEI TAYLOR SWIFT"},
+    {"id":"shot_mil_pessoas","segment":"mil_pessoas","asset":"crowd_walk","motion":"push_in","transition_out":"cut","highlight":"EVENTOS > 1.000"},
+    {"id":"shot_agua_gratis","segment":"agua_gratis","asset":"drinking_fountain","motion":"hold","transition_out":"crossfade","highlight":"ÁGUA GRATUITA"},
+    {"id":"shot_recipientes","segment":"recipientes","asset":"drinking_water_pot","motion":"push_in","transition_out":"cut","highlight":"RECIPIENTE DE ÁGUA"},
+    {"id":"shot_seguranca","segment":"seguranca","asset":"water_bottle","motion":"pull_out","transition_out":"cut","highlight":"COM SEGURANÇA"},
+    {"id":"shot_venda_agua","segment":"venda_agua","asset":"concert_gothenburg","motion":"hold","transition_out":"crossfade","highlight":"VENDA NÃO SUBSTITUI"},
+    {"id":"shot_ingressos","segment":"ingressos","asset":"vinyl_spin","motion":"push_in","transition_out":"cut","highlight":"INGRESSOS TAMBÉM"},
+    {"id":"shot_taxas","segment":"taxas","asset":"coin_counter","motion":"hold","transition_out":"cut","highlight":"TAXAS TRANSPARENTES"},
+    {"id":"shot_transferencias","segment":"transferencias","asset":"street_traffic","motion":"push_in","transition_out":"crossfade","highlight":"TRANSFERÊNCIA GRATUITA"},
+    {"id":"shot_cambistas","segment":"cambistas","asset":"record_store","motion":"pull_out","transition_out":"cut","highlight":"CAMBISTAS NA MIRA"},
+    {"id":"shot_referencia","segment":"referencia","asset":"live_band","motion":"hold","transition_out":"cut","highlight":"DO SHOW AO PAÍS"},
+    {"id":"shot_titulo","segment":"titulo","asset":"lula","motion":"push_in","transition_out":"crossfade","highlight":"NOME INFORMAL"},
+    {"id":"shot_mobilizacao","segment":"mobilizacao","asset":"music_street","motion":"pull_out","transition_out":"cut","highlight":"FÃS + TRAGÉDIA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"rio_view","motion":"push_in","transition_out":"crossfade","highlight":"VIROU POLÍTICA PÚBLICA"},
+    {"id":"shot_cta","segment":"cta","asset":"taylor_folklore","motion":"hold","transition_out":"cut","highlight":"DEVERIA SER GLOBAL?"}
+  ]
+}

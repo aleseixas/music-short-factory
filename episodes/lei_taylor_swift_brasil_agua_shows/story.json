@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "title": "A “Lei Taylor Swift” que mudou grandes eventos no Brasil",
+  "slug": "lei_taylor_swift_brasil_agua_shows",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Taylor Swift virou nome informal de novas regras federais no Brasil depois de uma tragédia em sua turnê.","delivery":"hook"},
+    {"id":"ana","text":"Em 2023, Ana Clara Benevides, de 23 anos, passou mal na Eras Tour no Rio.","delivery":"emotional"},
+    {"id":"laudo","text":"O laudo concluiu que o calor extremo levou à parada cardiorrespiratória.","delivery":"dramatic"},
+    {"id":"calor","text":"Fazia perto de 40 graus,","delivery":"dramatic"},
+    {"id":"agua_dificil","text":"e fãs reclamaram da dificuldade para conseguir água.","delivery":"dramatic"},
+    {"id":"emergencia","text":"O governo criou regras emergenciais de hidratação depois.","delivery":"neutral"},
+    {"id":"tres_anos","text":"Quase três anos mais tarde, a mudança ficou bem maior.","delivery":"curious"},
+    {"id":"decretos","text":"Em 2026, Lula assinou decretos apelidados pela imprensa de “Lei Taylor Swift”.","delivery":"reveal"},
+    {"id":"mil_pessoas","text":"Eventos com mais de mil pessoas","delivery":"neutral"},
+    {"id":"agua_gratis","text":"agora precisam oferecer água gratuita.","delivery":"reveal"},
+    {"id":"recipientes","text":"O público também deve poder entrar com recipientes de água,","delivery":"neutral"},
+    {"id":"seguranca","text":"seguindo regras de segurança.","delivery":"neutral"},
+    {"id":"venda_agua","text":"Vender garrafa lá dentro não substitui essa obrigação.","delivery":"reveal"},
+    {"id":"ingressos","text":"Outro decreto mexeu na venda de ingressos.","delivery":"curious"},
+    {"id":"taxas","text":"As taxas devem aparecer antes,","delivery":"neutral"},
+    {"id":"transferencias","text":"transferências gratuitas ser permitidas","delivery":"neutral"},
+    {"id":"cambistas","text":"e cambistas entram na mira.","delivery":"dramatic"},
+    {"id":"referencia","text":"Olha isso: uma noite de show virou referência para eventos pelo país.","delivery":"reveal"},
+    {"id":"titulo","text":"O nome de Taylor não está no título oficial da norma.","delivery":"neutral"},
+    {"id":"mobilizacao","text":"A mobilização de fãs e a tragédia no Rio ficaram ligadas à mudança.","delivery":"emotional"},
+    {"id":"payoff","text":"A história saiu do palco e virou política pública.","delivery":"payoff"},
+    {"id":"cta","text":"Você acha que essas regras deveriam existir no mundo inteiro? Comenta.","delivery":"curious"}
+  ]
+}

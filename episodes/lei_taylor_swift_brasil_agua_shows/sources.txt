@@ -1,0 +1,27 @@
+FATOS / REPORTAGEM
+- NME — “Brazil introduces ‘Taylor Swift Law’ three years after fan died of extreme heat at gig”, 3 Sep 2026. Novos decretos federais; eventos >1.000; água gratuita; entrada com recipientes; regras de ingressos. https://www.nme.com/news/music/brazil-introduces-taylor-swift-law-three-years-after-fan-died-of-extreme-heat-at-gig-3966818
+- UPI — “Brazil adopts 'Taylor Swift Law' rules for concerts, ticket sales”, 1 Sep 2026. Confirma água gratuita, recipientes próprios, venda de água não substitui obrigação e decreto de ingressos. https://www.upi.com/Top_News/World-News/2026/09/01/latam-brazil-taylor-swift-law/3221788282214/
+- Associated Press — laudo forense sobre Ana Clara Benevides: exaustão térmica e parada cardiorrespiratória no show de 17 Nov 2023. https://apnews.com/article/6cc6a79fd8c845419f0600b4148acb29
+- The Guardian — laudo do IML, calor próximo de 40°C e contexto do show no Rio, 28 Dec 2023. https://www.theguardian.com/music/2023/dec/28/taylor-swift-fan-cause-of-death-rio-brazil-heat-exhaustion-ana-clara-benevides
+- Folha de S.Paulo — laudo do IML e contexto das medidas adotadas após o show, 27 Dec 2023. https://www1.folha.uol.com.br/ilustrada/2023/12/policia-ouvira-t4f-produtora-de-show-da-cantora-taylor-swift-sobre-morte-de-fa.shtml
+
+NOTA EDITORIAL
+- “Lei Taylor Swift” é apelido usado por imprensa/fãs para o pacote de decretos, não o título oficial da norma.
+
+VISUAIS — Wikimedia Commons / web-first
+- Taylor Swift Concert.jpg — https://upload.wikimedia.org/wikipedia/commons/9/9f/Taylor_Swift_Concert.jpg
+- The Eras Tour - Estádio Nilton Santos.jpg — https://commons.wikimedia.org/wiki/File:The_Eras_Tour_-_Est%C3%A1dio_Nilton_Santos.jpg
+- Taylor Swift The Eras Tour Midnights Era Set — https://commons.wikimedia.org/wiki/File:Taylor_Swift_The_Eras_Tour_Midnights_Era_Set_(53109044972).jpg
+- Taylor Swift The Eras Tour Folklore Set — https://commons.wikimedia.org/wiki/File:Taylor_Swift_The_Eras_Tour_The_Folklore_Set_Era_(53108930977).jpg
+- Water flowing from fountain.webm — https://commons.wikimedia.org/wiki/File:Water_flowing_from_fountain.webm
+- Water fountain.webmhd.webm — https://commons.wikimedia.org/wiki/File:Water_fountain.webmhd.webm
+- Drinking water pot.webm — https://commons.wikimedia.org/wiki/File:Drinking_water_pot.webm
+- Drinking Water Fountain.jpg — https://commons.wikimedia.org/wiki/File:Drinking_Water_Fountain.jpg
+- Water fountain and bottle.jpg — https://commons.wikimedia.org/wiki/File:Water_fountain_and_bottle.jpg
+- Demais bases e alternativas: URLs/proveniência registradas em assets.json e visual_candidates.json. IA=0.
+
+BACKGROUND — pesquisa externa real antes do fallback
+- Suspense.ogg — Tamlin Lollis Love — 77.8s — CC BY-SA 3.0. Boa duração, mas licença com atribuição pública e clima mais sombrio do que o necessário. https://commons.wikimedia.org/wiki/File:Suspense.ogg
+- John Bartmann - broken-suspense-master.ogg — 4m04 — CC0. Tecnicamente compatível, mas sombrio demais para uma narrativa de política pública que termina em consequência construtiva. https://commons.wikimedia.org/wiki/File:John_Bartmann_-_broken-suspense-master.ogg
+- The March Of The Final Battle by MusicLFiles.ogg — 2m15 — CC BY 4.0. Dramática/épica demais e exige atribuição pública. https://commons.wikimedia.org/wiki/File:The_March_Of_The_Final_Battle_by_MusicLFiles.ogg
+- Seleção final: profile fallback_social_cinematic, catálogo curado da main, por equilíbrio entre tensão documental e virada institucional após as candidatas externas novas falharem em fit editorial/licença para o fluxo de copy limpa.
