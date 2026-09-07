@@ -274,6 +274,18 @@ Antes de aceitar qualquer shot acima de ~4s, pergunte mentalmente: **este materi
 
 Não corte apenas para atingir números. Prefira **16 takes excelentes a 24 medíocres** quando o material realmente justificar; da mesma forma, se houver material forte suficiente para 20–25+ visuais distintos, não seja conservador e não deixe o vídeo visualmente pobre por hábito.
 
+### SPEED E FREEZE FRAME — USO EDITORIAL
+
+`speed` e `freeze_frame` são ferramentas de edição disponíveis para shots de VÍDEO. Use-as conscientemente quando melhorarem ritmo, emoção, clareza, surpresa ou impacto; **não use por obrigação e não distribua esses recursos por quota**.
+
+- `speed` tem default `1.0` e deve ficar entre `0.5` e `2.0` conforme o schema atual. Mantenha `1.0` quando o take já funciona naturalmente. Acelere para ganhar energia, eliminar sensação arrastada ou reforçar montagem; desacelere para dar peso a um momento emocional, dramático ou de reação. Prefira ajustes moderados quando eles já resolverem o objetivo e evite velocidade chamativa sem função narrativa.
+- `freeze_frame` usa `start_seconds` + `duration_seconds` e, no estado atual, aceita duração entre `0.10` e `2.0` segundos. Use freezes normalmente curtos para destacar reveal, reação, detalhe, personagem, punchline, virada ou payoff. Não congele apenas porque a feature existe.
+- Speed e freeze podem coexistir no mesmo shot somente quando o schema/validação atual permitir e quando as duas decisões reforçarem o mesmo beat. Nunca combine efeitos por densidade.
+- Garanta que `freeze_frame.start_seconds` caia dentro do trecho de vídeo realmente usado e que trims, speed e freeze continuem válidos contra a duração real do asset.
+- Não use speed/freeze para mascarar um visual ruim ou repetido. Primeiro procure o melhor asset/trecho; depois use a ferramenta para polir um plano que já é editorialmente forte.
+
+Exemplos de intenção: um take comum pode ganhar leve aceleração para manter energia; um momento emocional pode respirar com leve desaceleração; uma revelação ou reação pode receber um freeze curto sincronizado com texto/SFX quando isso realmente aumentar o impacto.
+
 ### REGRA CRÍTICA — NÃO REPETIR VISUAIS
 
 Cada shot deve usar um visual principal único dentro do episódio.
