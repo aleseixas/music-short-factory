@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "episode": "cazuza_barao_telao_rock_in_rio_2026",
+  "selections": {
+    "rir_cazuza_telao": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "image",
+      "name": "rir_cazuza_telao",
+      "visual_score": 39.12,
+      "width": 768,
+      "height": 512,
+      "duration_seconds": null,
+      "fps": null,
+      "opening_motion_score": null,
+      "motion_score": null,
+      "practically_static": null,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "tour_telao": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "image",
+      "name": "tour_telao",
+      "visual_score": 39.12,
+      "width": 768,
+      "height": 512,
+      "duration_seconds": null,
+      "fps": null,
+      "opening_motion_score": null,
+      "motion_score": null,
+      "practically_static": null,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "barao_1985": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "rir1985_thumb": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "image",
+      "name": "rir1985_thumb",
+      "visual_score": 33.05,
+      "width": 480,
+      "height": 360,
+      "duration_seconds": null,
+      "fps": null,
+      "opening_motion_score": null,
+      "motion_score": null,
+      "practically_static": null,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "cazuza_ezequiel": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "frejat": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "cazuza_1987": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "live_band": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "video",
+      "name": "live_band",
+      "visual_score": 81.24,
+      "width": 360,
+      "height": 640,
+      "duration_seconds": 42.233,
+      "fps": 30.0,
+      "opening_motion_score": 98.16,
+      "motion_score": 94.2,
+      "practically_static": false,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "sound_recording": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "concert_gothenburg": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "barao1985_alt_thumb": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "image",
+      "name": "barao1985_alt_thumb",
+      "visual_score": 33.05,
+      "width": 480,
+      "height": 360,
+      "duration_seconds": null,
+      "fps": null,
+      "opening_motion_score": null,
+      "motion_score": null,
+      "practically_static": null,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "lp_vinyl": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "rock_stage": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "around_concerts": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "record_store": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "rain": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "video",
+      "name": "rain",
+      "visual_score": 43.8,
+      "width": 1280,
+      "height": 720,
+      "duration_seconds": 18.2,
+      "fps": 30.0,
+      "opening_motion_score": 8.35,
+      "motion_score": 9.9,
+      "practically_static": false,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "crowd": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "stage_lights": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "vinyl_demo": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "microphone": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "studio_control": {
+      "status": "selected",
+      "selection_mode": "eligible",
+      "kind": "image",
+      "name": "studio_control",
+      "visual_score": 63.52,
+      "width": 1280,
+      "height": 960,
+      "duration_seconds": null,
+      "fps": null,
+      "opening_motion_score": null,
+      "motion_score": null,
+      "practically_static": null,
+      "warnings": [],
+      "source_start_seconds": null,
+      "source_end_seconds": null
+    },
+    "cassette": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    },
+    "mixing_console": {
+      "status": "kept_existing_asset",
+      "kind": "image",
+      "visual_score": null,
+      "reason": "no_render_safe_same_kind_candidate"
+    }
+  },
+  "candidate_scores": {
+    "rir_cazuza_telao": [
+      {
+        "candidate_index": 1,
+        "name": "rir_cazuza_telao",
+        "kind": "image",
+        "visual_score": 39.12,
+        "selection_score": 39.12,
+        "rights_status": "unknown",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 768,
+        "height": 512,
+        "duration_seconds": null,
+        "fps": null,
+        "opening_motion_score": null,
+        "motion_score": null,
+        "practically_static": null,
+        "trim_safe": null,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "tour_telao": [
+      {
+        "candidate_index": 1,
+        "name": "tour_telao",
+        "kind": "image",
+        "visual_score": 39.12,
+        "selection_score": 39.12,
+        "rights_status": "unknown",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 768,
+        "height": 512,
+        "duration_seconds": null,
+        "fps": null,
+        "opening_motion_score": null,
+        "motion_score": null,
+        "practically_static": null,
+        "trim_safe": null,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "barao_1985": [],
+    "rir1985_thumb": [
+      {
+        "candidate_index": 1,
+        "name": "rir1985_thumb",
+        "kind": "image",
+        "visual_score": 33.05,
+        "selection_score": 33.05,
+        "rights_status": "unknown",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 480,
+        "height": 360,
+        "duration_seconds": null,
+        "fps": null,
+        "opening_motion_score": null,
+        "motion_score": null,
+        "practically_static": null,
+        "trim_safe": null,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "cazuza_ezequiel": [],
+    "frejat": [],
+    "cazuza_1987": [],
+    "live_band": [
+      {
+        "candidate_index": 1,
+        "name": "live_band",
+        "kind": "video",
+        "visual_score": 81.24,
+        "selection_score": 81.24,
+        "rights_status": "verified",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 360,
+        "height": 640,
+        "duration_seconds": 42.233,
+        "fps": 30.0,
+        "opening_motion_score": 98.16,
+        "motion_score": 94.2,
+        "practically_static": false,
+        "trim_safe": true,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "sound_recording": [],
+    "concert_gothenburg": [],
+    "barao1985_alt_thumb": [
+      {
+        "candidate_index": 1,
+        "name": "barao1985_alt_thumb",
+        "kind": "image",
+        "visual_score": 33.05,
+        "selection_score": 33.05,
+        "rights_status": "unknown",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 480,
+        "height": 360,
+        "duration_seconds": null,
+        "fps": null,
+        "opening_motion_score": null,
+        "motion_score": null,
+        "practically_static": null,
+        "trim_safe": null,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "lp_vinyl": [],
+    "rock_stage": [],
+    "around_concerts": [],
+    "record_store": [],
+    "rain": [
+      {
+        "candidate_index": 1,
+        "name": "rain",
+        "kind": "video",
+        "visual_score": 43.8,
+        "selection_score": 43.8,
+        "rights_status": "verified",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 1280,
+        "height": 720,
+        "duration_seconds": 18.2,
+        "fps": 30.0,
+        "opening_motion_score": 8.35,
+        "motion_score": 9.9,
+        "practically_static": false,
+        "trim_safe": true,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "crowd": [],
+    "stage_lights": [],
+    "vinyl_demo": [],
+    "microphone": [],
+    "studio_control": [
+      {
+        "candidate_index": 1,
+        "name": "studio_control",
+        "kind": "image",
+        "visual_score": 63.52,
+        "selection_score": 63.52,
+        "rights_status": "verified",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 1280,
+        "height": 960,
+        "duration_seconds": null,
+        "fps": null,
+        "opening_motion_score": null,
+        "motion_score": null,
+        "practically_static": null,
+        "trim_safe": null,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1
+      }
+    ],
+    "cassette": [],
+    "mixing_console": []
+  },
+  "inspection_failures": [
+    "barao_1985[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "cazuza_ezequiel[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "frejat[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "cazuza_1987[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "sound_recording[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "concert_gothenburg[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "lp_vinyl[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "rock_stage[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "around_concerts[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "record_store[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "crowd[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "stage_lights[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "vinyl_demo[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "microphone[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "cassette[1]: Nao foi possivel obter o candidato visual selecionado.",
+    "mixing_console[1]: Nao foi possivel obter o candidato visual selecionado."
+  ]
+}
