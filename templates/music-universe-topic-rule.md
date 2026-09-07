@@ -237,6 +237,31 @@ Essa proporção deve orientar o histórico recente do canal, e não funcionar c
 
 Nos dois grupos, dê forte preferência a **cantores, artistas e bandas famosos, populares ou amplamente reconhecíveis pelo público**. Não use artista obscuro apenas para cumprir a proporção. Ao mesmo tempo, fama sozinha não basta: o assunto escolhido sobre esse artista ainda precisa ser não óbvio, forte e passar por todos os gates editoriais.
 
+### PRIORIDADE DE AUDIÊNCIA — RENOME + HYPE ATUAL
+
+O potencial de audiência do artista é um dos principais critérios de seleção do tema. **Priorize fortemente artistas com nome muito grande, fandom relevante, reconhecimento imediato e capacidade real de gerar clique, retenção, comentário e compartilhamento.** Entre duas histórias de qualidade editorial semelhante, normalmente deve vencer a que envolve o artista com maior reconhecimento público ou maior momento cultural.
+
+Considere dois caminhos igualmente válidos:
+
+1. **grandes nomes consolidados**, nacionais ou internacionais, com enorme reconhecimento público e fandom;
+2. **artistas em forte hype agora**, mesmo que ainda não tenham o mesmo peso histórico, quando estiverem dominando conversa, charts, lançamentos, TikTok, Reels, Shorts, YouTube, Spotify ou cobertura musical recente.
+
+No Brasil, pesquise ativamente quem está em alta na data REAL da execução. Nomes como **Matuê, Teto, Veigh, WIU, Filipe Ret, Orochi, MC Cabelinho, KayBlack, Ana Castela, Anitta** e outros podem ser ótimos candidatos **quando os sinais atuais confirmarem relevância**. Esses nomes são somente exemplos de referência: **NÃO são whitelist, NÃO são lista fixa e NÃO devem continuar recebendo bônus se o hype tiver passado**.
+
+Da mesma forma, no internacional, dê prioridade a artistas de enorme reconhecimento ou que estejam dominando o momento cultural. Não fique preso a uma lista histórica de megastars: pesquise quem está realmente movimentando audiência na data da execução.
+
+Antes de fechar o pool/ranking, use a web para procurar sinais atuais de demanda quando isso for relevante: charts, lançamentos recentes, viralização, volume de cobertura, tendências em plataformas sociais, turnês, colaborações, controvérsias confirmadas e outros indicadores públicos de interesse. **Não invente métricas e não trate um único sinal isolado como prova definitiva de hype.**
+
+Na comparação de candidatas com qualidade semelhante, aplique esta ordem de desempate editorial:
+
+1. maior potencial de audiência/reconhecimento imediato;
+2. maior hype ou momento cultural atual comprovável;
+3. fandom mais ativo/engajado;
+4. assunto com maior chance de reconhecimento instantâneo no feed;
+5. melhor combinação entre nome forte e história não óbvia.
+
+Evite gastar episódios com artistas excessivamente nichados ou pouco reconhecidos quando houver uma história de força semelhante envolvendo um nome muito maior. **Artista obscuro só deve vencer um artista de grande renome quando a história for claramente superior, muito mais surpreendente ou significativamente melhor documentada.**
+
 A meta 65/35 é uma preferência, não uma trava. Se a melhor história disponível for claramente superior e pertencer ao lado momentaneamente mais representado, ela ainda pode vencer; evite sacrificar qualidade apenas para fechar uma conta exata.
 
 Dentro desse mix, continue buscando variedade de artistas, gêneros e épocas.
@@ -251,6 +276,8 @@ Avalie cada tema em 0–10:
 - `M` Cultural Moment / atualidade;
 - `F` Source Reliability;
 - `V` Visual Potential.
+
+Ao atribuir `R` e `M`, seja exigente: `R` deve refletir o quanto o artista é reconhecível para o público amplo e `M` deve refletir sinais atuais verificáveis de hype/relevância. Não dê `R` ou `M` altos por preferência pessoal.
 
 Fórmula editorial:
 
@@ -333,6 +360,9 @@ Confirme:
 - candidatas duplicadas foram descartadas individualmente e a seleção continuou;
 - se o pool inicial foi consumido por duplicatas/reprovações, novas candidatas foram pesquisadas antes de considerar `SEM_CANDIDATO`;
 - o tema é realmente interessante e não apenas famoso;
+- o artista/tema tem forte potencial de audiência OU a história é claramente superior o bastante para justificar um nome menor;
+- o hype atual foi verificado com sinais recentes quando ele foi usado como argumento de prioridade;
+- nomes nacionais e internacionais foram avaliados sem tratar listas de exemplos como fixas;
 - o fato central não é óbvio para o público médio;
 - o hook entrega a curiosidade/tensão no primeiro beat;
 - artista/banda aparece na primeira frase quando houver sujeito central;
