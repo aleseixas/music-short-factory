@@ -1,0 +1,44 @@
+FONTES FACTUAIS
+1. Folha de S.Paulo, 20/07/2025 — “Como Tim Maia fez os discos da fase Racional...”:
+https://www1.folha.uol.com.br/ilustrada/2025/07/como-tim-maia-fez-os-discos-da-fase-racional-que-ele-fez-ha-50-anos-e-tentou-enterrar.shtml
+Usado para: bases instrumentais gravadas antes da adesão; letras/vozes refeitas; relação com RCA; pagamento pelas fitas; uso de branco/livro por músicos; fracasso comercial; posterior rejeição da fase.
+
+2. Rádio Nacional / EBC, 27/05/2026 — Tim Maia “Racional Vol. 1” no Festa do Disco:
+https://radionacional.ebc.com.br/programas/festa-do-disco/tim-maia-racional-vol-1-no-festa-do-disco
+Usado para: redescoberta cult, raridade dos vinis e nova prensagem autorizada pela família em 2026.
+
+3. Luaka Bop — Tim Maia “Que Beleza”, live 1974:
+https://www.youtube.com/watch?v=tn4WourTVao
+Usado como evidência visual/contextual da fase e performance de 1974.
+
+4. Tim Maia Official Artist Channel — Imunização Racional (Que Beleza):
+https://www.youtube.com/watch?v=86Wjb15h9zc
+Usado como referência oficial da faixa/álbum e visual.
+
+5. Álbum completo Racional Vols. 1 e 2:
+https://www.youtube.com/watch?v=wPEbJ2nk16g
+Usado como referência visual/contextual, não como fonte única de fatos.
+
+BACKGROUND MUSIC — PESQUISA EXTERNA
+Consultas feitas: soul funk instrumental; funk instrumental public domain; psychedelic funk instrumental; soul groove instrumental; retro funk instrumental.
+Candidatas comparadas incluíram Funk Soul.ogg, Fifteen Seconds of Funk, The Funkhouser, Funkorama e Poor Man’s Groove.
+Escolha operacional: profile existente external_oke_funkhouser, por combinar com soul/funk setentista e usar fonte Wikimedia compatível. A Action de media preflight deve rejeitar automaticamente se houver repetição recente e selecionar fallback permitido.
+Página de licença/origem da candidata escolhida:
+https://commons.wikimedia.org/wiki/File:Sonatema_-_The_Funkhouser_(Versi%C3%B3n_original).wav
+CC0 1.0.
+
+VISUAIS FINAIS / PROVENIÊNCIA
+tim_white_stage — Brazuca Sounds / reprodução histórica:
+https://d3t3ozftmdmh3i.cloudfront.net/staging/podcast_uploaded_episode400/42582912/42582912-1744634640365-f1c2ed14f30cb.jpg
+tim_choir — GZH / reprodução histórica:
+https://www.rbsdirect.com.br/imagesrc/25152973.jpg?a=c&format=webp&h=1600&w=1600
+tim_racional_promo — Diário de Cuiabá / reprodução:
+https://diariodecuiaba.nyc3.digitaloceanspaces.com/storage/webdisco/2025/07/21/1200x900/a54239d0aa292ddde5198ea2aef71e5a.jpg
+live_1974 thumbnail — Luaka Bop / YouTube:
+https://i.ytimg.com/vi/tn4WourTVao/hqdefault.jpg
+official_album_thumb — Tim Maia Official Artist Channel:
+https://i.ytimg.com/vi/86Wjb15h9zc/hqdefault.jpg
+full_album_thumb:
+https://i.ytimg.com/vi/wPEbJ2nk16g/hqdefault.jpg
+
+Demais vídeos/imagens contextuais vêm de Wikimedia Commons e estão registrados diretamente em assets.json/visual_candidates.json com credit/license quando conhecidos. IA de imagem: 0.
