@@ -1,1 +1,241 @@
-{"schema_version":1,"assets":[{"id":"oasis_backstage","file":"oasis_backstage.jpg","url":"https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg","credit":"GQ Mexico / editorial web","license":"","focus":{"x":0.5,"y":0.38}},{"id":"dat_tapes","file":"dat_tapes.jpg","url":"https://images.squarespace-cdn.com/content/v1/5fe388feefcd990a12d9ccd9/1615036588186-FP166DPC9AAHU731WT8T/BASF%2BDAT%2BMaster%2Ben%2BSONY%2B2PDP-90A%2Bcassettes","credit":"AV Works / web","license":"","focus":{"x":0.5,"y":0.5}},{"id":"oasis_studio","file":"oasis_studio.jpg","url":"https://esquiresg.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2024/04/oasis.jpg","credit":"Esquire Singapore / editorial web","license":"","focus":{"x":0.48,"y":0.42}},{"id":"loch_lomond","file":"loch_lomond.jpg","url":"https://s.yimg.com/ny/api/res/1.2/TeNmcK1RJ0MARuvDdwIUBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MjA7aD0xMDc4O2NmPXdlYnA-/https%3A/media.zenfs.com/en/glasgow_live_848/9d5495895aad1d3efc92d76f96676038","credit":"Glasgow Live / Yahoo UK / editorial web","license":"","focus":{"x":0.5,"y":0.48}},{"id":"oasis_1994_thumb","file":"oasis_1994_thumb.jpg","url":"https://i.ytimg.com/vi/w9X3vNjb52c/hqdefault.jpg","credit":"Oasis / YouTube thumbnail","license":"","focus":{"x":0.5,"y":0.45}},{"id":"oasis_duet_thumb","file":"oasis_duet_thumb.jpg","url":"https://i.ytimg.com/vi/xiD0ZGEPbRA/hqdefault.jpg","credit":"YouTube thumbnail","license":"","focus":{"x":0.5,"y":0.45}},{"id":"sound_recording","file":"sound_recording.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Sound%20Effect%20Recording.webm","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"concert_gothenburg","file":"concert_gothenburg.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Concert%20at%20University%20of%20Gothenburg.webm","credit":"Netha Hussain / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},{"id":"lp_vinyl","file":"lp_vinyl.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/LP%20Long%20play%20vinyl%20record%20%28record%20player%29%203%20-%20Free%20HD%20stock%20footage.webm","credit":"OrangeHD / Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"around_concerts","file":"around_concerts.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Around%20the%20world%20in%2050%20concerts.webm","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"record_store","file":"record_store.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/In%20The%20Record%20Store.webm","credit":"Fredrik Johansson / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.5}},{"id":"crowd","file":"crowd.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Walking%20through%20the%20crowd%20in%20Boston%208%2019%2017.webm","credit":"DaTechGuyBlog / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},{"id":"vinyl_demo","file":"vinyl_demo.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/%C2%BFC%C3%B3mo%20funciona%20un%20vinilo-%20%28%C2%BFY%20por%20qu%C3%A9%20eso%20funciona-%29.webm","credit":"Magic Markers / Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"live_band","file":"live_band.webm","url":"https://upload.wikimedia.org/wikipedia/commons/0/04/Live_band_performs_on_stage..webm","credit":"Leticia Nabunje / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},{"id":"rain","file":"rain.webm","url":"https://upload.wikimedia.org/wikipedia/commons/9/95/Raindrops_against_the_window_in_the_night_city%2C_Las_Palmas.webm","credit":"Vjatseslav Robtsenkov / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},{"id":"city_night","file":"city_night.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/City%20at%20night.webm","credit":"Editor / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},{"id":"disco_lights","file":"disco_lights.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Rotating%20disco%20lights.webm","credit":"JJMr19 / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},{"id":"sunrise_timelapse","file":"sunrise_timelapse.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Sunrise%20time%20lapse.webm","credit":"Aravind Samala / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.5}},{"id":"street_traffic","file":"street_traffic.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Street%20traffic.webm","credit":"Editor / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},{"id":"contract_signing","file":"contract_signing.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Paris%20agreement%20signed.webm","credit":"EU2016NL / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.5}},{"id":"coin_counter","file":"coin_counter.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/201905%20Coin%20counter%20working.webm","credit":"Jonashtand / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},{"id":"marathon_runners","file":"marathon_runners.webm","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/2018%20Columbus%20Marathon%20runners.webm","credit":"Legoktm / Wikimedia Commons","license":"CC BY-SA 4.0","focus":{"x":0.5,"y":0.5}},{"id":"train","file":"train.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/62/Train_street_20220807_1205.webm","credit":"L. Shyamal / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}]}
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "oasis_backstage",
+      "file": "oasis_backstage.jpg",
+      "url": "https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "dat_tapes",
+      "file": "dat_tapes.jpg",
+      "url": "https://images.squarespace-cdn.com/content/v1/5fe388feefcd990a12d9ccd9/1615036588186-FP166DPC9AAHU731WT8T/BASF%2BDAT%2BMaster%2Ben%2BSONY%2B2PDP-90A%2Bcassettes",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "sound_recording",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "oasis_studio",
+      "file": "oasis_backstage.jpg",
+      "url": "https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "live_band",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "concert_gothenburg",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "loch_lomond",
+      "file": "oasis_backstage.jpg",
+      "url": "https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "lp_vinyl",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "city_night",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "rain",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "oasis_1994_thumb",
+      "file": "oasis_backstage.jpg",
+      "url": "https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "contract_signing",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "vinyl_demo",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "train",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "street_traffic",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "coin_counter",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "record_store",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "disco_lights",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "oasis_duet_thumb",
+      "file": "oasis_backstage.jpg",
+      "url": "https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "around_concerts",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "marathon_runners",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "sunrise_timelapse",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "crowd",
+      "file": "oasis_paris_1994.mp4",
+      "credit": "web",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}
