@@ -11,6 +11,11 @@ from .models import (
     DEFAULT_TEXT_FX_INTENSITY,
     DEFAULT_OVERLAY_OPACITY,
     DEFAULT_OVERLAY_SCALE,
+    DEFAULT_VIDEO_SPEED,
+    MAX_FREEZE_DURATION_SECONDS,
+    MAX_VIDEO_SPEED,
+    MIN_FREEZE_DURATION_SECONDS,
+    MIN_VIDEO_SPEED,
     MOTIONS,
     TRANSITIONS,
     TEXT_FX_ANIMATIONS,
@@ -20,9 +25,11 @@ from .models import (
     VISUAL_FX_TYPES,
     AssetSpec,
     BackgroundMusicSpec,
+    FreezeFrameSpec,
     HighlightSpec,
     RelativeTextFxCue,
     ResolvedTextFxCue,
+    ResolvedFreezeFrame,
     ResolvedVisualFxCue,
     SfxCue,
     ShotSpec,
@@ -91,9 +98,29 @@ def load_timeline(
                 f"Plano {shot_id!r}.source_end_seconds precisa ser maior que "
                 "source_start_seconds."
             )
+        speed = _parse_number(
+            raw.get("speed", DEFAULT_VIDEO_SPEED),
+            f"Plano {shot_id!r}.speed",
+        )
+        if not MIN_VIDEO_SPEED <= speed <= MAX_VIDEO_SPEED:
+            raise RuntimeError(
+                f"Plano {shot_id!r}.speed precisa ficar entre "
+                f"{MIN_VIDEO_SPEED:.1f} e {MAX_VIDEO_SPEED:.1f}."
+            )
+        freeze_frame = _parse_freeze_frame(raw.get("freeze_frame"), shot_id)
         if not assets[asset_id].is_video and (source_start != 0 or source_end is not None):
             raise RuntimeError(
                 f"Plano {shot_id!r} usa recorte de fonte, mas o asset "
+                f"{asset_id!r} nao e video."
+            )
+        if not assets[asset_id].is_video and speed != DEFAULT_VIDEO_SPEED:
+            raise RuntimeError(
+                f"Plano {shot_id!r} usa speed={speed:g}, mas o asset "
+                f"{asset_id!r} nao e video."
+            )
+        if not assets[asset_id].is_video and freeze_frame is not None:
+            raise RuntimeError(
+                f"Plano {shot_id!r} usa freeze_frame, mas o asset "
                 f"{asset_id!r} nao e video."
             )
 
@@ -124,6 +151,8 @@ def load_timeline(
                 focus_y=focus_y,
                 source_start_seconds=source_start,
                 source_end_seconds=source_end,
+                speed=speed,
+                freeze_frame=freeze_frame,
             )
         )
 
@@ -206,6 +235,12 @@ def build_timeline(
                 frame_count // 3,
                 next_frame_count // 3,
             )
+        freeze_frame = resolve_freeze_frame(
+            shot.freeze_frame,
+            frame_count,
+            fps,
+            f"Plano {shot.id!r}.freeze_frame",
+        )
         scenes.append(
             TimelineScene(
                 index=index + 1,
@@ -215,6 +250,7 @@ def build_timeline(
                 end_frame=end_frame,
                 render_frames=frame_count + transition_frames,
                 transition_frames=transition_frames,
+                freeze_frame=freeze_frame,
             )
         )
     if visual_fx_cues:
@@ -423,6 +459,17 @@ def write_timeline_plan(plan: TimelinePlan, path: Path) -> None:
                 "start_frame": scene.start_frame,
                 "end_frame": scene.end_frame,
                 "render_frames": scene.render_frames,
+                "speed": scene.shot.speed,
+                **(
+                    {
+                        "freeze_frame": {
+                            "start_frame": scene.freeze_frame.start_frame,
+                            "duration_frames": scene.freeze_frame.duration_frames,
+                        }
+                    }
+                    if scene.freeze_frame is not None
+                    else {}
+                ),
                 "start": round(scene.start_frame / plan.fps, 6),
                 "end": round(scene.end_frame / plan.fps, 6),
             }
@@ -463,6 +510,72 @@ def _parse_highlight(raw: object, shot_id: str) -> HighlightSpec | None:
         text=text,
         start_seconds=start,
         duration_seconds=parsed_duration,
+    )
+
+
+def _parse_freeze_frame(raw: object, shot_id: str) -> FreezeFrameSpec | None:
+    if raw is None:
+        return None
+    label = f"Plano {shot_id!r}.freeze_frame"
+    if not isinstance(raw, dict):
+        raise RuntimeError(f"{label} precisa ser um objeto ou null.")
+    if "start_seconds" not in raw or "duration_seconds" not in raw:
+        raise RuntimeError(
+            f"{label} precisa definir start_seconds e duration_seconds."
+        )
+    start = _parse_non_negative_seconds(
+        raw.get("start_seconds"),
+        f"{label}.start_seconds",
+    )
+    duration = _parse_number(
+        raw.get("duration_seconds"),
+        f"{label}.duration_seconds",
+    )
+    if not MIN_FREEZE_DURATION_SECONDS <= duration <= MAX_FREEZE_DURATION_SECONDS:
+        raise RuntimeError(
+            f"{label}.duration_seconds precisa ficar entre "
+            f"{MIN_FREEZE_DURATION_SECONDS:.2f} e "
+            f"{MAX_FREEZE_DURATION_SECONDS:.2f}."
+        )
+    return FreezeFrameSpec(start_seconds=start, duration_seconds=duration)
+
+
+def resolve_freeze_frame(
+    freeze_frame: FreezeFrameSpec | None,
+    shot_frames: int,
+    fps: int,
+    label: str = "freeze_frame",
+) -> ResolvedFreezeFrame | None:
+    """Resolve one output-relative freeze to deterministic project frames."""
+    if freeze_frame is None:
+        return None
+    if isinstance(fps, bool) or not isinstance(fps, int) or fps <= 0:
+        raise RuntimeError(f"{label} nao pode ser resolvido com FPS invalido.")
+    if isinstance(shot_frames, bool) or not isinstance(shot_frames, int) or shot_frames <= 0:
+        raise RuntimeError(f"{label} nao pode ser resolvido em shot sem frames.")
+
+    start_frame = max(
+        0,
+        math.ceil(freeze_frame.start_seconds * fps - 1e-9),
+    )
+    duration_frames = math.ceil(freeze_frame.duration_seconds * fps - 1e-9)
+    if duration_frames < 2:
+        raise RuntimeError(
+            f"{label}.duration_seconds precisa representar pelo menos dois "
+            f"frames no FPS atual ({fps})."
+        )
+    if start_frame >= shot_frames:
+        raise RuntimeError(
+            f"{label}.start_seconds fica fora da duracao real do shot."
+        )
+    if start_frame + duration_frames > shot_frames:
+        raise RuntimeError(
+            f"{label} ultrapassa a duracao real do shot; o freeze nao pode "
+            "invadir o handle de crossfade."
+        )
+    return ResolvedFreezeFrame(
+        start_frame=start_frame,
+        duration_frames=duration_frames,
     )
 
 

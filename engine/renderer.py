@@ -64,14 +64,44 @@ class Renderer:
         arguments: list[object] = ["-y", "-hide_banner"]
         source_filter = motion_filter
         if scene.asset.is_video:
-            required_duration = scene.render_frames / render.fps
+            source_duration = scene.required_source_duration(render.fps)
+            speed_filter = (
+                "setpts=PTS-STARTPTS,"
+                if scene.shot.speed == 1.0
+                else f"setpts=(PTS-STARTPTS)/{scene.shot.speed:.6f},"
+            )
+            freeze_filter = ""
+            if scene.freeze_frame is not None:
+                freeze = scene.freeze_frame
+                next_source_frame = freeze.start_frame + 1
+                if next_source_frame >= scene.source_frame_count:
+                    # A freeze ending with the shot has no later frame whose PTS
+                    # can be shifted. Extend the selected final frame explicitly;
+                    # this is a finite pad, not a source loop.
+                    freeze_filter = (
+                        f"tpad=stop_mode=clone:stop={freeze.added_frames},"
+                        f"trim=end_frame={scene.render_frames},"
+                        f"settb=AVTB,setpts=N/({render.fps}*TB),"
+                    )
+                else:
+                    # Move all frames after the selected one forward, then let
+                    # fps deterministically fill the gap with that frame.
+                    freeze_filter = (
+                        "setpts='PTS+if("
+                        f"gte(N\\,{next_source_frame})\\,"
+                        f"{freeze.added_frames}/({render.fps}*TB)\\,0)',"
+                        f"fps=fps={render.fps}:start_time=0,"
+                        f"trim=end_frame={scene.render_frames},"
+                        f"settb=AVTB,setpts=N/({render.fps}*TB),"
+                    )
             work_width = render.width * render.working_scale
             work_height = render.height * render.working_scale
             source_filter = (
                 f"trim=start={scene.shot.source_start_seconds:.6f}:"
-                f"duration={required_duration:.6f},"
-                "setpts=PTS-STARTPTS,"
+                f"duration={source_duration:.6f},"
+                f"{speed_filter}"
                 f"fps={render.fps},settb=AVTB,setpts=N/({render.fps}*TB),"
+                f"{freeze_filter}"
                 f"scale={work_width}:{work_height}:"
                 "force_original_aspect_ratio=increase:flags=lanczos,"
                 f"crop={work_width}:{work_height}:(iw-ow)/2:(ih-oh)/2,"

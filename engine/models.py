@@ -26,6 +26,11 @@ DEFAULT_OVERLAY_SCALE = 0.38
 DEFAULT_OVERLAY_OPACITY = 1.0
 TRANSITIONS = {"cut", "crossfade"}
 VIDEO_ASSET_EXTENSIONS = frozenset({".mp4", ".mov", ".webm"})
+DEFAULT_VIDEO_SPEED = 1.0
+MIN_VIDEO_SPEED = 0.5
+MAX_VIDEO_SPEED = 2.0
+MIN_FREEZE_DURATION_SECONDS = 0.10
+MAX_FREEZE_DURATION_SECONDS = 2.0
 
 
 @dataclass(frozen=True)
@@ -186,6 +191,23 @@ class OverlayCue:
 
 
 @dataclass(frozen=True)
+class FreezeFrameSpec:
+    start_seconds: float
+    duration_seconds: float
+
+
+@dataclass(frozen=True)
+class ResolvedFreezeFrame:
+    start_frame: int
+    duration_frames: int
+
+    @property
+    def added_frames(self) -> int:
+        # The selected source frame already contributes one output frame.
+        return self.duration_frames - 1
+
+
+@dataclass(frozen=True)
 class ShotSpec:
     id: str
     segment_id: str
@@ -197,6 +219,8 @@ class ShotSpec:
     focus_y: float | None = None
     source_start_seconds: float = 0.0
     source_end_seconds: float | None = None
+    speed: float = DEFAULT_VIDEO_SPEED
+    freeze_frame: FreezeFrameSpec | None = None
 
 
 @dataclass(frozen=True)
@@ -226,10 +250,19 @@ class TimelineScene:
     render_frames: int
     transition_frames: int
     visual_fx_cues: tuple[ResolvedVisualFxCue, ...] = ()
+    freeze_frame: ResolvedFreezeFrame | None = None
 
     @property
     def frame_count(self) -> int:
         return self.end_frame - self.start_frame
+
+    @property
+    def source_frame_count(self) -> int:
+        added_frames = self.freeze_frame.added_frames if self.freeze_frame else 0
+        return self.render_frames - added_frames
+
+    def required_source_duration(self, fps: int) -> float:
+        return self.source_frame_count / fps * self.shot.speed
 
 
 @dataclass(frozen=True)

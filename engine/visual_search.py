@@ -16,7 +16,16 @@ import requests
 
 from .ffmpeg import probe_video_stream, run_ffmpeg_capture
 from .media_cache import download_to_cache, media_cache_directory
-from .models import VIDEO_ASSET_EXTENSIONS
+from .models import (
+    DEFAULT_VIDEO_SPEED,
+    MAX_FREEZE_DURATION_SECONDS,
+    MAX_VIDEO_SPEED,
+    MIN_FREEZE_DURATION_SECONDS,
+    MIN_VIDEO_SPEED,
+    VIDEO_ASSET_EXTENSIONS,
+    FreezeFrameSpec,
+)
+from .timeline import resolve_freeze_frame
 
 
 VisualKind = Literal["image", "video", "any"]
@@ -227,6 +236,31 @@ class TrimAssessment:
     required_seconds: float | None
     margin_seconds: float | None
     reason: str
+    speed: float | None = DEFAULT_VIDEO_SPEED
+    required_output_seconds: float | None = None
+    moving_output_seconds: float | None = None
+    output_fps: int | None = None
+    freeze_start_frame: int | None = None
+    freeze_duration_frames: int | None = None
+
+    @property
+    def freeze_frame(self) -> dict[str, object] | None:
+        if (
+            self.output_fps is None
+            or self.freeze_start_frame is None
+            or self.freeze_duration_frames is None
+        ):
+            return None
+        return {
+            "start_frame": self.freeze_start_frame,
+            "duration_frames": self.freeze_duration_frames,
+            "start_seconds": round(self.freeze_start_frame / self.output_fps, 6),
+            "duration_seconds": round(
+                self.freeze_duration_frames / self.output_fps,
+                6,
+            ),
+            "source_frames_saved": self.freeze_duration_frames - 1,
+        }
 
     def as_dict(self) -> dict[str, object]:
         return {
@@ -237,7 +271,12 @@ class TrimAssessment:
             "source_end_seconds": self.source_end_seconds,
             "available_seconds": self.available_seconds,
             "required_seconds": self.required_seconds,
+            "required_output_seconds": self.required_output_seconds,
+            "moving_output_seconds": self.moving_output_seconds,
             "margin_seconds": self.margin_seconds,
+            "speed": self.speed,
+            "output_fps": self.output_fps,
+            "freeze_frame": self.freeze_frame,
             "reason": self.reason,
             "loop_required": self.reason == "insufficient_duration_no_loop",
         }
@@ -534,6 +573,10 @@ def inspect_visual_result(
     source_start_seconds: float = 0.0,
     source_end_seconds: float | None = None,
     crossfade_seconds: float = 0.0,
+    speed: float = DEFAULT_VIDEO_SPEED,
+    freeze_start_seconds: float | None = None,
+    freeze_duration_seconds: float | None = None,
+    output_fps: int = 30,
     cache_root: Path | None = None,
     target_width: int = TARGET_WIDTH,
     target_height: int = TARGET_HEIGHT,
@@ -547,6 +590,16 @@ def inspect_visual_result(
         )
     if target_width <= 0 or target_height <= 0:
         raise VisualSearchError("Resolucao alvo invalida para inspecao visual.")
+    if result.kind != "video" and (
+        not _is_finite_number(speed) or float(speed) != DEFAULT_VIDEO_SPEED
+    ):
+        raise VisualSearchError("speed so pode ser usado na inspecao de video.")
+    if result.kind != "video" and (
+        freeze_start_seconds is not None or freeze_duration_seconds is not None
+    ):
+        raise VisualSearchError(
+            "freeze_frame so pode ser usado na inspecao de video."
+        )
 
     category = "video" if result.kind == "video" else "image"
     project_root = project_root.resolve()
@@ -620,18 +673,23 @@ def inspect_visual_result(
         source_start_seconds=source_start_seconds,
         source_end_seconds=source_end_seconds,
         crossfade_seconds=crossfade_seconds,
+        speed=speed,
+        freeze_start_seconds=freeze_start_seconds,
+        freeze_duration_seconds=freeze_duration_seconds,
+        output_fps=output_fps,
     )
     warnings: list[str] = []
     motion: MotionAnalysis | None = None
     try:
         motion_end = source_end_seconds
-        if motion_end is None and _is_finite_number(shot_duration_seconds):
-            requested_duration = float(shot_duration_seconds) + max(
-                0.0, _finite_or_default(crossfade_seconds, 0.0)
-            )
+        if (
+            motion_end is None
+            and trim.reason in {"safe", "insufficient_duration_no_loop"}
+            and trim.required_seconds is not None
+        ):
             motion_end = min(
                 video_info.duration,
-                source_start_seconds + requested_duration,
+                source_start_seconds + trim.required_seconds,
             )
         motion = analyze_video_motion(
             path,
@@ -741,6 +799,10 @@ def assess_trim(
     source_start_seconds: float = 0.0,
     source_end_seconds: float | None = None,
     crossfade_seconds: float = 0.0,
+    speed: float = DEFAULT_VIDEO_SPEED,
+    freeze_start_seconds: float | None = None,
+    freeze_duration_seconds: float | None = None,
+    output_fps: int = 30,
 ) -> TrimAssessment:
     """Apply the renderer's no-loop trim policy without mutating episode files."""
     if not _is_finite_number(duration_seconds) or duration_seconds <= 0:
@@ -752,24 +814,89 @@ def assess_trim(
         else _finite_or_default(source_end_seconds, math.nan)
     )
     fade = _finite_or_default(crossfade_seconds, math.nan)
+    playback_speed = _finite_or_default(speed, math.nan)
+    has_freeze_start = freeze_start_seconds is not None
+    has_freeze_duration = freeze_duration_seconds is not None
     tolerance = 1e-6
 
+    if not MIN_VIDEO_SPEED <= playback_speed <= MAX_VIDEO_SPEED:
+        return _unsafe_trim(
+            start if math.isfinite(start) else 0.0,
+            start if math.isfinite(start) else 0.0,
+            shot_duration_seconds,
+            "speed_invalid",
+            crossfade_seconds=fade,
+            speed=speed,
+        )
     if not math.isfinite(start) or start < 0:
-        return _unsafe_trim(0.0, 0.0, shot_duration_seconds, "source_start_invalid")
+        return _unsafe_trim(
+            0.0,
+            0.0,
+            shot_duration_seconds,
+            "source_start_invalid",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
     if not math.isfinite(fade) or fade < 0:
-        return _unsafe_trim(start, start, shot_duration_seconds, "crossfade_invalid")
+        return _unsafe_trim(
+            start,
+            start,
+            shot_duration_seconds,
+            "crossfade_invalid",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
+    if has_freeze_start != has_freeze_duration:
+        return _unsafe_trim(
+            start,
+            start,
+            shot_duration_seconds,
+            "freeze_incomplete",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
     if start >= duration_seconds - tolerance:
-        return _unsafe_trim(start, duration_seconds, shot_duration_seconds, "start_at_or_after_end")
+        return _unsafe_trim(
+            start,
+            duration_seconds,
+            shot_duration_seconds,
+            "start_at_or_after_end",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
     if requested_end is not None and (
         not math.isfinite(requested_end) or requested_end <= start
     ):
-        return _unsafe_trim(start, start, shot_duration_seconds, "source_end_invalid")
+        return _unsafe_trim(
+            start,
+            start,
+            shot_duration_seconds,
+            "source_end_invalid",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
     if requested_end is not None and requested_end > duration_seconds + tolerance:
-        return _unsafe_trim(start, requested_end, shot_duration_seconds, "source_end_after_media")
+        return _unsafe_trim(
+            start,
+            requested_end,
+            shot_duration_seconds,
+            "source_end_after_media",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
 
     effective_end = min(requested_end or duration_seconds, duration_seconds)
     available = max(0.0, effective_end - start)
     if shot_duration_seconds is None:
+        if has_freeze_start:
+            return _unsafe_trim(
+                start,
+                effective_end,
+                shot_duration_seconds,
+                "freeze_requires_shot_duration",
+                crossfade_seconds=fade,
+                speed=playback_speed,
+            )
         return TrimAssessment(
             safe_for_shot=None,
             source_start_seconds=round(start, 6),
@@ -778,11 +905,69 @@ def assess_trim(
             required_seconds=None,
             margin_seconds=None,
             reason="shot_duration_not_provided",
+            speed=round(playback_speed, 6),
+            output_fps=output_fps if _valid_output_fps(output_fps) else None,
         )
     shot_duration = _finite_or_default(shot_duration_seconds, math.nan)
     if not math.isfinite(shot_duration) or shot_duration <= 0:
-        return _unsafe_trim(start, effective_end, shot_duration_seconds, "shot_duration_invalid")
-    required = shot_duration + fade
+        return _unsafe_trim(
+            start,
+            effective_end,
+            shot_duration_seconds,
+            "shot_duration_invalid",
+            crossfade_seconds=fade,
+            speed=playback_speed,
+        )
+    resolved_freeze = None
+    if has_freeze_start:
+        freeze_start = _finite_or_default(freeze_start_seconds, math.nan)
+        freeze_duration = _finite_or_default(freeze_duration_seconds, math.nan)
+        if (
+            not _valid_output_fps(output_fps)
+            or not math.isfinite(freeze_start)
+            or freeze_start < 0
+            or not math.isfinite(freeze_duration)
+            or not MIN_FREEZE_DURATION_SECONDS
+            <= freeze_duration
+            <= MAX_FREEZE_DURATION_SECONDS
+        ):
+            return _unsafe_trim(
+                start,
+                effective_end,
+                shot_duration_seconds,
+                "freeze_invalid",
+                crossfade_seconds=fade,
+                speed=playback_speed,
+            )
+        shot_frames = max(1, math.ceil(shot_duration * output_fps - 1e-9))
+        try:
+            resolved_freeze = resolve_freeze_frame(
+                FreezeFrameSpec(
+                    start_seconds=freeze_start,
+                    duration_seconds=freeze_duration,
+                ),
+                shot_frames,
+                output_fps,
+                "freeze_frame",
+            )
+        except RuntimeError:
+            return _unsafe_trim(
+                start,
+                effective_end,
+                shot_duration_seconds,
+                "freeze_invalid",
+                crossfade_seconds=fade,
+                speed=playback_speed,
+            )
+
+    required_output = shot_duration + fade
+    saved_output = (
+        resolved_freeze.added_frames / output_fps
+        if resolved_freeze is not None
+        else 0.0
+    )
+    moving_output = required_output - saved_output
+    required = moving_output * playback_speed
     margin = available - required
     safe = available + tolerance >= required
     return TrimAssessment(
@@ -793,6 +978,16 @@ def assess_trim(
         required_seconds=round(required, 6),
         margin_seconds=round(margin, 6),
         reason="safe" if safe else "insufficient_duration_no_loop",
+        speed=round(playback_speed, 6),
+        required_output_seconds=round(required_output, 6),
+        moving_output_seconds=round(moving_output, 6),
+        output_fps=output_fps if _valid_output_fps(output_fps) else None,
+        freeze_start_frame=(
+            resolved_freeze.start_frame if resolved_freeze is not None else None
+        ),
+        freeze_duration_frames=(
+            resolved_freeze.duration_frames if resolved_freeze is not None else None
+        ),
     )
 
 
@@ -915,6 +1110,10 @@ def main(
     parser.add_argument("--source-start", type=float, default=0.0)
     parser.add_argument("--source-end", type=float)
     parser.add_argument("--crossfade", type=float, default=0.0)
+    parser.add_argument("--speed", type=float, default=DEFAULT_VIDEO_SPEED)
+    parser.add_argument("--freeze-start", type=float)
+    parser.add_argument("--freeze-duration", type=float)
+    parser.add_argument("--output-fps", type=int, default=30)
     parser.add_argument(
         "--project-root",
         type=Path,
@@ -951,6 +1150,10 @@ def main(
                     source_start_seconds=args.source_start,
                     source_end_seconds=args.source_end,
                     crossfade_seconds=args.crossfade,
+                    speed=args.speed,
+                    freeze_start_seconds=args.freeze_start,
+                    freeze_duration_seconds=args.freeze_duration,
+                    output_fps=args.output_fps,
                 )
                 inspected_candidates.append(inspection)
             except VisualSearchError as exc:
@@ -1215,10 +1418,26 @@ def _unsafe_trim(
     end: float,
     shot_duration: float | None,
     reason: str,
+    *,
+    crossfade_seconds: float = 0.0,
+    speed: float = DEFAULT_VIDEO_SPEED,
 ) -> TrimAssessment:
-    required = (
+    shot = (
         float(shot_duration)
         if _is_finite_number(shot_duration) and float(shot_duration) > 0
+        else None
+    )
+    fade = _finite_or_default(crossfade_seconds, math.nan)
+    playback_speed = _finite_or_default(speed, math.nan)
+    valid_speed = MIN_VIDEO_SPEED <= playback_speed <= MAX_VIDEO_SPEED
+    required_output = (
+        shot + fade
+        if shot is not None and math.isfinite(fade) and fade >= 0
+        else None
+    )
+    required = (
+        required_output * playback_speed
+        if required_output is not None and valid_speed
         else None
     )
     return TrimAssessment(
@@ -1229,6 +1448,10 @@ def _unsafe_trim(
         required_seconds=round(required, 6) if required is not None else None,
         margin_seconds=None,
         reason=reason,
+        speed=round(playback_speed, 6) if valid_speed else None,
+        required_output_seconds=(
+            round(required_output, 6) if required_output is not None else None
+        ),
     )
 
 
@@ -1393,6 +1616,10 @@ def _is_finite_number(value: object) -> bool:
         return math.isfinite(float(value))
     except (TypeError, ValueError):
         return False
+
+
+def _valid_output_fps(value: object) -> bool:
+    return not isinstance(value, bool) and isinstance(value, int) and value > 0
 
 
 def _motion_value_to_score(value: float) -> float:

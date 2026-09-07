@@ -193,17 +193,40 @@ class AssetManager:
             )
         effective_end = min(requested_end or info.duration, info.duration)
         available = effective_end - start
-        required = scene.render_frames / fps
+        output_duration = scene.render_frames / fps
+        required = scene.required_source_duration(fps)
         if available + tolerance < required:
-            crossfade_note = (
-                f", incluindo {scene.transition_frames / fps:.3f}s de handle de crossfade"
-                if scene.transition_frames
+            output_crossfade = scene.transition_frames / fps
+            if scene.transition_frames and scene.shot.speed != 1.0:
+                source_crossfade = output_crossfade * scene.shot.speed
+                crossfade_note = (
+                    f", incluindo {source_crossfade:.3f}s de fonte para "
+                    f"{output_crossfade:.3f}s de handle de crossfade na saida"
+                )
+            elif scene.transition_frames:
+                crossfade_note = (
+                    f", incluindo {output_crossfade:.3f}s de handle de crossfade"
+                )
+            else:
+                crossfade_note = ""
+            speed_note = (
+                f" para {output_duration:.3f}s de saida em speed={scene.shot.speed:.3f}x"
+                if scene.shot.speed != 1.0
                 else ""
             )
+            freeze_note = ""
+            if scene.freeze_frame is not None:
+                freeze_duration = scene.freeze_frame.duration_frames / fps
+                saved_duration = scene.freeze_frame.added_frames / fps
+                freeze_note = (
+                    f", com freeze de {freeze_duration:.3f}s "
+                    f"({saved_duration:.3f}s sem consumir fonte)"
+                )
             raise RuntimeError(
                 f"Trecho de video insuficiente no shot {scene.shot.id!r} "
                 f"(asset {scene.asset.id!r}): disponivel={available:.3f}s; "
-                f"necessario={required:.3f}s{crossfade_note}. Loop nao e permitido."
+                f"necessario={required:.3f}s{speed_note}{freeze_note}{crossfade_note}. "
+                "Loop nao e permitido."
             )
         return info
 

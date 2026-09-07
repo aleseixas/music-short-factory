@@ -184,11 +184,20 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         info = asset_manager.preflight_video_scene(scene, config.render.fps)
         if info is not None:
             source_start = scene.shot.source_start_seconds
-            source_end = source_start + scene.render_frames / config.render.fps
+            source_duration = scene.required_source_duration(config.render.fps)
+            source_end = source_start + source_duration
+            freeze_note = ""
+            if scene.freeze_frame is not None:
+                freeze_note = (
+                    f" | freeze={scene.freeze_frame.start_frame / config.render.fps:.3f}s"
+                    f"+{scene.freeze_frame.duration_frames / config.render.fps:.3f}s"
+                )
             print(
                 f"[video] shot={scene.shot.id} | asset={scene.asset.id} | "
                 f"fonte={source_start:.3f}s-{source_end:.3f}s | "
+                f"speed={scene.shot.speed:.3f}x | "
                 f"original={info.width}x{info.height}@{info.fps:.3f}fps"
+                f"{freeze_note}"
             )
 
     write_timeline_plan(plan, work_dir / "timeline.resolved.json")

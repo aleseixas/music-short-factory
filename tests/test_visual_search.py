@@ -11,6 +11,7 @@ from PIL import Image
 from engine.ffmpeg import VideoStreamInfo
 from engine.visual_search import (
     OpenverseImageProvider,
+    VisualSearchError,
     WikimediaCommonsProvider,
     analyze_video_motion,
     assess_trim,
@@ -333,6 +334,45 @@ class VisualInspectionTests(unittest.TestCase):
         self.assertIsNone(inspection.motion)
         self.assertGreater(inspection.visual_score, 90.0)
 
+    def test_image_inspection_rejects_non_default_video_speed_without_download(self):
+        response = FakeResponse(openverse_image_payload())
+        with patch("engine.visual_search.requests.get", return_value=response):
+            result = OpenverseImageProvider().search(
+                "concert",
+                kind="image",
+                limit=1,
+            )[0]
+
+        with (
+            tempfile.TemporaryDirectory() as temp_dir,
+            patch("engine.visual_search.download_to_cache") as download,
+            self.assertRaisesRegex(VisualSearchError, "speed.*video"),
+        ):
+            inspect_visual_result(Path(temp_dir), result, speed=0.8)
+        download.assert_not_called()
+
+    def test_image_inspection_rejects_freeze_without_download(self):
+        response = FakeResponse(openverse_image_payload())
+        with patch("engine.visual_search.requests.get", return_value=response):
+            result = OpenverseImageProvider().search(
+                "concert",
+                kind="image",
+                limit=1,
+            )[0]
+
+        with (
+            tempfile.TemporaryDirectory() as temp_dir,
+            patch("engine.visual_search.download_to_cache") as download,
+            self.assertRaisesRegex(VisualSearchError, "freeze_frame.*video"),
+        ):
+            inspect_visual_result(
+                Path(temp_dir),
+                result,
+                freeze_start_seconds=0.4,
+                freeze_duration_seconds=0.5,
+            )
+        download.assert_not_called()
+
     def test_trim_assessment_includes_crossfade_handle(self):
         safe = assess_trim(
             10.0,
@@ -351,8 +391,172 @@ class VisualInspectionTests(unittest.TestCase):
         self.assertFalse(_safe_flag(insufficient))
         self.assertAlmostEqual(safe.as_dict()["available_seconds"], 4.0)
         self.assertAlmostEqual(safe.as_dict()["required_seconds"], 3.5)
+        self.assertAlmostEqual(safe.as_dict()["required_output_seconds"], 3.5)
+        self.assertAlmostEqual(safe.as_dict()["moving_output_seconds"], 3.5)
+        self.assertEqual(safe.as_dict()["speed"], 1.0)
+        self.assertIsNone(safe.as_dict()["freeze_frame"])
         self.assertAlmostEqual(safe.as_dict()["margin_seconds"], 0.5)
         self.assertLess(insufficient.as_dict()["margin_seconds"], 0.0)
+
+    def test_trim_assessment_accounts_for_frame_exact_freeze_and_crossfade(self):
+        frozen = assess_trim(
+            10.0,
+            shot_duration_seconds=3.0,
+            source_start_seconds=2.0,
+            source_end_seconds=5.1,
+            crossfade_seconds=0.5,
+            freeze_start_seconds=1.0,
+            freeze_duration_seconds=0.5,
+            output_fps=10,
+        )
+
+        payload = frozen.as_dict()
+        self.assertTrue(_safe_flag(frozen))
+        self.assertEqual(payload["reason"], "safe")
+        self.assertEqual(payload["required_output_seconds"], 3.5)
+        self.assertEqual(payload["moving_output_seconds"], 3.1)
+        self.assertEqual(payload["required_seconds"], 3.1)
+        self.assertEqual(payload["margin_seconds"], 0.0)
+        self.assertEqual(payload["output_fps"], 10)
+        self.assertEqual(
+            payload["freeze_frame"],
+            {
+                "start_frame": 10,
+                "duration_frames": 5,
+                "start_seconds": 1.0,
+                "duration_seconds": 0.5,
+                "source_frames_saved": 4,
+            },
+        )
+
+    def test_trim_assessment_combines_freeze_speed_and_crossfade(self):
+        frozen = assess_trim(
+            10.0,
+            shot_duration_seconds=3.0,
+            source_start_seconds=2.0,
+            source_end_seconds=6.65,
+            crossfade_seconds=0.5,
+            speed=1.5,
+            freeze_start_seconds=1.0,
+            freeze_duration_seconds=0.5,
+            output_fps=10,
+        )
+        without_freeze = assess_trim(
+            10.0,
+            shot_duration_seconds=3.0,
+            source_start_seconds=2.0,
+            source_end_seconds=6.65,
+            crossfade_seconds=0.5,
+            speed=1.5,
+            output_fps=10,
+        )
+
+        self.assertTrue(_safe_flag(frozen))
+        self.assertEqual(frozen.as_dict()["moving_output_seconds"], 3.1)
+        self.assertEqual(frozen.as_dict()["required_seconds"], 4.65)
+        self.assertEqual(frozen.as_dict()["margin_seconds"], 0.0)
+        self.assertFalse(_safe_flag(without_freeze))
+        self.assertEqual(without_freeze.reason, "insufficient_duration_no_loop")
+        self.assertEqual(without_freeze.as_dict()["required_seconds"], 5.25)
+
+    def test_trim_assessment_rejects_invalid_freeze_contract(self):
+        incomplete = (
+            {"freeze_start_seconds": 0.5},
+            {"freeze_duration_seconds": 0.5},
+        )
+        for values in incomplete:
+            with self.subTest(values=values):
+                assessment = assess_trim(
+                    10.0,
+                    shot_duration_seconds=3.0,
+                    **values,
+                )
+                self.assertFalse(_safe_flag(assessment))
+                self.assertEqual(assessment.reason, "freeze_incomplete")
+
+        missing_duration = assess_trim(
+            10.0,
+            freeze_start_seconds=0.5,
+            freeze_duration_seconds=0.5,
+        )
+        self.assertFalse(_safe_flag(missing_duration))
+        self.assertEqual(missing_duration.reason, "freeze_requires_shot_duration")
+
+        invalid = (
+            {"freeze_start_seconds": -0.01, "freeze_duration_seconds": 0.5},
+            {"freeze_start_seconds": True, "freeze_duration_seconds": 0.5},
+            {"freeze_start_seconds": float("nan"), "freeze_duration_seconds": 0.5},
+            {"freeze_start_seconds": 0.5, "freeze_duration_seconds": 0.09},
+            {"freeze_start_seconds": 0.5, "freeze_duration_seconds": 2.01},
+            {"freeze_start_seconds": 0.5, "freeze_duration_seconds": True},
+            {"freeze_start_seconds": 0.5, "freeze_duration_seconds": float("inf")},
+            {
+                "freeze_start_seconds": 2.8,
+                "freeze_duration_seconds": 0.3,
+            },
+            {
+                "freeze_start_seconds": 0.5,
+                "freeze_duration_seconds": 0.5,
+                "output_fps": 0,
+            },
+            {
+                "freeze_start_seconds": 0.5,
+                "freeze_duration_seconds": 0.5,
+                "output_fps": True,
+            },
+        )
+        for values in invalid:
+            with self.subTest(values=values):
+                assessment = assess_trim(
+                    10.0,
+                    shot_duration_seconds=3.0,
+                    **values,
+                )
+                self.assertFalse(_safe_flag(assessment))
+                self.assertEqual(assessment.reason, "freeze_invalid")
+                self.assertIsNone(assessment.as_dict()["freeze_frame"])
+
+    def test_trim_assessment_accounts_for_speed_and_rejects_invalid_values(self):
+        fast = assess_trim(
+            10.0,
+            shot_duration_seconds=3.0,
+            source_start_seconds=2.0,
+            source_end_seconds=6.0,
+            crossfade_seconds=0.5,
+            speed=1.2,
+        )
+        slow = assess_trim(
+            10.0,
+            shot_duration_seconds=3.0,
+            source_start_seconds=2.0,
+            source_end_seconds=6.0,
+            crossfade_seconds=0.5,
+            speed=0.8,
+        )
+
+        self.assertFalse(_safe_flag(fast))
+        self.assertEqual(fast.reason, "insufficient_duration_no_loop")
+        self.assertEqual(fast.as_dict()["speed"], 1.2)
+        self.assertAlmostEqual(fast.as_dict()["required_output_seconds"], 3.5)
+        self.assertAlmostEqual(fast.as_dict()["required_seconds"], 4.2)
+        self.assertAlmostEqual(fast.as_dict()["margin_seconds"], -0.2)
+
+        self.assertTrue(_safe_flag(slow))
+        self.assertEqual(slow.as_dict()["speed"], 0.8)
+        self.assertAlmostEqual(slow.as_dict()["required_seconds"], 2.8)
+        self.assertAlmostEqual(slow.as_dict()["margin_seconds"], 1.2)
+
+        for value in (0.49, 2.01, float("nan"), True):
+            with self.subTest(value=value):
+                invalid = assess_trim(
+                    10.0,
+                    shot_duration_seconds=3.0,
+                    speed=value,
+                )
+                self.assertFalse(_safe_flag(invalid))
+                self.assertEqual(invalid.reason, "speed_invalid")
+                self.assertIsNone(invalid.as_dict()["speed"])
+                self.assertIsNone(invalid.as_dict()["required_seconds"])
 
     def test_candidate_asset_entry_contains_only_renderer_fields(self):
         response = FakeResponse(openverse_image_payload())
@@ -418,8 +622,12 @@ class VisualInspectionTests(unittest.TestCase):
                     result,
                     shot_duration_seconds=4.0,
                     source_start_seconds=1.0,
-                    source_end_seconds=7.0,
+                    source_end_seconds=8.0,
                     crossfade_seconds=0.4,
+                    speed=1.5,
+                    freeze_start_seconds=1.0,
+                    freeze_duration_seconds=0.5,
+                    output_fps=10,
                 )
 
         network.assert_not_called()
@@ -429,6 +637,12 @@ class VisualInspectionTests(unittest.TestCase):
         self.assertEqual(payload["height"], 1080)
         self.assertEqual(payload["fps"], 30.0)
         self.assertTrue(payload["trim"]["safe"])
+        self.assertEqual(payload["trim"]["speed"], 1.5)
+        self.assertEqual(payload["trim"]["required_output_seconds"], 4.4)
+        self.assertEqual(payload["trim"]["moving_output_seconds"], 4.0)
+        self.assertEqual(payload["trim"]["required_seconds"], 6.0)
+        self.assertEqual(payload["trim"]["freeze_frame"]["start_frame"], 10)
+        self.assertEqual(payload["trim"]["freeze_frame"]["duration_frames"], 5)
         self.assertGreater(payload["motion_score"], 0.0)
         self.assertGreater(payload["opening_motion_score"], 0.0)
         self.assertGreaterEqual(payload["visual_score"], 0.0)
@@ -459,6 +673,17 @@ class VisualSearchDocumentationTests(unittest.TestCase):
         self.assertIn("praticamente estático", combined)
         self.assertIn("fallback", combined)
         self.assertIn("renderer nunca pesquisa", combined)
+        self.assertIn("--speed", guide)
+        self.assertIn("--freeze-start", guide)
+        self.assertIn("--freeze-duration", guide)
+        self.assertIn("--output-fps", guide)
+        self.assertIn("0.5", combined)
+        self.assertIn("2.0", combined)
+        self.assertIn("freeze_frame", combined)
+        self.assertIn("reveal", combined)
+        self.assertIn("payoff", combined)
+        self.assertIn("duração do shot + crossfade de saída", combined)
+        self.assertIn("voz, música e sfx", combined)
 
 
 if __name__ == "__main__":

@@ -16,6 +16,7 @@ from engine.ffmpeg import (
 )
 from engine.models import (
     AssetSpec,
+    FreezeFrameSpec,
     HighlightSpec,
     OverlayCue,
     ResolvedTextFxCue,
@@ -53,6 +54,7 @@ class VideoAssetRendererTests(unittest.TestCase):
                 fps=12,
                 working_scale=1,
                 intermediate_preset="ultrafast",
+                intermediate_crf=0,
                 preset="ultrafast",
             ),
         )
@@ -88,6 +90,27 @@ class VideoAssetRendererTests(unittest.TestCase):
                 "-pix_fmt",
                 "yuv420p",
                 cls.temporal_video,
+            ]
+        )
+
+        cls.moving_video = fixture_root / "moving.mp4"
+        run_ffmpeg(
+            [
+                "-y",
+                "-hide_banner",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=180x100:rate=12:duration=3",
+                "-c:v",
+                "libx264",
+                "-preset",
+                "ultrafast",
+                "-crf",
+                0,
+                "-pix_fmt",
+                "yuv420p",
+                cls.moving_video,
             ]
         )
 
@@ -167,6 +190,8 @@ class VideoAssetRendererTests(unittest.TestCase):
         duration: float = 1.0,
         source_start: float = 0.0,
         source_end: float | None = None,
+        speed: float = 1.0,
+        freeze_frame: FreezeFrameSpec | None = None,
         highlight: HighlightSpec | None = None,
         visual_fx: tuple[VisualFxCue, ...] = (),
     ) -> TimelinePlan:
@@ -180,6 +205,8 @@ class VideoAssetRendererTests(unittest.TestCase):
             highlight=highlight,
             source_start_seconds=source_start,
             source_end_seconds=source_end,
+            speed=speed,
+            freeze_frame=freeze_frame,
         )
         return build_timeline(
             Story("Test", "test", (ScriptSegment("hook", "one"),)),
@@ -209,6 +236,26 @@ class VideoAssetRendererTests(unittest.TestCase):
         )
         return frame
 
+    def frame_checksums(self, video: Path) -> list[str]:
+        output = ffmpeg_output(
+            [
+                "-hide_banner",
+                "-i",
+                video,
+                "-map",
+                "0:v:0",
+                "-f",
+                "framemd5",
+                "-",
+            ]
+        )
+        checksums: list[str] = []
+        for line in output.splitlines():
+            fields = line.split(",")
+            if len(fields) == 6 and fields[0].strip().isdigit():
+                checksums.append(fields[-1].strip())
+        return checksums
+
     def test_video_start_end_trim_uses_requested_source_window_without_loop(self):
         plan = self.single_plan(
             self.temporal_video,
@@ -222,7 +269,12 @@ class VideoAssetRendererTests(unittest.TestCase):
 
         arguments = ffmpeg_call.call_args.args[0]
         video_filter = arguments[arguments.index("-vf") + 1]
+        self.assertIsNone(plan.scenes[0].freeze_frame)
+        self.assertEqual(plan.scenes[0].source_frame_count, 12)
+        self.assertAlmostEqual(plan.scenes[0].required_source_duration(12), 1.0)
         self.assertIn("trim=start=1.000000:duration=1.000000", video_filter)
+        self.assertIn("setpts=PTS-STARTPTS", video_filter)
+        self.assertNotIn("setpts=(PTS-STARTPTS)/", video_filter)
         self.assertNotIn("-loop", arguments)
         self.assertNotIn("-stream_loop", arguments)
         self.assertIn("-an", arguments)
@@ -236,6 +288,128 @@ class VideoAssetRendererTests(unittest.TestCase):
             red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
         self.assertGreater(green, red + 60)
         self.assertGreater(green, blue + 60)
+
+    def test_freeze_repeats_exact_frames_and_keeps_shot_duration(self):
+        plan = self.single_plan(
+            self.moving_video,
+            freeze_frame=FreezeFrameSpec(
+                start_seconds=0.25,
+                duration_seconds=0.5,
+            ),
+        )
+        scene = plan.scenes[0]
+        self.assertEqual(scene.freeze_frame.start_frame, 3)
+        self.assertEqual(scene.freeze_frame.duration_frames, 6)
+        self.assertEqual(scene.freeze_frame.added_frames, 5)
+        self.assertEqual(scene.source_frame_count, 7)
+        self.assertAlmostEqual(scene.required_source_duration(12), 7 / 12)
+
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
+            output = self.renderer.render_scene(scene, self.moving_video, None)
+
+        arguments = ffmpeg_call.call_args.args[0]
+        self.assertNotIn("-loop", arguments)
+        self.assertNotIn("-stream_loop", arguments)
+        self.assertIn("-an", arguments)
+        self.assertEqual(probe_video_frame_count(output), 12)
+        self.assertAlmostEqual(probe_duration(output), 1.0, delta=0.06)
+
+        checksums = self.frame_checksums(output)
+        self.assertEqual(len(checksums), 12)
+        self.assertEqual(len(set(checksums[3:9])), 1)
+        self.assertNotEqual(checksums[2], checksums[3])
+        self.assertNotEqual(checksums[8], checksums[9])
+
+    def test_terminal_freeze_uses_no_loop_and_keeps_exact_frame_count(self):
+        plan = self.single_plan(
+            self.moving_video,
+            freeze_frame=FreezeFrameSpec(
+                start_seconds=0.75,
+                duration_seconds=0.25,
+            ),
+        )
+        scene = plan.scenes[0]
+        self.assertEqual(scene.freeze_frame.start_frame, 9)
+        self.assertEqual(scene.freeze_frame.duration_frames, 3)
+        self.assertEqual(scene.source_frame_count, 10)
+
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
+            output = self.renderer.render_scene(scene, self.moving_video, None)
+
+        arguments = ffmpeg_call.call_args.args[0]
+        self.assertNotIn("-loop", arguments)
+        self.assertNotIn("-stream_loop", arguments)
+        self.assertEqual(probe_video_frame_count(output), 12)
+        self.assertAlmostEqual(probe_duration(output), 1.0, delta=0.06)
+        checksums = self.frame_checksums(output)
+        self.assertEqual(len(set(checksums[9:12])), 1)
+        self.assertNotEqual(checksums[8], checksums[9])
+
+    def test_freeze_and_speed_share_frame_based_source_duration(self):
+        plan = self.single_plan(
+            self.moving_video,
+            duration=1.5,
+            speed=1.5,
+            freeze_frame=FreezeFrameSpec(
+                start_seconds=0.25,
+                duration_seconds=0.5,
+            ),
+        )
+        scene = plan.scenes[0]
+        self.assertEqual(scene.render_frames, 18)
+        self.assertEqual(scene.source_frame_count, 13)
+        self.assertAlmostEqual(scene.required_source_duration(12), 1.625)
+
+        output = self.renderer.render_scene(scene, self.moving_video, None)
+
+        self.assertEqual(probe_video_frame_count(output), 18)
+        self.assertAlmostEqual(probe_duration(output), 1.5, delta=0.06)
+        checksums = self.frame_checksums(output)
+        self.assertEqual(len(set(checksums[3:9])), 1)
+        self.assertNotEqual(checksums[8], checksums[9])
+
+    def test_speed_accelerates_only_video_and_keeps_shot_duration(self):
+        plan = self.single_plan(self.temporal_video, speed=2.0)
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
+            output = self.renderer.render_scene(
+                plan.scenes[0], self.temporal_video, None
+            )
+
+        arguments = ffmpeg_call.call_args.args[0]
+        video_filter = arguments[arguments.index("-vf") + 1]
+        self.assertIn("trim=start=0.000000:duration=2.000000", video_filter)
+        self.assertIn("setpts=(PTS-STARTPTS)/2.000000", video_filter)
+        self.assertIn("-an", arguments)
+        self.assertNotIn("-loop", arguments)
+        self.assertNotIn("-stream_loop", arguments)
+        self.assertEqual(probe_video_frame_count(output), 12)
+        self.assertAlmostEqual(probe_duration(output), 1.0, delta=0.06)
+
+        frame = self.extract_frame(output, 0.75, "accelerated.png")
+        with Image.open(frame) as opened:
+            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+        self.assertGreater(green, red + 60)
+        self.assertGreater(green, blue + 60)
+
+    def test_speed_slows_video_and_keeps_shot_duration(self):
+        plan = self.single_plan(self.temporal_video, speed=0.5)
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
+            output = self.renderer.render_scene(
+                plan.scenes[0], self.temporal_video, None
+            )
+
+        arguments = ffmpeg_call.call_args.args[0]
+        video_filter = arguments[arguments.index("-vf") + 1]
+        self.assertIn("trim=start=0.000000:duration=0.500000", video_filter)
+        self.assertIn("setpts=(PTS-STARTPTS)/0.500000", video_filter)
+        self.assertEqual(probe_video_frame_count(output), 12)
+        self.assertAlmostEqual(probe_duration(output), 1.0, delta=0.06)
+
+        frame = self.extract_frame(output, 0.75, "slowed.png")
+        with Image.open(frame) as opened:
+            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+        self.assertGreater(red, green + 60)
+        self.assertGreater(red, blue + 60)
 
     def test_landscape_video_is_center_cropped_fps_normalized_and_audio_is_discarded(self):
         plan = self.single_plan(self.landscape_audio_video)
@@ -425,6 +599,164 @@ class VideoAssetRendererTests(unittest.TestCase):
         self.assertEqual(graph.count("concat=n=2:v=1:a=0"), 4)
         self.assertEqual(probe_video_frame_count(output), 48)
         self.assertAlmostEqual(probe_duration(output), 4.0, delta=0.06)
+
+    def test_speed_preserves_video_to_video_crossfade_timing(self):
+        first_asset = asset("first", self.landscape_audio_video.name)
+        second_asset = asset("second", self.landscape_audio_video.name)
+        first = TimelineScene(
+            index=1,
+            shot=ShotSpec(
+                "shot_1",
+                "segment_1",
+                "first",
+                "hold",
+                "crossfade",
+                speed=1.5,
+            ),
+            asset=first_asset,
+            start_frame=0,
+            end_frame=12,
+            render_frames=14,
+            transition_frames=2,
+        )
+        second = TimelineScene(
+            index=2,
+            shot=ShotSpec(
+                "shot_2",
+                "segment_2",
+                "second",
+                "hold",
+                "cut",
+                speed=0.75,
+            ),
+            asset=second_asset,
+            start_frame=12,
+            end_frame=24,
+            render_frames=12,
+            transition_frames=0,
+        )
+        plan = TimelinePlan(
+            fps=12,
+            total_frames=24,
+            audio_duration=2.0,
+            scenes=(first, second),
+        )
+
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as render_calls:
+            clips = [
+                self.renderer.render_scene(
+                    scene, self.landscape_audio_video, None
+                )
+                for scene in plan.scenes
+            ]
+        first_arguments = render_calls.call_args_list[0].args[0]
+        first_filter = first_arguments[first_arguments.index("-vf") + 1]
+        second_arguments = render_calls.call_args_list[1].args[0]
+        second_filter = second_arguments[second_arguments.index("-vf") + 1]
+        self.assertIn("trim=start=0.000000:duration=1.750000", first_filter)
+        self.assertIn("setpts=(PTS-STARTPTS)/1.500000", first_filter)
+        self.assertIn("trim=start=0.000000:duration=0.750000", second_filter)
+        self.assertIn("setpts=(PTS-STARTPTS)/0.750000", second_filter)
+
+        captions = self.work / "speed-crossfade.ass"
+        write_ass_captions(
+            (WordTiming("one", 0, 2),),
+            captions,
+            90,
+            160,
+            self.style.captions,
+        )
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as compose_call:
+            output = self.renderer.compose_timeline(clips, plan, captions)
+        graph = compose_call.call_args.args[0][
+            compose_call.call_args.args[0].index("-filter_complex") + 1
+        ]
+        self.assertIn("xfade=transition=fade:duration=0.166667", graph)
+        self.assertEqual(probe_video_frame_count(output), 24)
+        self.assertAlmostEqual(probe_duration(output), 2.0, delta=0.06)
+
+    def test_freeze_with_speed_trim_and_crossfade_keeps_timeline_duration(self):
+        first_asset = asset("first", self.moving_video.name)
+        second_asset = asset("second", self.moving_video.name)
+        first_shot = ShotSpec(
+            "shot_1",
+            "segment_1",
+            "first",
+            "hold",
+            "crossfade",
+            source_start_seconds=0.5,
+            source_end_seconds=1.625,
+            speed=1.5,
+            freeze_frame=FreezeFrameSpec(0.25, 0.5),
+        )
+        second_shot = ShotSpec(
+            "shot_2",
+            "segment_2",
+            "second",
+            "hold",
+            "cut",
+        )
+        plan = build_timeline(
+            Story(
+                "Test",
+                "test",
+                (
+                    ScriptSegment("segment_1", "one"),
+                    ScriptSegment("segment_2", "two"),
+                ),
+            ),
+            (first_shot, second_shot),
+            {"first": first_asset, "second": second_asset},
+            (
+                WordTiming("one", 0.0, 0.9),
+                WordTiming("two", 1.1, 2.0),
+            ),
+            2.0,
+            12,
+            2 / 12,
+        )
+        first = plan.scenes[0]
+        self.assertEqual(first.frame_count, 12)
+        self.assertEqual(first.render_frames, 14)
+        self.assertEqual(first.transition_frames, 2)
+        self.assertEqual(first.freeze_frame.start_frame, 3)
+        self.assertEqual(first.freeze_frame.duration_frames, 6)
+        self.assertEqual(first.source_frame_count, 9)
+        self.assertAlmostEqual(first.required_source_duration(12), 1.125)
+        self.assertAlmostEqual(
+            first.shot.source_end_seconds - first.shot.source_start_seconds,
+            first.required_source_duration(12),
+        )
+
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as render_calls:
+            clips = [
+                self.renderer.render_scene(scene, self.moving_video, None)
+                for scene in plan.scenes
+            ]
+        first_arguments = render_calls.call_args_list[0].args[0]
+        self.assertNotIn("-loop", first_arguments)
+        self.assertNotIn("-stream_loop", first_arguments)
+        self.assertEqual(probe_video_frame_count(clips[0]), 14)
+        first_checksums = self.frame_checksums(clips[0])
+        self.assertEqual(len(set(first_checksums[3:9])), 1)
+        self.assertNotEqual(first_checksums[8], first_checksums[9])
+
+        captions = self.work / "freeze-speed-crossfade.ass"
+        write_ass_captions(
+            (WordTiming("one", 0, 1), WordTiming("two", 1, 2)),
+            captions,
+            90,
+            160,
+            self.style.captions,
+        )
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as compose_call:
+            output = self.renderer.compose_timeline(clips, plan, captions)
+        graph = compose_call.call_args.args[0][
+            compose_call.call_args.args[0].index("-filter_complex") + 1
+        ]
+        self.assertIn("xfade=transition=fade:duration=0.166667", graph)
+        self.assertEqual(probe_video_frame_count(output), 24)
+        self.assertAlmostEqual(probe_duration(output), 2.0, delta=0.06)
 
 
 if __name__ == "__main__":

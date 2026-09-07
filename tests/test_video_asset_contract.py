@@ -1,13 +1,23 @@
 import json
 import tempfile
 import unittest
+from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
 
 from engine.assets import AssetManager
 from engine.ffmpeg import VideoStreamInfo, preflight, probe_video_stream
-from engine.models import AssetSpec, ScriptSegment, ShotSpec, Story, TimelineScene
-from engine.timeline import load_timeline
+from engine.models import (
+    AssetSpec,
+    FreezeFrameSpec,
+    ResolvedFreezeFrame,
+    ScriptSegment,
+    ShotSpec,
+    Story,
+    TimelineScene,
+    WordTiming,
+)
+from engine.timeline import build_timeline, load_timeline, resolve_freeze_frame
 
 
 def asset(asset_id: str, file_name: str) -> AssetSpec:
@@ -66,12 +76,166 @@ class VideoShotSchemaTests(unittest.TestCase):
         default = self.load(self.shot()).shots[0]
         self.assertEqual(default.source_start_seconds, 0.0)
         self.assertIsNone(default.source_end_seconds)
+        self.assertEqual(default.speed, 1.0)
+        self.assertIsNone(default.freeze_frame)
 
         explicit = self.load(
-            self.shot(source_start_seconds=1.25, source_end_seconds=4.75)
+            self.shot(
+                source_start_seconds=1.25,
+                source_end_seconds=4.75,
+                speed=1.2,
+                freeze_frame={
+                    "start_seconds": 0.8,
+                    "duration_seconds": 0.6,
+                },
+            )
         ).shots[0]
         self.assertEqual(explicit.source_start_seconds, 1.25)
         self.assertEqual(explicit.source_end_seconds, 4.75)
+        self.assertEqual(explicit.speed, 1.2)
+        self.assertEqual(explicit.freeze_frame, FreezeFrameSpec(0.8, 0.6))
+
+    def test_freeze_frame_accepts_safe_boundaries_and_rejects_invalid_values(self):
+        for duration in (0.10, 0.6, 2.0):
+            with self.subTest(duration=duration):
+                freeze = self.load(
+                    self.shot(
+                        freeze_frame={
+                            "start_seconds": 0,
+                            "duration_seconds": duration,
+                        }
+                    )
+                ).shots[0].freeze_frame
+                self.assertEqual(freeze, FreezeFrameSpec(0.0, duration))
+
+        cases = (
+            ([], "objeto ou null"),
+            ({}, "precisa definir"),
+            ({"start_seconds": 0.2}, "precisa definir"),
+            ({"duration_seconds": 0.5}, "precisa definir"),
+            (
+                {"start_seconds": -0.01, "duration_seconds": 0.5},
+                "maior ou igual a zero",
+            ),
+            (
+                {"start_seconds": True, "duration_seconds": 0.5},
+                "numero finito",
+            ),
+            (
+                {"start_seconds": float("nan"), "duration_seconds": 0.5},
+                "numero finito",
+            ),
+            (
+                {"start_seconds": 0.2, "duration_seconds": 0.09},
+                "entre 0.10 e 2.00",
+            ),
+            (
+                {"start_seconds": 0.2, "duration_seconds": 2.01},
+                "entre 0.10 e 2.00",
+            ),
+            (
+                {"start_seconds": 0.2, "duration_seconds": True},
+                "numero finito",
+            ),
+            (
+                {"start_seconds": 0.2, "duration_seconds": float("inf")},
+                "numero finito",
+            ),
+        )
+        for value, message in cases:
+            with self.subTest(value=value), self.assertRaisesRegex(
+                RuntimeError, message
+            ):
+                self.load(self.shot(freeze_frame=value))
+
+    def test_freeze_frame_is_rejected_for_image(self):
+        with self.assertRaisesRegex(RuntimeError, "freeze_frame.*nao e video"):
+            self.load(
+                self.shot(
+                    "photo",
+                    freeze_frame={
+                        "start_seconds": 0.2,
+                        "duration_seconds": 0.5,
+                    },
+                ),
+                self.image,
+            )
+
+    def test_freeze_frame_is_resolved_with_ceil_and_must_fit_logical_shot(self):
+        resolved = resolve_freeze_frame(
+            FreezeFrameSpec(start_seconds=0.333, duration_seconds=0.101),
+            shot_frames=30,
+            fps=30,
+        )
+        self.assertEqual(resolved, ResolvedFreezeFrame(10, 4))
+        self.assertEqual(resolved.added_frames, 3)
+
+        shot = self.load(
+            self.shot(
+                speed=1.5,
+                freeze_frame={
+                    "start_seconds": 0.2,
+                    "duration_seconds": 0.4,
+                },
+            )
+        ).shots[0]
+        plan = build_timeline(
+            self.story,
+            (shot,),
+            {"clip": self.video},
+            (WordTiming("one", 0.0, 1.0),),
+            1.0,
+            30,
+            0.2,
+        )
+        scene = plan.scenes[0]
+        self.assertEqual(scene.frame_count, 30)
+        self.assertEqual(scene.render_frames, 30)
+        self.assertEqual(scene.freeze_frame, ResolvedFreezeFrame(6, 12))
+        self.assertEqual(scene.source_frame_count, 19)
+        self.assertAlmostEqual(scene.required_source_duration(30), 0.95)
+
+        outside = self.load(
+            self.shot(
+                freeze_frame={
+                    "start_seconds": 0.8,
+                    "duration_seconds": 0.3,
+                }
+            )
+        ).shots[0]
+        with self.assertRaisesRegex(RuntimeError, "nao pode invadir.*crossfade"):
+            build_timeline(
+                self.story,
+                (outside,),
+                {"clip": self.video},
+                (WordTiming("one", 0.0, 1.0),),
+                1.0,
+                30,
+                0.2,
+            )
+
+    def test_speed_accepts_safe_boundaries_and_rejects_invalid_values(self):
+        for value in (0.5, 1.0, 2.0):
+            with self.subTest(value=value):
+                self.assertEqual(
+                    self.load(self.shot(speed=value)).shots[0].speed,
+                    value,
+                )
+
+        cases = (
+            (0.49, "entre 0.5 e 2.0"),
+            (2.01, "entre 0.5 e 2.0"),
+            (0, "entre 0.5 e 2.0"),
+            (True, "numero finito"),
+            (float("nan"), "numero finito"),
+            (float("inf"), "numero finito"),
+            ("fast", "numero finito"),
+        )
+        for value, message in cases:
+            with self.subTest(value=value), self.assertRaisesRegex(
+                RuntimeError, message
+            ):
+                self.load(self.shot(speed=value))
 
     def test_invalid_source_windows_are_rejected(self):
         cases = (
@@ -95,10 +259,18 @@ class VideoShotSchemaTests(unittest.TestCase):
         legacy = self.load(self.shot("photo"), self.image).shots[0]
         self.assertEqual(legacy.source_start_seconds, 0.0)
         self.assertIsNone(legacy.source_end_seconds)
+        self.assertEqual(legacy.speed, 1.0)
+        self.assertIsNone(legacy.freeze_frame)
+
+        explicit_default = self.load(
+            self.shot("photo", speed=1.0), self.image
+        ).shots[0]
+        self.assertEqual(explicit_default.speed, 1.0)
 
         for values in (
             {"source_start_seconds": 0.1},
             {"source_end_seconds": 1.0},
+            {"speed": 0.8},
         ):
             with self.subTest(values=values), self.assertRaisesRegex(
                 RuntimeError, "nao e video"
@@ -240,6 +412,8 @@ class VideoWindowPreflightTests(unittest.TestCase):
         source_end: float | None,
         semantic_frames: int,
         transition_frames: int,
+        speed: float = 1.0,
+        freeze_frame: ResolvedFreezeFrame | None = None,
     ):
         assets_dir = root / "assets"
         assets_dir.mkdir()
@@ -253,6 +427,7 @@ class VideoWindowPreflightTests(unittest.TestCase):
             "cut",
             source_start_seconds=source_start,
             source_end_seconds=source_end,
+            speed=speed,
         )
         scene = TimelineScene(
             index=1,
@@ -262,6 +437,7 @@ class VideoWindowPreflightTests(unittest.TestCase):
             end_frame=semantic_frames,
             render_frames=semantic_frames + transition_frames,
             transition_frames=transition_frames,
+            freeze_frame=freeze_frame,
         )
         manager = AssetManager(assets_dir, root / "work", 90, 160, 1)
         return manager, scene
@@ -298,6 +474,79 @@ class VideoWindowPreflightTests(unittest.TestCase):
                     r"0\.200s de handle de crossfade.*Loop nao e permitido",
                 ):
                     manager.preflight_video_scene(scene, fps=10)
+
+    def test_speed_changes_source_window_and_crossfade_handle_requirements(self):
+        info = VideoStreamInfo(duration=10.0, width=1920, height=1080, fps=24.0)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            fast_manager, fast_scene = self.make_manager_and_scene(
+                root,
+                source_start=1.0,
+                source_end=3.4,
+                semantic_frames=10,
+                transition_frames=2,
+                speed=2.0,
+            )
+            with patch("engine.assets.probe_video_stream", return_value=info):
+                self.assertEqual(
+                    fast_manager.preflight_video_scene(fast_scene, fps=10), info
+                )
+
+            fast_scene = replace(
+                fast_scene,
+                shot=replace(fast_scene.shot, source_end_seconds=3.39),
+            )
+            with self.assertRaisesRegex(
+                RuntimeError,
+                r"necessario=2\.400s.*speed=2\.000x.*0\.400s de fonte.*"
+                r"0\.200s de handle de crossfade.*Loop nao e permitido",
+            ):
+                fast_manager.preflight_video_scene(fast_scene, fps=10)
+
+        with tempfile.TemporaryDirectory() as directory:
+            slow_manager, slow_scene = self.make_manager_and_scene(
+                Path(directory),
+                source_start=1.0,
+                source_end=1.6,
+                semantic_frames=10,
+                transition_frames=2,
+                speed=0.5,
+            )
+            with patch("engine.assets.probe_video_stream", return_value=info):
+                self.assertEqual(
+                    slow_manager.preflight_video_scene(slow_scene, fps=10), info
+                )
+
+    def test_freeze_reduces_source_window_with_speed_and_preserves_crossfade_handle(self):
+        info = VideoStreamInfo(duration=10.0, width=1920, height=1080, fps=24.0)
+        with tempfile.TemporaryDirectory() as directory:
+            manager, scene = self.make_manager_and_scene(
+                Path(directory),
+                source_start=1.0,
+                source_end=2.8,
+                semantic_frames=10,
+                transition_frames=2,
+                speed=2.0,
+                freeze_frame=ResolvedFreezeFrame(
+                    start_frame=3,
+                    duration_frames=4,
+                ),
+            )
+            self.assertEqual(scene.source_frame_count, 9)
+            self.assertAlmostEqual(scene.required_source_duration(10), 1.8)
+            with patch("engine.assets.probe_video_stream", return_value=info):
+                self.assertEqual(manager.preflight_video_scene(scene, fps=10), info)
+
+            insufficient = replace(
+                scene,
+                shot=replace(scene.shot, source_end_seconds=2.79),
+            )
+            with self.assertRaisesRegex(
+                RuntimeError,
+                r"necessario=1\.800s.*speed=2\.000x.*"
+                r"handle de crossfade.*Loop nao e permitido",
+            ):
+                manager.preflight_video_scene(insufficient, fps=10)
 
     def test_window_cannot_exceed_probed_duration(self):
         info = VideoStreamInfo(duration=3.0, width=1280, height=720, fps=30.0)
