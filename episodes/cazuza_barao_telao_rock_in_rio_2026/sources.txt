@@ -1,0 +1,43 @@
+FONTES FACTUAIS
+
+Folha de S.Paulo — 06/09/2026 — Cazuza surge no telão e canta com Barão Vermelho no Rock in Rio
+https://www1.folha.uol.com.br/ilustrada/2026/09/cazuza-surge-no-telao-e-canta-com-barao-vermelho-no-rock-in-rio.shtml
+Confirma: formação com Frejat, Maurício Barros, Dé Palmeira e Guto Goffi; ligação com Rock in Rio 1985; Cazuza no telão; gravação de voz em dueto virtual de Todo Amor Que Houver Nessa Vida; repertório; chuva e frio.
+
+Folha de S.Paulo — 01/05/2026 — Barão Vermelho abre turnê de reencontro com Cazuza em dueto no telão
+https://www1.folha.uol.com.br/ilustrada/2026/05/barao-vermelho-abre-turne-de-reencontro-com-cazuza-em-dueto-no-telao.shtml
+Confirma: estreia da turnê de reencontro; uso de fragmento do show O Tempo Não Para para o dueto virtual; formação original; presença de imagens de 1985 na abertura.
+
+Folha de S.Paulo — 29/04/2026 — Barão Vermelho reúne integrantes originais em turnê pelo Brasil
+https://www1.folha.uol.com.br/ilustrada/2026/04/barao-vermelho-reune-integrantes-originais-em-turne-pelo-brasil.shtml
+Contexto da reunião de Frejat, Maurício Barros, Dé Palmeira e Guto Goffi em 2026.
+
+Cazuza / YouTube — Barão Vermelho no Rock in Rio 1985
+https://www.youtube.com/watch?v=FAbV3-MxEXY
+Arquivo audiovisual de referência da apresentação de 1985.
+
+YouTube — arquivo Barão Vermelho Rock in Rio 1985
+https://www.youtube.com/watch?v=qcsmLxBV2oQ
+Referência visual histórica adicional.
+
+PROVENIÊNCIA VISUAL PRINCIPAL
+
+Rock in Rio / Folha — imagem do show de 06/09/2026 com Cazuza projetado
+https://f.i.uol.com.br/fotografia/2026/09/06/17887262686a9dcbfc534ba_1788726268_3x2_md.jpg
+
+Pridia / Folha — imagem da turnê de reencontro em 30/04/2026
+https://f.i.uol.com.br/fotografia/2026/05/01/177761348169f43aa98c5fa_1777613481_3x2_md.jpg
+
+Wikimedia Commons — Barão Vermelho histórico
+https://commons.wikimedia.org/wiki/File:Barao_Vermelho.jpg
+
+Wikimedia Commons — Cazuza e Ezequiel Neves
+https://commons.wikimedia.org/wiki/File:Cazuza_e_Ezequiel_Neves.jpg
+
+Wikimedia Commons — Cazuza em 1987
+https://commons.wikimedia.org/wiki/File:Cazuza_em_1987.jpg
+
+Demais mídias abertas/stock contextual: URLs e créditos registrados diretamente em assets.json e visual_candidates.json.
+
+BACKGROUND MUSIC
+Foram pesquisadas opções externas novas em estilos rock cinematográfico, emo/punk instrumental, blues-rock, retro rock e violão nostálgico. As candidatas encontradas não foram promovidas a novo profile dedicado nesta rodada por metadata operacional/Content ID insuficiente ou menos segura que o catálogo curado. Foi escolhido fallback_social_urban, que usa faixas remotas Pixabay curadas e inclui opção rock/R&B com metadata operacional conhecida. O profile é fallback da repo, não áudio comercial do artista.
