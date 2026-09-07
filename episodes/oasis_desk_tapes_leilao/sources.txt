@@ -1,0 +1,55 @@
+FACTUAL SOURCES
+
+NME — 7 Sep 2026 — Oasis reportedly “unhappy” with sale of unheard and rare recordings they want “back in their possession”:
+https://www.nme.com/news/music/oasis-reportedly-unhappy-with-sale-of-unheard-and-rare-recordings-3967412
+Confirms: 63 concert recordings; 100+ hours of rehearsals/soundchecks/dialogue; £1.2m–£1.6m guide; Oct 3 auction; Huw Richards recorded from the sound desk; Owain Richards selling; Oasis wants the tapes back; band retains IP and commercial exploitation requires consent.
+
+The Guardian — 7 Sep 2026 — Oasis recordings up for auction despite band's objections:
+https://www.theguardian.com/music/2026/sep/07/auction-oasis-recordings-archive-concerts-rehearsals-conversations
+Confirms: 209 DAT tapes, 73 analogue cassettes and three MiniDiscs; archive compiled 1994–2001; buyer cannot commercially release recordings without Oasis permission; Loch Lomond recording described as believed sole recording.
+
+The Independent — 7 Sep 2026 — Oasis reportedly dispute auction of rare concert master recordings:
+https://www.independent.co.uk/bulletin/culture/oasis-auction-concert-rehersal-tapes-b3045913.html
+Independent confirmation of dispute and auction scope.
+
+NME — 6 Sep 2026 — Noel and Liam Gallagher at Venice Film Festival:
+https://www.nme.com/news/music/watch-noel-and-liam-gallagher-make-first-public-appearances-together-outside-of-oasis-reunion-tour-3967179
+Confirms the brothers appeared together in Venice for the reunion documentary premiere.
+
+Reuters — 5 Sep 2026 — Oasis bring swagger to Venice as documentary celebrates reunion:
+https://www.reuters.com/business/media-telecom/oasis-bring-swagger-venice-documentary-celebrates-reunion-2026-09-05/
+Independent confirmation of Venice premiere/current cultural moment.
+
+VISUAL DISCOVERY / BASE ASSETS
+
+Oasis backstage editorial image — GQ Mexico:
+https://media.gq.com.mx/photos/66d1fe8eabd9c778bbb21d63/master/w_1024%2Cc_limit/Oasis_gig_85044598.jpg
+
+Oasis studio editorial image — Esquire Singapore:
+https://esquiresg.s3.ap-southeast-2.amazonaws.com/wp-content/uploads/2024/04/oasis.jpg
+
+Oasis / Loch Lomond editorial image — Glasgow Live via Yahoo UK:
+https://s.yimg.com/ny/api/res/1.2/TeNmcK1RJ0MARuvDdwIUBQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTE2MjA7aD0xMDc4O2NmPXdlYnA-/https%3A/media.zenfs.com/en/glasgow_live_848/9d5495895aad1d3efc92d76f96676038
+
+DAT tapes visual — AV Works:
+https://images.squarespace-cdn.com/content/v1/5fe388feefcd990a12d9ccd9/1615036588186-FP166DPC9AAHU731WT8T/BASF%2BDAT%2BMaster%2Ben%2BSONY%2B2PDP-90A%2Bcassettes
+
+Oasis 1994 video candidate / thumbnail:
+https://www.youtube.com/watch?v=w9X3vNjb52c
+
+Oasis Noel 1994 interview candidate:
+https://www.youtube.com/watch?v=fSGEV2OvfTc
+
+Oasis documentary 2026 teaser candidate — Disney Korea:
+https://www.youtube.com/watch?v=Z8J8ncHT6FY
+
+Oasis Live Forever candidate:
+https://www.youtube.com/watch?v=xiD0ZGEPbRA
+
+Wikimedia Commons base visual files are individually identified in assets.json with creator/license metadata where confirmed. Unclear metadata was intentionally left blank/unknown rather than inferred.
+
+BACKGROUND SEARCH
+External-first searches attempted across five distinct directions: Britpop guitar documentary instrumental; 90s alternative-rock instrumental; archival tape tension instrumental; nostalgic guitar documentary; cinematic rock instrumental. No new direct audio candidate with sufficiently clear compatibility/provenance was resolved in this run. Per docs/audio-search.md fallback order, selected curated repo profile fallback_social_cinematic; the engine deterministically selects its Pixabay-backed track for this slug.
+
+SFX
+All SFX types are existing entries from assets/audio/sfx/catalog.json; no per-episode SFX source was added.
