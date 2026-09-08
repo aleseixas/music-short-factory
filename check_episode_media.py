@@ -10,7 +10,7 @@ from engine.assets import AssetManager
 from engine.audio_library import AudioCatalogEntry
 from engine.config import load_project_config
 from engine.episode import load_episode
-from engine.models import BackgroundMusicSpec
+from engine.models import AssetSpec, BackgroundMusicSpec, Episode
 from engine.music import MUSIC_ROOT, background_music_candidates, resolve_background_music
 
 
@@ -89,6 +89,54 @@ def _normalize_url_identity(value: str) -> str:
             "",
         )
     ).casefold()
+
+
+def _visual_aliases(asset: AssetSpec) -> tuple[tuple[str, str], ...]:
+    aliases: list[tuple[str, str]] = [
+        ("asset_id", asset.id.casefold()),
+        ("file", asset.file.casefold()),
+    ]
+    if asset.url:
+        aliases.append(("url", _normalize_url_identity(asset.url)))
+    return tuple(aliases)
+
+
+def _assert_intra_episode_visuals_unique(episode: Episode) -> None:
+    """Block reuse of the same main visual across shots in one episode."""
+
+    seen: dict[tuple[str, str], tuple[str, str]] = {}
+
+    for shot in episode.shots:
+        asset = episode.assets.get(shot.asset_id)
+        if asset is None:
+            raise RuntimeError(
+                f"Shot {shot.id!r} referencia asset inexistente {shot.asset_id!r}."
+            )
+
+        aliases = _visual_aliases(asset)
+        for identity in aliases:
+            previous = seen.get(identity)
+            if previous is None:
+                continue
+
+            previous_shot, previous_asset = previous
+            identity_kind, identity_value = identity
+            raise RuntimeError(
+                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: o mesmo visual foi usado "
+                "mais de uma vez dentro do episodio. "
+                f"Shot {shot.id!r} (asset={asset.id!r}) repete o visual de "
+                f"{previous_shot!r} (asset={previous_asset!r}); "
+                f"identidade={identity_kind}:{identity_value}. "
+                "Cada shot principal deve usar uma imagem ou video diferente."
+            )
+
+        for identity in aliases:
+            seen[identity] = (shot.id, asset.id)
+
+    print(
+        "[preflight] intra-episode visual uniqueness OK: "
+        f"{len(episode.shots)} shot(s) sem reutilizacao"
+    )
 
 
 def _candidate_aliases(entry: AudioCatalogEntry) -> set[str]:
@@ -237,6 +285,9 @@ def main() -> int:
         allowed_assets_root=episode.directory,
         video_cache_dir=video_cache,
     )
+
+    print("[preflight] validating intra-episode visual uniqueness...")
+    _assert_intra_episode_visuals_unique(episode)
 
     print(f"[preflight] validating {len(episode.assets)} episode assets...")
     manager.ensure_all(tuple(episode.assets.values()))
