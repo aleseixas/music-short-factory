@@ -22,6 +22,40 @@ Não continue trabalhando numa candidata duplicada e não faça alterações exp
 
 Se todas as candidatas viáveis forem duplicadas ou falharem nos demais gates, não force uma escolha e não crie episódio nem queue.
 
+## EVENTOS MUSICAIS DO MÊS — PRIORIDADE EDITORIAL OBRIGATÓRIA
+
+Antes de fechar o pool/ranking de temas, pesquise os **grandes eventos musicais que estão acontecendo no mês REAL da execução**, com atenção especial a festivais, premiações, grandes turnês, shows únicos, despedidas, retornos e acontecimentos que estejam dominando a conversa musical no Brasil ou no mundo.
+
+Eventos atuais recebem um bônus editorial forte porque combinam reconhecimento, busca, conversa social e senso de urgência. Quando houver um grande evento relevante no mês, mantenha **pelo menos 2–3 candidatas plausíveis ligadas a ele no pool inicial**, desde que existam histórias realmente fortes e verificáveis. Não transforme o canal em agenda de festival e não escolha um assunto fraco apenas por ser atual: a história ainda precisa passar pelos gates de hook, novidade, fontes e potencial de audiência.
+
+Ao pesquisar um evento atual, não se limite a “quem tocou” ou a um resumo de setlist. Procure principalmente ângulos que gerem curiosidade e comentário, como:
+
+- polêmica ou controvérsia **confirmada**;
+- fala inesperada no palco;
+- transmissão cortada ou problema de transmissão;
+- falha de som, atraso, cancelamento ou problema técnico;
+- reação forte do público;
+- vaia, crítica ou recepção inesperada;
+- atitude incomum de artista;
+- acidente ou incidente relevante;
+- mudança de última hora;
+- participação surpresa;
+- reencontro, despedida ou momento histórico;
+- bastidor curioso;
+- performance que viralizou;
+- comparação ou conflito entre artistas/fandoms;
+- acontecimento fora do palco que tenha relação clara com o festival/show e relevância musical/cultural.
+
+**Polêmica tem prioridade de hook quando for real e bem documentada, não quando depender de rumor.** Nunca fabrique escândalo, não transforme opinião isolada em consenso e não use acusação sem qualificação/fonte suficiente. A regra continua sendo: sensacionalista na forma, factual no conteúdo.
+
+### PRIORIDADE ESPECIAL — SETEMBRO DE 2026 / ROCK IN RIO
+
+Durante **setembro de 2026**, o **Rock in Rio 2026 deve entrar obrigatoriamente na pesquisa e no pool de temas enquanto o evento e suas repercussões estiverem atuais**. Dê bônus forte às melhores histórias surgidas nos shows e ao redor deles, especialmente quando envolverem artistas de grande reconhecimento e algum elemento de tensão, surpresa, polêmica confirmada, falha, viralização, bastidor ou momento histórico.
+
+Não faça um vídeo genérico “sobre o Rock in Rio”. Prefira uma história específica com protagonista, acontecimento e payoff claros. Exemplos de formatos a procurar, sempre confirmando os fatos na web na data da execução: `artista + problema no show`, `artista + fala que repercutiu`, `show + transmissão cortada`, `artista + reação do público`, `momento inesperado + consequência`, `bastidor + revelação`, `performance + viralização`.
+
+Enquanto o Rock in Rio estiver acontecendo ou ainda gerando repercussão recente, entre duas candidatas de força editorial semelhante, **prefira a candidata ligada ao festival**. Depois que a relevância cair, volte a tratá-lo como qualquer outro evento histórico e não force a pauta.
+
 ## EDITOR MODE — regra central
 
 Não pense como gerador de JSON. Pense como editor de vídeo vertical.
