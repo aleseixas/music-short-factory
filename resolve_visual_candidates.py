@@ -1,11 +1,18 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 from urllib.parse import urlparse
 
-from engine.visual_search import VisualSearchResult, inspect_visual_result
+from engine.visual_search import VisualSearchResult, assess_trim, inspect_visual_result
+from engine.visual_repetition import (
+    VisualFingerprint,
+    assess_repetition,
+    fingerprint_to_usage,
+    load_visual_history,
+)
 
 
 APPROVED_VISUAL_HOSTS = frozenset({"upload.wikimedia.org", "live.staticflickr.com"})
@@ -140,6 +147,9 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
         source_start_seconds=start if result.kind == "video" else 0.0,
         source_end_seconds=_number(end) if result.kind == "video" and end is not None else None,
         crossfade_seconds=crossfade if result.kind == "video" else 0.0,
+        **_playback_options(slot, result.kind),
+        repetition_history=slot.get("_repetition_history"),
+        exclude_episode=slot.get("_episode"),
     )
 
     minimum = _number(
@@ -164,6 +174,9 @@ def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspe
         "name": result.name,
         "kind": result.kind,
         "visual_score": inspection.visual_score,
+        "selection_score": inspection.selection_score,
+        "repetition": inspection.repetition.as_dict() if inspection.repetition else None,
+        "downgraded_for_repetition": bool(inspection.repetition and inspection.repetition.is_repeated),
         "width": inspection.width,
         "height": inspection.height,
         "duration_seconds": inspection.duration_seconds,
@@ -176,6 +189,41 @@ def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspe
         "warnings": reasons + list(inspection.warnings),
         "editorial_rank": int(max(1, _number(candidate.get("editorial_rank"), index))),
     }
+
+
+def _playback_options(slot: dict, kind: str) -> dict:
+    """Keep inspection tied to the playback contract of the actual timeline shot."""
+    shot = slot.get("_shot", {}) if kind == "video" else {}
+    freeze = shot.get("freeze_frame") or {}
+    return {
+        "speed": shot.get("speed", 1.0),
+        "freeze_start_seconds": freeze.get("start_seconds"),
+        "freeze_duration_seconds": freeze.get("duration_seconds"),
+        "output_fps": slot.get("_output_fps", 30),
+    }
+
+
+def _url_repetition(candidate: dict, slot: dict, history):
+    kind = str(candidate.get("kind") or "").lower()
+    duration = None
+    start = _number(candidate.get("source_start_seconds"), 0.0) if kind == "video" else 0.0
+    if kind == "video":
+        assessment = assess_trim(
+            1e12,
+            shot_duration_seconds=_number(slot.get("required_seconds"), DEFAULT_REQUIRED_SECONDS),
+            source_start_seconds=start,
+            crossfade_seconds=_number(slot.get("crossfade_seconds"), DEFAULT_CROSSFADE_SECONDS),
+            **_playback_options(slot, kind),
+        )
+        duration = assessment.required_seconds
+    identity = candidate.get("url") or candidate.get("source_page_url")
+    fingerprint = VisualFingerprint.from_dict({
+        "kind": kind,
+        "urls": [identity] if identity else [],
+        "source_start_seconds": start,
+        "source_duration_seconds": duration,
+    })
+    return assess_repetition(fingerprint, history)
 
 
 def resolve_episode(project_root: Path, slug: str) -> int:
@@ -213,6 +261,19 @@ def resolve_episode(project_root: Path, slug: str) -> int:
     selections: dict[str, dict] = {}
     candidate_scores: dict[str, list[dict]] = {}
     failures: list[str] = []
+    recorded_at = datetime.now(timezone.utc).isoformat()
+    visual_usage: list[dict] = []
+    try:
+        history, history_warnings = load_visual_history(project_root, exclude_episode=slug)
+    except Exception:
+        history, history_warnings = (), ("Historico visual indisponivel; ranking tecnico mantido.",)
+    try:
+        render_config = _load_json(project_root / "config" / "config.json").get("render", {})
+        output_fps = int(render_config.get("fps", 30))
+        if output_fps <= 0:
+            output_fps = 30
+    except (OSError, ValueError, TypeError, RuntimeError):
+        output_fps = 30
 
     for slot in slots:
         if not isinstance(slot, dict):
@@ -225,6 +286,11 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             continue
 
         current_asset = original_assets_by_id.get(slot_id)
+        slot_shots = [shot for shot in shots if isinstance(shot, dict) and shot.get("asset") == slot_id]
+        # The final post-render history records each real shot separately. Here
+        # the authored slot duration provides the candidate-selection estimate.
+        slot = dict(slot, _shot=slot_shots[0] if slot_shots else {},
+                    _output_fps=output_fps, _repetition_history=history, _episode=slug)
         target_kind = _asset_kind(current_asset)
         if target_kind not in {"image", "video"}:
             failures.append(f"{slot_id}: tipo do asset atual nao identificado; mantendo asset existente")
@@ -256,7 +322,16 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             )
             continue
 
-        indexed.sort(key=lambda pair: _metadata_priority(pair[1], pair[0]), reverse=True)
+        preselection_repetition = {}
+        for index, candidate in indexed:
+            try:
+                preselection_repetition[index] = _url_repetition(candidate, slot, history)
+            except Exception:
+                pass
+        indexed.sort(key=lambda pair: (
+            preselection_repetition[pair[0]].penalty if pair[0] in preselection_repetition else 0.0,
+            *_metadata_priority(pair[1], pair[0]),
+        ), reverse=True)
         shortlist = indexed[:inspect_top]
         print(
             f"Visual slot {slot_id}: {len(candidates)} candidatos totais, "
@@ -268,7 +343,7 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             try:
                 result, inspection, reasons = _inspect_candidate(project_root, slot, candidate, index)
                 record = _score_record(index, candidate, result, inspection, reasons)
-                inspected.append((inspection.visual_score, -record["editorial_rank"], candidate, result, inspection, reasons, record))
+                inspected.append((record["selection_score"], -record["editorial_rank"], candidate, result, inspection, reasons, record))
                 status = "ELIGIBLE" if not reasons else "SCORED_ONLY"
                 print(f"Visual candidate {status} {slot_id}[{index}]: {result.kind} score={inspection.visual_score:.1f}")
             except Exception as exc:
@@ -277,6 +352,19 @@ def resolve_episode(project_root: Path, slug: str) -> int:
 
         inspected.sort(key=lambda item: (item[0], item[1]), reverse=True)
         candidate_scores[slot_id] = [item[6] for item in inspected]
+        shortlisted = {index for index, _candidate in shortlist}
+        candidate_scores[slot_id].extend({
+            "candidate_index": index,
+            "name": str(candidate.get("name") or ""),
+            "kind": target_kind,
+            "visual_score": None,
+            "selection_score": None,
+            "inspection_status": "outside_shortlist",
+            "repetition": preselection_repetition[index].as_dict(),
+            "downgraded_for_repetition": True,
+        } for index, candidate in indexed
+          if index not in shortlisted and index in preselection_repetition
+          and preselection_repetition[index].is_repeated)
         eligible = [item for item in inspected if not item[5]]
 
         selection_mode = "eligible"
@@ -317,7 +405,10 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             "selection_mode": selection_mode,
             "kind": result.kind,
             "name": result.name,
-            "visual_score": score,
+            "visual_score": _record["visual_score"],
+            "selection_score": score,
+            "repetition": _record.get("repetition"),
+            "downgraded_for_repetition": _record.get("downgraded_for_repetition", False),
             "width": inspection.width,
             "height": inspection.height,
             "duration_seconds": inspection.duration_seconds,
@@ -325,10 +416,16 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             "opening_motion_score": inspection.opening_motion_score,
             "motion_score": inspection.motion_score,
             "practically_static": inspection.is_practically_static,
-            "warnings": reasons,
+            "warnings": reasons + list(inspection.warnings),
             "source_start_seconds": candidate.get("source_start_seconds"),
             "source_end_seconds": candidate.get("source_end_seconds"),
         }
+        if inspection.fingerprint is not None:
+            for shot in slot_shots:
+                visual_usage.append(fingerprint_to_usage(
+                    inspection.fingerprint, slug, str(shot.get("id") or slot_id),
+                    slot_id, recorded_at=recorded_at,
+                ))
         suffix = "" if selection_mode == "eligible" else " (fallback do mesmo tipo)"
         print(f"Visual selected {slot_id}: {result.name} score={score:.1f}{suffix}")
 
@@ -351,16 +448,23 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             shot["source_start_seconds"] = float(start) if start is not None else 0.0
             if end is not None:
                 shot["source_end_seconds"] = float(end)
+            else:
+                shot.pop("source_end_seconds", None)
         else:
             shot.pop("source_start_seconds", None)
             shot.pop("source_end_seconds", None)
             shot.pop("speed", None)
+            shot.pop("freeze_frame", None)
 
     _write_json(assets_path, assets)
     _write_json(timeline_path, timeline)
     report = {
         "schema_version": 1,
         "episode": slug,
+        "recorded_at": recorded_at,
+        "visual_usage_stage": "candidate_resolution",
+        "visual_usage": visual_usage,
+        "repetition_history_warnings": list(history_warnings),
         "selections": selections,
         "candidate_scores": candidate_scores,
         "inspection_failures": failures,
@@ -372,7 +476,10 @@ def resolve_episode(project_root: Path, slug: str) -> int:
         if not scores:
             print(f"{slot_id}: sem score tecnico")
             continue
-        best = scores[0]
+        best = next((item for item in scores if item.get("visual_score") is not None), None)
+        if best is None:
+            print(f"{slot_id}: apenas avaliacao de repeticao por URL")
+            continue
         selected = selections.get(slot_id, {})
         if selected.get("status") == "selected":
             mode = selected.get("selection_mode")

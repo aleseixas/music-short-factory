@@ -249,6 +249,18 @@ Antes do commit, revise `post.json` e remova qualquer crédito técnico ou refer
 
 ## Direção visual
 
+Antes de fechar os visuais, consulte `visual_usage.json` e
+`visual_resolution_report.json` dos episódios recentes. Prefira fotos e trechos
+inéditos entre candidatos editorialmente adequados. O resolver compara URLs,
+SHA-256, hashes perceptuais de imagem e frames do trecho de vídeo consumido,
+considerando speed, freeze e crossfade. Compare `selection_score` e os motivos de
+`repetition`, além do `visual_score` técnico. Reformule buscas quando um candidato
+for rebaixado por repetição. Se não houver alternativas suficientes, mantenha a
+melhor opção válida como fallback ENTRE episódios e registre o motivo.
+Essa preferência não substitui a revisão de unicidade dentro do episódio.
+Não invente hashes/scores em autoria sem execução: os registros técnicos são
+gerados na inspeção/render. Não coloque fingerprints em assets.json/timeline.json.
+
 A escolha do ASSET é uma das decisões mais importantes. Antes de compensar visual fraco com FX, procure um vídeo/trecho melhor e semanticamente ligado à fala. Vídeo com movimento perceptível é preferível a imagem quando houver opção realmente boa.
 
 Não transforme poucos vídeos genéricos em dezenas de shots quase iguais apenas mudando o trim.

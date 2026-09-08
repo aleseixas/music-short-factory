@@ -17,6 +17,7 @@ from .sfx import resolve_sfx_cues
 from .text_fx import write_text_fx_ass
 from .timeline import build_timeline, resolve_text_fx_cues, write_timeline_plan
 from .utils import safe_child
+from .visual_usage import record_visual_usage_safely
 
 
 async def build_video(project_root: Path, episode_name: str) -> Path:
@@ -179,7 +180,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         for asset_id in dict.fromkeys(shot.asset_id for shot in episode.shots)
     )
     print(f"[assets] validando {len(used_assets)} arquivo(s) antes do render...")
-    asset_manager.ensure_all(used_assets)
+    resolved_asset_paths = asset_manager.ensure_all(used_assets)
     for scene in plan.scenes:
         info = asset_manager.preflight_video_scene(scene, config.render.fps)
         if info is not None:
@@ -277,6 +278,12 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
     print(
         f"[capa] abertura={cover_duration:.2f}s | "
         f"arquivo={cover_path.relative_to(project_root).as_posix()}"
+    )
+    record_visual_usage_safely(
+        project_root,
+        episode,
+        plan,
+        resolved_asset_paths,
     )
     print(f"[pronto] {output}")
     return output

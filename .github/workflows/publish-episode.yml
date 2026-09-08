@@ -261,6 +261,14 @@ jobs:
       - name: Render episode
         run: python generate.py "$EPISODE"
 
+      - name: Upload visual usage history
+        uses: actions/upload-artifact@v7
+        with:
+          name: visual-usage-${{ needs.prepare.outputs.episode }}
+          path: episodes/${{ needs.prepare.outputs.episode }}/visual_usage.json
+          if-no-files-found: warn
+          retention-days: 1
+
       - name: Upload rendered MP4
         uses: actions/upload-artifact@v7
         with:
@@ -300,3 +308,42 @@ jobs:
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
         run: python publish.py "$EPISODE" --platform tiktok --live
+
+  persist-visual-usage:
+    needs:
+      - prepare
+      - publish
+    if: ${{ always() && needs.prepare.result == 'success' }}
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Download visual usage history
+        id: visual_usage
+        continue-on-error: true
+        uses: actions/download-artifact@v7
+        with:
+          name: visual-usage-${{ needs.prepare.outputs.episode }}
+          path: episodes/${{ needs.prepare.outputs.episode }}
+
+      - name: Set up Python
+        if: ${{ steps.visual_usage.outcome == 'success' }}
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      - name: Install visual history dependency
+        if: ${{ steps.visual_usage.outcome == 'success' }}
+        run: python -m pip install Pillow==12.1.1
+
+      - name: Persist visual usage history
+        if: ${{ steps.visual_usage.outcome == 'success' }}
+        continue-on-error: true
+        run: python scripts/persist_visual_usage.py "${{ needs.prepare.outputs.episode }}"

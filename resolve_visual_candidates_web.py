@@ -198,6 +198,9 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
             else None
         ),
         crossfade_seconds=crossfade if result.kind == "video" else 0.0,
+        **legacy._playback_options(slot, result.kind),
+        repetition_history=slot.get("_repetition_history"),
+        exclude_episode=slot.get("_episode"),
     )
     if result.search_provider == "youtube_web":
         WEB_DOWNLOADED_PATHS[result.provider_id] = base.path
@@ -219,7 +222,7 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
     ranked = RankedInspection(
         base=base,
         technical_visual_score=base.visual_score,
-        visual_score=selection_score(base.visual_score, status),
+        visual_score=selection_score(base.selection_score, status),
         rights_status=status,
         rights_rank_adjustment=rights_rank_adjustment(status),
     )
@@ -233,6 +236,8 @@ def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspe
         "kind": result.kind,
         "visual_score": inspection.technical_visual_score,
         "selection_score": inspection.visual_score,
+        "repetition": inspection.repetition.as_dict() if inspection.repetition else None,
+        "downgraded_for_repetition": bool(inspection.repetition and inspection.repetition.is_repeated),
         "rights_status": inspection.rights_status,
         "rights_rank_adjustment": inspection.rights_rank_adjustment,
         "rights_blocks_selection": False,

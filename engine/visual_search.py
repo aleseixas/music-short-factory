@@ -26,6 +26,14 @@ from .models import (
     FreezeFrameSpec,
 )
 from .timeline import resolve_freeze_frame
+from .visual_repetition import (
+    RepetitionAssessment,
+    VisualFingerprint,
+    VisualHistoryEntry,
+    assess_repetition,
+    build_visual_fingerprint,
+    load_visual_history,
+)
 
 
 VisualKind = Literal["image", "video", "any"]
@@ -296,6 +304,15 @@ class VisualInspection:
     visual_score: float
     score_breakdown: dict[str, float]
     warnings: tuple[str, ...] = ()
+    fingerprint: VisualFingerprint | None = None
+    repetition: RepetitionAssessment | None = None
+
+    @property
+    def selection_score(self) -> float:
+        return (
+            self.repetition.adjust_score(self.visual_score)
+            if self.repetition else self.visual_score
+        )
 
     @property
     def opening_motion_score(self) -> float | None:
@@ -344,6 +361,8 @@ class VisualInspection:
             "motion": self.motion.as_dict() if self.motion else None,
             "trim": self.trim.as_dict() if self.trim else None,
             "visual_score": self.visual_score,
+            "selection_score": self.selection_score,
+            "repetition": self.repetition.as_dict() if self.repetition else None,
             "score_breakdown": self.score_breakdown,
             "score_components": self.score_breakdown,
             "warnings": list(self.warnings),
@@ -580,6 +599,8 @@ def inspect_visual_result(
     cache_root: Path | None = None,
     target_width: int = TARGET_WIDTH,
     target_height: int = TARGET_HEIGHT,
+    repetition_history: Sequence[VisualHistoryEntry] | None = None,
+    exclude_episode: str | None = None,
 ) -> VisualInspection:
     """Download, validate and technically score one explicitly selected candidate."""
     if not isinstance(result, VisualSearchResult):
@@ -645,7 +666,7 @@ def inspect_visual_result(
             target_width=target_width,
             target_height=target_height,
         )
-        return VisualInspection(
+        inspection = VisualInspection(
             result=result,
             path=path,
             width=width,
@@ -657,6 +678,9 @@ def inspect_visual_result(
             trim=None,
             visual_score=score,
             score_breakdown=breakdown,
+        )
+        return apply_visual_repetition(
+            project_root, inspection, repetition_history, exclude_episode=exclude_episode
         )
 
     try:
@@ -712,7 +736,7 @@ def inspect_visual_result(
         target_width=target_width,
         target_height=target_height,
     )
-    return VisualInspection(
+    inspection = VisualInspection(
         result=result,
         path=path,
         width=video_info.width,
@@ -726,6 +750,77 @@ def inspect_visual_result(
         score_breakdown=breakdown,
         warnings=tuple(warnings),
     )
+    return apply_visual_repetition(
+        project_root, inspection, repetition_history, exclude_episode=exclude_episode
+    )
+
+
+def visual_identity_urls(result: VisualSearchResult) -> tuple[str, ...]:
+    # A page can host several different photos. Only use its identity when it is
+    # the source itself (e.g. a YouTube video), not alongside a direct image URL.
+    identity = result.download_url or result.source_page_url
+    return (identity,) if identity else ()
+
+
+def apply_visual_repetition(
+    project_root: Path,
+    inspection: VisualInspection,
+    history: Sequence[VisualHistoryEntry] | None = None,
+    *,
+    exclude_episode: str | None = None,
+) -> VisualInspection:
+    """Attach content evidence and a non-blocking adjustment to technical quality."""
+    warnings = list(inspection.warnings)
+    try:
+        if history is None:
+            history, history_warnings = load_visual_history(
+                project_root, exclude_episode=exclude_episode
+            )
+            warnings.extend(history_warnings)
+        trim = inspection.trim
+        start = trim.source_start_seconds if trim else 0.0
+        duration = trim.required_seconds if trim and trim.safe_for_shot else None
+        urls = visual_identity_urls(inspection.result)
+        fingerprint = VisualFingerprint.from_dict({
+            "kind": inspection.result.kind,
+            "urls": urls,
+            "source_start_seconds": start,
+            "source_duration_seconds": duration,
+        })
+        if inspection.result.kind == "image" or duration is not None:
+            try:
+                fingerprint = build_visual_fingerprint(
+                    inspection.path,
+                    inspection.result.kind,
+                    urls=urls,
+                    source_start_seconds=start,
+                    source_duration_seconds=duration,
+                )
+            except Exception:
+                warnings.append(
+                    "Fingerprint visual indisponivel; comparacao por URL mantida."
+                )
+        else:
+            warnings.append(
+                "Fingerprint do trecho requer duracao de shot/trim seguro; "
+                "comparacao por URL mantida."
+            )
+        repetition = assess_repetition(fingerprint, history)
+        warnings.extend(repetition.warnings)
+        if repetition.is_repeated:
+            warnings.append(
+                f"Visual repetido entre episodios: ajuste de ranking "
+                f"{repetition.penalty:.1f}; candidato continua disponivel."
+            )
+        return replace(
+            inspection,
+            fingerprint=fingerprint,
+            repetition=repetition,
+            warnings=tuple(dict.fromkeys(warnings)),
+        )
+    except Exception:
+        warnings.append("Anti-repeticao visual indisponivel; ranking tecnico mantido.")
+        return replace(inspection, warnings=tuple(dict.fromkeys(warnings)))
 
 
 def analyze_video_motion(
@@ -1070,6 +1165,7 @@ def rank_visual_inspections(
         sorted(
             inspections,
             key=lambda item: (
+                -item.selection_score,
                 -item.visual_score,
                 item.result.name.casefold(),
                 item.result.provider_id.casefold(),
@@ -1114,6 +1210,7 @@ def main(
     parser.add_argument("--freeze-start", type=float)
     parser.add_argument("--freeze-duration", type=float)
     parser.add_argument("--output-fps", type=int, default=30)
+    parser.add_argument("--episode", help="Exclui o proprio episodio do historico visual.")
     parser.add_argument(
         "--project-root",
         type=Path,
@@ -1137,6 +1234,14 @@ def main(
     elif args.inspect_top and not args.external:
         warnings.append("--inspect-top requer --external; nenhuma midia foi baixada.")
     elif args.inspect_top:
+        try:
+            history, history_warnings = load_visual_history(
+                args.project_root, exclude_episode=args.episode
+            )
+            warnings.extend(history_warnings)
+        except Exception:
+            history = ()
+            warnings.append("Historico visual indisponivel; ranking tecnico mantido.")
         for result in report.results:
             if len(inspected_candidates) >= args.inspect_top:
                 break
@@ -1154,6 +1259,8 @@ def main(
                     freeze_start_seconds=args.freeze_start,
                     freeze_duration_seconds=args.freeze_duration,
                     output_fps=args.output_fps,
+                    exclude_episode=args.episode,
+                    repetition_history=history,
                 )
                 inspected_candidates.append(inspection)
             except VisualSearchError as exc:

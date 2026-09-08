@@ -15,6 +15,7 @@ import requests
 from .ffmpeg import probe_video_stream
 from .media_cache import media_cache_directory
 from .models import VIDEO_ASSET_EXTENSIONS
+from .visual_repetition import VisualHistoryEntry, load_visual_history
 from .visual_search import (
     MAX_EXTERNAL_VIDEO_BYTES,
     OpenverseImageProvider,
@@ -24,6 +25,7 @@ from .visual_search import (
     VisualSearchResult,
     WikimediaCommonsProvider,
     analyze_video_motion,
+    apply_visual_repetition,
     assess_trim,
     calculate_visual_score,
     inspect_visual_result,
@@ -219,6 +221,12 @@ def inspect_candidate(
     source_start_seconds: float = 0.0,
     source_end_seconds: float | None = None,
     crossfade_seconds: float = 0.0,
+    speed: float = 1.0,
+    freeze_start_seconds: float | None = None,
+    freeze_duration_seconds: float | None = None,
+    output_fps: int = 30,
+    repetition_history: Sequence[VisualHistoryEntry] | None = None,
+    exclude_episode: str | None = None,
 ) -> VisualInspection:
     """Inspect direct-media candidates or web video pages; one failure never aborts the pool."""
     if result.search_provider != "youtube_web":
@@ -229,6 +237,12 @@ def inspect_candidate(
             source_start_seconds=source_start_seconds,
             source_end_seconds=source_end_seconds,
             crossfade_seconds=crossfade_seconds,
+            speed=speed,
+            freeze_start_seconds=freeze_start_seconds,
+            freeze_duration_seconds=freeze_duration_seconds,
+            output_fps=output_fps,
+            repetition_history=repetition_history,
+            exclude_episode=exclude_episode,
         )
 
     path = _download_web_video(project_root, result)
@@ -244,6 +258,10 @@ def inspect_candidate(
         source_start_seconds=source_start_seconds,
         source_end_seconds=source_end_seconds,
         crossfade_seconds=crossfade_seconds,
+        speed=speed,
+        freeze_start_seconds=freeze_start_seconds,
+        freeze_duration_seconds=freeze_duration_seconds,
+        output_fps=output_fps,
     )
     warnings: list[str] = []
     motion = None
@@ -274,7 +292,7 @@ def inspect_candidate(
         motion=motion,
         trim=trim,
     )
-    return VisualInspection(
+    inspection = VisualInspection(
         result=result,
         path=path,
         width=info.width,
@@ -288,6 +306,9 @@ def inspect_candidate(
         score_breakdown=breakdown,
         warnings=tuple(warnings),
     )
+    return apply_visual_repetition(
+        project_root, inspection, repetition_history, exclude_episode=exclude_episode
+    )
 
 
 def rank_inspections_for_selection(
@@ -299,7 +320,7 @@ def rank_inspections_for_selection(
             inspections,
             key=lambda item: (
                 item.result.kind,
-                -selection_score(item.visual_score, candidate_rights_status(item.result)),
+                -selection_score(item.selection_score, candidate_rights_status(item.result)),
                 -item.visual_score,
                 item.result.name.casefold(),
                 item.result.provider_id.casefold(),
@@ -349,6 +370,11 @@ def main(
     parser.add_argument("--source-start", type=float, default=0.0)
     parser.add_argument("--source-end", type=float)
     parser.add_argument("--crossfade", type=float, default=0.0)
+    parser.add_argument("--speed", type=float, default=1.0)
+    parser.add_argument("--freeze-start", type=float)
+    parser.add_argument("--freeze-duration", type=float)
+    parser.add_argument("--output-fps", type=int, default=30)
+    parser.add_argument("--episode", help="Exclui o proprio episodio do historico visual.")
     parser.add_argument(
         "--project-root",
         type=Path,
@@ -386,6 +412,14 @@ def main(
     elif args.inspect_top and not args.external:
         warnings.append("--inspect-top requer --external; nenhuma midia foi baixada.")
     elif args.inspect_top:
+        try:
+            history, history_warnings = load_visual_history(
+                args.project_root, exclude_episode=args.episode
+            )
+            warnings.extend(history_warnings)
+        except Exception:
+            history = ()
+            warnings.append("Historico visual indisponivel; ranking tecnico mantido.")
         for result in report.results:
             if len(inspections) >= args.inspect_top:
                 break
@@ -400,6 +434,12 @@ def main(
                         source_start_seconds=args.source_start,
                         source_end_seconds=args.source_end,
                         crossfade_seconds=args.crossfade,
+                        speed=args.speed,
+                        freeze_start_seconds=args.freeze_start,
+                        freeze_duration_seconds=args.freeze_duration,
+                        output_fps=args.output_fps,
+                        exclude_episode=args.episode,
+                        repetition_history=history,
                     )
                 )
             except VisualSearchError as exc:
@@ -416,7 +456,7 @@ def main(
         payload["kind_rank"] = kind_counts[inspection.result.kind]
         payload["rights_status"] = status
         payload["rights_rank_adjustment"] = rights_rank_adjustment(status)
-        payload["selection_score"] = selection_score(inspection.visual_score, status)
+        payload["selection_score"] = selection_score(inspection.selection_score, status)
         payload["rights_blocks_selection"] = False
         serialized_inspections.append(payload)
 

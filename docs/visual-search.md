@@ -97,7 +97,7 @@ rights_rank_adjustment = -12
 O score técnico continua separado:
 
 ```text
-selection_score = visual_score + rights_rank_adjustment
+selection_score = clamp(visual_score + repetition_penalty + rights_rank_adjustment, 0, 100)
 ```
 
 Portanto um candidato `restricted` muito melhor visualmente ainda pode vencer um candidato `unknown` fraco. `rights_status` é metadata de decisão, não garantia jurídica de licença e não deve ser inventado.
@@ -283,6 +283,19 @@ Não transforme indisponibilidade externa em sucesso falso e não invente score/
 
 ## Duração e trim
 
+Speed Control e Freeze Frame entram na inspeção do trecho. A CLI aceita `--speed`
+(0.5 a 2.0, padrão 1.0), `--freeze-start`, `--freeze-duration` (0.10 a 2.00s) e
+`--output-fps` (FPS do projeto). No `timeline.json`, o contrato continua sendo
+`speed` e `freeze_frame: {start_seconds, duration_seconds}`. O freeze precisa
+caber dentro do shot. Esses controles não alteram voz, música e SFX.
+
+A duração de fonte consumida considera duração do shot + crossfade de saída,
+menos os frames adicionais do freeze, multiplicada por `speed`. O frame escolhido
+já conta como um frame, portanto um freeze de D frames economiza D−1 frames de
+fonte na saída. O histórico definitivo usa o plano resolvido em frames após TTS;
+a inspeção durante autoria usa a duração informada para o slot. Use freeze com
+moderação em reveal, estatística ou payoff quando a pausa ajudar a compreensão.
+
 Para um vídeo ser seguro, o intervalo a partir de `source_start_seconds` precisa cobrir a duração real do shot e qualquer handle de crossfade exigido pelo renderer.
 
 Quando `source_end_seconds` existir, ele limita o intervalo disponível e não pode ultrapassar a duração real do arquivo.
@@ -290,6 +303,61 @@ Quando `source_end_seconds` existir, ele limita o intervalo disponível e não p
 Não use loop para esconder trecho insuficiente. Se a duração não puder ser confirmada durante autoria, deixe a Action validar e mantenha asset-base válido como fallback.
 
 ## Persistência
+
+### Anti-repetição entre episódios
+
+O histórico compara os shots principais dos 24 episódios mais recentes, excluindo
+o episódio atual. Use `--episode <slug>` na busca/inspeção avulsa; o resolver já
+faz essa exclusão automaticamente. Para o GPT agendado, consulte também os
+`visual_usage.json` e `visual_resolution_report.json` dos episódios anteriores.
+
+Antes do download, a identidade por URL reduz a prioridade de candidatos já
+usados no shortlist. Após a inspeção, SHA-256 identifica arquivos iguais, hashes
+perceptuais reconhecem imagens redimensionadas/recomprimidas e recortes moderados,
+e hashes de frames comparam o trecho consumido do vídeo. `source_end_seconds`
+é um limite disponível: não faz o fingerprint incluir partes que o shot não usa.
+Speed, freeze e o handle do crossfade entram no cálculo desse intervalo.
+
+`visual_score` permanece a qualidade técnica. `repetition.penalty` reduz o
+`selection_score`, com maior peso para usos recentes. O relatório registra
+`downgraded_for_repetition`, método, similaridade e episódio/shot correspondente.
+Uma repetição nunca cria um erro técnico nem retira o candidato do fallback.
+Procure outro visual relevante; se as alternativas forem insuficientes, continue
+com a melhor opção válida e mantenha o diagnóstico no relatório.
+
+A janela padrão é de 24 episódios com histórico. A recência vem do horário do
+registro; para manifests antigos, usa a criação no Git (ordem por slug se não
+houver data). As penalidades-base são 56 pontos por URL, 62 por SHA-256, 50 por
+imagem perceptualmente semelhante e 54 por frames semelhantes. Multiplicam-se
+pela similaridade e por `max(0.35, 1 - 0.04 * posição_na_recência)`. Evidências do
+mesmo uso não somam entre si: vale a mais forte; outros usos acrescentam 20% da
+respectiva penalidade, até 70 pontos no total. O score final fica entre 0 e 100.
+Para o mesmo vídeo-fonte, URL/SHA só penalizam a sobreposição dos trechos; trechos
+disjuntos podem ser inéditos. Se o intervalo legado for desconhecido, a identidade
+da fonte recebe apenas 25% do peso, sem presumir que o vídeo inteiro foi usado.
+
+`visual_resolution_report.json.visual_usage` guarda a escolha provisória durante
+a autoria/resolução. Depois de renderizar com sucesso, `visual_usage.json` guarda
+somente as identidades/hashes dos shots usados e os intervalos reais. Esse pequeno
+JSON é persistido na `main` pelo workflow, sem mídia, cache ou credenciais. Falha
+ao registrar ou persistir histórico gera aviso e não impede o vídeo. Em episódios
+antigos sem hashes, os manifests oferecem comparação por URL e a mídia local
+disponível permite comparação por conteúdo, sem baixar o acervo histórico.
+
+O render local também grava esse JSON, mas não executa Git/push. Ao preparar o
+próximo episódio em outro ambiente, inclua o pequeno `visual_usage.json` no Git.
+Na Action, `scripts/persist_visual_usage.py` faz isso em um worktree isolado da
+`origin/main` atual, com push normal somente desse arquivo e sem sobrescrever um
+registro remoto mais recente. Não são necessários novos secrets. Nenhuma etapa
+de publicação social foi alterada.
+
+Hashes perceptuais são heurísticos: crops extremos, montagens e alterações fortes
+podem escapar, e cenas quase iguais podem parecer repetidas. Compare a relevância
+editorial; não interprete score como identificação infalível. Não invente hashes
+quando o agente só tiver acesso a GitHub/web. A inspeção gera os dados técnicos.
+
+O renderer nunca pesquisa na web para escolher visuais. A comparação de candidatos
+continua na autoria; o registro pós-render apenas lê a mídia local já utilizada.
 
 Scores, ranking, queries, `rights_status` temporário e diagnósticos pertencem ao relatório de autoria/resolução. Não grave campos não suportados em `assets.json` ou `timeline.json`.
 

@@ -1,11 +1,12 @@
 import json
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 
 import resolve_visual_candidates as resolver
+from engine.visual_repetition import VisualFingerprint
+from engine.visual_search import TrimAssessment, VisualInspection
 
 
 class VisualCandidateResolutionTests(unittest.TestCase):
@@ -13,7 +14,7 @@ class VisualCandidateResolutionTests(unittest.TestCase):
         episode = root / "episodes" / slug
         episode.mkdir(parents=True)
         (episode / "assets.json").write_text(
-            json.dumps({"schema_version": 1, "assets": [{"id": "slot_a", "file": "old.jpg", "url": "https://upload.wikimedia.org/old.jpg", "credit": "old", "license": "CC0", "focus": {"x": 0.5, "y": 0.5}}]}),
+            json.dumps({"schema_version": 1, "assets": [{"id": "slot_a", "file": "old.webm", "url": "https://upload.wikimedia.org/old.webm", "credit": "old", "license": "CC0", "focus": {"x": 0.5, "y": 0.5}}]}),
             encoding="utf-8",
         )
         (episode / "timeline.json").write_text(
@@ -47,18 +48,33 @@ class VisualCandidateResolutionTests(unittest.TestCase):
             ],
         }
 
-        def fake_inspect(_root, result, **_kwargs):
+        def fake_inspect(_root, result, **kwargs):
             score = 91.0 if result.name == "best" else 78.0
-            return SimpleNamespace(
+            return VisualInspection(
+                result=result,
+                path=Path(result.suggested_file or "candidate.webm"),
+                aspect_ratio=(result.width or 720) / (result.height or 1280),
                 visual_score=score,
                 width=result.width or 720,
                 height=result.height or 1280,
                 duration_seconds=result.duration_seconds,
                 fps=30.0 if result.kind == "video" else None,
-                opening_motion_score=80.0 if result.kind == "video" else None,
-                motion_score=75.0 if result.kind == "video" else None,
-                is_practically_static=False if result.kind == "video" else None,
-                trim=SimpleNamespace(safe_for_shot=True) if result.kind == "video" else None,
+                motion=None,
+                trim=TrimAssessment(
+                    safe_for_shot=True,
+                    source_start_seconds=kwargs["source_start_seconds"],
+                    source_end_seconds=kwargs["source_end_seconds"],
+                    available_seconds=(
+                        kwargs["source_end_seconds"] - kwargs["source_start_seconds"]
+                    ),
+                    required_seconds=kwargs["shot_duration_seconds"],
+                    margin_seconds=1.0,
+                    reason="safe",
+                ),
+                score_breakdown={"fixture": score},
+                fingerprint=VisualFingerprint.from_dict(
+                    {"kind": result.kind, "urls": [result.download_url]}
+                ),
             )
 
         with TemporaryDirectory() as tmp, patch.object(resolver, "inspect_visual_result", side_effect=fake_inspect) as inspect:

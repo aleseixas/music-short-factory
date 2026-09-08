@@ -379,6 +379,16 @@ Warnings de excesso devem provocar revisão, não transformar estilo em hard err
 
 ## Assets, vídeos e trims
 
+Entre episódios, prefira fotos inéditas e trechos de vídeo ainda não usados.
+Consulte o histórico `visual_usage.json` e os relatórios de resolução recentes;
+a Visual Intelligence penaliza URLs/arquivos/imagens/trechos reconhecidos, com
+maior peso para os últimos episódios. Veja a política em `docs/visual-search.md`.
+`visual_score` mede qualidade técnica e `selection_score` inclui repetição.
+Se faltarem alternativas suficientes, repetição ENTRE episódios pode permanecer
+como fallback diagnosticado; nunca deve impedir a criação ou o render.
+Essa política é diferente da revisão de unicidade entre shots do mesmo episódio.
+Speed e Freeze Frame não tornam um trecho já usado inédito.
+
 Vídeo real é prioridade quando houver material bom e reutilizável.
 
 - antes de escolher, faça múltiplas consultas e compare candidatos conforme `docs/visual-search.md`;
