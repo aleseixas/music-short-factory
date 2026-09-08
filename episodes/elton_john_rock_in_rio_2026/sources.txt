@@ -1,0 +1,51 @@
+FONTES FACTUAIS
+
+Elton John — anúncio oficial do Rock in Rio 2026 (25/11/2025). Confirma apresentação única no Brasil em 7/9/2026, fim da Farewell Yellow Brick Road em 2023 e fala do artista de que não conseguiu levar a despedida à América do Sul e aceitou o convite imediatamente:
+https://www.eltonjohn.com/stories/elton-to-headline-rock-in-rio-2026
+
+CNN Brasil — “Saiba motivo que fez Elton John pausar aposentadoria para cantar no Brasil” (26/11/2025). Registra a declaração de que Elton sentiu ter decepcionado fãs brasileiros por não passar pelo país na Farewell Yellow Brick Road e queria compensar isso:
+https://www.cnnbrasil.com.br/pop/saiba-motivo-que-fez-elton-john-pausar-aposentadoria-para-cantar-no-brasil/
+
+Folha de S.Paulo — cobertura do show no Rock in Rio 2026 (08/09/2026). Confirma o retorno, repertório, terceira passagem pelo festival, oitava visita ao Brasil, motivo ligado à despedida que não passou pelo país e encerramento com Don't Let the Sun Go Down on Me:
+https://www1.folha.uol.com.br/ilustrada/2026/09/elton-john-faz-show-dedicado-em-despedida-emocionante-do-brasil-no-rock-in-rio.shtml
+
+UOL/Toca — cobertura publicada em 08/09/2026. Confirma show totalmente ao vivo, retorno especial após o fim das grandes turnês e fala de Elton no palco agradecendo o Brasil e explicando a ausência da turnê de despedida:
+https://www.uol.com.br/toca/noticias/2026/09/08/elton-john-coroa-dia-das-lendas-no-rock-in-rio-sem-playback-ou-disfarce.htm
+
+VISUAIS WEB-FIRST
+
+Elton John / Rock in Rio — arte oficial do anúncio:
+https://www.eltonjohn.com/cms/wp-content/uploads/2025/11/IG_1X1_HEADLINER1_ELTONJOHN_1311_AB_V2_S.TAG_.png
+
+NME — Elton John em performance recente:
+https://www.nme.com/wp-content/uploads/2025/10/elton_john_singapore1.jpg
+
+Portal Pop Cyber / Ben Gibson Photo — performance recente:
+https://www.portalpopcyber.com/wp-content/uploads/2025/11/elton-jhon_Aberdeen_show_BENGIBSONPHOTO-5021-scaled.jpg.webp
+
+KCRW — Elton John ao piano:
+https://images.ctfassets.net/2658fe8gbo8o/0734821f04264d98a372e7c0fd477e23-photo-asset/f8f99bb2bb239a9538e63a7f9b0cd26e/2023-04-27T183226Z_1682620340_DPAF230427X99X477909_RTRFIPP_4_MUSIC-PEOPLE-CONCERT-CONCERTS-STAGE-LIVE-PERFORMANCE-PIANO.JPG
+
+TownSquare Media — Farewell Yellow Brick Road:
+https://townsquare.media/site/295/files/2018/09/1029566930.jpg
+
+R7 — show de Elton John no Rio:
+https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/2YPUGMQILBKUJLXJOKXW2XAS5A.jpg?auth=ece0dadf9d75651f2f4a3b29c6660b7283aca4986179d5fb06fef5c426e2b81d&height=809&width=1200
+
+Audiograma — apresentação de 1995 no Brasil:
+https://www.audiograma.com.br/wp-content/uploads/2020/07/eltonjohn-estadiodoflamengo-riodejaneiro-show.jpg
+
+OFuxico — Rock in Rio 2011:
+https://ofuxico.com.br/img/galeria/2011/09/67241.jpg
+
+iHeartRadio — Farewell tour performance:
+https://www.iheartradio.ca/content/dam/audio/uploadImg/migrated/music_news/2022/3/29/elton-1-17460252.jpg/jcr%3Acontent/renditions/cq5dam.web.1280.1280.c0i_.jpeg
+
+Nostalgie — Elton John ao piano em palco:
+https://img.nrj.fr/XyY0jZdtS7QF-fmlLrdKstJmvAw%3D/800x450/smart/medias%2F2023%2F01%2Ff1ltyp7eiktmoq0cdnpnfna8gpsuhw5pjykboqmtofq_63b572181c2ca.jpg
+
+Vídeos-base adicionais vêm de Wikimedia Commons e estão identificados com crédito/licença em assets.json. Eles funcionam como contexto visual e não são apresentados como gravações do evento real.
+
+BACKGROUND MUSIC
+
+Busca externa real realizada antes do fallback curado, com consultas distintas para cinematic piano documentary, emotional piano documentary, uplifting piano, retro-pop instrumental e documentary background. Opções encontradas no Pixabay incluíam candidatas com Content ID registrado, material marcado como AI e/ou metadata operacional insuficiente para adotar uma nova entrada dedicada com segurança nesta rodada. Foi escolhido o profile curado fallback_social_cinematic da repo, que é a etapa de fallback prevista pela main e distribui faixas remotas curadas do Pixabay de forma determinística por slug.
