@@ -1,0 +1,25 @@
+FATOS
+- TV Brasil / Sem Censura — especial com Anitta, 11/08/2026: https://tvbrasil.ebc.com.br/sem-censura/2026/08/especial-anitta
+- EBC — anúncio do especial ao vivo, 11/08/2026: https://www.ebc.com.br/imprensa/2026/anitta-ganha-especial-ao-vivo-no-programa-sem-censura-da-tv-brasil-nesta-terca-11-8
+- UOL Splash — Anitta diz que festivais de fora a contratam mais, 12/08/2026: https://www.uol.com.br/splash/noticias/2026/08/12/anitta-alfineta-festivais-nacionais-fora-do-brasil-todos-me-contratam.ghtm
+- Folha de S.Paulo — cobertura da fala sobre festivais nacionais, agosto/2026: https://www1.folha.uol.com.br/ilustrada/2026/08/anitta-alfineta-festivais-nacionais-e-diz-que-e-o-maximo-fora-do-brasil.shtml
+- Agência Brasil — trajetória e novo projeto, 12/08/2026: https://agenciabrasil.ebc.com.br/cultura/noticia/2026-08/sem-censura-anitta-revela-trajetoria-ate-album-sobre-religiao-afro
+
+BACKGROUND MUSIC
+- Pesquisa external-first realizada com consultas distintas para urban documentary beat, brazil/funk instrumental, latin electronic, hip-hop documentary e modern pop/urban social background.
+- Candidatas comparadas em Pixabay/Openverse/Freesound. Várias opções plausíveis exibiam Content ID Registered.
+- Candidata mais alinhada: Pixabay — “Urban - Urban Latin Beat”, Loksii: https://pixabay.com/music/urban-latin-urban-urban-latin-beat-232688/
+- Fallback final: profile curado `fallback_social_urban` da repo.
+- Motivo: várias candidatas externas comparadas exibiam Content ID Registered e a opção urbana/latina restante não ofereceu evidência operacional forte o bastante para justificar um profile novo; o fallback curado mantém estética urbana e aquisição suportada pela main.
+
+VISUAIS
+- Funk Generation cover: https://www.universalmusic.ca/wp-content/uploads/sites/2543/2024/04/Anitta_FunkGen_Album_10x10_RGB-scaled.jpg
+- Anitta + The Weeknd: https://conteudo.imguol.com.br/c/entretenimento/42/2024/09/08/usando-a-cor-do-show-anitta-participa-de-show-do-cantor-the-weeknd-no-sabado-7-em-sao-paulo-1725811206682_v2_750x1.jpg
+- Anitta Lollapalooza Paris: https://www.hola.com/us/horizon/original_aspect_ratio/bc83e355ffa8-lollapalooza-paris-day-1.jpg
+- Anitta Planeta Atlântida: https://www.rbsdirect.com.br/filestore/1/9/8/5/3/5/5_66d80d5fd013f9b/5535891_d645fc8850d0c4b.jpg
+- Anitta + The Weeknd palco: https://medias.spotern.com/medias/videos/w1280/67/67445.jpg
+- Anitta Rock in Rio: https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2019/11/26/218dad13-7dbb-4d26-bfeb-78e9926134b2.jpg
+- Equilibrivm cover: https://pbs.twimg.com/media/HGrVDsMXoAAAHcv.jpg
+- Anitta Met: https://s2-marieclaire.glbimg.com/kSGz2qSCpfik3CPUkyWcDqGBgTs%3D/0x0%3A4000x6000/924x0/smart/filters%3Astrip_icc%28%29/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/A/e/IS6x9YRfAxR6OBqYR7QA/gettyimages-1486924770.jpg
+- Anitta interview: https://liontop.fr/wp-content/uploads/2025/02/Anitta-singer_0.jpg
+- Demais B-roll e contexto: Wikimedia Commons, com URLs e créditos registrados em assets.json.
