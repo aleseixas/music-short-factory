@@ -1,0 +1,519 @@
+{
+  "schema_version": 1,
+  "episode": "fatboy_slim_rock_in_rio_estreia",
+  "recorded_at": "2026-09-08T22:23:35Z",
+  "visual_usage": [
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_01",
+      "asset_id": "fatboy_rir_2026",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "cbdcd197347ddb4a4b963835692548af589551df0b5c11421de2004de7d01d0c",
+        "url_hashes": [
+          "301001e7d9dcbca6b395a0ae9519bbeffba24c87ccf12523b485e184199f6a36"
+        ],
+        "perceptual_hashes": [
+          "d178276538c7b24d",
+          "d27a25613ce52cd5",
+          "d21e65681fe47ca4",
+          "b4784b71cb4385c7",
+          "b4703cce315aad5a",
+          "d900762ff26f91c8",
+          "d90990f61d4cb36e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_02",
+      "asset_id": "fatboy_iris_2025",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6c2c9797ab1dc5b976db8d732db47bd8206d877e072f2a056832642f87c72d17",
+        "url_hashes": [
+          "8a1e9ea068f4d3ff99dc1261512335fa03e6fe2ee0095d2fb33d8ac4b78913eb"
+        ],
+        "perceptual_hashes": [
+          "cc3273c5ac0e53f1",
+          "cc3273d1ac0e52f5",
+          "cc3413f12c4ef0ed",
+          "996586e95da6601f",
+          "99696686a4785d97",
+          "c738d8b723d83589",
+          "c73338d8fc2521ab"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_03",
+      "asset_id": "dj_mix_stage",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7d8897406b572cb740c1d624f6515cb3e46434804a4206353c37c415946f2c34",
+        "url_hashes": [
+          "671533d8b55e10f4e4cb37eaa17879ed21e2847dbce73ee568993af72d4f5ece"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c8f74cc0982f7cd1",
+          "e8e347c08b235fd8",
+          "fcc047c4892377dc",
+          "fce046c68c236ade",
+          "87572a8e57a354a3",
+          "83552a9e5de354aa",
+          "87552a8c5deb543a",
+          "a7315a4a1ca7b45e"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.1
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_04",
+      "asset_id": "fatboy_brasilia_2014",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "40937f89236893a9cd1df98f209cdd0ad9ffd9dac68bd595c26b88dbc199bbc2",
+        "url_hashes": [
+          "545bb745521675276bef44a25958910f082e490155470f21b05826f374105852"
+        ],
+        "perceptual_hashes": [
+          "b90565bd4092b76d",
+          "bb0a6f8d54972629",
+          "b9426aa95d92578d",
+          "b340ea9ba56d4ab4",
+          "b703647e4a5ab06d",
+          "8c25b5c699b5a6a9",
+          "8a4939b5a66e8d53"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_05",
+      "asset_id": "fatboy_wireless_2008",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "43644f15d8323c7bcd645f6ef2759c71785a9300ee53a67b5d106f3bebc8a2d1",
+        "url_hashes": [
+          "33b259dd5e71ac8238b7a6d77176ceb74aca4b29b034a8835e9d860e25dd0127"
+        ],
+        "perceptual_hashes": [
+          "edb19092cf43ad4c",
+          "edb19490dad3c90d",
+          "ebb9959096d3da01",
+          "eaa285dd445b4bc9",
+          "fae2a0a29ba9a4d5",
+          "a49ed2c968e426f3",
+          "a5bc56968752b0cb"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_06",
+      "asset_id": "fatboy_2004",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7bcf1facdb3913d5d56d841b87894b1e2d63e8bc117f8ae31e1b09ce6877401e",
+        "url_hashes": [
+          "c95432db29abb9660d1a51864221c7dd05d7290bc506138bfe476708b7dd412e"
+        ],
+        "perceptual_hashes": [
+          "bfbc0d40e1345477",
+          "bfbf0d48e018c0bb",
+          "bfbf0f4ae090d282",
+          "f8b850e3a36a6b29",
+          "eeb89e18c66f0345",
+          "b4a545ff97503216",
+          "b8b78404643f077f"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_07",
+      "asset_id": "big_beach_2002",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7e972f3ad283e0db308ce190f93a6896dd3102f975ad26f9bff6022ae6fd9d89",
+        "url_hashes": [
+          "ab22efd1704f2920f0eefad98f9b6cff213a8c220b2c39a4049519f56d6ea99d"
+        ],
+        "perceptual_hashes": [
+          "d5d53f6a019de442",
+          "d5952e6a209de6c3",
+          "d5950e65103ce7c7",
+          "c3bc5c4337c81733",
+          "c383bc7c421733e3",
+          "d4d52b7e95e0481e",
+          "d6d595626a081eb7"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_08",
+      "asset_id": "brighton_beach_pd",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "fe33c523d3e542049f6a73f5992c5765ea742019a55a2087fb2c2b76164a73b7",
+        "url_hashes": [
+          "62ebd875c6873ce8e2820b2d584e012f19ebf300493639dc85a009b60191d314"
+        ],
+        "perceptual_hashes": [
+          "c4bbb05d2e5b44b2",
+          "cda1b25d2e5964b2",
+          "cfa0b58f265928b6",
+          "90a7b07d7603e45b",
+          "c817e392a8bdda0b",
+          "c0bdde214a97b946",
+          "c00db2deb3a94e47"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_09",
+      "asset_id": "brighton_beach_west_pd",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "01ba80b08f5d364e5f271199b645e6b6e7028783b4e65cf7ba35a1745c87a9c8",
+        "url_hashes": [
+          "1ada2cecff50486afd408cd332498ed67320ebd37167c360b66a2426a4c68600"
+        ],
+        "perceptual_hashes": [
+          "ffc03c3007fec017",
+          "f7c03f3006fee803",
+          "f7c01f3006fef803",
+          "c499310ff9c20ef9",
+          "ffc0b9f0023d28f1",
+          "fdc01e71c3ee1093",
+          "ffe0821e1c1113fb"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_10",
+      "asset_id": "crowd_walk",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e9beba7bead71bb3806a35e6dced2896385472287bd39fd3cde7958e709393fe",
+        "url_hashes": [
+          "6ead30edabda14a8ff362dc2eb6d3b06dbecd9899569984da7e9e6610f838177"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cad5b13f46e13905",
+          "9cc1639c6ab44e97",
+          "9a95314fc819b7e4",
+          "87b1689625fa72a5",
+          "9aa55798649b2cd3",
+          "95ea75836cbe4314",
+          "91ea35817cbb443e",
+          "98a718e51bac57ac"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.233333
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_11",
+      "asset_id": "concert_gothenburg",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "055bcee9d61fc0b1c7560f8cc399a675ae458c37e30012168577811591a5f9be",
+        "url_hashes": [
+          "cba6997d1e71a0acf648776e107ea7d37a354a635c1be8009f2a84d596a1cca5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f264167d8a176ad1",
+          "f27417758a876863",
+          "fa74177588876c29",
+          "fb7613758c834c29",
+          "fb7613758e810e29",
+          "f97713758e810e29",
+          "fd7711758f810a29",
+          "fd7711758f810a29"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.5
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_12",
+      "asset_id": "dj_qbert",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a1c7300c36b6a69b7bcd7ef8a9102967c32caf90af1ce7d97552dbbb18e64f23",
+        "url_hashes": [
+          "0568affc9028a5e529c47b82edf5c5f4d8454f1149a32ead599061063d2c3fbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "71ca46478c86b212",
+          "cacacad333313535",
+          "cacacad333313535",
+          "d2c2cb2b2b3d34b4",
+          "d2c2cb2b2b3d34b4",
+          "c6d3334e6f3134c4",
+          "c6d3334e6f3134c4"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.1
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_13",
+      "asset_id": "record_store",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e4c2638390c3c9fa9e9d206fe5726a58bb6d903a83f07de64fd32ef1e87d6c00",
+        "url_hashes": [
+          "5d1ace288d7f56f642f906f5d04570cab92428d3b7fcec378f0c3146d7399f67"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8531e58d5db8934b",
+          "8531658d5df8934b",
+          "8533658ddd78924b",
+          "8533658ddd789343",
+          "8531658ddd78934b",
+          "8531658ddd78934b",
+          "8531658ddde8934b",
+          "8533658ddd68934b"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.033333
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_14",
+      "asset_id": "city_night",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "157c349bfd76e9c6ab804f5c049e067198c8600f26ea8fedc8b3349b45fd33f7",
+        "url_hashes": [
+          "b850dd9ccffa49db2734bfc926d9006c14f37d715cf4a16b3a02a33c7dceeff4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e3184f71ac633e15",
+          "e3184f71ac633e15",
+          "e3184f71ac637e14",
+          "c3384f71ac637e14",
+          "c33c4f71ac637614",
+          "c3385e71ac637616",
+          "c3385e71ac237656",
+          "c3385e71ac237656"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.033333
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_15",
+      "asset_id": "live_band",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b86d0a4f5fe7ad2402209d9f798a383ec1d1543d06f0bbe54ccfc4efa4d7385d",
+        "url_hashes": [
+          "f96a28d7c17ca0c38103ef1a5ed0109c77ccafe5b67d5ef7cddd24e9ea74cb92"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dd4de02660267c7d",
+          "d958e43666667c68",
+          "9919a63666667c69",
+          "d948c4266666fc79",
+          "9359e23666e61c69",
+          "9158a63666e55d69",
+          "9818e4666d8dd9cb",
+          "9849e4666d9959a7"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.666667
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_16",
+      "asset_id": "vinyl_spin",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2ff29cc94557949b8cc3b6ff67f611fe79221fc7fcef4e93d56a21030d663619",
+        "url_hashes": [
+          "5355b9f1795b9118d9b6f1311e449aa1374d0213c51281e18e3cf4fc8d796bf9"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c41ffae8338de10c",
+          "c41ffae8338d6168",
+          "c41ffac8338d6968",
+          "c41ffac8338d6968",
+          "c41ffae8338d614c",
+          "c41ffae8338d6168",
+          "c61ffac8338d6168",
+          "c41ffac8338d6968"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.433333
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_17",
+      "asset_id": "rain_city",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e96a46f335f599742b1699714f3ab0465bf60d57b8505d97e15ed47153fac2b8",
+        "url_hashes": [
+          "4082c73059aa967d61bec55ea58019f565a0031dc0beca8bfb9f02a807aef022"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8d5e70a99ab54f50",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9ab54f50",
+          "8c5e70ad9ab54f50",
+          "8d5a70a99ab54f51",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9aa54f51"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.3
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_18",
+      "asset_id": "train_street",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "44bcf562fef0b01951a0c0d9b1bcb4c7618557e099139459fd5f97cd59c21bda",
+        "url_hashes": [
+          "70af880865cfc2fe79b97b4eff65d814cc942325b336a8264bbd6ed078561d89"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dcc2f1d813391f1a",
+          "c2ecdf8d3c0d188b",
+          "cacc99ca8e87d386",
+          "a29695705d5a4f6a",
+          "ccc4958d95a7d331",
+          "c849d1d578f0e44f",
+          "e6cec1700a6ef389",
+          "c1c79948c329f4b7"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.833333
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_19",
+      "asset_id": "concert_archive",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1057b05b3c6ecdcc70f7bdd514595f11f96f14c91d0554f6882181c3107f7849",
+        "url_hashes": [
+          "a0c4bd03fe48a00f4655fd774f4df570061500c4f65680d3c0dae45dc4a63387"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b58ae0a57f09c6ca",
+          "b78ac0a57f1986ca",
+          "fc8ac0a57f1986ca",
+          "f68ac0257f1996ca",
+          "fe8ac0a56f0996ca",
+          "ff8ac0257f090eca",
+          "ff8ae0257e01c6ca",
+          "ff8ac0257f01c6ca"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.7
+      }
+    },
+    {
+      "episode": "fatboy_slim_rock_in_rio_estreia",
+      "shot_id": "shot_20",
+      "asset_id": "open_air_concert",
+      "recorded_at": "2026-09-08T22:23:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6334ced5dedfbeb5c2dbbde0f172b5c6a71cd96762430c6ffdd4b9d4991afa6a",
+        "url_hashes": [
+          "fb62c6bfb1255b6ee57f8f8617e18247d97b295d2fc671b249522337e9e8dabb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "80f4b2b6b3a33734",
+          "80b193bab4ae3736",
+          "80b4b68ab5b232bf",
+          "80bab7b6b6833433",
+          "80b0e496b7b7352e",
+          "80b495aef69f3036",
+          "80b6a49d81b7379e",
+          "80b6b6b3b3a92b34"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.1
+      }
+    }
+  ]
+}
