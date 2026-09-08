@@ -1,1 +1,303 @@
-{"schema_version":1,"background_music":{"profile":"fallback_social_cinematic","volume":0.1},"sfx_cues":[{"time_seconds":0.12,"type":"record_scratch","volume":0.12},{"time_seconds":10.0,"type":"tape_stop","volume":0.1},{"time_seconds":21.0,"type":"riser_popular","volume":0.11},{"time_seconds":34.0,"type":"crowd_cheer","volume":0.12},{"time_seconds":48.0,"type":"camera_shutter","volume":0.09},{"time_seconds":61.0,"type":"chime_sparkles","volume":0.09},{"time_seconds":72.0,"type":"whoosh_wind","volume":0.09}],"visual_fx_cues":[{"start_seconds":0.1,"end_seconds":0.85,"type":"punch_zoom","intensity":0.9},{"start_seconds":22.0,"end_seconds":22.8,"type":"punch_zoom","intensity":0.8},{"start_seconds":64.0,"end_seconds":64.8,"type":"punch_zoom","intensity":0.75}],"text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.35,"text":"ELE VOLTOU PELO BRASIL","accent_text":"BRASIL","animation":"scale_bounce","position":"center","intensity":1.0},{"segment":"shows","offset_seconds":0.1,"duration_seconds":1.2,"text":"330 SHOWS","accent_text":"330","animation":"pop_in","position":"center","intensity":0.9},{"segment":"since_2017","offset_seconds":0.1,"duration_seconds":1.2,"text":"DESDE 2017","accent_text":"2017","animation":"fade_pop","position":"center","intensity":0.9},{"segment":"cta","offset_seconds":0.1,"duration_seconds":1.3,"text":"O ADEUS QUE FALTAVA?","accent_text":"ADEUS","animation":"slide_up","position":"center","intensity":0.85}],"shots":[{"id":"shot_01","segment":"hook","asset":"elton_rir_promo","motion":"push_in","transition_out":"cut","highlight":"ELTON JOHN • VOLTOU PELO BRASIL"},{"id":"shot_02","segment":"farewell_end","asset":"elton_farewell_stage","motion":"pull_out","transition_out":"cut","highlight":"FIM DA DESPEDIDA • 2023"},{"id":"shot_03","segment":"shows","asset":"vinyl_spin","motion":"hold","transition_out":"cut","highlight":"330 SHOWS","source_start_seconds":0.0},{"id":"shot_04","segment":"south_america","asset":"city_night","motion":"hold","transition_out":"crossfade","highlight":"AMÉRICA DO SUL FICOU FORA","source_start_seconds":0.0},{"id":"shot_05","segment":"regret","asset":"elton_blue_stage","motion":"push_in","transition_out":"cut","highlight":"UMA DÍVIDA COM OS FÃS"},{"id":"shot_06","segment":"fans","asset":"crowd_walk","motion":"hold","transition_out":"cut","highlight":"FÃS BRASILEIROS","source_start_seconds":0.0},{"id":"shot_07","segment":"invite","asset":"elton_recent_yellow","motion":"push_in","transition_out":"cut","highlight":"ACEITOU IMEDIATAMENTE"},{"id":"shot_08","segment":"not_tour","asset":"studio_console","motion":"pan_left","transition_out":"crossfade","highlight":"NÃO ERA NOVA TURNÊ"},{"id":"shot_09","segment":"special_show","asset":"live_band","motion":"hold","transition_out":"cut","highlight":"SHOW ESPECIAL","source_start_seconds":0.0},{"id":"shot_10","segment":"since_2017","asset":"elton_rio_2014","motion":"pull_out","transition_out":"cut","highlight":"SEM BRASIL DESDE 2017"},{"id":"shot_11","segment":"return_stage","asset":"elton_recent_piano","motion":"push_in","transition_out":"cut","highlight":"7 DE SETEMBRO • PALCO MUNDO"},{"id":"shot_12","segment":"yellow_piano","asset":"white_house_performance","motion":"hold","transition_out":"cut","highlight":"79 ANOS • AO PIANO","source_start_seconds":0.0},{"id":"shot_13","segment":"live","asset":"elton_piano_kcrw","motion":"push_in","transition_out":"crossfade","highlight":"QUASE 2 HORAS AO VIVO"},{"id":"shot_14","segment":"rocket","asset":"concert_gothenburg","motion":"hold","transition_out":"cut","highlight":"ROCKET MAN","source_start_seconds":0.0},{"id":"shot_15","segment":"classics","asset":"elton_farewell_2022","motion":"pan_right","transition_out":"cut","highlight":"YOUR SONG • CANDLE IN THE WIND"},{"id":"shot_16","segment":"goodbye","asset":"white_house_bts","motion":"hold","transition_out":"crossfade","highlight":"GOODBYE YELLOW BRICK ROAD","source_start_seconds":0.0},{"id":"shot_17","segment":"crocodile","asset":"elton_rir_2011","motion":"push_in","transition_out":"cut","highlight":"BRASIL NO TELÃO"},{"id":"shot_18","segment":"personal","asset":"record_store","motion":"hold","transition_out":"cut","highlight":"A PARTE MAIS PESSOAL","source_start_seconds":0.0},{"id":"shot_19","segment":"pandemic","asset":"rain_city","motion":"hold","transition_out":"crossfade","highlight":"A DESPEDIDA NÃO PASSOU AQUI","source_start_seconds":0.0},{"id":"shot_20","segment":"thanks","asset":"train_street","motion":"hold","transition_out":"cut","highlight":"VOLTOU PARA AGRADECER","source_start_seconds":0.0},{"id":"shot_21","segment":"history","asset":"elton_brazil_1995","motion":"pull_out","transition_out":"cut","highlight":"8ª VEZ NO BRASIL"},{"id":"shot_22","segment":"payoff","asset":"contract_signing","motion":"hold","transition_out":"crossfade","highlight":"FIM DAS TURNÊS ≠ FIM DOS PALCOS","source_start_seconds":0.0},{"id":"shot_23","segment":"cta","asset":"microphone","motion":"push_in","transition_out":"cut","highlight":"O ADEUS QUE FALTAVA?"}]}
+{
+  "schema_version": 1,
+  "background_music": {
+    "profile": "dark_cinematic",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "record_scratch",
+      "volume": 0.12
+    },
+    {
+      "time_seconds": 10.0,
+      "type": "tape_stop",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 21.0,
+      "type": "riser_popular",
+      "volume": 0.11
+    },
+    {
+      "time_seconds": 34.0,
+      "type": "crowd_cheer",
+      "volume": 0.12
+    },
+    {
+      "time_seconds": 48.0,
+      "type": "camera_shutter",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 61.0,
+      "type": "chime_sparkles",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 72.0,
+      "type": "whoosh_wind",
+      "volume": 0.09
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.85,
+      "type": "punch_zoom",
+      "intensity": 0.9
+    },
+    {
+      "start_seconds": 22.0,
+      "end_seconds": 22.8,
+      "type": "punch_zoom",
+      "intensity": 0.8
+    },
+    {
+      "start_seconds": 64.0,
+      "end_seconds": 64.8,
+      "type": "punch_zoom",
+      "intensity": 0.75
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.35,
+      "text": "ELE VOLTOU PELO BRASIL",
+      "accent_text": "BRASIL",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 1.0
+    },
+    {
+      "segment": "shows",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "330 SHOWS",
+      "accent_text": "330",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "since_2017",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "DESDE 2017",
+      "accent_text": "2017",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "cta",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.3,
+      "text": "O ADEUS QUE FALTAVA?",
+      "accent_text": "ADEUS",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.85
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "elton_rir_promo",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "ELTON JOHN • VOLTOU PELO BRASIL"
+    },
+    {
+      "id": "shot_02",
+      "segment": "farewell_end",
+      "asset": "elton_farewell_stage",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "FIM DA DESPEDIDA • 2023"
+    },
+    {
+      "id": "shot_03",
+      "segment": "shows",
+      "asset": "vinyl_spin",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "330 SHOWS",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_04",
+      "segment": "south_america",
+      "asset": "city_night",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "highlight": "AMÉRICA DO SUL FICOU FORA",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_05",
+      "segment": "regret",
+      "asset": "elton_blue_stage",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "UMA DÍVIDA COM OS FÃS"
+    },
+    {
+      "id": "shot_06",
+      "segment": "fans",
+      "asset": "crowd_walk",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "FÃS BRASILEIROS",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_07",
+      "segment": "invite",
+      "asset": "elton_recent_yellow",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "ACEITOU IMEDIATAMENTE"
+    },
+    {
+      "id": "shot_08",
+      "segment": "not_tour",
+      "asset": "studio_console",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "NÃO ERA NOVA TURNÊ"
+    },
+    {
+      "id": "shot_09",
+      "segment": "special_show",
+      "asset": "live_band",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "SHOW ESPECIAL",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_10",
+      "segment": "since_2017",
+      "asset": "elton_rio_2014",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "SEM BRASIL DESDE 2017"
+    },
+    {
+      "id": "shot_11",
+      "segment": "return_stage",
+      "asset": "elton_recent_piano",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "7 DE SETEMBRO • PALCO MUNDO"
+    },
+    {
+      "id": "shot_12",
+      "segment": "yellow_piano",
+      "asset": "white_house_performance",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "79 ANOS • AO PIANO",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_13",
+      "segment": "live",
+      "asset": "elton_piano_kcrw",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "QUASE 2 HORAS AO VIVO"
+    },
+    {
+      "id": "shot_14",
+      "segment": "rocket",
+      "asset": "concert_gothenburg",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "ROCKET MAN",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_15",
+      "segment": "classics",
+      "asset": "elton_farewell_2022",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "YOUR SONG • CANDLE IN THE WIND"
+    },
+    {
+      "id": "shot_16",
+      "segment": "goodbye",
+      "asset": "white_house_bts",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "highlight": "GOODBYE YELLOW BRICK ROAD",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_17",
+      "segment": "crocodile",
+      "asset": "elton_rir_2011",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "BRASIL NO TELÃO"
+    },
+    {
+      "id": "shot_18",
+      "segment": "personal",
+      "asset": "record_store",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "A PARTE MAIS PESSOAL",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_19",
+      "segment": "pandemic",
+      "asset": "rain_city",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "highlight": "A DESPEDIDA NÃO PASSOU AQUI",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_20",
+      "segment": "thanks",
+      "asset": "train_street",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "VOLTOU PARA AGRADECER",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_21",
+      "segment": "history",
+      "asset": "elton_brazil_1995",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "8ª VEZ NO BRASIL"
+    },
+    {
+      "id": "shot_22",
+      "segment": "payoff",
+      "asset": "contract_signing",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "highlight": "FIM DAS TURNÊS ≠ FIM DOS PALCOS",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_23",
+      "segment": "cta",
+      "asset": "microphone",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "O ADEUS QUE FALTAVA?"
+    }
+  ]
+}
