@@ -41,8 +41,8 @@ https://ofuxico.com.br/img/galeria/2011/09/67241.jpg
 Wikimedia Commons / The White House — Elton John em 23/09/2022; foto oficial de Adam Schultz; domínio público. Substitui o asset iHeartRadio que passou a responder 404 no media preflight:
 https://upload.wikimedia.org/wikipedia/commons/d/d2/Elton_John_2022.jpg
 
-Nostalgie — Elton John ao piano em palco:
-https://img.nrj.fr/XyY0jZdtS7QF-fmlLrdKstJmvAw%3D/800x450/smart/medias%2F2023%2F01%2Ff1ltyp7eiktmoq0cdnpnfna8gpsuhw5pjykboqmtofq_63b572181c2ca.jpg
+Wikimedia Commons / The White House — Elton John em performance na abertura do Stonewall National Monument Visitor Center em 28/06/2024; foto oficial de Erin Scott; domínio público. Substitui o asset Nostalgie que passou a responder HTTP 403 no media preflight:
+https://upload.wikimedia.org/wikipedia/commons/d/d3/F20240628ES-0527_%2853827171022%29.jpg
 
 Vídeos-base adicionais vêm de Wikimedia Commons e estão identificados com crédito/licença em assets.json. Eles funcionam como contexto visual e não são apresentados como gravações do evento real.
 
