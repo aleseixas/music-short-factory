@@ -1,0 +1,582 @@
+{
+  "schema_version": 1,
+  "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+  "recorded_at": "2026-09-09T23:23:00Z",
+  "visual_usage": [
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_01",
+      "asset_id": "gil_01",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "dd274b2b24341bc1e033b40290d97b4548cd27dd0dae3ccf5e4634a1b3f407e9",
+        "url_hashes": [
+          "18b5646277f2611f4952236359f49cb96cd505d501d6fa96f943b66435060a6c"
+        ],
+        "perceptual_hashes": [
+          "87931e595869796a",
+          "87930e1d5a3b1a7a",
+          "83970f95dc231e55",
+          "8ebc387162736363",
+          "8ea65c2eb9f82615",
+          "c08b025f2d3f3e3c",
+          "e1fca1b4d3ca14c5"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_02",
+      "asset_id": "gil_02",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e07909291615c02751179921f4d6b8a7425258111292d15ad6fe4646169c436c",
+        "url_hashes": [
+          "e440a9af285500eac687bc9e3d79b5a61d3503054e4b93d599a63afabc08e61b"
+        ],
+        "perceptual_hashes": [
+          "953b78971e8cf484",
+          "903b70971edcac8d",
+          "803170971fdf1c9d",
+          "8573379899898cee",
+          "81a663e72c14f47d",
+          "d52e5e83c7b5a038",
+          "d5b83ffc300a982b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_03",
+      "asset_id": "gil_03",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "807911aaf5fa37ee78ed8e68dd79f66ae5acb2a7b5ddeb7440bacc0c72d73d54",
+        "url_hashes": [
+          "94c00cb7144b02d9924c843ddf3a7be24cc1cde875f95f13a489f84ffdbbf671"
+        ],
+        "perceptual_hashes": [
+          "8d79668e3469d398",
+          "8d5966872c6ad758",
+          "895b62872d62d55e",
+          "9a70cdaa699459e6",
+          "8a7265d5ac3b6ca2",
+          "845ff1a665d807b8",
+          "a44c79c9d0a771bc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_04",
+      "asset_id": "gil_04",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ae6bd3e744758a20ae892bbba2cecc550f79ac25cf09391587aa7a58dd3de297",
+        "url_hashes": [
+          "afae165f3adbac30dc6c4f80923972294bb926f5060e886735b393a7eee4b672"
+        ],
+        "perceptual_hashes": [
+          "83d66d59b664dc50",
+          "81d66d59226ef855",
+          "91946959662e7e1d",
+          "96e952e1cdf18b81",
+          "97a9ef52b2428d61",
+          "cce2445bf1ced6a0",
+          "dcd3a24cde72d029"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_05",
+      "asset_id": "gil_05",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e4b3fb051c61e2013af13479a9864be4ec7cfeb4250888e881c0f27dadeaac0c",
+        "url_hashes": [
+          "f015f248588948a17d49f29f4bdb32e1b3a688006de6a0453e31d372114f51be"
+        ],
+        "perceptual_hashes": [
+          "fbf969f03422026e",
+          "db7969f034b50466",
+          "db5a69f828b82536",
+          "f4736263650c6dd2",
+          "b49452d2d377f282",
+          "cd6f7637326228c4",
+          "88c86cec472dddc6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_06",
+      "asset_id": "gil_06",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3ede56986d79051925754176e9513e887b755fdebcff50ce9158d4503992d517",
+        "url_hashes": [
+          "f16c9e19c12b91e875b3c24a6d82fd1c2f6f502e08ca6268423a30a79e645083"
+        ],
+        "perceptual_hashes": [
+          "fae3cf1db4188063",
+          "fae24b15be1d8069",
+          "fee24124be9c1659",
+          "f1ce1ea89141c2ef",
+          "f1e1c606e47e8f05",
+          "bf608493c678ecb1",
+          "bf7be86cb0289431"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_07",
+      "asset_id": "gil_07",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3dab80557ea5af79d937e1e572236d333f65d3cc958f66b6829e092d28fff81d",
+        "url_hashes": [
+          "775bd93ac3326bb2bb44081b09d453103efd455b6067b37edac0bf12841e79a0"
+        ],
+        "perceptual_hashes": [
+          "a9afd652689925c9",
+          "a8afd4564a9825db",
+          "b8ae95744ab46d92",
+          "fb88b565916ad44a",
+          "f3ea88b66d94254a",
+          "afa45a6b8d34c925",
+          "afa5c4d273c81b26"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_08",
+      "asset_id": "gil_08",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "51259e36bb87700d99348ade5e7be927df2817e037771b7f3e77d289b2a16e6f",
+        "url_hashes": [
+          "d683833f11b8c015e0d17c8c6b6d9f69bf039d435169abff3dd28a56e2ec62c8"
+        ],
+        "perceptual_hashes": [
+          "c528739a71269af6",
+          "cd69729e71863496",
+          "c969f298710bb699",
+          "9a62b5b36ea59641",
+          "ca5a649db3661a65",
+          "e46e999e329bcc21",
+          "e4267991ce74ce31"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_09",
+      "asset_id": "gil_09",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "572906dc327dd71a49fa612e1022f8e45274f14532d302881295698d21845d8c",
+        "url_hashes": [
+          "07fa040bbfcdb5d45320b688a1fd627645e2d27bea506e3d3cd5dc0d667c7917"
+        ],
+        "perceptual_hashes": [
+          "8cf925d38d4ae362",
+          "8cb9a5918dda817e",
+          "8ca9aeb18c9aad8e",
+          "9b72861b1d666467",
+          "9d726866e2799463",
+          "c635d44e497a6a78",
+          "c30f357ab42ec90e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_10",
+      "asset_id": "gil_10",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "05352e81aee5b6826bc0cda0021a8cf399da7a49fc85ef040012ec1abdd85d0c",
+        "url_hashes": [
+          "33eeca3cee378626ee5a2f0663e4c5b778facf7653a92e3c55a3ad2cf7f6285a"
+        ],
+        "perceptual_hashes": [
+          "be3a12d9e0879f0c",
+          "be3a125a60c3cf0f",
+          "ae3e1b5b78e2c308",
+          "fd7094d28f9c1ba0",
+          "af69251c7033a3f4",
+          "a13bc8eef0c09796",
+          "b33b1a050e3f1fc8"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_11",
+      "asset_id": "gil_11",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "df5493d8b7439afbc700c41647602bed8da4a433a7176378ed50040809e057ab",
+        "url_hashes": [
+          "ce5d8b2a5e51a19298ddba570c62b7b92ba4d4e5e834ed6822005def497a4d2f"
+        ],
+        "perceptual_hashes": [
+          "9c137b68a39e9c49",
+          "9c93786823be94d9",
+          "9db37c7862368e90",
+          "902f7145bd9b626a",
+          "98ae3f5343666e0c",
+          "d0186f7991c73e26",
+          "c690164f7e7c3863"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_12",
+      "asset_id": "gil_12",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "be97d282c33e55236a60d1b0acfe7a3bbb968551d835ca6e66fd96536b62f90a",
+        "url_hashes": [
+          "9c781eed7327d161ce7af3439fba36e6d01cafc861d67293feee866e0e0f676e"
+        ],
+        "perceptual_hashes": [
+          "c6e173cc31738ae4",
+          "c6e173ce3160aaec",
+          "c7f870ce31102aef",
+          "8c630d8867d9ea37",
+          "9cc367d898e22735",
+          "c13e41e23ae1b45f",
+          "c1ee3cc1c1565e1d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_13",
+      "asset_id": "gil_13",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1a2f657b8e4910d7896525e252f645feeef947ce5e8fd4a4c04fb2ecf5b6391e",
+        "url_hashes": [
+          "ef652bc81a16e2a28345b9b1436082effbadf6a97c49b635cb9bd7161e1a7fc4"
+        ],
+        "perceptual_hashes": [
+          "9e61b30ced32f984",
+          "8c6b33cccf326994",
+          "847b35ccc63359b4",
+          "996623d926d38d56",
+          "9946f603da0de457",
+          "c33c1ae738ccd32c",
+          "c36d181ac5f3b86c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_14",
+      "asset_id": "gil_14",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "2d831044524cb595c2b0201f37a43fc76d40ec982d375960eefe124d0380e1fb",
+        "url_hashes": [
+          "f71206f9a4273b260e6d6a3fba9957880b19fd33927136b8fd9a0f2dbd7af015"
+        ],
+        "perceptual_hashes": [
+          "c6e173cc31738ae4",
+          "c6e173ce3160aaec",
+          "c7f870ce31102aef",
+          "8c630d8867d9ea37",
+          "9cc367dc98e20735",
+          "c13e41e23ae1b45f",
+          "c1ee3cc1c1565e1d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_15",
+      "asset_id": "gil_15",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3b0c7c04612f244cba4b21016f77768a8c7afcfaea3a4f302f578149ec36bf42",
+        "url_hashes": [
+          "c45b8d44c1cd67e62ecb78828f61726088afa0e9d9ee107242e0d3cd9d9a2817"
+        ],
+        "perceptual_hashes": [
+          "cdf973d0742b0626",
+          "cef97bd474419026",
+          "caf911dd7e09803d",
+          "d87232c1478f6d0f",
+          "d8fa7686a960528f",
+          "e53c5a5328b33179",
+          "e1a538d8d3716cd8"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_16",
+      "asset_id": "gil_16",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "dc9a771d68db93355b0c49e58c75b366843b6d16f16ce25cf44fb4d133728c5b",
+        "url_hashes": [
+          "4fb7e602aa5c014d072166e7c41960cb6f39f5ae27fcc5e22efa0d2b0c0a0c78"
+        ],
+        "perceptual_hashes": [
+          "c2cd3c6a65b4c70e",
+          "c0cdbe4a69b58d07",
+          "c4cb9e4a69bd8817",
+          "8198794fab8d6c69",
+          "8588b8bc5c6c63eb",
+          "c2c50b6fb6e13163",
+          "dac48583693837af"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_17",
+      "asset_id": "gil_17",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "08869e87eed607799eb530b1d382b5f6afeabb01ba551b94e1bf58aa69060269",
+        "url_hashes": [
+          "b2ee4bd63fe1c6ae659849d2d0dd4a46ea07ce7772733fd1369a62120305b603"
+        ],
+        "perceptual_hashes": [
+          "966c639538b293bc",
+          "966e62e158f2b334",
+          "976e62e949f29134",
+          "8c59e63235a56b5c",
+          "bd584dcc5a5a4cd2",
+          "d263f00e1b9867e5",
+          "d26769f0646665c5"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_18",
+      "asset_id": "gil_18",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "5139e66e96ce958f42e49f3033b34025f38cf79cfc4dc7b5d4d9b00b4864b5fc",
+        "url_hashes": [
+          "dd4ef41d888b989858d6a136a8587c3bf4931c14259797a2a23278ae58ba5146"
+        ],
+        "perceptual_hashes": [
+          "c6c76939383c3969",
+          "c6c769291e3c3959",
+          "c5c769a1163f1c5a",
+          "cfce7b30383264ac",
+          "c5c44acf82c5afa9",
+          "f0e02f1d0f0c79f2",
+          "d0f0626cf4f1f292"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_19",
+      "asset_id": "gil_19",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b85b3f6176ca815faf69d7bf0849560dc2ea82f8836c1d6788e27421067d8ead",
+        "url_hashes": [
+          "45d72dccc67a34fc42013d01d309db3478a88a4f30638fc0d13be55deb7e9b94"
+        ],
+        "perceptual_hashes": [
+          "a256ab685db2b954",
+          "a255aa485db2bdd4",
+          "b455aa494bb269f4",
+          "a15e9752a5aaad26",
+          "a55ab5ad5a452656",
+          "b350ad44bbd4d3a8",
+          "bb5299ab4453ab25"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_20",
+      "asset_id": "gil_20",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8702f8921d35308db90aa2c024b4082c6821853d58e7a5fd5c5c8b3a51a341bb",
+        "url_hashes": [
+          "698d11aa99a059e66e3334442a3800b10ea12cc21583b73f53a025ed85ee3824"
+        ],
+        "perceptual_hashes": [
+          "f2da0993c143b763",
+          "f6f80996c9c0b762",
+          "f4fc0996c8d09b65",
+          "f1d31ef5027c6294",
+          "f1f1023efc42859e",
+          "dbedc8d9fc1030c8",
+          "9bdb6418816ed9cc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_21",
+      "asset_id": "gil_21",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "290700f882a6fb5935d6ccaa79aff0a948965691eac86e55d64a117f4d789a84",
+        "url_hashes": [
+          "e350bebef387df4a72209997573893e9a51925dc881701d4907315d8f222e5f1"
+        ],
+        "perceptual_hashes": [
+          "cd3327d8e30e39c1",
+          "cd330fdcc30c7bc0",
+          "cc330cfbc40e79e2",
+          "db2439c60d72cd39",
+          "cb242f39e6c93932",
+          "c6390ff8231ce317",
+          "e639380f3ce3138e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_22",
+      "asset_id": "gil_22",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f0f84a9b0471cfe680d6601defb4d5aef32f02205fcfcb7b3d44b5d1795be7c7",
+        "url_hashes": [
+          "a6f0818dc156c31b877a366c3f4f047ccbe13500d22b3b3ae9fe92fd4f6c42b1"
+        ],
+        "perceptual_hashes": [
+          "c017a7ca887597ea",
+          "cc1327cef87501ea",
+          "ce1123d6fe330d52",
+          "c13eccd1238fd0b3",
+          "c1372eee99d8312a",
+          "c314e8c315efab86",
+          "e75d9478cba11c26"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "gilberto_gil_ultimo_rock_in_rio_2026",
+      "shot_id": "shot_23",
+      "asset_id": "gil_23",
+      "recorded_at": "2026-09-09T23:23:00Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "0b1d4ce7b38e1b5f4976c8785bdf83a3b165f1a955e4ccf298e077315ed0799c",
+        "url_hashes": [
+          "331e2d2309a31fd1876ca48b3144ba55382f26e2b3be374e8e900c8c3ed367fd"
+        ],
+        "perceptual_hashes": [
+          "cebf984a0ec6709c",
+          "c7bf984a0f403c8f",
+          "c5bd987a41613f43",
+          "ceb3d30cc97085e3",
+          "ccacb3f3309e4790",
+          "e08faf60f311c1ba",
+          "e0908fef0dc0fa8e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
