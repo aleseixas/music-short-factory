@@ -25,14 +25,14 @@ Use esta ordem de retomada:
 
 1. se os arquivos do episódio estiverem incompletos, complete/corrija somente o mesmo slug;
 2. se ainda não houver media preflight, crie `.episode-check/<slug>-<nonce>.json` e acompanhe a Action exata;
-3. se o último media preflight falhou, corrija somente o mesmo episódio e rode novo media preflight;
+3. se o último media preflight falhou, corrija somente o mesmo episódio e rode novo media preflight conforme `templates/publishing-completion-rule.md` e `docs/publishing-retry.md`;
 4. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, confirme que `assets.json`, `timeline.json`, background e demais arquivos relevantes NÃO foram alterados depois desse PASS;
 5. se nada relevante mudou após o PASS, leia a política de publicação atual, confirme que a queue ainda não existe e crie `.publish-queue/<slug>.txt` com conteúdo exatamente `<slug>`;
-6. depois da criação bem-sucedida da queue, encerre imediatamente a execução.
+6. depois da criação bem-sucedida da queue, **NÃO encerre a execução por causa da queue**: siga `templates/publishing-completion-rule.md`, acompanhe a Publish Action correspondente ao mesmo slug e só conclua em um estado terminal real de publicação ou bloqueio permitido.
 
 Se qualquer asset, timeline ou background tiver sido alterado depois do último PASS, o media preflight deve ser executado novamente antes da queue.
 
-Se `.publish-queue/<slug>.txt` já existir para o MESMO slug que estava sendo retomado, o episódio não está mais pendente: não recrie a queue. Isso não significa que uma execução nova, iniciada depois dessa queue, esteja bloqueada.
+Se `.publish-queue/<slug>.txt` já existir para o MESMO slug que estava sendo retomado, não recrie a queue. A partir daí, trate o slug conforme `templates/publishing-completion-rule.md`: localize e acompanhe a Publish Action correspondente em vez de interpretar a existência da queue como conclusão.
 
 Se forem encontrados **dois ou mais episódios ativos sem queue** no mesmo estado de continuidade, não escolha arbitrariamente entre eles. Trate como conflito operacional e reporte `BLOQUEADO` para evitar criar/publicar um terceiro episódio.
 
@@ -43,11 +43,11 @@ O workflow `Duplicate candidate preflight` também possui uma segunda camada de 
 
 `RESUME_EXISTING_EPISODE` não significa candidata duplicada e não autoriza um novo episódio. Ele significa: **há trabalho anterior já iniciado que deve ser concluído antes de qualquer nova seleção editorial**.
 
-Uma queue anterior à execução atual nunca deve ser reinterpretada como `EXECUTION_ALREADY_COMPLETED`. O agente só considera a execução atual concluída quando **ele próprio acabou de criar com sucesso a nova `.publish-queue/<slug>.txt` desta execução**.
+Uma queue anterior à execução atual nunca deve ser reinterpretada como `EXECUTION_ALREADY_COMPLETED`. **Queue não é estado terminal**: conclusão de publicação é regida por `templates/publishing-completion-rule.md` e exige acompanhar o estado real da Publish Action/plataformas quando acessível.
 
 Fluxo de continuidade obrigatório:
 
-`episódio iniciado -> concluir arquivos -> media preflight PASS -> queue -> STOP`
+`episódio iniciado -> concluir arquivos -> media preflight PASS -> queue -> Publish episode -> verificar plataformas -> estado terminal`
 
 Somente quando NÃO existir episódio ativo sem queue a execução pode seguir para a seleção normal de tema descrita abaixo.
 
@@ -214,7 +214,7 @@ Depois de ranquear o pool, processe as candidatas em ordem de qualidade:
 5. se o pool inicial for consumido principalmente por duplicatas ou reprovações, **pesquise e acrescente novas candidatas** em vez de encerrar automaticamente;
 6. continue esse ciclo até encontrar uma candidata inédita que passe pelos gates e possa seguir para autoria;
 7. depois que uma candidata receber `UNIQUE_CANDIDATE`, pare de avaliar outras, autorize somente esse slug e conduza-o até `MEDIA_PREFLIGHT_RESULT=PASS` e criação da queue;
-8. depois da criação bem-sucedida da nova queue desta execução, STOP.
+8. depois da criação bem-sucedida da nova queue desta execução, **continue com o mesmo slug pela regra de conclusão/publicação; não use `STOP` na queue**.
 
 `DUPLICATE_CANDIDATE` é um resultado normal de filtragem, não um erro de execução. Uma queue de execução anterior também não é um erro nem motivo de bloqueio.
 
@@ -224,7 +224,7 @@ Depois de ranquear o pool, processe as candidatas em ordem de qualidade:
 
 Objetivo operacional normal:
 
-`pool -> candidata 1 duplicada? próxima -> candidata 2 falhou gate? próxima -> ampliar pool se necessário -> UNIQUE -> autoria -> media preflight PASS -> queue -> STOP`
+`pool -> candidata 1 duplicada? próxima -> candidata 2 falhou gate? próxima -> ampliar pool se necessário -> UNIQUE -> autoria -> media preflight PASS -> queue -> Publish episode -> verificar plataformas -> estado terminal`
 
 ### Mix Brasil x internacional
 
@@ -373,14 +373,19 @@ Confirme:
 - a mesma história não foi publicada antes;
 - o duplicate preflight técnico passou para uma nova candidata OU a execução está retomando um slug previamente autorizado;
 - as regras atuais de roteiro, visual, áudio, CTA e mídia continuam respeitadas;
-- `MEDIA_PREFLIGHT_RESULT=PASS` existe antes da publish queue.
+- `MEDIA_PREFLIGHT_RESULT=PASS` existe antes da publish queue;
+- a criação da queue será tratada apenas como solicitação de publicação, nunca como conclusão da execução;
+- após a queue, `templates/publishing-completion-rule.md` será seguido até um estado real verificável.
 
 ## 12. Precedência
 
-Em conflito EDITORIAL com regras antigas, aplique esta ordem:
+Em conflito, aplique esta ordem:
 
 1. `main` para capacidades e contratos técnicos;
-2. esta regra para **continuidade operacional antes da seleção**, escopo de tema, escolha editorial, hook e duplicidade por história;
-3. demais templates para edição, pacing, visual, áudio, legenda, CTA e publicação.
+2. `templates/publishing-completion-rule.md` e `docs/publishing-retry.md` para **conclusão da execução, queue, acompanhamento da Publish Action, diagnóstico de falhas, retries e status de publicação**;
+3. esta regra para **continuidade operacional antes da seleção**, escopo de tema, escolha editorial, hook e duplicidade por história;
+4. demais templates para edição, pacing, visual, áudio, legenda e CTA.
 
 Qualquer instrução antiga equivalente a `todo episódio deve ser sobre uma música`, `escolha obrigatoriamente uma música` ou `a primeira frase deve identificar música + artista` deve ser considerada substituída por esta regra.
+
+Qualquer instrução antiga equivalente a `queue -> STOP`, `queue encerra a tarefa`, `não acompanhe a Publish Action` ou `pare na primeira falha de workflow` deve ser considerada substituída por `templates/publishing-completion-rule.md`.
