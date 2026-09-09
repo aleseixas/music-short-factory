@@ -1,0 +1,41 @@
+# Fontes factuais e visuais — Stray Kids / Rock in Rio 2026
+
+1. UOL Splash — 09/09/2026 — primeiro dia de K-pop em 41 anos; 11/09; NEXZ, Hwasa e Stray Kids; ingressos esgotados; lightsticks liberados.
+https://www.uol.com.br/splash/noticias/2026/09/09/pela-primeira-vez-rock-in-rio-tem-um-dia-de-k-pop-com-stray-kids-hwasa-e-nexz.ghtm
+
+2. gshow — programação oficial do Rock in Rio 2026 — horários do Palco Mundo em 11/09: NEXZ, Hwasa, Alok e Stray Kids.
+https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/qual-e-a-programacao-completa-do-rock-in-rio-2026-veja-o-line-up.ghtml
+
+3. gshow — 25/11/2025 — Stray Kids anunciado como primeira atração de K-pop da história do Rock in Rio.
+https://gshow.globo.com/festivais/rock-in-rio/noticia/rock-in-rio-anuncia-stray-kids-primeira-atracao-de-k-pop-da-historia-do-festival.ghtml
+
+4. Spotify Newsroom — 03/08/2026 — 3RACHA Session; Bang Chan, Changbin e HAN; unidade de produção/criação do Stray Kids.
+https://newsroom.spotify.com/2026-08-03/jyp-podcast-3racha-sessions-stray-kids/
+
+5. Rock in Rio — página oficial Stray Kids — integrantes, hits e descrição de versatilidade/performance.
+https://rockinrio.com/rio/pt-br/line-up/stray-kids/
+
+6. Billboard Brasil — 07/04/2025 — turnê dominATE no Brasil: 175 mil fãs em três shows (55 mil no Rio + 120 mil em São Paulo, segundo o grupo).
+https://billboard.com.br/stray-kids-encerra-passagem-no-brasil-com-maior-turne-de-k-pop-no-pais/
+
+7. StarNews — 09/06/2026 — Governors Ball: público, banda ao vivo e rearranjos de rock/EDM em formato de festival.
+https://www.starnewskorea.com/en/music/2026/06/09/2026060910225189432
+
+8. gshow — 22/08/2026 — The dominATE Experience e o Stray Kids como headliner do primeiro dia dedicado ao K-pop.
+https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/stray-kids-faz-show-grandioso-em-filme-que-chega-ao-globoplay-veja-por-que-assistir-com-o-selo-gshow.ghtml
+
+## Pesquisa de background externo
+Foram testadas buscas externas semanticamente diferentes antes do fallback:
+- Pixabay: k-pop instrumental/upbeat/energetic;
+- Pixabay: modern electronic instrumental;
+- Pixabay: energetic trap instrumental;
+- Pixabay: Korean pop instrumental;
+- Pixabay: hyperpop/festival energetic.
+
+Candidatas consideradas:
+- K-Pop Rush: Upbeat & Energetic Instrumental — boa aderência, mas marcada como AI generated e sem confirmação explícita de Content ID na página.
+- Number One (no vocal) — rejeitada porque a página informa Content ID Registered.
+- Trap Modern — aderência parcial e sem confirmação explícita de Content ID.
+- Trap Instrumental — aderência parcial e sem confirmação explícita de Content ID.
+
+Por segurança operacional, o episódio usa o profile de fallback do repositório `fallback_social_modern`, depois de pesquisa externa real.
