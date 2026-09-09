@@ -57,6 +57,8 @@ Se a Publish Action ainda estiver rodando e não houver estado terminal acessív
 
 Uma primeira falha de Media Preflight ou Publish Action **não é automaticamente um estado terminal**. Antes de reportar falha final, aplique obrigatoriamente o protocolo de recuperação da seção 6 quando a falha for elegível.
 
+**Status genérico de workflow não é causa raiz.** `failure`, `exit code 1`, nome da etapa que ficou vermelha, `MEDIA_PREFLIGHT_RESULT=FAIL` ou frases equivalentes não podem ser usados sozinhos para encerrar a tarefa. Antes de parar, a causa concreta deve ser procurada nos logs brutos e nos artefatos persistentes conforme a seção 6.0 e `docs/publishing-retry.md`.
+
 Se, depois do protocolo permitido, a Publish Action terminar com falha não recuperável ou com tentativas seguras esgotadas, use `STATUS: FALHA_PUBLICAÇÃO` e reporte a plataforma/etapa que falhou com base nos logs/steps reais.
 
 Se o episódio foi criado, mas a ferramenta não permitir verificar a Publish Action, use `STATUS: PUBLICAÇÃO_NÃO_VERIFICADA`; não invente sucesso.
@@ -77,12 +79,29 @@ Nunca diga que uma plataforma publicou apenas porque o workflow geral foi dispar
 
 É proibido encerrar a execução após a primeira falha elegível apenas reportando o erro ao usuário.
 
+### 6.0 Escada obrigatória de diagnóstico — não parar em erro genérico
+
+Antes de considerar uma falha terminal, faça tudo que for aplicável abaixo na **execução exata** que falhou:
+
+1. identifique `run_id`, `job_id`, commit/branch e a etapa exata;
+2. abra o **log bruto/completo do job** e procure a mensagem imediatamente anterior ao exit code, traceback, `ERROR`, `Exception`, validator detail, target, asset, URL, arquivo ou constraint;
+3. se o log bruto estiver indisponível, truncado ou genérico, consulte obrigatoriamente o artefato `media-preflight-diagnostics-<run_id>` quando existir;
+4. leia `final-result.txt`; se ainda estiver genérico, leia os `attempt-*.log` do mesmo run;
+5. cruze a causa encontrada com os arquivos do **mesmo slug** e com a versão da `main` usada naquele run;
+6. somente depois classifique a falha como corrigível, não recuperável ou diagnóstico inacessível.
+
+Mensagens como `Process completed with exit code 1`, `Validate and auto-repair episode media failed`, `MEDIA_PREFLIGHT_RESULT=FAIL`, `job failed` ou somente o nome de uma etapa **nunca são suficientes** para `ERRO/BLOQUEIO` final.
+
+Enquanto houver uma fonte diagnóstica ainda não consultada ou uma correção segura restante, **continue trabalhando no mesmo slug e não devolva o controle ao usuário**.
+
+Se todas as fontes disponíveis forem realmente esgotadas sem causa concreta, use `DIAGNÓSTICO_INACESSÍVEL` como motivo explícito e informe quais fontes foram tentadas. Não mascare isso como erro técnico do episódio.
+
 ### 6.1 Falha no Media Preflight antes da queue
 
 Se `Episode media preflight` falhar:
 
-1. leia o job, a etapa que falhou e os logs acessíveis da execução exata;
-2. identifique o erro concreto — não faça retry cego;
+1. aplique primeiro a escada obrigatória da seção 6.0;
+2. identifique o erro concreto — não faça retry cego de publicação;
 3. se a correção puder ser feita somente no episódio ativo, preserve o mesmo slug;
 4. corrija os arquivos necessários do episódio;
 5. grave a correção na `main`;
@@ -90,13 +109,17 @@ Se `Episode media preflight` falhar:
 7. acompanhe a nova Action exata;
 8. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, continue automaticamente para a queue/publicação sem devolver controle ao usuário entre essas etapas.
 
-Para evitar loop infinito, faça no máximo **3 tentativas totais de Media Preflight por episódio dentro da mesma execução do agente**: tentativa inicial + até 2 novas tentativas após correções reais. Cada nova tentativa exige uma correção objetiva correspondente ao erro anterior.
+Para evitar loop infinito, faça no máximo **3 tentativas totais de Media Preflight por episódio dentro da mesma execução do agente**: tentativa inicial + até 2 novas tentativas após correções reais. Cada nova tentativa normal exige uma correção objetiva correspondente ao erro anterior.
 
-Pare antes do PASS somente se o erro não puder ser corrigido com segurança dentro do escopo autorizado do episódio, se depender de autenticação/secrets/permissões/infraestrutura externa, se os logs não permitirem identificar uma correção confiável ou se as 3 tentativas totais forem consumidas.
+**Exceção diagnóstica:** se o Media Preflight falhar antes da queue e tanto o log bruto quanto o artefato persistente não revelarem a causa concreta, é permitida **uma única rechecagem diagnóstica adicional do mesmo slug com nonce novo**, sem alteração de tema e sem criação de queue. Essa rechecagem existe somente para produzir diagnóstico melhor e não autoriza loop infinito.
+
+Pare antes do PASS somente se o erro não puder ser corrigido com segurança dentro do escopo autorizado do episódio, se depender de autenticação/secrets/permissões/infraestrutura externa, se a escada de diagnóstico tiver sido integralmente esgotada sem causa concreta ou se as tentativas seguras permitidas tiverem sido consumidas.
+
+Uma mensagem genérica de step/job, isoladamente, **não satisfaz nenhuma dessas condições de parada**.
 
 ### 6.2 Falha na Publish Action
 
-Se a Publish Action falhar, leia a etapa/log acessível e identifique o erro concreto.
+Se a Publish Action falhar, aplique a seção 6.0, leia a etapa/log acessível e identifique o erro concreto.
 
 Se a falha ocorreu comprovadamente antes de qualquer plataforma poder ter recebido o vídeo, e a correção puder ser feita somente nos arquivos do episódio, a recuperação automática é **obrigatória** enquanto houver tentativa segura disponível. Siga exatamente `docs/publishing-retry.md` e a implementação atual da `main`: hoje são no máximo **3 tentativas totais de publicação** — tentativa inicial pela queue + `retry-1` + `retry-2`.
 
@@ -154,12 +177,14 @@ YOUTUBE: <status real>
 INSTAGRAM: <status real>
 TIKTOK: <status real>
 RETRIES: <número real | N/A>
-ERRO/BLOQUEIO: <resumo objetivo ou NENHUM>
+ERRO/BLOQUEIO: <causa concreta; nunca apenas nome genérico de step/status | NENHUM>
 ```
 
 ## 9. Regra de ouro
 
-**Falha elegível = investigar, corrigir e tentar novamente; não parar na primeira falha.**
+**Falha elegível = investigar log bruto, identificar causa concreta, corrigir e tentar novamente; não parar na primeira falha.**
+
+**Erro genérico de Action = continuar diagnóstico; não encerrar.**
 
 **Queue criada = publicação solicitada.**
 
