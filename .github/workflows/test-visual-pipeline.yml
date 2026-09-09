@@ -1,0 +1,175 @@
+name: Test visual pipeline
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".visual-pipeline-test/*.txt"
+
+permissions:
+  contents: read
+
+jobs:
+  resolve-and-stage:
+    runs-on: ubuntu-latest
+    env:
+      EPISODE: luisa_sonza_menescal_rock_in_rio_2026
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Set up Node.js for yt-dlp EJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Ensure FFmpeg
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v ffmpeg >/dev/null 2>&1 && command -v ffprobe >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+            ffprobe -version | head -n 1
+            exit 0
+          fi
+
+          while IFS= read -r source; do
+            if sudo grep -q 'dl.google.com/linux/chrome' "$source"; then
+              sudo mv "$source" "${source}.disabled"
+            fi
+          done < <(find /etc/apt/sources.list.d -maxdepth 1 -type f -print)
+
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Verify download stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import yt_dlp
+          print(f"yt-dlp: {yt_dlp.version.__version__}")
+          PY
+          node --version
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
+      - name: Test YouTube auth metadata path
+        env:
+          PYTHONPATH: .
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          YOUTUBE_AUTH_TEST_URL: https://www.youtube.com/watch?v=DKZV_DbmWQo
+        run: python scripts/test_youtube_auth.py
+
+      - name: Download and inspect real Luisa Sonza clip
+        env:
+          PYTHONPATH: .
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          VISUAL_DOWNLOAD_TEST_URL: https://www.youtube.com/watch?v=DKZV_DbmWQo
+          VISUAL_DOWNLOAD_TEST_START: "20"
+          VISUAL_DOWNLOAD_TEST_SECONDS: "8"
+        run: python scripts/test_visual_download.py
+
+      - name: Run full visual resolver without publishing
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python resolve_visual_candidates_web_auth.py "$EPISODE"
+
+      - name: Validate resolver output
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          episode = os.environ["EPISODE"]
+          episode_dir = Path("episodes") / episode
+          report_path = episode_dir / "visual_resolution_report.json"
+
+          if not report_path.is_file():
+              raise SystemExit("visual_resolution_report.json was not produced")
+
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          selections = report.get("selections", {})
+          selected = [
+              slot
+              for slot, payload in selections.items()
+              if isinstance(payload, dict) and payload.get("status") == "selected"
+          ]
+          if not selected:
+              raise SystemExit("Resolver completed but selected zero visual candidates")
+
+          asset_files = list((episode_dir / "assets").glob("*")) if (episode_dir / "assets").is_dir() else []
+          print(f"VISUAL_RESOLVER_SMOKE_OK selected={len(selected)} asset_files={len(asset_files)}")
+          print("Selected slots:", ", ".join(selected[:20]))
+          PY
+
+      - name: Stage visual handoff
+        run: python scripts/stage_visual_handoff.py
+
+      - name: Validate staged handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f ".visual-handoff/episodes/$EPISODE/assets.json"
+          test -f ".visual-handoff/episodes/$EPISODE/timeline.json"
+          test -f ".visual-handoff/episodes/$EPISODE/visual_resolution_report.json"
+          find ".visual-handoff/episodes/$EPISODE" -maxdepth 2 -type f -print
+
+      - name: Upload visual handoff
+        uses: actions/upload-artifact@v7
+        with:
+          name: visual-pipeline-smoke-handoff
+          path: .visual-handoff
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+          compression-level: 0
+
+  verify-handoff:
+    needs: resolve-and-stage
+    runs-on: ubuntu-latest
+    env:
+      EPISODE: luisa_sonza_menescal_rock_in_rio_2026
+
+    steps:
+      - name: Download visual handoff
+        uses: actions/download-artifact@v7
+        with:
+          name: visual-pipeline-smoke-handoff
+          path: .visual-handoff
+
+      - name: Verify handoff arrived intact
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f ".visual-handoff/episodes/$EPISODE/assets.json"
+          test -f ".visual-handoff/episodes/$EPISODE/timeline.json"
+          test -f ".visual-handoff/episodes/$EPISODE/visual_resolution_report.json"
+          count="$(find ".visual-handoff/episodes/$EPISODE" -type f | wc -l)"
+          test "$count" -ge 3
+          echo "VISUAL_HANDOFF_SMOKE_OK files=$count"
+
+      - name: Confirm this workflow never publishes
+        run: |
+          echo "Smoke test finished. No render or publishing command exists in this workflow."
