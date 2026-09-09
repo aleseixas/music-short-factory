@@ -1,4 +1,4 @@
-name: Test YouTube auth
+name: Test YouTube visual download
 
 on:
   workflow_dispatch:
@@ -11,13 +11,19 @@ on:
 permissions:
   contents: read
 
+env:
+  TEST_EPISODE: luisa_sonza_menescal_rock_in_rio_2026
+  TEST_YOUTUBE_URL: https://www.youtube.com/watch?v=DKZV_DbmWQo
+
 jobs:
-  youtube-auth-smoke-test:
+  youtube-visual-smoke-test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -30,12 +36,125 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Ensure FFmpeg
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v ffmpeg >/dev/null 2>&1 && command -v ffprobe >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+            ffprobe -version | head -n 1
+            exit 0
+          fi
+
+          while IFS= read -r source; do
+            if sudo grep -q 'dl.google.com/linux/chrome' "$source"; then
+              sudo mv "$source" "${source}.disabled"
+            fi
+          done < <(find /etc/apt/sources.list.d -maxdepth 1 -type f -print)
+
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Test PO token then cookie fallback
+      - name: Verify download stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import yt_dlp
+          print(f"yt-dlp: {yt_dlp.version.__version__}")
+          PY
+          node --version
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
+      - name: Test YouTube metadata auth path
         env:
           PYTHONPATH: .
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
-          YOUTUBE_AUTH_TEST_URL: https://www.youtube.com/watch?v=yszWh_7xYrs
+          YOUTUBE_AUTH_TEST_URL: ${{ env.TEST_YOUTUBE_URL }}
         run: python scripts/test_youtube_auth.py
+
+      - name: Download and validate real YouTube clip
+        env:
+          PYTHONPATH: .
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          YOUTUBE_DOWNLOAD_TEST_URL: ${{ env.TEST_YOUTUBE_URL }}
+          YOUTUBE_DOWNLOAD_TEST_SECONDS: "8"
+        run: python scripts/test_youtube_download.py
+
+      - name: Resolve Luisa visual candidates without publishing
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python resolve_visual_candidates_web_auth.py "$TEST_EPISODE"
+
+      - name: Verify resolver output
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "episodes/$TEST_EPISODE/visual_resolution_report.json"
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          episode = os.environ["TEST_EPISODE"]
+          report_path = Path("episodes") / episode / "visual_resolution_report.json"
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          selections = report.get("selections") or {}
+          selected = [slot for slot, value in selections.items() if isinstance(value, dict) and value.get("status") == "selected"]
+          print(f"Resolver report: {len(selections)} slots, {len(selected)} selected")
+          if not selections:
+              raise SystemExit("Resolver produced no slot selections")
+          PY
+
+      - name: Stage visual handoff
+        env:
+          EPISODE: ${{ env.TEST_EPISODE }}
+        run: python scripts/stage_visual_handoff.py
+
+      - name: Verify staged handoff locally
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f ".visual-handoff/episodes/$TEST_EPISODE/assets.json"
+          test -f ".visual-handoff/episodes/$TEST_EPISODE/timeline.json"
+          test -f ".visual-handoff/episodes/$TEST_EPISODE/visual_resolution_report.json"
+          find .visual-handoff -type f -maxdepth 5 -print
+
+      - name: Upload visual handoff smoke artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: visual-handoff-smoke-${{ github.run_id }}
+          path: .visual-handoff
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+
+  handoff-smoke-test:
+    needs: youtube-visual-smoke-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download visual handoff smoke artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: visual-handoff-smoke-${{ github.run_id }}
+          path: .visual-handoff
+
+      - name: Verify handoff survived artifact transfer
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f ".visual-handoff/episodes/$TEST_EPISODE/assets.json"
+          test -f ".visual-handoff/episodes/$TEST_EPISODE/timeline.json"
+          test -f ".visual-handoff/episodes/$TEST_EPISODE/visual_resolution_report.json"
+          echo "VISUAL_HANDOFF_TRANSFER_OK"
+          find .visual-handoff -type f -maxdepth 5 -print
