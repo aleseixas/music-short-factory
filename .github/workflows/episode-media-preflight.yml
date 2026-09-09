@@ -73,7 +73,7 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Validate and auto-repair episode media
+      - name: Episode media preflight — exact diagnostics
         id: repair
         shell: bash
         env:
@@ -87,7 +87,6 @@ jobs:
 
           emit_failure_summary() {
             local log_file="$1"
-            local reason="$2"
             local code detail recoverable target action same_slug error_class
 
             code="$(grep '^MEDIA_PREFLIGHT_ERROR_CODE=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
@@ -98,49 +97,70 @@ jobs:
             action="$(grep '^MEDIA_PREFLIGHT_RECOMMENDED_ACTION=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
             same_slug="$(grep '^MEDIA_PREFLIGHT_SAME_SLUG=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
 
-            code="${code:-UNSTRUCTURED_FAILURE}"
-            error_class="${error_class:-UNKNOWN}"
-            detail="${detail:-The failing command did not emit a structured detail. Inspect the traceback immediately above.}"
-            recoverable="${recoverable:-unknown}"
-            target="${target:-unknown}"
-            action="${action:-Inspect the traceback, fix the named cause, keep the same slug, and do not create the publish queue until PASS.}"
+            # Generic classifier/fallback labels are status metadata, not root causes.
+            # Never expose them to the agent as if they were diagnoses.
+            if [[ "$code" == "UNCLASSIFIED_ENGINE_ERROR" || "$code" == "UNSTRUCTURED_FAILURE" ]]; then
+              code=""
+              recoverable=""
+              target=""
+              action=""
+            fi
+            if [[ "$same_slug" == "UNKNOWN" ]]; then
+              same_slug="$EPISODE"
+            fi
             same_slug="${same_slug:-$EPISODE}"
 
-            echo "MEDIA_PREFLIGHT_FINAL_ERROR_CODE=$code"
-            echo "MEDIA_PREFLIGHT_FINAL_ERROR_CLASS=$error_class"
-            echo "MEDIA_PREFLIGHT_FINAL_ERROR_DETAIL=$detail"
-            echo "MEDIA_PREFLIGHT_FINAL_RECOVERABLE=$recoverable"
-            echo "MEDIA_PREFLIGHT_FINAL_TARGET=$target"
-            echo "MEDIA_PREFLIGHT_FINAL_RECOMMENDED_ACTION=$action"
-            echo "MEDIA_PREFLIGHT_FINAL_SAME_SLUG=$same_slug"
-            echo "::error::MEDIA PREFLIGHT [$code] $detail TARGET: $target. RECOVERABLE: $recoverable. ACTION: $action SAME_SLUG: $same_slug. REASON: $reason"
+            # If the validator did not emit an exact exception detail, do not invent one.
+            if [[ -n "$detail" && -n "$error_class" && "$detail" == "$error_class" && -z "$code" ]]; then
+              detail=""
+            fi
+
+            echo "MEDIA_PREFLIGHT_STATUS=FAIL"
+            [[ -n "$error_class" ]] && echo "MEDIA_PREFLIGHT_ERROR_CLASS=$error_class"
+            [[ -n "$code" ]] && echo "MEDIA_PREFLIGHT_ERROR_CODE=$code"
+            [[ -n "$detail" ]] && echo "MEDIA_PREFLIGHT_ERROR_DETAIL=$detail"
+            [[ -n "$recoverable" ]] && echo "MEDIA_PREFLIGHT_RECOVERABLE=$recoverable"
+            [[ -n "$target" ]] && echo "MEDIA_PREFLIGHT_TARGET=$target"
+            [[ -n "$action" ]] && echo "MEDIA_PREFLIGHT_RECOMMENDED_ACTION=$action"
+            echo "MEDIA_PREFLIGHT_SAME_SLUG=$same_slug"
+
+            if [[ -n "$detail" ]]; then
+              annotation="$detail"
+              [[ -n "$error_class" ]] && annotation="$error_class: $annotation"
+              [[ -n "$code" ]] && annotation="[$code] $annotation"
+              echo "::error::$annotation"
+            else
+              echo "MEDIA_PREFLIGHT_DIAGNOSTIC_MISSING=true"
+            fi
 
             {
-              echo "MEDIA_PREFLIGHT_RESULT=FAIL"
-              echo "MEDIA_PREFLIGHT_REASON=$reason"
-              echo "MEDIA_PREFLIGHT_ERROR_CODE=$code"
-              echo "MEDIA_PREFLIGHT_ERROR_CLASS=$error_class"
-              echo "MEDIA_PREFLIGHT_ERROR_DETAIL=$detail"
-              echo "MEDIA_PREFLIGHT_RECOVERABLE=$recoverable"
-              echo "MEDIA_PREFLIGHT_TARGET=$target"
-              echo "MEDIA_PREFLIGHT_RECOMMENDED_ACTION=$action"
+              echo "MEDIA_PREFLIGHT_STATUS=FAIL"
+              [[ -n "$error_class" ]] && echo "MEDIA_PREFLIGHT_ERROR_CLASS=$error_class"
+              [[ -n "$code" ]] && echo "MEDIA_PREFLIGHT_ERROR_CODE=$code"
+              [[ -n "$detail" ]] && echo "MEDIA_PREFLIGHT_ERROR_DETAIL=$detail"
+              [[ -n "$recoverable" ]] && echo "MEDIA_PREFLIGHT_RECOVERABLE=$recoverable"
+              [[ -n "$target" ]] && echo "MEDIA_PREFLIGHT_TARGET=$target"
+              [[ -n "$action" ]] && echo "MEDIA_PREFLIGHT_RECOMMENDED_ACTION=$action"
               echo "MEDIA_PREFLIGHT_SAME_SLUG=$same_slug"
+              [[ -z "$detail" ]] && echo "MEDIA_PREFLIGHT_DIAGNOSTIC_MISSING=true"
               echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
               echo "GITHUB_SHA=$GITHUB_SHA"
             } > "$diagnostics_dir/final-result.txt"
 
             {
-              echo "## Media preflight failure"
+              echo "## Media preflight diagnostic"
               echo ""
               echo "- **Episode:** \`$same_slug\`"
-              echo "- **Error code:** \`$code\`"
-              echo "- **Exception:** \`$error_class\`"
-              echo "- **Detail:** $detail"
-              echo "- **Recoverable:** \`$recoverable\`"
-              echo "- **Target to change:** \`$target\`"
-              echo "- **Recommended action:** $action"
-              echo "- **Continuity rule:** keep this same slug; do not author a replacement topic because of this failure."
-              echo "- **Persistent diagnostics:** artifact \`media-preflight-diagnostics-$GITHUB_RUN_ID\`."
+              [[ -n "$code" ]] && echo "- **Exact error code:** \`$code\`"
+              [[ -n "$error_class" ]] && echo "- **Exception class:** \`$error_class\`"
+              [[ -n "$detail" ]] && echo "- **Root error detail:** $detail"
+              [[ -n "$recoverable" ]] && echo "- **Recoverable:** \`$recoverable\`"
+              [[ -n "$target" ]] && echo "- **Target to change:** \`$target\`"
+              [[ -n "$action" ]] && echo "- **Recommended action:** $action"
+              if [[ -z "$detail" ]]; then
+                echo "- **Diagnostic state:** no exact exception detail was captured; no generic cause was substituted."
+              fi
+              echo "- **Raw diagnostics:** artifact \`media-preflight-diagnostics-$GITHUB_RUN_ID\`."
             } >> "$GITHUB_STEP_SUMMARY"
           }
 
@@ -150,14 +170,14 @@ jobs:
             : > "$log_file"
 
             set +e
-            python check_episode_media.py "$EPISODE" 2>&1 | tee "$log_file"
-            status=${PIPESTATUS[0]}
+            python check_episode_media.py "$EPISODE" > "$log_file" 2>&1
+            status=$?
             set -e
 
             if [[ $status -eq 0 ]] && grep -q '^MEDIA_PREFLIGHT_RESULT=PASS$' "$log_file"; then
               echo "MEDIA_AUTO_RECOVERY=PASS attempt=$attempt"
               {
-                echo "MEDIA_PREFLIGHT_RESULT=PASS"
+                echo "MEDIA_PREFLIGHT_STATUS=PASS"
                 echo "MEDIA_PREFLIGHT_ATTEMPT=$attempt"
                 echo "MEDIA_PREFLIGHT_SAME_SLUG=$EPISODE"
                 echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
@@ -170,8 +190,7 @@ jobs:
             recoverable="$(grep '^MEDIA_PREFLIGHT_RECOVERABLE=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
 
             if [[ $attempt -ge $max_attempts ]]; then
-              emit_failure_summary "$log_file" "attempts_exhausted"
-              cat "$log_file"
+              emit_failure_summary "$log_file"
               exit 1
             fi
 
@@ -193,7 +212,8 @@ jobs:
                 fi
                 ;;
               *)
-                # Backwards-compatible fallback for older/unstructured validators.
+                # Backwards-compatible matching is used only to choose a repair strategy.
+                # It is never emitted as the diagnosed root cause.
                 if grep -Eq 'BACKGROUND_REUSE_BLOCKED|Nenhuma faixa do profile de background music|background music.*(falhou|invalido|ausente)|Profile de background music inexistente' "$log_file"; then
                   echo "AUTO_REPAIR_STRATEGY=BACKGROUND_MUSIC_RESELECT legacy_match=true"
                   if python scripts/repair_background_music.py "$EPISODE"; then
@@ -217,14 +237,14 @@ jobs:
             fi
 
             if [[ $repaired -ne 1 ]]; then
-              emit_failure_summary "$log_file" "no_safe_auto_repair_applied"
+              emit_failure_summary "$log_file"
               exit 1
             fi
 
             echo "Recovery applied; re-running the full media preflight for SAME_SLUG=$EPISODE."
           done
 
-          echo "::error::MEDIA_PREFLIGHT_INTERNAL_LOOP_ERROR: unexpected recovery loop termination. ACTION: inspect workflow logic; do not queue or change episode topic."
+          echo "::error::Workflow invariant violated: media preflight loop terminated without PASS or a captured failure diagnostic."
           exit 1
 
       - name: Upload media preflight diagnostics
