@@ -320,6 +320,23 @@ Antes de aceitar qualquer shot acima de ~4s, pergunte mentalmente: **este materi
 
 Não corte apenas para atingir números. Prefira **16 takes excelentes a 24 medíocres** quando o material realmente justificar; da mesma forma, se houver material forte suficiente para 20–25+ visuais distintos, não seja conservador e não deixe o vídeo visualmente pobre por hábito.
 
+### ENQUADRAMENTO VERTICAL INTELIGENTE — IMAGENS
+
+Para CADA asset principal de IMAGEM, defina `focus.x` e `focus.y` sobre o elemento
+que não pode ser cortado: priorize rosto/pessoa, artista, instrumento, objeto
+principal ou texto/manchete relevante. Não use `0.5, 0.5` por inércia quando o
+assunto estiver fora do centro.
+
+O renderer tenta primeiro um crop 9:16 guiado pelo foco e pela importância visual.
+Quando esse crop perder conteúdo relevante, ele usa automaticamente a imagem
+inteira centralizada sobre fundo preenchido/desfocado. Esse fallback é uma rede de
+segurança, não motivo para aceitar uma imagem horizontal fraca: entre candidatos
+semanticamente equivalentes, ainda prefira o que compõe melhor no formato vertical.
+
+Não invente campos novos para controlar o modo e não tente escolher manualmente
+`smart_crop`/`contain_blur`: a decisão é determinística no preparo da imagem.
+Vídeos, overlays e capas não usam essa regra.
+
 ### SPEED E FREEZE FRAME — USO EDITORIAL
 
 `speed` e `freeze_frame` são ferramentas de edição disponíveis para shots de VÍDEO. Use-as conscientemente quando melhorarem ritmo, emoção, clareza, surpresa ou impacto; **não use por obrigação e não distribua esses recursos por quota**.

@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 from PIL import Image, ImageOps, UnidentifiedImageError
 
 from .ffmpeg import VideoStreamInfo, probe_video_stream
+from .image_framing import prepare_vertical_image
 from .media_cache import download_to_cache
 from .models import AssetSpec, TimelineScene
 from .utils import load_json, validate_schema
@@ -153,17 +154,16 @@ class AssetManager:
         if asset.is_video:
             return source
         # Six decimals are finer than one source pixel even on very large photos.
-        target = self.prepared_dir / f"{asset.id}_{fx:.6f}_{fy:.6f}.jpg"
+        target = self.prepared_dir / f"{asset.id}_{fx:.6f}_{fy:.6f}_smart-v1.jpg"
         if target.exists():
             return target
 
         with Image.open(source) as opened:
-            image = ImageOps.exif_transpose(opened).convert("RGB")
-            fitted = ImageOps.fit(
-                image,
+            fitted, _ = prepare_vertical_image(
+                opened,
                 (self.width, self.height),
-                method=Image.Resampling.LANCZOS,
-                centering=(fx, fy),
+                fx,
+                fy,
             )
             fitted.save(target, format="JPEG", quality=95, subsampling=0, optimize=True)
         return target

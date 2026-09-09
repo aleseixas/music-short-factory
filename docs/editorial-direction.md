@@ -299,6 +299,29 @@ Esses tempos são guias, não uma grade mecânica. Prefira 16 takes excelentes a
 
 ## Regras por camada
 
+### Enquadramento vertical inteligente de imagens
+
+O renderer tenta enquadrar cada imagem em 9:16 preservando as regiões visualmente
+mais importantes. A análise é determinística: combina o `focus` editorial com
+contraste, bordas e detalhes — sinais que ajudam a proteger rosto/pessoa, objeto
+principal e texto ou manchete de alto contraste.
+
+- em `assets.json`, coloque `focus.x`/`focus.y` sobre o rosto, pessoa, instrumento,
+  objeto ou trecho de texto que não pode ser perdido;
+- quando o shot sobrescrever `focus`, mantenha a mesma intenção semântica;
+- se um crop 9:16 preservar bem o foco e o conteúdo relevante, o engine usa o
+  crop inteligente;
+- se o conteúdo importante estiver espalhado ou o crop for inseguro, o engine
+  mantém a imagem inteira centralizada sobre um fundo preenchido e desfocado;
+- o fallback não corrige um asset ruim: continue escolhendo primeiro a imagem
+  mais forte e mais adequada ao formato vertical;
+- essa regra vale somente para imagens principais. Vídeos e overlays conservam
+  seus fluxos atuais.
+
+Não existe reconhecimento semântico por IA dentro do renderer. O `focus` informado
+na autoria é o sinal mais confiável para indicar o assunto principal; a análise
+visual funciona como proteção adicional e nunca pesquisa a web durante o render.
+
 ### Motion
 
 Não use `hold` por hábito. Em imagens, motion discreto costuma melhorar profundidade/ritmo. Em vídeo já dinâmico, `hold` pode ser a melhor escolha.
