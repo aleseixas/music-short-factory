@@ -87,8 +87,9 @@ Antes de considerar uma falha terminal, faça tudo que for aplicável abaixo na 
 2. abra o **log bruto/completo do job** e procure a mensagem imediatamente anterior ao exit code, traceback, `ERROR`, `Exception`, validator detail, target, asset, URL, arquivo ou constraint;
 3. se o log bruto estiver indisponível, truncado ou genérico, consulte obrigatoriamente o artefato `media-preflight-diagnostics-<run_id>` quando existir;
 4. leia `final-result.txt`; se ainda estiver genérico, leia os `attempt-*.log` do mesmo run;
-5. cruze a causa encontrada com os arquivos do **mesmo slug** e com a versão da `main` usada naquele run;
-6. somente depois classifique a falha como corrigível, não recuperável ou diagnóstico inacessível.
+5. quando existirem `MEDIA_PREFLIGHT_ERROR_COUNT`, `MEDIA_PREFLIGHT_ERRORS_JSON` ou linhas `MEDIA_PREFLIGHT_ERROR_ITEM`, trate **a lista completa** como o diagnóstico autoritativo daquela passada — não reduza o diagnóstico ao primeiro erro legado;
+6. cruze todas as causas encontradas com os arquivos do **mesmo slug** e com a versão da `main` usada naquele run;
+7. somente depois classifique a falha como corrigível, não recuperável ou diagnóstico inacessível.
 
 Mensagens como `Process completed with exit code 1`, `Validate and auto-repair episode media failed`, `MEDIA_PREFLIGHT_RESULT=FAIL`, `job failed` ou somente o nome de uma etapa **nunca são suficientes** para `ERRO/BLOQUEIO` final.
 
@@ -96,24 +97,38 @@ Enquanto houver uma fonte diagnóstica ainda não consultada ou uma correção s
 
 Se todas as fontes disponíveis forem realmente esgotadas sem causa concreta, use `DIAGNÓSTICO_INACESSÍVEL` como motivo explícito e informe quais fontes foram tentadas. Não mascare isso como erro técnico do episódio.
 
-### 6.1 Falha no Media Preflight antes da queue
+### 6.1 Falha no Media Preflight antes da queue — diagnóstico e correção em lote
+
+O Media Preflight atual deve tentar **coletar todos os erros independentes observáveis na mesma passada** antes de pedir nova validação. O comportamento desejado é:
+
+`validar tudo possível -> coletar lote de erros -> corrigir lote inteiro -> revalidar uma vez -> corrigir somente erros novos/dependentes`
+
+Não use o padrão antigo `achar 1 erro -> corrigir -> revalidar -> achar o próximo` quando o log já fornecer múltiplos erros estruturados.
 
 Se `Episode media preflight` falhar:
 
 1. aplique primeiro a escada obrigatória da seção 6.0;
-2. identifique o erro concreto — não faça retry cego de publicação;
-3. se a correção puder ser feita somente no episódio ativo, preserve o mesmo slug;
-4. corrija os arquivos necessários do episódio;
-5. grave a correção na `main`;
-6. crie um novo request `.episode-check/<slug>-<nonce>.json` conforme o contrato atual;
-7. acompanhe a nova Action exata;
-8. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, continue automaticamente para a queue/publicação sem devolver controle ao usuário entre essas etapas.
+2. leia `MEDIA_PREFLIGHT_ERROR_COUNT` e `MEDIA_PREFLIGHT_ERRORS_JSON` quando existirem;
+3. identifique **todos** os itens recuperáveis do lote, preservando o mesmo slug;
+4. corrija todos os assets 403/404/inválidos, referências visuais e background recuperável que puderem ser corrigidos com segurança **antes de uma nova passada completa**;
+5. não dispare um novo Media Preflight depois de cada asset individual corrigido;
+6. grave as correções na `main` quando o fluxo exigir persistência externa;
+7. crie um novo request `.episode-check/<slug>-<nonce>.json` apenas quando uma nova Action externa for realmente necessária pelo contrato atual;
+8. acompanhe a nova Action exata;
+9. se surgirem erros novos que dependiam das correções anteriores, faça outro lote somente desses erros novos;
+10. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, continue automaticamente para a queue/publicação sem devolver controle ao usuário entre essas etapas.
 
-Para evitar loop infinito, faça no máximo **3 tentativas totais de Media Preflight por episódio dentro da mesma execução do agente**: tentativa inicial + até 2 novas tentativas após correções reais. Cada nova tentativa normal exige uma correção objetiva correspondente ao erro anterior.
+O workflow pode executar internamente mais de uma passada dentro da mesma Action para resolver dependências, mas cada passada deve corrigir o **lote inteiro conhecido**. Um retry/passado é contado por nova validação completa, **não por quantidade de assets reparados**.
+
+Exemplo: se uma passada retornar três imagens 403, uma imagem 404 e um background repetido, a ação correta é reparar os cinco itens em lote e só então revalidar. Não são cinco retries.
+
+Para background, prefira selecionar diretamente uma faixa/profile válido e não usado recentemente. Não rotacione cegamente um profile por nova execução quando o histórico já permite eliminar opções repetidas de uma vez.
+
+Para evitar loop infinito no acompanhamento manual do agente, faça no máximo **3 ciclos externos totais de Media Preflight por episódio dentro da mesma execução do agente**: tentativa inicial + até 2 novas Actions após correções reais. Correções internas em lote realizadas pelo próprio workflow não contam como novas Actions do agente.
 
 **Exceção diagnóstica:** se o Media Preflight falhar antes da queue e tanto o log bruto quanto o artefato persistente não revelarem a causa concreta, é permitida **uma única rechecagem diagnóstica adicional do mesmo slug com nonce novo**, sem alteração de tema e sem criação de queue. Essa rechecagem existe somente para produzir diagnóstico melhor e não autoriza loop infinito.
 
-Pare antes do PASS somente se o erro não puder ser corrigido com segurança dentro do escopo autorizado do episódio, se depender de autenticação/secrets/permissões/infraestrutura externa, se a escada de diagnóstico tiver sido integralmente esgotada sem causa concreta ou se as tentativas seguras permitidas tiverem sido consumidas.
+Pare antes do PASS somente se existir pelo menos um erro não recuperável que bloqueie a continuidade, se a correção não puder ser feita com segurança dentro do escopo autorizado do episódio, se depender de autenticação/secrets/permissões/infraestrutura externa, se a escada de diagnóstico tiver sido integralmente esgotada sem causa concreta ou se as tentativas seguras permitidas tiverem sido consumidas.
 
 Uma mensagem genérica de step/job, isoladamente, **não satisfaz nenhuma dessas condições de parada**.
 
@@ -176,13 +191,17 @@ PUBLISH ACTION: <SUCESSO | FALHA | EM_ANDAMENTO | NÃO_VERIFICADO | BLOQUEADO>
 YOUTUBE: <status real>
 INSTAGRAM: <status real>
 TIKTOK: <status real>
-RETRIES: <número real | N/A>
-ERRO/BLOQUEIO: <causa concreta; nunca apenas nome genérico de step/status | NENHUM>
+RETRIES: <número de novas validações/publicações; não quantidade de itens corrigidos | N/A>
+ERRO/BLOQUEIO: <causa concreta ou resumo do lote; nunca apenas nome genérico de step/status | NENHUM>
 ```
 
 ## 9. Regra de ouro
 
-**Falha elegível = investigar log bruto, identificar causa concreta, corrigir e tentar novamente; não parar na primeira falha.**
+**Uma passada de preflight = descobrir o máximo de erros independentes possível.**
+
+**Lote recuperável = corrigir todos os itens conhecidos antes da próxima validação.**
+
+**Falha elegível = investigar log bruto, identificar causas concretas, corrigir e tentar novamente; não parar na primeira falha.**
 
 **Erro genérico de Action = continuar diagnóstico; não encerrar.**
 
