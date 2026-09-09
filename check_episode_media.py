@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import subprocess
+import sys
 from urllib.parse import urlsplit, urlunsplit
 
 from engine.assets import AssetManager
@@ -15,6 +16,165 @@ from engine.music import MUSIC_ROOT, background_music_candidates, resolve_backgr
 
 
 RECENT_BACKGROUND_TRACK_WINDOW = 20
+
+
+def _single_line(value: object) -> str:
+    return " ".join(str(value).replace("\x00", "").split())
+
+
+def _classify_preflight_failure(exc: Exception, slug: str) -> tuple[str, bool, str, str]:
+    """Return a stable machine-readable error code and a concrete repair hint."""
+
+    detail = _single_line(exc)
+    folded = detail.casefold()
+    episode_root = f"episodes/{slug}" if slug else "episodes/<slug>"
+
+    if "intra_episode_visual_reuse_blocked" in folded:
+        return (
+            "INTRA_EPISODE_VISUAL_REUSE",
+            True,
+            f"{episode_root}/assets.json + {episode_root}/timeline.json",
+            "Replace the repeated main visual with a different unique source, keep the same slug, then rerun media preflight.",
+        )
+
+    if "background_reuse_blocked" in folded:
+        return (
+            "BACKGROUND_MUSIC_REUSE",
+            True,
+            f"{episode_root}/timeline.json",
+            "Choose a different background track/profile for this same episode, then rerun media preflight.",
+        )
+
+    if (
+        "background music" in folded
+        or "profile de background music" in folded
+        or "faixa do profile" in folded
+    ):
+        return (
+            "BACKGROUND_MUSIC_INVALID",
+            True,
+            f"{episode_root}/timeline.json",
+            "Fix or replace the background music profile/source for this same episode, then rerun media preflight.",
+        )
+
+    if any(token in folded for token in ("http error 403", "http 403", "status 403")):
+        return (
+            "VISUAL_ASSET_HTTP_403",
+            True,
+            f"{episode_root}/assets.json",
+            "The remote visual is forbidden. Replace that asset URL/source with another accessible unique candidate for the same shot and rerun preflight.",
+        )
+
+    if any(token in folded for token in ("http error 404", "http 404", "status 404")):
+        return (
+            "VISUAL_ASSET_HTTP_404",
+            True,
+            f"{episode_root}/assets.json",
+            "The remote visual no longer exists. Replace that asset with another accessible unique candidate for the same shot and rerun preflight.",
+        )
+
+    if any(token in folded for token in ("http error 429", "http 429", "status 429")):
+        return (
+            "REMOTE_MEDIA_RATE_LIMITED",
+            False,
+            "remote media provider / credentials",
+            "Do not change topic or queue the episode. Inspect provider/auth/rate-limit state and retry only when external access is healthy.",
+        )
+
+    if any(token in folded for token in ("http error 5", "http 5", "status 5")):
+        return (
+            "REMOTE_MEDIA_PROVIDER_ERROR",
+            False,
+            "remote media provider",
+            "Do not change topic or queue the episode. This is an external/provider failure; retry only after confirming the provider is healthy.",
+        )
+
+    if "shot " in folded and "referencia asset inexistente" in folded:
+        return (
+            "SHOT_REFERENCES_MISSING_ASSET",
+            True,
+            f"{episode_root}/timeline.json + {episode_root}/assets.json",
+            "Make the shot asset_id point to an existing asset, or add the missing asset entry. Keep the same slug and rerun preflight.",
+        )
+
+    if any(
+        token in folded
+        for token in (
+            "asset de video invalido",
+            "asset de video ausente",
+            "arquivo nao e uma imagem valida",
+            "asset de imagem",
+            "asset de video",
+            "asset "
+        )
+    ) and any(
+        token in folded
+        for token in (
+            "invalido",
+            "invalid",
+            "ausente",
+            "missing",
+            "nao encontrado",
+            "not found",
+            "stream de video ausente",
+        )
+    ):
+        return (
+            "VISUAL_ASSET_INVALID",
+            True,
+            f"{episode_root}/assets.json",
+            "Replace the failing image/video entry with a valid accessible unique asset for the same shot, then rerun media preflight.",
+        )
+
+    if any(
+        token in folded
+        for token in (
+            "json invalido",
+            "timeline.json",
+            "assets.json",
+            "story.json",
+            "delivery invalido",
+            "freeze_frame",
+            "fps invalido",
+        )
+    ):
+        return (
+            "EPISODE_SCHEMA_OR_TIMELINE_INVALID",
+            True,
+            episode_root,
+            "Fix the exact invalid field/file named in MEDIA_PREFLIGHT_ERROR_DETAIL for this same episode, then rerun media preflight.",
+        )
+
+    if "ffprobe" in folded or "ffmpeg" in folded:
+        return (
+            "MEDIA_PROBE_OR_CODEC_ERROR",
+            True,
+            f"{episode_root}/assets.json",
+            "Replace or repair the media file identified in the detail so FFmpeg/ffprobe can decode it, then rerun preflight.",
+        )
+
+    return (
+        "UNCLASSIFIED_ENGINE_ERROR",
+        False,
+        "engine/global code or unclassified episode data",
+        "Read the traceback immediately above this marker. Do not create a new topic or publish queue; fix the named cause first and keep the same slug.",
+    )
+
+
+def _emit_structured_failure(exc: Exception) -> None:
+    slug = sys.argv[1].strip() if len(sys.argv) > 1 else ""
+    code, recoverable, target, action = _classify_preflight_failure(exc, slug)
+    detail = _single_line(exc) or exc.__class__.__name__
+    same_slug = slug or "UNKNOWN"
+
+    print("MEDIA_PREFLIGHT_RESULT=FAIL")
+    print(f"MEDIA_PREFLIGHT_ERROR_CODE={code}")
+    print(f"MEDIA_PREFLIGHT_ERROR_CLASS={exc.__class__.__name__}")
+    print(f"MEDIA_PREFLIGHT_ERROR_DETAIL={detail}")
+    print(f"MEDIA_PREFLIGHT_RECOVERABLE={'true' if recoverable else 'false'}")
+    print(f"MEDIA_PREFLIGHT_TARGET={target}")
+    print(f"MEDIA_PREFLIGHT_RECOMMENDED_ACTION={action}")
+    print(f"MEDIA_PREFLIGHT_SAME_SLUG={same_slug}")
 
 
 def _recent_episode_slugs(
@@ -324,5 +484,5 @@ if __name__ == "__main__":
     try:
         raise SystemExit(main())
     except Exception as exc:
-        print(f"MEDIA_PREFLIGHT_RESULT=FAIL: {exc}")
+        _emit_structured_failure(exc)
         raise
