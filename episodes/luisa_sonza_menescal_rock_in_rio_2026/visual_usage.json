@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+  "recorded_at": "2026-09-09T17:44:58Z",
+  "visual_usage": [
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_01",
+      "asset_id": "luisa_menescal_rir",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "fbf0f435f5f4e757ba9db785d4a459d975569394e30b6c87b9bec4fbbc50065d",
+        "url_hashes": [
+          "27b03acd7882365dea080529aef427e483d3c601544af625b88800e2e5aa8014"
+        ],
+        "perceptual_hashes": [
+          "d39d1e38c27c3a26",
+          "919b1c3fc25c9a6c",
+          "b1811dbbc31d971c",
+          "a69e338479354b66",
+          "a6869f7b940b7286",
+          "d8c40ec9471b773c",
+          "d8acc31ed9f60c98"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_02",
+      "asset_id": "luisa_bossa_live",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7a2992b374f631ce981dcae47d72d9eb6d66c028e6d125303f97e0a869f19cbe",
+        "url_hashes": [
+          "5344a2b093983ff1b73be7cfb269e02a0d85de40df1059b7aa2100e652fa218a"
+        ],
+        "perceptual_hashes": [
+          "a5544a5faa0f4af4",
+          "a5d45357ba0b4ad4",
+          "a9ec5143b7031f96",
+          "aa105fac1fd3e146",
+          "eaa0105fe5e35f42",
+          "b54648b9a956d2ec",
+          "b5954a54fa96a86c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_03",
+      "asset_id": "luisa_rir_2024",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "01f60f0d712928cfdd14264ba4ae857030b9be7a92a0a57ab17401bd301e4dcd",
+        "url_hashes": [
+          "959f6c274cc7944bc5d8df1c39868bec94dad74cf06f0c8e7cf85558b45e12aa"
+        ],
+        "perceptual_hashes": [
+          "99bf648f616613c1",
+          "9b9f248fe1661364",
+          "9bbd649a6d262364",
+          "946b49d66d96c2d4",
+          "94b6698d96caf194",
+          "88b273cc73d866c9",
+          "8c8c3383cce62fd9"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_04",
+      "asset_id": "rir_lineup",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "23c97743608a310875e2e23b8a427b48d558f9c28b8a1b38a95355d4cb8ea9e5",
+        "url_hashes": [
+          "8cf4129f03a20296b96cf50ce119e59666ffb5779ba30657d7504075a00e9bfb"
+        ],
+        "perceptual_hashes": [
+          "ca2779293596c3b4",
+          "ce24794939b762b4",
+          "c6647d4b390b69e4",
+          "946b72622d83af9c",
+          "948d6f9d52389c5c",
+          "c13e2d3430f7d3c1",
+          "c1d372cb6d16c90d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_05",
+      "asset_id": "luisa_menescal_stage",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "058492fbb839309215d5e4bcb1657b0c825eb37cba804be8b4a3b903e1d0d300",
+        "url_hashes": [
+          "1d5ec404a16343c8fa28d38840a9d8be4c200d82b7e991c06aec120a79e8ec5e"
+        ],
+        "perceptual_hashes": [
+          "d0907e8e85199bde",
+          "d0907e84a51ddb2f",
+          "fbd276852989d90a",
+          "b0b4198b17943daf",
+          "b0b5747d0c692fc2",
+          "de5922a6dec8119b",
+          "dcdd5949a03512fa"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_06",
+      "asset_id": "bossa_album_cover",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1841967d3395f6e6ad610a898f1998341baef129d1e6cdfe2c096b782453ee5a",
+        "url_hashes": [
+          "9e3da45c001a6c319c4f708517d8f8e5dea5ba4758acf3b953546b0f19e215db"
+        ],
+        "perceptual_hashes": [
+          "82947db79b2aa60b",
+          "82907db79b6a272a",
+          "80d47da79b6c236a",
+          "85f37ea45905d3a2",
+          "8481d36da632f9b6",
+          "d1cf34996ab0ea92",
+          "d1d34e72950dce54"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_07",
+      "asset_id": "menescal_portrait",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1edd7fd2eb423f54f99ecc2ed969073c19542959e5c08ddacfaf0bb4e724f2ce",
+        "url_hashes": [
+          "8a58f9255ed16abf043dc5553fc213a0ed175a74f58272892c56d12502e8bc87"
+        ],
+        "perceptual_hashes": [
+          "b6d9c10f720e982f",
+          "b6d9c10d671eb02d",
+          "a5d9c199678e338c",
+          "afd28a2fd933c904",
+          "abb6c09ae34ed906",
+          "92ccc423c39fe35a",
+          "b21cfdc4fc60c358"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_08",
+      "asset_id": "luisa_menescal_sofa",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "d3aa435dcfa8d6b8c90debc9bef8b8fb5d7d0408675f23bf1d07b0a6798e9b89",
+        "url_hashes": [
+          "3b3be74b2ec292180007c05397590ee56e8d467986c0f19bbd557729d1ed8a05"
+        ],
+        "perceptual_hashes": [
+          "b3f3f0248d2b163c",
+          "b3f3f0248d2b172c",
+          "b3b1f4accb83072c",
+          "a6e6211b5e2de1e4",
+          "9ef6e621a151c6d4",
+          "b89c33a5ac13a7b8",
+          "a89cd83ad727ec88"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_09",
+      "asset_id": "luisa_menescal_studio",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "60538c3e290e9dc18a14ed98046bdfcd03e10ef2b8cc09652ac4f44cc5716557",
+        "url_hashes": [
+          "ed537337fd9c3ebb8a28c765836912056d485d0d98b098c44b9725ff9a9f0436"
+        ],
+        "perceptual_hashes": [
+          "c18d3a2497e23a7b",
+          "c18d3e2483e23b7e",
+          "c18d3e2c81c7337e",
+          "c3183187c47f758b",
+          "c3da38793bc38983",
+          "e6001bb0f83f5bc6",
+          "dee40a2716d7c2c6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_10",
+      "asset_id": "luisa_bossa_close",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3637dd8da0b65443dd00f778669a79ece518f2257713f1171f8298d5175a483a",
+        "url_hashes": [
+          "aa8ce090243f39a4f910764d373677df4c97ed9901de63f8632227b21dfccfa0"
+        ],
+        "perceptual_hashes": [
+          "b7d3433e84553a25",
+          "b3f3c3168c753a12",
+          "bbf343148cd53a54",
+          "e6c42c3ba0750bee",
+          "bae6c4648d0b8ef2",
+          "b8dc38875539b4b4",
+          "a4dcd538abb6c0b4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_11",
+      "asset_id": "live_band",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b86d0a4f5fe7ad2402209d9f798a383ec1d1543d06f0bbe54ccfc4efa4d7385d",
+        "url_hashes": [
+          "f96a28d7c17ca0c38103ef1a5ed0109c77ccafe5b67d5ef7cddd24e9ea74cb92"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "995ca23666e65c6c",
+          "d959e02666667c6c",
+          "9159a23666667c6d",
+          "9919a63666667c69",
+          "d948c4266666fc79",
+          "9359e23666e61c69",
+          "9158a67666e45d69",
+          "9159a6666ee55869"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.7
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_12",
+      "asset_id": "white_house_bts",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d3b04bc5da689700bb99f034a77730b31dd0a5b8d8a762761d465f503fc85d3f",
+        "url_hashes": [
+          "0331a870fdeb15e6c9b7a9ca7a3e186d4a5f8ff350fd6c65a8352dfe078c6769"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b2c9744aa6e17b43",
+          "b4c1744aa7e37a49",
+          "b1c1764a2df2f249",
+          "b2c5644a06e6f2db",
+          "b2e966520565fad1",
+          "c74e88ab6d982eac",
+          "c4675c506f4e8f92",
+          "c95f632f58b214a6"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.3
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_13",
+      "asset_id": "record_store",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e4c2638390c3c9fa9e9d206fe5726a58bb6d903a83f07de64fd32ef1e87d6c00",
+        "url_hashes": [
+          "5d1ace288d7f56f642f906f5d04570cab92428d3b7fcec378f0c3146d7399f67"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8531658d5dbc934b",
+          "8531658d5df8934b",
+          "8533658ddd78924b",
+          "8531658ddd78934b",
+          "8531658ddd78934b",
+          "8533658ddde8934a",
+          "8533658ddd68934b",
+          "8533658ddd68934b"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.533333
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_14",
+      "asset_id": "vinyl_spin",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2ff29cc94557949b8cc3b6ff67f611fe79221fc7fcef4e93d56a21030d663619",
+        "url_hashes": [
+          "5355b9f1795b9118d9b6f1311e449aa1374d0213c51281e18e3cf4fc8d796bf9"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c41fdae8338de14c",
+          "c41ffac8338d6968",
+          "c41ffae8338d6168",
+          "c41ffae8338de148",
+          "c41ffac8338d6968",
+          "c41ffae8338d6168",
+          "c41ffae8338d6168",
+          "c41ffac8338d6968"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.9
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_15",
+      "asset_id": "contract_signing",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d3b5308fa9c39d40f10b1e16a8a3a60759b2b67c13010c3d945ed22e6c5fc2a0",
+        "url_hashes": [
+          "6de3c8c461cf933fb150c1a9e8b7f071fe00809fd68c9d5973f5f947b1ee57f0"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "94960978de962b6d",
+          "94960968de966b7c",
+          "949629489e9e6b7c",
+          "949621489eb66bfc",
+          "9da69399d9071653",
+          "96e9cb96d2c00d5b",
+          "85b1d29999ea54d5",
+          "c0d0f79de6a4c447"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.1
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_16",
+      "asset_id": "dj_mix_stage",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7d8897406b572cb740c1d624f6515cb3e46434804a4206353c37c415946f2c34",
+        "url_hashes": [
+          "671533d8b55e10f4e4cb37eaa17879ed21e2847dbce73ee568993af72d4f5ece"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c8f74cc099277cd1",
+          "ece047c089237fdc",
+          "fcc246c488237fdc",
+          "c3c38a9a9eae18ab",
+          "8355aa8e5de354aa",
+          "87192aca1dcb743b",
+          "873279b41ac7b417",
+          "e4e9b0231b1e43de"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.833333
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_17",
+      "asset_id": "concert_gothenburg",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "055bcee9d61fc0b1c7560f8cc399a675ae458c37e30012168577811591a5f9be",
+        "url_hashes": [
+          "cba6997d1e71a0acf648776e107ea7d37a354a635c1be8009f2a84d596a1cca5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f264167d8a176ad1",
+          "f274177588876c63",
+          "fa7613758c874c29",
+          "fb7613758c814e29",
+          "f97713758e810e29",
+          "fd7711758f810a29",
+          "ff7711758f810229",
+          "ff7711748f81022d"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.166667
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_18",
+      "asset_id": "city_night",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "157c349bfd76e9c6ab804f5c049e067198c8600f26ea8fedc8b3349b45fd33f7",
+        "url_hashes": [
+          "b850dd9ccffa49db2734bfc926d9006c14f37d715cf4a16b3a02a33c7dceeff4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e3184f71ac633e15",
+          "e3184f71ac633e15",
+          "e3184f71ac637e14",
+          "c3384f71ac637e14",
+          "c33c4f71ac637614",
+          "c3385e71ac237656",
+          "c3385e71ac237656",
+          "c3385e71ac237656"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.333333
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_19",
+      "asset_id": "crowd_walk",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e9beba7bead71bb3806a35e6dced2896385472287bd39fd3cde7958e709393fe",
+        "url_hashes": [
+          "6ead30edabda14a8ff362dc2eb6d3b06dbecd9899569984da7e9e6610f838177"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c896b13e44eb18b7",
+          "91c2ec9a611bdcae",
+          "81b62f49d235cd3a",
+          "99a65b95e2d904da",
+          "95ea758348be4b94",
+          "91ea35817cbb443e",
+          "98a31ce71bb5730c",
+          "9de21da67b1420f5"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.833333
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_20",
+      "asset_id": "open_air_concert",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6334ced5dedfbeb5c2dbbde0f172b5c6a71cd96762430c6ffdd4b9d4991afa6a",
+        "url_hashes": [
+          "fb62c6bfb1255b6ee57f8f8617e18247d97b295d2fc671b249522337e9e8dabb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "80b09e9ba6b71736",
+          "80b4b69bb5bd3628",
+          "80b0b5beb6963731",
+          "80b0babcb4977663",
+          "80b495aef69f3036",
+          "80b59d94b5bc363a",
+          "80b0b3babd972d32",
+          "80b295b2b1bc7e2e"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.833333
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_21",
+      "asset_id": "concert_archive",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1057b05b3c6ecdcc70f7bdd514595f11f96f14c91d0554f6882181c3107f7849",
+        "url_hashes": [
+          "a0c4bd03fe48a00f4655fd774f4df570061500c4f65680d3c0dae45dc4a63387"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b58ae0a57f09c6ca",
+          "b78ac0a57f11c6ca",
+          "fc8ac0a57f1986ca",
+          "f68ac0a56f1996ca",
+          "fe8ac0a56f1986ca",
+          "ff8ac0257f090eca",
+          "ff8ac0257e09c6ca",
+          "ff8ac0257f01c6ca"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.266667
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_22",
+      "asset_id": "train_street",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "44bcf562fef0b01951a0c0d9b1bcb4c7618557e099139459fd5f97cd59c21bda",
+        "url_hashes": [
+          "70af880865cfc2fe79b97b4eff65d814cc942325b336a8264bbd6ed078561d89"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dcc2f1d813391f1a",
+          "c0ecdf8c3c0f588d",
+          "e7e38fc0a3da8852",
+          "91c0ab2a2db97a3e",
+          "c7d6d6c852b2c878",
+          "cc6cc0db3c74f2a2",
+          "c5e7f348e2021de5",
+          "e7d1d26f8822f194"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.133333
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_23",
+      "asset_id": "dj_qbert",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a1c7300c36b6a69b7bcd7ef8a9102967c32caf90af1ce7d97552dbbb18e64f23",
+        "url_hashes": [
+          "0568affc9028a5e529c47b82edf5c5f4d8454f1149a32ead599061063d2c3fbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "cacacad333313535",
+          "cacacad333313535",
+          "d2c2cb2b2b3d34b4",
+          "d2c2cb2b2b3d30f4",
+          "c6d3334e6f3134c4",
+          "c6d3314f4f3134c5",
+          "ce93314e6f3934c4"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.4
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_24",
+      "asset_id": "white_house_performance",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "862f262b26744485143f572d974568c234536d5dbeb264790b871cb2d0a8a73d",
+        "url_hashes": [
+          "60f280e3f850280d9386f0498b673f908369d800ca6d629cb9a78ffae5005b8b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9d865b78b6c14c3a",
+          "d9c65b78a2c9443b",
+          "d9c61b7862c9463b",
+          "d9c61b70e2c9163b",
+          "d9c61b70e2c9163b",
+          "be9b6128658e7139",
+          "bed36928648e392b",
+          "bed36928668e5929"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.1
+      }
+    },
+    {
+      "episode": "luisa_sonza_menescal_rock_in_rio_2026",
+      "shot_id": "shot_25",
+      "asset_id": "rain_city",
+      "recorded_at": "2026-09-09T17:44:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e96a46f335f599742b1699714f3ab0465bf60d57b8505d97e15ed47153fac2b8",
+        "url_hashes": [
+          "4082c73059aa967d61bec55ea58019f565a0031dc0beca8bfb9f02a807aef022"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8d5e70a99aa54f51",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9ab54f50",
+          "8d5a70ad9aa54f51",
+          "8d5a70a99ab54f51",
+          "8c5a70ad9ab54f51"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.633333
+      }
+    }
+  ]
+}
