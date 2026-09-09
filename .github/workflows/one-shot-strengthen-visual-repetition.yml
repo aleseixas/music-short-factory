@@ -13,7 +13,6 @@ permissions:
 jobs:
   patch-and-test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -26,7 +25,7 @@ jobs:
           python-version: "3.13"
           cache: pip
 
-      - name: Install FFmpeg and Python dependencies
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install --yes ffmpeg
@@ -52,101 +51,101 @@ jobs:
               "# Keep effectively the full project history by default; explicit callers can still request a smaller window.\nDEFAULT_RECENT_EPISODE_LIMIT = 10_000",
           )
 
-          replace_once(
-              "engine/visual_repetition.py",
-              '''        detected: list[tuple[str, float]] = []
-        overlap = _source_overlap(candidate, previous) if candidate.kind == "video" else 1.0
-        if overlap > 0 and set(candidate.url_hashes).intersection(previous.url_hashes):
-            detected.append(("url", overlap))
-        if overlap > 0 and candidate.sha256 and candidate.sha256 == previous.sha256:
-            detected.append(("sha256", overlap))
-''',
-              '''        detected: list[tuple[str, float]] = []
-        overlap = _source_overlap(candidate, previous) if candidate.kind == "video" else 1.0
-        same_url = bool(set(candidate.url_hashes).intersection(previous.url_hashes))
-        same_sha = bool(candidate.sha256 and candidate.sha256 == previous.sha256)
-        # For video, the same source is repetition even when a different trim is used.
-        # Exact source identity must therefore remain strong for legacy entries that do
-        # not know the consumed duration and for non-overlapping trims of the same file.
-        if same_url:
-            detected.append(("url", 1.0 if candidate.kind == "video" else overlap))
-        if same_sha:
-            detected.append(("sha256", 1.0 if candidate.kind == "video" else overlap))
-''',
+          old = (
+              "        detected: list[tuple[str, float]] = []\n"
+              "        overlap = _source_overlap(candidate, previous) if candidate.kind == \"video\" else 1.0\n"
+              "        if overlap > 0 and set(candidate.url_hashes).intersection(previous.url_hashes):\n"
+              "            detected.append((\"url\", overlap))\n"
+              "        if overlap > 0 and candidate.sha256 and candidate.sha256 == previous.sha256:\n"
+              "            detected.append((\"sha256\", overlap))\n"
           )
+          new = (
+              "        detected: list[tuple[str, float]] = []\n"
+              "        overlap = _source_overlap(candidate, previous) if candidate.kind == \"video\" else 1.0\n"
+              "        same_url = bool(set(candidate.url_hashes).intersection(previous.url_hashes))\n"
+              "        same_sha = bool(candidate.sha256 and candidate.sha256 == previous.sha256)\n"
+              "        # For video, the same source is repetition even when a different trim is used.\n"
+              "        # Exact source identity must therefore remain strong for legacy entries that do\n"
+              "        # not know the consumed duration and for non-overlapping trims of the same file.\n"
+              "        if same_url:\n"
+              "            detected.append((\"url\", 1.0 if candidate.kind == \"video\" else overlap))\n"
+              "        if same_sha:\n"
+              "            detected.append((\"sha256\", 1.0 if candidate.kind == \"video\" else overlap))\n"
+          )
+          replace_once("engine/visual_repetition.py", old, new)
 
-          replace_once(
-              "engine/visual_repetition.py",
-              '''        factor = _recency_factor(raw_entry.recency_rank)
-        usage_key = (raw_entry.episode, raw_entry.shot_id, raw_entry.asset_id)
-        for method, similarity in detected:
-            penalty = -round(base_penalties[method] * factor * similarity, 2)
-''',
-              '''        factor = _recency_factor(raw_entry.recency_rank)
-        usage_key = (raw_entry.episode, raw_entry.shot_id, raw_entry.asset_id)
-        for method, similarity in detected:
-            exact_video_source = candidate.kind == "video" and method in {"url", "sha256"}
-            effective_factor = 1.0 if exact_video_source else factor
-            effective_base = MAX_REPETITION_PENALTY if exact_video_source else base_penalties[method]
-            penalty = -round(effective_base * effective_factor * similarity, 2)
-''',
+          old = (
+              "        factor = _recency_factor(raw_entry.recency_rank)\n"
+              "        usage_key = (raw_entry.episode, raw_entry.shot_id, raw_entry.asset_id)\n"
+              "        for method, similarity in detected:\n"
+              "            penalty = -round(base_penalties[method] * factor * similarity, 2)\n"
           )
+          new = (
+              "        factor = _recency_factor(raw_entry.recency_rank)\n"
+              "        usage_key = (raw_entry.episode, raw_entry.shot_id, raw_entry.asset_id)\n"
+              "        for method, similarity in detected:\n"
+              "            exact_video_source = candidate.kind == \"video\" and method in {\"url\", \"sha256\"}\n"
+              "            effective_factor = 1.0 if exact_video_source else factor\n"
+              "            effective_base = MAX_REPETITION_PENALTY if exact_video_source else base_penalties[method]\n"
+              "            penalty = -round(effective_base * effective_factor * similarity, 2)\n"
+          )
+          replace_once("engine/visual_repetition.py", old, new)
 
-          replace_once(
-              "tests/test_visual_repetition.py",
-              '''        for match in assessment.matches:
-            self.assertAlmostEqual(match.similarity, 0.5)
-        self.assertFalse(assessment.blocked)
-''',
-              '''        for match in assessment.matches:
-            self.assertEqual(match.similarity, 1.0)
-        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)
-        self.assertFalse(assessment.blocked)
-''',
+          old = (
+              "        for match in assessment.matches:\n"
+              "            self.assertAlmostEqual(match.similarity, 0.5)\n"
+              "        self.assertFalse(assessment.blocked)\n"
           )
+          new = (
+              "        for match in assessment.matches:\n"
+              "            self.assertEqual(match.similarity, 1.0)\n"
+              "        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)\n"
+              "        self.assertFalse(assessment.blocked)\n"
+          )
+          replace_once("tests/test_visual_repetition.py", old, new)
 
-          replace_once(
-              "tests/test_visual_repetition.py",
-              '''        assessment = assess_repetition(candidate, (_entry(prior),))
-        self.assertFalse(assessment.is_repeated)
-        self.assertEqual(assessment.matches, ())
-        self.assertEqual(assessment.penalty, 0)
-''',
-              '''        assessment = assess_repetition(candidate, (_entry(prior),))
-        self.assertTrue(assessment.is_repeated)
-        self.assertEqual(_methods(assessment), {"url", "sha256"})
-        self.assertTrue(all(match.similarity == 1.0 for match in assessment.matches))
-        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)
-''',
+          old = (
+              "        assessment = assess_repetition(candidate, (_entry(prior),))\n"
+              "        self.assertFalse(assessment.is_repeated)\n"
+              "        self.assertEqual(assessment.matches, ())\n"
+              "        self.assertEqual(assessment.penalty, 0)\n"
           )
+          new = (
+              "        assessment = assess_repetition(candidate, (_entry(prior),))\n"
+              "        self.assertTrue(assessment.is_repeated)\n"
+              "        self.assertEqual(_methods(assessment), {\"url\", \"sha256\"})\n"
+              "        self.assertTrue(all(match.similarity == 1.0 for match in assessment.matches))\n"
+              "        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)\n"
+          )
+          replace_once("tests/test_visual_repetition.py", old, new)
 
-          replace_once(
-              "tests/test_visual_repetition.py",
-              '''        prior = self._fingerprint(0, 1)
-        candidate = self._fingerprint(1, 1)
-        self.assertFalse(assess_repetition(candidate, (_entry(prior),)).is_repeated)
-''',
-              '''        prior = self._fingerprint(0, 1)
-        candidate = self._fingerprint(1, 1)
-        assessment = assess_repetition(candidate, (_entry(prior),))
-        self.assertTrue(assessment.is_repeated)
-        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)
-''',
+          old = (
+              "        prior = self._fingerprint(0, 1)\n"
+              "        candidate = self._fingerprint(1, 1)\n"
+              "        self.assertFalse(assess_repetition(candidate, (_entry(prior),)).is_repeated)\n"
           )
+          new = (
+              "        prior = self._fingerprint(0, 1)\n"
+              "        candidate = self._fingerprint(1, 1)\n"
+              "        assessment = assess_repetition(candidate, (_entry(prior),))\n"
+              "        self.assertTrue(assessment.is_repeated)\n"
+              "        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)\n"
+          )
+          replace_once("tests/test_visual_repetition.py", old, new)
 
-          replace_once(
-              "tests/test_visual_repetition.py",
-              '''        self.assertTrue(weak.is_repeated)
-        self.assertGreater(weak.penalty, exact.penalty)
-        self.assertGreater(weak.matches[0].similarity, 0)
-        self.assertLess(weak.matches[0].similarity, 1)
-''',
-              '''        self.assertTrue(weak.is_repeated)
-        self.assertEqual(weak.penalty, -MAX_REPETITION_PENALTY)
-        self.assertEqual(exact.penalty, -MAX_REPETITION_PENALTY)
-        self.assertTrue(all(match.similarity == 1.0 for match in weak.matches))
-''',
+          old = (
+              "        self.assertTrue(weak.is_repeated)\n"
+              "        self.assertGreater(weak.penalty, exact.penalty)\n"
+              "        self.assertGreater(weak.matches[0].similarity, 0)\n"
+              "        self.assertLess(weak.matches[0].similarity, 1)\n"
           )
+          new = (
+              "        self.assertTrue(weak.is_repeated)\n"
+              "        self.assertEqual(weak.penalty, -MAX_REPETITION_PENALTY)\n"
+              "        self.assertEqual(exact.penalty, -MAX_REPETITION_PENALTY)\n"
+              "        self.assertTrue(all(match.similarity == 1.0 for match in weak.matches))\n"
+          )
+          replace_once("tests/test_visual_repetition.py", old, new)
 
           replace_once(
               "docs/visual-search.md",
