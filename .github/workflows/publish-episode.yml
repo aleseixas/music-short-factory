@@ -137,12 +137,30 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install FFmpeg on GitHub-hosted runner
+      - name: Ensure FFmpeg on GitHub-hosted runner
         if: ${{ vars.USE_SELF_HOSTED_VISUALS != 'true' }}
         shell: bash
         run: |
+          set -euo pipefail
+          if command -v ffmpeg >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+            exit 0
+          fi
+
+          # Third-party package indexes on hosted runners can briefly be out of
+          # sync with their Release metadata. FFmpeg comes from Ubuntu, so
+          # disable only the Chrome repo if it would make apt-get update fail.
+          while IFS= read -r source; do
+            if sudo grep -q 'dl.google.com/linux/chrome' "$source"; then
+              sudo mv "$source" "${source}.disabled"
+            fi
+          done < <(find /etc/apt/sources.list.d -maxdepth 1 -type f -print)
+
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
           sudo apt-get update
           sudo apt-get install --yes ffmpeg
+          ffmpeg -version | head -n 1
 
       - name: Verify FFmpeg on self-hosted runner
         if: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' }}
@@ -150,6 +168,17 @@ jobs:
 
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
+
+      - name: Verify visual download stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import yt_dlp
+          print(f"yt-dlp: {yt_dlp.version.__version__}")
+          PY
+          node --version
+          ffmpeg -version | head -n 1
 
       - name: Show visual runner mode
         run: python -c "import os, socket; print('Visual runner:', 'self-hosted/residential' if os.getenv('USE_SELF_HOSTED_VISUALS') == 'true' else 'github-hosted'); print('Host:', socket.gethostname())"
@@ -174,6 +203,7 @@ jobs:
           name: visual-handoff-${{ needs.prepare.outputs.episode }}
           path: .visual-handoff
           if-no-files-found: ignore
+          include-hidden-files: true
           retention-days: 1
           compression-level: 0
 
