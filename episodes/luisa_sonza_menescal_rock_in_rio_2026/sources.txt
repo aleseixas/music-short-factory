@@ -1,0 +1,52 @@
+FONTES FACTUAIS
+Billboard Brasil — 03/08/2026 — “É o show mais importante da minha vida”, diz Luísa Sonza sobre Rock in Rio
+https://billboard.com.br/luisa-sonza-rock-in-rio-importancia/
+
+Billboard Brasil — 26/08/2026 — Vivendo nova fase, Roberto Menescal leva a bossa nova ao Rock in Rio
+https://billboard.com.br/roberto-menescal-bossa-nova-rock-in-rio-88-anos/
+
+Billboard Brasil — 02/09/2026 — Luísa Sonza mostra ensaios para o Rock in Rio e prepara encontro com Menescal
+https://billboard.com.br/luisa-sonza-bastidores-ensaio-rock-in-rio-2026/
+
+Billboard Brasil — 07/09/2026 — horários do Rock in Rio em 7 de setembro
+https://billboard.com.br/rock-in-rio-2026-horarios-shows-7-de-setembro/
+
+Folha de S.Paulo — 08/09/2026 — Luísa Sonza canta bossa nova no Rock in Rio para uma plateia esvaziada
+https://www1.folha.uol.com.br/ilustrada/2026/09/luisa-sonza-canta-bossa-nova-no-rock-in-rio-para-uma-plateia-esvaziada.shtml
+
+Billboard Brasil — 10/01/2026 — tracklist de Bossa Sempre Nova
+https://billboard.com.br/luisa-sonza-tracklist/
+
+Apple Music — Bossa Sempre Nova — Luísa Sonza, Roberto Menescal & Toquinho
+https://music.apple.com/us/album/bossa-sempre-nova/1880803879
+
+VISUAIS PRINCIPAIS
+RBS / Atlântida — Luísa Sonza + Roberto Menescal / Rock in Rio 2026
+https://www.rbsdirect.com.br/filestore/5/2/6/3/6/7/5_ad9a7f062187061/5763625_a10b1a221cb2c79.jpeg?a=c&h=576&w=1024
+Globo / frame de reportagem sobre Bossa Sempre Nova
+https://s01.video.glbimg.com/x720/14283180.jpg
+O Dia / Pam Martins — Luísa Sonza e Roberto Menescal
+https://odia.ig.com.br/_midias/jpg/2026/01/14/385x420/1_2cre__ditopammartins-37900067.jpg
+Popular Mais — encontro em estúdio
+https://popularmais.com.br/images/noticias/26112/28021517_A_nova_bos.JPG
+TMC — performance de bossa nova
+https://s48837.pcdn.co/wp-content/uploads/2026/01/coletiva_luisa-1068x785.jpg.optimal.jpg
+Spotify artist image — Roberto Menescal
+https://i.scdn.co/image/63a81be87d8d05e49144d1632c7f1f68a6f235e0
+Sony Music / Apple Music — artwork Bossa Sempre Nova
+https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/54/62/e0/5462e05f-3871-d451-f696-435e7a3228a0/196873746487.jpg/3000x3000bb.jpg
+O Globo — Luísa Sonza no Rock in Rio 2024
+https://s2-oglobo.glbimg.com/58jviALb_qctftRxka5SCaZSoSw%3D/0x0%3A852x559/924x0/smart/filters%3Astrip_icc%28%29/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2024/e/2/91ohY9St6I2TADo8QQcA/108568117-sc-rio-de-janeiro-rj-22-09-2024-rock-in-rio-luisa-sonza-no-palco-mundo.-foto-alexandre.jpg
+Rock in Rio / reprodução de programação de 07/09/2026
+https://420576d5f5d16b12d00d53a989e5098a.cdn.bubble.io/f1771027802424x441253464472090430/rockinrio.jpg
+G1 / divulgação Bossa Sempre Nova
+https://s2-g1.glbimg.com/On1RzQX1_vYBnycRaeCr3fd0tXE%3D/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2026/o/b/BdNA9mSKmZQLok5vipDQ/luisamenecal.jpg
+
+Demais vídeos contextuais: páginas-fonte, créditos e licenças estão registrados em assets.json e visual_candidates.json.
+
+BACKGROUND MUSIC — PESQUISA EXTERNAL-FIRST
+Consultas realizadas: bossa nova instrumental chill; brazilian jazz instrumental; acoustic guitar lounge documentary; latin jazz chill; soft jazz guitar documentary.
+Candidatas comparadas incluíram Pixabay “Bossa Nova Instrumental 01”, “Jazz Bossa Nova Brazilian Vibes Instrumental Music”, “Instrumental Jazz Bossa Nova Brazilian Guitar Vibes”, “Brazilian Bossa Nova Chill Background Music”, “Bossa Nova - Summer - Instrumental Brazil”, “Bossa Nova or Lofi” e “Bossa Lounge”. Algumas opções exibiam Content ID Registered; outras eram AI-generated ou não tinham sinal operacional forte o bastante para justificar nova entrada dedicada. Para preservar compatibilidade multiplataforma, foi usado o fallback curado da repo `fallback_social_chill`, conforme docs/audio-search.md.
+
+SFX
+Somente types existentes em assets/audio/sfx/catalog.json foram usados; nenhuma entrada de catálogo foi criada ou alterada.
