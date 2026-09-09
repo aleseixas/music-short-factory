@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+  "recorded_at": "2026-09-09T22:32:49Z",
+  "visual_usage": [
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_01",
+      "asset_id": "rir_straykids",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7924d0bce5541dde11db04afe906c0d2a37e31927fbb2ea5b4c2cc503b910403",
+        "url_hashes": [
+          "48ab50aeef1fb5999003a9265a353767f4398348fabb479adf2a54ed9ce02964"
+        ],
+        "perceptual_hashes": [
+          "d9f9d580031e3ee2",
+          "caf9d581d3941cd2",
+          "daf8a5e9d39019d0",
+          "d3f68a061d796c58",
+          "d1f5eceb60c46318",
+          "cddcd6484b237925",
+          "c92df1a62cf93505"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_02",
+      "asset_id": "nexz_rir",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "5477167fd8fefe0b809064c84361986639c2a9f37491c1e3ea43c048ef2eeba3",
+        "url_hashes": [
+          "ea0decb6b78e49b0c4855f0802c51d377fdc8eef724a97c76a02da4deda3a285"
+        ],
+        "perceptual_hashes": [
+          "83859ccbd29e29dc",
+          "c2a59cc3d79ec09c",
+          "e2a48cf1d7b6c08e",
+          "8599979639d3187a",
+          "c46b39d342986ee3",
+          "f9d7cac883ae042e",
+          "e93487af6cc0307e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_03",
+      "asset_id": "thisthat_group",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f9b92958a8019640ac0a048c208a2cd0484e5b3efa69ba645dbf6befc34f0770",
+        "url_hashes": [
+          "48c4c285b949efe084f74a63e4510bd225b0b11ae22604ca87b9811c56ceddb6"
+        ],
+        "perceptual_hashes": [
+          "ee91c57c8334ce61",
+          "e483cd5ca13ccee1",
+          "f482cf5f303e4ac1",
+          "eb86d837a0ccc639",
+          "eba784689662b179",
+          "bbd5403f9740fc03",
+          "ea9de542c83e8b23"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_04",
+      "asset_id": "karma_group",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3234cd07f2e8035ee1280f31d23c46610da793986e9ebe55407ee85693689076",
+        "url_hashes": [
+          "0f926247cae2eab43bced4ff1d63505ae035eb3792d18e5ecf6b437f14a561f9"
+        ],
+        "perceptual_hashes": [
+          "ca9c1c2f65e0b07e",
+          "d89a0c676fa8a86e",
+          "db9a9c0363a898cf",
+          "94914d6ce3b16c67",
+          "d094911d1d6e6737",
+          "cbc52230bf9f7038",
+          "cecddf024070783f"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_05",
+      "asset_id": "hwasa_rir",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "a9bfd0a4c07ebb030ab3d3b27654b2e59312c3042c57848e7b2d90859a8d727a",
+        "url_hashes": [
+          "bd57a610de334aaabd3f5b4c04570f69ad7ca2d8012af93ee7aead607072f394"
+        ],
+        "perceptual_hashes": [
+          "c93433c93bd93472",
+          "c93433c91bc93e71",
+          "c83432e512df3675",
+          "db6dc4d3906867d0",
+          "936b24c86dc7969c",
+          "ce39d8cecc323ac4",
+          "ce3619e03b7cccc1"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_06",
+      "asset_id": "lightstick_crowd",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "00b5b0552dcd4352bba45b5a56f70e32733b864171e07d6c5c076435b5d8f181",
+        "url_hashes": [
+          "2046e975eff62edd685edca481a22666c214291b23f11e8da6382a2d7ff3062b"
+        ],
+        "perceptual_hashes": [
+          "c9c67d195acb63a0",
+          "c9e63d1d5a535270",
+          "d9e62d0d1d535271",
+          "92cc7a55c4476b99",
+          "92cd6c2a2d38fc95",
+          "c4f1044b787bb6a5",
+          "cef131a43386a5cd"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_07",
+      "asset_id": "dominate_stage",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e0ae305c93c1bfdc3f07f5270dcff33455d56fd69ccb3fd30497056372cdf4b7",
+        "url_hashes": [
+          "c1bbb2091a13ac38357321bd0c6108889bc1f5d08f3a2b9ef635b0507f8d13eb"
+        ],
+        "perceptual_hashes": [
+          "8ec97b966c0e5079",
+          "8ef9719768867909",
+          "84f873b7e8867a11",
+          "99f264c81b607fe8",
+          "9d9272ac60df9ce0",
+          "83ee38e7465d4a61",
+          "83c72c987daac2b5"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_08",
+      "asset_id": "three_racha",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8dced0467690a97689b49b6c7aa632ee6262b2001925467a660a8b55879152e3",
+        "url_hashes": [
+          "8138aeab5e0d878abbff14729aab98e883e02615982206b82a62667d79955331"
+        ],
+        "perceptual_hashes": [
+          "82937b3f1dc8f822",
+          "949273379dddd110",
+          "d4d263378b9dd019",
+          "81967c1b93e35cd4",
+          "89a1c6ec6d1cdcc5",
+          "dbd810c6c67b29e1",
+          "c3db6839392985d9"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_09",
+      "asset_id": "bangchan_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "fcbf9a60cd996a50e32566f47dfb416d9d6435af838f64376956d9f72b05c23d",
+        "url_hashes": [
+          "aa7650b4c300ab3d6486727de9ef7041a0d0ee859ca161e395464088f1813e9f"
+        ],
+        "perceptual_hashes": [
+          "8cc9b66cb166d931",
+          "8ccbb64cb1669939",
+          "ccdbb74831c6994a",
+          "999648736d33686d",
+          "9996a45c936ecd23",
+          "c79c732e311e3133",
+          "c7cd9861ce32e11e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_10",
+      "asset_id": "changbin_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6332057b1078472f3b5cc097de18f5ad4f2ee207198f1c77b7dba41c8a636f50",
+        "url_hashes": [
+          "bcb99737d8a258e5c065dffa30e728d54dfce7d19ac0faf9ed099f4e871b5469"
+        ],
+        "perceptual_hashes": [
+          "98cdb26623996793",
+          "9cc9b66632596713",
+          "9dc896669e68b562",
+          "9b936c6cd22c549b",
+          "b392932c6c945bb3",
+          "cec731396c3869c6",
+          "8ec6cf5231c9658e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_11",
+      "asset_id": "han_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e58456a1763d31bae7953ef516c928a0d002303b041eeaa864dc42d5916ece53",
+        "url_hashes": [
+          "bc871c19346f9308003ed7f408792fe2e6766a4af10dd6600cafd8e39cf9689f"
+        ],
+        "perceptual_hashes": [
+          "98e93233eec2338b",
+          "9ce9b6338662a353",
+          "9ce9b6318c64b663",
+          "93e3645ccca65a99",
+          "9bd388256e997989",
+          "cef63821f198c4c7",
+          "c6e6d2183cc727c3"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_12",
+      "asset_id": "hyunjin_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "82f1829d8c8625222809c7b79cf370b39cb0a78babd7bbc32c8223a0ab2d9238",
+        "url_hashes": [
+          "bb8841eef84291a63e103238311fd0155ffecd6a5ff46853a7e88be3b02d9428"
+        ],
+        "perceptual_hashes": [
+          "cccc26333374b933",
+          "cccce63332749933",
+          "ccccc633666c993c",
+          "999966666bb664c4",
+          "99999996b66c4d94",
+          "c7c33838379c38f8",
+          "c7c7c7c8983163cc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_13",
+      "asset_id": "frankfurt_stage",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1368eb0710a06cac43969c0d2257bf19729bc491de72f343ab6f1a8c24b2259a",
+        "url_hashes": [
+          "c9aaf928f49ef474f3e71949f00ce5fbe7b5159822ec792e40b5385c6c8b06df"
+        ],
+        "perceptual_hashes": [
+          "cc9956cbbca3c21a",
+          "c89957cbbca0e23a",
+          "c89c45c93ce1e5ba",
+          "9b3f0ebd2584150f",
+          "99b02b0e9f3b0f4c",
+          "c70e5a8f31d00fd3",
+          "c58d1658ca0ff372"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_14",
+      "asset_id": "govball_stage",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "71aec68114b46f3dfa7f380f2701c0a80b14571d77528f40adf7068c838a8e7a",
+        "url_hashes": [
+          "354c3f38682e4c78aaf620972550e7ae880413d082015f44e767cefb8bd33f95"
+        ],
+        "perceptual_hashes": [
+          "f87594a9557c2b41",
+          "dc17968993bcb348",
+          "dc33b68897ae924c",
+          "fb2491f668664267",
+          "fb6e24c38602b9f4",
+          "ae11afcc352d6439",
+          "ae7451abc856a399"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_15",
+      "asset_id": "dominate_london",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "bf4c2e597b3dedf199ed16fe925d80e06523fa355161beaf996fcb7b1333050b",
+        "url_hashes": [
+          "835172a85c78fe36b236341f097fac023fb7514d35a8972a94b67a57999b4740"
+        ],
+        "perceptual_hashes": [
+          "cc9956cbbca3c21a",
+          "c89957cbbca0e23a",
+          "c89c55c93ce0e5ba",
+          "9b3f0ebd2584150f",
+          "99b02b0e9f3b0f4c",
+          "c70e5a8f31d00fd3",
+          "c58d1658ca0ff372"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_16",
+      "asset_id": "celebrate_stage",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b7b984ba633c924e30f3f7b82eca9a07be80600ac17af9672eb74527846aa171",
+        "url_hashes": [
+          "8db2e8cd108acd843f5579a7be3936c236ee97ed8193808ac6a2ec61ec143dd7"
+        ],
+        "perceptual_hashes": [
+          "d02f6a9523cc2f78",
+          "d42b7e95708c2b5c",
+          "d5605ea3d58a7b30",
+          "807f90a7997ca38e",
+          "806e7b986f838fd0",
+          "d02bc5fec4293fc0",
+          "d03d2bc13ddeb4c0"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_17",
+      "asset_id": "thisthat_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "df8a67e37c4ed15317694d13c6b54d493347d51a7604159a2b1f78546ad5e1ad",
+        "url_hashes": [
+          "6e9986ffe16a7efc75a803a21149595e4049f95cf7652cdb848727de17b55af8"
+        ],
+        "perceptual_hashes": [
+          "eac0c5eb037e706a",
+          "cad5cdc303247973",
+          "d6fbcdc0810e4d27",
+          "ffc0ca47707065d1",
+          "fff080d8878f8193",
+          "aad5e07811287bcf",
+          "aa99d5a2dce097c4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_18",
+      "asset_id": "felix_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f7b67d0baaffe7e75afaa2dbbcb327110f7df1b70b527226adaff05ce9287e52",
+        "url_hashes": [
+          "ee3d338bc5a33d4904535cf9d621d16bfb1e2a489345c074e223f278c5ddd6a9"
+        ],
+        "perceptual_hashes": [
+          "f99985667225279a",
+          "f999856672652596",
+          "f899895656696993",
+          "f2926d6d6b2a8463",
+          "f292929a9495676b",
+          "aec672393630d933",
+          "aecc86c6c9c93336"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_19",
+      "asset_id": "leeknow_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b58113c593f065f0b1f11141497cded8e8262cecab5df0fcdf102abd3027fe65",
+        "url_hashes": [
+          "469e3bb65d514be0d7c961a7ce4ec14987a289366eb23e3af5ba2130801e477e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a8afb5d0d22fc116",
+          "b8aeae91646fd824",
+          "9d8f8099666bd827",
+          "9a9fc8936c65906d",
+          "c0c03f3fde8c9127",
+          "853705c87e62b7c9",
+          "f878818e1e907fac",
+          "ff5c800201dd3fb6"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.933333
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_20",
+      "asset_id": "seungmin_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e6550ed9af161004fb74b3d90070d59759909994f67cfeae0a989b415a179ecc",
+        "url_hashes": [
+          "6d474d4b69ab9cebcea091d581f890817118552e5dd3e107e6f50da8266cee95"
+        ],
+        "perceptual_hashes": [
+          "d985e626265b699c",
+          "d985f626265a6a96",
+          "99a1f6a527534a27",
+          "b28f6d6c15d189d1",
+          "b283c5d1eba943d1",
+          "ccf2313049ed92cf",
+          "ccd6d2cdb69024cd"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+      "shot_id": "shot_21",
+      "asset_id": "in_press",
+      "recorded_at": "2026-09-09T22:32:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "03b56ee310615e262d73bfe53b9246a8da71ab69d73be57ae2c3063d4f804bb8",
+        "url_hashes": [
+          "3cb6d565be58242aa492e5f8ece90ccce644a603f0d86f6c51cc802351f047fe"
+        ],
+        "perceptual_hashes": [
+          "c88c36e2d31d92cf",
+          "c88d26e2c33bd2cb",
+          "d88d24f0e333f2c3",
+          "937a6dc43e859a38",
+          "93927a69e54a7a61",
+          "cfa633f804dbe406",
+          "cfc62633f364241b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
