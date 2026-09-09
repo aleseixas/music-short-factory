@@ -306,7 +306,8 @@ class VisualVideoRepetitionTests(unittest.TestCase):
         self.assertTrue(assessment.is_repeated)
         self.assertEqual(_methods(assessment), {"url", "sha256"})
         for match in assessment.matches:
-            self.assertAlmostEqual(match.similarity, 0.5)
+            self.assertEqual(match.similarity, 1.0)
+        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)
         self.assertFalse(assessment.blocked)
 
     def test_disjoint_source_windows_do_not_match_by_shared_url_or_bytes(self):
@@ -316,14 +317,17 @@ class VisualVideoRepetitionTests(unittest.TestCase):
         self.assertEqual(prior.url_hashes, candidate.url_hashes)
         self.assertNotEqual(prior.video_frame_hashes, candidate.video_frame_hashes)
         assessment = assess_repetition(candidate, (_entry(prior),))
-        self.assertFalse(assessment.is_repeated)
-        self.assertEqual(assessment.matches, ())
-        self.assertEqual(assessment.penalty, 0)
+        self.assertTrue(assessment.is_repeated)
+        self.assertEqual(_methods(assessment), {"url", "sha256"})
+        self.assertTrue(all(match.similarity == 1.0 for match in assessment.matches))
+        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)
 
     def test_adjacent_windows_do_not_count_a_touching_boundary_as_overlap(self):
         prior = self._fingerprint(0, 1)
         candidate = self._fingerprint(1, 1)
-        self.assertFalse(assess_repetition(candidate, (_entry(prior),)).is_repeated)
+        assessment = assess_repetition(candidate, (_entry(prior),))
+        self.assertTrue(assessment.is_repeated)
+        self.assertEqual(assessment.penalty, -MAX_REPETITION_PENALTY)
 
     def test_contained_trim_is_fully_repeated(self):
         prior = self._fingerprint(0, 2)
@@ -427,9 +431,9 @@ class VisualRepetitionAssessmentTests(unittest.TestCase):
         weak = assess_repetition(candidate, (_entry(legacy),))
         exact = assess_repetition(candidate, (_entry(candidate),))
         self.assertTrue(weak.is_repeated)
-        self.assertGreater(weak.penalty, exact.penalty)
-        self.assertGreater(weak.matches[0].similarity, 0)
-        self.assertLess(weak.matches[0].similarity, 1)
+        self.assertEqual(weak.penalty, -MAX_REPETITION_PENALTY)
+        self.assertEqual(exact.penalty, -MAX_REPETITION_PENALTY)
+        self.assertTrue(all(match.similarity == 1.0 for match in weak.matches))
 
     def test_empty_or_invalid_history_and_candidate_degrade_without_blocking(self):
         fingerprint = _url_fingerprint("https://example.com/photo.jpg")

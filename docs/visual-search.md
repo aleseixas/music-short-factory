@@ -325,7 +325,7 @@ Uma repetição nunca cria um erro técnico nem retira o candidato do fallback.
 Procure outro visual relevante; se as alternativas forem insuficientes, continue
 com a melhor opção válida e mantenha o diagnóstico no relatório.
 
-A janela padrão é de 24 episódios com histórico. A recência vem do horário do
+A janela padrão cobre efetivamente todo o histórico do projeto (até 10.000 episódios). Para vídeos, URL ou SHA-256 exatos recebem a penalidade máxima de repetição (-70), mesmo com outro trim e independentemente da recência. A recência vem do horário do
 registro; para manifests antigos, usa a criação no Git (ordem por slug se não
 houver data). As penalidades-base são 56 pontos por URL, 62 por SHA-256, 50 por
 imagem perceptualmente semelhante e 54 por frames semelhantes. Multiplicam-se

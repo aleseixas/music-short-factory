@@ -29,7 +29,8 @@ VIDEO_FRAME_COUNT = 8
 VIDEO_FRAME_DISTANCE_THRESHOLD = 12
 VIDEO_SIMILARITY_THRESHOLD = 0.82
 MAX_REPETITION_PENALTY = 70.0
-DEFAULT_RECENT_EPISODE_LIMIT = 24
+# Keep effectively the full project history by default; explicit callers can still request a smaller window.
+DEFAULT_RECENT_EPISODE_LIMIT = 10_000
 TRACKING_QUERY_KEYS = frozenset(
     {
         "fbclid",
@@ -440,10 +441,15 @@ def assess_repetition(
             continue
         detected: list[tuple[str, float]] = []
         overlap = _source_overlap(candidate, previous) if candidate.kind == "video" else 1.0
-        if overlap > 0 and set(candidate.url_hashes).intersection(previous.url_hashes):
-            detected.append(("url", overlap))
-        if overlap > 0 and candidate.sha256 and candidate.sha256 == previous.sha256:
-            detected.append(("sha256", overlap))
+        same_url = bool(set(candidate.url_hashes).intersection(previous.url_hashes))
+        same_sha = bool(candidate.sha256 and candidate.sha256 == previous.sha256)
+        # For video, the same source is repetition even when a different trim is used.
+        # Exact source identity must therefore remain strong for legacy entries that do
+        # not know the consumed duration and for non-overlapping trims of the same file.
+        if same_url:
+            detected.append(("url", 1.0 if candidate.kind == "video" else overlap))
+        if same_sha:
+            detected.append(("sha256", 1.0 if candidate.kind == "video" else overlap))
         if candidate.kind == "image":
             similarity = _image_hash_similarity(
                 candidate.perceptual_hashes,
@@ -464,7 +470,10 @@ def assess_repetition(
         factor = _recency_factor(raw_entry.recency_rank)
         usage_key = (raw_entry.episode, raw_entry.shot_id, raw_entry.asset_id)
         for method, similarity in detected:
-            penalty = -round(base_penalties[method] * factor * similarity, 2)
+            exact_video_source = candidate.kind == "video" and method in {"url", "sha256"}
+            effective_factor = 1.0 if exact_video_source else factor
+            effective_base = MAX_REPETITION_PENALTY if exact_video_source else base_penalties[method]
+            penalty = -round(effective_base * effective_factor * similarity, 2)
             strongest_by_usage[usage_key] = max(
                 strongest_by_usage.get(usage_key, 0.0),
                 abs(penalty),
