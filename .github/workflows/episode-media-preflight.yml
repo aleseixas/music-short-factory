@@ -35,7 +35,7 @@ jobs:
             mapfile -t files < <(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.episode-check/*.json')
           fi
           if [[ ${#files[@]} -ne 1 ]]; then
-            echo "::error::Expected exactly one new .episode-check request; found ${#files[@]}."
+            echo "::error::PREFLIGHT_REQUEST_INVALID: expected exactly one new .episode-check request; found ${#files[@]}. ACTION: create exactly one new request file and keep the same episode slug."
             exit 1
           fi
           file="${files[0]}"
@@ -48,7 +48,7 @@ jobs:
           PY
           )"
           if [[ ! "$slug" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
-            echo "::error::Invalid episode slug in request."
+            echo "::error::PREFLIGHT_SLUG_INVALID: invalid episode slug in request. TARGET: $file. ACTION: fix only the slug format; do not create a new topic."
             exit 1
           fi
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
@@ -83,6 +83,50 @@ jobs:
           set -uo pipefail
           max_attempts=5
 
+          emit_failure_summary() {
+            local log_file="$1"
+            local reason="$2"
+            local code detail recoverable target action same_slug error_class
+
+            code="$(grep '^MEDIA_PREFLIGHT_ERROR_CODE=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            error_class="$(grep '^MEDIA_PREFLIGHT_ERROR_CLASS=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            detail="$(grep '^MEDIA_PREFLIGHT_ERROR_DETAIL=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            recoverable="$(grep '^MEDIA_PREFLIGHT_RECOVERABLE=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            target="$(grep '^MEDIA_PREFLIGHT_TARGET=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            action="$(grep '^MEDIA_PREFLIGHT_RECOMMENDED_ACTION=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            same_slug="$(grep '^MEDIA_PREFLIGHT_SAME_SLUG=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+
+            code="${code:-UNSTRUCTURED_FAILURE}"
+            error_class="${error_class:-UNKNOWN}"
+            detail="${detail:-The failing command did not emit a structured detail. Inspect the traceback immediately above.}"
+            recoverable="${recoverable:-unknown}"
+            target="${target:-unknown}"
+            action="${action:-Inspect the traceback, fix the named cause, keep the same slug, and do not create the publish queue until PASS.}"
+            same_slug="${same_slug:-$EPISODE}"
+
+            echo "MEDIA_PREFLIGHT_FINAL_ERROR_CODE=$code"
+            echo "MEDIA_PREFLIGHT_FINAL_ERROR_CLASS=$error_class"
+            echo "MEDIA_PREFLIGHT_FINAL_ERROR_DETAIL=$detail"
+            echo "MEDIA_PREFLIGHT_FINAL_RECOVERABLE=$recoverable"
+            echo "MEDIA_PREFLIGHT_FINAL_TARGET=$target"
+            echo "MEDIA_PREFLIGHT_FINAL_RECOMMENDED_ACTION=$action"
+            echo "MEDIA_PREFLIGHT_FINAL_SAME_SLUG=$same_slug"
+            echo "::error::MEDIA PREFLIGHT [$code] $detail TARGET: $target. RECOVERABLE: $recoverable. ACTION: $action SAME_SLUG: $same_slug. REASON: $reason"
+
+            {
+              echo "## Media preflight failure"
+              echo ""
+              echo "- **Episode:** \`$same_slug\`"
+              echo "- **Error code:** \`$code\`"
+              echo "- **Exception:** \`$error_class\`"
+              echo "- **Detail:** $detail"
+              echo "- **Recoverable:** \`$recoverable\`"
+              echo "- **Target to change:** \`$target\`"
+              echo "- **Recommended action:** $action"
+              echo "- **Continuity rule:** keep this same slug; do not author a replacement topic because of this failure."
+            } >> "$GITHUB_STEP_SUMMARY"
+          }
+
           for attempt in $(seq 1 "$max_attempts"); do
             echo "===== MEDIA PREFLIGHT attempt $attempt/$max_attempts ====="
             log_file="$(mktemp)"
@@ -92,14 +136,17 @@ jobs:
             status=${PIPESTATUS[0]}
             set -e
 
-            if [[ $status -eq 0 ]] && grep -q 'MEDIA_PREFLIGHT_RESULT=PASS' "$log_file"; then
+            if [[ $status -eq 0 ]] && grep -q '^MEDIA_PREFLIGHT_RESULT=PASS$' "$log_file"; then
               echo "MEDIA_AUTO_RECOVERY=PASS attempt=$attempt"
               rm -f "$log_file"
               exit 0
             fi
 
+            error_code="$(grep '^MEDIA_PREFLIGHT_ERROR_CODE=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+            recoverable="$(grep '^MEDIA_PREFLIGHT_RECOVERABLE=' "$log_file" | tail -n 1 | cut -d= -f2- || true)"
+
             if [[ $attempt -ge $max_attempts ]]; then
-              echo "::error::Media preflight failed after $max_attempts attempts."
+              emit_failure_summary "$log_file" "attempts_exhausted"
               cat "$log_file"
               rm -f "$log_file"
               exit 1
@@ -107,33 +154,56 @@ jobs:
 
             repaired=0
 
-            if grep -Eq 'BACKGROUND_REUSE_BLOCKED|Nenhuma faixa do profile de background music|background music.*(falhou|invalido|ausente)|Profile de background music inexistente' "$log_file"; then
-              echo "Recoverable background failure detected; selecting another local profile."
-              if python scripts/repair_background_music.py "$EPISODE"; then
-                repaired=1
-              fi
-            fi
+            case "$error_code" in
+              BACKGROUND_MUSIC_REUSE|BACKGROUND_MUSIC_INVALID)
+                echo "AUTO_REPAIR_STRATEGY=BACKGROUND_MUSIC_RESELECT error_code=$error_code"
+                if python scripts/repair_background_music.py "$EPISODE"; then
+                  repaired=1
+                fi
+                ;;
+              INTRA_EPISODE_VISUAL_REUSE|VISUAL_ASSET_HTTP_403|VISUAL_ASSET_HTTP_404|VISUAL_ASSET_INVALID|SHOT_REFERENCES_MISSING_ASSET|MEDIA_PROBE_OR_CODEC_ERROR)
+                echo "AUTO_REPAIR_STRATEGY=VISUAL_RESELECT error_code=$error_code"
+                python resolve_visual_candidates.py "$EPISODE" || true
+                python resolve_visual_candidates_web_auth.py "$EPISODE" || true
+                if ! git diff --quiet -- "episodes/$EPISODE"; then
+                  repaired=1
+                fi
+                ;;
+              *)
+                # Backwards-compatible fallback for older/unstructured validators.
+                if grep -Eq 'BACKGROUND_REUSE_BLOCKED|Nenhuma faixa do profile de background music|background music.*(falhou|invalido|ausente)|Profile de background music inexistente' "$log_file"; then
+                  echo "AUTO_REPAIR_STRATEGY=BACKGROUND_MUSIC_RESELECT legacy_match=true"
+                  if python scripts/repair_background_music.py "$EPISODE"; then
+                    repaired=1
+                  fi
+                fi
 
-            if grep -Eq 'Asset .*ausente|Asset de video .*ausente|Asset de video invalido|Arquivo nao e uma imagem valida|asset de imagem|asset de video|HTTP Error|HTTP [45][0-9][0-9]|404|403' "$log_file"; then
-              echo "Recoverable visual asset failure detected; trying candidate reselection."
-              python resolve_visual_candidates.py "$EPISODE" || true
-              python resolve_visual_candidates_web_auth.py "$EPISODE" || true
-              if ! git diff --quiet -- "episodes/$EPISODE"; then
-                repaired=1
-              fi
-            fi
+                if grep -Eq 'INTRA_EPISODE_VISUAL_REUSE_BLOCKED|Asset .*ausente|Asset de video .*ausente|Asset de video invalido|Arquivo nao e uma imagem valida|asset de imagem|asset de video|HTTP Error|HTTP [45][0-9][0-9]|404|403' "$log_file"; then
+                  echo "AUTO_REPAIR_STRATEGY=VISUAL_RESELECT legacy_match=true"
+                  python resolve_visual_candidates.py "$EPISODE" || true
+                  python resolve_visual_candidates_web_auth.py "$EPISODE" || true
+                  if ! git diff --quiet -- "episodes/$EPISODE"; then
+                    repaired=1
+                  fi
+                fi
+                ;;
+            esac
 
-            rm -f "$log_file"
+            if [[ "$recoverable" == "false" ]]; then
+              repaired=0
+            fi
 
             if [[ $repaired -ne 1 ]]; then
-              echo "::error::Preflight failure was not auto-repairable with the known recovery strategies."
+              emit_failure_summary "$log_file" "no_safe_auto_repair_applied"
+              rm -f "$log_file"
               exit 1
             fi
 
-            echo "Recovery applied; re-running the full media preflight."
+            rm -f "$log_file"
+            echo "Recovery applied; re-running the full media preflight for SAME_SLUG=$EPISODE."
           done
 
-          echo "::error::Unexpected recovery loop termination."
+          echo "::error::MEDIA_PREFLIGHT_INTERNAL_LOOP_ERROR: unexpected recovery loop termination. ACTION: inspect workflow logic; do not queue or change episode topic."
           exit 1
 
       - name: Persist repairs and create publish queue
