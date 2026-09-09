@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "title": "Gil abriu um possível adeus olhando para o futuro",
+  "slug": "gilberto_gil_ultimo_rock_in_rio_2026",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"No provável último Rock in Rio de Gilberto Gil, aconteceu isso.","delivery":"hook"},
+    {"id":"ia","text":"Ele começou falando de inteligência artificial.","delivery":"curious"},
+    {"id":"duas","text":"E abriu com duas músicas sobre tecnologia.","delivery":"reveal"},
+    {"id":"cerebro","text":"A primeira, Cérebro Eletrônico, é de 1969.","delivery":"reveal"},
+    {"id":"cinquenta_sete","text":"Cinquenta e sete anos antes desse palco.","delivery":"dramatic"},
+    {"id":"internet","text":"Depois veio Pela Internet, lançada em 1996.","delivery":"curious"},
+    {"id":"conectado","text":"Gil já cantava site, homepage, e-mail e um mundo conectado.","delivery":"curious"},
+    {"id":"agora","text":"Em 2026, elas voltaram quando IA virou conversa diária.","delivery":"reveal"},
+    {"id":"nostalgia","text":"E não era nostalgia jogada no repertório.","delivery":"dramatic"},
+    {"id":"humanidade","text":"Gil ligou tecnologia, humanidade e presente logo no começo.","delivery":"neutral"},
+    {"id":"hits","text":"Depois vieram Andar com Fé, Toda Menina Baiana e Vamos Fugir.","delivery":"payoff"},
+    {"id":"liminha","text":"Liminha, parceiro de décadas, subiu para tocar com ele.","delivery":"reveal"},
+    {"id":"rita","text":"E Rita Lee ganhou homenagem com Ovelha Negra.","delivery":"emotional"},
+    {"id":"barao","text":"Também teve Pro Dia Nascer Feliz, do Barão Vermelho.","delivery":"reveal"},
+    {"id":"peso","text":"Aí o peso do momento bateu.","delivery":"dramatic"},
+    {"id":"primeiro","text":"Gil esteve no primeiro Rock in Rio, em 1985.","delivery":"dramatic"},
+    {"id":"quarenta_um","text":"Quarenta e um anos depois, voltou ao festival aos 84.","delivery":"dramatic"},
+    {"id":"despedida","text":"Só que agora existia uma despedida pairando no palco.","delivery":"emotional"},
+    {"id":"tempo_rei","text":"Gil vinha da Tempo Rei, anunciada como sua última turnê.","delivery":"emotional"},
+    {"id":"talvez_ultimo","text":"E disse que talvez aquele fosse seu último Rock in Rio.","delivery":"reveal"},
+    {"id":"descanso","text":"Sem cravar aposentadoria: só falou que precisava descansar um pouco.","delivery":"neutral"},
+    {"id":"ironia","text":"A ironia: um possível adeus começou olhando para o futuro.","delivery":"payoff"},
+    {"id":"cta","text":"Gil ainda volta ao Rock in Rio? Comenta aí.","delivery":"payoff"}
+  ]
+}

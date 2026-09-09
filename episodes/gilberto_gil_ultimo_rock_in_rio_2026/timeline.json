@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "background_music": {"profile":"fallback_social_chill","volume":0.1},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"suspense_build_up","volume":0.11},
+    {"time_seconds":6.0,"type":"notification_iphone","volume":0.09},
+    {"time_seconds":13.5,"type":"tape_stop","volume":0.1},
+    {"time_seconds":23.0,"type":"swoosh_alt","volume":0.09},
+    {"time_seconds":35.0,"type":"chime_sparkles","volume":0.09},
+    {"time_seconds":48.0,"type":"camera_flash","volume":0.09},
+    {"time_seconds":59.0,"type":"heartbeat_slow","volume":0.1},
+    {"time_seconds":69.0,"type":"dramatic_dun_dun","volume":0.11},
+    {"time_seconds":75.0,"type":"applause_cheering","volume":0.09}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.1,"end_seconds":0.85,"type":"punch_zoom","intensity":0.9},
+    {"start_seconds":12.5,"end_seconds":13.25,"type":"punch_zoom","intensity":0.72},
+    {"start_seconds":55.0,"end_seconds":55.8,"type":"punch_zoom","intensity":0.75},
+    {"start_seconds":70.0,"end_seconds":70.8,"type":"slow_zoom_in","intensity":0.65}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"POSSÍVEL ÚLTIMO SHOW","accent_text":"ÚLTIMO","animation":"scale_bounce","position":"center","intensity":0.95},
+    {"segment":"cerebro","offset_seconds":0.1,"duration_seconds":1.1,"text":"1969","accent_text":"1969","animation":"pop_in","position":"center","intensity":0.88},
+    {"segment":"quarenta_um","offset_seconds":0.1,"duration_seconds":1.15,"text":"41 ANOS DEPOIS","accent_text":"41 ANOS","animation":"fade_pop","position":"center","intensity":0.9},
+    {"segment":"talvez_ultimo","offset_seconds":0.1,"duration_seconds":1.2,"text":"TALVEZ O ÚLTIMO","accent_text":"ÚLTIMO","animation":"pop_in","position":"center","intensity":0.9},
+    {"segment":"cta","offset_seconds":0.1,"duration_seconds":1.2,"text":"ELE VOLTA?","accent_text":"VOLTA?","animation":"slide_up","position":"center","intensity":0.85}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"gil_01","motion":"push_in","transition_out":"cut","highlight":"PROVÁVEL ÚLTIMO ROCK IN RIO"},
+    {"id":"shot_02","segment":"ia","asset":"gil_02","motion":"pull_out","transition_out":"cut","highlight":"INTELIGÊNCIA ARTIFICIAL"},
+    {"id":"shot_03","segment":"duas","asset":"gil_03","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_04","segment":"cerebro","asset":"gil_04","motion":"push_in","transition_out":"cut","highlight":"1969"},
+    {"id":"shot_05","segment":"cinquenta_sete","asset":"gil_05","motion":"pan_right","transition_out":"crossfade","highlight":"57 ANOS ANTES"},
+    {"id":"shot_06","segment":"internet","asset":"gil_06","motion":"pull_out","transition_out":"cut","highlight":"PELA INTERNET — 1996"},
+    {"id":"shot_07","segment":"conectado","asset":"gil_07","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_08","segment":"agora","asset":"gil_08","motion":"pull_out","transition_out":"cut","highlight":"IA EM 2026"},
+    {"id":"shot_09","segment":"nostalgia","asset":"gil_09","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_10","segment":"humanidade","asset":"gil_10","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_11","segment":"hits","asset":"gil_11","motion":"pan_right","transition_out":"cut","highlight":"ANDAR COM FÉ + VAMOS FUGIR"},
+    {"id":"shot_12","segment":"liminha","asset":"gil_12","motion":"pull_out","transition_out":"cut","highlight":"LIMINHA NO PALCO"},
+    {"id":"shot_13","segment":"rita","asset":"gil_13","motion":"push_in","transition_out":"cut","highlight":"HOMENAGEM A RITA LEE"},
+    {"id":"shot_14","segment":"barao","asset":"gil_14","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_15","segment":"peso","asset":"gil_15","motion":"pan_left","transition_out":"crossfade"},
+    {"id":"shot_16","segment":"primeiro","asset":"gil_16","motion":"push_in","transition_out":"cut","highlight":"ROCK IN RIO 1985"},
+    {"id":"shot_17","segment":"quarenta_um","asset":"gil_17","motion":"pan_right","transition_out":"cut","highlight":"41 ANOS DEPOIS"},
+    {"id":"shot_18","segment":"despedida","asset":"gil_18","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_19","segment":"tempo_rei","asset":"gil_19","motion":"push_in","transition_out":"crossfade","highlight":"A ÚLTIMA TURNÊ"},
+    {"id":"shot_20","segment":"talvez_ultimo","asset":"gil_20","motion":"pull_out","transition_out":"cut","highlight":"TALVEZ O ÚLTIMO"},
+    {"id":"shot_21","segment":"descanso","asset":"gil_21","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_22","segment":"ironia","asset":"gil_22","motion":"push_in","transition_out":"crossfade","highlight":"ADEUS OLHANDO O FUTURO"},
+    {"id":"shot_23","segment":"cta","asset":"gil_23","motion":"pan_right","transition_out":"cut"}
+  ]
+}
