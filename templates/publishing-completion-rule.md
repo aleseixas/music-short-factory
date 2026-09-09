@@ -2,7 +2,7 @@
 
 Esta regra define quando uma execução do **Além do Hit / Music Short Factory** pode ser considerada concluída.
 
-Ela é autoritativa para **queue, acompanhamento da Publish Action, status final e verificação por plataforma**. Em qualquer conflito com instruções antigas equivalentes a `queue -> STOP`, `a criação da queue encerra a tarefa`, `não acompanhe a Action` ou `ACTION: SUCESSO` baseado apenas no media preflight, **esta regra prevalece**.
+Ela é autoritativa para **queue, acompanhamento da Publish Action, status final, recuperação de falhas e verificação por plataforma**. Em qualquer conflito com instruções antigas equivalentes a `queue -> STOP`, `a criação da queue encerra a tarefa`, `não acompanhe a Action`, `pare na primeira falha de workflow` ou `ACTION: SUCESSO` baseado apenas no media preflight, **esta regra prevalece**.
 
 A `main` continua sendo a fonte da verdade para capacidades técnicas, workflows, publishers, schemas e estados realmente disponíveis.
 
@@ -55,7 +55,9 @@ Não transforme `NÃO_VERIFICADO` em sucesso por inferência.
 
 Se a Publish Action ainda estiver rodando e não houver estado terminal acessível, use `STATUS: PUBLICAÇÃO_EM_ANDAMENTO` e `PUBLISH ACTION: EM_ANDAMENTO`. Nunca use `STATUS: CRIADO` como sinônimo de publicação concluída.
 
-Se o workflow terminar com falha, use `STATUS: FALHA_PUBLICAÇÃO` e reporte a plataforma/etapa que falhou com base nos logs/steps reais.
+Uma primeira falha de Media Preflight ou Publish Action **não é automaticamente um estado terminal**. Antes de reportar falha final, aplique obrigatoriamente o protocolo de recuperação da seção 6 quando a falha for elegível.
+
+Se, depois do protocolo permitido, a Publish Action terminar com falha não recuperável ou com tentativas seguras esgotadas, use `STATUS: FALHA_PUBLICAÇÃO` e reporte a plataforma/etapa que falhou com base nos logs/steps reais.
 
 Se o episódio foi criado, mas a ferramenta não permitir verificar a Publish Action, use `STATUS: PUBLICAÇÃO_NÃO_VERIFICADA`; não invente sucesso.
 
@@ -69,21 +71,60 @@ Reporte separadamente, usando apenas evidência real da execução:
 
 Nunca diga que uma plataforma publicou apenas porque o workflow geral foi disparado.
 
-## 6. Falhas e retries
+## 6. Falhas e retries — recuperação automática obrigatória
+
+**Uma GitHub Action com `failure` é um estado intermediário, não conclusão da tarefa, enquanto existir uma recuperação segura e autorizada.**
+
+É proibido encerrar a execução após a primeira falha elegível apenas reportando o erro ao usuário.
+
+### 6.1 Falha no Media Preflight antes da queue
+
+Se `Episode media preflight` falhar:
+
+1. leia o job, a etapa que falhou e os logs acessíveis da execução exata;
+2. identifique o erro concreto — não faça retry cego;
+3. se a correção puder ser feita somente no episódio ativo, preserve o mesmo slug;
+4. corrija os arquivos necessários do episódio;
+5. grave a correção na `main`;
+6. crie um novo request `.episode-check/<slug>-<nonce>.json` conforme o contrato atual;
+7. acompanhe a nova Action exata;
+8. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, continue automaticamente para a queue/publicação sem devolver controle ao usuário entre essas etapas.
+
+Para evitar loop infinito, faça no máximo **3 tentativas totais de Media Preflight por episódio dentro da mesma execução do agente**: tentativa inicial + até 2 novas tentativas após correções reais. Cada nova tentativa exige uma correção objetiva correspondente ao erro anterior.
+
+Pare antes do PASS somente se o erro não puder ser corrigido com segurança dentro do escopo autorizado do episódio, se depender de autenticação/secrets/permissões/infraestrutura externa, se os logs não permitirem identificar uma correção confiável ou se as 3 tentativas totais forem consumidas.
+
+### 6.2 Falha na Publish Action
 
 Se a Publish Action falhar, leia a etapa/log acessível e identifique o erro concreto.
 
-Não republique cegamente uma plataforma que já possa ter concluído. Siga `docs/publishing-retry.md` e a implementação atual da `main` para qualquer retry, preservando segurança contra publicação duplicada.
+Se a falha ocorreu comprovadamente antes de qualquer plataforma poder ter recebido o vídeo, e a correção puder ser feita somente nos arquivos do episódio, a recuperação automática é **obrigatória** enquanto houver tentativa segura disponível. Siga exatamente `docs/publishing-retry.md` e a implementação atual da `main`: hoje são no máximo **3 tentativas totais de publicação** — tentativa inicial pela queue + `retry-1` + `retry-2`.
 
-Uma falha de publicação não autoriza escolher outro tema dentro da mesma execução.
+Antes de cada retry:
+
+1. corrija primeiro o episódio;
+2. grave a correção na `main`;
+3. crie o próximo arquivo de retry permitido pelo contrato atual;
+4. acompanhe a nova Publish Action;
+5. continue até sucesso ou até não existir mais retry seguro permitido.
+
+Não use rerun cego de execução antiga depois de alterar o episódio se a política atual exigir um novo arquivo de retry associado ao commit corrigido.
+
+### 6.3 Segurança contra duplicação
+
+Não republique cegamente uma plataforma que já possa ter concluído. Depois que alguma etapa de publicação começou, concluiu ou pode ter concluído, preserve a regra conservadora de `docs/publishing-retry.md`.
+
+Se uma plataforma falhar e a `main`/workflow atual permitir continuar ou recuperar as demais plataformas de forma independente e comprovadamente segura, continue com as demais. **Nunca republique uma plataforma já confirmada como publicada.** Se o workflow atual não oferecer mecanismo seguro de continuação independente, reporte o estado real sem inventar idempotência.
+
+Uma falha de Media Preflight ou publicação não autoriza escolher outro tema dentro da mesma execução.
 
 ## 7. Limite de episódio continua valendo
 
 A regra de no máximo 1 episódio por execução continua absoluta.
 
-Depois que um slug recebe `UNIQUE_CANDIDATE` e a autoria começa, toda a execução permanece dedicada a esse slug até chegar a um estado final de publicação verificável, falha real ou bloqueio operacional.
+Depois que um slug recebe `UNIQUE_CANDIDATE` e a autoria começa, toda a execução permanece dedicada a esse slug até chegar a um estado final de publicação verificável, falha real após recuperação permitida ou bloqueio operacional.
 
-Acompanhar a Publish Action não autoriza criar um segundo episódio.
+Acompanhar ou recuperar Actions não autoriza criar um segundo episódio.
 
 ## 8. Formato final obrigatório
 
@@ -117,6 +158,8 @@ ERRO/BLOQUEIO: <resumo objetivo ou NENHUM>
 ```
 
 ## 9. Regra de ouro
+
+**Falha elegível = investigar, corrigir e tentar novamente; não parar na primeira falha.**
 
 **Queue criada = publicação solicitada.**
 
