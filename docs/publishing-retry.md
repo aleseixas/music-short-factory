@@ -56,7 +56,7 @@ Cada retry é um arquivo novo e, portanto, dispara uma nova execução usando o 
 
 O retry automático só é permitido quando todas as condições abaixo forem verdadeiras:
 
-- existe uma falha concreta e um log acessível que explique o erro;
+- existe uma falha concreta e um log ou artefato de diagnóstico acessível que explique o erro;
 - a falha ocorreu antes de qualquer etapa de publicação poder ter enviado o vídeo a uma plataforma;
 - a correção pode ser feita somente nos arquivos do episódio `episodes/<slug>/`;
 - a nova tentativa corresponde a uma alteração objetiva que corrige o erro anterior;
@@ -74,7 +74,7 @@ Pare e reporte a falha quando:
 - não for possível confirmar com segurança se YouTube ou Instagram já receberam o vídeo;
 - a falha for de autenticação, segredo, permissão, indisponibilidade externa, infraestrutura ou código global da engine/publishing;
 - a correção exigiria alterar `engine/`, `publishing/`, `config/`, `.github/`, catálogos globais ou episódios anteriores;
-- o erro não estiver suficientemente explicado pelos logs;
+- o erro não estiver suficientemente explicado pelos logs ou pelo artefato de diagnóstico persistente;
 - a terceira tentativa já tiver falhado.
 
 A prioridade é evitar publicação duplicada.
@@ -92,7 +92,7 @@ ACTION — tentativa 1
     ↓
 SUCESSO → encerrar
     ↓ falha segura antes da publicação
-ler log → corrigir episódio
+ler log/diagnóstico → corrigir episódio
     ↓
 .publish-retry/<slug>-retry-1.txt
     ↓
@@ -100,7 +100,7 @@ ACTION — tentativa 2
     ↓
 SUCESSO → encerrar
     ↓ falha segura antes da publicação
-ler log → corrigir episódio
+ler log/diagnóstico → corrigir episódio
     ↓
 .publish-retry/<slug>-retry-2.txt
     ↓
@@ -118,9 +118,32 @@ FALHA → parar e reportar para intervenção manual
 - Todos os arquivos do episódio devem ser corrigidos antes de criar o respectivo arquivo de retry.
 - Se uma escrita de queue/retry retornar sucesso, não repita a mesma escrita.
 
+## Diagnóstico persistente do media preflight
+
+Cada execução de `Episode media preflight` preserva os logs de cada tentativa em um artefato do próprio run chamado:
+
+```text
+media-preflight-diagnostics-<run_id>
+```
+
+O artefato contém:
+
+```text
+ci-diagnostics/media-preflight-<run_id>/attempt-1.log
+ci-diagnostics/media-preflight-<run_id>/attempt-2.log
+...
+ci-diagnostics/media-preflight-<run_id>/final-result.txt
+```
+
+`final-result.txt` é a fonte rápida e machine-readable para o resultado terminal. Em falhas ele registra, quando disponível, `MEDIA_PREFLIGHT_ERROR_CODE`, `MEDIA_PREFLIGHT_ERROR_CLASS`, `MEDIA_PREFLIGHT_ERROR_DETAIL`, `MEDIA_PREFLIGHT_RECOVERABLE`, `MEDIA_PREFLIGHT_TARGET`, `MEDIA_PREFLIGHT_RECOMMENDED_ACTION` e `MEDIA_PREFLIGHT_SAME_SLUG`.
+
+Se o endpoint normal de job logs estiver indisponível, truncado ou difícil de consumir, consulte primeiro esse artefato persistente. Não conclua que o erro é desconhecido enquanto o artefato do run estiver disponível.
+
+Os logs persistentes são apenas diagnóstico; eles não autorizam troca de slug, retry cego ou criação de queue sem `MEDIA_PREFLIGHT_RESULT=PASS`.
+
 ## Acompanhamento da Action
 
-Quando a conexão GitHub permitir, acompanhe a execução até obter um estado conclusivo. Use jobs e logs reais; não invente resultado de render, publicação ou score visual.
+Quando a conexão GitHub permitir, acompanhe a execução até obter um estado conclusivo. Use jobs, logs reais e os artefatos persistentes de diagnóstico; não invente resultado de render, publicação ou score visual.
 
 Se a execução ainda estiver em andamento e não houver mecanismo apropriado para continuar acompanhando dentro da mesma execução do agente, reporte o estado real disponível. Não trate ausência de evidência como sucesso.
 
