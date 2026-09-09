@@ -218,10 +218,29 @@ jobs:
           python-version: "3.13"
           cache: pip
 
-      - name: Install FFmpeg
+      - name: Ensure FFmpeg
+        shell: bash
         run: |
+          set -euo pipefail
+          if command -v ffmpeg >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+            exit 0
+          fi
+
+          # Third-party package indexes on hosted runners can briefly be out of
+          # sync with their Release metadata. FFmpeg comes from Ubuntu, so
+          # disable only the Chrome repo if it would make apt-get update fail.
+          while IFS= read -r source; do
+            if sudo grep -q 'dl.google.com/linux/chrome' "$source"; then
+              sudo mv "$source" "${source}.disabled"
+            fi
+          done < <(find /etc/apt/sources.list.d -maxdepth 1 -type f -print)
+
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
           sudo apt-get update
           sudo apt-get install --yes ffmpeg
+          ffmpeg -version | head -n 1
 
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
@@ -259,6 +278,7 @@ jobs:
           PY
 
       - name: Render episode
+        id: render
         run: python generate.py "$EPISODE"
 
       - name: Upload visual usage history
@@ -289,7 +309,7 @@ jobs:
         run: python publish.py "$EPISODE" --platform youtube --live
 
       - name: Publish to Instagram
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.render.outcome == 'success' }}
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
           INSTAGRAM_ACCOUNT_ID: ${{ secrets.INSTAGRAM_ACCOUNT_ID }}
@@ -302,7 +322,7 @@ jobs:
         run: python publish.py "$EPISODE" --platform instagram --live
 
       - name: Upload TikTok draft
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && steps.render.outcome == 'success' }}
         env:
           TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
