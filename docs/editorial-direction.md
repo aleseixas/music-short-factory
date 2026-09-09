@@ -433,6 +433,34 @@ aspect ratio, movimento e segurança do trim para desempatar. Se a tarefa tiver
 somente GitHub + web, use metadados dos endpoints públicos e seja explícita sobre
 a ausência de análise FFmpeg local.
 
+### Best Segment conservador para vídeo
+
+O trim escolhido pelo GPT permanece como baseline editorial e fallback. No render,
+quando o vídeo-fonte oferece outras janelas tecnicamente válidas, o Best Segment
+pode comparar um conjunto pequeno de trechos do **mesmo asset**. A avaliação não se
+baseia apenas em movimento: combina nitidez, exposição, estabilidade, mudanças de
+cena, movimento perceptível e visibilidade do assunto quando detectável.
+Somente alternativas próximas ao baseline podem ser aplicadas automaticamente, e
+dois shots do mesmo arquivo não convergem para o mesmo trecho.
+
+O pipeline só troca o baseline quando a alternativa apresenta ganho mínimo de
+**12 pontos**, confiança mínima de **0,75** e melhora sustentada por múltiplos
+sinais. Se a vantagem for pequena, a confiança for baixa ou qualquer parte da
+análise falhar, o trim original é preservado exatamente e o episódio continua.
+Uma alternativa que coincida fortemente com um trecho do histórico visual recente
+também é recusada; a seleção automática nunca enfraquece a proteção anti-repetição.
+
+As janelas usam o consumo real já calculado para duração do shot, crossfade,
+`speed` e `freeze_frame`. A seleção não muda o asset, não afeta imagens, não altera
+a duração final e nunca usa loop. O relatório temporário fica em
+`work/<slug>/best_segment_selection.json`; não persista seus scores ou diagnósticos
+em `assets.json`/`timeline.json`.
+
+Na autoria, continue escolhendo conscientemente o melhor trecho sem depender dessa
+rede de segurança. O Best Segment pode promover uma alternativa claramente melhor
+dentro de um vídeo bom, mas não entende a função narrativa da fala e não torna um
+asset genérico ou semanticamente errado em uma escolha adequada.
+
 ## Áudio e mix
 
 A voz domina o mix. Background deve ficar baixo/moderado e SFX devem reforçar sem competir com narração.

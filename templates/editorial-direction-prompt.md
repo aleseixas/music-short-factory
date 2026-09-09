@@ -349,6 +349,42 @@ Vídeos, overlays e capas não usam essa regra.
 
 Exemplos de intenção: um take comum pode ganhar leve aceleração para manter energia; um momento emocional pode respirar com leve desaceleração; uma revelação ou reação pode receber um freeze curto sincronizado com texto/SFX quando isso realmente aumentar o impacto.
 
+### BEST SEGMENT SELECTION — BASELINE DO GPT + MELHORIA CONSERVADORA
+
+Para todo shot de VÍDEO, escolha `source_start_seconds`/`source_end_seconds` com
+intenção semântica. Esse trim é o baseline editorial e o fallback; não delegue ao
+pipeline a tarefa de descobrir o que a fala significa.
+
+Depois que a narração define a duração real do shot, a `main` pode analisar um
+conjunto pequeno de janelas do mesmo vídeo. O score combina múltiplos sinais —
+movimento perceptível, nitidez, exposição, estabilidade, mudanças de cena e
+visibilidade do assunto quando tecnicamente detectável — e nunca usa Motion Score
+isoladamente como justificativa.
+Somente uma janela próxima ao baseline pode ser promovida automaticamente; trechos
+distantes continuam sendo apenas diagnóstico, e shots do mesmo arquivo não devem
+convergir para a mesma janela.
+
+Uma janela alternativa só substitui seu baseline se tiver simultaneamente:
+
+- ganho de pelo menos **12 pontos**;
+- confiança de pelo menos **0,75**;
+- melhora confirmada por múltiplos sinais;
+- duração segura segundo o consumo real do shot.
+- ausência de correspondência forte com trechos do histórico visual recente.
+
+Esse consumo já considera crossfade, `speed` e os frames acrescentados por
+`freeze_frame`. A duração final do shot não muda, não existe loop, o asset permanece
+o mesmo e imagens não entram nessa análise. Ganho pequeno, baixa confiança, sinais
+contraditórios ou falha de análise mantêm exatamente o trim escrito por você e não
+bloqueiam o episódio.
+
+Consulte `work/<slug>/best_segment_selection.json` quando o ambiente de execução
+estiver disponível: ele registra trim original/selecionado, scores, ganho, confiança
+e motivo. O arquivo é diagnóstico temporário; nunca copie seus campos para
+`assets.json` ou `timeline.json`. Continue pesquisando e comparando assets antes de
+fechar o episódio: Best Segment melhora apenas um trecho claramente inferior de um
+vídeo já adequado, não corrige irrelevância semântica nem asset ruim.
+
 ### REGRA CRÍTICA — NÃO REPETIR VISUAIS
 
 Cada shot deve usar um visual principal único dentro do episódio.

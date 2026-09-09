@@ -462,6 +462,23 @@ def write_timeline_plan(plan: TimelinePlan, path: Path) -> None:
                 "speed": scene.shot.speed,
                 **(
                     {
+                        "source_start_seconds": round(
+                            scene.shot.source_start_seconds, 6
+                        ),
+                        "source_end_seconds": (
+                            round(scene.shot.source_end_seconds, 6)
+                            if scene.shot.source_end_seconds is not None
+                            else None
+                        ),
+                        "required_source_seconds": round(
+                            scene.required_source_duration(plan.fps), 6
+                        ),
+                    }
+                    if scene.asset.is_video
+                    else {}
+                ),
+                **(
+                    {
                         "freeze_frame": {
                             "start_frame": scene.freeze_frame.start_frame,
                             "duration_frames": scene.freeze_frame.duration_frames,

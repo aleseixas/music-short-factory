@@ -302,6 +302,58 @@ Quando `source_end_seconds` existir, ele limita o intervalo disponível e não p
 
 Não use loop para esconder trecho insuficiente. Se a duração não puder ser confirmada durante autoria, deixe a Action validar e mantenha asset-base válido como fallback.
 
+## Best Segment Selection conservador
+
+Para cada shot de vídeo, o trim escrito pelo GPT em `source_start_seconds` e
+`source_end_seconds` continua sendo o **baseline editorial** e o fallback. Depois
+que a duração real da narração resolve o plano em frames, o pipeline pode comparar
+esse trecho com um conjunto pequeno e determinístico de outras janelas válidas do
+mesmo arquivo. Ele nunca troca o asset e não executa essa análise para imagens.
+As alternativas próximas ao baseline são as únicas elegíveis para troca automática;
+janelas distantes podem aparecer no diagnóstico, mas não vencem apenas por qualidade
+técnica. Quando ocorre uma troca, o pipeline substitui em memória os dois limites do
+trim pelo novo intervalo; sem troca, inclusive um `source_end_seconds` explícito é
+preservado exatamente.
+
+Cada janela tem exatamente o consumo de fonte necessário para o shot. Esse consumo
+é calculado pela regra real do renderer: duração final do shot, handle de crossfade,
+frames acrescentados por `freeze_frame` e `speed`. Nenhuma janela pode ultrapassar
+a duração real da mídia, usar loop ou mudar a duração final do shot.
+
+O score de janela é multidimensional. Movimento perceptível é apenas um dos sinais;
+a análise também considera nitidez, exposição/luminosidade, estabilidade, mudanças
+de cena e visibilidade do assunto quando houver evidência técnica disponível. Um
+Motion Score alto, sozinho, não justifica substituir o trim do GPT.
+
+A substituição só acontece quando todas estas condições forem satisfeitas:
+
+- o melhor trecho alternativo ganha pelo menos **12 pontos** sobre o baseline;
+- a confiança da análise é pelo menos **0,75**;
+- a melhora aparece em múltiplos sinais, e não em uma única métrica isolada;
+- a janela é tecnicamente segura para o consumo real do shot.
+- ela permanece na vizinhança conservadora do trecho escolhido pelo GPT e não
+  sobrepõe fortemente outro shot do mesmo arquivo.
+- ela não corresponde fortemente a um trecho já registrado nos episódios recentes.
+
+Ganho menor, baixa confiança, sinais contraditórios, análise incompleta ou falha do
+FFmpeg mantêm **exatamente** o trim original. A análise é uma melhoria best-effort:
+ela nunca bloqueia criação ou render e não transforma um trecho tecnicamente
+inválido em sucesso falso; as validações normais continuam sendo a autoridade.
+
+O diagnóstico fica em
+`work/<slug>/best_segment_selection.json`, com trim original e selecionado, scores,
+ganho, confiança e motivo da troca ou da manutenção. Esse relatório é temporário:
+não copie seus scores para `assets.json` ou `timeline.json`. O `timeline.resolved.json`
+e o histórico visual pós-render refletem o trecho realmente usado. O relatório
+também registra, sem URLs ou hashes brutos, quando a alternativa foi recusada por
+repetição persistente. Se essa checagem ficar indisponível, o baseline é mantido.
+
+Durante a autoria, o GPT ainda deve pesquisar e escolher um baseline semanticamente
+forte. Best Segment serve para aproveitar uma janela claramente superior dentro do
+mesmo vídeo; não corrige asset irrelevante, não substitui comparação de candidatos e
+não deve ser usado como motivo para aceitar um vídeo longo sem inspecionar seu
+conteúdo.
+
 ## Persistência
 
 ### Anti-repetição entre episódios

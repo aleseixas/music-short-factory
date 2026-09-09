@@ -5,6 +5,7 @@ from pathlib import Path
 
 from .assets import AssetManager
 from .audio import resolve_audio, validate_audio_duration
+from .best_segment import select_best_segments_safely
 from .captions import create_highlight_overlay, write_ass_captions
 from .config import load_project_config, load_style_config
 from .cover_intro import embed_episode_cover_intro
@@ -181,6 +182,19 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
     )
     print(f"[assets] validando {len(used_assets)} arquivo(s) antes do render...")
     resolved_asset_paths = asset_manager.ensure_all(used_assets)
+    video_infos = {
+        asset.id: asset_manager.video_info(asset)
+        for asset in used_assets
+        if asset.is_video
+    }
+    plan = select_best_segments_safely(
+        plan,
+        resolved_asset_paths,
+        video_infos,
+        work_dir / "best_segment_selection.json",
+        project_root=project_root,
+        exclude_episode=episode.name,
+    )
     for scene in plan.scenes:
         info = asset_manager.preflight_video_scene(scene, config.render.fps)
         if info is not None:
