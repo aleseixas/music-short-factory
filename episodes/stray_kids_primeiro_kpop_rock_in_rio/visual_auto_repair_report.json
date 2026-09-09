@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode": "stray_kids_primeiro_kpop_rock_in_rio",
+  "error_code": "VISUAL_ASSET_HTTP_403",
+  "error_detail": "Falha ao baixar asset de imagem 'leeknow_press.jpeg' para o cache apos 6 tentativa(s): HTTP 403.",
+  "target_slot": "leeknow_press",
+  "failing_file": "leeknow_press.jpeg",
+  "selection_mode": "cross_kind_eligible",
+  "selected_kind": "video",
+  "selected_name": "Bang Chan ATE visual",
+  "selected_file": "quarenta_um_ngec_qMFfEw.mp4",
+  "selected_url": null,
+  "visual_score": 81.34,
+  "selection_score": 69.34,
+  "inspection_failures": []
+}
