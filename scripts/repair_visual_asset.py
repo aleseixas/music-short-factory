@@ -3,7 +3,12 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 from engine.visual_repetition import load_visual_history
 import resolve_visual_candidates as legacy
@@ -263,7 +268,6 @@ def repair(project_root: Path, slug: str, diagnostic_log: Path) -> int:
     )
     candidate = chosen["candidate"]
     result = chosen["result"]
-    inspection = chosen["inspection"]
     new_asset = legacy._asset_entry(target_slot, candidate, result)
 
     if _same_asset(current_asset, new_asset):
@@ -309,7 +313,7 @@ def repair(project_root: Path, slug: str, diagnostic_log: Path) -> int:
     }
     _write_json(episode_dir / "visual_auto_repair_report.json", report)
 
-    print(f"VISUAL_REPAIR_CHANGED=true")
+    print("VISUAL_REPAIR_CHANGED=true")
     print(f"VISUAL_REPAIR_SELECTED_KIND={result.kind}")
     print(f"VISUAL_REPAIR_SELECTED_FILE={new_asset.get('file') or ''}")
     print(f"VISUAL_REPAIR_MODE={mode}")
@@ -328,9 +332,8 @@ def main() -> int:
     parser.add_argument("--diagnostic-log", required=True, help="Log da tentativa de media preflight que falhou")
     args = parser.parse_args()
 
-    project_root = Path(__file__).resolve().parents[1]
     try:
-        return repair(project_root, args.episode, Path(args.diagnostic_log))
+        return repair(PROJECT_ROOT, args.episode, Path(args.diagnostic_log))
     except Exception as exc:
         print(f"::warning::Targeted visual repair failed: {exc}")
         return 2
