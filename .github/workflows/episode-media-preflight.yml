@@ -82,6 +82,8 @@ jobs:
         run: |
           set -uo pipefail
           max_attempts=5
+          diagnostics_dir="ci-diagnostics/media-preflight-${GITHUB_RUN_ID}"
+          mkdir -p "$diagnostics_dir"
 
           emit_failure_summary() {
             local log_file="$1"
@@ -114,6 +116,20 @@ jobs:
             echo "::error::MEDIA PREFLIGHT [$code] $detail TARGET: $target. RECOVERABLE: $recoverable. ACTION: $action SAME_SLUG: $same_slug. REASON: $reason"
 
             {
+              echo "MEDIA_PREFLIGHT_RESULT=FAIL"
+              echo "MEDIA_PREFLIGHT_REASON=$reason"
+              echo "MEDIA_PREFLIGHT_ERROR_CODE=$code"
+              echo "MEDIA_PREFLIGHT_ERROR_CLASS=$error_class"
+              echo "MEDIA_PREFLIGHT_ERROR_DETAIL=$detail"
+              echo "MEDIA_PREFLIGHT_RECOVERABLE=$recoverable"
+              echo "MEDIA_PREFLIGHT_TARGET=$target"
+              echo "MEDIA_PREFLIGHT_RECOMMENDED_ACTION=$action"
+              echo "MEDIA_PREFLIGHT_SAME_SLUG=$same_slug"
+              echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+              echo "GITHUB_SHA=$GITHUB_SHA"
+            } > "$diagnostics_dir/final-result.txt"
+
+            {
               echo "## Media preflight failure"
               echo ""
               echo "- **Episode:** \`$same_slug\`"
@@ -124,12 +140,14 @@ jobs:
               echo "- **Target to change:** \`$target\`"
               echo "- **Recommended action:** $action"
               echo "- **Continuity rule:** keep this same slug; do not author a replacement topic because of this failure."
+              echo "- **Persistent diagnostics:** artifact \`media-preflight-diagnostics-$GITHUB_RUN_ID\`."
             } >> "$GITHUB_STEP_SUMMARY"
           }
 
           for attempt in $(seq 1 "$max_attempts"); do
             echo "===== MEDIA PREFLIGHT attempt $attempt/$max_attempts ====="
-            log_file="$(mktemp)"
+            log_file="$diagnostics_dir/attempt-${attempt}.log"
+            : > "$log_file"
 
             set +e
             python check_episode_media.py "$EPISODE" 2>&1 | tee "$log_file"
@@ -138,7 +156,13 @@ jobs:
 
             if [[ $status -eq 0 ]] && grep -q '^MEDIA_PREFLIGHT_RESULT=PASS$' "$log_file"; then
               echo "MEDIA_AUTO_RECOVERY=PASS attempt=$attempt"
-              rm -f "$log_file"
+              {
+                echo "MEDIA_PREFLIGHT_RESULT=PASS"
+                echo "MEDIA_PREFLIGHT_ATTEMPT=$attempt"
+                echo "MEDIA_PREFLIGHT_SAME_SLUG=$EPISODE"
+                echo "GITHUB_RUN_ID=$GITHUB_RUN_ID"
+                echo "GITHUB_SHA=$GITHUB_SHA"
+              } > "$diagnostics_dir/final-result.txt"
               exit 0
             fi
 
@@ -148,7 +172,6 @@ jobs:
             if [[ $attempt -ge $max_attempts ]]; then
               emit_failure_summary "$log_file" "attempts_exhausted"
               cat "$log_file"
-              rm -f "$log_file"
               exit 1
             fi
 
@@ -195,16 +218,23 @@ jobs:
 
             if [[ $repaired -ne 1 ]]; then
               emit_failure_summary "$log_file" "no_safe_auto_repair_applied"
-              rm -f "$log_file"
               exit 1
             fi
 
-            rm -f "$log_file"
             echo "Recovery applied; re-running the full media preflight for SAME_SLUG=$EPISODE."
           done
 
           echo "::error::MEDIA_PREFLIGHT_INTERNAL_LOOP_ERROR: unexpected recovery loop termination. ACTION: inspect workflow logic; do not queue or change episode topic."
           exit 1
+
+      - name: Upload media preflight diagnostics
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: media-preflight-diagnostics-${{ github.run_id }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: Persist repairs and create publish queue
         id: queue
