@@ -81,7 +81,9 @@ jobs:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         run: |
           set -uo pipefail
-          max_attempts=5
+          # A preflight reports one concrete root cause at a time. Give the workflow
+          # enough room to repair several independent remote assets in sequence.
+          max_attempts=12
           diagnostics_dir="ci-diagnostics/media-preflight-${GITHUB_RUN_ID}"
           mkdir -p "$diagnostics_dir"
 
@@ -203,11 +205,23 @@ jobs:
                   repaired=1
                 fi
                 ;;
-              INTRA_EPISODE_VISUAL_REUSE|VISUAL_ASSET_HTTP_403|VISUAL_ASSET_HTTP_404|VISUAL_ASSET_INVALID|SHOT_REFERENCES_MISSING_ASSET|MEDIA_PROBE_OR_CODEC_ERROR)
+              VISUAL_ASSET_HTTP_403|VISUAL_ASSET_HTTP_404|VISUAL_ASSET_INVALID|MEDIA_PROBE_OR_CODEC_ERROR)
+                # Do not count unrelated episode diffs as a successful repair. The repair
+                # script must identify and actually replace the exact slot named by the
+                # structured diagnostic. It may switch image -> video if the image source
+                # is dead/forbidden and the authored pool has a render-safe video fallback.
+                echo "AUTO_REPAIR_STRATEGY=VISUAL_TARGETED_RESELECT error_code=$error_code"
+                if python scripts/repair_visual_asset.py "$EPISODE" --diagnostic-log "$log_file"; then
+                  repaired=1
+                fi
+                ;;
+              INTRA_EPISODE_VISUAL_REUSE|SHOT_REFERENCES_MISSING_ASSET)
                 echo "AUTO_REPAIR_STRATEGY=VISUAL_RESELECT error_code=$error_code"
+                before_diff="$(git diff -- "episodes/$EPISODE" || true)"
                 python resolve_visual_candidates.py "$EPISODE" || true
                 python resolve_visual_candidates_web_auth.py "$EPISODE" || true
-                if ! git diff --quiet -- "episodes/$EPISODE"; then
+                after_diff="$(git diff -- "episodes/$EPISODE" || true)"
+                if [[ "$after_diff" != "$before_diff" ]]; then
                   repaired=1
                 fi
                 ;;
@@ -221,11 +235,13 @@ jobs:
                   fi
                 fi
 
-                if grep -Eq 'INTRA_EPISODE_VISUAL_REUSE_BLOCKED|Asset .*ausente|Asset de video .*ausente|Asset de video invalido|Arquivo nao e uma imagem valida|asset de imagem|asset de video|HTTP Error|HTTP [45][0-9][0-9]|404|403' "$log_file"; then
+                if [[ $repaired -ne 1 ]] && grep -Eq 'INTRA_EPISODE_VISUAL_REUSE_BLOCKED|Asset .*ausente|Asset de video .*ausente|Asset de video invalido|Arquivo nao e uma imagem valida|asset de imagem|asset de video|HTTP Error|HTTP [45][0-9][0-9]|404|403' "$log_file"; then
                   echo "AUTO_REPAIR_STRATEGY=VISUAL_RESELECT legacy_match=true"
+                  before_diff="$(git diff -- "episodes/$EPISODE" || true)"
                   python resolve_visual_candidates.py "$EPISODE" || true
                   python resolve_visual_candidates_web_auth.py "$EPISODE" || true
-                  if ! git diff --quiet -- "episodes/$EPISODE"; then
+                  after_diff="$(git diff -- "episodes/$EPISODE" || true)"
+                  if [[ "$after_diff" != "$before_diff" ]]; then
                     repaired=1
                   fi
                 fi
