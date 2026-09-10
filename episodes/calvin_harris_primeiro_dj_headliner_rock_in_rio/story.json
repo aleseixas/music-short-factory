@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "O primeiro DJ headliner do Palco Mundo",
+  "slug": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Pela primeira vez em 41 anos, um DJ virou o headliner do Palco Mundo.","delivery":"hook"},
+    {"id":"marco","text":"Calvin Harris fechou o domingo do Rock in Rio sozinho nas pick-ups.","delivery":"reveal"},
+    {"id":"chuva","text":"E justamente no dia mais chuvoso do primeiro fim de semana.","delivery":"dramatic"},
+    {"id":"rave","text":"A Cidade do Rock virou uma rave debaixo d’água.","delivery":"payoff"},
+    {"id":"antes","text":"Só que a eletrônica nem sempre teve esse tamanho no festival.","delivery":"curious"},
+    {"id":"tenda","text":"Vinte e cinco anos atrás, ela ocupava uma pequena tenda.","delivery":"neutral"},
+    {"id":"cresceu","text":"Depois ganhou espaços maiores, até chegar ao New Dance Order.","delivery":"reveal"},
+    {"id":"mundo","text":"Em 2026, finalmente tomou o palco principal.","delivery":"payoff"},
+    {"id":"sozinho","text":"Sem banda e sem os vocalistas das parcerias, Calvin comandou tudo sozinho.","delivery":"dramatic"},
+    {"id":"hits","text":"Vieram One Kiss, This Is What You Came For e How Deep Is Your Love.","delivery":"neutral"},
+    {"id":"brasil","text":"Mas o set também olhou para o Brasil.","delivery":"curious"},
+    {"id":"funk","text":"Calvin colocou funk brasileiro no meio da sequência.","delivery":"reveal"},
+    {"id":"bandeira","text":"E os telões exibiram a bandeira do país.","delivery":"payoff"},
+    {"id":"debate","text":"A escolha gerou debate porque o Mundo costuma ser território de bandas e cantores.","delivery":"dramatic"},
+    {"id":"virada","text":"Só que a discussão revela o tamanho da mudança.","delivery":"curious"},
+    {"id":"tomorrowland","text":"Meses antes, ele estreou no Tomorrowland depois de duas décadas de carreira.","delivery":"reveal"},
+    {"id":"dois_marcos","text":"No mesmo ano, acumulou duas estreias em festivais gigantes.","delivery":"payoff"},
+    {"id":"simbolo","text":"No Rio, virou símbolo da pista eletrônica saindo da tenda para o topo.","delivery":"emotional"},
+    {"id":"pergunta","text":"Agora a pergunta é outra: o formato do headliner mudou?","delivery":"curious"},
+    {"id":"cta","text":"Pra você, DJ no topo do Palco Mundo é evolução ou exagero? Comenta.","delivery":"payoff"}
+  ]
+}
