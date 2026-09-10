@@ -8,6 +8,9 @@ from typing import Any, Mapping
 from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
 
 
+_VIDEO_SUFFIXES = {".mp4", ".webm", ".mov", ".mkv", ".avi", ".m4v"}
+
+
 def generate_cover(
     project_root: Path,
     episode_dir: Path,
@@ -28,7 +31,7 @@ def generate_cover(
     cover = post["cover"]
     headline = str(cover["headline"]).strip()
     source = cover["source"]
-    source_path, default_focus = _resolve_source(
+    source_path, default_focus, temporary_source = _resolve_source(
         episode_dir, source, output_path.parent
     )
     focus = cover.get("focus", {})
@@ -49,7 +52,7 @@ def generate_cover(
     except (UnidentifiedImageError, OSError) as exc:
         raise RuntimeError(f"Fonte da capa nao e uma imagem valida: {source_path}") from exc
     finally:
-        if source.get("type") == "video_frame":
+        if temporary_source:
             source_path.unlink(missing_ok=True)
 
     _draw_headline(canvas, headline, style, project_root)
@@ -66,7 +69,7 @@ def _resolve_source(
     episode_dir: Path,
     source: Mapping[str, Any],
     temporary_dir: Path,
-) -> tuple[Path, tuple[float, float]]:
+) -> tuple[Path, tuple[float, float], bool]:
     if source.get("type") == "asset":
         catalog = _load_json(episode_dir / "assets.json")
         raw_assets = catalog.get("assets")
@@ -101,7 +104,16 @@ def _resolve_source(
         focus = match.get("focus", {})
         if not isinstance(focus, Mapping):
             focus = {}
-        return path, (float(focus.get("x", 0.5)), float(focus.get("y", 0.5)))
+        default_focus = (float(focus.get("x", 0.5)), float(focus.get("y", 0.5)))
+
+        if path.suffix.lower() in _VIDEO_SUFFIXES:
+            timestamp = float(source.get("timestamp_seconds", 1.0))
+            temporary_dir.mkdir(parents=True, exist_ok=True)
+            frame_path = temporary_dir / f".{episode_dir.name}_cover_asset_frame.png"
+            _extract_frame(path, timestamp, frame_path)
+            return frame_path, (0.5, 0.5), True
+
+        return path, default_focus, False
 
     timestamp = float(source["timestamp_seconds"])
     output_root = temporary_dir.resolve()
@@ -117,7 +129,7 @@ def _resolve_source(
     temporary_dir.mkdir(parents=True, exist_ok=True)
     frame_path = temporary_dir / f".{episode_dir.name}_cover_frame.png"
     _extract_frame(video_path, timestamp, frame_path)
-    return frame_path, (0.5, 0.5)
+    return frame_path, (0.5, 0.5), True
 
 
 def _extract_frame(video_path: Path, timestamp: float, frame_path: Path) -> None:
