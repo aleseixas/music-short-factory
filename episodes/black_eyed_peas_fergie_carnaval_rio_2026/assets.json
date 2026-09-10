@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"bep_01","file":"bep_01.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Apl%20%26%20WIll.i.am.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_02","file":"bep_02.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Apl.de.ap%202007%20Grammy%20blazer.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_03","file":"bep_03.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Apldeap%20in%20esu.JPG","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_04","file":"bep_04.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BEP%202001.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_05","file":"bep_05.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BEP%202006.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_06","file":"bep_06.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/BEP%20Sept%202010%201.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_07","file":"bep_07.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%200234%20%281519297354%29.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_08","file":"bep_08.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%200328%20%281519320526%29.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_09","file":"bep_09.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%200691%20%281519407988%29.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_10","file":"bep_10.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%202.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_11","file":"bep_11.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20%40%20Jacksonville%20Veterans%20Memorial%20Arena%2001.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_12","file":"bep_12.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20%40%20Jacksonville%20Veterans%20Memorial%20Arena%2002.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_13","file":"bep_13.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20%40%20Jacksonville%20Veterans%20Memorial%20Arena%2003.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_14","file":"bep_14.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20%40%20Jacksonville%20Veterans%20Memorial%20Arena%2004.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_15","file":"bep_15.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20at%2093rd%20Grey%20Cup%20%28cropped1%29.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_16","file":"bep_16.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20at%2093rd%20Grey%20Cup.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_17","file":"bep_17.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20at%20the%202019%20SEA%20Games%20closing.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_18","file":"bep_18.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20at%20Walmart%20meeting.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_19","file":"bep_19.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20at%20Wireless%20Festival%202011.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_20","file":"bep_20.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20performing%20%28cropped%29.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_21","file":"bep_21.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20performing%20-%202006%20-%20JD.jpg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_22","file":"bep_22.jpeg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Black%20Eyed%20Peas%20performing%20at%20O2%20Apollo%20Manchester%20Nov2018.jpeg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}},
+    {"id":"bep_23","file":"bep_23.jpeg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/J.%20Rey%20Soul%2C%202018.jpeg","credit":"Wikimedia Commons","license":"See source page","focus":{"x":0.5,"y":0.42}}
+  ]
+}
