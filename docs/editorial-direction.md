@@ -297,6 +297,49 @@ Para linguagem nativa de TikTok, Reels e Shorts:
 
 Esses tempos são guias, não uma grade mecânica. Prefira 16 takes excelentes a 24 medíocres quando o material realmente justificar, mas não aceite um vídeo visualmente pobre por conservadorismo se houver material forte suficiente para renovar a montagem.
 
+### Smart Visual Pacing
+
+Novos episódios podem habilitar o ajuste determinístico de ritmo no topo de
+`timeline.json`:
+
+```json
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "shots": []
+}
+```
+
+O Smart Visual Pacing analisa a timeline completa antes do render. Ele usa tipo de
+asset, movimento visual disponível e contexto editorial já declarado para fazer
+ajustes conservadores nas fronteiras entre shots. Hooks e beats fortes podem ficar
+mais ágeis; vídeos com movimento útil ou informação visual sustentável podem
+respirar um pouco mais; sequências de imagens estáticas recebem atenção especial
+quando existe um shot adjacente apto a absorver parte desse tempo.
+
+O recurso nunca cria, remove, troca ou reordena assets e não altera roteiro, voz,
+música, SFX nem duração total. Limites internos impedem microcortes e mudanças
+agressivas. Quando uma análise não for segura, o timing original continua sendo o
+fallback. Campo ausente, `null` ou `{"enabled": false}` mantém exatamente o fluxo
+legado.
+
+Na implementação atual, uma fronteira pode se mover no máximo `1s` e no máximo
+35% do menor dos dois shots adjacentes. O passe não reduz um take abaixo de
+`1.25s`; se o take autorado já for menor, ele não é encurtado. O diagnóstico fica
+em `work/<slug>/smart_visual_pacing.json`, com frames originais/ajustados, sinais
+usados e o motivo de aplicar ou preservar a timeline.
+
+Como o passe não cria cortes nem repete assets, uma sequência composta somente por
+imagens continua com a mesma quantidade de trocas: nesse caso ele pode apenas
+redistribuir o tempo entre as imagens existentes. Variedade visual real continua
+sendo responsabilidade da autoria do episódio.
+
+Esta etapa é acabamento, não direção semântica: o agente continua responsável por
+segmentar bem a história, escolher assets relevantes e planejar um ritmo forte. Não
+use o recurso para compensar asset ruim, falta de variedade ou segmentação fraca.
+
 ## Regras por camada
 
 ### Enquadramento vertical inteligente de imagens

@@ -72,6 +72,13 @@ Para Shorts/Reels/TikTok na faixa de aproximadamente 60–90 segundos, mire norm
 
 O objetivo é sensação constante de avanço visual, mas **contexto vale mais do que troca vazia de imagem**.
 
+Para novos episódios, use `"smart_visual_pacing": {"enabled": true}` no topo de
+`timeline.json` quando quiser o ajuste conservador de fronteiras antes do render.
+O recurso preserva assets, ordem, áudio e duração total; ele não substitui o
+planejamento de segmentos/shots nem autoriza depender do pipeline para corrigir
+uma montagem semanticamente fraca. Campo ausente ou desativado mantém o pacing
+legado.
+
 ### HARD GATE — imagens estáticas obrigatoriamente entre 2 e 4 segundos
 
 Esta é uma **regra obrigatória de pacing**, não uma recomendação. Ela prevalece sobre qualquer redação genérica ou antiga do projeto que diga `normalmente 2–4s`, que permita imagem estática longa por “força editorial” ou que trate 2–4s apenas como referência.

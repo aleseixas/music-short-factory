@@ -33,6 +33,7 @@ from .models import (
     ResolvedVisualFxCue,
     SfxCue,
     ShotSpec,
+    SmartVisualPacingSpec,
     Story,
     TimelinePlan,
     TimelineScene,
@@ -167,12 +168,30 @@ def load_timeline(
         raise RuntimeError("O ultimo plano precisa terminar com transition_out='cut'.")
     return TimelineSpec(
         shots=tuple(shots),
+        smart_visual_pacing=_parse_smart_visual_pacing(data.get("smart_visual_pacing")),
         background_music=_parse_background_music(data.get("background_music")),
         sfx_cues=_parse_sfx_cues(data.get("sfx_cues")),
         visual_fx_cues=_parse_visual_fx_cues(data.get("visual_fx_cues")),
         text_fx_cues=_parse_text_fx_cues(data.get("text_fx_cues")),
         overlay_cues=_parse_overlay_cues(data.get("overlay_cues"), assets),
     )
+
+
+def _parse_smart_visual_pacing(raw: object) -> SmartVisualPacingSpec | None:
+    if raw is None:
+        return None
+    if not isinstance(raw, dict):
+        raise RuntimeError("smart_visual_pacing precisa ser um objeto ou null.")
+    unknown_fields = set(raw) - {"enabled"}
+    if unknown_fields:
+        fields = ", ".join(sorted(unknown_fields))
+        raise RuntimeError(
+            "smart_visual_pacing contem campos desconhecidos: " + fields + "."
+        )
+    enabled = raw.get("enabled", True)
+    if not isinstance(enabled, bool):
+        raise RuntimeError("smart_visual_pacing.enabled precisa ser booleano.")
+    return SmartVisualPacingSpec(enabled=enabled)
 
 
 def build_timeline(

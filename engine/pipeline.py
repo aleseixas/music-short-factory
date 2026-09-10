@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 import shutil
 from pathlib import Path
 
@@ -13,8 +14,15 @@ from .episode import load_episode
 from .editorial import load_editorial_catalogs, validate_editorial_direction
 from .ffmpeg import preflight
 from .music import resolve_background_music
+from .models import TimelinePlan
 from .renderer import Renderer
 from .sfx import resolve_sfx_cues
+from .smart_visual_pacing import (
+    SmartVisualPacingReport,
+    analyze_timeline_motion_safely,
+    apply_smart_visual_pacing,
+    write_smart_visual_pacing_report,
+)
 from .text_fx import write_text_fx_ass
 from .timeline import build_timeline, resolve_text_fx_cues, write_timeline_plan
 from .utils import safe_child
@@ -160,6 +168,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         crossfade_seconds=style.transitions.crossfade_seconds,
         visual_fx_cues=episode.visual_fx_cues,
     )
+    authored_plan = plan
     resolved_text_fx_cues = resolve_text_fx_cues(episode.text_fx_cues, plan)
     editorial_catalogs = load_editorial_catalogs(
         project_root,
@@ -173,9 +182,6 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         highlight_default_duration=style.highlights.default_duration,
         resolved_text_fx_cues=resolved_text_fx_cues,
     )
-    for warning in editorial_report.warnings:
-        print(f"[direcao] aviso {warning.code}: {warning.message}")
-
     used_assets = tuple(
         episode.assets[asset_id]
         for asset_id in dict.fromkeys(shot.asset_id for shot in episode.shots)
@@ -187,6 +193,75 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         for asset in used_assets
         if asset.is_video
     }
+    pacing_spec = getattr(episode, "smart_visual_pacing", None)
+    if pacing_spec is not None:
+        pacing_enabled = bool(pacing_spec.enabled)
+        motion_by_shot: dict[str, object] = {}
+        analysis_warnings: tuple[str, ...] = ()
+        if pacing_enabled and video_infos:
+            motion_by_shot, analysis_warnings = analyze_timeline_motion_safely(
+                plan,
+                resolved_asset_paths,
+                video_infos,
+            )
+        proposed_plan, pacing_report = apply_smart_visual_pacing(
+            plan,
+            episode.story,
+            enabled=pacing_enabled,
+            crossfade_seconds=style.transitions.crossfade_seconds,
+            video_motion_by_asset=motion_by_shot,
+            video_infos=video_infos,
+        )
+        if proposed_plan != authored_plan:
+            try:
+                proposed_text_fx = resolve_text_fx_cues(
+                    episode.text_fx_cues,
+                    proposed_plan,
+                )
+                proposed_editorial = validate_editorial_direction(
+                    episode,
+                    proposed_plan,
+                    editorial_catalogs,
+                    highlight_default_duration=style.highlights.default_duration,
+                    resolved_text_fx_cues=proposed_text_fx,
+                )
+            except RuntimeError:
+                pacing_report = _preserve_authored_pacing_report(
+                    pacing_report,
+                    authored_plan,
+                    "relative_cue_constraint_preserved_original",
+                    (
+                        "O ajuste conflitou com uma cue relativa; a timeline "
+                        "original foi preservada.",
+                    ),
+                )
+            else:
+                plan = proposed_plan
+                resolved_text_fx_cues = proposed_text_fx
+                editorial_report = proposed_editorial
+        pacing_report = replace(
+            pacing_report,
+            warnings=tuple(dict.fromkeys((*pacing_report.warnings, *analysis_warnings))),
+        )
+        write_smart_visual_pacing_report(
+            pacing_report,
+            work_dir / "smart_visual_pacing.json",
+            plan.fps,
+        )
+        if pacing_report.applied:
+            changed_scenes = sum(scene.changed for scene in pacing_report.scenes)
+            print(
+                f"[pacing] {changed_scenes} plano(s) reequilibrados; "
+                f"duracao preservada em {plan.duration:.3f}s."
+            )
+        else:
+            print(f"[pacing] timeline original preservada: {pacing_report.reason}.")
+        for warning in pacing_report.warnings:
+            print(f"[pacing] aviso: {warning}")
+
+    for warning in editorial_report.warnings:
+        print(f"[direcao] aviso {warning.code}: {warning.message}")
+
     plan = select_best_segments_safely(
         plan,
         resolved_asset_paths,
@@ -356,3 +431,27 @@ def _assert_disjoint_roots(roots: dict[str, Path]) -> None:
                     f"Diretorios de runtime nao podem se sobrepor: "
                     f"{left_name}={left} e {right_name}={right}."
                 )
+
+
+def _preserve_authored_pacing_report(
+    report: SmartVisualPacingReport,
+    plan: TimelinePlan,
+    reason: str,
+    warnings: tuple[str, ...],
+) -> SmartVisualPacingReport:
+    scenes = tuple(
+        replace(
+            scene,
+            adjusted_start_frame=scene.original_start_frame,
+            adjusted_end_frame=scene.original_end_frame,
+        )
+        for scene in report.scenes
+    )
+    return replace(
+        report,
+        applied=False,
+        reason=reason,
+        adjusted_total_frames=plan.total_frames,
+        scenes=scenes,
+        warnings=tuple(dict.fromkeys((*report.warnings, *warnings))),
+    )

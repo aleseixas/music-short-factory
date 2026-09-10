@@ -72,6 +72,7 @@ class EpisodeTests(unittest.TestCase):
         self.assertEqual(episode.visual_fx_cues, ())
         self.assertEqual(episode.text_fx_cues, ())
         self.assertEqual(episode.overlay_cues, ())
+        self.assertIsNone(episode.smart_visual_pacing)
 
     def test_load_story_reports_invalid_json(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -123,6 +124,8 @@ class EpisodeTests(unittest.TestCase):
         self.assertEqual(timeline["visual_fx_cues"], [])
         self.assertEqual(timeline["text_fx_cues"], [])
         self.assertEqual(timeline["overlay_cues"], [])
+        self.assertEqual(timeline["smart_visual_pacing"], {"enabled": True})
+        self.assertTrue(episode.smart_visual_pacing.enabled)
 
     def test_create_episode_refuses_to_overwrite_existing_episode(self):
         with tempfile.TemporaryDirectory() as temp_dir:

@@ -165,6 +165,7 @@ Principais recursos atuais:
 
 - background music por profile;
 - SFX por `type`;
+- Smart Visual Pacing opcional para ajuste conservador do ritmo entre shots;
 - vídeo com `source_start_seconds` / `source_end_seconds`;
 - motions `push_in`, `pull_out`, `pan_left`, `pan_right`, `hold`;
 - transitions `cut` e `crossfade`;
@@ -178,6 +179,9 @@ Exemplo simplificado:
 ```json
 {
   "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
   "background_music": {
     "profile": "profile_existente",
     "volume": 0.10
@@ -222,6 +226,11 @@ Exemplo simplificado:
   ]
 }
 ```
+
+`smart_visual_pacing` é opt-in. Quando habilitado, o pipeline analisa a timeline
+inteira antes do render e pode ajustar conservadoramente as fronteiras dos shots,
+sem trocar/reordenar assets, mudar o áudio ou alterar a duração total. Campo
+ausente, `null` ou `{"enabled": false}` preserva exatamente o pacing legado.
 
 Nunca invente enums ou campos porque parecem editorialmente úteis. Consulte a `main` antes de usar uma capacidade nova.
 

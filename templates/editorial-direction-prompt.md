@@ -320,6 +320,33 @@ Antes de aceitar qualquer shot acima de ~4s, pergunte mentalmente: **este materi
 
 Não corte apenas para atingir números. Prefira **16 takes excelentes a 24 medíocres** quando o material realmente justificar; da mesma forma, se houver material forte suficiente para 20–25+ visuais distintos, não seja conservador e não deixe o vídeo visualmente pobre por hábito.
 
+### SMART VISUAL PACING — AJUSTE FINAL OPT-IN
+
+Para novos episódios, habilite no topo de `timeline.json`:
+
+```json
+"smart_visual_pacing": {
+  "enabled": true
+}
+```
+
+O pipeline pode então analisar a timeline inteira e ajustar conservadoramente as
+fronteiras dos shots antes do render. Ele favorece mais agilidade em hooks/beats
+fortes, reduz o peso de sequências arrastadas de imagens estáticas quando existe
+um shot adjacente apto a receber tempo e permite que vídeos com movimento útil
+respirem quando houver margem segura. O recurso não inventa cortes,
+não troca/reordena assets, não altera o roteiro, o áudio ou a duração total.
+
+Trate o timing escrito pelo agente como baseline editorial. Smart Visual Pacing é
+polimento determinístico e conservador, não substituto para segmentação, escolha de
+asset ou trim bem feitos. Não o use para esconder asset ruim, repetição ou falta de
+variedade. Campo ausente, `null` ou `{"enabled": false}` mantém exatamente o
+comportamento legado.
+
+Uma timeline formada somente por imagens não ganha novas trocas: sem criar ou
+repetir assets, o passe consegue apenas redistribuir o tempo entre os shots já
+existentes. Portanto, resolva variedade visual durante a autoria.
+
 ### ENQUADRAMENTO VERTICAL INTELIGENTE — IMAGENS
 
 Para CADA asset principal de IMAGEM, defina `focus.x` e `focus.y` sobre o elemento

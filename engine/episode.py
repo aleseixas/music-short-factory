@@ -109,6 +109,7 @@ def load_episode(project_root: Path, episodes_dir: str, name: str) -> Episode:
         story=story,
         assets=assets,
         shots=timeline.shots,
+        smart_visual_pacing=timeline.smart_visual_pacing,
         background_music=timeline.background_music,
         sfx_cues=timeline.sfx_cues,
         visual_fx_cues=timeline.visual_fx_cues,
@@ -147,6 +148,7 @@ def create_episode(project_root: Path, episodes_dir: str, name: str) -> Path:
     }
     timeline = {
         "schema_version": 1,
+        "smart_visual_pacing": {"enabled": True},
         "background_music": None,
         "sfx_cues": [],
         "visual_fx_cues": [],

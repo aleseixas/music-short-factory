@@ -139,10 +139,26 @@ class TimelineValidationTests(unittest.TestCase):
     def test_optional_configuration_defaults_are_empty(self):
         timeline = self.load_with_options()
 
+        self.assertIsNone(timeline.smart_visual_pacing)
         self.assertIsNone(timeline.background_music)
         self.assertEqual(timeline.sfx_cues, ())
         self.assertEqual(timeline.visual_fx_cues, ())
         self.assertEqual(timeline.text_fx_cues, ())
+
+    def test_smart_visual_pacing_is_opt_in_and_strictly_validated(self):
+        enabled = self.load_with_options(smart_visual_pacing={})
+        disabled = self.load_with_options(
+            smart_visual_pacing={"enabled": False}
+        )
+
+        self.assertTrue(enabled.smart_visual_pacing.enabled)
+        self.assertFalse(disabled.smart_visual_pacing.enabled)
+        for value in (True, "yes", [], {"enabled": 1}, {"limit": 3}):
+            with self.subTest(value=value), self.assertRaisesRegex(
+                RuntimeError,
+                "smart_visual_pacing",
+            ):
+                self.load_with_options(smart_visual_pacing=value)
 
     def test_optional_configuration_rejects_invalid_volumes(self):
         cases = (

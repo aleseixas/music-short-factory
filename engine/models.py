@@ -197,6 +197,11 @@ class FreezeFrameSpec:
 
 
 @dataclass(frozen=True)
+class SmartVisualPacingSpec:
+    enabled: bool = True
+
+
+@dataclass(frozen=True)
 class ResolvedFreezeFrame:
     start_frame: int
     duration_frames: int
@@ -231,6 +236,7 @@ class TimelineSpec:
     visual_fx_cues: tuple[VisualFxCue, ...] = ()
     text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
+    smart_visual_pacing: SmartVisualPacingSpec | None = None
 
 
 @dataclass(frozen=True)
@@ -298,6 +304,7 @@ class Episode:
     visual_fx_cues: tuple[VisualFxCue, ...] = ()
     text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
+    smart_visual_pacing: SmartVisualPacingSpec | None = None
 
     @property
     def assets_dir(self) -> Path:
