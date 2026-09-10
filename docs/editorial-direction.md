@@ -282,20 +282,21 @@ Para linguagem nativa de TikTok, Reels e Shorts:
 - impacto perceptível nos primeiros ~0,5s;
 - hook completo até ~2s;
 - promessa narrativa até ~5s;
-- take comum normalmente funciona bem por aproximadamente **2–4s**;
-- take excepcionalmente forte, emocional, raro ou informativo pode permanecer por aproximadamente **4–6s** quando houver motivo narrativo claro;
-- cortes de aproximadamente **1–2s** podem funcionar em hook, reveal, lista, reação, montagem ou aceleração deliberada;
+- **imagem estática deve permanecer entre 2,0s e 4,0s**; esta faixa é hard gate, não guia;
+- vídeo comum costuma funcionar bem por aproximadamente **2–4s**;
+- vídeo excepcionalmente forte, emocional, raro ou informativo pode permanecer por aproximadamente **4–6s ou mais** quando movimento/contexto real sustentarem o plano;
+- cortes de aproximadamente **1–2s** podem funcionar em vídeo durante hook, reveal, lista, reação, montagem ou aceleração deliberada; imagem estática continua respeitando o mínimo de 2,0s;
 - nos primeiros **15–20s**, prefira maior densidade visual e seja mais rigoroso com planos longos ou genéricos;
-- para vídeos de **60–90s**, algo em torno de **18–25 visuais principais distintos** é um sanity check útil, não uma quota;
+- para vídeos de **60–90s**, algo em torno de **20–30 takes principais** é o sanity check atual, ajustado à duração e à qualidade real do material;
 - evite composições estáticas por ~3–4s quando existe alternativa melhor;
 - prefira trocar asset/trecho antes de apenas adicionar efeito;
 - zoom, crop, focus, speed, motion, transition, visual FX, kinetic text, highlight, overlay ou SFX sobre o mesmo asset **não contam, por si só, como renovação do visual principal**;
-- antes de aceitar um shot acima de ~4s, avalie se aquele material realmente merece permanecer tanto tempo na tela;
+- antes de aceitar um vídeo acima de ~4s, avalie se aquele material realmente merece permanecer tanto tempo na tela;
 - se um shot estiver longo apenas por falta de material, faça nova busca e troque o visual em vez de compensar com FX;
 - mantenha payoff visual/editorial forte nos últimos 5–8s;
 - use variação de delivery para reforçar a curva narrativa, não para criar oscilação artificial a cada frase.
 
-Esses tempos são guias, não uma grade mecânica. Prefira 16 takes excelentes a 24 medíocres quando o material realmente justificar, mas não aceite um vídeo visualmente pobre por conservadorismo se houver material forte suficiente para renovar a montagem.
+Exceto pelo hard gate de 2,0–4,0s para imagens estáticas, esses tempos são guias, não uma grade mecânica. Prefira menos takes excelentes a muitos medíocres quando o material realmente justificar, mas não aceite um vídeo visualmente pobre por conservadorismo se houver material forte suficiente para renovar a montagem.
 
 ### Smart Visual Pacing
 
@@ -326,10 +327,13 @@ fallback. Campo ausente, `null` ou `{"enabled": false}` mantém exatamente o flu
 legado.
 
 Na implementação atual, uma fronteira pode se mover no máximo `1s` e no máximo
-35% do menor dos dois shots adjacentes. O passe não reduz um take abaixo de
-`1.25s`; se o take autorado já for menor, ele não é encurtado. O diagnóstico fica
-em `work/<slug>/smart_visual_pacing.json`, com frames originais/ajustados, sinais
-usados e o motivo de aplicar ou preservar a timeline.
+35% do menor dos dois shots adjacentes. Para vídeos, o piso técnico do Smart Visual
+Pacing continua em `1.25s`. Para imagens estáticas, o passe respeita obrigatoriamente
+**mínimo de 2.0s e máximo de 4.0s**; ele nunca usa zoom, motion, FX ou highlight como
+justificativa para sair dessa janela. Se um rebalanceamento não conseguir preservar
+essas garantias junto com trims/cues válidos, a timeline original é mantida. O
+diagnóstico fica em `work/<slug>/smart_visual_pacing.json`, com frames
+originais/ajustados, sinais usados e o motivo de aplicar ou preservar a timeline.
 
 Como o passe não cria cortes nem repete assets, uma sequência composta somente por
 imagens continua com a mesma quantidade de trocas: nesse caso ele pode apenas
@@ -439,7 +443,7 @@ Isso é uma decisão editorial única. Não espalhe as camadas de forma aleatór
 
 Não use quantidade mínima rígida para nenhuma camada ou delivery. A densidade deve emergir da história, dos assets e dos beats.
 
-Para visuais principais, a faixa aproximada de 18–25 em vídeos de 60–90s funciona apenas como diagnóstico editorial: abaixo disso, revise se a montagem ficou pobre ou com shots longos por falta de material; acima disso, revise se há cortes sem propósito. Não transforme a faixa em hard error.
+Para visuais principais, a faixa aproximada de **20–30 takes** em vídeos de 60–90s funciona como diagnóstico editorial atual: abaixo disso, revise se a montagem ficou pobre ou com shots longos por falta de material; acima disso, revise se há cortes sem propósito. Não transforme a faixa em hard error.
 
 Warnings de excesso devem provocar revisão, não transformar estilo em hard error. Preserve contraste entre trechos mais densos e trechos limpos.
 
