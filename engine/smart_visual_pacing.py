@@ -21,6 +21,8 @@ from .visual_search import MotionAnalysis, analyze_video_motion
 # These are safety rails, not editorial schema limits.  The authored boundary
 # always remains reachable and each pass can move it only a small distance.
 MIN_TAKE_SECONDS = 1.25
+MIN_IMAGE_TAKE_SECONDS = 2.0
+MAX_IMAGE_TAKE_SECONDS = 4.0
 MAX_BOUNDARY_SHIFT_SECONDS = 1.0
 MAX_BOUNDARY_SHIFT_FRACTION = 0.35
 
@@ -318,8 +320,12 @@ def _scene_signal(
     ):
         target = min(target, 3.1)
         labels.append("important_phrase")
+    if scene.asset.is_video:
+        target = max(MIN_TAKE_SECONDS, target)
+    else:
+        target = max(MIN_IMAGE_TAKE_SECONDS, min(MAX_IMAGE_TAKE_SECONDS, target))
     return _SceneSignal(
-        target_seconds=max(MIN_TAKE_SECONDS, target),
+        target_seconds=target,
         motion_score=round(score, 2) if score is not None else None,
         practically_static=practically_static,
         labels=tuple(dict.fromkeys(labels)),
@@ -393,6 +399,7 @@ def _choose_boundaries(
 ) -> tuple[int, ...]:
     originals = _original_boundaries(plan)
     minimums = tuple(_minimum_scene_frames(scene, plan.fps) for scene in plan.scenes)
+    maximums = tuple(_maximum_scene_frames(scene, plan.fps) for scene in plan.scenes)
     target_frames = tuple(max(1.0, signal.target_seconds * plan.fps) for signal in signals)
     target_total = sum(target_frames)
     desired = [0]
@@ -432,39 +439,82 @@ def _choose_boundaries(
     upper_bounds.append(plan.total_frames)
 
     chosen = list(originals)
-    # A few deterministic forward/backward passes handle neighboring minimums
-    # without an opaque optimizer.  The original boundaries always remain a
-    # feasible fallback.
+    # A few deterministic forward/backward passes handle neighboring duration
+    # limits without an opaque optimizer.  Image maxima are enforced locally;
+    # videos remain free to breathe when the neighboring constraints allow it.
     for _ in range(3):
         for index in range(1, len(chosen) - 1):
-            lower = max(lower_bounds[index], chosen[index - 1] + minimums[index - 1])
-            upper = min(upper_bounds[index], chosen[index + 1] - minimums[index])
+            lower, upper = _boundary_limits(
+                chosen,
+                index,
+                minimums,
+                maximums,
+                lower_bounds,
+                upper_bounds,
+            )
             if lower <= upper:
                 chosen[index] = max(lower, min(desired[index], upper))
         for index in range(len(chosen) - 2, 0, -1):
-            lower = max(lower_bounds[index], chosen[index - 1] + minimums[index - 1])
-            upper = min(upper_bounds[index], chosen[index + 1] - minimums[index])
+            lower, upper = _boundary_limits(
+                chosen,
+                index,
+                minimums,
+                maximums,
+                lower_bounds,
+                upper_bounds,
+            )
             if lower <= upper:
                 chosen[index] = max(lower, min(desired[index], upper))
 
     return tuple(chosen)
 
 
+def _boundary_limits(
+    chosen: list[int],
+    index: int,
+    minimums: tuple[int, ...],
+    maximums: tuple[int | None, ...],
+    lower_bounds: list[int],
+    upper_bounds: list[int],
+) -> tuple[int, int]:
+    lower = max(lower_bounds[index], chosen[index - 1] + minimums[index - 1])
+    upper = min(upper_bounds[index], chosen[index + 1] - minimums[index])
+
+    right_maximum = maximums[index]
+    if right_maximum is not None:
+        lower = max(lower, chosen[index + 1] - right_maximum)
+
+    left_maximum = maximums[index - 1]
+    if left_maximum is not None:
+        upper = min(upper, chosen[index - 1] + left_maximum)
+
+    return lower, upper
+
+
 def _minimum_scene_frames(scene: TimelineScene, fps: int) -> int:
-    minimum = min(scene.frame_count, max(1, math.ceil(MIN_TAKE_SECONDS * fps)))
+    if scene.asset.is_video:
+        minimum = min(scene.frame_count, max(1, math.ceil(MIN_TAKE_SECONDS * fps)))
+    else:
+        minimum = max(1, math.ceil(MIN_IMAGE_TAKE_SECONDS * fps - 1e-9))
     if scene.shot.highlight is not None:
         # Highlight timing is relative to its authored shot and its default
         # duration lives in style.json, outside this pure transform.  Never
         # shorten such a scene: this preserves both explicit and style-default
         # highlight visibility without duplicating style policy here.
-        minimum = scene.frame_count
+        minimum = max(minimum, scene.frame_count)
     if scene.shot.freeze_frame is not None:
         freeze_end = (
             math.ceil(scene.shot.freeze_frame.start_seconds * fps - 1e-9)
             + math.ceil(scene.shot.freeze_frame.duration_seconds * fps - 1e-9)
         )
         minimum = max(minimum, freeze_end)
-    return min(scene.frame_count, minimum)
+    return minimum if not scene.asset.is_video else min(scene.frame_count, minimum)
+
+
+def _maximum_scene_frames(scene: TimelineScene, fps: int) -> int | None:
+    if scene.asset.is_video:
+        return None
+    return max(1, math.floor(MAX_IMAGE_TAKE_SECONDS * fps + 1e-9))
 
 
 def _visual_cue_boundary_limits(
@@ -612,6 +662,16 @@ def _validate_adjusted_plan(
         != adjusted.total_frames
     ):
         raise RuntimeError("Smart pacing quebrou a aritmetica de crossfade.")
+
+    image_minimum = max(1, math.ceil(MIN_IMAGE_TAKE_SECONDS * adjusted.fps - 1e-9))
+    image_maximum = max(1, math.floor(MAX_IMAGE_TAKE_SECONDS * adjusted.fps + 1e-9))
+    for scene in adjusted.scenes:
+        if scene.asset.is_video:
+            continue
+        if not image_minimum <= scene.frame_count <= image_maximum:
+            raise RuntimeError(
+                "Smart pacing tiraria uma imagem da janela obrigatoria de 2-4s."
+            )
 
     tolerance = 1e-6
     for scene in adjusted.scenes:
