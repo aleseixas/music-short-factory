@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "cover": {"headline":"FERGIE NO CARNAVAL DO RIO?","source":{"type":"asset","asset_id":"bep_01"}},
+  "youtube": {
+    "title":"Black Eyed Peas quer Fergie no Carnaval do Rio",
+    "description":"Depois de tocar no Rock in Rio sem Fergie, will.i.am voltou a falar de um plano bem maior: reunir a formação clássica do Black Eyed Peas no Carnaval do Rio e até criar um álbum inspirado na festa. Só que ainda não há confirmação, data ou acordo anunciado. Você iria nesse show com a Fergie?",
+    "hashtags":["blackeyedpeas","fergie","rockinrio","carnaval","musica"],
+    "privacy_status":"public",
+    "category_id":"10"
+  },
+  "instagram": {
+    "caption":"Will.i.am saiu do Rock in Rio ainda falando de uma ideia que mexe com a nostalgia dos anos 2000: reunir Fergie, apl.de.ap e Taboo com o Black Eyed Peas no Carnaval do Rio. O plano existe, mas ainda não foi confirmado. Você iria nesse show com a Fergie?",
+    "hashtags":["blackeyedpeas","fergie","rockinrio","carnaval","riodejaneiro","musica","pop","curiosidades"],
+    "share_to_feed":true,
+    "thumb_offset_ms":1000
+  },
+  "tiktok": {
+    "caption":"Will.i.am quer reunir a formação clássica do Black Eyed Peas com Fergie no Carnaval do Rio. Mas ainda é desejo, não anúncio. Você iria?",
+    "hashtags":["blackeyedpeas","fergie","carnaval","rockinrio","musica"],
+    "privacy_level":"PUBLIC_TO_EVERYONE",
+    "video_cover_timestamp_ms":1000,
+    "disable_comment":false,
+    "disable_duet":false,
+    "disable_stitch":false,
+    "brand_content_toggle":false,
+    "brand_organic_toggle":false,
+    "is_aigc":false
+  }
+}
