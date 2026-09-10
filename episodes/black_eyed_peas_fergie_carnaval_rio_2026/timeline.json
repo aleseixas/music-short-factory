@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"fallback_social_urban","volume":0.10},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"suspense_build_up","volume":0.11},
+    {"time_seconds":7.0,"type":"swoosh_alt","volume":0.09},
+    {"time_seconds":18.0,"type":"dramatic_dun_dun","volume":0.10},
+    {"time_seconds":30.0,"type":"crowd_cheer","volume":0.09},
+    {"time_seconds":42.0,"type":"camera_flash","volume":0.08},
+    {"time_seconds":55.0,"type":"tape_stop","volume":0.09},
+    {"time_seconds":66.0,"type":"riser_build_up","volume":0.10},
+    {"time_seconds":74.0,"type":"impact","volume":0.10}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.82,"type":"punch_zoom","intensity":0.88},
+    {"start_seconds":18.0,"end_seconds":18.7,"type":"punch_zoom","intensity":0.70},
+    {"start_seconds":42.0,"end_seconds":42.7,"type":"slow_zoom_in","intensity":0.65},
+    {"start_seconds":66.0,"end_seconds":66.8,"type":"punch_zoom","intensity":0.75}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.08,"duration_seconds":1.25,"text":"FERGIE NO CARNAVAL?","accent_text":"FERGIE","animation":"scale_bounce","position":"center","intensity":0.95},
+    {"segment":"mas","offset_seconds":0.1,"duration_seconds":1.1,"text":"NÃO ESTÁ CONFIRMADO","accent_text":"NÃO","animation":"pop_in","position":"center","intensity":0.9},
+    {"segment":"amas","offset_seconds":0.1,"duration_seconds":1.1,"text":"MAIO DE 2026","accent_text":"2026","animation":"fade_pop","position":"center","intensity":0.85},
+    {"segment":"nao_volta","offset_seconds":0.1,"duration_seconds":1.15,"text":"NÃO FOI RETORNO","accent_text":"NÃO","animation":"pop_in","position":"center","intensity":0.9},
+    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.3,"text":"VOCÊ IRIA?","accent_text":"IRIA?","animation":"slide_up","position":"center","intensity":0.9}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"bep_01","motion":"push_in","transition_out":"cut","highlight":"FERGIE NO CARNAVAL?"},
+    {"id":"shot_02","segment":"dedos","asset":"bep_02","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_03","segment":"plano","asset":"bep_03","motion":"pan_left","transition_out":"cut","highlight":"FORMAÇÃO CLÁSSICA"},
+    {"id":"shot_04","segment":"album","asset":"bep_04","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_05","segment":"rio","asset":"bep_05","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_06","segment":"mas","asset":"bep_06","motion":"push_in","transition_out":"cut","highlight":"AINDA NÃO CONFIRMADO"},
+    {"id":"shot_07","segment":"sem_contrato","asset":"bep_07","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_08","segment":"fergie_aceitou","asset":"bep_08","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_09","segment":"janeiro","asset":"bep_09","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_10","segment":"brasil","asset":"bep_10","motion":"hold","transition_out":"crossfade"},
+    {"id":"shot_11","segment":"rock_rio","asset":"bep_11","motion":"push_in","transition_out":"cut","highlight":"ROCK IN RIO 2026"},
+    {"id":"shot_12","segment":"sem_fergie","asset":"bep_12","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_13","segment":"hits","asset":"bep_13","motion":"pan_left","transition_out":"cut","highlight":"PUMP IT • BOOM BOOM POW"},
+    {"id":"shot_14","segment":"papatinho","asset":"bep_14","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_15","segment":"carta","asset":"bep_15","motion":"hold","transition_out":"cut"},
+    {"id":"shot_16","segment":"fergie_era","asset":"bep_16","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_17","segment":"saida","asset":"bep_17","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_18","segment":"amas","asset":"bep_18","motion":"pan_left","transition_out":"cut","highlight":"MAIO DE 2026"},
+    {"id":"shot_19","segment":"reuniao","asset":"bep_19","motion":"pan_right","transition_out":"cut","highlight":"REENCONTRO NO AMAs"},
+    {"id":"shot_20","segment":"nao_volta","asset":"bep_20","motion":"hold","transition_out":"cut","highlight":"NÃO FOI RETORNO OFICIAL"},
+    {"id":"shot_21","segment":"porta","asset":"bep_21","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_22","segment":"payoff","asset":"bep_22","motion":"pull_out","transition_out":"cut","highlight":"REENCONTRO NO RIO?"},
+    {"id":"shot_23","segment":"cta","asset":"bep_23","motion":"pan_left","transition_out":"cut","highlight":"VOCÊ IRIA?"}
+  ]
+}
