@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+  "recorded_at": "2026-09-10T12:24:38Z",
+  "visual_usage": [
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_01",
+      "asset_id": "bep_01",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "fc476432ce56835f8837b0a1b072a8b834465994fb123fbdab4c9e26b8ebe3d3",
+        "url_hashes": [
+          "0c47a7cb3d81910073367ad32c7c7f848297b55d0e4ad8fb7e52988cc71b2f37"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce2c2bb2f9985c2a",
+          "8be5a804e1c9eaeb",
+          "8be5e908c0cecaeb",
+          "f0e01f503cfc07f8",
+          "fce103783f1800ff",
+          "eca7376907138e07",
+          "e9a7366907169b0e",
+          "e3a726630f121b1f"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 8.2
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_02",
+      "asset_id": "bep_02",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b75cc57aa463e3db2e4cf10e431710de4ca4c103e02a9ae9a0643f5cfa8d6464",
+        "url_hashes": [
+          "24c53d654004b27aabb6263036e601749a7a958c998f73b5acdba1d531539002"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b48f021ae9fd7a81",
+          "f58c330ae8df6a81",
+          "9588370af8fd628d",
+          "f588171ae9dd6285",
+          "f508171ae8f9468f",
+          "e0911e13eafb448f",
+          "e1961c3ceaa34fe0",
+          "e1b7101ee9f25748"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.6
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_03",
+      "asset_id": "bep_03",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1a54513fd661fbbe2b04f4cb9e42223031140eccd4c3065965ac1a9f56c749f4",
+        "url_hashes": [
+          "6307e43920ba9db486d1a6e2079a49527db4b401c2f309e02dd215d1853d806e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce9db17a68a42d68",
+          "8695396a7ca66569",
+          "82881d4a37867d7f",
+          "918e1f5c23826d5f",
+          "918c1f5c23966d57",
+          "908c1f5c23966d5f",
+          "90ac1f5ca3966957",
+          "908c0f5cb3be6956"
+        ],
+        "source_start_seconds": 6.589917,
+        "source_duration_seconds": 4.4
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_04",
+      "asset_id": "bep_04",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4af4ec385c147e7b51833ef0e0dd3c67747342fd0c3947f547acee1e3664a37b",
+        "url_hashes": [
+          "4eaf6b3bb3ca71580ec16df9cf9623b107856dc428899107a3aad1b6626e329b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d681c34f8f070f0f",
+          "d683cf1f0d191e98",
+          "d455c7ae0d0f1d0e",
+          "e517de1c1f3e1818",
+          "ea87c58c8fee0c0e",
+          "e987c5c181e3c7c6",
+          "e415c75e870e871e",
+          "ad87ce1f1d1c18b8"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.7
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_05",
+      "asset_id": "bep_05",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5ef4790d57eac650b102e88dd4106d1677f45f143d68fc3f01385290026d9708",
+        "url_hashes": [
+          "69cfa1db72bb0936238a880ca0a1aef2974555dc0ac5df223a5eeceddbccfadf"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a8faa8f0e8f0e8f0",
+          "a8faa8f0e8f0e8f0",
+          "ff80809bc17c6a3e",
+          "ff8080bbc175683e",
+          "ff80c0bbc155653a",
+          "ff8ac0b2c155653a",
+          "ff8ac0b2c195653a",
+          "ffaac092c1956572"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.133333
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_06",
+      "asset_id": "bep_06",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1c8755968c15507844bc9cb0ed41e77b05b43d7b6de439f07e7a528e4adbbd0d",
+        "url_hashes": [
+          "873fc6fa264474ea16a21edc52faa2c8fd2b860195709712a71adc280958985d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "71ca46478c86b212",
+          "71ca46478c86b212",
+          "cf02bff8123d2271",
+          "fedef071303c8491",
+          "efdefd30340c809c",
+          "cfdefc300cccc909",
+          "cfdefd303c44c01c"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 2.6
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_07",
+      "asset_id": "bep_07",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d93f6af291441913fd24550518f888aaf02ce939b2ee6e1487c7cabe80edc348",
+        "url_hashes": [
+          "349cd0afaa4af47a4d7ce0693ad81410240556fb2208007b52f233b0b02c7342"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "efd0c4a8a05d71d9",
+          "ebd4c4a8a85d51d9",
+          "ebd4c4a8a85d71d8",
+          "ebd5e4a8a85d7188",
+          "ebd5e4a8b85d5188",
+          "ebd5a4a8b85d5988",
+          "abd5a4a8b85dd988",
+          "8bd5aca8b859db88"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.2
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_08",
+      "asset_id": "bep_08",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0d51f859e2eb2b1ab59856a6396ffc788c62b77ddd8a7a7ac197ec4b692595ac",
+        "url_hashes": [
+          "d76b84d0d9cf3ba39ec8e278f6b7f0f8d5bc83fa28c4221faa1af1f8c0674794"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "959538b6e722b271",
+          "859538f4e706b879",
+          "c59738f0e307b839",
+          "c18b3cf8e306bc3c",
+          "d5853eb8f226f061",
+          "95953af8e626b831",
+          "95953bf8e626b025",
+          "91913bb8e6663473"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.5
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_09",
+      "asset_id": "bep_09",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "84bafb298ca939fdff64b494035a94028aac2619b53d8341a61ce61222c7d7d2",
+        "url_hashes": [
+          "c1dff2ca162fa9f501e5dc32abd5e4f0719b6961cbc0a3afa2bb7f2cd76b8853"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "71ca46478c86b212",
+          "ae5d512371aa2a5e",
+          "ae5d512371aa2a5e",
+          "ae5d512371ec2a1e",
+          "ae5d512371ac2a5e",
+          "ae5d512371aa2a5e",
+          "ae5d512371aa2a5e"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.4
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_10",
+      "asset_id": "bep_10",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "2af380cbd5cf59d515f60ba90281a85d7a07da816744f582f8ad9c2e8c2e6f2d",
+        "url_hashes": [
+          "02dc462e079cb82f938555c2a4db5b86cf04e353d06070d1a050951f57c6fe2d"
+        ],
+        "perceptual_hashes": [
+          "e3e99416f3f82443",
+          "e3e99c17f0bc3007",
+          "e2eb9f95d0bc3104",
+          "c7d09827f826df30",
+          "c7e4d09c0e97f8b0",
+          "e9c5823aa738eb19",
+          "f9e9c580f0da8798"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_11",
+      "asset_id": "bep_11",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "9a7cef6ad1074fa90a4d7f3f16d151eb98216df9897dc018a1f9d77ab555cbb1",
+        "url_hashes": [
+          "b745f717283932a541078c36010ef4916aa10f8588135f6c5d54c80490b2bd5b"
+        ],
+        "perceptual_hashes": [
+          "e45c5a4b3c30ece3",
+          "e45d52433d3a6c63",
+          "e51d54c2191e1f67",
+          "e81a557279c0eeb1",
+          "e96a3bc595263531",
+          "b446493c07e1f29f",
+          "b2344679c57a0b1f"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_12",
+      "asset_id": "bep_12",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "184db51616c8872717742c4cd2d399ee98618ea6f70ac0e021230e7b85db196e",
+        "url_hashes": [
+          "ce57f7478f0dddbebae62fcf2899f61003b19a327dd2a3fec1f305352de35f16"
+        ],
+        "perceptual_hashes": [
+          "8669699669966de1",
+          "d66968d479964db0",
+          "96694cc93e964ba5",
+          "8d7209b0bd5ae3a5",
+          "8d7252af52a5a55c",
+          "d32c63859164be9b",
+          "d33c2cf36c9b9209"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_13",
+      "asset_id": "bep_13",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b23d96f96b5bd1f10b6e547a2e4803bfbab9271198022a1cf00d6a594a18b019",
+        "url_hashes": [
+          "4c9f6cfed4fe957429f959a219e0d42b595c25ae0eb4039f98e32b7096543c3a"
+        ],
+        "perceptual_hashes": [
+          "d9860f1e18ff00f9",
+          "d9c6070e585f28bd",
+          "d9e5030f5c46fc91",
+          "924d1c39f732a64d",
+          "97ca4f0c00ff0cf9",
+          "cce001075fbcdc6b",
+          "dcf2782005f7436b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_14",
+      "asset_id": "bep_14",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "047f5beff4c437118175a93858aaab28054c854c781e8c86b7285a1036b9a234",
+        "url_hashes": [
+          "86f1be1a7f417dec787af77eeedc1a218835472b52e0ac3aeb544156f4a0cc2a"
+        ],
+        "perceptual_hashes": [
+          "c80f5cb14bd827f8",
+          "c807deb0cb99237a",
+          "c8479fa0df996a14",
+          "831cb1c7b463dda2",
+          "c20f5cb14ff00ff0",
+          "e64087ed183f5a9c",
+          "ec70409fe14b96ec"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_15",
+      "asset_id": "bep_15",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "a2ba1958eb42632784d62bffc8d394503eea282ec17c8421bee2574f439d38b0",
+        "url_hashes": [
+          "caf2a5e157bf2d870f906b6c3bae29e243dad238c7549b524283b417dd1918c0"
+        ],
+        "perceptual_hashes": [
+          "929a6da7e974528a",
+          "969e6da1e93556a0",
+          "96946dc0e92d56b3",
+          "a55a4ac678ad9399",
+          "a5957b2b85d21a5a",
+          "9b6664ed14da8cc3",
+          "9b9b6622ebad0742"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_16",
+      "asset_id": "bep_16",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b158ca51b3caa4b9fd78cf457905d15de2b3f5bb982c203f3eb9777c5648f657",
+        "url_hashes": [
+          "1a44fca69bb9f9e8d25ffc65086533f955aa84125505e84f060029ffe73334d0"
+        ],
+        "perceptual_hashes": [
+          "ccd273c3c86273ca",
+          "cc9432d3cd2433cf",
+          "cd973291cd3433c3",
+          "99e5649a6964dc63",
+          "9b996564969b8b23",
+          "c6b138c67339c12f",
+          "c6c63939ccc6c63a"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_17",
+      "asset_id": "bep_17",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "c58afd7d1a79a550e118165239f45cbeb5579d5634128fdf577cc99e3697e6be",
+        "url_hashes": [
+          "edb2915793cc987ff92208103b5700760b1833b34efe1cbbd460945c66c7fab1"
+        ],
+        "perceptual_hashes": [
+          "d59d9e240ec4ccd9",
+          "d59d972e06c48cd9",
+          "959d972e06c68cda",
+          "ba9e3d09c9d27262",
+          "b29a9ef222266da9",
+          "d4d49123c7ce3c36",
+          "d4d6d4dd2c383193"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_18",
+      "asset_id": "bep_18",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "0ada70b4dc8f53ac01d9dfc857955334197d4ebf9b1eeb3766a3d8b0a91ff24f",
+        "url_hashes": [
+          "7a3cfa4a1dd1d134e759904ff7d8dbfd472ac9164bb5d2dae440bcfb664d257c"
+        ],
+        "perceptual_hashes": [
+          "c75838318ecee17a",
+          "c75a383186cec67a",
+          "e15e3b300f8ec4da",
+          "cf31338dc8c7703a",
+          "cec5786237383a8e",
+          "f10b1e92e3ff0834",
+          "f0eb0b3e3e0805f6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_19",
+      "asset_id": "bep_19",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "0a4758a5c2b3ac9bc1e2c6e7890ef77029f43eb0ee41ecbe59287528da74d3b1",
+        "url_hashes": [
+          "0c22ae5ea37fb290ff8026223c4a24de70c7922d1cc7ee2ec626790921c37e90"
+        ],
+        "perceptual_hashes": [
+          "dee061374e81d17a",
+          "dfe961260e80d17b",
+          "86fd2b264cc0d1db",
+          "9d626e1d82f4782b",
+          "9d9272667d690b0b",
+          "c12e3043cddc3737",
+          "c1ce2e343323b72e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_20",
+      "asset_id": "bep_20",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f9572776d5c0af7ae1c8742f5e8b7a234cbc390ce3e8a01e4ca4dec752272ee8",
+        "url_hashes": [
+          "cddd2a5805f969b02ef7e179e8c1cd8f9a948992c7f2d0e2e5ae0d8bbed9fc11"
+        ],
+        "perceptual_hashes": [
+          "85591a6758a53ddc",
+          "a559165758a8adda",
+          "ad59164554a0ebde",
+          "8a732d7331f0746a",
+          "8a5234ee7c8d2f2a",
+          "f44f3a4fad054932",
+          "f44c0bb05ad33ab6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_21",
+      "asset_id": "bep_21",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "090f188a250187aec3ca3f8d1c7fcef095f9f771c7bac88f648b0e2aafc91b8b",
+        "url_hashes": [
+          "69fe7680304b1265625fa5c61832e0affc6b6d0fae26e188cfee311a9c7bc41d"
+        ],
+        "perceptual_hashes": [
+          "846b3a6e7b9521d1",
+          "855b3a6a5ba5a1d1",
+          "8d5b3e4412afa9d8",
+          "8a767156a0e2756d",
+          "8b4635e9559d6d28",
+          "c6682b6894fc5b33",
+          "d66c09f76b432b12"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_22",
+      "asset_id": "bep_22",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b20d1659c2b32c05f63647e216e13ffc7c85cd8e71fba8005ba326acf19a97a1",
+        "url_hashes": [
+          "84b163dbafb36b1a5e959fa35f85517cb096a0fc27a2c76beb713a214166d1d8"
+        ],
+        "perceptual_hashes": [
+          "d34d47e7c2224e65",
+          "93484fe3d552cae1",
+          "934a4ba3f117d3e0",
+          "945d4ee600df4b3c",
+          "9473595cdd6b10b4",
+          "d96570fa6a617701",
+          "d94f6725d5b60388"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "black_eyed_peas_fergie_carnaval_rio_2026",
+      "shot_id": "shot_23",
+      "asset_id": "bep_23",
+      "recorded_at": "2026-09-10T12:24:38Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "5b8b26c94306a0d2b7e376cf75f2caf43508229bb2c07d07a673280d4ce9cfa8",
+        "url_hashes": [
+          "deedcb5fbd8d9917eebf54aa5a6118e12f8091dfae412b7d64a2a74b7785f758"
+        ],
+        "perceptual_hashes": [
+          "9198c36bcb9dc925",
+          "919c636a629de3a5",
+          "b19c757274d862a9",
+          "b290c6559ade9a93",
+          "a2b98e32453b93d5",
+          "9ece686bc4e494ca",
+          "9687d41c6916cf4b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
