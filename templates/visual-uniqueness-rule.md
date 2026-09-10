@@ -40,6 +40,27 @@ A ordem editorial é:
 
 Nunca escolha um vídeo sem relação com a fala apenas para aumentar a porcentagem de movimento.
 
+## Pool de candidatos — diversidade antes do resolver
+
+Esta seção **SOBREPÕE o alvo antigo de 4–5 candidatos por slot** quando o tema tiver material visual suficiente. O resolver só consegue escolher entre o que recebeu; portanto, a qualidade e a diversidade do `visual_candidates.json` são responsabilidade editorial obrigatória.
+
+Para slots visualmente ricos, mire normalmente em **8 candidatos reais por slot**, com a composição preferencial de **até 5 vídeos de IDs/fontes distintos + até 3 imagens**. Quando a disponibilidade real não permitir isso, aceite um pool menor, mas tente manter **pelo menos 5 candidatos úteis** antes de desistir da busca. Não complete quantidade com material genérico ou irrelevante.
+
+Regras obrigatórias para montar o pool:
+
+- cada slot deve pesquisar a partir do seu `visual_intent`, e não apenas pelo nome do artista ou da música;
+- quando a primeira busca trouxer vídeos repetidos, genéricos ou pouco ligados à fala, faça novas consultas semanticamente diferentes antes de fechar o slot;
+- um mesmo YouTube `provider_id` conta como **uma única fonte** para diversidade do pool, mesmo que apareça com títulos, URLs ou trims diferentes;
+- não deixe 2–3 IDs populares dominarem candidatos de muitos slots sem relação direta entre si;
+- se a mesma fonte começar a aparecer em vários slots, continue pesquisando alternativas antes de aceitá-la novamente;
+- prefira candidatos `exact` e `direct`; use `contextual` conscientemente e `generic` apenas como último recurso real;
+- para pessoas, colaborações, bastidores, eventos ou locais citados na narração, faça buscas específicas com esses nomes/contextos em vez de substituir por um clipe musical genérico do artista;
+- preserve diversidade entre fontes, eventos e momentos: performance, entrevista, bastidor, arquivo histórico, gravação, premiação e contexto documental podem coexistir quando fizerem sentido para a história;
+- não trate cinco trims do mesmo vídeo como cinco bons candidatos de vídeo para o slot;
+- antes de fechar `visual_candidates.json`, revise os IDs de vídeo do episódio inteiro. Se poucos IDs estiverem aparecendo repetidamente em muitos slots, reabra as buscas dos slots mais fracos.
+
+O objetivo não é maximizar contagem. É entregar ao resolver **opções semanticamente fortes e realmente diferentes** para que download, semantic gates, Best Segment, motion/static checks e ranking técnico tenham matéria-prima suficiente.
+
 ## Gate antes da queue
 
 Antes de finalizar o episódio, confirme:
@@ -49,6 +70,8 @@ Antes de finalizar o episódio, confirme:
 - os intervalos reutilizados da mesma fonte são distintos e não se sobrepõem;
 - o mesmo trecho não foi mascarado como novo take por crop/FX/speed;
 - o Best Segment pode operar sem empurrar um take para cima do intervalo de outro shot da mesma fonte;
-- a escolha de reutilizar uma fonte preserva ou melhora relevância semântica.
+- a escolha de reutilizar uma fonte preserva ou melhora relevância semântica;
+- slots visualmente ricos receberam variedade real de candidatos, em vez de pequenas variações dos mesmos poucos IDs;
+- nenhum vídeo genérico foi usado para encobrir falta de busca específica quando uma imagem relevante ou asset existente seria editorialmente melhor.
 
 Esta regra substitui a política anterior de `zero reuso do vídeo-fonte`. A política correta agora é: **zero reuso da mesma imagem e zero reuso do mesmo trecho de vídeo; uma mesma fonte de vídeo pode abastecer takes distintos com segmentos não sobrepostos, dentro do limite definido acima**.
