@@ -34,6 +34,31 @@ Use `text_fx` para uma ideia forte, número, contraste, revelação ou frase cur
 
 Se uma cena já tiver legenda falada forte e o visual principal estiver claro, deixar o centro limpo é uma decisão editorial válida e preferível a poluir a tela.
 
+## Legenda de publicação e hashtags
+
+Nos campos públicos de `post.json`, mantenha o texto da legenda/descrição separado das hashtags.
+
+- `youtube.description`, `instagram.caption` e `tiktok.caption` devem conter APENAS o texto editorial da publicação, sem hashtags embutidas no fim do texto.
+- As hashtags devem existir SOMENTE no array `hashtags` da respectiva plataforma, porque o publisher já adiciona esse array ao texto final da publicação.
+- Nunca copie o mesmo bloco de hashtags para dentro da caption/description e também para `hashtags`; isso gera repetição no post publicado.
+- Cada hashtag deve aparecer no máximo uma vez por plataforma, considerando comparação sem diferença entre maiúsculas e minúsculas.
+- TODAS as hashtags devem ser salvas em letras minúsculas. Nunca use CamelCase, iniciais maiúsculas ou capitalização de nomes próprios. Exemplos corretos: `jotaquest`, `timmaia`, `musicabrasileira`, `rockinrio`, `curiosidade`.
+- Antes do commit/queue, faça uma checagem final do texto renderizado: deve existir apenas UM bloco de hashtags no final e nenhuma hashtag pode estar repetida.
+
+Exemplo ERRADO:
+
+```text
+caption: "... #JotaQuest #TimMaia #MusicaBrasileira #RockInRio"
+hashtags: ["JotaQuest", "TimMaia", "MusicaBrasileira", "RockInRio"]
+```
+
+Exemplo CORRETO:
+
+```text
+caption: "Em 1998, o Jota Quest foi retirado do palco durante um show de Tim Maia. O próprio Tim interveio, nasceu a ideia de uma colaboração e, 28 anos depois, a história virou um álbum-tributo."
+hashtags: ["jotaquest", "timmaia", "musicabrasileira", "rockinrio", "curiosidade"]
+```
+
 ## Regra prática
 
 Nunca empilhe no mesmo beat:
