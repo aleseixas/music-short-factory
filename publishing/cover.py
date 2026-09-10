@@ -7,6 +7,8 @@ from typing import Any, Mapping
 
 from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
 
+from engine.media_cache import download_to_cache
+
 
 _VIDEO_SUFFIXES = {".mp4", ".webm", ".mov", ".mkv", ".avi", ".m4v"}
 
@@ -97,10 +99,35 @@ def _resolve_source(
             path.relative_to(assets_dir)
         except ValueError as exc:
             raise RuntimeError(f"Asset da capa fora da pasta permitida: {path}") from exc
+
+        # A capa pode apontar para um asset que nao participou da timeline. Nesse caso,
+        # o visual handoff pode trazer assets.json atualizado sem materializar esse arquivo.
+        # Reobtemos a propria fonte declarada aqui para que o render nao dependa de o asset
+        # ter sido tocado pelo resolver visual.
         if not path.is_file():
-            raise RuntimeError(
-                f"Arquivo do asset da capa ausente: {path}. Gere o episodio ou obtenha o asset primeiro."
-            )
+            url = str(match.get("url", "")).strip()
+            if not url:
+                raise RuntimeError(
+                    f"Arquivo do asset da capa ausente e sem URL para recuperacao: {path}."
+                )
+            assets_dir.mkdir(parents=True, exist_ok=True)
+            try:
+                downloaded = download_to_cache(
+                    url,
+                    assets_dir,
+                    file_name,
+                    f"asset da capa {asset_id!r}",
+                )
+            except RuntimeError as exc:
+                raise RuntimeError(
+                    f"Arquivo do asset da capa ausente e download falhou: {path}. Fonte: {url}. {exc}"
+                ) from exc
+            path = downloaded.resolve()
+            try:
+                path.relative_to(assets_dir)
+            except ValueError as exc:
+                raise RuntimeError(f"Download da capa saiu da pasta permitida: {path}") from exc
+
         focus = match.get("focus", {})
         if not isinstance(focus, Mapping):
             focus = {}
