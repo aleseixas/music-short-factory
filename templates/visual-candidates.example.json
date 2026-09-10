@@ -3,6 +3,7 @@
   "slots": [
     {
       "id": "artist_clip",
+      "visual_intent": "Artist visibly performing the narrated action or appearing in the exact event/context mentioned by this segment",
       "required_seconds": 7.0,
       "crossfade_seconds": 0.35,
       "inspect_top": 4,
@@ -10,6 +11,7 @@
       "candidates": [
         {
           "editorial_rank": 1,
+          "semantic_fit": "exact",
           "name": "Relevant artist interview",
           "kind": "video",
           "url": "https://www.youtube.com/watch?v=EXAMPLE",
@@ -27,6 +29,7 @@
         },
         {
           "editorial_rank": 2,
+          "semantic_fit": "direct",
           "name": "Relevant concert clip",
           "kind": "video",
           "url": "https://upload.wikimedia.org/.../concert.webm",
