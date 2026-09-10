@@ -40,10 +40,14 @@ Nos campos públicos de `post.json`, mantenha o texto da legenda/descrição sep
 
 - `youtube.description`, `instagram.caption` e `tiktok.caption` devem conter APENAS o texto editorial da publicação, sem hashtags embutidas no fim do texto.
 - As hashtags devem existir SOMENTE no array `hashtags` da respectiva plataforma, porque o publisher já adiciona esse array ao texto final da publicação.
+- Para TODO novo episódio, `youtube.hashtags`, `instagram.hashtags` e `tiktok.hashtags` são obrigatórios: os três arrays devem existir e conter hashtags editoriais relevantes para aquele episódio. Nunca omita o array de uma plataforma e nunca o deixe vazio esperando que o código complete depois.
+- Defaults técnicos como `shorts` ou `reels` são apenas fallback de segurança e NÃO substituem a autoria das hashtags. O episódio deve chegar ao commit/queue com hashtags reais já preenchidas para YouTube, Instagram e TikTok.
+- Gere as hashtags conscientemente por plataforma, priorizando combinações úteis de artista/banda, música, tema, evento, gênero ou contexto e `curiosidade`, sem adicionar tags genéricas só para aumentar quantidade.
+- Siga as recomendações atuais da `main` para quantidade quando aplicáveis; no estado atual, a referência é aproximadamente 5 hashtags no YouTube, 8 no Instagram e 5 no TikTok. Isso é orientação editorial, não motivo para adicionar tags irrelevantes.
 - Nunca copie o mesmo bloco de hashtags para dentro da caption/description e também para `hashtags`; isso gera repetição no post publicado.
 - Cada hashtag deve aparecer no máximo uma vez por plataforma, considerando comparação sem diferença entre maiúsculas e minúsculas.
 - TODAS as hashtags devem ser salvas em letras minúsculas. Nunca use CamelCase, iniciais maiúsculas ou capitalização de nomes próprios. Exemplos corretos: `jotaquest`, `timmaia`, `musicabrasileira`, `rockinrio`, `curiosidade`.
-- Antes do commit/queue, faça uma checagem final do texto renderizado: deve existir apenas UM bloco de hashtags no final e nenhuma hashtag pode estar repetida.
+- Antes do commit/queue, faça uma checagem final das TRÊS plataformas: nenhum array `hashtags` pode estar ausente ou vazio; o texto renderizado deve ter apenas UM bloco de hashtags no final e nenhuma hashtag pode estar repetida.
 
 Exemplo ERRADO:
 
