@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "episode": "mbdtf_kanye_vma_comeback",
+  "recorded_at": "2026-09-10T18:08:48Z",
+  "visual_usage": [
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b6acb3876821f03728c2fd441eeb803dd6f31e4c09ec0bff20968a6abbe29728",
+        "url_hashes": [
+          "d6f337ef7b18d487be00df2d76eef61ce4c7835ded05a55c2c7944bda9a90ab2"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c283e9c7d3c363c1",
+          "c383edc6d3c34331",
+          "d383edc6cba14631",
+          "828bedc6cbb1c661",
+          "c38bedc6ca912647",
+          "c387edc6cec13246",
+          "c7c7e4c68e41b326",
+          "ca83e4c6ce69b326"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 8.7
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_02",
+      "asset_id": "vma_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "40016532e9174f1cdfc9a14babe83d0a94144b862f2dcd2914de62123588912d",
+        "url_hashes": [
+          "12e485b6bd8cd1727c56736b7646e991e6f66dcf00859c4ac07721f2cd87c297"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0bfc4037ef05b06",
+          "d8bec4037ef05b06",
+          "d8bfc40376b059d4",
+          "d8bec4037ef059c4",
+          "d1bfc503cec453c4",
+          "d0bbe501cec453f4",
+          "d1bbc40716e0f9b4",
+          "f1bec4031ea07b74"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.5
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_03",
+      "asset_id": "reaction_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "40016532e9174f1cdfc9a14babe83d0a94144b862f2dcd2914de62123588912d",
+        "url_hashes": [
+          "12e485b6bd8cd1727c56736b7646e991e6f66dcf00859c4ac07721f2cd87c297"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8528fb13f9c1dca1",
+          "856bf252fbc3d120",
+          "857ff806d2c2d362",
+          "8c7bf406d087bda2",
+          "877ad40fe2c5b82a",
+          "817bd55ce6c5382a",
+          "876ad0df64cc2f05",
+          "c44e1e2517abbad2"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 2.233333
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_04",
+      "asset_id": "obama_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "68d08e49230f29fdc8c4f818e107dfd2bb268a0e606e67796f089ebe2acb4fba",
+        "url_hashes": [
+          "0ce5fbe547158c990fc148df49b543e038f862d2b0a09bb1ba6f50b5477e8b1d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a34e3d5ec30c6cb1",
+          "8679856d78823e6d",
+          "b0a141fe6b2d98b3",
+          "d5b70bd53dcb3008",
+          "97c46a5a6c396d25",
+          "97c4687a5e3b2925",
+          "85c6685b5f1b3a25",
+          "d5c6665b1f191a25"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 2.7
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_05",
+      "asset_id": "jackass_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b2a924acdb372dba93d696dfaa3a1a0473d3becef011ce85870f277953118fa0",
+        "url_hashes": [
+          "30d759b53b2a2d94124f0eb073236e28f5eca6ba5551b842a192da8e887a10dc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ac923eac62f3417c",
+          "acd01fec22b3b0bc",
+          "acd00fec23b3b0bc",
+          "acd00fec62b3b0bc",
+          "acd00fec62b3b0bc",
+          "acd00fec62b3b0bc",
+          "acd00fec62b3b0bc",
+          "acd00fec62b3b0bc"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.4
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_06",
+      "asset_id": "apology_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f804ae96ed64d7456c84dda80ec3fae19f7d145849985cd09c71e97bcc5d081f",
+        "url_hashes": [
+          "3d7b406e76f5edd23d91cccb2096243eda2ff8e222c3ed2ff9787b87acf7ae3c"
+        ],
+        "perceptual_hashes": [
+          "8e38e74973a43333",
+          "8e38e55972ec3133",
+          "8e3aed1876cd3131",
+          "9960cb67c8266f99",
+          "98316c9a37d99999",
+          "873ee439f01c38c7",
+          "c11f30c6196bc7c7"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_07",
+      "asset_id": "exile_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "c062933e7deeb71bc4aec3ffbc82d2f58db4b9da328f4ff0970e7ba92ebd1555",
+        "url_hashes": [
+          "0d357e88fccbeb09e7f635f1b115f193e7da994454f112f2c3813ffa0891c6cc"
+        ],
+        "perceptual_hashes": [
+          "98c7bc679843b866",
+          "988775e2b641bc72",
+          "988569a777c33d50",
+          "91eb642cd679619a",
+          "918ef34eb94c914e",
+          "c5f63871cc275784",
+          "8ff097709770dd20"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_08",
+      "asset_id": "hawaii_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b301cfed83672eae8967480c0ca11910b08de44a579445125fdffc78c3b91104",
+        "url_hashes": [
+          "642fc2331bb8a4d90af5a305d3fdc65897811c6beae9721a323f65bfafb75554"
+        ],
+        "perceptual_hashes": [
+          "d93de6d36d8c0d08",
+          "d82de6f26d80cd98",
+          "d82fc2f26f81c899",
+          "937cc56e0a93386d",
+          "933a4c856d646dcd",
+          "ce20f93546cf2633",
+          "ce0620db3f2131fb"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_09",
+      "asset_id": "collab_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d10188af6d5e401d10ff8c0846c6df333b3b5dd9fca76a2d4599ebfc5fbb2a60",
+        "url_hashes": [
+          "dd32834ffc4ff0d10587beea3842579f88671cf26c0aadd8f78add0bf368b2dd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "96121fe11dc738ce",
+          "96121fe11dc738ce",
+          "96121fe11dc738ce",
+          "96121fe11dc738ce",
+          "96121fe11dc738ce",
+          "96521ee11dc738ce",
+          "96521ee11dc738ce"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.0
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_10",
+      "asset_id": "obsession_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b6acb3876821f03728c2fd441eeb803dd6f31e4c09ec0bff20968a6abbe29728",
+        "url_hashes": [
+          "d6f337ef7b18d487be00df2d76eef61ce4c7835ded05a55c2c7944bda9a90ab2"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c7c7e4c6ce413326",
+          "c7c3e4c6ce41b326",
+          "c383e4c6ce61b366",
+          "ca83e4c6ce61b366",
+          "ca83e4c6ce69e332",
+          "ca82e4e7ce696332",
+          "ca83e4e7ca696332",
+          "cfc7e4e78a602332"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 3.566667
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_11",
+      "asset_id": "maximal_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b6acb3876821f03728c2fd441eeb803dd6f31e4c09ec0bff20968a6abbe29728",
+        "url_hashes": [
+          "d6f337ef7b18d487be00df2d76eef61ce4c7835ded05a55c2c7944bda9a90ab2"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce86a6e68e8b2633",
+          "ce86a6a6ce036673",
+          "cf86a6a7ce136622",
+          "cec7e6634e432662",
+          "cec7e66746413662",
+          "cec7c66746493266",
+          "8ecfc665564d3226",
+          "cecfc66512cc3326"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 5.933333
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_12",
+      "asset_id": "power_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f5252372c177f162da540f768151886abe5b37dcf534be274654416ec575a1bb",
+        "url_hashes": [
+          "ad22be4957a6b3a69360670854656cc8dc0330a804d39448b569870b82e44211"
+        ],
+        "perceptual_hashes": [
+          "9d2b62dc09a37a8d",
+          "9d2076dd29b25e85",
+          "8b60779f28765781",
+          "ba47ec9a05f80a79",
+          "ba9b45fcda8a2170",
+          "85785aa5394ab52f",
+          "85ad78d246b5354b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_13",
+      "asset_id": "monster_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "94b8842a1d4e769b1e299dd9999e0cd8f92f645e5e40813b9be5713e88f0cb25",
+        "url_hashes": [
+          "14ad82216cad73c9f7eaac07c2183f1b9e95830fc0e01c45a60706290cc02f66"
+        ],
+        "perceptual_hashes": [
+          "e1e2bda1e3c11c3a",
+          "e0f2bfaae2c10caa",
+          "e0f59fb6e0e00c9a",
+          "c7f8b0c78338b4d2",
+          "c7cd38b83ce6c348",
+          "fdd585e9e5018954",
+          "fbf2049502b8fe52"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_14",
+      "asset_id": "runaway_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d10188af6d5e401d10ff8c0846c6df333b3b5dd9fca76a2d4599ebfc5fbb2a60",
+        "url_hashes": [
+          "dd32834ffc4ff0d10587beea3842579f88671cf26c0aadd8f78add0bf368b2dd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "96521ee11dc738ce",
+          "96521ee11dc738ce",
+          "96521ee11dc738ce",
+          "9e521ee01dc738ce",
+          "9a521ee11dc738ce",
+          "8b521fe01dc738ce",
+          "8b521ee21dc738ce",
+          "8f501ee21dc738ce"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.7
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_15",
+      "asset_id": "return_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d10188af6d5e401d10ff8c0846c6df333b3b5dd9fca76a2d4599ebfc5fbb2a60",
+        "url_hashes": [
+          "dd32834ffc4ff0d10587beea3842579f88671cf26c0aadd8f78add0bf368b2dd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "84121be31fe738ce",
+          "84121be21fe738cf",
+          "86121be21de63bce",
+          "86121fe21de639e6",
+          "96101fe21dc738cf",
+          "97101ee31dc738ce",
+          "93141ee31dc738c7",
+          "97141ee31dc638c7"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 4.0
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_16",
+      "asset_id": "goodfridays_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ff6187cd6523680959c9069136d30a078bb8ed23d493aca10043ff8a2583c0c7",
+        "url_hashes": [
+          "14fb07e0cea3ab38bee926fb6c50c6cbebe15d4d5d552fb1af475e7b800ea447"
+        ],
+        "perceptual_hashes": [
+          "d0586b972c6b7686",
+          "f35a6a952c5326c6",
+          "b71a6a95687966c4",
+          "b4718eaa61cd9b32",
+          "b4305586aed2b277",
+          "980df4962bf1de0c",
+          "980929d8d6ee5e2d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_17",
+      "asset_id": "album_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ebd275d0b616fa84546769be2831b8e5e23f3c36bb08079a25bd448070395fd5",
+        "url_hashes": [
+          "b85fb242529ad9afcfb660da423b790513c12db0b65d47cbf3807915cac9a9c8"
+        ],
+        "perceptual_hashes": [
+          "f2c7ac2154abe4ca",
+          "f2c7ad20152ae45f",
+          "f3c7886f152ae059",
+          "e4dedb0737cc1824",
+          "e5c4fadcc81e2887",
+          "f8c4a556bfe144a1",
+          "f8708ea1524e35bb"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_18",
+      "asset_id": "critical_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "9c94f92be59d7514b1f49d538bbead4d92273d51b8e449265a072d8c7d3f22cc",
+        "url_hashes": [
+          "bf18e6859d849e6dff6f400558b598cc4fa5a820d4ce9acaec0cd16bb06b8fdf"
+        ],
+        "perceptual_hashes": [
+          "ce10333e0f3bcc87",
+          "ce1031fe233fcf80",
+          "ce783036313fc70b",
+          "982364dc369c07fb",
+          "d8992721492773f9",
+          "c33e39c00cc33d3f",
+          "c3c63c1b633c3c33"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_19",
+      "asset_id": "turnaround_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "40016532e9174f1cdfc9a14babe83d0a94144b862f2dcd2914de62123588912d",
+        "url_hashes": [
+          "12e485b6bd8cd1727c56736b7646e991e6f66dcf00859c4ac07721f2cd87c297"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "93437b03e566e81d",
+          "9867e61ef642e311",
+          "986747546763b0f8",
+          "a7639621c71946dd",
+          "e6060867b96ed3b8",
+          "b74c5bba494903c7",
+          "f3ca0c652534cb7a",
+          "95c977162b4d0697"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 6.033333
+      }
+    },
+    {
+      "episode": "mbdtf_kanye_vma_comeback",
+      "shot_id": "shot_20",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-10T18:08:48Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1f426f1758c773ce38f0bcc7f65ac51253786879ad40bd6614de6f6996f65fe2",
+        "url_hashes": [
+          "ea76e21955dbd657cf06d01d5a36a8213334c0c3f3f91999a149d096191e3060"
+        ],
+        "perceptual_hashes": [
+          "c26163c6073e1ede",
+          "d26961c4e33f071e",
+          "d67978e0e135033d",
+          "c562cf8e3c1cf1c1",
+          "c57272f1c6c1e3c4",
+          "f97cf2f000005ff3",
+          "db2c2c83f8fd12e0"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
