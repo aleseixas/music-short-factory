@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+  "recorded_at": "2026-09-10T23:07:17Z",
+  "visual_usage": [
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ef4791dffd304df4198f30a61862135a005b1b5d1956e057b35f12902c6eec4e",
+        "url_hashes": [
+          "6d1b1c635a9c73355e27d2cae4f29c8db649354ddec7d652bc1f3e8ee8ce3500"
+        ],
+        "perceptual_hashes": [
+          "d1d37284f69c9899",
+          "c1f372c7660e9299",
+          "d0f070e76706361f",
+          "87e7e989999192e2",
+          "83867796e46ac8e5",
+          "defad183828dce82",
+          "dcd83eccfc60e031"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_02",
+      "asset_id": "mgk_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "077c69e11766fa98673dcd1890c0f3c8376767d754fac1d93ee724078911e1d5",
+        "url_hashes": [
+          "f17c8e59f9ce7763399c4f7c9cc742500ffb86c0cb47a07cfa42868998fe12fd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d28f246e604eb733",
+          "e7403d61364b693d",
+          "f1f41f6834954a6a",
+          "c61ace3d1992696d",
+          "9e51fb0659696662",
+          "8f6c32625933753a",
+          "b0a83d711d8e5727",
+          "97948a3b19c96373"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.8
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_03",
+      "asset_id": "waiting_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "53f1cd5282b3145487a284b3264361cf4db55cd9cbb6a5439d35e8e9fba9c9d4",
+        "url_hashes": [
+          "14272497ef62c05b03193b14c5ee38071457d1ace46047e19c7d0ce118248825"
+        ],
+        "perceptual_hashes": [
+          "943573e24f5ad04b",
+          "943533e64e5e704b",
+          "8d393be6623e684a",
+          "893e644d55f2d6a8",
+          "893b36e0c75cbc68",
+          "d61c79634bde4892",
+          "d6961cb8f5691135"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_04",
+      "asset_id": "reaction_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "79cb383fce21f8b5d4ba169c9ed6fdf16e960aba0f9d0198d72add87ee307170",
+        "url_hashes": [
+          "48688fb051851fe5fc41665763c477034a569d918835b7348e52ee73b7c51dd3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "996662d9a5a55b62",
+          "c1c63e3935a5c3ca",
+          "996466d9a5275b46",
+          "99646699ad26db64",
+          "99c442d9cda4db5c",
+          "c9c462c9c5ee197c",
+          "c1c46cdbc5ac197c",
+          "d2c86cd3c38aea65"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.7
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_05",
+      "asset_id": "confession_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "077c69e11766fa98673dcd1890c0f3c8376767d754fac1d93ee724078911e1d5",
+        "url_hashes": [
+          "f17c8e59f9ce7763399c4f7c9cc742500ffb86c0cb47a07cfa42868998fe12fd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "fddd07269258323a",
+          "a3cac6c7cc796143",
+          "a0b83d2d1d57672a",
+          "f4d1ea08c93363dc",
+          "c6f26b6ae9c98630",
+          "d98dd6cc8b828bd1",
+          "c691849cb97726d9",
+          "c6b5b79a89542563"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.6
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_06",
+      "asset_id": "challenge_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "79cb383fce21f8b5d4ba169c9ed6fdf16e960aba0f9d0198d72add87ee307170",
+        "url_hashes": [
+          "48688fb051851fe5fc41665763c477034a569d918835b7348e52ee73b7c51dd3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f5d80b070e3f7868",
+          "f4f10b970f1f301a",
+          "f4f00b970f0fb458",
+          "f1e10a9f1f0f841e",
+          "f0e0039f1f1f1e38",
+          "c1e16d1f1f1a1e0e",
+          "f1e1093e1e1e3a1d",
+          "d1e4271b0f343a1f"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 2.833333
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_07",
+      "asset_id": "negativity_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7aee9df14060196d6700db8532fa95f56357276a53a078c61aa02d54791c7cd4",
+        "url_hashes": [
+          "705b3e220be6423e15ae1d8141f103231ca49bc15adeafdcef34266f0dd2774a"
+        ],
+        "perceptual_hashes": [
+          "b38c76d8a631d88e",
+          "b28d27c8a731d8ab",
+          "b08f2cdc2730dcb3",
+          "a798718c26936ceb",
+          "a79a6cb3986c6389",
+          "9b843fe11ccf3047",
+          "b986304fc3313ec7"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_08",
+      "asset_id": "turn_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "cdf8eadad84eefdf11cc05332433b48ab6560fa3e5f91db6dd85af016a6b8573",
+        "url_hashes": [
+          "7c64455ff894bd82fbf7cb972ace151e7c7c3117fb531aee58222c3ceabba59c"
+        ],
+        "perceptual_hashes": [
+          "8ab832c6d378cc73",
+          "c89938c7735ccc71",
+          "c9993cc3331ecc71",
+          "9a3361c639d96699",
+          "8e9a3179c6663599",
+          "ea8e3bf80bc23cc1",
+          "e8ce3f07f03889c3"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_09",
+      "asset_id": "friends_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "01348112f2257eb6d2731d9260078d37ab08fc7679eb52089b10d53ccdcb990f",
+        "url_hashes": [
+          "240196c60cf7c1bcbc9a4ee82af61863f78d5821f446516e18353dcd4a33837f"
+        ],
+        "perceptual_hashes": [
+          "91ce3027e699d366",
+          "91ce31676499f364",
+          "91ce39676c99e330",
+          "b69966c9b3c46992",
+          "b69931266c4b9b8e",
+          "9cc33ce38eb827c4",
+          "9ce30f1c7127c7d0"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_10",
+      "asset_id": "names_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d2e48a23b34493fa6241cc7eb49303b2a9678583651f7728244e4b16414673ed",
+        "url_hashes": [
+          "1fa10e9daa750951f5ba02f23229881f70af57d30c1f56107f13c1fc027e8f57"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "99e67bc44619e619",
+          "93ec72c9843bc45b",
+          "96c976c951b24d96",
+          "ad522ddca956a954",
+          "aad52a5d4a3792ac",
+          "89b923cc5d7256ca",
+          "ccba239ccc3a633a",
+          "8eb433d9cec2312b"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.966667
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_11",
+      "asset_id": "lineup_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "0787ab2c4ccedecb8c7137f66eb3bfda1919c8f7400fddbd80ca3da346d4f1fe",
+        "url_hashes": [
+          "8868678d9ff81762ae7ce1daa60e06d58272f54c7259e676c8166ea91131f1f2"
+        ],
+        "perceptual_hashes": [
+          "c74c31cfce309963",
+          "c74c31c7c63c9933",
+          "c74c38c3c63e9933",
+          "cc7373cc71926499",
+          "cc1973738e4c5999",
+          "c03f3ee01fcc38c3",
+          "c0633f1ee07163c7"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_12",
+      "asset_id": "tradition_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d4003794a8019e0cb737e2d2fde1385fb5f9f584d73a1ee59cc89c3d4e016133",
+        "url_hashes": [
+          "c8c85ddcdd25e1241624a32e1818071fabb6d2bf7bcb8679c8ab1a9e41c1122e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ab2a24f72f98d922",
+          "bb2a24c30b9c5e7a",
+          "dae839d0653fc445",
+          "9a6e29922d9be41b",
+          "daea39922d1bc41b",
+          "ca2e3fc22d93c03b",
+          "daea29922d1b863b",
+          "9b6c399a2c93e613"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.966667
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_13",
+      "asset_id": "vision_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6ca8a87f6a45a6152e01a83be8edeea23b8ebc73a639cf21afcf6c82ca743c38",
+        "url_hashes": [
+          "95d10f4ae3ab17daff93dfaa3c078fea6568237bdf2474f02b8795130d66978c"
+        ],
+        "perceptual_hashes": [
+          "96386b94b64de92a",
+          "96794b94b6494a76",
+          "96794bb4b7094a55",
+          "ad5256a95255aea5",
+          "8d2b5650bd2cab55",
+          "936c6d9364699297",
+          "d1166c6d9b92d629"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_14",
+      "asset_id": "seize_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e6e3190c2dc316708006fb0b0345232fe47c2f80db158d2d349ba9294c97fcf1",
+        "url_hashes": [
+          "74618939e5b6c7b357c99e11605ecafad3a4c567046f6f2aba1a700465ea4806"
+        ],
+        "perceptual_hashes": [
+          "c13a36c927768976",
+          "c13a36c926739976",
+          "e92236d926d39966",
+          "c22d92d36c936d93",
+          "c2566d92936c8f1b",
+          "f43384ce31ce31ce",
+          "f42833cccf31ed06"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_15",
+      "asset_id": "classic_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d4003794a8019e0cb737e2d2fde1385fb5f9f584d73a1ee59cc89c3d4e016133",
+        "url_hashes": [
+          "c8c85ddcdd25e1241624a32e1818071fabb6d2bf7bcb8679c8ab1a9e41c1122e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "df626885989067dd",
+          "9f6b68859a98659c",
+          "9f6a6a8d8b98619c",
+          "9f6a6a898ba6619c",
+          "d9e86d03263b233d",
+          "c9ac3bc32c33661d",
+          "c92e33cb2499c79c",
+          "c9ed3283269de19c"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 3.0
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_16",
+      "asset_id": "contrast_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6bef2259bbdffc7b11db8fb0ea39a6b671102d7be954cb1a23f613fed77fa5fc",
+        "url_hashes": [
+          "4ff74c6a1f97e0cd54a342cbe60ac8118308d74dc4272a8f3ea1ac7b6d7d7656"
+        ],
+        "perceptual_hashes": [
+          "8c7336cc3366cc33",
+          "8c7326cc33cccd33",
+          "8c7366cc33ccc999",
+          "9b649966499b64d9",
+          "9b64649bb264d94d",
+          "c638c73867c638e3",
+          "c63838c78e39c771"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_17",
+      "asset_id": "message_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "9299f7a79c4fc842f07d56de87fbef197d5f59bef9fcb988adbe10dbb67f3778",
+        "url_hashes": [
+          "657529d4747f920ad72c76c22546b8288954c9007aa6c4132bf0f1ab2e93470f"
+        ],
+        "perceptual_hashes": [
+          "c5c05a3d657636a6",
+          "c5c25a1d697534ae",
+          "c1d55e0ac97929ad",
+          "8e91117a6a2ded65",
+          "8f88851915d57757",
+          "f4cb0d243a33b339",
+          "f4d0cb0b45cd5d0d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_18",
+      "asset_id": "context_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "86e4b4ba2e83f4a369d584e24f35a516e54e55e5351abff569fa720d03b16bad",
+        "url_hashes": [
+          "d2a650e580d0132d67d1fb2e87f22e7c878e86c21b4ab732513d76be72a40f55"
+        ],
+        "perceptual_hashes": [
+          "f4cb0bb0f62dec80",
+          "f4db0ab1d62bcc90",
+          "f5da0ab5132a6c9c",
+          "e85502ae5dc911fe",
+          "f8f65503a2062efc",
+          "d66925922dc78eb1",
+          "d2de6d25f2183871"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_19",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "214683ab14c6c37b8a4b9c6981ae21176edd8e99396035fd7792898863d83e23",
+        "url_hashes": [
+          "1940ffa4718ae696ec32c676e7fe816c7df87ac9384aa133645fdc154e307894"
+        ],
+        "perceptual_hashes": [
+          "d92236e78919fe24",
+          "d93436e3c919f624",
+          "d93436f6089b64cd",
+          "d2217cc31a6d097f",
+          "da83296ded01966d",
+          "ce3231ed0c33e729",
+          "ccf61231f333cc31"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "m_shadows_defende_mgk_rock_in_rio_2026",
+      "shot_id": "shot_20",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-10T23:07:17Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "79cb383fce21f8b5d4ba169c9ed6fdf16e960aba0f9d0198d72add87ee307170",
+        "url_hashes": [
+          "48688fb051851fe5fc41665763c477034a569d918835b7348e52ee73b7c51dd3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c3c3383c0f3f0fe0",
+          "c7c7181c2b3363e3",
+          "c6cc183873736fc4",
+          "d0cf0b3a3e3463e1",
+          "dcd82327663f0bc8",
+          "d1da0a3d0f64647b",
+          "d2d2096d6d6c34e6",
+          "d5d50a1f1b343571"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 5.1
+      }
+    }
+  ]
+}
