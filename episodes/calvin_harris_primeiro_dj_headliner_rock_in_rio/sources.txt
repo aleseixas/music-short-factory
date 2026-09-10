@@ -1,0 +1,17 @@
+FATOS / EDITORIAL
+- Billboard Brasil, 07/09/2026 — Calvin Harris foi o primeiro DJ headliner da história do Palco Mundo; a música eletrônica estreou no Rock in Rio em uma pequena tenda 25 anos antes e evoluiu até o New Dance Order: https://billboard.com.br/superbet-rir-26-calvin-harris-rock-in-rio-show-2026/
+- Folha de S.Paulo, 07/09/2026 — show de Calvin Harris sob chuva; repertório com One Kiss, This Is What You Came For e How Deep Is Your Love; funk brasileiro e bandeira do Brasil nos telões: https://www1.folha.uol.com.br/ilustrada/2026/09/calvin-harris-faz-grande-rave-e-agita-multidao-no-rock-in-rio-debaixo-de-chuva.shtml
+- UOL Toca, 07/09/2026 — Calvin Harris comandou sozinho o Palco Mundo e transformou a Cidade do Rock em pista de dança; primeira apresentação solo de um DJ no palco principal: https://www.uol.com.br/toca/noticias/2026/09/07/sozinho-no-palco-calvin-harris-faz-cidade-do-rock-virar-pista-de-danca.ghtm
+- The Groove Cartel / YouTube, 20/07/2026 — registro do primeiro set de Calvin Harris no Tomorrowland em 2026 após cerca de duas décadas de carreira: https://www.youtube.com/watch?v=lWV-nJxmu44
+
+VISUAIS
+- Wikimedia Commons — série Calvin Harris no Rock in Rio Madrid 2012, Carlos Delgado, CC BY-SA 3.0.
+- Wikimedia Commons — Calvin Harris no Eurockéennes 2008, Festival Eurockéennes, CC BY 2.0.
+- Wikimedia Commons — Calvin Harris 2011, James, CC BY 2.0.
+- Wikimedia Commons — Calvin Harris no Coachella 2014, Ian T. McFarland, CC BY-SA 2.0.
+- YouTube — candidatos de vídeo de Calvin Harris: Tomorrowland 2026 e clipes oficiais de One Kiss, Summer, Feel So Close, This Is What You Came For, How Deep Is Your Love e We Found Love. Rights status tratado como restricted para ranking, sem bloquear o fluxo técnico.
+
+BACKGROUND MUSIC
+- Busca externa feita antes do fallback com cinco famílias de consulta: electronic documentary background; festival EDM; upbeat electronic; dance electronic; modern social-media electronic.
+- Candidatas comparadas no Pixabay incluíram Festival Season (DIMMYSAD), Festival Energy (JoyInSound), Festival EDM (MiroMaxMusic), Corporate Upbeat Electronic (LeVvvV) e Drift Away (AlexGrohl).
+- Várias candidatas estavam marcadas como Content ID Registered; para evitar claim desnecessário e não criar profile global dedicado nesta rodada, foi usado o fallback curado da repo `fallback_social_modern`, conforme docs/audio-search.md.
