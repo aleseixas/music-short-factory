@@ -145,7 +145,7 @@ Para cada necessidade visual importante:
 9. escolha o melhor take real;
 10. reserve o visual vencedor para aquele slot e remova-o da disputa dos demais slots.
 
-O objetivo normal do episódio continua sendo aproximadamente 30–50 candidatos distribuídos pelos slots importantes, tipicamente 4–6 por slot quando houver material suficiente.
+Para episódios de aproximadamente 20–30 takes, o alvo editorial padrão é **100–120 candidatos visuais totais**, normalmente cerca de 4–5 candidatos reais por slot. **80 candidatos é o mínimo aceitável** quando a disponibilidade do tema limitar a busca; temas ricos visualmente podem ultrapassar 120 quando isso aumentar de verdade a qualidade da seleção. Não infle o pool com material genérico apenas para atingir quantidade.
 
 ## Web video discovery e ingest durante a Action
 
