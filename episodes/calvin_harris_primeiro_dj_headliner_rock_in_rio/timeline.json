@@ -1,49 +1,273 @@
 {
   "schema_version": 1,
-  "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile":"fallback_social_modern","volume":0.10},
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "ambient_calm",
+    "volume": 0.1
+  },
   "sfx_cues": [
-    {"time_seconds":0.10,"type":"record_scratch","volume":0.12},
-    {"time_seconds":7.0,"type":"whoosh_fast","volume":0.09},
-    {"time_seconds":17.0,"type":"riser_build_up","volume":0.10},
-    {"time_seconds":28.0,"type":"bass_drop","volume":0.10},
-    {"time_seconds":39.0,"type":"dj_rewind","volume":0.09},
-    {"time_seconds":49.0,"type":"crowd_cheer","volume":0.10},
-    {"time_seconds":61.0,"type":"air_horn_hype","volume":0.08},
-    {"time_seconds":72.0,"type":"impact","volume":0.10}
+    {
+      "time_seconds": 0.1,
+      "type": "record_scratch",
+      "volume": 0.12
+    },
+    {
+      "time_seconds": 7.0,
+      "type": "whoosh_fast",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 17.0,
+      "type": "riser_build_up",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 28.0,
+      "type": "bass_drop",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 39.0,
+      "type": "dj_rewind",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 49.0,
+      "type": "crowd_cheer",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 61.0,
+      "type": "air_horn_hype",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 72.0,
+      "type": "impact",
+      "volume": 0.1
+    }
   ],
   "visual_fx_cues": [
-    {"start_seconds":0.10,"end_seconds":0.85,"type":"punch_zoom","intensity":0.92},
-    {"start_seconds":27.0,"end_seconds":27.75,"type":"punch_zoom","intensity":0.75},
-    {"start_seconds":59.0,"end_seconds":59.8,"type":"slow_zoom_in","intensity":0.65}
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.85,
+      "type": "punch_zoom",
+      "intensity": 0.92
+    },
+    {
+      "start_seconds": 27.0,
+      "end_seconds": 27.75,
+      "type": "punch_zoom",
+      "intensity": 0.75
+    },
+    {
+      "start_seconds": 59.0,
+      "end_seconds": 59.8,
+      "type": "slow_zoom_in",
+      "intensity": 0.65
+    }
   ],
   "text_fx_cues": [
-    {"segment":"hook","offset_seconds":0.10,"duration_seconds":1.25,"text":"PRIMEIRO DJ HEADLINER","accent_text":"PRIMEIRO","animation":"scale_bounce","position":"center","intensity":0.95},
-    {"segment":"tenda","offset_seconds":0.10,"duration_seconds":1.10,"text":"DE UMA TENDA...","accent_text":"TENDA","animation":"pop_in","position":"center","intensity":0.85},
-    {"segment":"mundo","offset_seconds":0.10,"duration_seconds":1.10,"text":"...AO PALCO MUNDO","accent_text":"PALCO MUNDO","animation":"fade_pop","position":"center","intensity":0.90},
-    {"segment":"funk","offset_seconds":0.10,"duration_seconds":1.00,"text":"TEVE FUNK BRASILEIRO","accent_text":"FUNK","animation":"slide_up","position":"center","intensity":0.85},
-    {"segment":"cta","offset_seconds":0.10,"duration_seconds":1.25,"text":"EVOLUÇÃO OU EXAGERO?","accent_text":"EVOLUÇÃO","animation":"scale_bounce","position":"center","intensity":0.90}
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.25,
+      "text": "PRIMEIRO DJ HEADLINER",
+      "accent_text": "PRIMEIRO",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.95
+    },
+    {
+      "segment": "tenda",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "DE UMA TENDA...",
+      "accent_text": "TENDA",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.85
+    },
+    {
+      "segment": "mundo",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "...AO PALCO MUNDO",
+      "accent_text": "PALCO MUNDO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "funk",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.0,
+      "text": "TEVE FUNK BRASILEIRO",
+      "accent_text": "FUNK",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.85
+    },
+    {
+      "segment": "cta",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.25,
+      "text": "EVOLUÇÃO OU EXAGERO?",
+      "accent_text": "EVOLUÇÃO",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.9
+    }
   ],
   "shots": [
-    {"id":"shot_01","segment":"hook","asset":"calvin_01","motion":"push_in","transition_out":"cut","highlight":"PRIMEIRO DJ HEADLINER"},
-    {"id":"shot_02","segment":"marco","asset":"calvin_02","motion":"pull_out","transition_out":"cut"},
-    {"id":"shot_03","segment":"chuva","asset":"calvin_03","motion":"pan_left","transition_out":"cut"},
-    {"id":"shot_04","segment":"rave","asset":"calvin_04","motion":"push_in","transition_out":"crossfade","highlight":"RAVE NA CHUVA"},
-    {"id":"shot_05","segment":"antes","asset":"calvin_05","motion":"pan_right","transition_out":"cut"},
-    {"id":"shot_06","segment":"tenda","asset":"calvin_06","motion":"pull_out","transition_out":"cut"},
-    {"id":"shot_07","segment":"cresceu","asset":"calvin_07","motion":"push_in","transition_out":"cut"},
-    {"id":"shot_08","segment":"mundo","asset":"calvin_08","motion":"pull_out","transition_out":"crossfade","highlight":"PALCO MUNDO"},
-    {"id":"shot_09","segment":"sozinho","asset":"calvin_09","motion":"pan_left","transition_out":"cut"},
-    {"id":"shot_10","segment":"hits","asset":"calvin_10","motion":"push_in","transition_out":"cut","highlight":"ONE KISS • HOW DEEP IS YOUR LOVE"},
-    {"id":"shot_11","segment":"brasil","asset":"calvin_11","motion":"pan_right","transition_out":"cut"},
-    {"id":"shot_12","segment":"funk","asset":"calvin_12","motion":"pull_out","transition_out":"crossfade","highlight":"FUNK BRASILEIRO"},
-    {"id":"shot_13","segment":"bandeira","asset":"calvin_euro_01","motion":"push_in","transition_out":"cut"},
-    {"id":"shot_14","segment":"debate","asset":"calvin_euro_03","motion":"pull_out","transition_out":"cut"},
-    {"id":"shot_15","segment":"virada","asset":"calvin_euro_04","motion":"pan_left","transition_out":"cut"},
-    {"id":"shot_16","segment":"tomorrowland","asset":"calvin_euro_05","motion":"push_in","transition_out":"crossfade","highlight":"ESTREIA NO TOMORROWLAND"},
-    {"id":"shot_17","segment":"dois_marcos","asset":"calvin_euro_06","motion":"pull_out","transition_out":"cut"},
-    {"id":"shot_18","segment":"simbolo","asset":"calvin_2011","motion":"pan_right","transition_out":"cut","highlight":"DA TENDA AO TOPO"},
-    {"id":"shot_19","segment":"pergunta","asset":"calvin_coachella","motion":"push_in","transition_out":"crossfade"},
-    {"id":"shot_20","segment":"cta","asset":"calvin_hardrock","motion":"pull_out","transition_out":"cut"}
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "calvin_01",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "PRIMEIRO DJ HEADLINER"
+    },
+    {
+      "id": "shot_02",
+      "segment": "marco",
+      "asset": "calvin_02",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "chuva",
+      "asset": "calvin_03",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_04",
+      "segment": "rave",
+      "asset": "calvin_04",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "RAVE NA CHUVA"
+    },
+    {
+      "id": "shot_05",
+      "segment": "antes",
+      "asset": "calvin_05",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_06",
+      "segment": "tenda",
+      "asset": "calvin_06",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_07",
+      "segment": "cresceu",
+      "asset": "calvin_07",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "mundo",
+      "asset": "calvin_08",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "PALCO MUNDO"
+    },
+    {
+      "id": "shot_09",
+      "segment": "sozinho",
+      "asset": "calvin_09",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_10",
+      "segment": "hits",
+      "asset": "calvin_10",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "ONE KISS • HOW DEEP IS YOUR LOVE"
+    },
+    {
+      "id": "shot_11",
+      "segment": "brasil",
+      "asset": "calvin_11",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_12",
+      "segment": "funk",
+      "asset": "calvin_12",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "FUNK BRASILEIRO"
+    },
+    {
+      "id": "shot_13",
+      "segment": "bandeira",
+      "asset": "calvin_euro_01",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_14",
+      "segment": "debate",
+      "asset": "calvin_euro_03",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_15",
+      "segment": "virada",
+      "asset": "calvin_euro_04",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_16",
+      "segment": "tomorrowland",
+      "asset": "calvin_euro_05",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "ESTREIA NO TOMORROWLAND"
+    },
+    {
+      "id": "shot_17",
+      "segment": "dois_marcos",
+      "asset": "calvin_euro_06",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_18",
+      "segment": "simbolo",
+      "asset": "calvin_2011",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "DA TENDA AO TOPO"
+    },
+    {
+      "id": "shot_19",
+      "segment": "pergunta",
+      "asset": "calvin_coachella",
+      "motion": "push_in",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_20",
+      "segment": "cta",
+      "asset": "calvin_hardrock",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    }
   ]
 }
