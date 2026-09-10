@@ -9,6 +9,10 @@ from urllib.parse import parse_qs, urlparse
 
 import engine.visual_search_web as web_engine
 import resolve_visual_candidates_web as resolver
+from engine.visual_resolution_policy import (
+    reuse_penalty_for_prior_uses,
+    video_fallback_block_reason,
+)
 
 
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
@@ -195,6 +199,8 @@ def _install_cookie_fallback() -> None:
 
 
 _original_install_youtube_po_patch = resolver._install_youtube_po_patch
+_original_resolver_inspect_candidate = resolver._inspect_candidate
+_original_resolver_score_record = resolver._score_record
 
 
 def _install_po_then_cookie() -> None:
@@ -202,7 +208,81 @@ def _install_po_then_cookie() -> None:
     _install_cookie_fallback()
 
 
+def _inspect_candidate_with_safe_video_fallback(
+    project_root: Path,
+    slot: dict,
+    candidate: dict,
+    index: int,
+):
+    result, inspection, reasons = _original_resolver_inspect_candidate(
+        project_root,
+        slot,
+        candidate,
+        index,
+    )
+    if result.kind != "video":
+        return result, inspection, reasons
+
+    block_reason = video_fallback_block_reason(
+        semantic_fit=resolver._semantic_fit(candidate),
+        best_semantic_rank=resolver._best_explicit_semantic_rank(slot),
+        practically_static=bool(inspection.is_practically_static),
+    )
+    if block_reason:
+        provider_id, _safe_url, _downloader = resolver._candidate_log_reference(candidate, index)
+        print(
+            f"VIDEO_FALLBACK_BLOCK slot={slot.get('id', '<sem_id>')} "
+            f"id={provider_id} reason={block_reason}",
+            flush=True,
+        )
+        raise RuntimeError(block_reason)
+
+    return result, inspection, reasons
+
+
+def _score_record_with_episode_reuse_penalty(
+    index: int,
+    candidate: dict,
+    result,
+    inspection,
+    reasons: list[str],
+) -> dict:
+    record = _original_resolver_score_record(
+        index,
+        candidate,
+        result,
+        inspection,
+        reasons,
+    )
+    if result.kind != "video":
+        return record
+
+    source_identity = resolver._video_source_identity(candidate)
+    prior_uses = len(resolver.SELECTED_VIDEO_SEGMENTS.get(source_identity, [])) if source_identity else 0
+    penalty = reuse_penalty_for_prior_uses(prior_uses)
+    score_before_penalty = float(record.get("selection_score") or 0.0)
+    score_after_penalty = round(max(0.0, score_before_penalty - penalty), 2)
+
+    record["selection_score_before_episode_reuse_penalty"] = score_before_penalty
+    record["current_episode_reuse_count"] = prior_uses
+    record["current_episode_reuse_penalty"] = -penalty
+    record["selection_score"] = score_after_penalty
+
+    if penalty > 0:
+        provider_id, _safe_url, _downloader = resolver._candidate_log_reference(candidate, index)
+        print(
+            f"VIDEO_REUSE_PENALTY slot={resolver.CURRENT_EPISODE or '<episode>'} "
+            f"id={provider_id} prior_uses={prior_uses} penalty=-{penalty:.1f} "
+            f"score={score_before_penalty:.2f}->{score_after_penalty:.2f}",
+            flush=True,
+        )
+
+    return record
+
+
 resolver._install_youtube_po_patch = _install_po_then_cookie
+resolver._inspect_candidate = _inspect_candidate_with_safe_video_fallback
+resolver._score_record = _score_record_with_episode_reuse_penalty
 
 
 if __name__ == "__main__":
