@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "title": "Will.i.am quer reencontro com Fergie no Carnaval do Rio",
+  "slug": "black_eyed_peas_fergie_carnaval_rio_2026",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"O Black Eyed Peas saiu do Rock in Rio sem Fergie — e will.i.am já imagina o reencontro no Carnaval do Rio.","delivery":"hook"},
+    {"id":"dedos","text":"Depois do show, ele disse estar de dedos cruzados para isso acontecer.","delivery":"curious"},
+    {"id":"plano","text":"A ideia: reunir will.i.am, apl.de.ap, Taboo e Fergie.","delivery":"reveal"},
+    {"id":"album","text":"E criar um álbum inspirado no Carnaval brasileiro.","delivery":"reveal"},
+    {"id":"rio","text":"Tudo lançado com um grande show no Rio.","delivery":"dramatic"},
+    {"id":"mas","text":"Mas atenção: isso ainda não está confirmado.","delivery":"dramatic"},
+    {"id":"sem_contrato","text":"Não há data, contrato ou negociação oficial anunciada.","delivery":"neutral"},
+    {"id":"fergie_aceitou","text":"Nem confirmação de que Fergie tenha aceitado.","delivery":"neutral"},
+    {"id":"janeiro","text":"Will.i.am já falava desse plano em janeiro com Papatinho.","delivery":"curious"},
+    {"id":"brasil","text":"Para ele, a formação clássica deveria voltar justamente no Brasil.","delivery":"reveal"},
+    {"id":"rock_rio","text":"Então chegou o Rock in Rio de 6 de setembro.","delivery":"neutral"},
+    {"id":"sem_fergie","text":"Fergie não apareceu; J. Rey Soul assumiu os vocais femininos.","delivery":"dramatic"},
+    {"id":"hits","text":"E vieram Pump It, Boom Boom Pow e I Gotta Feeling.","delivery":"payoff"},
+    {"id":"papatinho","text":"Papatinho ainda subiu ao palco com uma colaboração nova.","delivery":"reveal"},
+    {"id":"carta","text":"Will.i.am chamou a faixa de carta de amor ao Brasil.","delivery":"emotional"},
+    {"id":"fergie_era","text":"Mesmo sem Fergie, a nostalgia daquela formação ficou no ar.","delivery":"emotional"},
+    {"id":"saida","text":"Ela deixou o grupo anos atrás para seguir outros projetos.","delivery":"neutral"},
+    {"id":"amas","text":"Mas em maio de 2026 a história ganhou outro capítulo.","delivery":"curious"},
+    {"id":"reuniao","text":"Fergie apareceu com os antigos companheiros no American Music Awards.","delivery":"reveal"},
+    {"id":"nao_volta","text":"Foi reencontro público, não retorno oficial à banda.","delivery":"dramatic"},
+    {"id":"porta","text":"Ou seja: existe aproximação, mas o Carnaval ainda é desejo.","delivery":"payoff"},
+    {"id":"payoff","text":"Se sair do papel, a formação clássica pode se reencontrar justamente no Rio.","delivery":"payoff"},
+    {"id":"cta","text":"Você iria nesse show com a Fergie? Comenta.","delivery":"payoff"}
+  ]
+}
