@@ -1,1 +1,280 @@
-{"schema_version":1,"smart_visual_pacing":{"enabled":true},"background_music":{"profile":"fallback_social_dark","volume":0.1},"sfx_cues":[{"time_seconds":0.1,"type":"record_scratch","volume":0.13},{"time_seconds":7.0,"type":"crowd_gasp","volume":0.1},{"time_seconds":14.0,"type":"whoosh_fast","volume":0.09},{"time_seconds":23.0,"type":"notification_discord","volume":0.08},{"time_seconds":31.0,"type":"dramatic_dun_dun","volume":0.1},{"time_seconds":39.0,"type":"riser_build_up","volume":0.1},{"time_seconds":48.0,"type":"crowd_cheer","volume":0.09},{"time_seconds":57.0,"type":"impact","volume":0.11},{"time_seconds":66.0,"type":"bass_drop_cinematic","volume":0.1}],"visual_fx_cues":[{"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.9},{"start_seconds":30.0,"end_seconds":30.9,"type":"punch_zoom","intensity":0.8},{"start_seconds":57.0,"end_seconds":58.0,"type":"slow_zoom_in","intensity":0.7}],"text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.25,"text":"HEADLINER DEFENDEU MGK","accent_text":"MGK","animation":"scale_bounce","position":"center","intensity":0.95},{"segment":"desabafo","offset_seconds":0.1,"duration_seconds":1.1,"text":"POR QUE ELE ESTÁ AQUI?","accent_text":"POR QUE","animation":"pop_in","position":"center","intensity":0.88},{"segment":"negatividade","offset_seconds":0.1,"duration_seconds":1.1,"text":"MUITA NEGATIVIDADE","accent_text":"NEGATIVIDADE","animation":"fade_pop","position":"center","intensity":0.9},{"segment":"amigos","offset_seconds":0.1,"duration_seconds":1.1,"text":"“ESSAS BANDAS SÃO AMIGAS”","accent_text":"AMIGAS","animation":"slide_up","position":"center","intensity":0.9},{"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.15,"text":"MENOS GUERRA DE FANDOM","accent_text":"MENOS GUERRA","animation":"scale_bounce","position":"center","intensity":0.92}],"shots":[{"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","highlight":"HEADLINER DEFENDEU MGK"},{"id":"shot_02","segment":"mgk","asset":"mgk_visual","motion":"pull_out","transition_out":"cut","highlight":"MGK NO DIA DO METAL"},{"id":"shot_03","segment":"espera","asset":"waiting_visual","motion":"pan_left","transition_out":"crossfade"},{"id":"shot_04","segment":"reacao","asset":"reaction_visual","motion":"pan_right","transition_out":"cut","highlight":"VAIAS + REDES"},{"id":"shot_05","segment":"desabafo","asset":"confession_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_06","segment":"tentativa","asset":"challenge_visual","motion":"pull_out","transition_out":"crossfade"},{"id":"shot_07","segment":"negatividade","asset":"negativity_visual","motion":"pan_right","transition_out":"cut","highlight":"NEGATIVIDADE NO X"},{"id":"shot_08","segment":"virada","asset":"turn_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_09","segment":"amigos","asset":"friends_visual","motion":"pan_left","transition_out":"crossfade","highlight":"“SÃO AMIGOS”"},{"id":"shot_10","segment":"nomes","asset":"names_visual","motion":"pull_out","transition_out":"cut"},{"id":"shot_11","segment":"lineup","asset":"lineup_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_12","segment":"tradicao","asset":"tradition_visual","motion":"pull_out","transition_out":"cut"},{"id":"shot_13","segment":"visao","asset":"vision_visual","motion":"pan_left","transition_out":"crossfade"},{"id":"shot_14","segment":"seize","asset":"seize_visual","motion":"pan_right","transition_out":"cut","highlight":"SEIZE THE DAY"},{"id":"shot_15","segment":"classico","asset":"classic_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_16","segment":"contraste","asset":"contrast_visual","motion":"pull_out","transition_out":"crossfade"},{"id":"shot_17","segment":"mensagem","asset":"message_visual","motion":"pan_right","transition_out":"cut"},{"id":"shot_18","segment":"contexto","asset":"context_visual","motion":"push_in","transition_out":"cut","highlight":"ROCK SEM FRONTEIRA?"},{"id":"shot_19","segment":"payoff","asset":"payoff_visual","motion":"pan_left","transition_out":"crossfade","highlight":"MENOS RIVALIDADE"},{"id":"shot_20","segment":"cta","asset":"cta_visual","motion":"pull_out","transition_out":"cut","highlight":"MGK COMBINOU?"}]}
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "emotional_piano",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.1,
+      "type": "record_scratch",
+      "volume": 0.13
+    },
+    {
+      "time_seconds": 7.0,
+      "type": "crowd_gasp",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 14.0,
+      "type": "whoosh_fast",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 23.0,
+      "type": "notification_discord",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 31.0,
+      "type": "dramatic_dun_dun",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 39.0,
+      "type": "riser_build_up",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 48.0,
+      "type": "crowd_cheer",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 57.0,
+      "type": "impact",
+      "volume": 0.11
+    },
+    {
+      "time_seconds": 66.0,
+      "type": "bass_drop_cinematic",
+      "volume": 0.1
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.9,
+      "type": "punch_zoom",
+      "intensity": 0.9
+    },
+    {
+      "start_seconds": 30.0,
+      "end_seconds": 30.9,
+      "type": "punch_zoom",
+      "intensity": 0.8
+    },
+    {
+      "start_seconds": 57.0,
+      "end_seconds": 58.0,
+      "type": "slow_zoom_in",
+      "intensity": 0.7
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.25,
+      "text": "HEADLINER DEFENDEU MGK",
+      "accent_text": "MGK",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.95
+    },
+    {
+      "segment": "desabafo",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "POR QUE ELE ESTÁ AQUI?",
+      "accent_text": "POR QUE",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.88
+    },
+    {
+      "segment": "negatividade",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "MUITA NEGATIVIDADE",
+      "accent_text": "NEGATIVIDADE",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "amigos",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "“ESSAS BANDAS SÃO AMIGAS”",
+      "accent_text": "AMIGAS",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.15,
+      "text": "MENOS GUERRA DE FANDOM",
+      "accent_text": "MENOS GUERRA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.92
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "HEADLINER DEFENDEU MGK"
+    },
+    {
+      "id": "shot_02",
+      "segment": "mgk",
+      "asset": "mgk_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "MGK NO DIA DO METAL"
+    },
+    {
+      "id": "shot_03",
+      "segment": "espera",
+      "asset": "waiting_visual",
+      "motion": "pan_left",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_04",
+      "segment": "reacao",
+      "asset": "reaction_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "VAIAS + REDES"
+    },
+    {
+      "id": "shot_05",
+      "segment": "desabafo",
+      "asset": "confession_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_06",
+      "segment": "tentativa",
+      "asset": "challenge_visual",
+      "motion": "pull_out",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_07",
+      "segment": "negatividade",
+      "asset": "negativity_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "NEGATIVIDADE NO X"
+    },
+    {
+      "id": "shot_08",
+      "segment": "virada",
+      "asset": "turn_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_09",
+      "segment": "amigos",
+      "asset": "friends_visual",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "“SÃO AMIGOS”"
+    },
+    {
+      "id": "shot_10",
+      "segment": "nomes",
+      "asset": "names_visual",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_11",
+      "segment": "lineup",
+      "asset": "lineup_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_12",
+      "segment": "tradicao",
+      "asset": "tradition_visual",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_13",
+      "segment": "visao",
+      "asset": "vision_visual",
+      "motion": "pan_left",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_14",
+      "segment": "seize",
+      "asset": "seize_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "SEIZE THE DAY"
+    },
+    {
+      "id": "shot_15",
+      "segment": "classico",
+      "asset": "classic_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_16",
+      "segment": "contraste",
+      "asset": "contrast_visual",
+      "motion": "pull_out",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_17",
+      "segment": "mensagem",
+      "asset": "message_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_18",
+      "segment": "contexto",
+      "asset": "context_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "ROCK SEM FRONTEIRA?"
+    },
+    {
+      "id": "shot_19",
+      "segment": "payoff",
+      "asset": "payoff_visual",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "highlight": "MENOS RIVALIDADE"
+    },
+    {
+      "id": "shot_20",
+      "segment": "cta",
+      "asset": "cta_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "MGK COMBINOU?"
+    }
+  ]
+}
