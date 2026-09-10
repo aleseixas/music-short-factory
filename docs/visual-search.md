@@ -97,21 +97,80 @@ rights_rank_adjustment = -12
 O score técnico continua separado:
 
 ```text
-selection_score = clamp(visual_score + repetition_penalty + rights_rank_adjustment, 0, 100)
+technical_selection_score = clamp(visual_score + repetition_penalty + rights_rank_adjustment, 0, 100)
 ```
 
-Portanto um candidato `restricted` muito melhor visualmente ainda pode vencer um candidato `unknown` fraco. `rights_status` é metadata de decisão, não garantia jurídica de licença e não deve ser inventado.
+Portanto um candidato `restricted` muito melhor visualmente ainda pode vencer um candidato `unknown` fraco **dentro do mesmo nível de pertinência semântica**. `rights_status` é metadata de decisão, não garantia jurídica de licença e não deve ser inventado.
+
+## Coerência semântica executável
+
+A autoria deve tornar explícita a relação entre a fala e cada candidato. Em cada slot de `visual_candidates.json`, registre uma `visual_intent` curta e concreta descrevendo o que idealmente deve estar na tela naquele momento. Em cada candidato novo, registre `semantic_fit` com exatamente um destes valores:
+
+```text
+exact
+ direct
+contextual
+generic
+```
+
+Use os níveis assim:
+
+- `exact`: mostra o evento, ação, pessoa, lugar/objeto e contexto específico mencionado na fala;
+- `direct`: mostra diretamente a entidade/ação principal correta, mesmo que não seja o registro exato do acontecimento;
+- `contextual`: ajuda a explicar a fala de modo legítimo, mas não mostra diretamente o acontecimento principal;
+- `generic`: é apenas do mesmo artista/gênero/vibe ou funciona como B-roll sem relação específica com a frase.
+
+A classificação é editorial e deve ser honesta. Não marque `exact` ou `direct` só para favorecer um vídeo bonito. Quando a justificativa for apenas “é do mesmo artista”, “é um clipe famoso”, “tem movimento”, “combina com a vibe” ou equivalente, use `generic` ou, no máximo, `contextual` quando houver contexto narrativo real.
+
+Exemplo de slot:
+
+```json
+{
+  "id": "rain_reveal",
+  "visual_intent": "Calvin Harris ou o público do Rock in Rio 2026 visivelmente sob chuva forte durante o show",
+  "required_seconds": 4.0,
+  "inspect_top": 5,
+  "candidates": [
+    {
+      "editorial_rank": 1,
+      "semantic_fit": "exact",
+      "name": "Calvin Harris Rock in Rio 2026 rain crowd",
+      "kind": "video"
+    },
+    {
+      "editorial_rank": 2,
+      "semantic_fit": "generic",
+      "name": "Calvin Harris official music video",
+      "kind": "video"
+    }
+  ]
+}
+```
+
+Quando `semantic_fit` está presente, o resolver web aplica ordem **lexicográfica semântica antes da qualidade técnica**:
+
+```text
+exact > direct > contextual > generic
+```
+
+Dentro do mesmo nível semântico continuam decidindo `technical_selection_score`, repetição, direitos e `editorial_rank`. Os níveis ocupam bandas de ranking não sobrepostas, portanto um `generic` tecnicamente excelente não ultrapassa um `direct`/`exact` apenas por resolução, movimento ou aspect ratio.
+
+A prioridade de vídeo também não pode anular uma escolha semântica explícita: quando o slot contém um nível semântico melhor, candidatos de níveis inferiores recebem gate editorial durante a seleção normal. Se os candidatos do nível superior falharem aquisição/validação técnica, os mecanismos de fallback continuam disponíveis para preservar um render possível.
+
+No relatório de resolução, `technical_selection_score` preserva o score técnico já ajustado por repetição/direitos; `selection_score` passa a representar o score final usado para ranking quando `semantic_fit` foi informado. Pools antigos sem `semantic_fit` continuam usando o comportamento anterior para compatibilidade.
+
+`visual_intent` não é um pedido para o renderer “entender” a imagem. Ela existe para disciplinar a autoria e a pesquisa. O código continua determinístico e não adiciona modelo de visão/LLM ao runtime.
 
 ## Prioridade de vídeo e fallback de imagem
 
 Na resolução web da Action, vídeos e imagens formam shortlists separadas. Um
 vídeo elegível é escolhido antes da imagem, independentemente de o asset-base
-temporário ser uma imagem. Imagens continuam como fallback quando downloads,
+temporário ser uma imagem, **desde que isso não contradiga um nível de `semantic_fit` melhor explicitamente autorado**. Imagens continuam como fallback quando downloads,
 trim, validação ou qualidade dos vídeos não forem suficientes. A CLI legada de
 URLs diretas continua preservando o tipo do asset-base.
 
-Não compare tipos apenas pelo número bruto do score: primeiro aplique os gates
-técnicos do vídeo; depois respeite a prioridade editorial de movimento real.
+Não compare tipos apenas pelo número bruto do score: primeiro aplique a pertinência semântica explícita, depois os gates
+técnicos do vídeo; por fim respeite a prioridade editorial de movimento real entre opções semanticamente equivalentes.
 
 ## REGRA CRÍTICA: nunca repetir imagem ou vídeo entre shots
 
@@ -134,12 +193,12 @@ Somente se for tecnicamente impossível obter qualquer alternativa válida depoi
 
 Para cada necessidade visual importante:
 
-1. identifique entidade, ação, emoção, evento, local e época;
+1. identifique entidade, ação, emoção, evento, local e época e registre uma `visual_intent` concreta;
 2. gere múltiplas queries diferentes, não apenas variações triviais;
 3. busque na web primeiro;
 4. mantenha Commons/Openverse como fallback e fonte aberta;
 5. deduplique resultados repetidos;
-6. compare semanticamente antes de olhar apenas o score técnico;
+6. classifique cada candidato com `semantic_fit` antes de olhar apenas o score técnico;
 7. forme shortlist por tipo de mídia;
 8. inspecione os melhores candidatos;
 9. escolha o melhor take real;
@@ -173,7 +232,7 @@ generate.py
 
 No resolver web, `inspect_top` é aplicado separadamente por tipo. Por exemplo,
 um slot com `inspect_top: 4`, quatro vídeos e uma imagem tenta até quatro vídeos
-e também a imagem de fallback. Um vídeo tecnicamente válido tem prioridade;
+e também a imagem de fallback. Dentro de níveis semânticos equivalentes, um vídeo tecnicamente válido tem prioridade;
 imagem só vence quando nenhum vídeo elegível permanece. O tipo do asset-base
 não elimina os candidatos de vídeo antes da inspeção.
 
@@ -188,13 +247,14 @@ A Action mantém `continue-on-error` para a etapa visual; falha isolada não dev
 
 ## visual_candidates.json com candidato web
 
-Siga sempre o schema atual da `main`. Um candidato de vídeo web pode registrar a página pública como origem de discovery e indicar `search_provider: youtube_web` quando aplicável.
+Siga sempre o schema atual da `main`. Um candidato de vídeo web pode registrar a página pública como origem de discovery e indicar `search_provider: youtube_web` quando aplicável. Para pools novos, preencha também `visual_intent` no slot e `semantic_fit` em todos os candidatos comparáveis.
 
 Exemplo conceitual:
 
 ```json
 {
   "editorial_rank": 1,
+  "semantic_fit": "direct",
   "name": "Artist interview",
   "kind": "video",
   "url": "https://www.youtube.com/watch?v=EXEMPLO",
@@ -207,12 +267,11 @@ Exemplo conceitual:
   "credit": "Channel name / YouTube",
   "license": "",
   "rights_status": "unknown",
-  "editorial_rank": 1,
   "source_start_seconds": 12.0
 }
 ```
 
-Não invente `license`, duração, resolução ou `rights_status`. Se não houver informação clara de direitos, use/assuma `unknown`, não `verified`.
+Não invente `license`, duração, resolução ou `rights_status`. Se não houver informação clara de direitos, use/assuma `unknown`, não `verified`. `semantic_fit` também não deve ser inventado para favorecer o candidato: ele descreve somente a pertinência editorial que você realmente consegue justificar a partir do resultado encontrado.
 
 Para imagens ou vídeos com URL HTTPS direta para arquivo suportado, a resolução web-aware aceita o host público do próprio candidato e valida o arquivo na inspeção. Landing page HTML não deve ser fingida como mídia direta, exceto nos providers de página web explicitamente suportados pelo resolver.
 
@@ -260,7 +319,7 @@ Para vídeos, a ferramenta usa FFprobe/FFmpeg para confirmar:
 
 `opening_motion_score` e `motion_score` são sinais técnicos normalizados. `practically_static` identifica vídeo que se comporta praticamente como imagem.
 
-Esses sinais NÃO reconhecem automaticamente pessoas, ações, lugares ou importância narrativa. Um vídeo tecnicamente excelente ainda pode ser editorialmente errado. A escolha semântica continua sendo responsabilidade do GPT/editor.
+Esses sinais NÃO reconhecem automaticamente pessoas, ações, lugares ou importância narrativa. Um vídeo tecnicamente excelente ainda pode ser editorialmente errado. A escolha semântica continua sendo responsabilidade do GPT/editor e agora deve ser registrada por `visual_intent` + `semantic_fit` nos pools novos.
 
 ## visual_score
 
@@ -277,7 +336,7 @@ Vídeos praticamente estáticos e trims inseguros continuam recebendo limitaçõ
 
 Para imagens, o score continua baseado principalmente em resolução e aspect ratio.
 
-Direitos NÃO são incorporados ao `visual_score`; entram depois em `selection_score`.
+Direitos NÃO são incorporados ao `visual_score`; entram depois em `technical_selection_score`. Quando `semantic_fit` existe, o ranking final ainda aplica a camada semântica por cima desse score técnico ajustado.
 
 ## Falha controlada
 
@@ -384,8 +443,9 @@ e hashes de frames comparam o trecho consumido do vídeo. `source_end_seconds`
 Speed, freeze e o handle do crossfade entram no cálculo desse intervalo.
 
 `visual_score` permanece a qualidade técnica. `repetition.penalty` reduz o
-`selection_score`, com maior peso para usos recentes. O relatório registra
-`downgraded_for_repetition`, método, similaridade e episódio/shot correspondente.
+`technical_selection_score`, com maior peso para usos recentes. Quando `semantic_fit`
+foi autorado, a camada semântica organiza o ranking final antes desse desempate técnico.
+O relatório registra `downgraded_for_repetition`, método, similaridade e episódio/shot correspondente.
 Uma repetição nunca cria um erro técnico nem retira o candidato do fallback.
 Procure outro visual relevante; se as alternativas forem insuficientes, continue
 com a melhor opção válida e mantenha o diagnóstico no relatório.
@@ -424,7 +484,7 @@ quando o agente só tiver acesso a GitHub/web. A inspeção gera os dados técni
 O renderer nunca pesquisa na web para escolher visuais. A comparação de candidatos
 continua na autoria; o registro pós-render apenas lê a mídia local já utilizada.
 
-Scores, ranking, queries, `rights_status` temporário e diagnósticos pertencem ao relatório de autoria/resolução. Não grave campos não suportados em `assets.json` ou `timeline.json`.
+Scores, ranking, queries, `rights_status` temporário, `semantic_fit`, `visual_intent` e diagnósticos pertencem ao relatório/pool de autoria/resolução. Não grave esses campos em `assets.json` ou `timeline.json`.
 
 O asset final continua respeitando o contrato real da `main`. Para mídia web baixada durante a Action, o resolver cria temporariamente o arquivo local necessário para o render.
 
