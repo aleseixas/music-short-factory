@@ -1,0 +1,526 @@
+{
+  "schema_version": 1,
+  "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+  "recorded_at": "2026-09-10T15:30:33Z",
+  "visual_usage": [
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_01",
+      "asset_id": "calvin_01",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9a32639b45f4dc67a2c11bac73d6fbd82c80858bd62a30e4bdcf1b908f8c1b19",
+        "url_hashes": [
+          "e63237a4f18fd9fbfa75322b45e9d35ce015f0edd36481564a3179a64f95b864"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f4f82a17d570380f",
+          "f8f86034e6e2711b",
+          "dcc90384bc7b4bc6",
+          "d46f2bd2952542ea",
+          "fb0341f19aa3345b",
+          "ba157e454ca335aa",
+          "9493274ccd53ccf8",
+          "a1ed6bda262ad216"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.333333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_02",
+      "asset_id": "calvin_02",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "61ddb7798f01559172082f3cf68a80663652831acc4887d245e385bca86671e1",
+        "url_hashes": [
+          "b2ec5b558ddf0e59a1a379d8fa80bf0853777d8573cdcd3360189c0abf31bbaf"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "71ca46478c86b212",
+          "71ca46478c86b212",
+          "f739a16a9ccd6052",
+          "87c07fc01f600eef",
+          "d5d02bacd4f16d0c",
+          "d4d02baed4f16d0c",
+          "69ba7ce4d4891146"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.466667
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_03",
+      "asset_id": "calvin_03",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "54e31f8230c7f87d799360cc8468cd851fe3bf1fd566875b344b7c50859638e0",
+        "url_hashes": [
+          "06c32be7ae07e3ec79c74326a6596c995d5737c80ef13a5ffcd4e62f2a85c81c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "e3fc03bec122f845",
+          "c3dc03bac5233ad5",
+          "c3dc039ec522f8d5",
+          "c7f8471ad1453ad1",
+          "c3dc439ac5233ad5",
+          "e3fc413adc612ad4",
+          "e3fc4103aef4613a"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.6
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_04",
+      "asset_id": "calvin_04",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1442208486d9cd455576ae62c0c7356f3c71fa4fa224b2892f753b3cda018163",
+        "url_hashes": [
+          "f43e0c9cffd58a7a7cf87933f695b897adfdce55e80de771a89fa17f5ede9f66"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "85e05a1f6b2c6e0f",
+          "81e1761e6b3c6a0f",
+          "81c1561e6b3c7a2f",
+          "81c05e1f6b3c7b25",
+          "81e05a1f6b2c6b2f",
+          "85e05a1f612e6f0f",
+          "84f05a0f612e6f2f",
+          "84f85b07702f6f07"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.433333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_05",
+      "asset_id": "calvin_05",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "ffde2af85974e250b133ef3d66f202ea105e1092bd0a8d1db7dc61325a5758e6",
+        "url_hashes": [
+          "733bbf57b68b24bc076c00f5895fa2eea0a17d23670d489e8fee096153b049ce"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c4e23a1c2bf4d92e",
+          "c4e23a1c2bf4d92e",
+          "c4e23a1c2bf4d92e",
+          "c4e23a1c2bf4d92e",
+          "c4e23a1c2be5d92e",
+          "b2e4c1f1478347f2",
+          "b2e4d3e1408f6df0",
+          "b2f0d0f1409365fb"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.3
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_06",
+      "asset_id": "calvin_06",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "aabdd33e229c64310d158c352b78a70114f5d2ccbb78b8c614bcbcc753e11054",
+        "url_hashes": [
+          "b2d6bee95887e0d43f9227e11f1dd4818bcd3cbcbfef0e9d18dbfd585b2f6b71"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c6c663e728656d68",
+          "c2c667a728756578",
+          "c2c667e12c7571e8",
+          "c6de7ba328656138",
+          "c6c673e768616169",
+          "c6c27b232c7571e8",
+          "c6c677e16c716168",
+          "d6de7ba32c447920"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.5
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_07",
+      "asset_id": "calvin_07",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9a32639b45f4dc67a2c11bac73d6fbd82c80858bd62a30e4bdcf1b908f8c1b19",
+        "url_hashes": [
+          "e63237a4f18fd9fbfa75322b45e9d35ce015f0edd36481564a3179a64f95b864"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "bdc0727c84b978c6",
+          "baf57e89324d3a02",
+          "e20f11712fc78f07",
+          "cb696447db392662",
+          "de7d52b09348c33c",
+          "f85f14bb27588724",
+          "f15e35ae3e1b9408",
+          "fbe5240adbd460e1"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 3.9
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_08",
+      "asset_id": "calvin_08",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9a32639b45f4dc67a2c11bac73d6fbd82c80858bd62a30e4bdcf1b908f8c1b19",
+        "url_hashes": [
+          "e63237a4f18fd9fbfa75322b45e9d35ce015f0edd36481564a3179a64f95b864"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d6f54829b96c3691",
+          "daf35d67ac233014",
+          "d7f83a6f99042594",
+          "d6d37268f9b00c27",
+          "dbd75940ec8d222d",
+          "c8d85d2d27dda82a",
+          "c8d16d50b78e7133",
+          "b4ed5051c3da4d2b"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 5.433333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_09",
+      "asset_id": "calvin_09",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "61ddb7798f01559172082f3cf68a80663652831acc4887d245e385bca86671e1",
+        "url_hashes": [
+          "b2ec5b558ddf0e59a1a379d8fa80bf0853777d8573cdcd3360189c0abf31bbaf"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b0fa9a7045c2a74f",
+          "c699c55ae25cf50a",
+          "969da552e219b53c",
+          "9699ad56e618a53c",
+          "9699ad57e618a13c",
+          "96998d77c65aa238",
+          "94890967c4c3a7bf",
+          "a4981b67c5c3e3a3"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.5
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_10",
+      "asset_id": "calvin_10",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "54e31f8230c7f87d799360cc8468cd851fe3bf1fd566875b344b7c50859638e0",
+        "url_hashes": [
+          "06c32be7ae07e3ec79c74326a6596c995d5737c80ef13a5ffcd4e62f2a85c81c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d42b1bd02e5748b7",
+          "d42b1bd02e5748b7",
+          "d42b1bd42e5648b7",
+          "d42b1bd02e5748b7",
+          "d42b1bd02e5658b7",
+          "80e003e07ee71ffa",
+          "80e007c07ec71ffb",
+          "9a64659af2cf4d30"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.9
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_11",
+      "asset_id": "calvin_11",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1442208486d9cd455576ae62c0c7356f3c71fa4fa224b2892f753b3cda018163",
+        "url_hashes": [
+          "f43e0c9cffd58a7a7cf87933f695b897adfdce55e80de771a89fa17f5ede9f66"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "964a69d54cb25ab6",
+          "9a6d65826a9a655d",
+          "896576d26999718e",
+          "8d65725a758c6da8",
+          "bba5445a1a7e2d45",
+          "baad44571a5a6d25",
+          "fcac45570a5a3f60",
+          "f8a845571a3e3f50"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 3.5
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_12",
+      "asset_id": "calvin_12",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1442208486d9cd455576ae62c0c7356f3c71fa4fa224b2892f753b3cda018163",
+        "url_hashes": [
+          "f43e0c9cffd58a7a7cf87933f695b897adfdce55e80de771a89fa17f5ede9f66"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d7ed6f3730120235",
+          "d7ed6f3731120231",
+          "d7ed6f3731120231",
+          "b888467f4bb166e4",
+          "8f98686773676063",
+          "8f91786e46716363",
+          "819e7c607e717163",
+          "9c9e5269636171e9"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 2.833333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_13",
+      "asset_id": "calvin_euro_01",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "ffde2af85974e250b133ef3d66f202ea105e1092bd0a8d1db7dc61325a5758e6",
+        "url_hashes": [
+          "733bbf57b68b24bc076c00f5895fa2eea0a17d23670d489e8fee096153b049ce"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b6c10b944fb4cb9c",
+          "b7c10b944bb4cb9c",
+          "e134b2e698a79c93",
+          "e13693c698e79887",
+          "e1b696c49bc6988e",
+          "e1b4b6c69aa6988e",
+          "e1b6b6c69a279886",
+          "9e25e906b66d433c"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 3.633333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_14",
+      "asset_id": "calvin_euro_03",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "aabdd33e229c64310d158c352b78a70114f5d2ccbb78b8c614bcbcc753e11054",
+        "url_hashes": [
+          "b2d6bee95887e0d43f9227e11f1dd4818bcd3cbcbfef0e9d18dbfd585b2f6b71"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c6da7bb324647168",
+          "c6c26ba32c7571e8",
+          "c6c66fe268716361",
+          "d4dc7ae628796a28",
+          "d4d87ab6286d7a21",
+          "c6d46a6b282c7b78",
+          "c6c66f63283d6169",
+          "c6c67f62a8796129"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 5.8
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_15",
+      "asset_id": "calvin_euro_04",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "aabdd33e229c64310d158c352b78a70114f5d2ccbb78b8c614bcbcc753e11054",
+        "url_hashes": [
+          "b2d6bee95887e0d43f9227e11f1dd4818bcd3cbcbfef0e9d18dbfd585b2f6b71"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c6da2b622c3d7169",
+          "dcda7b6324646721",
+          "cece7b626c756101",
+          "dcd87b3324647169",
+          "cade7f232c646129",
+          "cada73616e647560",
+          "d8da333266647179",
+          "c8de7363ee646160"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 2.766667
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_16",
+      "asset_id": "calvin_euro_05",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "61ddb7798f01559172082f3cf68a80663652831acc4887d245e385bca86671e1",
+        "url_hashes": [
+          "b2ec5b558ddf0e59a1a379d8fa80bf0853777d8573cdcd3360189c0abf31bbaf"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a49e099e268d37d3",
+          "a49b09160d1f3f5d",
+          "a49b070e1f1f0d37",
+          "a49b649b4d361b2e",
+          "a8aec68f452e071f",
+          "956aa51ae9345aad",
+          "956aa51ae9345aad",
+          "956a251ae9345bad"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 5.533333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_17",
+      "asset_id": "calvin_euro_06",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "965fd251e4b18b2b6362b7298d45091e39f61f7bbaed6fccedaac9d038be3f32",
+        "url_hashes": [
+          "02e8098392ebf50c566ef3181754e45ed9e102d96b5256c8121a1026697e27cd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95d47b2b261b2b32",
+          "95d57a2b241b2b35",
+          "95d57a2b245b2b31",
+          "85d47b2b2c5b2b31",
+          "81d47f2b28123f3d",
+          "95d57a2a2e532b38",
+          "95d47a2b261b2b35",
+          "91d67f2b26192e31"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.9
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_18",
+      "asset_id": "calvin_2011",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "965fd251e4b18b2b6362b7298d45091e39f61f7bbaed6fccedaac9d038be3f32",
+        "url_hashes": [
+          "02e8098392ebf50c566ef3181754e45ed9e102d96b5256c8121a1026697e27cd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "85d77f28221f3b21",
+          "85d57f2b200a3f33",
+          "95d47a2b2e523b26",
+          "84d57b2a261b7b32",
+          "85d5782b2f5b3832",
+          "81d57f2a205b3f31",
+          "91d55e2b714b2e31",
+          "91d57f28720f3d12"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 5.6
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_19",
+      "asset_id": "calvin_coachella",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "965fd251e4b18b2b6362b7298d45091e39f61f7bbaed6fccedaac9d038be3f32",
+        "url_hashes": [
+          "02e8098392ebf50c566ef3181754e45ed9e102d96b5256c8121a1026697e27cd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95d07927427d0f3a",
+          "94c3493626696f3e",
+          "a5d65a2d371a606d",
+          "a191567e39076b69",
+          "d59728692a7c2f64",
+          "d7962c692a782e6c",
+          "c3932c6d3a682f6c",
+          "d3922c6d326c2d6d"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 6.533333
+      }
+    },
+    {
+      "episode": "calvin_harris_primeiro_dj_headliner_rock_in_rio",
+      "shot_id": "shot_20",
+      "asset_id": "calvin_hardrock",
+      "recorded_at": "2026-09-10T15:30:33Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "da3275e3f7a214d1fc8981ccffcdc2a454f03dcabb5238c8c228511bb7c67ed2",
+        "url_hashes": [
+          "a65efba4c8d5b625eff2693098b98f367edecc024ab69ee5f1d388e05cade889"
+        ],
+        "perceptual_hashes": [
+          "d8d861663707654f",
+          "d8d8696437336563",
+          "9eda6b6e35316160",
+          "91d06a2f2f4f94b4",
+          "9191d258d8b4b5bb",
+          "cfcc3432b267c989",
+          "cbcfcc6561999886"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
