@@ -56,6 +56,15 @@ def _youtube_log_id(raw: object) -> str:
     return cleaned[:100] or "unknown"
 
 
+def _candidate_log_id(candidate: dict, index: int) -> str:
+    cleaned = re.sub(
+        r"[^A-Za-z0-9._-]+",
+        "_",
+        str(candidate.get("provider_id") or index),
+    ).strip("._")
+    return cleaned[:100] or str(index)
+
+
 def _remove_cookie_file(path: Path) -> None:
     try:
         path.unlink(missing_ok=True)
@@ -229,10 +238,9 @@ def _inspect_candidate_with_safe_video_fallback(
         practically_static=bool(inspection.is_practically_static),
     )
     if block_reason:
-        provider_id, _safe_url, _downloader = resolver._candidate_log_reference(candidate, index)
         print(
             f"VIDEO_FALLBACK_BLOCK slot={slot.get('id', '<sem_id>')} "
-            f"id={provider_id} reason={block_reason}",
+            f"id={_candidate_log_id(candidate, index)} reason={block_reason}",
             flush=True,
         )
         raise RuntimeError(block_reason)
@@ -269,11 +277,10 @@ def _score_record_with_episode_reuse_penalty(
     record["selection_score"] = score_after_penalty
 
     if penalty > 0:
-        provider_id, _safe_url, _downloader = resolver._candidate_log_reference(candidate, index)
         print(
-            f"VIDEO_REUSE_PENALTY slot={resolver.CURRENT_EPISODE or '<episode>'} "
-            f"id={provider_id} prior_uses={prior_uses} penalty=-{penalty:.1f} "
-            f"score={score_before_penalty:.2f}->{score_after_penalty:.2f}",
+            f"VIDEO_REUSE_PENALTY episode={resolver.CURRENT_EPISODE or '<episode>'} "
+            f"id={_candidate_log_id(candidate, index)} prior_uses={prior_uses} "
+            f"penalty=-{penalty:.1f} score={score_before_penalty:.2f}->{score_after_penalty:.2f}",
             flush=True,
         )
 
