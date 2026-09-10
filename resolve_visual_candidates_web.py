@@ -27,6 +27,10 @@ from engine.visual_search_web import (
 PROJECT_ROOT = Path(__file__).resolve().parent
 CURRENT_EPISODE = ""
 WEB_DOWNLOADED_PATHS: dict[str, Path] = {}
+SELECTED_VIDEO_SEGMENTS: dict[str, list[tuple[float, float]]] = {}
+INSPECTED_VIDEO_SEGMENTS: dict[tuple[str, str], tuple[str, float, float]] = {}
+MAX_VIDEO_USES_PER_SOURCE = 3
+AUTO_REUSE_GAP_SECONDS = 2.0
 IMAGE_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".webp"})
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
 KNOWN_REDIRECT_HOSTS = {
@@ -37,6 +41,7 @@ YOUTUBE_PO_PROVIDER_CONTAINER = "music-short-factory-bgutil"
 YOUTUBE_PO_PROVIDER_HOST = "127.0.0.1"
 YOUTUBE_PO_PROVIDER_PORT = 4416
 YOUTUBE_PO_PROVIDER_URL = f"http://{YOUTUBE_PO_PROVIDER_HOST}:{YOUTUBE_PO_PROVIDER_PORT}"
+_LEGACY_CANDIDATE_SOURCE_KEY = legacy._candidate_source_key
 
 
 @dataclass(frozen=True)
@@ -91,6 +96,93 @@ def _is_youtube_candidate(candidate: dict, kind: str) -> bool:
     raw = str(candidate.get("source_page_url") or candidate.get("url") or "").strip()
     host = (urlparse(raw).hostname or "").casefold()
     return host in YOUTUBE_HOSTS
+
+
+def _candidate_source_key(candidate: dict) -> str:
+    """Reserve video segments, not an entire video source, during one resolution."""
+    base = _LEGACY_CANDIDATE_SOURCE_KEY(candidate)
+    if not base or _kind(candidate) != "video":
+        return base
+
+    raw_start = candidate.get("source_start_seconds")
+    if raw_start is None:
+        # Authored pools frequently reuse a source without preselecting a trim.
+        # Keep those candidates independently inspectable; _inspect_candidate will
+        # assign a deterministic unused baseline before technical inspection.
+        auto_identity = str(candidate.get("file") or candidate.get("name") or "auto")
+        auto_identity = re.sub(r"[^A-Za-z0-9._-]+", "_", auto_identity).strip("._")
+        return f"{base}:segment:auto:{auto_identity or 'candidate'}"
+
+    start = legacy._number(raw_start, 0.0)
+    raw_end = candidate.get("source_end_seconds")
+    end = legacy._number(raw_end) if raw_end is not None else None
+    end_token = f"{end:.6f}" if end is not None and end > start else "auto"
+    return f"{base}:segment:{start:.6f}:{end_token}"
+
+
+def _video_source_identity(candidate: dict) -> str:
+    return _LEGACY_CANDIDATE_SOURCE_KEY(candidate)
+
+
+def _requested_video_interval(slot: dict, candidate: dict) -> tuple[float, float]:
+    start = legacy._number(candidate.get("source_start_seconds"), 0.0)
+    required = legacy._number(slot.get("required_seconds"), legacy.DEFAULT_REQUIRED_SECONDS)
+    crossfade = legacy._number(slot.get("crossfade_seconds"), legacy.DEFAULT_CROSSFADE_SECONDS)
+    assessment = legacy.assess_trim(
+        1e12,
+        shot_duration_seconds=required,
+        source_start_seconds=start,
+        crossfade_seconds=crossfade,
+        **legacy._playback_options(slot, "video"),
+    )
+    return start, start + assessment.required_seconds
+
+
+def _intervals_overlap(
+    left_start: float,
+    left_end: float,
+    right_start: float,
+    right_end: float,
+) -> bool:
+    return min(left_end, right_end) - max(left_start, right_start) > 1e-6
+
+
+def _reuse_rejection_reason(source_identity: str, start: float, end: float) -> str | None:
+    if not source_identity:
+        return None
+    used = SELECTED_VIDEO_SEGMENTS.get(source_identity, [])
+    if len(used) >= MAX_VIDEO_USES_PER_SOURCE:
+        return "video_source_reuse_limit"
+    if any(
+        _intervals_overlap(start, end, used_start, used_end)
+        for used_start, used_end in used
+    ):
+        return "video_segment_overlaps_selected"
+    return None
+
+
+def _assign_auto_video_start(slot: dict, candidate: dict, source_identity: str) -> None:
+    if candidate.get("source_start_seconds") is not None:
+        return
+    used = SELECTED_VIDEO_SEGMENTS.get(source_identity, [])
+    if not used:
+        candidate["source_start_seconds"] = 0.0
+        return
+
+    required = legacy._number(slot.get("required_seconds"), legacy.DEFAULT_REQUIRED_SECONDS)
+    crossfade = legacy._number(slot.get("crossfade_seconds"), legacy.DEFAULT_CROSSFADE_SECONDS)
+    assessment = legacy.assess_trim(
+        1e12,
+        shot_duration_seconds=required,
+        source_start_seconds=0.0,
+        crossfade_seconds=crossfade,
+        **legacy._playback_options(slot, "video"),
+    )
+    spacing = max(AUTO_REUSE_GAP_SECONDS, assessment.required_seconds * 0.5)
+    candidate["source_start_seconds"] = round(
+        max(end for _start, end in used) + spacing,
+        3,
+    )
 
 
 def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearchResult:
@@ -188,9 +280,28 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
     result = _candidate_result(candidate, slot_id, index)
     required = legacy._number(slot.get("required_seconds"), legacy.DEFAULT_REQUIRED_SECONDS)
     crossfade = legacy._number(slot.get("crossfade_seconds"), legacy.DEFAULT_CROSSFADE_SECONDS)
-    start = legacy._number(candidate.get("source_start_seconds"), 0.0)
-    end = candidate.get("source_end_seconds")
 
+    if result.kind == "video":
+        source_identity = _video_source_identity(candidate)
+        _assign_auto_video_start(slot, candidate, source_identity)
+        start, consumed_end = _requested_video_interval(slot, candidate)
+        reuse_reason = _reuse_rejection_reason(source_identity, start, consumed_end)
+        if reuse_reason:
+            print(
+                f"VIDEO_REUSE_SKIP slot={slot_id} id={result.provider_id} "
+                f"start={start:.3f} end={consumed_end:.3f} reason={reuse_reason}",
+                flush=True,
+            )
+            raise RuntimeError(reuse_reason)
+        INSPECTED_VIDEO_SEGMENTS[(slot_id, _candidate_source_key(candidate))] = (
+            source_identity,
+            start,
+            consumed_end,
+        )
+    else:
+        start = 0.0
+
+    end = candidate.get("source_end_seconds")
     base = inspect_web_candidate(
         project_root,
         result,
@@ -266,6 +377,21 @@ def _safe_filename(raw: str, fallback: str, suffix: str) -> str:
     return f"{cleaned[:90]}{suffix}"
 
 
+def _reserve_selected_video_segment(slot_id: str, candidate: dict) -> None:
+    key = (slot_id, _candidate_source_key(candidate))
+    inspected = INSPECTED_VIDEO_SEGMENTS.get(key)
+    if inspected is None:
+        return
+    source_identity, start, end = inspected
+    SELECTED_VIDEO_SEGMENTS.setdefault(source_identity, []).append((start, end))
+    print(
+        f"VIDEO_REUSE_RESERVED slot={slot_id} source={source_identity} "
+        f"start={start:.3f} end={end:.3f} "
+        f"use={len(SELECTED_VIDEO_SEGMENTS[source_identity])}/{MAX_VIDEO_USES_PER_SOURCE}",
+        flush=True,
+    )
+
+
 def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> dict:
     focus = (
         candidate.get("focus")
@@ -280,14 +406,18 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
             raise RuntimeError(f"{slot_id}: video web selecionado nao esta disponivel no cache.")
         episode_assets = PROJECT_ROOT / "episodes" / CURRENT_EPISODE / "assets"
         episode_assets.mkdir(parents=True, exist_ok=True)
+        # One provider_id always maps to the same staged file. Multiple asset ids can
+        # safely point to it with different trims, which also lets Best Segment see
+        # them as the same underlying source and protect against window overlap.
         desired = _safe_filename(
-            str(candidate.get("file") or ""),
-            f"{slot_id}-{result.provider_id}",
+            "",
+            f"youtube-{result.provider_id}",
             source_path.suffix.lower(),
         )
         destination = episode_assets / desired
-        if source_path.resolve() != destination.resolve():
+        if source_path.resolve() != destination.resolve() and not destination.is_file():
             shutil.copy2(source_path, destination)
+        _reserve_selected_video_segment(slot_id, candidate)
         return {
             "id": slot_id,
             "file": desired,
@@ -297,6 +427,8 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
         }
 
     file_name = str(candidate.get("file") or result.suggested_file or f"{slot_id}.{result.file_format}")
+    if result.kind == "video":
+        _reserve_selected_video_segment(slot_id, candidate)
     return {
         "id": slot_id,
         "file": file_name,
@@ -443,6 +575,7 @@ def _install_patches() -> None:
     if not hasattr(legacy, "_metadata_priority_original"):
         legacy._metadata_priority_original = legacy._metadata_priority
     legacy._candidate_result = _candidate_result
+    legacy._candidate_source_key = _candidate_source_key
     legacy._inspect_candidate = _inspect_candidate
     legacy._score_record = _score_record
     legacy._asset_entry = _asset_entry
@@ -453,6 +586,9 @@ def main() -> int:
     global CURRENT_EPISODE
     if len(sys.argv) >= 2:
         CURRENT_EPISODE = str(sys.argv[1]).strip()
+    WEB_DOWNLOADED_PATHS.clear()
+    SELECTED_VIDEO_SEGMENTS.clear()
+    INSPECTED_VIDEO_SEGMENTS.clear()
     _install_patches()
     return legacy.main(prefer_video_candidates=True)
 
