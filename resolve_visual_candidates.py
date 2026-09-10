@@ -4,12 +4,14 @@ import argparse
 from datetime import datetime, timezone
 import json
 from pathlib import Path
+import re
 from urllib.parse import urlparse
 
 from engine.visual_search import VisualSearchResult, assess_trim, inspect_visual_result
 from engine.visual_repetition import (
     VisualFingerprint,
     assess_repetition,
+    canonicalize_visual_url,
     fingerprint_to_usage,
     load_visual_history,
 )
@@ -24,6 +26,7 @@ MIN_IMAGE_SCORE = 35.0
 MIN_VIDEO_SCORE = 45.0
 IMAGE_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".webp", ".gif"})
 VIDEO_SUFFIXES = frozenset({".mp4", ".mov", ".webm", ".mkv", ".avi", ".m4v"})
+YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
 
 
 def _load_json(path: Path) -> dict:
@@ -74,6 +77,98 @@ def _metadata_priority(candidate: dict, index: int) -> tuple[float, float, float
     kind_bonus = 1.0 if str(candidate.get("kind") or "").lower() == "video" else 0.0
     editorial_rank = max(1.0, _number(candidate.get("editorial_rank"), index))
     return (kind_bonus, portrait_fit, pixels, -editorial_rank)
+
+
+def _candidate_source_key(candidate: dict) -> str:
+    """Return a credential-free identity used only to reserve a selected source."""
+    kind = str(candidate.get("kind") or "").strip().casefold()
+    provider = str(candidate.get("search_provider") or "").strip().casefold()
+    provider_id = str(candidate.get("provider_id") or "").strip()
+    raw_url = str(candidate.get("source_page_url") or candidate.get("url") or "").strip()
+    host = (urlparse(raw_url).hostname or "").casefold()
+    if kind == "video" and provider_id and (provider == "youtube_web" or host in YOUTUBE_HOSTS):
+        return f"video:youtube:{provider_id}"
+    canonical = canonicalize_visual_url(raw_url)
+    return f"{kind}:url:{canonical}" if kind and canonical else ""
+
+
+def _safe_log_text(value: object, fallback: str = "unknown") -> str:
+    parts: list[str] = []
+    current = value if isinstance(value, BaseException) else None
+    if current is None:
+        parts.append(str(value or ""))
+    else:
+        seen: set[int] = set()
+        while current is not None and id(current) not in seen and len(parts) < 3:
+            seen.add(id(current))
+            detail = str(current or "").strip()
+            if detail and detail not in parts:
+                parts.append(detail)
+            current = current.__cause__ or current.__context__
+    text = " | caused_by: ".join(parts)
+    text = re.sub(r"[\x00-\x1f\x7f]+", " ", text).strip()
+    text = re.sub(r"https?://\S+", "<url>", text, flags=re.IGNORECASE)
+    text = re.sub(
+        r"(?i)\bauthorization\s*[:=]\s*(?:bearer\s+)?[^\s,;|]+",
+        "authorization=<redacted>",
+        text,
+    )
+    text = re.sub(
+        r"(?i)\bcookies?\s*[:=]\s*[^;\s,|]+"
+        r"(?:\s*[;,]\s*[^;\s,|]+)*",
+        "cookie=<redacted>",
+        text,
+    )
+    text = re.sub(r"(?i)\bbearer\s+[^\s,;|]+", "Bearer <redacted>", text)
+    text = re.sub(
+        r"(?i)\b(access[_ -]?token|password|secret|po[_ -]?token)"
+        r"\s*[:=]\s*[^\s,;|]+",
+        r"\1=<redacted>",
+        text,
+    )
+    return (text or fallback)[:500]
+
+
+def _candidate_log_reference(candidate: dict, index: int) -> tuple[str, str, str]:
+    provider_id = re.sub(
+        r"[^A-Za-z0-9._-]+",
+        "_",
+        str(candidate.get("provider_id") or index),
+    ).strip("._")[:100] or str(index)
+    raw_url = str(candidate.get("source_page_url") or candidate.get("url") or "").strip()
+    parsed = urlparse(raw_url)
+    host = (parsed.hostname or "").casefold()
+    is_youtube = (
+        str(candidate.get("search_provider") or "").strip().casefold() == "youtube_web"
+        or host in YOUTUBE_HOSTS
+    )
+    if is_youtube:
+        safe_url = f"https://www.youtube.com/watch?v={provider_id}"
+        downloader = "yt-dlp"
+    elif parsed.scheme.casefold() == "https" and parsed.netloc:
+        safe_url = f"https://{parsed.netloc}{parsed.path}"
+        downloader = "direct-cache"
+    else:
+        safe_url = "<invalid>"
+        downloader = "unknown"
+    return provider_id, safe_url, downloader
+
+
+def _shortlist_candidates(
+    indexed: list[tuple[int, dict]],
+    inspect_top: int,
+    *,
+    prefer_video_candidates: bool,
+) -> list[tuple[int, dict]]:
+    if not prefer_video_candidates:
+        return indexed[:inspect_top]
+
+    # In the web resolver inspect_top is a per-kind ceiling. This guarantees that
+    # video failures cannot hide the image fallback (or vice versa), while keeping
+    # the video shortlist at its full authored size.
+    videos = [pair for pair in indexed if str(pair[1].get("kind") or "").casefold() == "video"]
+    images = [pair for pair in indexed if str(pair[1].get("kind") or "").casefold() == "image"]
+    return videos[:inspect_top] + images[:inspect_top]
 
 
 def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearchResult:
@@ -226,7 +321,12 @@ def _url_repetition(candidate: dict, slot: dict, history):
     return assess_repetition(fingerprint, history)
 
 
-def resolve_episode(project_root: Path, slug: str) -> int:
+def resolve_episode(
+    project_root: Path,
+    slug: str,
+    *,
+    prefer_video_candidates: bool = False,
+) -> int:
     episode_dir = project_root / "episodes" / slug
     pool_path = episode_dir / "visual_candidates.json"
     if not pool_path.exists():
@@ -263,6 +363,7 @@ def resolve_episode(project_root: Path, slug: str) -> int:
     failures: list[str] = []
     recorded_at = datetime.now(timezone.utc).isoformat()
     visual_usage: list[dict] = []
+    reserved_candidate_sources: set[str] = set()
     try:
         history, history_warnings = load_visual_history(project_root, exclude_episode=slug)
     except Exception:
@@ -302,11 +403,12 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             continue
 
         inspect_top = int(max(1, min(MAX_INSPECT_TOP, _number(slot.get("inspect_top"), DEFAULT_INSPECT_TOP))))
+        allowed_kinds = {"video", "image"} if prefer_video_candidates else {target_kind}
         indexed = [
             (index, candidate)
             for index, candidate in enumerate(candidates, start=1)
             if isinstance(candidate, dict)
-            and str(candidate.get("kind") or "").strip().lower() == target_kind
+            and str(candidate.get("kind") or "").strip().lower() in allowed_kinds
         ]
 
         if not indexed:
@@ -314,10 +416,14 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             selections[slot_id] = {
                 "status": "kept_existing_asset",
                 "kind": target_kind,
-                "reason": "no_same_kind_candidate",
+                "reason": (
+                    "no_supported_candidate"
+                    if prefer_video_candidates
+                    else "no_same_kind_candidate"
+                ),
             }
             print(
-                f"::warning::Visual slot {slot_id}: nenhum candidato {target_kind}; "
+                f"::warning::Visual slot {slot_id}: nenhum candidato suportado; "
                 "mantendo asset existente."
             )
             continue
@@ -332,31 +438,107 @@ def resolve_episode(project_root: Path, slug: str) -> int:
             preselection_repetition[pair[0]].penalty if pair[0] in preselection_repetition else 0.0,
             *_metadata_priority(pair[1], pair[0]),
         ), reverse=True)
-        shortlist = indexed[:inspect_top]
+        shortlist = _shortlist_candidates(
+            indexed,
+            inspect_top,
+            prefer_video_candidates=prefer_video_candidates,
+        )
+        available_video = sum(
+            str(candidate.get("kind") or "").casefold() == "video"
+            for _index, candidate in indexed
+        )
+        available_image = sum(
+            str(candidate.get("kind") or "").casefold() == "image"
+            for _index, candidate in indexed
+        )
+        inspect_video = sum(
+            str(candidate.get("kind") or "").casefold() == "video"
+            for _index, candidate in shortlist
+        )
+        inspect_image = len(shortlist) - inspect_video
         print(
-            f"Visual slot {slot_id}: {len(candidates)} candidatos totais, "
-            f"{len(indexed)} do tipo {target_kind}; inspecionando top {len(shortlist)}."
+            f"Visual slot {slot_id}: {len(candidates)} candidatos totais "
+            f"(video={available_video}, image={available_image}); plano de inspecao "
+            f"video={inspect_video}, image={inspect_image}, inspect_top={inspect_top}"
+            + (" por tipo, prioridade=video." if prefer_video_candidates else "."),
+            flush=True,
         )
 
         inspected = []
+        skipped_records: list[dict] = []
         for index, candidate in shortlist:
+            candidate_kind = str(candidate.get("kind") or "").strip().casefold()
+            provider_id, safe_url, downloader = _candidate_log_reference(candidate, index)
+            source_key = _candidate_source_key(candidate)
+            if prefer_video_candidates and source_key and source_key in reserved_candidate_sources:
+                skipped_records.append({
+                    "candidate_index": index,
+                    "name": str(candidate.get("name") or ""),
+                    "kind": candidate_kind,
+                    "visual_score": None,
+                    "selection_score": None,
+                    "inspection_status": "skipped_duplicate_in_current_resolution",
+                    "eligible_for_auto_selection": False,
+                    "warnings": ["duplicate_in_current_resolution"],
+                })
+                if candidate_kind == "video":
+                    print(
+                        f"VIDEO_RESULT slot={slot_id} candidate={index} id={provider_id} "
+                        f"downloader={downloader} acquisition=NOT_RUN status=SKIPPED "
+                        "reason=duplicate_in_current_resolution",
+                        flush=True,
+                    )
+                continue
+            if candidate_kind == "video":
+                print(
+                    f"VIDEO_ATTEMPT slot={slot_id} candidate={index} id={provider_id} "
+                    f"url={safe_url} downloader={downloader}",
+                    flush=True,
+                )
             try:
                 result, inspection, reasons = _inspect_candidate(project_root, slot, candidate, index)
                 record = _score_record(index, candidate, result, inspection, reasons)
                 inspected.append((record["selection_score"], -record["editorial_rank"], candidate, result, inspection, reasons, record))
                 status = "ELIGIBLE" if not reasons else "SCORED_ONLY"
                 print(f"Visual candidate {status} {slot_id}[{index}]: {result.kind} score={inspection.visual_score:.1f}")
+                if candidate_kind == "video":
+                    gate_reasons = ",".join(reasons) if reasons else "none"
+                    print(
+                        f"VIDEO_RESULT slot={slot_id} candidate={index} id={provider_id} "
+                        f"downloader={downloader} acquisition=SUCCESS "
+                        f"status={status} score={inspection.visual_score:.1f} "
+                        f"trim_safe={inspection.trim_safe} reasons={gate_reasons}",
+                        flush=True,
+                    )
             except Exception as exc:
-                failures.append(f"{slot_id}[{index}]: {exc}")
-                print(f"::warning::Visual candidate FAIL {slot_id}[{index}]: {exc}")
+                reason = _safe_log_text(exc)
+                failures.append(f"{slot_id}[{index}]: {reason}")
+                if candidate_kind == "video":
+                    print(
+                        f"::warning::VIDEO_RESULT slot={slot_id} candidate={index} "
+                        f"id={provider_id} downloader={downloader} acquisition=FAIL "
+                        f"status=FAIL reason={reason}",
+                        flush=True,
+                    )
+                else:
+                    print(f"::warning::Visual candidate FAIL {slot_id}[{index}]: {reason}")
 
-        inspected.sort(key=lambda item: (item[0], item[1]), reverse=True)
-        candidate_scores[slot_id] = [item[6] for item in inspected]
+        inspected.sort(
+            key=lambda item: (
+                1
+                if prefer_video_candidates and item[3].kind == "video" and not item[5]
+                else 0,
+                item[0],
+                item[1],
+            ),
+            reverse=True,
+        )
+        candidate_scores[slot_id] = [item[6] for item in inspected] + skipped_records
         shortlisted = {index for index, _candidate in shortlist}
         candidate_scores[slot_id].extend({
             "candidate_index": index,
             "name": str(candidate.get("name") or ""),
-            "kind": target_kind,
+            "kind": str(candidate.get("kind") or "").strip().casefold(),
             "visual_score": None,
             "selection_score": None,
             "inspection_status": "outside_shortlist",
@@ -380,7 +562,11 @@ def resolve_episode(project_root: Path, slug: str) -> int:
                     "status": "kept_existing_asset",
                     "kind": target_kind,
                     "visual_score": best_score,
-                    "reason": "no_render_safe_same_kind_candidate",
+                    "reason": (
+                        "no_render_safe_candidate"
+                        if prefer_video_candidates
+                        else "no_render_safe_same_kind_candidate"
+                    ),
                 }
                 if best_score is None:
                     print(f"::warning::Visual slot {slot_id}: nenhum candidato {target_kind} inspecionado; mantendo asset existente.")
@@ -400,6 +586,9 @@ def resolve_episode(project_root: Path, slug: str) -> int:
 
         score, _rank, candidate, result, inspection, reasons, _record = chosen
         resolved_entries[slot_id] = _asset_entry(slot_id, candidate, result)
+        source_key = _candidate_source_key(candidate)
+        if source_key:
+            reserved_candidate_sources.add(source_key)
         selections[slot_id] = {
             "status": "selected",
             "selection_mode": selection_mode,
@@ -428,6 +617,17 @@ def resolve_episode(project_root: Path, slug: str) -> int:
                 ))
         suffix = "" if selection_mode == "eligible" else " (fallback do mesmo tipo)"
         print(f"Visual selected {slot_id}: {result.name} score={score:.1f}{suffix}")
+        if result.kind == "video":
+            provider_id, safe_url, _downloader = _candidate_log_reference(
+                candidate,
+                int(_record["candidate_index"]),
+            )
+            print(
+                f"VIDEO_SELECTED slot={slot_id} id={provider_id} url={safe_url} "
+                f"score={score:.1f} "
+                f"file={_safe_log_text(resolved_entries[slot_id].get('file'), '<unknown>')}",
+                flush=True,
+            )
 
     replaced_ids = set(resolved_entries)
     assets["assets"] = [
@@ -491,11 +691,15 @@ def resolve_episode(project_root: Path, slug: str) -> int:
     return 0
 
 
-def main() -> int:
+def main(*, prefer_video_candidates: bool = False) -> int:
     parser = argparse.ArgumentParser(description="Inspeciona pools visuais, informa scores e resolve candidatos sem bloquear o render.")
     parser.add_argument("episode", help="Slug do episodio")
     args = parser.parse_args()
-    return resolve_episode(Path(__file__).resolve().parent, args.episode)
+    return resolve_episode(
+        Path(__file__).resolve().parent,
+        args.episode,
+        prefer_video_candidates=prefer_video_candidates,
+    )
 
 
 if __name__ == "__main__":

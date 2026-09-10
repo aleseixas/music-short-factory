@@ -29,6 +29,9 @@ CURRENT_EPISODE = ""
 WEB_DOWNLOADED_PATHS: dict[str, Path] = {}
 IMAGE_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".webp"})
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
+KNOWN_REDIRECT_HOSTS = {
+    "commons.wikimedia.org": ("commons.wikimedia.org", "upload.wikimedia.org"),
+}
 YOUTUBE_PO_PROVIDER_IMAGE = "brainicism/bgutil-ytdlp-pot-provider:1.3.2"
 YOUTUBE_PO_PROVIDER_CONTAINER = "music-short-factory-bgutil"
 YOUTUBE_PO_PROVIDER_HOST = "127.0.0.1"
@@ -153,6 +156,7 @@ def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearch
             f"{slot_id}[{index}]: extensao {suffix or '<ausente>'} nao suportada para {kind}."
         )
 
+    allowed_hosts = KNOWN_REDIRECT_HOSTS.get(host, (host,))
     return VisualSearchResult(
         provider_id=provider_id,
         name=name,
@@ -172,7 +176,7 @@ def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearch
         mime_type=str(candidate.get("mime_type") or "") or None,
         thumbnail_url=_safe_https_url(candidate.get("thumbnail_url")) or None,
         download_url=raw_url,
-        allowed_download_hosts=(host,),
+        allowed_download_hosts=allowed_hosts,
         download_note=(
             "general web direct-media candidate; rights metadata is non-blocking"
         ),
@@ -450,7 +454,7 @@ def main() -> int:
     if len(sys.argv) >= 2:
         CURRENT_EPISODE = str(sys.argv[1]).strip()
     _install_patches()
-    return legacy.main()
+    return legacy.main(prefer_video_candidates=True)
 
 
 if __name__ == "__main__":

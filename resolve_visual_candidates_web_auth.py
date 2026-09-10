@@ -4,7 +4,8 @@ import atexit
 import os
 from pathlib import Path
 import tempfile
-from urllib.parse import urlparse
+import re
+from urllib.parse import parse_qs, urlparse
 
 import engine.visual_search_web as web_engine
 import resolve_visual_candidates_web as resolver
@@ -38,6 +39,17 @@ def _is_youtube_target(raw: object) -> bool:
 def _is_auth_error(exc: BaseException) -> bool:
     text = str(exc).casefold()
     return any(marker in text for marker in AUTH_ERROR_MARKERS)
+
+
+def _youtube_log_id(raw: object) -> str:
+    parsed = urlparse(str(raw or "").strip())
+    host = (parsed.hostname or "").casefold()
+    if host == "youtu.be":
+        candidate = parsed.path.strip("/").split("/", 1)[0]
+    else:
+        candidate = (parse_qs(parsed.query).get("v") or [""])[0]
+    cleaned = re.sub(r"[^A-Za-z0-9._-]+", "_", candidate).strip("._")
+    return cleaned[:100] or "unknown"
 
 
 def _remove_cookie_file(path: Path) -> None:
@@ -132,17 +144,46 @@ def _install_cookie_fallback() -> None:
                     if not _is_youtube_target(url) or not _is_auth_error(exc):
                         raise
 
+                    video_id = _youtube_log_id(url)
+                    primary_detail = web_engine._safe_yt_dlp_diagnostic(exc)
                     print(
-                        "YouTube web: tentativa primaria bloqueada; "
-                        "repetindo candidato com cookies de fallback "
-                        "(client web_embedded + Node EJS)."
+                        f"YT_DLP_AUTH id={video_id} primary=FAIL reason="
+                        f"{primary_detail}; fallback=cookies_web_embedded",
+                        flush=True,
                     )
                     fallback_params = _with_cookie_fallback_options(
                         self._cookie_fallback_params,
                         cookie_file,
                     )
-                    with CookieYoutubeDL(fallback_params) as fallback_ydl:
-                        return fallback_ydl.extract_info(url, *args, **kwargs)
+                    try:
+                        with CookieYoutubeDL(fallback_params) as fallback_ydl:
+                            result = fallback_ydl.extract_info(url, *args, **kwargs)
+                    except _CookieDownloadError as fallback_exc:
+                        fallback_detail = web_engine._safe_yt_dlp_diagnostic(fallback_exc)
+                        print(
+                            f"YT_DLP_AUTH id={video_id} fallback=FAIL reason="
+                            f"{fallback_detail}",
+                            flush=True,
+                        )
+                        raise DownloadError(
+                            "tentativa primaria bloqueada: "
+                            f"{primary_detail}; fallback com cookies falhou: "
+                            f"{fallback_detail}"
+                        ) from fallback_exc
+                    except Exception as fallback_exc:
+                        fallback_detail = web_engine._safe_yt_dlp_diagnostic(fallback_exc)
+                        print(
+                            f"YT_DLP_AUTH id={video_id} fallback=FAIL reason="
+                            f"{fallback_detail}",
+                            flush=True,
+                        )
+                        raise DownloadError(
+                            "tentativa primaria bloqueada: "
+                            f"{primary_detail}; fallback com cookies falhou: "
+                            f"{fallback_detail}"
+                        ) from fallback_exc
+                    print(f"YT_DLP_AUTH id={video_id} fallback=SUCCESS", flush=True)
+                    return result
 
         return CookieFallbackYoutubeDL, DownloadError
 

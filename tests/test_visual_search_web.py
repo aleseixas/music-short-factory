@@ -1,11 +1,19 @@
 from __future__ import annotations
 
+from contextlib import redirect_stdout
+import io
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 
-from engine.visual_search import VisualInspection, VisualSearchResult, search_visual
+import engine.visual_search_web as visual_search_web
+from engine.visual_search import (
+    VisualInspection,
+    VisualSearchError,
+    VisualSearchResult,
+    search_visual,
+)
 from engine.visual_search_web import (
     RIGHTS_RESTRICTED_PENALTY,
     DuckDuckGoWebImageProvider,
@@ -225,6 +233,186 @@ class WebImageProviderTests(unittest.TestCase):
         self.assertEqual(len(report.results), 1)
         self.assertEqual(report.results[0].provider_id, "fallback")
         self.assertTrue(report.warnings)
+
+
+class WebVideoDownloadTests(unittest.TestCase):
+    @staticmethod
+    def _candidate() -> VisualSearchResult:
+        return VisualSearchResult(
+            provider_id="-safe-video-id",
+            name="Fixture video",
+            kind="video",
+            source="youtube",
+            source_page_url="https://www.youtube.com/watch?v=-safe-video-id",
+            creator="Fixture",
+            license="",
+            license_url="",
+            attribution="Fixture",
+            search_provider="youtube_web",
+        )
+
+    def test_yt_dlp_failure_keeps_concrete_reason_and_redacts_secrets(self):
+        class FakeDownloadError(Exception):
+            pass
+
+        class FailingYoutubeDL:
+            def __init__(self, _options):
+                pass
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return None
+
+            def extract_info(self, _url, download=True):
+                self.assert_download = download
+                raise FakeDownloadError(
+                    "Requested format is not available at https://cdn.example/file "
+                    "Authorization: Bearer BEARER_SECRET "
+                    "Cookie: SID=COOKIE_SECRET; HSID=SECOND_COOKIE_SECRET "
+                    "po_token=PO_SECRET access_token=ACCESS_SECRET"
+                )
+
+        with tempfile.TemporaryDirectory() as directory:
+            output = io.StringIO()
+            with (
+                patch.object(
+                    visual_search_web,
+                    "_yt_dlp_api",
+                    return_value=(FailingYoutubeDL, FakeDownloadError),
+                ),
+                redirect_stdout(output),
+                self.assertRaisesRegex(VisualSearchError, "Requested format is not available"),
+            ):
+                visual_search_web._download_web_video(
+                    Path(directory),
+                    self._candidate(),
+                )
+
+        logs = output.getvalue()
+        self.assertIn("YT_DLP_ATTEMPT id=-safe-video-id", logs)
+        self.assertIn("YT_DLP_RESULT id=-safe-video-id status=FAIL", logs)
+        self.assertIn("Requested format is not available", logs)
+        self.assertNotIn("cdn.example", logs)
+        for secret in (
+            "BEARER_SECRET",
+            "COOKIE_SECRET",
+            "SECOND_COOKIE_SECRET",
+            "PO_SECRET",
+            "ACCESS_SECRET",
+        ):
+            self.assertNotIn(secret, logs)
+
+    def test_success_is_cached_by_youtube_id_without_another_yt_dlp_call(self):
+        calls: list[dict] = []
+
+        class FakeDownloadError(Exception):
+            pass
+
+        class SuccessfulYoutubeDL:
+            def __init__(self, options):
+                self.options = options
+                calls.append(options)
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return None
+
+            def extract_info(self, _url, download=True):
+                target = Path(self.options["outtmpl"].replace("%(ext)s", "mp4"))
+                target.write_bytes(b"synthetic-video")
+                return {"id": "-safe-video-id", "ext": "mp4", "_filename": str(target)}
+
+            def prepare_filename(self, info):
+                return info["_filename"]
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first_logs = io.StringIO()
+            with (
+                patch.object(
+                    visual_search_web,
+                    "_yt_dlp_api",
+                    return_value=(SuccessfulYoutubeDL, FakeDownloadError),
+                ),
+                redirect_stdout(first_logs),
+            ):
+                first = visual_search_web._download_web_video(root, self._candidate())
+            self.assertTrue(first.is_file())
+            self.assertEqual(len(calls), 1)
+            self.assertIn("status=DOWNLOADED", first_logs.getvalue())
+
+            second_logs = io.StringIO()
+            with (
+                patch.object(
+                    visual_search_web,
+                    "_yt_dlp_api",
+                    side_effect=AssertionError("yt-dlp must not be loaded on cache hit"),
+                ),
+                patch.object(visual_search_web, "probe_video_stream"),
+                redirect_stdout(second_logs),
+            ):
+                second = visual_search_web._download_web_video(root, self._candidate())
+            self.assertEqual(second, first)
+            self.assertIn("status=CACHE_HIT", second_logs.getvalue())
+
+    def test_corrupt_cache_is_removed_and_downloaded_again(self):
+        calls: list[dict] = []
+
+        class FakeDownloadError(Exception):
+            pass
+
+        class SuccessfulYoutubeDL:
+            def __init__(self, options):
+                self.options = options
+                calls.append(options)
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return None
+
+            def extract_info(self, _url, download=True):
+                target = Path(self.options["outtmpl"].replace("%(ext)s", "mp4"))
+                target.write_bytes(b"fresh-video")
+                return {"id": "-safe-video-id", "ext": "mp4", "_filename": str(target)}
+
+            def prepare_filename(self, info):
+                return info["_filename"]
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            candidate = self._candidate()
+            safe_id = visual_search_web._safe_component(candidate.provider_id)[:54]
+            digest = visual_search_web._stable_web_id(candidate.provider_id)[:12]
+            cached = root / "cache" / "video" / f"web-{safe_id}-{digest}.mp4"
+            cached.parent.mkdir(parents=True)
+            cached.write_bytes(b"corrupt-cache")
+            output = io.StringIO()
+            with (
+                patch.object(
+                    visual_search_web,
+                    "probe_video_stream",
+                    side_effect=RuntimeError("ffprobe found no video stream"),
+                ),
+                patch.object(
+                    visual_search_web,
+                    "_yt_dlp_api",
+                    return_value=(SuccessfulYoutubeDL, FakeDownloadError),
+                ),
+                redirect_stdout(output),
+            ):
+                downloaded = visual_search_web._download_web_video(root, candidate)
+
+            self.assertEqual(downloaded, cached)
+            self.assertEqual(downloaded.read_bytes(), b"fresh-video")
+            self.assertEqual(len(calls), 1)
+            self.assertIn("status=CACHE_INVALID", output.getvalue())
+            self.assertIn("status=DOWNLOADED", output.getvalue())
 
 
 if __name__ == "__main__":

@@ -27,7 +27,20 @@ YouTube web: cookies de fallback configurados; PO/default continua sendo a prime
 Cookies are actually used only after an authentication/bot failure, which prints:
 
 ```text
-YouTube web: tentativa primaria bloqueada; repetindo candidato com cookies de fallback.
+YT_DLP_AUTH id=<youtube_id> primary=FAIL reason=<motivo>; fallback=cookies_web_embedded
+YT_DLP_AUTH id=<youtube_id> fallback=SUCCESS
 ```
 
 A normal successful PO Token request never reaches the cookie retry.
+
+Candidate diagnostics use these events:
+
+```text
+VIDEO_ATTEMPT slot=<slot> candidate=<n> id=<youtube_id> url=<canonical_url> downloader=yt-dlp
+YT_DLP_RESULT id=<youtube_id> status=DOWNLOADED|CACHE_HIT|CACHE_INVALID|FAIL ...
+VIDEO_RESULT slot=<slot> candidate=<n> id=<youtube_id> downloader=yt-dlp acquisition=SUCCESS|FAIL status=ELIGIBLE|SCORED_ONLY|FAIL ...
+VIDEO_SELECTED slot=<slot> id=<youtube_id> ...
+```
+
+On failure, the reason is retained in sanitized form. Cookie contents, tokens,
+private query strings and the temporary cookie file are never printed.

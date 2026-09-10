@@ -102,14 +102,16 @@ selection_score = clamp(visual_score + repetition_penalty + rights_rank_adjustme
 
 Portanto um candidato `restricted` muito melhor visualmente ainda pode vencer um candidato `unknown` fraco. `rights_status` é metadata de decisão, não garantia jurídica de licença e não deve ser inventado.
 
-## Vídeo compete com vídeo; imagem compete com imagem
+## Prioridade de vídeo e fallback de imagem
 
-A resolução de candidatos preserva a regra atual:
+Na resolução web da Action, vídeos e imagens formam shortlists separadas. Um
+vídeo elegível é escolhido antes da imagem, independentemente de o asset-base
+temporário ser uma imagem. Imagens continuam como fallback quando downloads,
+trim, validação ou qualidade dos vídeos não forem suficientes. A CLI legada de
+URLs diretas continua preservando o tipo do asset-base.
 
-- slot-base `video` recebe/avalia somente candidatos `video`;
-- slot-base `image` recebe/avalia somente candidatos `image`.
-
-Nunca deixe uma imagem vencer um pool de vídeos ou um vídeo vencer um pool de imagens apenas por score.
+Não compare tipos apenas pelo número bruto do score: primeiro aplique os gates
+técnicos do vídeo; depois respeite a prioridade editorial de movimento real.
 
 ## REGRA CRÍTICA: nunca repetir imagem ou vídeo entre shots
 
@@ -168,6 +170,17 @@ se vencer: cópia temporária para episodes/<slug>/assets/
         ↓
 generate.py
 ```
+
+No resolver web, `inspect_top` é aplicado separadamente por tipo. Por exemplo,
+um slot com `inspect_top: 4`, quatro vídeos e uma imagem tenta até quatro vídeos
+e também a imagem de fallback. Um vídeo tecnicamente válido tem prioridade;
+imagem só vence quando nenhum vídeo elegível permanece. O tipo do asset-base
+não elimina os candidatos de vídeo antes da inspeção.
+
+Os logs por slot informam `video=<N>, image=<N>` no pool e no plano de inspeção.
+Cada candidato YouTube gera `VIDEO_ATTEMPT`, `YT_DLP_RESULT` e `VIDEO_RESULT`;
+o vencedor gera `VIDEO_SELECTED`. URLs de diagnóstico são canônicas e erros são
+sanitizados para não exibir cookies, tokens ou query strings privadas.
 
 A cópia para `episodes/<slug>/assets/` acontece somente no workspace da Action para permitir o render. Ela não é commitada automaticamente no repositório.
 

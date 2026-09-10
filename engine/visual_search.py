@@ -642,7 +642,7 @@ def inspect_visual_result(
             cache_dir,
             result.suggested_file or "visual.bin",
             f"candidato visual {result.provider_id!r}",
-            allowed_hosts={host},
+            allowed_hosts=set(result.allowed_download_hosts),
             require_https=True,
             max_bytes=max_bytes,
         )

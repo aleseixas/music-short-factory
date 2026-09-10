@@ -614,15 +614,49 @@ def _parse_youtube_result(raw: dict[object, object], rank: int) -> VisualSearchR
 
 
 def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
-    YoutubeDL, DownloadError = _yt_dlp_api()
     cache_dir = media_cache_directory(project_root.resolve(), None, "video")
     cache_dir.mkdir(parents=True, exist_ok=True)
-    stem = _safe_component(f"web-{result.provider_id}-{Path(result.name).stem}")[:80]
+    raw_id = str(result.provider_id or "video")
+    log_id = re.sub(r"[^A-Za-z0-9._-]+", "_", raw_id).strip("._")[:100] or "video"
+    safe_id = _safe_component(raw_id)[:54]
+    source_digest = _stable_web_id(raw_id)[:12]
+    stem = _safe_component(f"web-{safe_id}-{source_digest}")[:80]
+    legacy_prefix = _safe_component(f"web-{raw_id}")[:70]
+    cache_candidates: list[Path] = []
     for suffix in VIDEO_ASSET_EXTENSIONS:
-        cached = cache_dir / f"{stem}{suffix}"
-        if cached.is_file() and 0 < cached.stat().st_size <= MAX_EXTERNAL_VIDEO_BYTES:
-            return cached
+        cache_candidates.append(cache_dir / f"{stem}{suffix}")
+        cache_candidates.extend(sorted(cache_dir.glob(f"{legacy_prefix}-*{suffix}")))
+    for cached in dict.fromkeys(cache_candidates):
+        if not cached.is_file():
+            continue
+        cached_size = cached.stat().st_size
+        if not 0 < cached_size <= MAX_EXTERNAL_VIDEO_BYTES:
+            cached.unlink(missing_ok=True)
+            print(
+                f"YT_DLP_RESULT id={log_id} status=CACHE_INVALID "
+                "reason=empty_or_oversized; retrying=download",
+                flush=True,
+            )
+            continue
+        try:
+            probe_video_stream(cached)
+        except (OSError, RuntimeError) as exc:
+            cached.unlink(missing_ok=True)
+            detail = _safe_yt_dlp_diagnostic(exc)
+            print(
+                f"YT_DLP_RESULT id={log_id} status=CACHE_INVALID "
+                f"reason={detail}; retrying=download",
+                flush=True,
+            )
+            continue
+        print(
+            f"YT_DLP_RESULT id={log_id} status=CACHE_HIT "
+            f"container={cached.suffix.casefold()} bytes={cached_size}",
+            flush=True,
+        )
+        return cached
 
+    YoutubeDL, DownloadError = _yt_dlp_api()
     outtmpl = str(cache_dir / f"{stem}.%(ext)s")
     options = {
         "quiet": True,
@@ -636,15 +670,26 @@ def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
             "bestvideo[height<=720]/best[height<=720]"
         ),
     }
+    print(
+        f"YT_DLP_ATTEMPT id={log_id} "
+        f"url=https://www.youtube.com/watch?v={log_id}",
+        flush=True,
+    )
     try:
         with YoutubeDL(options) as ydl:
             info = ydl.extract_info(result.source_page_url, download=True)
             prepared = Path(ydl.prepare_filename(info)) if isinstance(info, dict) else None
     except DownloadError as exc:
-        raise VisualSearchError("Falha ao obter video web; continuando com o pool.") from exc
-    except Exception as exc:
+        detail = _safe_yt_dlp_diagnostic(exc)
+        print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
         raise VisualSearchError(
-            f"Falha ao obter video web ({type(exc).__name__}); continuando com o pool."
+            f"yt-dlp falhou ao obter o video id={log_id}: {detail}"
+        ) from exc
+    except Exception as exc:
+        detail = _safe_yt_dlp_diagnostic(exc)
+        print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
+        raise VisualSearchError(
+            f"yt-dlp falhou ao obter o video id={log_id}: {detail}"
         ) from exc
 
     candidates: list[Path] = []
@@ -657,8 +702,41 @@ def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
             and candidate.suffix.casefold() in VIDEO_ASSET_EXTENSIONS
             and 0 < candidate.stat().st_size <= MAX_EXTERNAL_VIDEO_BYTES
         ):
+            print(
+                f"YT_DLP_RESULT id={log_id} status=DOWNLOADED "
+                f"container={candidate.suffix.casefold()} bytes={candidate.stat().st_size}",
+                flush=True,
+            )
             return candidate
-    raise VisualSearchError("Video web nao gerou arquivo suportado; continuando com o pool.")
+    detail = "yt-dlp terminou sem gerar um arquivo de video suportado"
+    print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
+    raise VisualSearchError(f"Video web id={log_id}: {detail}.")
+
+
+def _safe_yt_dlp_diagnostic(exc: BaseException) -> str:
+    """Keep the actionable yt-dlp reason while redacting URLs and credentials."""
+    text = re.sub(r"\x1b\[[0-9;]*m", "", str(exc or ""))
+    text = re.sub(r"[\x00-\x1f\x7f]+", " ", text).strip()
+    text = re.sub(r"https?://\S+", "<url>", text, flags=re.IGNORECASE)
+    text = re.sub(
+        r"(?i)\bauthorization\s*[:=]\s*(?:bearer\s+)?[^\s,;|]+",
+        "authorization=<redacted>",
+        text,
+    )
+    text = re.sub(
+        r"(?i)\bcookies?\s*[:=]\s*[^;\s,|]+"
+        r"(?:\s*[;,]\s*[^;\s,|]+)*",
+        "cookie=<redacted>",
+        text,
+    )
+    text = re.sub(r"(?i)\bbearer\s+[^\s,;|]+", "Bearer <redacted>", text)
+    text = re.sub(
+        r"(?i)\b(access[_ -]?token|password|secret|po[_ -]?token)"
+        r"\s*[:=]\s*[^\s,;|]+",
+        r"\1=<redacted>",
+        text,
+    )
+    return (text or type(exc).__name__)[:500]
 
 
 def _yt_dlp_api():
