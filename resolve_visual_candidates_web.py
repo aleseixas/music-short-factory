@@ -42,6 +42,14 @@ YOUTUBE_PO_PROVIDER_HOST = "127.0.0.1"
 YOUTUBE_PO_PROVIDER_PORT = 4416
 YOUTUBE_PO_PROVIDER_URL = f"http://{YOUTUBE_PO_PROVIDER_HOST}:{YOUTUBE_PO_PROVIDER_PORT}"
 _LEGACY_CANDIDATE_SOURCE_KEY = legacy._candidate_source_key
+SEMANTIC_FIT_RANK = {
+    "generic": 0,
+    "contextual": 1,
+    "direct": 2,
+    "exact": 3,
+}
+SEMANTIC_RANKING_BAND = 25.0
+SEMANTIC_TECHNICAL_SPAN = 24.99
 
 
 @dataclass(frozen=True)
@@ -78,6 +86,59 @@ def _kind(candidate: dict) -> str:
     if value not in {"image", "video"}:
         raise RuntimeError("kind deve ser image ou video")
     return value
+
+
+def _semantic_fit(candidate: dict) -> str | None:
+    value = str(candidate.get("semantic_fit") or "").strip().casefold()
+    return value if value in SEMANTIC_FIT_RANK else None
+
+
+def _semantic_rank(candidate: dict) -> int:
+    fit = _semantic_fit(candidate)
+    return SEMANTIC_FIT_RANK.get(fit, -1)
+
+
+def _semantic_ranking_score(candidate: dict, technical_selection_score: float) -> float:
+    """Return a 0-100 lexicographic score: semantic tier first, technical score second.
+
+    Pools created before semantic_fit keep the previous raw technical selection score.
+    When semantic_fit is present, each tier occupies a non-overlapping 25-point band,
+    so a technically excellent generic candidate cannot beat a direct/exact candidate.
+    """
+    fit = _semantic_fit(candidate)
+    technical = max(0.0, min(100.0, float(technical_selection_score)))
+    if fit is None:
+        return round(technical, 2)
+    band_start = SEMANTIC_FIT_RANK[fit] * SEMANTIC_RANKING_BAND
+    return round(
+        min(99.99, band_start + (technical / 100.0) * SEMANTIC_TECHNICAL_SPAN),
+        2,
+    )
+
+
+def _best_explicit_semantic_rank(slot: dict) -> int | None:
+    candidates = slot.get("candidates")
+    if not isinstance(candidates, list):
+        return None
+    ranks = [
+        _semantic_rank(candidate)
+        for candidate in candidates
+        if isinstance(candidate, dict) and _semantic_fit(candidate) is not None
+    ]
+    return max(ranks) if ranks else None
+
+
+def _semantic_gate_reason(slot: dict, candidate: dict) -> str | None:
+    """Keep video-first fallback from overriding a better semantic tier across media types."""
+    best_rank = _best_explicit_semantic_rank(slot)
+    fit = _semantic_fit(candidate)
+    if best_rank is None or fit is None:
+        return None
+    current_rank = SEMANTIC_FIT_RANK[fit]
+    if current_rank >= best_rank:
+        return None
+    best_fit = next(name for name, rank in SEMANTIC_FIT_RANK.items() if rank == best_rank)
+    return f"semantic_below_{best_fit}"
 
 
 def _explicit_rights_status(candidate: dict, result: VisualSearchResult) -> str:
@@ -332,6 +393,9 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
             reasons.append("unsafe_trim")
         if base.is_practically_static is True:
             reasons.append("practically_static")
+    semantic_reason = _semantic_gate_reason(slot, candidate)
+    if semantic_reason:
+        reasons.append(semantic_reason)
 
     status = _explicit_rights_status(candidate, result)
     ranked = RankedInspection(
@@ -345,12 +409,18 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
 
 
 def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspection, reasons: list[str]) -> dict:
+    technical_selection_score = inspection.visual_score
+    fit = _semantic_fit(candidate)
+    final_ranking_score = _semantic_ranking_score(candidate, technical_selection_score)
     return {
         "candidate_index": index,
         "name": result.name,
         "kind": result.kind,
         "visual_score": inspection.technical_visual_score,
-        "selection_score": inspection.visual_score,
+        "selection_score": final_ranking_score,
+        "technical_selection_score": technical_selection_score,
+        "semantic_fit": fit or "unspecified",
+        "semantic_rank": SEMANTIC_FIT_RANK.get(fit) if fit is not None else None,
         "repetition": inspection.repetition.as_dict() if inspection.repetition else None,
         "downgraded_for_repetition": bool(inspection.repetition and inspection.repetition.is_repeated),
         "rights_status": inspection.rights_status,
@@ -440,8 +510,12 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
 
 
 def _metadata_priority(candidate: dict, index: int):
-    # Keep editorial/technical pre-ranking dominant. Rights are intentionally not a hard gate.
-    return legacy._metadata_priority_original(candidate, index)
+    # Semantic fit decides the inspection order when authored; technical/editorial
+    # metadata remains the tie-breaker. Unlabelled legacy pools keep rank -1.
+    return (
+        _semantic_rank(candidate),
+        *legacy._metadata_priority_original(candidate, index),
+    )
 
 
 def _port_is_open(host: str, port: int) -> bool:
