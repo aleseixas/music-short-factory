@@ -1,0 +1,33 @@
+FONTES FACTUAIS
+
+1. UOL Toca — 06/09/2026 — Após chuva e atraso, Avenged Sevenfold fecha noite mais pesada do festival
+https://www.uol.com.br/toca/noticias/2026/09/06/apos-chuva-e-atraso-avenged-sevenfold-fecha-noite-mais-pesada-do-festival.htm
+Base factual: recepção morna a MGK por parte do público que aguardava Avenged Sevenfold; discussão nas redes; M. Shadows pediu respeito, lembrou que artistas do line-up são amigos e citou MGK, Bad Omens, Poppy e Bring Me The Horizon.
+
+2. Folha de S.Paulo — 06/09/2026 — Avenged Sevenfold perde urgência em show arrastado na volta ao Rock in Rio
+https://www1.folha.uol.com.br/ilustrada/2026/09/avenged-sevenfold-perde-urgencia-em-show-arrastado-na-volta-ao-rock-in-rio.shtml
+Base factual: M. Shadows disse ter visto negatividade no X sobre festival/bandas, afirmou que as bandas são amigas, pediu para o público não perder tempo com rivalidade e em seguida puxou Seize the Day.
+
+3. Diário do Grande ABC — 05/09/2026 — 'Mesmo que não me amem, eu amo vocês', desabafa MGK no Rock In Rio diante de reação da plateia
+https://diariodograndeabc.com.br/Noticia/4345387/-mesmo-que-nao-me-amem-eu-amo-voces-desabafa-mgk-no-rock-in-rio-diante-de-reacao-da-plateia
+Base factual: MGK reconheceu que parte do público questionava sua presença e disse que estava ali pelos fãs e para tentar conquistar novos fãs.
+
+4. Gshow — 05/09/2026 — MGK impacta com pintura sobre tatuagem blackout e visual punk
+https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/mgk-impacta-com-pintura-sobre-tatuagem-blackout-e-visual-punk-veja-transformacoes.ghtml
+Base factual: MGK no Palco Mundo no segundo dia do Rock in Rio 2026 e contexto visual da apresentação.
+
+VÍDEOS CANDIDATOS PESQUISADOS
+https://www.youtube.com/watch?v=Z6cozBYv4fg — Avenged Sevenfold - Rock in Rio 2026
+https://www.youtube.com/watch?v=GcSDq96QNns — The Stage - Avenged Sevenfold - Rock in Rio 2026
+https://www.youtube.com/watch?v=H6w3xs4gzHY — Hail to the King no Rock in Rio 2026 / Globoplay
+https://www.youtube.com/watch?v=R0WNd6bUb3E — Avenged Sevenfold Rock in Rio 2026 full show
+https://www.youtube.com/watch?v=k7pVx2JxFt4 — Avenged Sevenfold Allianz Parque São Paulo 2026
+https://www.youtube.com/watch?v=wK-8TCDrbV8 — MGK - I Think I'm OKAY official video
+https://www.youtube.com/watch?v=9YUBm2OqglM — MGK - my ex's best friend live performance
+https://www.youtube.com/watch?v=09IxI6_SyQc — MGK - my ex's best friend live Atlanta 2026
+
+IMAGENS BASE
+Wikimedia Commons: M. Shadows / Avenged Sevenfold / Machine Gun Kelly. URLs individuais estão registradas em assets.json e visual_candidates.json; licenças e autoria devem ser verificadas nas páginas-fonte do Commons antes de eventual uso final.
+
+BACKGROUND — PESQUISA EXTERNAL-FIRST
+Foram comparadas buscas por dark rock documentary, cinematic rock conflict, heavy guitar documentary, modern metal background e dramatic festival rock. Candidatas examinadas incluíram WELC0MEИ0 — 190729 Heavy/Battle/Guitar/Dark/Hard/Noise; AtlasAudio — Tension Documentary; The_Mountain — Upbeat Event; Tunetank — Dramatic Rock Music; kornevmusic — Sport Rock Big Beat Dramatic. Algumas opções tinham Content ID explícito ou exigiriam nova integração de catálogo. Para evitar risco e alteração global desnecessária, foi escolhido o profile curado externo existente fallback_social_dark conforme docs/audio-search.md.
