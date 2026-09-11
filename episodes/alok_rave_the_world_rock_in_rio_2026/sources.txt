@@ -1,0 +1,53 @@
+FACTUAL SOURCES
+
+Folha de S.Paulo — Alok aposta na geração Z para manter a pista viva no Rock in Rio (11/09/2026). Base para: Rave the World em 12/09; cerca de 60% do set definido durante a apresentação conforme a energia do público; estratégia de usar visuais no início e incentivar presença em vez de filmar tudo; percepção de Alok sobre a geração Z nas pistas brasileiras.
+https://www1.folha.uol.com.br/folhateen/2026/09/alok-aposta-na-geracao-z-para-manter-a-pista-viva-no-rock-in-rio.shtml
+
+Rock in Rio — página oficial ALOK & FAMILY pres. RAVE THE WORLD. Base para: conceito como releitura moderna da cultura rave; experiência coletiva; uso de som, luz, cenografia e efeitos visuais; apresentação no New Dance Order.
+https://adminrio-hml.rockinrio.com/pt-br/line-up/alok-pres-rave-the-world/
+
+Rock in Rio — line-up oficial de 12/09/2026. Base para: ALOK & FAMILY pres. RAVE THE WORLD, Ekanta & Swarup, Gabe, Adam Sellouk e Bhaskar no New Dance Order.
+https://adminrio-hml.rockinrio.com/line-up/dia/12-set/
+
+POPLine — Alok fará dois shows no Rock in Rio 2026; veja o line-up completo do New Dance Order (07/04/2026). Base para: Keep Art Human em 11/09 no Palco Mundo; Rave the World em 12/09 no New Dance Order; família no palco; convidados Gabe e Adam Sellouk; valores de paz, amor, união, respeito e diversidade associados por Alok à cultura rave.
+https://portalpopline.com.br/alok-dois-shows-rock-in-rio-2026-line-up-completo-new-dance-order/
+
+POPLine — Alok dividirá palco com a família no Greenvalley antes de levar formato de show ao Rock in Rio (13/04/2026). Base para: encontro de Alok com Swarup, Ekanta e Bhaskar em 2026 antes do Rock in Rio e relação da família com a cena eletrônica brasileira.
+https://portalpopline.com.br/alok-dividira-palco-familia-greenvalley-show-rock-in-rio/
+
+The Guardian — can DJ megastar Alok make dance music more sustainable? (23/06/2026). Contexto adicional sobre Rave the World, raízes de psytrance, trajetória familiar e intenção de reconectar o espetáculo a valores pessoais.
+https://www.theguardian.com/music/2026/jun/23/dj-alok-dance-music-sustainable-rave-the-world-tour
+
+VISUAL DISCOVERY — VÍDEOS
+
+Alok Official Artist Channel — Rave The World (16/07/2026). Candidato exact/direct para conceito Rave the World.
+https://www.youtube.com/watch?v=FxKgScdOu6U
+
+Alok Official Artist Channel — 4 DJS. 1 FAMILY. (RAVE THE WORLD - NOVA LIMA/MG) (31/08/2026). Candidato exact para família/Rave the World.
+https://www.youtube.com/watch?v=i5wvNAgp4Y0
+
+Tomorrowland — Alok | Tomorrowland Winter 2026. Candidato direct para performance recente de Alok.
+https://www.youtube.com/watch?v=uIsIyjcLkco
+
+Electronic Live Music — ALOK @ TOMORROWLAND WINTER 2026. Candidato direct para performance recente de Alok.
+https://www.youtube.com/watch?v=iP-t3nMX9wQ
+
+Raf Fender — Alok - Tomorrowland Brazil | Amazing Live Set 2025. Candidato direct para Alok em pista/festival.
+https://www.youtube.com/watch?v=wQsdK0sjp-w
+
+VISUAL DISCOVERY — IMAGENS
+
+Wikimedia Commons — Category:Alok e arquivos de Alok em shows no Brasil. Assets-base de imagem; IA=0.
+https://commons.wikimedia.org/wiki/Category:Alok
+https://commons.wikimedia.org/wiki/File:Alok_no_S%C3%A3o_Jo%C3%A3o_de_Patos.jpg
+https://commons.wikimedia.org/wiki/File:Alok_no_Lounge_037,_Par%C3%A1_de_Minas,_Minas_Gerais.jpg
+https://commons.wikimedia.org/wiki/File:Daniel_Spagnuolo,_Aizza_e_Alok.jpg
+
+BACKGROUND MUSIC — PESQUISA EXTERNAL-FIRST
+
+Consultas cobriram: psytrance/rave; dark techno; festival electronic; trance/futuristic; cyberpunk/club. Foram comparadas candidatas do Pixabay incluindo Dark Techno Background Music, Dark Industrial Techno Rave, Rave Furnace, Industrial Techno Rave e Festival Energy. As opções mais próximas eram marcadas como Content ID Registered ou apresentavam risco/metadata insuficiente para justificar adicionar um profile externo novo nesta rodada; por isso foi usado o fallback curado `fallback_social_modern`, conforme docs/audio-search.md.
+https://pixabay.com/music/dance-dark-techno-background-music-464198/
+https://pixabay.com/music/techno-trance-dark-industrial-techno-rave-distorted-bass-amp-heavy-kick-421431/
+https://pixabay.com/music/electronic-rave-furnace-dark-techno-heavy-kick-amp-vocal-fx-421429/
+https://pixabay.com/music/techno-trance-industrial-techno-rave-with-distorted-synths-amp-heavy-bass-422980/
+https://pixabay.com/music/future-bass-festival-energy-398345/
