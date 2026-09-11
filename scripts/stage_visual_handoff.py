@@ -34,6 +34,37 @@ def _asset_kind(asset: dict | None) -> str | None:
     return None
 
 
+def _final_asset_paths(episode_rel: Path, episode_dir: Path) -> set[Path]:
+    assets_data = _load_json(episode_dir / "assets.json")
+    assets = assets_data.get("assets")
+    if not isinstance(assets, list):
+        raise RuntimeError("VISUAL_HANDOFF_INVALID_ASSETS: assets.json sem lista assets valida.")
+
+    final_paths: set[Path] = set()
+    for asset in assets:
+        if not isinstance(asset, dict):
+            continue
+        raw_file = str(asset.get("file") or "").strip()
+        if not raw_file:
+            continue
+
+        asset_path = Path(raw_file)
+        if asset_path.is_absolute() or ".." in asset_path.parts:
+            raise RuntimeError(
+                "VISUAL_HANDOFF_INVALID_ASSET_PATH: caminho de asset inseguro em assets.json: "
+                f"{raw_file}"
+            )
+
+        if asset_path.parts and asset_path.parts[0] == "assets":
+            episode_asset_rel = asset_path
+        else:
+            episode_asset_rel = Path("assets") / asset_path
+
+        final_paths.add(episode_rel / episode_asset_rel)
+
+    return final_paths
+
+
 def _validate_final_video_semantics(episode_dir: Path) -> None:
     """Never hand an unverified/generic video to the publish runner.
 
@@ -128,8 +159,11 @@ def main() -> int:
         raise RuntimeError(f"Diretorio do episodio nao encontrado: {episode_rel}")
 
     _validate_final_video_semantics(episode_dir)
+    final_asset_paths = _final_asset_paths(episode_rel, episode_dir)
 
     handoff_root = root / ".visual-handoff"
+    if handoff_root.exists():
+        shutil.rmtree(handoff_root)
     handoff_episode = handoff_root / episode_rel
     handoff_episode.mkdir(parents=True, exist_ok=True)
 
@@ -159,10 +193,16 @@ def main() -> int:
         stdout=subprocess.PIPE,
     ).stdout.decode("utf-8", errors="surrogateescape")
 
+    skipped = 0
     for raw in changed.split("\0"):
         if not raw:
             continue
         rel = Path(raw)
+        if rel not in final_asset_paths:
+            skipped += 1
+            print(f"Handoff skip non-final candidate: {rel}")
+            continue
+
         source = root / rel
         if not source.is_file():
             continue
@@ -172,7 +212,10 @@ def main() -> int:
         copied.add(source)
         print(f"Handoff media: {rel}")
 
-    print(f"Visual handoff preparado com {len(copied)} arquivo(s).")
+    print(
+        "Visual handoff preparado "
+        f"com {len(copied)} arquivo(s); {skipped} candidato(s) nao finais ignorados."
+    )
     return 0
 
 
