@@ -1,0 +1,572 @@
+{
+  "schema_version": 1,
+  "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+  "recorded_at": "2026-09-11T12:09:44Z",
+  "visual_usage": [
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "95b1ce77d2f228b1605e42dd48bd4dd309337e06ee5704f7957d83f0b99403f2",
+        "url_hashes": [
+          "42e661b7e8e7ed9f60768fa132f76f4344c414673153e0bae882109587396394"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ecb3b0476ca895d2",
+          "cab065cd49db56d0",
+          "bdf0c54f21397219",
+          "b4fef8d0a84093da",
+          "82784f2770d27ba9",
+          "d212acdd7b3604cb",
+          "c089132d365bed75",
+          "84d89e3b1f06f455"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 8.4
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_02",
+      "asset_id": "dia_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b5e7d624aec16d71d5697363137133b068f061079fffb57717a04e9de1c0d129",
+        "url_hashes": [
+          "179bbed8784673d2d6952b7ba6df224c1675e0d0d6408eea122f9ba52b71e550"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dc95032a2eba7571",
+          "81836e7c7bb76a40",
+          "90803f7f78f06347",
+          "d2ca2a2a2d95357d",
+          "d97f266034963ad2",
+          "d959266076967e83",
+          "d97f266024963ad3",
+          "c97f366076963891"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 9.3
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_03",
+      "asset_id": "visual_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "95b1ce77d2f228b1605e42dd48bd4dd309337e06ee5704f7957d83f0b99403f2",
+        "url_hashes": [
+          "42e661b7e8e7ed9f60768fa132f76f4344c414673153e0bae882109587396394"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ea81163b690e97f2",
+          "84f99c1f0fc1b8c3",
+          "bce0c304db169dda",
+          "bce0c304db169dda",
+          "bce0c304db169dda",
+          "f8e0c305db160f9e",
+          "d87d8a552add03ac",
+          "da3d8a552bd503ac"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 6.6
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_04",
+      "asset_id": "musica_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c07c21a272b21a33249ae43892b66464c2d0f145947e64c11a83d41ca6e6c7b9",
+        "url_hashes": [
+          "bd6d59d3b61482aa0f258327374591e95708e086cd32051e907e6a1a69a8719c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "6b5cec7e545b79e5",
+          "6b5cec7e545b79e5",
+          "c32ac19747cd80df",
+          "d32ac19747cd80de",
+          "d328c19767cd80de",
+          "c220dc6d1bdf361c",
+          "c230dd6d1fcb3618"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.4
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_05",
+      "asset_id": "publico_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b5e7d624aec16d71d5697363137133b068f061079fffb57717a04e9de1c0d129",
+        "url_hashes": [
+          "179bbed8784673d2d6952b7ba6df224c1675e0d0d6408eea122f9ba52b71e550"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d95b266036967e83",
+          "d97b266034963ec3",
+          "d97b26602c963ad3",
+          "d97f2660669638d1",
+          "c97f26607e9638d0",
+          "c96f3660779638d0",
+          "c97f366076963891",
+          "c97f366036963cd0"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 3.1
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_06",
+      "asset_id": "vaias_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "95b1ce77d2f228b1605e42dd48bd4dd309337e06ee5704f7957d83f0b99403f2",
+        "url_hashes": [
+          "42e661b7e8e7ed9f60768fa132f76f4344c414673153e0bae882109587396394"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "da3d8a552bd503ac",
+          "da3d8a552bd503ac",
+          "d27d8a552bd503ac",
+          "cc3032f0cf04b37f",
+          "cc3032f4cb0eb31f",
+          "cc70733cd3c32f0c",
+          "cc32732cd3d32f0c",
+          "cc72774cd392252d"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 3.1
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_07",
+      "asset_id": "resposta_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b5e7d624aec16d71d5697363137133b068f061079fffb57717a04e9de1c0d129",
+        "url_hashes": [
+          "179bbed8784673d2d6952b7ba6df224c1675e0d0d6408eea122f9ba52b71e550"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c96f22607e9f2299",
+          "c96f26607c9f2299",
+          "928d0c707f9f6163",
+          "80897f7e2d716866",
+          "81843e7f7b433664",
+          "82803f3d69f3764a",
+          "808a3f3d79d1726a",
+          "80c02f3f7dd1706e"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 4.3
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_08",
+      "asset_id": "palco_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9077f310c30ba185c0090b14682a4985dfe48d0b839db6981c3d3d61757aa7c4",
+        "url_hashes": [
+          "079070b3745e4aa01b6d59de308de8141f57da39d8d34a4a84d77f68bac76f7e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "6b5cec7e545b79e5",
+          "6b5cec7e545b79e5",
+          "803ec19767cca2de",
+          "803ec19767cca2de",
+          "c223d1ad1ecfa61c",
+          "c233d96d1ecb3618",
+          "c3271bc83e9e6435"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.9
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_09",
+      "asset_id": "virada_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7eaf05df86d78521e600fa5810652acdd6708cd4082920a0f201bde1f7bd083f",
+        "url_hashes": [
+          "81fd63a07b7ffc5d37241704cf4ca42749e32ab91e9b467eaf5dc0a23ad33f1c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cf9830e2839c8f73",
+          "cf9830e7879c8ca3",
+          "c79830c7c79c8cb3",
+          "c79930c7879c8cb3",
+          "c79931c7869c8cb3",
+          "c79938c7c79c84a3",
+          "c69939c6c69c8cb3",
+          "c79838c7879c8cb3"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.6
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_10",
+      "asset_id": "aplausos_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9077f310c30ba185c0090b14682a4985dfe48d0b839db6981c3d3d61757aa7c4",
+        "url_hashes": [
+          "079070b3745e4aa01b6d59de308de8141f57da39d8d34a4a84d77f68bac76f7e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "803ec393678d86de",
+          "803ec397678d82de",
+          "803ec39347cd86de",
+          "fc2f6f1313919161",
+          "cc2f68137395916b",
+          "c42e7813739d916b",
+          "c02e781373bd936a",
+          "c12e711773bd0a6a"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.3
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_11",
+      "asset_id": "simbolo_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c07c21a272b21a33249ae43892b66464c2d0f145947e64c11a83d41ca6e6c7b9",
+        "url_hashes": [
+          "bd6d59d3b61482aa0f258327374591e95708e086cd32051e907e6a1a69a8719c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d338c19347cd80df",
+          "d22ac19367cd80df",
+          "d23ac19347cd80df",
+          "fc2f6f1363949160",
+          "cc2e7e1372959169",
+          "cc2e7a137295916b",
+          "c92e781371bd916a",
+          "d23ac3b045cd83cf"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.7
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_12",
+      "asset_id": "quarenta_um_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9077f310c30ba185c0090b14682a4985dfe48d0b839db6981c3d3d61757aa7c4",
+        "url_hashes": [
+          "079070b3745e4aa01b6d59de308de8141f57da39d8d34a4a84d77f68bac76f7e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a7195ab44c35363b",
+          "a7195ab44c35363b",
+          "903edab06519e38f",
+          "903edab06519e38f",
+          "903edab06119e39f",
+          "c22534d3c96f74e8",
+          "c23d70c39b53656c",
+          "903edab46139e30f"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 6.3
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_13",
+      "asset_id": "campanha_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c07c21a272b21a33249ae43892b66464c2d0f145947e64c11a83d41ca6e6c7b9",
+        "url_hashes": [
+          "bd6d59d3b61482aa0f258327374591e95708e086cd32051e907e6a1a69a8719c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a7185eb64e25323b",
+          "a7185eb64e25323b",
+          "923edab06119e3cb",
+          "923edab06119f38b",
+          "d62937d2890f74e8",
+          "c21d74c39b5265ec",
+          "923edab46039f30b",
+          "922ed2b4403df34f"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 7.5
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_14",
+      "asset_id": "primeira_campanha_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7eaf05df86d78521e600fa5810652acdd6708cd4082920a0f201bde1f7bd083f",
+        "url_hashes": [
+          "81fd63a07b7ffc5d37241704cf4ca42749e32ab91e9b467eaf5dc0a23ad33f1c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "879c38c7939c8cb3",
+          "c79c38c3939c8cb3",
+          "879c38c3939c8eb3",
+          "879c38c3939c8eb3",
+          "879c38c3939c8eb3",
+          "879c38c3939c96b3",
+          "8b9c2cf3939c8c33",
+          "ce997166c6999362"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 5.6
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_15",
+      "asset_id": "mensagem_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7eaf05df86d78521e600fa5810652acdd6708cd4082920a0f201bde1f7bd083f",
+        "url_hashes": [
+          "81fd63a07b7ffc5d37241704cf4ca42749e32ab91e9b467eaf5dc0a23ad33f1c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "944b6ab46972b2cd",
+          "b50a65b55a25ab5a",
+          "9629b6916bb6495a",
+          "d22db6c96db2494a",
+          "da2d33946cb39649",
+          "da2d33946d93641b",
+          "db2c33d96c32896c",
+          "db2c33cd66924966"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 4.3
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_16",
+      "asset_id": "idade_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "22f801152ed7fe3871f42e8d77d3433ae1915506c4cd13f23227aed63da5df76",
+        "url_hashes": [
+          "b26206538ee6e9eadd335f740bb1e8c6cb8eef433e21b97f07ee0dd61794ae88"
+        ],
+        "perceptual_hashes": [
+          "e7dcc388bc167861",
+          "e3fcc28cad177842",
+          "e1ffc2c88f1f3840",
+          "efd0953a2d63c4e0",
+          "eff084d5c28c9cb8",
+          "fac5c907102ff994",
+          "fa85d8c9edf18094"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_17",
+      "asset_id": "turne_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "feb183de02e0b8b3d8053959a9050b6cd0cb969c9b0b174c9d7f1c9721e3aec8",
+        "url_hashes": [
+          "66186d1215418df331cfa0a604c699c3f461b9cda39b766f05e8993dd926b602"
+        ],
+        "perceptual_hashes": [
+          "e7d094b82f60e5e4",
+          "e3d490b80b7065fd",
+          "e3d49698175061fb",
+          "cf99b17262e2881f",
+          "cff18df19898031e",
+          "f8d38f2c78778502",
+          "f8d7d0df85818a4a"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_18",
+      "asset_id": "contraste_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "cef490d14264583ba3e7056af6bce9b788eced1b093d6ceba6aeb4f7dcc8202c",
+        "url_hashes": [
+          "5cf8ac9ac831751898ada16b9987864c776b854de9511c1d69d86d235f7cb8d5"
+        ],
+        "perceptual_hashes": [
+          "81c9b3366ddb3264",
+          "90d9b3244d9b327e",
+          "90d9b3244d9b365e",
+          "81962f5b9465cba6",
+          "81d2b4a56bca9ea6",
+          "8dcc3026c93be6f4",
+          "99cdd83836e6c49c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_19",
+      "asset_id": "primeiro_passo_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "13a7c08dc2b90ba284abced4363270c9ed227128ca940bdb08b010595051eb55",
+        "url_hashes": [
+          "fa73e085af6b922997e0f94389d19edee891d63dcfbacc730e012c40e343931c"
+        ],
+        "perceptual_hashes": [
+          "879c6663991c3e39",
+          "859c6663995c363d",
+          "a09e6763994c669b",
+          "8b996e361969b64c",
+          "8799984de6d6864d",
+          "d7c7701c07338c73",
+          "b2c7c37138ccc873"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_20",
+      "asset_id": "foi_ney_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "84eb18e1a04eac16f4a9cd2a3d8eb81307358068e8e7d11238ae96c4cb08059b",
+        "url_hashes": [
+          "2704ac6fc8dcd1337eb069acfb69c16dfd586038b3a208f544f9573cc346528f"
+        ],
+        "perceptual_hashes": [
+          "a0964269358f6e77",
+          "b894506835ca7f6b",
+          "aa95d47831886f6b",
+          "8093613e9e5ce793",
+          "a09e81c163e7b39b",
+          "85da6f1cca219cce",
+          "a5d2c26b349cdec2"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_21",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ce68c004f38185d693543ac2b2265cec338c97e97d38bbd6529f2cfa9b317db9",
+        "url_hashes": [
+          "b8fbd306862f73ddcb3efa922b57c926b5bf349ab82e056164ab9151de969368"
+        ],
+        "perceptual_hashes": [
+          "d68b1c35624ccb7a",
+          "d68a9c37624dc71a",
+          "d5829f333a8dc11e",
+          "8d9538655bd57542",
+          "ed9598ba24617aca",
+          "dac9053d46cb0b6e",
+          "d2cbc384393b26f4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "ney_matogrosso_primeiro_rock_in_rio_1985",
+      "shot_id": "shot_22",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-11T12:09:44Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "18764579faaacec10edaad2d3ee6f93b28abe7c9166a884e737b05d11a4a818b",
+        "url_hashes": [
+          "aa133a46ef12cc160ba7284c88200d830159276beef75ee72b9f9323ea82fd2c"
+        ],
+        "perceptual_hashes": [
+          "efd195c82c3163e4",
+          "ef9195dc0e3103f4",
+          "c7b890de1e1102ff",
+          "ccb391586747e01f",
+          "cce2a78399d0991f",
+          "e0dfc2013cfcf146",
+          "e09d97dec381ca0d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
