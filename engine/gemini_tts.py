@@ -140,62 +140,115 @@ class GeminiTTSProvider:
     ) -> tuple[WordTiming, ...]:
         api_key = os.getenv("GEMINI_API_KEY", "").strip()
         if not api_key:
-            raise RuntimeError(
-                "GEMINI_API_KEY nao configurada; o fallback de TTS pode assumir."
+            _raise_diagnostic_error(
+                "configuration",
+                "GEMINI_API_KEY nao configurada; o fallback de TTS pode assumir.",
+                model=self.model,
             )
 
         try:
             from google import genai
         except ModuleNotFoundError as exc:
-            raise RuntimeError(
-                "Provider Gemini TTS indisponivel. Execute: "
-                "python -m pip install -r requirements.txt"
+            raise _diagnostic_exception(
+                "sdk_import",
+                exc,
+                model=self.model,
+                fallback_message=(
+                    "Provider Gemini TTS indisponivel. Execute: "
+                    "python -m pip install -r requirements.txt"
+                ),
             ) from exc
 
-        client = genai.Client(api_key=api_key)
+        try:
+            client = genai.Client(api_key=api_key)
+        except Exception as exc:
+            raise _diagnostic_exception(
+                "client_init",
+                exc,
+                model=self.model,
+            ) from exc
+
         prompt = _build_prompt(tagged_segments)
-        interaction = client.interactions.create(
-            model=self.model,
-            input=prompt,
-            response_format={"type": "audio"},
-            generation_config={
-                "temperature": self.temperature,
-                "speech_config": [{"voice": self.voice}],
-            },
-        )
+        try:
+            interaction = client.interactions.create(
+                model=self.model,
+                input=prompt,
+                response_format={"type": "audio"},
+                generation_config={
+                    "temperature": self.temperature,
+                    "speech_config": [{"voice": self.voice}],
+                },
+            )
+        except Exception as exc:
+            raise _diagnostic_exception(
+                "synthesis_request",
+                exc,
+                model=self.model,
+            ) from exc
 
         output_audio = getattr(interaction, "output_audio", None)
         encoded_audio = getattr(output_audio, "data", None)
         if not encoded_audio:
-            raise RuntimeError("Gemini TTS nao retornou audio.")
+            _raise_diagnostic_error(
+                "synthesis_response",
+                "Gemini TTS nao retornou audio.",
+                model=self.model,
+            )
         try:
             pcm = base64.b64decode(encoded_audio)
         except (TypeError, ValueError) as exc:
-            raise RuntimeError("Gemini TTS retornou audio em formato invalido.") from exc
+            raise _diagnostic_exception(
+                "audio_decode",
+                exc,
+                model=self.model,
+                fallback_message="Gemini TTS retornou audio em formato invalido.",
+            ) from exc
         if len(pcm) < 512:
-            raise RuntimeError("Gemini TTS retornou audio vazio ou truncado.")
+            _raise_diagnostic_error(
+                "audio_validation",
+                f"Gemini TTS retornou audio vazio ou truncado ({len(pcm)} bytes).",
+                model=self.model,
+            )
 
         output.parent.mkdir(parents=True, exist_ok=True)
         output.unlink(missing_ok=True)
         with tempfile.TemporaryDirectory(prefix=".gemini-tts-", dir=output.parent) as temp_dir:
             wav_path = Path(temp_dir) / "narracao.wav"
-            _write_pcm_wave(wav_path, pcm)
-            run_ffmpeg(
-                [
-                    "-y",
-                    "-hide_banner",
-                    "-i",
-                    wav_path,
-                    "-vn",
-                    "-c:a",
-                    "libmp3lame",
-                    "-b:a",
-                    "128k",
-                    output,
-                ]
-            )
+            try:
+                _write_pcm_wave(wav_path, pcm)
+            except Exception as exc:
+                raise _diagnostic_exception(
+                    "wav_write",
+                    exc,
+                    model=self.model,
+                ) from exc
+            try:
+                run_ffmpeg(
+                    [
+                        "-y",
+                        "-hide_banner",
+                        "-i",
+                        wav_path,
+                        "-vn",
+                        "-c:a",
+                        "libmp3lame",
+                        "-b:a",
+                        "128k",
+                        output,
+                    ]
+                )
+            except Exception as exc:
+                raise _diagnostic_exception(
+                    "mp3_encode",
+                    exc,
+                    model=self.model,
+                ) from exc
         if not output.is_file() or output.stat().st_size <= 0:
-            raise RuntimeError("FFmpeg nao produziu o MP3 do Gemini TTS.")
+            _raise_diagnostic_error(
+                "mp3_validation",
+                "FFmpeg nao produziu o MP3 do Gemini TTS.",
+                model=self.model,
+            )
 
         return self._transcribe_word_timings(client, output)
 
@@ -203,38 +256,63 @@ class GeminiTTSProvider:
         files = getattr(client, "files", None)
         interactions = getattr(client, "interactions", None)
         if files is None or interactions is None:
-            raise RuntimeError("SDK google-genai sem suporte a Files/Interactions API.")
+            _raise_diagnostic_error(
+                "transcribe_sdk",
+                "SDK google-genai sem suporte a Files/Interactions API.",
+                model=self.transcribe_model,
+            )
 
-        uploaded = files.upload(file=str(audio_path))
+        try:
+            uploaded = files.upload(file=str(audio_path))
+        except Exception as exc:
+            raise _diagnostic_exception(
+                "transcribe_upload",
+                exc,
+                model=self.transcribe_model,
+            ) from exc
+
         uri = getattr(uploaded, "uri", None)
         mime_type = getattr(uploaded, "mime_type", None) or "audio/mp3"
         if not uri:
-            raise RuntimeError("Gemini Transcribe nao recebeu URI do audio enviado.")
+            _raise_diagnostic_error(
+                "transcribe_upload_response",
+                "Gemini Transcribe nao recebeu URI do audio enviado.",
+                model=self.transcribe_model,
+            )
 
-        interaction = interactions.create(
-            model=self.transcribe_model,
-            input=[
-                {
-                    "type": "audio",
-                    "uri": uri,
-                    "mime_type": mime_type,
-                }
-            ],
-            generation_config={
-                "transcription_config": {
-                    "language_codes": [self.language],
-                    "mode": {
-                        "type": "verbatim",
-                        "timestamp_granularities": ["word"],
-                    },
-                }
-            },
-        )
+        try:
+            interaction = interactions.create(
+                model=self.transcribe_model,
+                input=[
+                    {
+                        "type": "audio",
+                        "uri": uri,
+                        "mime_type": mime_type,
+                    }
+                ],
+                generation_config={
+                    "transcription_config": {
+                        "language_codes": [self.language],
+                        "mode": {
+                            "type": "verbatim",
+                            "timestamp_granularities": ["word"],
+                        },
+                    }
+                },
+            )
+        except Exception as exc:
+            raise _diagnostic_exception(
+                "transcribe_request",
+                exc,
+                model=self.transcribe_model,
+            ) from exc
+
         words = _extract_word_timings(interaction)
         if not words:
-            raise RuntimeError(
-                "Gemini Transcribe nao retornou timestamps por palavra; "
-                "o fallback de TTS pode assumir."
+            _raise_diagnostic_error(
+                "transcribe_timestamps",
+                "Gemini Transcribe nao retornou timestamps por palavra; o fallback de TTS pode assumir.",
+                model=self.transcribe_model,
             )
         return words
 
@@ -297,6 +375,86 @@ def _extract_word_timings(interaction: object) -> tuple[WordTiming, ...]:
                     continue
                 result.append(WordTiming(text, start, end))
     return tuple(result)
+
+
+def _diagnostic_exception(
+    stage: str,
+    exc: Exception,
+    *,
+    model: str | None = None,
+    fallback_message: str | None = None,
+) -> RuntimeError:
+    error_type = type(exc).__name__
+    message = _safe_error_message(exc)
+    if fallback_message and not message:
+        message = fallback_message
+    metadata = _error_metadata(exc)
+    fields = [f"provider=gemini", f"stage={stage}"]
+    if model:
+        fields.append(f"model={model}")
+    fields.append(f"type={error_type}")
+    if metadata:
+        fields.append(metadata)
+    fields.append(f"message={message or 'sem mensagem'}")
+    diagnostic = " ".join(fields)
+    print(f"[tts-error] {diagnostic}")
+    return RuntimeError(diagnostic)
+
+
+def _raise_diagnostic_error(
+    stage: str,
+    message: str,
+    *,
+    model: str | None = None,
+) -> None:
+    safe_message = _safe_text(message)
+    fields = ["provider=gemini", f"stage={stage}"]
+    if model:
+        fields.append(f"model={model}")
+    fields.append("type=RuntimeError")
+    fields.append(f"message={safe_message}")
+    diagnostic = " ".join(fields)
+    print(f"[tts-error] {diagnostic}")
+    raise RuntimeError(diagnostic)
+
+
+def _safe_error_message(exc: Exception) -> str:
+    return _safe_text(str(exc))
+
+
+def _safe_text(value: str) -> str:
+    raw = value.strip()
+    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    if api_key:
+        raw = raw.replace(api_key, "***")
+    raw = re.sub(r"AIza[0-9A-Za-z_-]{20,}", "***", raw)
+    raw = " ".join(raw.split())
+    if len(raw) > 1600:
+        raw = raw[:1597] + "..."
+    return raw
+
+
+def _error_metadata(exc: Exception) -> str:
+    values: list[str] = []
+    seen: set[str] = set()
+
+    for name in ("status_code", "code", "status"):
+        value = getattr(exc, name, None)
+        if value is None:
+            continue
+        rendered = _safe_text(str(value))
+        if rendered and rendered not in seen:
+            values.append(f"{name}={rendered}")
+            seen.add(rendered)
+
+    response = getattr(exc, "response", None)
+    response_status = getattr(response, "status_code", None) if response is not None else None
+    if response_status is not None:
+        rendered = _safe_text(str(response_status))
+        if rendered and rendered not in seen:
+            values.append(f"http_status={rendered}")
+
+    return " ".join(values)
 
 
 def _field(value: object, name: str) -> object | None:
