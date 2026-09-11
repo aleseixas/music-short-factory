@@ -211,7 +211,7 @@ jobs:
     needs:
       - prepare
       - visuals
-    if: ${{ always() && needs.prepare.result == 'success' }}
+    if: ${{ always() && needs.prepare.result == 'success' && needs.visuals.result == 'success' }}
     runs-on: ubuntu-latest
     env:
       EPISODE: ${{ needs.prepare.outputs.episode }}
