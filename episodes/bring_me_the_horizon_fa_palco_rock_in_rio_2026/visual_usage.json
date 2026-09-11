@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+  "recorded_at": "2026-09-11T18:19:46Z",
+  "visual_usage": [
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7123d548dc11cbdacf50bfbd11a8f24cd6b7a3b136e76043437d952021c73ab7",
+        "url_hashes": [
+          "7f9f39026d7ca9049995d0ddb49c714cb927346ba9abb0381e41c35280a7d3a7"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b4cb34ab6c37b510",
+          "a59a319e6b26a55c",
+          "a7923cd46b35aa15",
+          "a9a10fba52afba50",
+          "afbf1e9052ad9260",
+          "aafe7e8101879a6a",
+          "e0b00a837f3f17f0",
+          "e181029f7e3f04f9"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.8
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_02",
+      "asset_id": "placa_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9fe4036b698fbd133a029e1cd2334b53d222f6d48c1bb089b9642ca86ead6946",
+        "url_hashes": [
+          "2a70318066b23b387d904c67d633592952ac29700a693fbe570dd4b9261b37e3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "982a1fc76822cf37",
+          "981a0fcf6022af77",
+          "98ba1fc76026af26",
+          "80ba1fcd6024bf76",
+          "983e1fc5e1208fe6",
+          "882a1fcde8248ff6",
+          "983a1fcde8208fd6",
+          "98bc1fc5e8208fc7"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.9
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_03",
+      "asset_id": "convite_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "47a3736a6581b521432efd32e74bc59fcc8b101c6852438d64029d70c45c61af",
+        "url_hashes": [
+          "81579585c2fd27739917a0ab381ca4f685458c2dbc89e89576e3e23c69251ce3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "987366cc718e7196",
+          "dbd724381c82c7c7",
+          "88887f7770724d4d",
+          "88887f3770724d5d",
+          "c11a3e8d3ce16c8f",
+          "c11a3e8d3ce12d9d",
+          "c33a3c8d6ce13cd1"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.266667
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_04",
+      "asset_id": "subida_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7123d548dc11cbdacf50bfbd11a8f24cd6b7a3b136e76043437d952021c73ab7",
+        "url_hashes": [
+          "7f9f39026d7ca9049995d0ddb49c714cb927346ba9abb0381e41c35280a7d3a7"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e185029f7e2f14f1",
+          "e0810fbf3e14a1f9",
+          "e1811cbf3f94e0f0",
+          "e1811e3e7f8670e8",
+          "e1410e3e3f8670eb",
+          "e1410e3e7f8470eb",
+          "e1410e3e7f8470eb",
+          "e1511e1e3f9470e9"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.1
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_05",
+      "asset_id": "escolha_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "3cc402ba10d7486804b92011c67700d10ec6c136574226178978ee6135cb83f0",
+        "url_hashes": [
+          "6c98af009da496e5eb4aadbcb55ce5e3079b424a996947bc300fb7989c9ef240"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "9ecc61b29cc9633c",
+          "9e4d61b29cc9633c",
+          "9e4d61b29cc9633c",
+          "9e4d61b29cc9633c",
+          "9e4d61b29cc9633c",
+          "9e4d61b29cc9633c",
+          "9e4d61b29cc9633c"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 3.633333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_06",
+      "asset_id": "pray_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "251c7641a8a3bd72a06502bfe659a3e5e9b4724170e34a9e4b4c5a3ad55ad025",
+        "url_hashes": [
+          "947df42aa564f87a4759955b7a367f95f4e3e79422d6f6fd4cc5710f7d4d997d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ca1e6dc14eb3d292",
+          "ca1e6dc14eb3d292",
+          "ca1e6dc14cb3d2d2",
+          "ca1e6dc14cb7c2f0",
+          "ca786cc168f7c2d2",
+          "ca786cc168f3c27a",
+          "ca7c6cc568f3c21a",
+          "cb782cc52cf3c351"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.433333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_07",
+      "asset_id": "peso_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "251c7641a8a3bd72a06502bfe659a3e5e9b4724170e34a9e4b4c5a3ad55ad025",
+        "url_hashes": [
+          "947df42aa564f87a4759955b7a367f95f4e3e79422d6f6fd4cc5710f7d4d997d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ca6934c93c73c15b",
+          "cb2d3cc53c63c949",
+          "c92c3cc63c73c969",
+          "c93c3cc33c33c569",
+          "c93c6cd13e33c519",
+          "ca3c6dd12c3bc41d",
+          "c83c689b783fc70c",
+          "ce1c7c837817c70e"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 5.366667
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_08",
+      "asset_id": "vinte_anos_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "251c7641a8a3bd72a06502bfe659a3e5e9b4724170e34a9e4b4c5a3ad55ad025",
+        "url_hashes": [
+          "947df42aa564f87a4759955b7a367f95f4e3e79422d6f6fd4cc5710f7d4d997d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce3c6cc93827c1c7",
+          "ce3c6cd93823c1c7",
+          "ca3c6cc93c33c1c7",
+          "ca3c6ccb3c33c1e1",
+          "ca3c6ccb3d33c0e1",
+          "c83c6dcb3f33c0e0",
+          "c83c6dc31d33f8e0",
+          "c83c6cc31d33f8f0"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 6.366667
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_09",
+      "asset_id": "medo_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "47a3736a6581b521432efd32e74bc59fcc8b101c6852438d64029d70c45c61af",
+        "url_hashes": [
+          "81579585c2fd27739917a0ab381ca4f685458c2dbc89e89576e3e23c69251ce3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d1c66e3c317b2b05",
+          "c43433c36e9c1df4",
+          "c4343bcb6c9c15f4",
+          "c43433c36f9c55f0",
+          "dd9752122929656f",
+          "828b5b5d3736626a",
+          "868b5b5d3536626a",
+          "c74338bc1c3a1ecd"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.966667
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_10",
+      "asset_id": "antivist_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b6b36db8b6a35965b14554901d8290df5e54ca7714c2baa3a6969725c63733a4",
+        "url_hashes": [
+          "c3710edf83bae22edc8815da53ef1e6b800d78723a3ec3fc8fe302b625286d74"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "e5f05a1b737838a4",
+          "c55a4ab664b59599",
+          "c1fd5f6a0ad24a64",
+          "df8f83416908b9b3",
+          "e4a6b6b0f23069e9",
+          "85a1ef993266ccca",
+          "da461d2007fd683f"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.033333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_11",
+      "asset_id": "karaoke_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9fe4036b698fbd133a029e1cd2334b53d222f6d48c1bb089b9642ca86ead6946",
+        "url_hashes": [
+          "2a70318066b23b387d904c67d633592952ac29700a693fbe570dd4b9261b37e3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d88c0fcfe8300ecf",
+          "d8bc1fcfc03006cf",
+          "d8b81fcfc87084ce",
+          "d0b83fcfc0700ece",
+          "d0983f8fc1700fce",
+          "d0b83f8fc1702cce",
+          "d0983fcfc1700ece",
+          "d0983fcfc0710ece"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 6.066667
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_12",
+      "asset_id": "ensaio_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7123d548dc11cbdacf50bfbd11a8f24cd6b7a3b136e76043437d952021c73ab7",
+        "url_hashes": [
+          "7f9f39026d7ca9049995d0ddb49c714cb927346ba9abb0381e41c35280a7d3a7"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e0703f0f0f9670bc",
+          "f0401f1f3f8078bd",
+          "c1633f9c1c9378ac",
+          "efc2103cfe8ed0a1",
+          "e0683f455f8473ac",
+          "edab31466e0b43f0",
+          "f70a18a37d0749f2",
+          "bda515536b2c10be"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 4.066667
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_13",
+      "asset_id": "dueto_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9fe4036b698fbd133a029e1cd2334b53d222f6d48c1bb089b9642ca86ead6946",
+        "url_hashes": [
+          "2a70318066b23b387d904c67d633592952ac29700a693fbe570dd4b9261b37e3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "883a1fcde8208ff6",
+          "98bc1fcde8208fc6",
+          "d0ac3fcfe82086ce",
+          "d88c0fcfe8300ecf",
+          "d89c1fcfc0300ecf",
+          "d8bc1f8fc87084ce",
+          "d0b83f8fc8708cce",
+          "d0983fcfc1700ece"
+        ],
+        "source_start_seconds": 4.154493,
+        "source_duration_seconds": 5.933333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_14",
+      "asset_id": "reacao_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "3cc402ba10d7486804b92011c67700d10ec6c136574226178978ee6135cb83f0",
+        "url_hashes": [
+          "6c98af009da496e5eb4aadbcb55ce5e3079b424a996947bc300fb7989c9ef240"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c13a3ec5c13e3ec1",
+          "c13a3ec3c13e3ec1",
+          "c13c3ec3c13e3ec1",
+          "c53c3ac3c53e3ac1",
+          "c48c3bd7c43c39c3",
+          "9e88675753a82973",
+          "b24d6c924db2176d",
+          "f00f7cf00df007ec"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 4.633333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_15",
+      "asset_id": "primeira_vez_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "26e1a5ac288afc76656bbdba06d7e640069c79c76fe3fa6d025667d66518105a",
+        "url_hashes": [
+          "537fcbdb244bf0eec0db4586c084224c739dfe88b0b4edd07da5c2eee017b07e"
+        ],
+        "perceptual_hashes": [
+          "e398c86f15beca05",
+          "e39aca43057fda41",
+          "e39eda6121375ac1",
+          "e6b1500fbcd08fb8",
+          "eebdb1d0430ee838",
+          "f88f687498eaf412",
+          "f8918feae754b003"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_16",
+      "asset_id": "set_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b6b36db8b6a35965b14554901d8290df5e54ca7714c2baa3a6969725c63733a4",
+        "url_hashes": [
+          "c3710edf83bae22edc8815da53ef1e6b800d78723a3ec3fc8fe302b625286d74"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f307c96b3c014ebc",
+          "939694b4996b6b68",
+          "cd1adc92c66b7624",
+          "c01f1fc498274fdc",
+          "c01f1ec8e51d5ec3",
+          "93936272b18d6d78",
+          "9393727224ad6d78",
+          "939362626dad6d68"
+        ],
+        "source_start_seconds": 6.525,
+        "source_duration_seconds": 5.233333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_17",
+      "asset_id": "contraste_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "47a3736a6581b521432efd32e74bc59fcc8b101c6852438d64029d70c45c61af",
+        "url_hashes": [
+          "81579585c2fd27739917a0ab381ca4f685458c2dbc89e89576e3e23c69251ce3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95da6e6d49a50327",
+          "9b8866f34c0f64e9",
+          "b5906e6f493a1a93",
+          "c84a64b733e1376c",
+          "cd4c6cb633a9312e",
+          "92d2692f65656665",
+          "8d85767a5b496a58",
+          "c1d867273c3e3899"
+        ],
+        "source_start_seconds": 13.05,
+        "source_duration_seconds": 4.333333
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_18",
+      "asset_id": "elogio_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e57f4eea543d5d038a582d9808e543fb598dc3543098284308e0d15af70c92d7",
+        "url_hashes": [
+          "9d1b218685ee7f8f38637747a0617d927aae2654fc8c1c8ff5db4c75d78b1e21"
+        ],
+        "perceptual_hashes": [
+          "c01c3f33679bc961",
+          "cc0e3f30239bcb71",
+          "dc0e3934209bb3f3",
+          "893c666794f2631b",
+          "c1995a336b63193d",
+          "c3003e39c8ac3fe7",
+          "c341043e373fc733"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_19",
+      "asset_id": "virada_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8015afa739900d0532f5321b55296e4f4858258d8f1dbfe7c5d593ac6544c838",
+        "url_hashes": [
+          "fc89412a9ef1213b91fc091d5c9127f6f46fbb618c0dc1d1dc21b37bd6e0edc2"
+        ],
+        "perceptual_hashes": [
+          "eb8c64b596d6905a",
+          "eb8c65a5d6a4b446",
+          "eb8a65a154a5b54e",
+          "c6896aada9b155b2",
+          "c6954952b55dcaa6",
+          "eda33693529b4b88",
+          "ed8d632c955aa698"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "bring_me_the_horizon_fa_palco_rock_in_rio_2026",
+      "shot_id": "shot_20",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-11T18:19:46Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "bc3d236618f943a27da273f43f08fa37ca820be6eea28c2f8f2ff63ec4879970",
+        "url_hashes": [
+          "bf98cc1c2a054222a71a312cac4c90d9c27fa97d71c5df0f9538949709926528"
+        ],
+        "perceptual_hashes": [
+          "adb472b55ea15c81",
+          "a9b4732dd6a25aa1",
+          "aba4712dd6329a63",
+          "9aa7669c847a427b",
+          "9abb65624b826d93",
+          "a5ba3cc1d90e7227",
+          "a5a77a3452b0738d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
