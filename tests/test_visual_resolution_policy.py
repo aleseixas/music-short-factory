@@ -24,22 +24,34 @@ class VisualResolutionPolicyTests(unittest.TestCase):
             "practically_static_not_fallbackable",
         )
 
-    def test_contextual_video_cannot_fallback_when_direct_or_exact_exists(self):
+    def test_contextual_video_is_always_blocked(self):
         self.assertEqual(
             video_fallback_block_reason(
                 semantic_fit="contextual",
-                best_semantic_rank=2,
+                best_semantic_rank=1,
                 practically_static=False,
             ),
-            "semantic_video_not_fallbackable_contextual",
+            "semantic_video_not_allowed_contextual",
         )
+
+    def test_generic_video_is_always_blocked(self):
         self.assertEqual(
             video_fallback_block_reason(
                 semantic_fit="generic",
-                best_semantic_rank=3,
+                best_semantic_rank=0,
                 practically_static=False,
             ),
-            "semantic_video_not_fallbackable_generic",
+            "semantic_video_not_allowed_generic",
+        )
+
+    def test_unlabelled_video_is_blocked(self):
+        self.assertEqual(
+            video_fallback_block_reason(
+                semantic_fit=None,
+                best_semantic_rank=None,
+                practically_static=False,
+            ),
+            "semantic_video_unlabelled_not_allowed",
         )
 
     def test_direct_video_can_remain_render_safe_fallback_if_exact_fails(self):
@@ -51,19 +63,10 @@ class VisualResolutionPolicyTests(unittest.TestCase):
             )
         )
 
-    def test_contextual_video_is_allowed_when_contextual_is_best_authored_tier(self):
+    def test_exact_video_is_allowed(self):
         self.assertIsNone(
             video_fallback_block_reason(
-                semantic_fit="contextual",
-                best_semantic_rank=1,
-                practically_static=False,
-            )
-        )
-
-    def test_legacy_candidate_without_semantic_fit_keeps_previous_behavior(self):
-        self.assertIsNone(
-            video_fallback_block_reason(
-                semantic_fit=None,
+                semantic_fit="exact",
                 best_semantic_rank=3,
                 practically_static=False,
             )
