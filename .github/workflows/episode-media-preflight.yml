@@ -270,7 +270,7 @@ jobs:
           name: media-preflight-diagnostics-${{ github.run_id }}
           path: ci-diagnostics/
           if-no-files-found: warn
-          retention-days: 30
+          retention-days: 1
 
       - name: Persist repairs and create publish queue
         id: queue
