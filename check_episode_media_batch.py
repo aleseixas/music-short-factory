@@ -32,6 +32,28 @@ def _error_record(exc: Exception, slug: str, *, scope: str = "") -> dict[str, ob
     return record
 
 
+def _explicit_error_record(
+    *,
+    code: str,
+    slug: str,
+    detail: str,
+    target: str,
+    recommended_action: str,
+    scope: str,
+    recoverable: bool = True,
+) -> dict[str, object]:
+    return {
+        "code": code,
+        "class": "RuntimeError",
+        "detail": _single_line(detail),
+        "recoverable": recoverable,
+        "target": target,
+        "recommended_action": recommended_action,
+        "same_slug": slug or "UNKNOWN",
+        "scope": scope,
+    }
+
+
 def _emit_batch(errors: list[dict[str, object]], slug: str) -> int:
     if not errors:
         print("MEDIA_PREFLIGHT_RESULT=PASS")
@@ -62,6 +84,113 @@ def _emit_batch(errors: list[dict[str, object]], slug: str) -> int:
             + json.dumps({"index": index, **error}, ensure_ascii=False, separators=(",", ":"))
         )
     return 1
+
+
+def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, object]]:
+    errors: list[dict[str, object]] = []
+    episode_root = f"episodes/{slug}"
+    pool_path = episode.directory / "visual_candidates.json"
+
+    pool_slots: list[dict] = []
+    if not pool_path.exists():
+        errors.append(
+            _explicit_error_record(
+                code="VISUAL_CANDIDATE_POOL_MISSING",
+                slug=slug,
+                detail=(
+                    "visual_candidates.json ausente. O episodio nao pode usar apenas assets-base "
+                    "e seguir para publicacao sem passar pela selecao visual estruturada."
+                ),
+                target=f"{episode_root}/visual_candidates.json",
+                recommended_action=(
+                    "Create a real web-first visual_candidates.json for this same episode, including video candidates, "
+                    "then rerun media preflight. Do not create the publish queue yet."
+                ),
+                scope="visual-candidate-pool",
+            )
+        )
+    else:
+        try:
+            pool = json.loads(pool_path.read_text(encoding="utf-8"))
+            slots = pool.get("slots") if isinstance(pool, dict) else None
+            if (
+                not isinstance(pool, dict)
+                or pool.get("schema_version") != 1
+                or not isinstance(slots, list)
+                or not slots
+                or not all(isinstance(slot, dict) for slot in slots)
+            ):
+                raise ValueError("schema_version=1 e slots nao vazios sao obrigatorios")
+            pool_slots = slots
+            print(f"[preflight] visual candidate pool OK: {len(pool_slots)} slot(s)")
+        except Exception as exc:
+            errors.append(
+                _explicit_error_record(
+                    code="VISUAL_CANDIDATE_POOL_INVALID",
+                    slug=slug,
+                    detail=f"visual_candidates.json invalido: {_single_line(exc)}",
+                    target=f"{episode_root}/visual_candidates.json",
+                    recommended_action=(
+                        "Fix visual_candidates.json for this same episode using schema_version=1 and non-empty slots, "
+                        "then rerun media preflight."
+                    ),
+                    scope="visual-candidate-pool",
+                )
+            )
+
+    if not episode.shots:
+        return errors
+
+    first_shot = episode.shots[0]
+    first_asset = episode.assets.get(first_shot.asset_id)
+    if first_asset is None or first_asset.is_video:
+        if first_asset is not None:
+            print(
+                "[preflight] opening editorial visual OK: "
+                f"shot={first_shot.id} asset={first_asset.id} media_type=video"
+            )
+        return errors
+
+    matching_slot = next(
+        (
+            slot
+            for slot in pool_slots
+            if str(slot.get("id") or "").strip() in {first_shot.id, first_shot.asset_id}
+        ),
+        None,
+    )
+    video_candidate_count = 0
+    if matching_slot is not None:
+        candidates = matching_slot.get("candidates")
+        if isinstance(candidates, list):
+            video_candidate_count = sum(
+                1
+                for candidate in candidates
+                if isinstance(candidate, dict)
+                and str(candidate.get("kind") or "").strip().casefold() == "video"
+            )
+
+    errors.append(
+        _explicit_error_record(
+            code="FIRST_EDITORIAL_VISUAL_NOT_VIDEO",
+            slug=slug,
+            detail=(
+                "O primeiro take editorial depois da capa tecnica precisa ser video real, mas "
+                f"shot={first_shot.id!r} usa asset={first_asset.id!r} ({first_asset.file}) "
+                f"do tipo imagem. opening_video_candidates={video_candidate_count}."
+            ),
+            target=(
+                f"{episode_root}/visual_candidates.json + {episode_root}/assets.json + "
+                f"{episode_root}/timeline.json"
+            ),
+            recommended_action=(
+                "Select and resolve a real video candidate for the first editorial shot of this same episode. "
+                "If the opening slot has no video candidate, add relevant video candidates first; then rerun media preflight."
+            ),
+            scope=f"shot:{first_shot.id}",
+        )
+    )
+    return errors
 
 
 def _collect_visual_structure_errors(episode, slug: str) -> list[dict[str, object]]:
@@ -144,6 +273,9 @@ def main() -> int:
         )
     except Exception as exc:
         return _emit_batch([_error_record(exc, slug, scope="asset-manager")], slug)
+
+    print("[preflight] validating visual authoring contract...")
+    errors.extend(_collect_visual_authoring_errors(episode, slug))
 
     print("[preflight] validating intra-episode visual structure...")
     errors.extend(_collect_visual_structure_errors(episode, slug))
