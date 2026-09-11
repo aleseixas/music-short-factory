@@ -53,18 +53,19 @@ Transforme informação em progressão narrativa:
 
 Evite sequência de fatos independentes. Use conectores conversados quando ajudarem a empurrar a história adiante.
 
-## 3) Primeiro visual — reconhecimento obrigatório
+## 3) Primeiro visual — VÍDEO obrigatório + reconhecimento imediato
 
-Nos primeiros **0,0–1,5 segundos**, o primeiro visual da história deve mostrar claramente uma destas opções:
+O primeiro take editorial da história, imediatamente depois da capa técnica de ~0,30s, deve ser **VÍDEO REAL**. Imagem estática, capa de álbum, foto, arte ou frame congelado NÃO podem ser o primeiro take editorial.
 
-1. **capa oficial do single, música ou álbum** relacionado ao episódio; ou
-2. **artista principal/banda principal claramente reconhecível**.
+Nos primeiros **0,0–1,5 segundos editoriais**, esse vídeo de abertura deve mostrar claramente o **artista principal/banda principal** ou o acontecimento central do hook de forma imediatamente reconhecível. Quando o tema for um evento/show específico, prefira vídeo do próprio evento; quando isso não existir, use vídeo direto e forte do artista, não B-roll genérico.
 
-Essa regra existe para o espectador entender instantaneamente sobre qual música/artista o vídeo fala.
+Essa regra existe para o espectador receber movimento + reconhecimento instantâneo antes de qualquer sequência de imagens.
 
-Não abra com B-roll genérico, multidão, instrumento aleatório, rua, estúdio vazio, paisagem, texto abstrato ou outro visual que obrigue o espectador a esperar para reconhecer o assunto.
+Não abra com foto, capa estática, B-roll genérico, multidão sem contexto, instrumento aleatório, rua, estúdio vazio, paisagem, texto abstrato ou outro visual que obrigue o espectador a esperar para reconhecer o assunto.
 
-Quando houver uma boa capa oficial e uma boa imagem/vídeo do artista, escolha o que gerar reconhecimento mais imediato e combinar melhor com o hook.
+A capa oficial do single/álbum continua podendo aparecer depois da abertura quando ajudar a história, mas **não substitui o vídeo obrigatório do primeiro take editorial**.
+
+O `visual_candidates.json` do slot inicial precisa conter candidatos reais de vídeo suficientes para que o resolver tenha alternativa. Se o primeiro slot não tiver nenhum candidato de vídeo, a autoria está incompleta e não deve seguir para queue.
 
 ### CAPA / THUMBNAIL — deve vir do começo do próprio vídeo
 
@@ -81,16 +82,16 @@ Use preferencialmente em `post.json`:
 }
 ```
 
-O timestamp pode variar dentro do começo do vídeo para pegar o melhor frame, mas deve continuar muito próximo da abertura — normalmente algo em torno de **0,3–1,5s**. Escolha um frame nítido, forte e reconhecível, idealmente com o artista principal, banda ou elemento central do hook claramente visível.
+O timestamp pode variar dentro do começo do vídeo para pegar um frame utilizável, mas deve continuar muito próximo da abertura — normalmente algo em torno de **0,3–1,5s**. A escolha do frame pode ser tratada pelo código/pipeline; não altere a estrutura editorial do primeiro take só para fabricar uma thumbnail.
 
-Se o frame em `0.7s` estiver ruim, com blur, transição, rosto cortado ou composição fraca, ajuste o timestamp para outro instante próximo do início. **Não pule para uma cena distante do vídeo só para conseguir uma capa mais bonita.** A capa deve parecer um print natural da abertura.
+Não pule para uma cena distante do vídeo só para conseguir uma capa mais bonita. A capa deve parecer um print natural da abertura.
 
 O pipeline atual já gera essa capa e a **insere automaticamente por aproximadamente 0,30s no início do MP4 final** antes do conteúdo normal. Portanto:
 
 - não crie um shot extra na `timeline.json` apenas para simular a capa;
-- não force o primeiro take normal a ser imagem ou vídeo por causa da capa;
 - a capa técnica inserida pelo pipeline é separada dos shots editoriais;
-- depois desses ~0,30s, a montagem segue normalmente a partir do primeiro shot da história;
+- a exigência de vídeo no primeiro take editorial existe independentemente da capa técnica;
+- depois desses ~0,30s, a montagem começa obrigatoriamente com o primeiro shot editorial em vídeo;
 - a mesma capa gerada é usada como thumbnail quando a plataforma/API suportar.
 
 O headline da capa continua vindo de `post.json`, mas o **fundo visual deve ser o frame inicial do próprio vídeo** sempre que o fluxo suportar `cover.source.type = video_frame`.
@@ -122,7 +123,7 @@ Para TODO shot cujo asset principal seja uma **imagem estática**:
 - no contrato atual `1 segment = 1 shot`, a segmentação do roteiro deve ser planejada para tornar essa regra possível; não aceite um segmento longo com imagem e espere que motion/FX resolvam o pacing;
 - se houver dúvida entre prolongar a imagem e trocar para outro asset semanticamente correto, **troque a imagem**.
 
-O primeiro visual editorial continua precisando aparecer imediatamente após a capa técnica. Se ele for imagem estática, deve respeitar normalmente a janela obrigatória de 2–4s.
+Imagens estáticas podem entrar normalmente depois do primeiro take editorial, respeitando a janela obrigatória de 2–4s. O primeiro take editorial é exceção por direção oposta: ele precisa ser vídeo real.
 
 **Exceção técnica:** a capa/thumbnail inserida automaticamente por `engine/cover_intro.py` por aproximadamente 0,30s no começo do MP4 **não é um shot da timeline** e não está sujeita ao mínimo de 2,0s das imagens editoriais.
 
@@ -141,6 +142,8 @@ Hooks, reveals, montagens, reações e viradas podem usar cortes mais rápidos q
 `motion`, zoom, crop, speed, transição, text FX, highlight, overlay ou SFX sobre o mesmo asset NÃO contam como troca de take.
 
 ## 5) Pool visual: 100–120 candidatos e relevância temática obrigatória
+
+`visual_candidates.json` é **obrigatório** para novos episódios. Não ter pool visual não é um fallback válido e não autoriza manter silenciosamente apenas os assets-base. O media preflight deve bloquear a queue com `VISUAL_CANDIDATE_POOL_MISSING` ou `VISUAL_CANDIDATE_POOL_INVALID` quando esse contrato não for cumprido.
 
 Não pesquise apenas a quantidade de assets que entrará no render.
 
@@ -214,7 +217,7 @@ Em ~24 takes, algo como **15–19 vídeos e 5–9 imagens** é uma referência, 
 
 Não escolha vídeo inferior apenas para cumprir proporção. Se imagens mais contextuais contarem melhor determinado trecho, use imagens.
 
-Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — além da regra específica do primeiro visual.
+O **primeiro take editorial é sempre vídeo**, independentemente dessa proporção global. Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — idealmente já na abertura.
 
 Nunca reutilize a mesma imagem nem o mesmo vídeo-fonte em dois shots, mesmo com trim/crop/FX diferentes.
 
@@ -234,7 +237,7 @@ A arte `assets/branding/end_card_template.jpg` está **desativada para novos epi
 
 Fluxo esperado:
 
-`hook reconhecível → história visual contextual → payoff → CTA contextual curto sobre o último visual da própria história`
+`hook reconhecível em vídeo → história visual contextual → payoff → CTA contextual curto sobre o último visual da própria história`
 
 O payoff deve vir antes do CTA.
 
@@ -246,10 +249,12 @@ Escolha apenas UMA ação principal no CTA, priorizando comentário ou compartil
 
 Antes de finalizar, confirme obrigatoriamente:
 
-- primeiro visual editorial = capa oficial ou artista principal claramente reconhecível;
-- **capa/thumbnail usa `cover.source.type = video_frame` e vem de um frame forte do começo do próprio vídeo, normalmente ~0,3–1,5s**;
+- **primeiro take editorial depois da capa técnica = VÍDEO REAL**;
+- vídeo inicial mostra artista/banda principal ou o acontecimento central do hook com reconhecimento imediato;
+- slot inicial do `visual_candidates.json` possui candidatos reais de vídeo;
+- `visual_candidates.json` existe, é válido e foi realmente usado na seleção visual;
+- **capa/thumbnail usa `cover.source.type = video_frame` e vem de um frame do começo do próprio vídeo**;
 - **a capa técnica será inserida automaticamente por ~0,30s no começo do MP4; não foi criado shot extra só para isso**;
-- o frame escolhido para a capa não vem de uma cena distante/desconectada da abertura;
 - 20–30 takes quando a duração do episódio comportar esse ritmo;
 - **toda imagem estática de timeline dura entre 2,0s e 4,0s, sem exceção editorial acima de 4s**;
 - quando uma imagem exigiria >4s, o roteiro foi dividido em segmentos menores e houve troca real do visual principal;
@@ -313,10 +318,10 @@ Fluxo obrigatório:
 
 2. essa escrita dispara `.github/workflows/episode-media-preflight.yml`;
 3. localize a Action `Episode media preflight` associada ao commit exato do request e leia o job/log;
-4. o preflight usa `check_episode_media.py`, que carrega o episódio com os parsers reais do engine, baixa/valida todos os assets com o mesmo `AssetManager` usado no render e resolve o background music com o mesmo `resolve_background_music` usado no pipeline;
+4. o preflight usa o engine real e `check_episode_media_batch.py`: além de carregar/validar assets e background, ele exige `visual_candidates.json` válido e bloqueia qualquer episódio cujo primeiro take editorial não seja vídeo;
 5. só `MEDIA_PREFLIGHT_RESULT=PASS` autoriza criar `.publish-queue/<slug>.txt`;
-6. HTTP 403, 404, 429, 5xx/525, payload inválido, imagem que o Pillow não reconhece, vídeo inválido no ffprobe, profile de música sem faixa resolvível ou qualquer outra falha de mídia = NÃO criar queue ainda;
-7. quando o preflight falhar, corrija apenas os assets/background do mesmo episódio e rode um NOVO `.episode-check/<slug>-<nonce>.json`; isso não conta como queue nem retry de publicação;
+6. `VISUAL_CANDIDATE_POOL_MISSING`, `VISUAL_CANDIDATE_POOL_INVALID`, `FIRST_EDITORIAL_VISUAL_NOT_VIDEO`, HTTP 403, 404, 429, 5xx/525, payload inválido, imagem que o Pillow não reconhece, vídeo inválido no ffprobe, profile de música sem faixa resolvível ou qualquer outra falha de mídia = NÃO criar queue ainda;
+7. quando o preflight falhar, corrija apenas os assets/pool/background do mesmo episódio e rode um NOVO `.episode-check/<slug>-<nonce>.json`; isso não conta como queue nem retry de publicação;
 8. nunca crie `.publish-queue` por suposição, mesmo que as URLs pareçam válidas no navegador;
-9. após um PASS, não altere `assets.json`, `timeline.json` ou o background antes da queue; se alterar, rode o media preflight novamente;
-10. objetivo: erros de download/mídia devem ser descobertos antes da primeira tentativa de publicação, preservando queue/retry para falhas reais posteriores.
+9. após um PASS, não altere `visual_candidates.json`, `assets.json`, `timeline.json` ou o background antes da queue; se alterar, rode o media preflight novamente;
+10. objetivo: erros de descoberta/seleção/download/mídia devem ser descobertos antes da primeira tentativa de publicação, preservando queue/retry para falhas reais posteriores.
