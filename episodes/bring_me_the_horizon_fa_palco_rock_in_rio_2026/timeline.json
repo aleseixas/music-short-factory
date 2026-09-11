@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_drop_dead_synth_pop",
+    "volume": 0.08
+  },
+  "sfx_cues": [
+    {"time_seconds": 0.1, "type": "bass_drop_cinematic", "volume": 0.1},
+    {"time_seconds": 8.0, "type": "crowd_gasp", "volume": 0.08},
+    {"time_seconds": 16.0, "type": "whoosh_fast", "volume": 0.075},
+    {"time_seconds": 25.0, "type": "dramatic_dun_dun", "volume": 0.075},
+    {"time_seconds": 34.0, "type": "heartbeat_fast", "volume": 0.07},
+    {"time_seconds": 43.0, "type": "record_scratch", "volume": 0.08},
+    {"time_seconds": 53.0, "type": "crowd_cheer", "volume": 0.085},
+    {"time_seconds": 63.0, "type": "riser_build_up", "volume": 0.075},
+    {"time_seconds": 74.0, "type": "impact", "volume": 0.09}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds": 0.1, "end_seconds": 0.9, "type": "punch_zoom", "intensity": 0.92},
+    {"start_seconds": 43.0, "end_seconds": 44.0, "type": "punch_zoom", "intensity": 0.8},
+    {"start_seconds": 72.0, "end_seconds": 73.2, "type": "slow_zoom_in", "intensity": 0.7}
+  ],
+  "text_fx_cues": [
+    {"segment": "hook", "offset_seconds": 0.1, "duration_seconds": 1.2, "text": "FÃ NO PALCO MUNDO", "accent_text": "PALCO MUNDO", "animation": "scale_bounce", "position": "center", "intensity": 0.95},
+    {"segment": "pray", "offset_seconds": 0.1, "duration_seconds": 1.1, "text": "PRAY FOR PLAGUES", "accent_text": "PRAY FOR PLAGUES", "animation": "pop_in", "position": "center", "intensity": 0.92},
+    {"segment": "medo", "offset_seconds": 0.1, "duration_seconds": 1.1, "text": "“VOU SER HUMILHADO?”", "accent_text": "HUMILHADO", "animation": "fade_pop", "position": "center", "intensity": 0.9},
+    {"segment": "karaoke", "offset_seconds": 0.1, "duration_seconds": 1.1, "text": "JÁ CANTAVA NO KARAOKÊ", "accent_text": "KARAOKÊ", "animation": "slide_up", "position": "center", "intensity": 0.9},
+    {"segment": "virada", "offset_seconds": 0.1, "duration_seconds": 1.1, "text": "DE MEME A DESTAQUE", "accent_text": "DESTAQUE", "animation": "scale_bounce", "position": "center", "intensity": 0.92}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","highlight":"FÃ NO PALCO MUNDO"},
+    {"id":"shot_02","segment":"placa","asset":"placa_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_03","segment":"convite","asset":"convite_visual","motion":"pan_left","transition_out":"cut","highlight":"OLI VIU A PLACA"},
+    {"id":"shot_04","segment":"subida","asset":"subida_visual","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_05","segment":"escolha","asset":"escolha_visual","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_06","segment":"pray","asset":"pray_visual","motion":"pull_out","transition_out":"cut","highlight":"PRAY FOR PLAGUES"},
+    {"id":"shot_07","segment":"peso","asset":"peso_visual","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_08","segment":"vinte_anos","asset":"vinte_anos_visual","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_09","segment":"medo","asset":"medo_visual","motion":"push_in","transition_out":"cut","highlight":"“VOU SER HUMILHADO?”"},
+    {"id":"shot_10","segment":"antivist","asset":"antivist_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_11","segment":"karaoke","asset":"karaoke_visual","motion":"pan_left","transition_out":"cut","highlight":"ENSAIO NO KARAOKÊ"},
+    {"id":"shot_12","segment":"ensaio","asset":"ensaio_visual","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_13","segment":"dueto","asset":"dueto_visual","motion":"push_in","transition_out":"cut","highlight":"GUTURAIS COM OLI"},
+    {"id":"shot_14","segment":"reacao","asset":"reacao_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_15","segment":"primeira_vez","asset":"primeira_vez_visual","motion":"pan_left","transition_out":"cut","highlight":"1ª VEZ NO ROCK IN RIO"},
+    {"id":"shot_16","segment":"set","asset":"set_visual","motion":"pan_right","transition_out":"cut"},
+    {"id":"shot_17","segment":"contraste","asset":"contraste_visual","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_18","segment":"elogio","asset":"elogio_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_19","segment":"virada","asset":"virada_visual","motion":"pan_left","transition_out":"cut","highlight":"DE MEME A DESTAQUE"},
+    {"id":"shot_20","segment":"cta","asset":"cta_visual","motion":"pan_right","transition_out":"cut","highlight":"VOCÊ SUBIRIA?"}
+  ]
+}
