@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -34,13 +35,12 @@ def _asset_kind(asset: dict | None) -> str | None:
     return None
 
 
-def _final_asset_paths(episode_rel: Path, episode_dir: Path) -> set[Path]:
-    assets_data = _load_json(episode_dir / "assets.json")
+def _final_asset_paths(episode_rel: Path, assets_data: dict) -> dict[Path, str]:
     assets = assets_data.get("assets")
     if not isinstance(assets, list):
         raise RuntimeError("VISUAL_HANDOFF_INVALID_ASSETS: assets.json sem lista assets valida.")
 
-    final_paths: set[Path] = set()
+    final_paths: dict[Path, str] = {}
     for asset in assets:
         if not isinstance(asset, dict):
             continue
@@ -57,12 +57,22 @@ def _final_asset_paths(episode_rel: Path, episode_dir: Path) -> set[Path]:
 
         if asset_path.parts and asset_path.parts[0] == "assets":
             episode_asset_rel = asset_path
+            staged_file = str(Path(*asset_path.parts[1:]))
         else:
             episode_asset_rel = Path("assets") / asset_path
+            staged_file = raw_file
 
-        final_paths.add(episode_rel / episode_asset_rel)
+        final_paths[episode_rel / episode_asset_rel] = staged_file
 
     return final_paths
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _validate_final_video_semantics(episode_dir: Path) -> None:
@@ -159,7 +169,8 @@ def main() -> int:
         raise RuntimeError(f"Diretorio do episodio nao encontrado: {episode_rel}")
 
     _validate_final_video_semantics(episode_dir)
-    final_asset_paths = _final_asset_paths(episode_rel, episode_dir)
+    assets_data = _load_json(episode_dir / "assets.json")
+    final_asset_paths = _final_asset_paths(episode_rel, assets_data)
 
     handoff_root = root / ".visual-handoff"
     if handoff_root.exists():
@@ -169,7 +180,7 @@ def main() -> int:
 
     copied: set[Path] = set()
 
-    for name in ("assets.json", "timeline.json", "visual_resolution_report.json"):
+    for name in ("timeline.json", "visual_resolution_report.json"):
         source = episode_dir / name
         if not source.is_file():
             continue
@@ -193,28 +204,66 @@ def main() -> int:
         stdout=subprocess.PIPE,
     ).stdout.decode("utf-8", errors="surrogateescape")
 
-    skipped = 0
+    skipped_non_final = 0
+    deduplicated = 0
+    digest_to_file: dict[str, str] = {}
+    file_rewrites: dict[str, str] = {}
+
     for raw in changed.split("\0"):
         if not raw:
             continue
         rel = Path(raw)
-        if rel not in final_asset_paths:
-            skipped += 1
+        staged_file = final_asset_paths.get(rel)
+        if staged_file is None:
+            skipped_non_final += 1
             print(f"Handoff skip non-final candidate: {rel}")
             continue
 
         source = root / rel
         if not source.is_file():
             continue
+
+        digest = _sha256(source)
+        canonical_file = digest_to_file.get(digest)
+        if canonical_file is not None:
+            file_rewrites[staged_file] = canonical_file
+            deduplicated += 1
+            print(
+                "Handoff dedupe: "
+                f"{rel} reutiliza assets/{canonical_file} (sha256={digest[:12]})."
+            )
+            continue
+
+        digest_to_file[digest] = staged_file
         destination = handoff_root / rel
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, destination)
         copied.add(source)
         print(f"Handoff media: {rel}")
 
+    staged_assets = json.loads(json.dumps(assets_data))
+    raw_assets = staged_assets.get("assets")
+    if not isinstance(raw_assets, list):
+        raise RuntimeError("VISUAL_HANDOFF_INVALID_ASSETS: assets.json sem lista assets valida.")
+    for asset in raw_assets:
+        if not isinstance(asset, dict):
+            continue
+        raw_file = str(asset.get("file") or "").strip()
+        replacement = file_rewrites.get(raw_file)
+        if replacement:
+            asset["file"] = replacement
+
+    staged_assets_path = handoff_episode / "assets.json"
+    staged_assets_path.write_text(
+        json.dumps(staged_assets, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+
     print(
         "Visual handoff preparado "
-        f"com {len(copied)} arquivo(s); {skipped} candidato(s) nao finais ignorados."
+        f"com {len(copied) + 1} arquivo(s); "
+        f"{skipped_non_final} candidato(s) nao finais ignorados; "
+        f"{deduplicated} copia(s) binariamente identica(s) deduplicada(s)."
     )
     return 0
 
