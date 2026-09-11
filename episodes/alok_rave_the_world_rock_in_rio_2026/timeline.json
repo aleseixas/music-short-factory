@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile": "fallback_social_modern", "volume": 0.075},
+  "background_music": {"profile": "uplifting_documentary", "volume": 0.075},
   "sfx_cues": [
     {"time_seconds": 0.1, "type": "bass_drop_cinematic", "volume": 0.09},
     {"time_seconds": 7.5, "type": "record_scratch", "volume": 0.065},
