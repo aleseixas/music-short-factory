@@ -53,34 +53,47 @@ Transforme informação em progressão narrativa:
 
 Evite sequência de fatos independentes. Use conectores conversados quando ajudarem a empurrar a história adiante.
 
-## 3) Primeiro visual — VÍDEO OBRIGATÓRIO (HARD GATE)
+## 3) Primeiro visual — reconhecimento obrigatório
 
-Nos primeiros **0,0–1,5 segundos**, o primeiro visual deve ser **obrigatoriamente um VÍDEO real**. O episódio **NUNCA pode começar com imagem estática**.
+Nos primeiros **0,0–1,5 segundos**, o primeiro visual da história deve mostrar claramente uma destas opções:
 
-O primeiro take/shot deve:
+1. **capa oficial do single, música ou álbum** relacionado ao episódio; ou
+2. **artista principal/banda principal claramente reconhecível**.
 
-1. usar asset principal do tipo **vídeo**;
-2. mostrar o **artista principal/banda principal claramente reconhecível** ou um momento diretamente ligado ao hook em que o assunto seja identificável de imediato;
-3. ter movimento real do material-fonte — performance, clipe, entrevista, bastidor, show, reação, evento ou outro trecho audiovisual relevante.
+Essa regra existe para o espectador entender instantaneamente sobre qual música/artista o vídeo fala.
 
-É **proibido** usar como primeiro visual:
+Não abra com B-roll genérico, multidão, instrumento aleatório, rua, estúdio vazio, paisagem, texto abstrato ou outro visual que obrigue o espectador a esperar para reconhecer o assunto.
 
-- foto do artista;
-- capa de single/álbum;
-- poster;
-- screenshot;
-- thumbnail;
-- arte estática;
-- qualquer asset `kind: image`;
-- imagem com zoom, crop, pan, `push_in`, `pull_out`, parallax, text FX ou qualquer motion artificial.
+Quando houver uma boa capa oficial e uma boa imagem/vídeo do artista, escolha o que gerar reconhecimento mais imediato e combinar melhor com o hook.
 
-**Motion aplicado sobre imagem não transforma imagem em vídeo para esta regra.** O asset principal do primeiro shot precisa ser vídeo de verdade.
+### CAPA / THUMBNAIL — deve vir do começo do próprio vídeo
 
-Não abra também com B-roll genérico, multidão, instrumento aleatório, rua, estúdio vazio, paisagem ou outro vídeo que obrigue o espectador a esperar para reconhecer o assunto. Entre vídeos válidos, priorize aquele que mostre o artista principal com mais clareza e tenha maior impacto no hook.
+A capa de publicação deve ser **derivada de um frame do começo do vídeo renderizado**, e não escolhida como uma imagem externa desconectada da abertura.
 
-Capa oficial ou imagem forte continuam podendo aparecer **a partir do segundo take**, quando forem editorialmente úteis, mas nunca como visual principal de abertura.
+Use preferencialmente em `post.json`:
 
-Se o primeiro slot não tiver nenhum vídeo válido, **continue a busca por vídeo**. É proibido aceitar imagem como fallback para o primeiro shot. Sem vídeo de abertura válido, o episódio ainda não está pronto para queue/publicação.
+```json
+"cover": {
+  "source": {
+    "type": "video_frame",
+    "timestamp_seconds": 0.7
+  }
+}
+```
+
+O timestamp pode variar dentro do começo do vídeo para pegar o melhor frame, mas deve continuar muito próximo da abertura — normalmente algo em torno de **0,3–1,5s**. Escolha um frame nítido, forte e reconhecível, idealmente com o artista principal, banda ou elemento central do hook claramente visível.
+
+Se o frame em `0.7s` estiver ruim, com blur, transição, rosto cortado ou composição fraca, ajuste o timestamp para outro instante próximo do início. **Não pule para uma cena distante do vídeo só para conseguir uma capa mais bonita.** A capa deve parecer um print natural da abertura.
+
+O pipeline atual já gera essa capa e a **insere automaticamente por aproximadamente 0,30s no início do MP4 final** antes do conteúdo normal. Portanto:
+
+- não crie um shot extra na `timeline.json` apenas para simular a capa;
+- não force o primeiro take normal a ser imagem ou vídeo por causa da capa;
+- a capa técnica inserida pelo pipeline é separada dos shots editoriais;
+- depois desses ~0,30s, a montagem segue normalmente a partir do primeiro shot da história;
+- a mesma capa gerada é usada como thumbnail quando a plataforma/API suportar.
+
+O headline da capa continua vindo de `post.json`, mas o **fundo visual deve ser o frame inicial do próprio vídeo** sempre que o fluxo suportar `cover.source.type = video_frame`.
 
 ## 4) Ritmo visual: agressivo, mas não aleatório
 
@@ -109,7 +122,9 @@ Para TODO shot cujo asset principal seja uma **imagem estática**:
 - no contrato atual `1 segment = 1 shot`, a segmentação do roteiro deve ser planejada para tornar essa regra possível; não aceite um segmento longo com imagem e espere que motion/FX resolvam o pacing;
 - se houver dúvida entre prolongar a imagem e trocar para outro asset semanticamente correto, **troque a imagem**.
 
-Esta regra de imagem vale somente para shots em que imagem é permitida. **O primeiro shot é exceção absoluta: nele imagem estática é proibida, independentemente da duração ou dos efeitos aplicados.**
+O primeiro visual editorial continua precisando aparecer imediatamente após a capa técnica. Se ele for imagem estática, deve respeitar normalmente a janela obrigatória de 2–4s.
+
+**Exceção técnica:** a capa/thumbnail inserida automaticamente por `engine/cover_intro.py` por aproximadamente 0,30s no começo do MP4 **não é um shot da timeline** e não está sujeita ao mínimo de 2,0s das imagens editoriais.
 
 ### Vídeos — podem respirar mais
 
@@ -197,9 +212,9 @@ Como referência editorial, tente fechar aproximadamente **60–80% dos takes fi
 
 Em ~24 takes, algo como **15–19 vídeos e 5–9 imagens** é uma referência, não hard gate.
 
-Não escolha vídeo inferior apenas para cumprir proporção nos demais takes. **No primeiro take, porém, vídeo é hard gate e imagem nunca é fallback aceitável.**
+Não escolha vídeo inferior apenas para cumprir proporção. Se imagens mais contextuais contarem melhor determinado trecho, use imagens.
 
-Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — e, pela regra específica de abertura, o primeiro visual já deve buscar cumprir isso em vídeo.
+Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — além da regra específica do primeiro visual.
 
 Nunca reutilize a mesma imagem nem o mesmo vídeo-fonte em dois shots, mesmo com trim/crop/FX diferentes.
 
@@ -231,12 +246,12 @@ Escolha apenas UMA ação principal no CTA, priorizando comentário ou compartil
 
 Antes de finalizar, confirme obrigatoriamente:
 
-- **primeiro visual/shot = VÍDEO real; nunca imagem estática, capa, foto, poster, screenshot ou thumbnail**;
-- **motion artificial sobre imagem NÃO conta como vídeo para o primeiro shot**;
-- primeiro vídeo mostra o artista principal/banda claramente reconhecível ou um momento diretamente ligado ao hook que identifique o assunto imediatamente;
-- se o primeiro slot não tinha vídeo válido, a busca continuou e nenhuma imagem foi aceita como fallback;
+- primeiro visual editorial = capa oficial ou artista principal claramente reconhecível;
+- **capa/thumbnail usa `cover.source.type = video_frame` e vem de um frame forte do começo do próprio vídeo, normalmente ~0,3–1,5s**;
+- **a capa técnica será inserida automaticamente por ~0,30s no começo do MP4; não foi criado shot extra só para isso**;
+- o frame escolhido para a capa não vem de uma cena distante/desconectada da abertura;
 - 20–30 takes quando a duração do episódio comportar esse ritmo;
-- **toda imagem estática permitida dura entre 2,0s e 4,0s, sem exceção editorial acima de 4s**;
+- **toda imagem estática de timeline dura entre 2,0s e 4,0s, sem exceção editorial acima de 4s**;
 - quando uma imagem exigiria >4s, o roteiro foi dividido em segmentos menores e houve troca real do visual principal;
 - vídeos podem durar mais que imagens e podem ultrapassar ~6s somente quando movimento/contexto real sustentarem o plano;
 - pool normalmente entre 100–120 candidatos;
