@@ -1,0 +1,19 @@
+FACTUAL SOURCES
+- UOL Splash, 05/09/2026 — retorno de Pabllo Vittar ao Pavilhão Itaú no Rock in Rio 2026, nove anos após o pocket show de 2017; lotação inesperada e problemas técnicos em 2017.
+https://www.uol.com.br/splash/noticias/2026/09/05/pabllo-vittar-palco-itau-rock-in-rio.ghtm
+- Folha de S.Paulo, 15/09/2017 — multidão correu ao palco do Itaú; público no fundo não conseguia ouvir e pediu aumento do som; repertório incluiu K.O., Open Bar, Vai Passar Mal e Sua Cara; Lady Gaga havia cancelado.
+https://www1.folha.uol.com.br/ilustrada/2017/09/1918839-sem-lady-gaga-publico-curte-pabllo-vittar-em-palco-menor-no-rock-in-rio.shtml
+- UOL, 16/09/2017 — Pabllo participou do show de Fergie no Palco Mundo e cantou Sua Cara.
+https://musica.uol.com.br/noticias/redacao/2017/09/16/tem-anitta-sim-fergie-e-pabllo-vittar-cantam-sua-cara-no-rock-in-rio.amp.htm
+
+VISUAL SOURCES
+- YouTube: Pabllo Vittar | ROCK IN RIO 2017 — https://www.youtube.com/watch?v=fYdA0ex87Xg
+- YouTube: Pabllo Vittar & Fergie - Sua Cara | Rock In Rio 2017 — https://www.youtube.com/watch?v=IVhT5DbxxM0
+- UOL/Folhapress 2017 Pabllo Rock in Rio image — https://conteudo.imguol.com.br/c/entretenimento/f8/2017/09/15/pabllo-vittar-rouba-a-cena-no-primeiro-dia-do-rock-in-rio-1505513638818_v2_4x3.jpg
+- Zine Cultural 2017 crowd image — https://files.zinecultural.com/Repositorio/Upload/S3/mlib-uploads/full/pr2-59c0347098021.jpeg
+- Purepeople Pabllo + Fergie Rock in Rio image — https://static1.purepeople.com.br/articles/7/20/07/97/@/2318597-pabllo-vittar-se-apresentou-no-palco-mun-1200x0-1.jpg
+- Wikimedia Commons assets declared in assets.json; individual source pages are encoded by Special:Redirect/file URLs.
+
+BACKGROUND SEARCH
+External-first queries compared: upbeat pop electronic dance instrumental; Brazilian pop instrumental upbeat; disco funk pop instrumental; fashion pop dance instrumental; energetic electro pop background.
+Candidates reviewed included Pixabay Upbeat Disco Funk House, Pop Music, Upbeat Brazilian Tropical Background Music, Electro Pop, Dance Pop Fashion Show, Ephemera / Groove Fashion Pop Music. Several were Content ID Registered; the Brazilian tropical option was AI-generated; remaining external options did not offer a stronger low-risk operational choice than the curated fallback. Selected fallback_social_fun from the repo as the least-risky semantically appropriate fallback for an energetic pop/career-turn story.
