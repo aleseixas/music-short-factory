@@ -45,7 +45,7 @@ https://commons.wikimedia.org/wiki/Bring_Me_the_Horizon
 
 BACKGROUND SEARCH — EXTERNAL-FIRST
 Consultas comparadas: dark electronic rock instrumental; industrial metal instrumental; cinematic metal tension; aggressive synth instrumental; festival rock instrumental.
-Candidatas consideradas incluíram faixas externas do Pixabay/Openverse e o arquivo “Synth pop with 4 on the floor” de Mesostic no Wikimedia Commons.
-Selecionada a faixa externa já suportada pelo catálogo como profile external_drop_dead_synth_pop:
-https://upload.wikimedia.org/wikipedia/commons/c/c2/Synth_pop_with_4_on_the_floor.ogg
-A página do Commons declara CC0 e permite uso comercial. O arquivo é mídia direta, compatível com o resolver atual e evita mutação global do catálogo.
+As primeiras escolhas foram bloqueadas pelo hard gate de repetição recente: external_drop_dead_synth_pop e, depois, dark_cinematic/silent-descent-01.mp3.
+Seleção corrigida: profile existente external_bby_wow_3am_west_end, que resolve para “3 am West End”, de statusq, no Wikimedia Commons:
+https://upload.wikimedia.org/wikipedia/commons/b/b0/Statusq_-_3_am_West_End.opus
+Fonte: Wikimedia Commons; licença CC0 1.0. A entrada já existe no catálogo atual e usa mídia direta compatível com o resolver, sem exigir mutação global.
