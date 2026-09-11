@@ -2,11 +2,16 @@ from __future__ import annotations
 
 import asyncio
 import base64
+from collections.abc import Callable, Mapping
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 import os
 import re
 import tempfile
+import time
 import wave
 from pathlib import Path
+from typing import TypeVar
 
 from .delivery import DEFAULT_DELIVERY
 from .ffmpeg import run_ffmpeg
@@ -19,6 +24,22 @@ DEFAULT_GEMINI_VOICE = "Charon"
 DEFAULT_GEMINI_TEMPERATURE = 0.6
 DEFAULT_GEMINI_LANGUAGE = "pt-BR"
 GEMINI_TTS_IMPLEMENTATION_VERSION = "1"
+GEMINI_API_MAX_ATTEMPTS = 3
+GEMINI_API_RETRY_BASE_SECONDS = 1.0
+GEMINI_API_MAX_RETRY_AFTER_SECONDS = 30.0
+
+_RETRYABLE_HTTP_STATUSES = frozenset({408, 409, 425, 429})
+_RETRYABLE_EXCEPTION_NAMES = (
+    "connection",
+    "connecterror",
+    "resourceexhausted",
+    "servererror",
+    "serviceunavailable",
+    "timeout",
+    "toomanyrequests",
+    "transporterror",
+)
+_T = TypeVar("_T")
 
 AUDIO_PROFILE = (
     "Brazilian Portuguese male narrator. Mature, masculine, warm and confident, "
@@ -170,14 +191,17 @@ class GeminiTTSProvider:
 
         prompt = _build_prompt(tagged_segments)
         try:
-            interaction = client.interactions.create(
-                model=self.model,
-                input=prompt,
-                response_format={"type": "audio"},
-                generation_config={
-                    "temperature": self.temperature,
-                    "speech_config": [{"voice": self.voice}],
-                },
+            interaction = _call_gemini_api(
+                lambda: client.interactions.create(
+                    model=self.model,
+                    input=prompt,
+                    response_format={"type": "audio"},
+                    generation_config={
+                        "temperature": self.temperature,
+                        "speech_config": [{"voice": self.voice}],
+                    },
+                ),
+                "synthesis_request",
             )
         except Exception as exc:
             raise _diagnostic_exception(
@@ -263,7 +287,10 @@ class GeminiTTSProvider:
             )
 
         try:
-            uploaded = files.upload(file=str(audio_path))
+            uploaded = _call_gemini_api(
+                lambda: files.upload(file=str(audio_path)),
+                "transcribe_upload",
+            )
         except Exception as exc:
             raise _diagnostic_exception(
                 "transcribe_upload",
@@ -281,24 +308,27 @@ class GeminiTTSProvider:
             )
 
         try:
-            interaction = interactions.create(
-                model=self.transcribe_model,
-                input=[
-                    {
-                        "type": "audio",
-                        "uri": uri,
-                        "mime_type": mime_type,
-                    }
-                ],
-                generation_config={
-                    "transcription_config": {
-                        "language_codes": [self.language],
-                        "mode": {
-                            "type": "verbatim",
-                            "timestamp_granularities": ["word"],
+            interaction = _call_gemini_api(
+                lambda: interactions.create(
+                    model=self.transcribe_model,
+                    input=[
+                        {
+                            "type": "audio",
+                            "uri": uri,
+                            "mime_type": mime_type,
+                        }
+                    ],
+                    generation_config={
+                        "transcription_config": {
+                            "language_codes": [self.language],
+                            "mode": {
+                                "type": "verbatim",
+                                "timestamp_granularities": ["word"],
+                            },
                         },
-                    }
-                },
+                    },
+                ),
+                "transcribe_request",
             )
         except Exception as exc:
             raise _diagnostic_exception(
@@ -315,6 +345,97 @@ class GeminiTTSProvider:
                 model=self.transcribe_model,
             )
         return words
+
+
+def _call_gemini_api(
+    call: Callable[[], _T],
+    stage: str,
+    *,
+    attempts: int = GEMINI_API_MAX_ATTEMPTS,
+    sleep: Callable[[float], None] | None = None,
+) -> _T:
+    """Retry one Gemini API call only when the failure is transient."""
+    if attempts < 1:
+        raise ValueError("Gemini API requer pelo menos uma tentativa.")
+    sleep_fn = sleep or time.sleep
+
+    for attempt in range(1, attempts + 1):
+        try:
+            return call()
+        except Exception as exc:
+            status = _exception_status_code(exc)
+            retryable = _is_retryable_api_error(exc, status)
+            if not retryable or attempt >= attempts:
+                raise
+
+            retry_after = _exception_retry_after_seconds(exc)
+            delay = (
+                retry_after
+                if retry_after is not None
+                else GEMINI_API_RETRY_BASE_SECONDS * (2 ** (attempt - 1))
+            )
+            label = f"HTTP {status}" if status is not None else type(exc).__name__
+            print(
+                f"[gemini-tts] stage={stage} falha_transitoria={label} "
+                f"tentativa={attempt + 1}/{attempts} espera={delay:g}s"
+            )
+            sleep_fn(delay)
+
+    raise AssertionError("Loop de retry do Gemini terminou sem resultado.")
+
+
+def _is_retryable_api_error(exc: Exception, status: int | None) -> bool:
+    if status is not None:
+        return status in _RETRYABLE_HTTP_STATUSES or 500 <= status <= 599
+    if isinstance(exc, (ConnectionError, TimeoutError)):
+        return True
+    name = type(exc).__name__.casefold()
+    return any(marker in name for marker in _RETRYABLE_EXCEPTION_NAMES)
+
+
+def _exception_status_code(exc: Exception) -> int | None:
+    response = getattr(exc, "response", None)
+    candidates = (
+        getattr(exc, "status_code", None),
+        getattr(exc, "code", None),
+        getattr(response, "status_code", None),
+    )
+    for candidate in candidates:
+        if callable(candidate):
+            try:
+                candidate = candidate()
+            except Exception:
+                continue
+        value = getattr(candidate, "value", candidate)
+        if isinstance(value, bool):
+            continue
+        if isinstance(value, int):
+            return value
+        if isinstance(value, str) and value.strip().isdigit():
+            return int(value.strip())
+    return None
+
+
+def _exception_retry_after_seconds(exc: Exception) -> float | None:
+    response = getattr(exc, "response", None)
+    headers = getattr(response, "headers", None) or getattr(exc, "headers", None)
+    if not isinstance(headers, Mapping):
+        return None
+    raw = headers.get("Retry-After") or headers.get("retry-after")
+    if raw is None:
+        return None
+    value = str(raw).strip()
+    try:
+        seconds = float(value)
+    except ValueError:
+        try:
+            retry_at = parsedate_to_datetime(value)
+            if retry_at.tzinfo is None:
+                retry_at = retry_at.replace(tzinfo=timezone.utc)
+            seconds = (retry_at - datetime.now(timezone.utc)).total_seconds()
+        except (TypeError, ValueError, OverflowError):
+            return None
+    return min(max(0.0, seconds), GEMINI_API_MAX_RETRY_AFTER_SECONDS)
 
 
 def _build_prompt(tagged_segments: tuple[tuple[str, str], ...]) -> str:

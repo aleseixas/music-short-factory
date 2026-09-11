@@ -1,11 +1,19 @@
+from contextlib import redirect_stdout
+from io import StringIO
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from engine.audio import resolve_audio
 from engine.config import TTSSettings
-from engine.gemini_tts import _build_prompt, _extract_word_timings
+from engine.gemini_tts import (
+    GeminiTTSProvider,
+    _build_prompt,
+    _call_gemini_api,
+    _extract_word_timings,
+)
 from engine.models import ScriptSegment, WordTiming
 
 
@@ -30,6 +38,15 @@ class _Step:
 class _Interaction:
     def __init__(self, steps: list[object]):
         self.steps = steps
+
+
+class _ApiError(Exception):
+    def __init__(self, status_code: int, detail: str, retry_after: str | None = None):
+        super().__init__(detail)
+        self.status_code = status_code
+        self.response = SimpleNamespace(
+            headers={"Retry-After": retry_after} if retry_after is not None else {}
+        )
 
 
 class BulkProvider:
@@ -116,6 +133,98 @@ class GeminiTTSHelperTests(unittest.TestCase):
         self.assertEqual([word.text for word in words], ["Ola", "mundo"])
         self.assertAlmostEqual(words[0].start, 0.1)
         self.assertAlmostEqual(words[1].end, 0.9)
+
+    def test_transient_429_respects_retry_after_and_succeeds(self):
+        calls = 0
+        sleeps: list[float] = []
+
+        def request():
+            nonlocal calls
+            calls += 1
+            if calls == 1:
+                raise _ApiError(429, "sensitive response", "2.5")
+            return "audio"
+
+        stdout = StringIO()
+        with redirect_stdout(stdout):
+            result = _call_gemini_api(
+                request,
+                "synthesis_request",
+                sleep=sleeps.append,
+            )
+
+        self.assertEqual(result, "audio")
+        self.assertEqual(calls, 2)
+        self.assertEqual(sleeps, [2.5])
+        self.assertIn("HTTP 429", stdout.getvalue())
+        self.assertNotIn("sensitive response", stdout.getvalue())
+
+    def test_transient_503_uses_progressive_backoff(self):
+        calls = 0
+        sleeps: list[float] = []
+
+        def request():
+            nonlocal calls
+            calls += 1
+            if calls < 3:
+                raise _ApiError(503, "provider internals")
+            return "audio"
+
+        result = _call_gemini_api(
+            request,
+            "synthesis_request",
+            sleep=sleeps.append,
+        )
+
+        self.assertEqual(result, "audio")
+        self.assertEqual(calls, 3)
+        self.assertEqual(sleeps, [1.0, 2.0])
+
+    def test_permanent_error_is_not_retried(self):
+        calls = 0
+        sleeps: list[float] = []
+
+        def request():
+            nonlocal calls
+            calls += 1
+            raise _ApiError(400, "invalid request")
+
+        with self.assertRaises(_ApiError):
+            _call_gemini_api(
+                request,
+                "synthesis_request",
+                sleep=sleeps.append,
+            )
+
+        self.assertEqual(calls, 1)
+        self.assertEqual(sleeps, [])
+
+    def test_transcription_upload_retries_a_timeout(self):
+        provider = GeminiTTSProvider()
+        upload_calls = 0
+
+        class Files:
+            def upload(self, *, file: str):
+                nonlocal upload_calls
+                upload_calls += 1
+                if upload_calls == 1:
+                    raise TimeoutError("sensitive request details")
+                return SimpleNamespace(uri="files/audio", mime_type="audio/mp3")
+
+        interaction = _Interaction(
+            [_Step([_Content([_Annotation("Ola", "0.0s", "0.4s")])])]
+        )
+        client = SimpleNamespace(
+            files=Files(),
+            interactions=SimpleNamespace(create=lambda **_kwargs: interaction),
+        )
+
+        with patch("engine.gemini_tts.time.sleep") as sleep:
+            words = provider._transcribe_word_timings(client, Path("narracao.mp3"))
+
+        self.assertEqual(upload_calls, 2)
+        sleep.assert_called_once_with(1.0)
+        self.assertEqual([word.text for word in words], ["Ola"])
 
 
 class BulkSegmentProviderTests(unittest.IsolatedAsyncioTestCase):
