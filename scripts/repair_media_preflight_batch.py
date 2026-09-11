@@ -18,6 +18,9 @@ VISUAL_TARGETED_CODES = {
 VISUAL_GENERAL_CODES = {
     "INTRA_EPISODE_VISUAL_REUSE",
     "SHOT_REFERENCES_MISSING_ASSET",
+    "FIRST_EDITORIAL_VISUAL_NOT_VIDEO",
+    "VISUAL_CANDIDATE_POOL_MISSING",
+    "VISUAL_CANDIDATE_POOL_INVALID",
 }
 BACKGROUND_CODES = {
     "BACKGROUND_MUSIC_REUSE",
@@ -125,7 +128,10 @@ def main() -> int:
         finally:
             mini_log.unlink(missing_ok=True)
 
-    # A general reselection can repair duplicate/missing references in one sweep.
+    # A general reselection can repair duplicate/missing references and opening
+    # image failures in one sweep. Missing/invalid pools intentionally produce no
+    # change here: the Action stays failed so the authoring agent must create/fix
+    # a real candidate pool instead of silently publishing the base images.
     if any(str(error.get("code") or "") in VISUAL_GENERAL_CODES for error in errors):
         print("BATCH_REPAIR_ITEM=visual_general")
         before = subprocess.run(
