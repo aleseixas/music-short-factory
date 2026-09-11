@@ -1,1 +1,296 @@
-{"schema_version":1,"smart_visual_pacing":{"enabled":true},"background_music":{"profile":"fallback_social_cinematic","volume":0.1},"sfx_cues":[{"time_seconds":0.1,"type":"record_scratch","volume":0.11},{"time_seconds":8.0,"type":"camera_flash","volume":0.08},{"time_seconds":16.0,"type":"crowd_gasp","volume":0.08},{"time_seconds":24.0,"type":"dramatic_dun_dun","volume":0.08},{"time_seconds":33.0,"type":"crowd_cheer","volume":0.08},{"time_seconds":43.0,"type":"whoosh_fast","volume":0.08},{"time_seconds":52.0,"type":"chime_sparkles","volume":0.07},{"time_seconds":63.0,"type":"riser_build_up","volume":0.08},{"time_seconds":74.0,"type":"impact","volume":0.09}],"visual_fx_cues":[{"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.9},{"start_seconds":31.5,"end_seconds":32.5,"type":"punch_zoom","intensity":0.8},{"start_seconds":70.0,"end_seconds":71.2,"type":"slow_zoom_in","intensity":0.7}],"text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"NEY ABRIU O ROCK IN RIO","accent_text":"NEY","animation":"scale_bounce","position":"center","intensity":0.95},{"segment":"vaias","offset_seconds":0.1,"duration_seconds":1.0,"text":"COMEÇOU COM VAIAS","accent_text":"VAIAS","animation":"pop_in","position":"center","intensity":0.9},{"segment":"aplausos","offset_seconds":0.1,"duration_seconds":1.1,"text":"VAIAS → APLAUSOS","accent_text":"APLAUSOS","animation":"slide_up","position":"center","intensity":0.9},{"segment":"quarenta_um","offset_seconds":0.1,"duration_seconds":1.1,"text":"41 ANOS DEPOIS","accent_text":"41 ANOS","animation":"fade_pop","position":"center","intensity":0.9},{"segment":"contraste","offset_seconds":0.1,"duration_seconds":1.1,"text":"DE VAIADO A SÍMBOLO","accent_text":"SÍMBOLO","animation":"scale_bounce","position":"center","intensity":0.92}],"shots":[{"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","highlight":"NEY ABRIU O ROCK IN RIO"},{"id":"shot_02","segment":"dia","asset":"dia_visual","motion":"pull_out","transition_out":"cut"},{"id":"shot_03","segment":"visual","asset":"visual_visual","motion":"pan_left","transition_out":"cut","highlight":"PURPURINA + TANGA + PENAS"},{"id":"shot_04","segment":"musica","asset":"musica_visual","motion":"pan_right","transition_out":"cut"},{"id":"shot_05","segment":"publico","asset":"publico_visual","motion":"push_in","transition_out":"cut","highlight":"+100 MIL PESSOAS"},{"id":"shot_06","segment":"vaias","asset":"vaias_visual","motion":"pull_out","transition_out":"cut","highlight":"COMEÇOU COM VAIAS"},{"id":"shot_07","segment":"resposta","asset":"resposta_visual","motion":"pan_left","transition_out":"cut"},{"id":"shot_08","segment":"palco","asset":"palco_visual","motion":"pan_right","transition_out":"cut"},{"id":"shot_09","segment":"virada","asset":"virada_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_10","segment":"aplausos","asset":"aplausos_visual","motion":"pull_out","transition_out":"cut","highlight":"VAIAS → APLAUSOS"},{"id":"shot_11","segment":"simbolo","asset":"simbolo_visual","motion":"pan_left","transition_out":"cut"},{"id":"shot_12","segment":"quarenta_um","asset":"quarenta_um_visual","motion":"pan_right","transition_out":"cut","highlight":"41 ANOS DEPOIS"},{"id":"shot_13","segment":"campanha","asset":"campanha_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_14","segment":"primeira_campanha","asset":"primeira_campanha_visual","motion":"pull_out","transition_out":"cut","highlight":"1ª CAMPANHA SOLO"},{"id":"shot_15","segment":"mensagem","asset":"mensagem_visual","motion":"pan_left","transition_out":"cut"},{"id":"shot_16","segment":"idade","asset":"idade_visual","motion":"pan_right","transition_out":"cut"},{"id":"shot_17","segment":"turne","asset":"turne_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_18","segment":"contraste","asset":"contraste_visual","motion":"pull_out","transition_out":"cut","highlight":"VAIAS → OUSADIA"},{"id":"shot_19","segment":"primeiro_passo","asset":"primeiro_passo_visual","motion":"pan_left","transition_out":"cut"},{"id":"shot_20","segment":"foi_ney","asset":"foi_ney_visual","motion":"pan_right","transition_out":"cut","highlight":"AMÉRICA DO SUL"},{"id":"shot_21","segment":"payoff","asset":"payoff_visual","motion":"push_in","transition_out":"cut","highlight":"IMAGEM HISTÓRICA"},{"id":"shot_22","segment":"cta","asset":"cta_visual","motion":"pull_out","transition_out":"cut","highlight":"VOCÊ CONTINUARIA?"}]}
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "bright_fun",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.1,
+      "type": "record_scratch",
+      "volume": 0.11
+    },
+    {
+      "time_seconds": 8.0,
+      "type": "camera_flash",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 16.0,
+      "type": "crowd_gasp",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 24.0,
+      "type": "dramatic_dun_dun",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 33.0,
+      "type": "crowd_cheer",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 43.0,
+      "type": "whoosh_fast",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 52.0,
+      "type": "chime_sparkles",
+      "volume": 0.07
+    },
+    {
+      "time_seconds": 63.0,
+      "type": "riser_build_up",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 74.0,
+      "type": "impact",
+      "volume": 0.09
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.9,
+      "type": "punch_zoom",
+      "intensity": 0.9
+    },
+    {
+      "start_seconds": 31.5,
+      "end_seconds": 32.5,
+      "type": "punch_zoom",
+      "intensity": 0.8
+    },
+    {
+      "start_seconds": 70.0,
+      "end_seconds": 71.2,
+      "type": "slow_zoom_in",
+      "intensity": 0.7
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "NEY ABRIU O ROCK IN RIO",
+      "accent_text": "NEY",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.95
+    },
+    {
+      "segment": "vaias",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.0,
+      "text": "COMEÇOU COM VAIAS",
+      "accent_text": "VAIAS",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "aplausos",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "VAIAS → APLAUSOS",
+      "accent_text": "APLAUSOS",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "quarenta_um",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "41 ANOS DEPOIS",
+      "accent_text": "41 ANOS",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "contraste",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "DE VAIADO A SÍMBOLO",
+      "accent_text": "SÍMBOLO",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.92
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "NEY ABRIU O ROCK IN RIO"
+    },
+    {
+      "id": "shot_02",
+      "segment": "dia",
+      "asset": "dia_visual",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "visual",
+      "asset": "visual_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "PURPURINA + TANGA + PENAS"
+    },
+    {
+      "id": "shot_04",
+      "segment": "musica",
+      "asset": "musica_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_05",
+      "segment": "publico",
+      "asset": "publico_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "+100 MIL PESSOAS"
+    },
+    {
+      "id": "shot_06",
+      "segment": "vaias",
+      "asset": "vaias_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "COMEÇOU COM VAIAS"
+    },
+    {
+      "id": "shot_07",
+      "segment": "resposta",
+      "asset": "resposta_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "palco",
+      "asset": "palco_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_09",
+      "segment": "virada",
+      "asset": "virada_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_10",
+      "segment": "aplausos",
+      "asset": "aplausos_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "VAIAS → APLAUSOS"
+    },
+    {
+      "id": "shot_11",
+      "segment": "simbolo",
+      "asset": "simbolo_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_12",
+      "segment": "quarenta_um",
+      "asset": "quarenta_um_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "41 ANOS DEPOIS"
+    },
+    {
+      "id": "shot_13",
+      "segment": "campanha",
+      "asset": "campanha_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_14",
+      "segment": "primeira_campanha",
+      "asset": "primeira_campanha_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "1ª CAMPANHA SOLO"
+    },
+    {
+      "id": "shot_15",
+      "segment": "mensagem",
+      "asset": "mensagem_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_16",
+      "segment": "idade",
+      "asset": "idade_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_17",
+      "segment": "turne",
+      "asset": "turne_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_18",
+      "segment": "contraste",
+      "asset": "contraste_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "VAIAS → OUSADIA"
+    },
+    {
+      "id": "shot_19",
+      "segment": "primeiro_passo",
+      "asset": "primeiro_passo_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_20",
+      "segment": "foi_ney",
+      "asset": "foi_ney_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "AMÉRICA DO SUL"
+    },
+    {
+      "id": "shot_21",
+      "segment": "payoff",
+      "asset": "payoff_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "IMAGEM HISTÓRICA"
+    },
+    {
+      "id": "shot_22",
+      "segment": "cta",
+      "asset": "cta_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "VOCÊ CONTINUARIA?"
+    }
+  ]
+}
