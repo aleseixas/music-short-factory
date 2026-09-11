@@ -31,20 +31,25 @@ def video_fallback_block_reason(
     best_semantic_rank: int | None,
     practically_static: bool,
 ) -> str | None:
-    """Block only weak video fallbacks that should never beat a relevant image/existing asset.
+    """Allow only semantically direct/exact moving footage.
 
-    Exact/direct videos remain eligible as render-safe fallbacks if their technical score is
-    low. Legacy candidates without semantic_fit keep the previous behavior. Contextual/generic
-    videos are blocked only when the authored pool contains a direct/exact alternative tier.
+    A video is valuable only when it actually shows the artist, band, event, person,
+    place, performance or action tied to the narrated beat. Contextual/generic footage
+    must never be selected merely to keep the screen moving; a relevant image is better.
+    Candidates without explicit semantic_fit are also blocked because their relevance
+    cannot be proven. ``best_semantic_rank`` remains in the signature for compatibility
+    with existing resolver callers, but no longer weakens this quality gate.
     """
+    del best_semantic_rank
+
     if practically_static:
         return "practically_static_not_fallbackable"
 
     fit = str(semantic_fit or "").strip().casefold()
-    rank = SEMANTIC_FIT_RANK.get(fit)
-    if rank is None or best_semantic_rank is None:
-        return None
-
-    if best_semantic_rank >= SEMANTIC_FIT_RANK["direct"] and rank < SEMANTIC_FIT_RANK["direct"]:
-        return f"semantic_video_not_fallbackable_{fit}"
+    if not fit:
+        return "semantic_video_unlabelled_not_allowed"
+    if fit not in {"direct", "exact"}:
+        if fit in SEMANTIC_FIT_RANK:
+            return f"semantic_video_not_allowed_{fit}"
+        return "semantic_video_unknown_fit_not_allowed"
     return None
