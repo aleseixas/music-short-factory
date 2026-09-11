@@ -1,51 +1,293 @@
 {
   "schema_version": 1,
-  "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile": "uplifting_documentary", "volume": 0.075},
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "uplifting_documentary",
+    "volume": 0.075
+  },
   "sfx_cues": [
-    {"time_seconds": 0.1, "type": "bass_drop_cinematic", "volume": 0.09},
-    {"time_seconds": 7.5, "type": "record_scratch", "volume": 0.065},
-    {"time_seconds": 17.0, "type": "whoosh_fast", "volume": 0.07},
-    {"time_seconds": 28.0, "type": "crowd_cheer", "volume": 0.065},
-    {"time_seconds": 39.0, "type": "riser_build_up", "volume": 0.065},
-    {"time_seconds": 49.0, "type": "camera_shutter", "volume": 0.06},
-    {"time_seconds": 58.0, "type": "tape_stop", "volume": 0.06},
-    {"time_seconds": 69.0, "type": "chime_sparkles", "volume": 0.065},
-    {"time_seconds": 79.0, "type": "impact", "volume": 0.08}
+    {
+      "time_seconds": 0.1,
+      "type": "bass_drop_cinematic",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 7.5,
+      "type": "record_scratch",
+      "volume": 0.065
+    },
+    {
+      "time_seconds": 17.0,
+      "type": "whoosh_fast",
+      "volume": 0.07
+    },
+    {
+      "time_seconds": 28.0,
+      "type": "crowd_cheer",
+      "volume": 0.065
+    },
+    {
+      "time_seconds": 39.0,
+      "type": "riser_build_up",
+      "volume": 0.065
+    },
+    {
+      "time_seconds": 49.0,
+      "type": "camera_shutter",
+      "volume": 0.06
+    },
+    {
+      "time_seconds": 58.0,
+      "type": "tape_stop",
+      "volume": 0.06
+    },
+    {
+      "time_seconds": 69.0,
+      "type": "chime_sparkles",
+      "volume": 0.065
+    },
+    {
+      "time_seconds": 79.0,
+      "type": "impact",
+      "volume": 0.08
+    }
   ],
   "visual_fx_cues": [
-    {"start_seconds": 0.1, "end_seconds": 0.9, "type": "punch_zoom", "intensity": 0.9},
-    {"start_seconds": 39.0, "end_seconds": 40.0, "type": "punch_zoom", "intensity": 0.82},
-    {"start_seconds": 74.0, "end_seconds": 76.0, "type": "slow_zoom_in", "intensity": 0.7}
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.9,
+      "type": "punch_zoom",
+      "intensity": 0.9
+    },
+    {
+      "start_seconds": 39.0,
+      "end_seconds": 40.0,
+      "type": "punch_zoom",
+      "intensity": 0.82
+    },
+    {
+      "start_seconds": 74.0,
+      "end_seconds": 76.0,
+      "type": "slow_zoom_in",
+      "intensity": 0.7
+    }
   ],
   "text_fx_cues": [
-    {"segment": "hook", "offset_seconds": 0.1, "duration_seconds": 1.25, "text": "60% AINDA NÃO ESTÁ DECIDIDO", "accent_text": "60%", "animation": "scale_bounce", "position": "center", "intensity": 0.95},
-    {"segment": "familia", "offset_seconds": 0.1, "duration_seconds": 1.2, "text": "4 DJs. 1 FAMÍLIA.", "accent_text": "1 FAMÍLIA", "animation": "pop_in", "position": "center", "intensity": 0.9},
-    {"segment": "datas", "offset_seconds": 0.1, "duration_seconds": 1.15, "text": "2 DIAS. 2 SHOWS.", "accent_text": "2 SHOWS", "animation": "slide_up", "position": "center", "intensity": 0.9},
-    {"segment": "sessenta", "offset_seconds": 0.1, "duration_seconds": 1.15, "text": "60% DECIDIDO NA PISTA", "accent_text": "NA PISTA", "animation": "scale_bounce", "position": "center", "intensity": 0.95},
-    {"segment": "celular_depois", "offset_seconds": 0.1, "duration_seconds": 1.1, "text": "GUARDA O CELULAR", "accent_text": "CELULAR", "animation": "fade_pop", "position": "center", "intensity": 0.88},
-    {"segment": "virada", "offset_seconds": 0.1, "duration_seconds": 1.2, "text": "TECNOLOGIA PARA IMPROVISAR", "accent_text": "IMPROVISAR", "animation": "pop_in", "position": "center", "intensity": 0.92}
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.25,
+      "text": "60% AINDA NÃO ESTÁ DECIDIDO",
+      "accent_text": "60%",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.95
+    },
+    {
+      "segment": "familia",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "4 DJs. 1 FAMÍLIA.",
+      "accent_text": "1 FAMÍLIA",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "datas",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.15,
+      "text": "2 DIAS. 2 SHOWS.",
+      "accent_text": "2 SHOWS",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "sessenta",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.15,
+      "text": "60% DECIDIDO NA PISTA",
+      "accent_text": "NA PISTA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.95
+    },
+    {
+      "segment": "celular_depois",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "GUARDA O CELULAR",
+      "accent_text": "CELULAR",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.88
+    },
+    {
+      "segment": "virada",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "TECNOLOGIA PARA IMPROVISAR",
+      "accent_text": "IMPROVISAR",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.92
+    }
   ],
   "shots": [
-    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","highlight":"60% AINDA NÃO ESTÁ DECIDIDO"},
-    {"id":"shot_02","segment":"flex","asset":"flex_visual","motion":"pull_out","transition_out":"cut"},
-    {"id":"shot_03","segment":"contraste","asset":"contraste_visual","motion":"pan_left","transition_out":"cut"},
-    {"id":"shot_04","segment":"ideia","asset":"ideia_visual","motion":"pan_right","transition_out":"cut"},
-    {"id":"shot_05","segment":"origem","asset":"origem_visual","motion":"push_in","transition_out":"cut"},
-    {"id":"shot_06","segment":"familia","asset":"familia_visual","motion":"pull_out","transition_out":"cut","highlight":"ALOK + PAI + MÃE + IRMÃO"},
-    {"id":"shot_07","segment":"geracoes","asset":"geracoes_visual","motion":"pan_left","transition_out":"cut"},
-    {"id":"shot_08","segment":"teste","asset":"teste_visual","motion":"pan_right","transition_out":"cut"},
-    {"id":"shot_09","segment":"dobradinha","asset":"dobradinha_visual","motion":"push_in","transition_out":"cut"},
-    {"id":"shot_10","segment":"datas","asset":"datas_visual","motion":"pull_out","transition_out":"cut","highlight":"2 SHOWS, 2 CONCEITOS"},
-    {"id":"shot_11","segment":"sessenta","asset":"sessenta_visual","motion":"pan_left","transition_out":"cut","highlight":"60% AO VIVO"},
-    {"id":"shot_12","segment":"pista","asset":"pista_visual","motion":"pan_right","transition_out":"cut"},
-    {"id":"shot_13","segment":"celular_inicio","asset":"celular_inicio_visual","motion":"push_in","transition_out":"cut"},
-    {"id":"shot_14","segment":"celular_depois","asset":"celular_depois_visual","motion":"pull_out","transition_out":"cut","highlight":"GUARDA O CELULAR"},
-    {"id":"shot_15","segment":"genz","asset":"genz_visual","motion":"pan_left","transition_out":"cut"},
-    {"id":"shot_16","segment":"valores","asset":"valores_visual","motion":"pan_right","transition_out":"cut","highlight":"PAZ • AMOR • UNIÃO"},
-    {"id":"shot_17","segment":"convidados","asset":"convidados_visual","motion":"push_in","transition_out":"cut"},
-    {"id":"shot_18","segment":"universo","asset":"universo_visual","motion":"pull_out","transition_out":"cut"},
-    {"id":"shot_19","segment":"virada","asset":"virada_visual","motion":"pan_left","transition_out":"cut","highlight":"TECNOLOGIA PARA IMPROVISAR"},
-    {"id":"shot_20","segment":"cta","asset":"cta_visual","motion":"pan_right","transition_out":"cut","highlight":"PERFEITO OU IMPREVISÍVEL?"}
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "60% AINDA NÃO ESTÁ DECIDIDO",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_02",
+      "segment": "flex",
+      "asset": "flex_visual",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "contraste",
+      "asset": "contraste_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_04",
+      "segment": "ideia",
+      "asset": "ideia_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_05",
+      "segment": "origem",
+      "asset": "origem_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_06",
+      "segment": "familia",
+      "asset": "familia_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "ALOK + PAI + MÃE + IRMÃO",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_07",
+      "segment": "geracoes",
+      "asset": "geracoes_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "teste",
+      "asset": "teste_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_09",
+      "segment": "dobradinha",
+      "asset": "dobradinha_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_10",
+      "segment": "datas",
+      "asset": "datas_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "2 SHOWS, 2 CONCEITOS"
+    },
+    {
+      "id": "shot_11",
+      "segment": "sessenta",
+      "asset": "sessenta_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "60% AO VIVO"
+    },
+    {
+      "id": "shot_12",
+      "segment": "pista",
+      "asset": "pista_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_13",
+      "segment": "celular_inicio",
+      "asset": "celular_inicio_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_14",
+      "segment": "celular_depois",
+      "asset": "celular_depois_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "GUARDA O CELULAR"
+    },
+    {
+      "id": "shot_15",
+      "segment": "genz",
+      "asset": "genz_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_16",
+      "segment": "valores",
+      "asset": "valores_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "PAZ • AMOR • UNIÃO"
+    },
+    {
+      "id": "shot_17",
+      "segment": "convidados",
+      "asset": "convidados_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_18",
+      "segment": "universo",
+      "asset": "universo_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_19",
+      "segment": "virada",
+      "asset": "virada_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "TECNOLOGIA PARA IMPROVISAR"
+    },
+    {
+      "id": "shot_20",
+      "segment": "cta",
+      "asset": "cta_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "PERFEITO OU IMPREVISÍVEL?"
+    }
   ]
 }
