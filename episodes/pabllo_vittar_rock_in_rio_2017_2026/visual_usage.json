@@ -1,0 +1,507 @@
+{
+  "schema_version": 1,
+  "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+  "recorded_at": "2026-09-11T11:34:12Z",
+  "visual_usage": [
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "52f7b2abf870dce11c952736318a59689e11e03efc290bfd3ab3c614c21e8bda",
+        "url_hashes": [
+          "46be00762b601455b96da871ba1848ca84bb771b1c9483bc50e4a95e3a6c49aa"
+        ],
+        "perceptual_hashes": [
+          "912e50acdf33d127",
+          "992f70cec339d02b",
+          "9e457ece531db009",
+          "916b319e36816eec",
+          "b4ca6761c96e58a5",
+          "877e0fc41ef52891",
+          "9da65927e3320bd1"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_02",
+      "asset_id": "crowd_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f0638756bad6e1d77628a74ce271c51d7809376cb484ee26f74b41e0fcfeebf5",
+        "url_hashes": [
+          "0635a30dfbcdb24da6845740f77a85ddb3b5e705a48c6e32c91d45bcb43b08b7"
+        ],
+        "perceptual_hashes": [
+          "c2d8cb0b2d31cde5",
+          "d4dec25a203bc5cb",
+          "d5d5d25a201ee8da",
+          "80c3d50316df7e2b",
+          "81bacbd4cb663863",
+          "dace492e25e46c36",
+          "d294f6c9e23c033e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_03",
+      "asset_id": "fergie_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b8d31c1052adee5f1d61af36c5dee3b88f671a995383b4b0886dab9ff8e9ff83",
+        "url_hashes": [
+          "3cb2aa1a6fb7749968e854d6e94bd2244d5a538448fd20a98591ba188fe8a38a"
+        ],
+        "perceptual_hashes": [
+          "91a04e5cb5296ede",
+          "91a25e5cb1296ed5",
+          "90e05e5eb1395e95",
+          "87c959a3625c8b6e",
+          "86a7dc5d9d836270",
+          "9dea43963c29d634",
+          "9db4e84b43d6342d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_04",
+      "asset_id": "early_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ab0a7c7536735793ed692aed1758e49264be887639a5cf3300a76857fdbcaadf",
+        "url_hashes": [
+          "e0e74346c81782bd34be4da6d7beed5b95ca2349a3c4b83507cc953634165155"
+        ],
+        "perceptual_hashes": [
+          "d3f62c21032cb5be",
+          "d3f72c69022c7d26",
+          "d3d70ee81728293e",
+          "94fc7b26286a3d83",
+          "94e41cfbf6198153",
+          "d8e1273a23b491d7",
+          "d8d801e75c8ad56e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_05",
+      "asset_id": "tour2_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "0ef12160a2dda9b70f2022a3828b86665f6facf500b6799feafad350a65f11cb",
+        "url_hashes": [
+          "e136c408b2bbbe165813aa7efac5c5aade1cd2dac24ef865d4c6145985b99d54"
+        ],
+        "perceptual_hashes": [
+          "c1793cb732c371c1",
+          "c1782f37367270f0",
+          "c0782f37173678f0",
+          "837b3c2d65c3869c",
+          "835379d83a9c3c5c",
+          "dc2f201a79ffd0c0",
+          "dc6f2fa53fc200e0"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_06",
+      "asset_id": "tour3_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "19e4af2f7979caaef8adf2f8d78fce93cc4804032f23613d27e9f5edee77df38",
+        "url_hashes": [
+          "7d8770e3883015ae9d2f4ce228aec867b1d96c9bc9667cb1238b31adc44b8f08"
+        ],
+        "perceptual_hashes": [
+          "c937323778d0037e",
+          "c927d6077e90217e",
+          "c92794067f922d3e",
+          "da2fa578a10f7186",
+          "d22f02877ef885ca",
+          "c43299339f341bdc",
+          "c4325ed42473dde4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_07",
+      "asset_id": "interview1_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "2fdfc90f17b9ec075b34f7200b0814be6bb19f9dc2ee9efa51240c7b4edd7221",
+        "url_hashes": [
+          "8738be261dce4acfebf4a75a7db05458b37cf4e940a6363485b72c0272f35fae"
+        ],
+        "perceptual_hashes": [
+          "e868dac7a5878786",
+          "e86ada62e1c362e6",
+          "f878dc75a9c072e0",
+          "e1c19cee8e8c8b9a",
+          "e1619d9d78ba9330",
+          "abebc0b4e5c19585",
+          "ef2fcbca1296940c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_08",
+      "asset_id": "interview2_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "d323654d7836b9dd36d5308bfdecf2176b19570efce74e57acd172a0cbd47823",
+        "url_hashes": [
+          "47c1e67e8bcb2e25f44e8fd2982b3ac951d440501588e475cd3233c2265c3ef4"
+        ],
+        "perceptual_hashes": [
+          "e12594c7a78746ce",
+          "e92d9c65e1a16167",
+          "ea2a9e75e1a17162",
+          "eb2a9ace8ecc9c88",
+          "e26f10b978fa8aa2",
+          "a5a5d6f6f443c282",
+          "ad25054b42e697be"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_09",
+      "asset_id": "interview3_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "2c5f3c5b1c2dd6017fb6e845c634c3f27ddb63169ef93de8c6a7e1a773c4fc22",
+        "url_hashes": [
+          "eb5f483bb5e5d6ae00fe7eab808e25e3c34d275bcd16ec3818850494a08fae7b"
+        ],
+        "perceptual_hashes": [
+          "a0b4d6e2e0f0d6e3",
+          "ad2d957270bc7470",
+          "a92d85407cbf2d6c",
+          "ea2ac5e1a0c7c787",
+          "e22a1a9f476785ac",
+          "b6b6d23890d0f9d8",
+          "be3584ca7b3d8990"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_10",
+      "asset_id": "sensacional1_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "df0c521f0bda90e48c586dc3b0ff162e7fb5a434b0210ee9a75880d04e6ed036",
+        "url_hashes": [
+          "e5e64bcd3c31f08efbc494e087bc7c0d9c658550a59c97cd7f521b960d05c523"
+        ],
+        "perceptual_hashes": [
+          "8b542547db678c93",
+          "8b542d47d3659ab2",
+          "92242d45d26fd3b6",
+          "972b4ad54d92295e",
+          "97392b6a91654b96",
+          "ca5764d8618a93ee",
+          "8853b726ca7966cc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_11",
+      "asset_id": "sensacional2_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "70fc17fc7ec14b05871ebf7921f6c9fcd79a13dffdf60281c7f82bc20da4b326",
+        "url_hashes": [
+          "46b6c2f5ec6e1b9edb583db01ad0cba41f2dce9ec7324532624bf76d659d126f"
+        ],
+        "perceptual_hashes": [
+          "96794b65639468ce",
+          "9478df6863906cce",
+          "94389f6b613a6cc6",
+          "a913966e97499476",
+          "89719f986a9e3662",
+          "d34f4c748b63c83c",
+          "d21fcac52ed01d36"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_12",
+      "asset_id": "sensacional3_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "5ecf590bbff97c766fd30657997bb56d88915caa53d106e8d6a6734424125bc7",
+        "url_hashes": [
+          "3c549f54e0bf0edf7bb2b97e0e9508e571f91ceb071f35cfe34323b85355e2d0"
+        ],
+        "perceptual_hashes": [
+          "99b736d0a18c4f39",
+          "98b736d3b8884f31",
+          "98a337d3b8c68da2",
+          "92aeb5830b5c6774",
+          "93a66cbc64b3649a",
+          "8cb651de27603d5a",
+          "c6ac3259589f7986"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_13",
+      "asset_id": "sensacional4_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "dc030ee8e3191f7508b456313e622d167dc7e367219bdaf8925c0284ff439488",
+        "url_hashes": [
+          "364efe84826b6c4752eacb29d7b3eca0ce853fcf30484ba89b7c8411bd5c2a7b"
+        ],
+        "perceptual_hashes": [
+          "817d5cd216764bc9",
+          "892f5d921474d6da",
+          "8a2fd9b4b525b492",
+          "967aa1a968d5574a",
+          "875e52d487b34aa9",
+          "8d06db92626b6d66",
+          "8d2544cddf8f6492"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_14",
+      "asset_id": "sensacional5_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6245e1770c9f49f4d1a0c7e511e7a2d37e683d848cb626b0b9dcbb615428ae14",
+        "url_hashes": [
+          "a3810f7792b5d27cabd8137e683276fde4cefa25d372d29daf0d06b16604d248"
+        ],
+        "perceptual_hashes": [
+          "96b962b449c56d56",
+          "87bb76bc1b814916",
+          "85fb67ae1288cac5",
+          "ac76683743596963",
+          "8db24ea878ad62b5",
+          "906c331d6e67123f",
+          "908c7ab23f923e99"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_15",
+      "asset_id": "tvz_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "07a688643f815032c0b03094b81863535f4b6599eb0d19c06d4a6c7eee55d2fd",
+        "url_hashes": [
+          "2e6baadc53ce9dcd5b3f19b47b5c887af97e3c4f3319153ba47b5e7c31c76ad2"
+        ],
+        "perceptual_hashes": [
+          "d5c23b354bf82525",
+          "d5c2193f5af92909",
+          "85c60d2752ff1b13",
+          "8c953a54f06a4fe9",
+          "8a85df2a0f9de8e0",
+          "d0c924496e3477b7",
+          "d4d1c3b6314be3a4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_16",
+      "asset_id": "vittar02_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "cc2d929086d8c411839969a6c67b96404bbf7d37505883e6d30cebee1467b731",
+        "url_hashes": [
+          "94103372214c93990a775673079c0d883bcce77f0da9e66bf5c96742b473aed4"
+        ],
+        "perceptual_hashes": [
+          "d24969b5366a6627",
+          "d25969ad14fa2e25",
+          "965b698d11de8c3c",
+          "85524b2f754d6ccc",
+          "ad9452ca2a66fc87",
+          "db4ca7926b3130f8",
+          "dbc86ce5943ccac8"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_17",
+      "asset_id": "nov2021_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8dedb6585383ee5c240133983e714a76ff2229f4df60bcf62e019c3e7774d902",
+        "url_hashes": [
+          "f1a0c465abc8857d284b4f823bf8698756f57affd4781cb22f1d5ebf4b0a0775"
+        ],
+        "perceptual_hashes": [
+          "ae87b31a111b42fd",
+          "ae84b2deb01246bf",
+          "eea2b2ceb8504747",
+          "f886b51126dce2f1",
+          "f88ce6ddc872a154",
+          "a1b98b1518c8bdaf",
+          "a1f0bceaa7b58229"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_18",
+      "asset_id": "promo2021_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "a67704b9dd97d8f473600b9ba2970170adf332e26e70b329242cd5564215a8d6",
+        "url_hashes": [
+          "37bd11f6c74a1b2de8e8444824d8c5919e9c71bd1e9d79e17af8ecd56f8a6d41"
+        ],
+        "perceptual_hashes": [
+          "e1c698984bc6dce5",
+          "e1c798984b86dbc5",
+          "e9c79c9873861a87",
+          "ea8cb1d69892ca9b",
+          "e2ce11b952679873",
+          "b4d08fecc3c5e606",
+          "bdf00a974cb6c20f"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_19",
+      "asset_id": "stage_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "af9107d8206988ae0b787906e9c2382c920c4b3a3a580f6b90a592558d93d8bd",
+        "url_hashes": [
+          "0f146c65ad48083a8cada2601632ae8c9d656fea5c183292d7a51305ce5fa4f0"
+        ],
+        "perceptual_hashes": [
+          "f78a00753ec0c53f",
+          "ef8f11612ee0853b",
+          "e68bd8712ef48538",
+          "ec90437d819f63c9",
+          "ecac90833f7ce09c",
+          "b1885e31c7c62df2",
+          "b1a0cede0829ffc2"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "pabllo_vittar_rock_in_rio_2017_2026",
+      "shot_id": "shot_20",
+      "asset_id": "show_visual",
+      "recorded_at": "2026-09-11T11:34:12Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "9d8410109e206ffc4568a2a62333519e7956f99c5c586c4d456161f4668f821e",
+        "url_hashes": [
+          "f3db8cb449c39e23d19283806f3e26ee257f7efcec44b5a67e4609ea5cc554b9"
+        ],
+        "perceptual_hashes": [
+          "e6fd3309c3e67408",
+          "e6fd3209c2ef5428",
+          "e5fe3318c3e50e14",
+          "cf753385ec3101c7",
+          "cff865323304e655",
+          "e2791ec1f007bad4",
+          "e2c53b0f1fa8fc40"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
