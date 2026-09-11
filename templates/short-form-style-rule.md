@@ -53,18 +53,34 @@ Transforme informação em progressão narrativa:
 
 Evite sequência de fatos independentes. Use conectores conversados quando ajudarem a empurrar a história adiante.
 
-## 3) Primeiro visual — reconhecimento obrigatório
+## 3) Primeiro visual — VÍDEO OBRIGATÓRIO (HARD GATE)
 
-Nos primeiros **0,0–1,5 segundos**, o primeiro visual deve mostrar claramente uma destas opções:
+Nos primeiros **0,0–1,5 segundos**, o primeiro visual deve ser **obrigatoriamente um VÍDEO real**. O episódio **NUNCA pode começar com imagem estática**.
 
-1. **capa oficial do single, música ou álbum** relacionado ao episódio; ou
-2. **artista principal/banda principal claramente reconhecível**.
+O primeiro take/shot deve:
 
-Essa regra existe para o espectador entender instantaneamente sobre qual música/artista o vídeo fala.
+1. usar asset principal do tipo **vídeo**;
+2. mostrar o **artista principal/banda principal claramente reconhecível** ou um momento diretamente ligado ao hook em que o assunto seja identificável de imediato;
+3. ter movimento real do material-fonte — performance, clipe, entrevista, bastidor, show, reação, evento ou outro trecho audiovisual relevante.
 
-Não abra com B-roll genérico, multidão, instrumento aleatório, rua, estúdio vazio, paisagem, texto abstrato ou outro visual que obrigue o espectador a esperar para reconhecer o assunto.
+É **proibido** usar como primeiro visual:
 
-Quando houver uma boa capa oficial e uma boa imagem/vídeo do artista, escolha o que gerar reconhecimento mais imediato e combinar melhor com o hook.
+- foto do artista;
+- capa de single/álbum;
+- poster;
+- screenshot;
+- thumbnail;
+- arte estática;
+- qualquer asset `kind: image`;
+- imagem com zoom, crop, pan, `push_in`, `pull_out`, parallax, text FX ou qualquer motion artificial.
+
+**Motion aplicado sobre imagem não transforma imagem em vídeo para esta regra.** O asset principal do primeiro shot precisa ser vídeo de verdade.
+
+Não abra também com B-roll genérico, multidão, instrumento aleatório, rua, estúdio vazio, paisagem ou outro vídeo que obrigue o espectador a esperar para reconhecer o assunto. Entre vídeos válidos, priorize aquele que mostre o artista principal com mais clareza e tenha maior impacto no hook.
+
+Capa oficial ou imagem forte continuam podendo aparecer **a partir do segundo take**, quando forem editorialmente úteis, mas nunca como visual principal de abertura.
+
+Se o primeiro slot não tiver nenhum vídeo válido, **continue a busca por vídeo**. É proibido aceitar imagem como fallback para o primeiro shot. Sem vídeo de abertura válido, o episódio ainda não está pronto para queue/publicação.
 
 ## 4) Ritmo visual: agressivo, mas não aleatório
 
@@ -93,7 +109,7 @@ Para TODO shot cujo asset principal seja uma **imagem estática**:
 - no contrato atual `1 segment = 1 shot`, a segmentação do roteiro deve ser planejada para tornar essa regra possível; não aceite um segmento longo com imagem e espere que motion/FX resolvam o pacing;
 - se houver dúvida entre prolongar a imagem e trocar para outro asset semanticamente correto, **troque a imagem**.
 
-O primeiro visual continua precisando aparecer imediatamente nos primeiros 0,0–1,5s; se ele for imagem estática, pode começar em 0,0s e permanecer até completar a janela obrigatória de 2–4s.
+Esta regra de imagem vale somente para shots em que imagem é permitida. **O primeiro shot é exceção absoluta: nele imagem estática é proibida, independentemente da duração ou dos efeitos aplicados.**
 
 ### Vídeos — podem respirar mais
 
@@ -181,9 +197,9 @@ Como referência editorial, tente fechar aproximadamente **60–80% dos takes fi
 
 Em ~24 takes, algo como **15–19 vídeos e 5–9 imagens** é uma referência, não hard gate.
 
-Não escolha vídeo inferior apenas para cumprir proporção. Se imagens mais contextuais contarem melhor determinado trecho, use imagens.
+Não escolha vídeo inferior apenas para cumprir proporção nos demais takes. **No primeiro take, porém, vídeo é hard gate e imagem nunca é fallback aceitável.**
 
-Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — além da regra específica do primeiro visual.
+Todo episódio deve ter pelo menos um take em que o artista principal seja claramente reconhecível — e, pela regra específica de abertura, o primeiro visual já deve buscar cumprir isso em vídeo.
 
 Nunca reutilize a mesma imagem nem o mesmo vídeo-fonte em dois shots, mesmo com trim/crop/FX diferentes.
 
@@ -215,9 +231,12 @@ Escolha apenas UMA ação principal no CTA, priorizando comentário ou compartil
 
 Antes de finalizar, confirme obrigatoriamente:
 
-- primeiro visual = capa oficial ou artista principal claramente reconhecível;
+- **primeiro visual/shot = VÍDEO real; nunca imagem estática, capa, foto, poster, screenshot ou thumbnail**;
+- **motion artificial sobre imagem NÃO conta como vídeo para o primeiro shot**;
+- primeiro vídeo mostra o artista principal/banda claramente reconhecível ou um momento diretamente ligado ao hook que identifique o assunto imediatamente;
+- se o primeiro slot não tinha vídeo válido, a busca continuou e nenhuma imagem foi aceita como fallback;
 - 20–30 takes quando a duração do episódio comportar esse ritmo;
-- **toda imagem estática dura entre 2,0s e 4,0s, sem exceção editorial acima de 4s**;
+- **toda imagem estática permitida dura entre 2,0s e 4,0s, sem exceção editorial acima de 4s**;
 - quando uma imagem exigiria >4s, o roteiro foi dividido em segmentos menores e houve troca real do visual principal;
 - vídeos podem durar mais que imagens e podem ultrapassar ~6s somente quando movimento/contexto real sustentarem o plano;
 - pool normalmente entre 100–120 candidatos;
