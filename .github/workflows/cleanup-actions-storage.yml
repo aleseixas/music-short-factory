@@ -7,6 +7,16 @@ on:
       - main
     paths:
       - ".github/workflows/cleanup-actions-storage.yml"
+  workflow_run:
+    workflows:
+      - "Publish episode"
+      - "Publish existing rendered artifact"
+      - "Episode media preflight"
+      - "Render test only"
+      - "Test YouTube visual download"
+      - "Test visual pipeline"
+    types:
+      - completed
   schedule:
     - cron: "17 * * * *"
 
@@ -40,17 +50,10 @@ jobs:
             created_epoch="$(date -u -d "$created_at" +%s)"
             age=$((now - created_epoch))
 
-            # Protect very recent artifacts even if the source run is transitioning.
-            if (( age < 1800 )); then
-              echo "KEEP recent: $name ($artifact_id)"
-              kept=$((kept + 1))
-              continue
-            fi
-
             run_info="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" --jq '[.status, (.conclusion // "")] | @tsv')"
             IFS=$'\t' read -r run_status run_conclusion <<< "$run_info"
 
-            # Never delete an artifact that belongs to an in-flight workflow.
+            # Artifacts may still be required by another job in the same run.
             if [[ "$run_status" != "completed" ]]; then
               echo "KEEP in-flight: $name ($artifact_id) run=$run_id status=$run_status"
               kept=$((kept + 1))
@@ -61,6 +64,10 @@ jobs:
             reason=""
 
             case "$name" in
+              visual-handoff-*|visual-usage-*|visual-handoff-smoke-*|visual-pipeline-smoke-handoff)
+                delete=true
+                reason="completed transient handoff"
+                ;;
               rendered-*)
                 if [[ "$run_conclusion" == "success" ]]; then
                   delete=true
@@ -79,7 +86,7 @@ jobs:
               *)
                 if [[ "$run_conclusion" == "success" ]] || (( age >= 86400 )); then
                   delete=true
-                  reason="completed transient artifact"
+                  reason="completed disposable artifact"
                 fi
                 ;;
             esac
