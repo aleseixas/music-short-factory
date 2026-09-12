@@ -1,0 +1,16 @@
+# Fontes factuais e visuais — Demi Lovato / brigadeiro / Rock in Rio 2026
+
+1. Folha de S.Paulo / F5 — 11/09/2026 — Demi chegou ao Brasil em 10/09, celebrou o Dia do Brigadeiro com vídeo preparando o doce, relembrou a confusão entre “brigadeiro” e “obrigada”, e está no país para o Rock in Rio e dois shows em São Paulo. https://f5.folha.uol.com.br/celebridades/2026/09/demi-lovato-troca-microfone-por-panela-e-ensina-receita-de-doce-brasileiro.shtml
+2. Itatiaia — 10/09/2026 — ingredientes usados, relato de Demi de que a troca foi “vergonhosa” e “hilária”, preparo de cerca de 20 minutos e reação final de que ficou perfeito. https://www.itatiaia.com.br/entretenimento/no-dia-do-brigadeiro-demi-lovato-ensina-receita-e-conta-relacao-com-o-doce/
+3. Alô Alô Bahia — 11/09/2026 — confirma que a fala “brigadeiro” ocorreu no encerramento de um show no Rio em 2014 e que o vídeo atual foi feito para o Dia do Brigadeiro. https://aloalobahia.com/noticias/2026/09/11/atracao-do-rock-in-rio-demi-lovato-aparece-fazendo-brigadeiro/
+4. CNN Brasil — 10/09/2026 — chegada ao Rio e atendimento aos fãs no aeroporto; show no Palco Mundo; fase It’s Not That Deep; repertório esperado mistura faixas novas e clássicos como Cool for the Summer e Heart Attack. https://www.cnnbrasil.com.br/pop/celebridades/demi-lovato-chega-ao-rj-para-rock-in-rio-2026-e-atende-fas-veja/
+5. Gshow — 03/12/2025 — confirma Demi no Palco Mundo em 12/09/2026 e que esta é sua volta ao Rock in Rio após 2022. https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/demi-lovato-celebra-show-no-rock-in-rio-2026-e-se-declara-aos-fas-brasileiros-tem-um-lugar-especial-no-coracao.ghtml
+6. Billboard Brasil — 08/09/2026 — agenda: Rock in Rio em 12/09 e shows em São Paulo em 15 e 16/09; turnê It’s Not That Deep e nono álbum. https://billboard.com.br/tudo-que-demi-lovato-vai-fazer-setembro-no-brasil/
+
+## Visuais pesquisados
+- YouTube — “Demi Lovato - Rock in Rio 2022 (Full Concert)” — https://www.youtube.com/watch?v=Kwzt_b5xBCA
+- YouTube / Diário de São Paulo — “Demi Lovato se confunde e agradece dizendo 'Brigadeiro'” — https://www.youtube.com/watch?v=w9adGlNPh1A
+- Wikimedia Commons — conjunto de fotografias de Demi Lovato em shows e aparições; URLs de origem ficam em assets.json e visual_candidates.json.
+
+## Background external-first
+Consultas realizadas em 12/09/2026: “upbeat playful pop background no content id”, “fun funky pop background music no content id”, “light playful social media pop instrumental”, “upbeat cooking fun background instrumental” e “quirky pop documentary background music”. Foram comparadas faixas do Pixabay incluindo Fun - Fun Pop Music (GR0ZA), Fun Pop Background Music (ikoliks_aj), Cooking Food Reels Music (MFCC), Upbeat Pop Music (Tatamusic), Funky and Happy (Sonican) e Cooking (NastelBom). As cinco primeiras estavam explicitamente marcadas como Content ID Registered; Cooking não trazia evidência explícita de No Content ID na página consultada. Para reduzir risco operacional multi-plataforma, nenhuma foi aprovada. Foi usado o fallback curado `fallback_social_fun` da repo, semanticamente compatível com a história leve/irônica.
