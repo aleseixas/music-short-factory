@@ -1,0 +1,104 @@
+name: Cleanup Actions storage
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/cleanup-actions-storage.yml"
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: cleanup-actions-storage
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete disposable Actions artifacts
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+
+          now="$(date -u +%s)"
+          freed=0
+          deleted=0
+          kept=0
+
+          while IFS=$'\t' read -r artifact_id name size created_at run_id; do
+            [[ -z "${artifact_id:-}" ]] && continue
+
+            created_epoch="$(date -u -d "$created_at" +%s)"
+            age=$((now - created_epoch))
+
+            # Protect very recent artifacts even if the source run is transitioning.
+            if (( age < 1800 )); then
+              echo "KEEP recent: $name ($artifact_id)"
+              kept=$((kept + 1))
+              continue
+            fi
+
+            run_info="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$run_id" --jq '[.status, (.conclusion // "")] | @tsv')"
+            IFS=$'\t' read -r run_status run_conclusion <<< "$run_info"
+
+            # Never delete an artifact that belongs to an in-flight workflow.
+            if [[ "$run_status" != "completed" ]]; then
+              echo "KEEP in-flight: $name ($artifact_id) run=$run_id status=$run_status"
+              kept=$((kept + 1))
+              continue
+            fi
+
+            delete=false
+            reason=""
+
+            case "$name" in
+              rendered-*)
+                if [[ "$run_conclusion" == "success" ]]; then
+                  delete=true
+                  reason="published successfully"
+                elif (( age >= 86400 )); then
+                  delete=true
+                  reason="failed/cancelled render older than 24h"
+                fi
+                ;;
+              render-test-*)
+                if (( age >= 86400 )); then
+                  delete=true
+                  reason="render test older than 24h"
+                fi
+                ;;
+              *)
+                if [[ "$run_conclusion" == "success" ]] || (( age >= 86400 )); then
+                  delete=true
+                  reason="completed transient artifact"
+                fi
+                ;;
+            esac
+
+            if [[ "$delete" == "true" ]]; then
+              gh api --method DELETE "repos/$GITHUB_REPOSITORY/actions/artifacts/$artifact_id"
+              echo "DELETE: $name ($artifact_id) bytes=$size reason=$reason"
+              freed=$((freed + size))
+              deleted=$((deleted + 1))
+            else
+              echo "KEEP recovery/debug: $name ($artifact_id) conclusion=$run_conclusion age=${age}s"
+              kept=$((kept + 1))
+            fi
+          done < <(
+            gh api --paginate "repos/$GITHUB_REPOSITORY/actions/artifacts?per_page=100" \
+              --jq '.artifacts[] | [.id, .name, .size_in_bytes, .created_at, .workflow_run.id] | @tsv'
+          )
+
+          echo "Deleted artifacts: $deleted"
+          echo "Kept artifacts: $kept"
+          echo "Freed bytes: $freed"
+          printf 'Freed approximately %.2f MiB\n' "$(awk -v b="$freed" 'BEGIN { print b / 1024 / 1024 }')"
