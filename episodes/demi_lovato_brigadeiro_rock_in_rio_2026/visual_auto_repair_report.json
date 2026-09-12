@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode": "demi_lovato_brigadeiro_rock_in_rio_2026",
+  "error_code": "VISUAL_ASSET_HTTP_404",
+  "error_detail": "Falha ao baixar asset de imagem 'Demi_Bogota_20220709.jpg' para o cache apos 6 tentativa(s): HTTP 404.",
+  "target_slot": "segunda_visual",
+  "failing_file": "Demi_Bogota_20220709.jpg",
+  "selection_mode": "same_kind_eligible",
+  "selected_kind": "image",
+  "selected_name": "Demi_Lovato_2_2012.jpg",
+  "selected_file": "Demi_Lovato_2_2012.jpg",
+  "selected_url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Demi%20Lovato%202%2C%202012.jpg",
+  "visual_score": 74.4,
+  "selection_score": 68.59,
+  "inspection_failures": []
+}
