@@ -264,7 +264,8 @@ jobs:
           exit 1
 
       - name: Upload media preflight diagnostics
-        if: ${{ always() }}
+        if: ${{ failure() }}
+        continue-on-error: true
         uses: actions/upload-artifact@v4
         with:
           name: media-preflight-diagnostics-${{ github.run_id }}

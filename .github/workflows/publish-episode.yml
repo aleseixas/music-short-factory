@@ -198,6 +198,7 @@ jobs:
 
       - name: Upload resolved visual handoff
         if: always()
+        continue-on-error: true
         uses: actions/upload-artifact@v7
         with:
           name: visual-handoff-${{ needs.prepare.outputs.episode }}
@@ -337,6 +338,7 @@ jobs:
         run: python generate.py "$EPISODE"
 
       - name: Upload visual usage history
+        continue-on-error: true
         uses: actions/upload-artifact@v7
         with:
           name: visual-usage-${{ needs.prepare.outputs.episode }}
@@ -345,6 +347,7 @@ jobs:
           retention-days: 1
 
       - name: Upload rendered MP4
+        continue-on-error: true
         uses: actions/upload-artifact@v7
         with:
           name: rendered-${{ needs.prepare.outputs.episode }}
