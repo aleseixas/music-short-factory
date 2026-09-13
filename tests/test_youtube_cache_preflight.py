@@ -3,6 +3,8 @@ from __future__ import annotations
 from contextlib import redirect_stderr, redirect_stdout
 import io
 from pathlib import Path
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -152,6 +154,19 @@ class YoutubeCachePreflightTests(unittest.TestCase):
 
 
 class SafeYoutubeCookieProbeTests(unittest.TestCase):
+    def test_importing_probe_helpers_does_not_patch_resolver(self):
+        code = (
+            "import resolve_visual_candidates_web as resolver; "
+            "original = resolver._inspect_candidate; "
+            "from scripts import test_youtube_auth; "
+            "assert resolver._inspect_candidate is original, 'probe import installed auth patches'"
+        )
+        result = subprocess.run(
+            [sys.executable, "-c", code], cwd=Path(__file__).resolve().parents[1],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_working_primary_makes_cookies_not_required_even_when_absent(self):
         self.assertEqual(auth_probe.cookie_status(primary_ok=True, present=False, parseable=False, all_expired=False, fallback_ok=False, fallback_reason="NOT_ATTEMPTED"), "NOT_REQUIRED")
 

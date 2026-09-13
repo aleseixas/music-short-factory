@@ -8,7 +8,6 @@ from pathlib import Path
 import time
 
 import engine.visual_search_web as web_engine
-import resolve_visual_candidates_web_auth as youtube_auth
 from engine.youtube import canonical_youtube_url
 
 
@@ -97,6 +96,10 @@ def cookie_status(*, primary_ok: bool, present: bool, parseable: bool,
 
 
 def main() -> int:
+    # The CLI auth adapter installs resolver monkeypatches when imported. Keep
+    # that side effect out of test discovery and callers of pure probe helpers.
+    import resolve_visual_candidates_web_auth as youtube_auth
+
     target = canonical_youtube_url(str(os.getenv("YOUTUBE_AUTH_TEST_URL") or DEFAULT_URL))
     if not target:
         print("YOUTUBE_COOKIE_STATUS=UNKNOWN")
