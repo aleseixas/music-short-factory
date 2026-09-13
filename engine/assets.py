@@ -11,6 +11,7 @@ from .image_framing import prepare_vertical_image
 from .media_cache import download_to_cache
 from .models import AssetSpec, TimelineScene
 from .utils import load_json, validate_schema
+from .youtube import canonical_youtube_url
 
 
 OVERLAY_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
@@ -102,7 +103,21 @@ class AssetManager:
     def ensure(self, asset: AssetSpec) -> Path:
         path = self.source_path(asset)
         if asset.is_video:
-            remote = False
+            def validate_video(candidate: Path) -> None:
+                self._video_info[candidate] = probe_video_stream(candidate)
+
+            if path.is_file():
+                try:
+                    if path not in self._video_info:
+                        validate_video(path)
+                    return path
+                except RuntimeError as exc:
+                    if not asset.url:
+                        raise RuntimeError(f"Asset de video invalido {asset.id!r}: {exc}") from exc
+                    # Only a proven-invalid, remotely reconstructible asset is
+                    # removed. Valid local assets continue to have priority.
+                    path.unlink(missing_ok=True)
+                    self._video_info.pop(path, None)
             if not path.is_file():
                 if not asset.url:
                     raise RuntimeError(
@@ -112,19 +127,28 @@ class AssetManager:
                     raise RuntimeError(
                         f"Cache de video nao configurado para o asset remoto {asset.id!r}."
                     )
-                path = download_to_cache(
-                    asset.url,
-                    self.video_cache_dir,
-                    asset.file,
-                    f"asset de video {asset.id!r}",
-                )
-                remote = True
+                try:
+                    if canonical_youtube_url(asset.url):
+                        from .visual_search_web import download_youtube_video
+
+                        path = download_youtube_video(asset.url, self.video_cache_dir, asset.file)
+                    else:
+                        path = download_to_cache(
+                            asset.url, self.video_cache_dir, asset.file,
+                            f"asset de video {asset.id!r}", min_bytes=1024,
+                            validator=validate_video,
+                        )
+                        # The validator sees the staging name before atomic rename.
+                        staged = path.with_name(path.name + ".part")
+                        if staged in self._video_info:
+                            self._video_info[path] = self._video_info.pop(staged)
+                except RuntimeError as exc:
+                    raise RuntimeError(f"Asset de video invalido {asset.id!r}: {exc}") from exc
             if path not in self._video_info:
                 try:
                     self._video_info[path] = probe_video_stream(path)
                 except RuntimeError as exc:
-                    if remote:
-                        path.unlink(missing_ok=True)
+                    path.unlink(missing_ok=True)
                     raise RuntimeError(
                         f"Asset de video invalido {asset.id!r}: {exc}"
                     ) from exc

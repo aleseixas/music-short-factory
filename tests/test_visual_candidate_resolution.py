@@ -404,6 +404,41 @@ class VisualCandidateResolutionTests(unittest.TestCase):
             self.assertEqual(report["selections"]["slot_a"]["name"], "valid image")
             self.assertEqual(output.getvalue().count("status=FAIL reason=download rejected"), 2)
 
+    def test_failed_or_unresolvable_shortlist_does_not_hide_remaining_video(self):
+        import resolve_visual_candidates_web as web_resolver
+
+        for broken_locator in (False, True):
+            with self.subTest(broken_locator=broken_locator), TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                blocked = {"name": "blocked", "kind": "video", "editorial_rank": 1}
+                if not broken_locator:
+                    blocked.update(url="https://youtube.com/watch?v=jsz2fjVDtEo", provider_id="jsz2fjVDtEo")
+                working = {"name": "working", "kind": "video", "editorial_rank": 2,
+                           "url": "https://youtube.com/watch?v=3wn9ec2Emuc", "file": "working.mp4"}
+                episode = self._write_episode(root, "demo", {
+                    "schema_version": 1,
+                    "slots": [{"id": "slot_a", "inspect_top": 1, "candidates": [blocked, working]}],
+                })
+                attempts = []
+
+                def inspect(project_root, slot, candidate, index):
+                    attempts.append(candidate["name"])
+                    web_resolver._candidate_result(candidate, slot["id"], index)
+                    if candidate["name"] == "blocked":
+                        raise RuntimeError("yt-dlp HTTP 403 fragment failure")
+                    return self._successful_candidate(candidate, index)
+
+                with (
+                    patch.object(resolver, "_inspect_candidate", side_effect=inspect),
+                    patch.object(resolver, "_asset_entry", return_value={"id": "slot_a", "file": "working.mp4"}),
+                    redirect_stdout(io.StringIO()),
+                ):
+                    self.assertEqual(resolver.resolve_episode(root, "demo", prefer_video_candidates=True), 0)
+                report = json.loads((episode / "visual_resolution_report.json").read_text(encoding="utf-8"))
+                self.assertEqual(attempts, ["blocked", "working"])
+                self.assertEqual(report["selections"]["slot_a"]["name"], "working")
+                self.assertEqual(len(report["inspection_failures"]), 1)
+
     def test_log_diagnostics_redact_common_credentials(self):
         raw = (
             "download failed Authorization: Bearer BEARER_SECRET "

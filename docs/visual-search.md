@@ -1,5 +1,32 @@
 # Visual Intelligence / Visual Search para autoria
 
+## Gate de autoria: candidatos precisam ser resolvíveis
+
+`visual_candidates.json` é autorado a partir dos resultados de discovery; nomes de
+busca, números internos e descrições não são candidatos adquiríveis. Preserve os
+campos do resultado, incluindo `kind`, `url`, `source_page_url`, `source`,
+`search_provider`, `provider_id`/`video_id` e a metadata técnica conhecida.
+`VisualSearchResult.as_dict()` já mantém a URL pública do YouTube mesmo quando
+a URL direta de MP4 ainda depende do yt-dlp. Não reduza esse resultado a nome/tipo.
+
+Antes de fechar a autoria ou criar `.episode-check`, valide sem rede:
+
+```powershell
+python -m engine.visual_candidates episodes/<slug>/visual_candidates.json
+```
+
+O gate rejeita cada candidato sem uma URL HTTPS de mídia suportada ou localizador
+YouTube utilizável. Para YouTube, um `provider_id`/`video_id` explícito e válido
+(11 caracteres), associado ao provider YouTube, permite reconstruir a URL; `id: 1`
+não permite. Os formatos `watch?v=`, `youtu.be/`, `shorts/` e `embed/` da mesma
+origem preservam a identidade case-sensitive `youtube:<VIDEO_ID>`. IDs distintos
+nunca devem colidir por perder o parâmetro `v`.
+
+O gate de autoria é estrito; a recuperação em runtime é isolada por candidato.
+Uma falha de aquisição não impede tentar o próximo candidato real do mesmo pool.
+`inspect_top` limita o ranking normal, mas não oculta candidatos restantes quando
+o shortlist falha. Nenhum localizador é inventado a partir de um título.
+
 Esta ferramenta pertence à etapa de autoria. Ela ajuda a tarefa agendada do ChatGPT e a GitHub Action a pesquisar, comparar, inspecionar e escolher imagens e vídeos antes do render final.
 
 O fluxo é:

@@ -57,9 +57,9 @@ def _used_recent_aliases(root: Path, episodes_dir: Path, slug: str) -> set[str]:
 def _all_profile_order(root: Path, current: str) -> tuple[str, ...]:
     """Return every configured profile in deterministic repair order.
 
-    Local profiles stay first because they are cheap/reliable, but external and fallback
-    profiles are included in the same repair pass. This prevents a recoverable freshness
-    failure from requiring human intervention just because all local tracks were used recently.
+    Keep remote alternatives ahead of the legacy local catalog (external-first).
+    Provider circuits skip unavailable networks across profiles, not eligible local
+    cache files. The existing recent-use check still gates any selected replacement.
     """
     music_root = (root / MUSIC_ROOT).resolve()
     profiles = _load_music_profiles(root.resolve(), music_root)
@@ -73,7 +73,15 @@ def _all_profile_order(root: Path, current: str) -> tuple[str, ...]:
     if current in ordered:
         start = ordered.index(current) + 1
         ordered = ordered[start:] + ordered[:start]
-    return tuple(profile for profile in ordered if profile != current)
+    alternatives = [profile for profile in ordered if profile != current]
+    external = {
+        profile for profile in alternatives
+        if any(isinstance(entry, dict) and entry.get("url") for entry in profiles[profile])
+    }
+    return tuple(
+        [profile for profile in alternatives if profile in external]
+        + [profile for profile in alternatives if profile not in external]
+    )
 
 
 def _resolved_catalog_entry(candidates, resolved_path: Path):

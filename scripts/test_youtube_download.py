@@ -9,6 +9,8 @@ import tempfile
 import engine.visual_search_web as web_engine
 import resolve_visual_candidates_web as resolver
 import resolve_visual_candidates_web_auth  # noqa: F401 - installs auth fallback patch
+from engine.models import VIDEO_ASSET_EXTENSIONS
+from engine.youtube import canonical_youtube_url
 
 
 DEFAULT_URL = "https://www.youtube.com/watch?v=DKZV_DbmWQo"
@@ -38,7 +40,10 @@ def _probe(path: Path) -> dict:
 
 
 def main() -> int:
-    target_url = str(os.getenv("YOUTUBE_DOWNLOAD_TEST_URL") or DEFAULT_URL).strip()
+    target_url = canonical_youtube_url(str(os.getenv("YOUTUBE_DOWNLOAD_TEST_URL") or DEFAULT_URL))
+    if not target_url:
+        print("YOUTUBE_REAL_DOWNLOAD_FAIL reason=INVALID_VIDEO_LOCATOR")
+        return 2
     seconds = int(str(os.getenv("YOUTUBE_DOWNLOAD_TEST_SECONDS") or DEFAULT_SECONDS))
     cookies_configured = bool(str(os.getenv("YOUTUBE_COOKIES") or "").strip())
 
@@ -60,8 +65,12 @@ def main() -> int:
         outtmpl = str(temp_root / "clip.%(ext)s")
         params = {
             "noplaylist": True,
-            "quiet": False,
+            "quiet": True,
             "no_warnings": False,
+            "logger": web_engine._SafeYoutubeLogger(),
+            "continuedl": False,
+            "overwrites": True,
+            "skip_unavailable_fragments": False,
             "outtmpl": outtmpl,
             "format": "bv*+ba/b",
             "merge_output_format": "mp4",
@@ -72,11 +81,13 @@ def main() -> int:
         try:
             with YoutubeDL(params) as ydl:
                 info = ydl.extract_info(target_url, download=True)
+                if getattr(ydl, "_download_retcode", 0):
+                    raise DownloadError(f"downloader exit code={ydl._download_retcode}")
         except DownloadError as exc:
-            print(f"::error::Real YouTube download failed after configured fallbacks: {exc}")
+            print(f"::error::Real YouTube download failed after configured fallbacks: {web_engine._safe_yt_dlp_diagnostic(exc)}")
             return 1
 
-        files = [path for path in temp_root.iterdir() if path.is_file() and path.stat().st_size > 0]
+        files = [path for path in temp_root.iterdir() if path.is_file() and path.suffix.casefold() in VIDEO_ASSET_EXTENSIONS and path.stat().st_size >= web_engine.MIN_WEB_VIDEO_BYTES]
         if not files:
             print("::error::yt-dlp reported success but no downloaded media file was produced.")
             return 1

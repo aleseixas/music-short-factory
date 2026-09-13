@@ -3,13 +3,16 @@ from __future__ import annotations
 from dataclasses import dataclass
 from html import unescape
 from html.parser import HTMLParser
+import json
+import os
 from pathlib import Path
 import re
+import tempfile
 from urllib.parse import unquote, urljoin, urlparse
 
 import requests
 
-from .media_cache import download_to_cache
+from .media_cache import _cache_destination, _validate_direct_file_url, download_to_cache
 
 
 SUPPORTED_AUDIO_SUFFIXES = {
@@ -53,6 +56,11 @@ MAX_EXTERNAL_MUSIC_BYTES = 100 * 1024 * 1024
 MAX_EXTERNAL_SFX_BYTES = 25 * 1024 * 1024
 MYINSTANTS_PAGE_TIMEOUT_SECONDS = (10, 30)
 PIXABAY_PAGE_TIMEOUT_SECONDS = (10, 30)
+PIXABAY_HTTP_403_LIMIT = 2
+# Optional run-scoped state shares the breaker with preflight/repair subprocesses.
+# Without it, state lasts only for this Python execution, never in the media cache.
+AUDIO_PROVIDER_CIRCUIT_STATE_ENV = "AUDIO_PROVIDER_CIRCUIT_STATE"
+_PIXABAY_HTTP_403_FAILURES: dict[str, int] = {}
 PIXABAY_MP3_PATTERN = re.compile(
     r"https://cdn\.pixabay\.com/[^\s\"'<>]+?\.mp3(?:\?[^\s\"'<>]*)?",
     re.IGNORECASE,
@@ -64,6 +72,70 @@ class AudioCatalogEntry:
     local_path: Path
     relative_file: str
     url: str | None
+
+
+class AudioProviderUnavailable(RuntimeError):
+    """A provider is temporarily disabled; other sources and cached audio remain usable."""
+
+
+def _pixabay_circuit_state() -> tuple[str, Path | None, int]:
+    configured = os.environ.get(AUDIO_PROVIDER_CIRCUIT_STATE_ENV, "").strip()
+    path = Path(configured).resolve() if configured else None
+    key = str(path) if path else "process"
+    failures = _PIXABAY_HTTP_403_FAILURES.get(key, 0)
+    if path is not None:
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            value = data["providers"]["pixabay"]["http_403_failures"]
+            if isinstance(value, int) and not isinstance(value, bool) and value >= 0:
+                failures = min(value, PIXABAY_HTTP_403_LIMIT)
+        except FileNotFoundError:
+            pass
+        except (OSError, ValueError, KeyError, TypeError):
+            # An unavailable diagnostic file must not prevent a fresh source attempt.
+            pass
+    return key, path, failures
+
+
+def _set_pixabay_http_403_failures(failures: int) -> None:
+    key, path, _previous = _pixabay_circuit_state()
+    _PIXABAY_HTTP_403_FAILURES[key] = failures
+    if path is None:
+        return
+    temporary: Path | None = None
+    try:
+        path.parent.mkdir(parents=True, exist_ok=True)
+        with tempfile.NamedTemporaryFile(
+            mode="w", encoding="utf-8", dir=path.parent, delete=False,
+            prefix=path.name + ".", suffix=".part",
+        ) as output:
+            temporary = Path(output.name)
+            json.dump(
+                {"providers": {"pixabay": {"http_403_failures": failures}}}, output
+            )
+        temporary.replace(path)
+    except OSError:
+        print("[audio] provider circuit state unavailable; using process-local state.")
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
+
+
+def _assert_pixabay_available() -> None:
+    _key, _path, failures = _pixabay_circuit_state()
+    if failures >= PIXABAY_HTTP_403_LIMIT:
+        raise AudioProviderUnavailable(
+            "AUDIO_PROVIDER_UNAVAILABLE: pixabay circuit open after repeated HTTP 403 "
+            "in this execution; use another provider/profile or eligible local catalog."
+        )
+
+
+def _record_pixabay_http_403() -> None:
+    _key, _path, previous = _pixabay_circuit_state()
+    failures = min(previous + 1, PIXABAY_HTTP_403_LIMIT)
+    _set_pixabay_http_403_failures(failures)
+    if previous < PIXABAY_HTTP_403_LIMIT <= failures:
+        print("AUDIO_PROVIDER_CIRCUIT_OPEN provider=pixabay reason=HTTP_403 failures=2")
 
 
 class _MyInstantsAudioLinkParser(HTMLParser):
@@ -186,14 +258,30 @@ def materialize_audio_catalog_entry(
     download_url = entry.url
     download_options: dict[str, object] = {}
     relative_file = entry.relative_file.casefold()
+    source_host = (urlparse(download_url).hostname or "").casefold()
+    is_pixabay = source_host in PIXABAY_PAGE_HOSTS | PIXABAY_AUDIO_HOSTS
     if relative_file.startswith(OPENVERSE_EXTERNAL_PREFIX):
-        host = (urlparse(download_url).hostname or "").casefold()
-        if host not in OPENVERSE_AUDIO_DOWNLOAD_HOSTS:
-            raise RuntimeError(
-                f"Host externo nao aprovado para {kind} em {label}."
-            )
+        if source_host not in OPENVERSE_AUDIO_DOWNLOAD_HOSTS:
+            raise RuntimeError(f"Host externo nao aprovado para {kind} em {label}.")
+    if is_pixabay:
+        # Page access is unnecessary once the media exists. Return it as remote so
+        # the caller still probes it and removes corrupt audio, even with an open circuit.
+        cached = _cache_destination(cache_dir, entry.relative_file, label)
+        _validate_direct_file_url(
+            download_url, cached.suffix, label,
+            allowed_hosts=PIXABAY_PAGE_HOSTS | PIXABAY_AUDIO_HOSTS, require_https=True,
+        )
+        size_limit = (
+            MAX_EXTERNAL_SFX_BYTES if kind.casefold() == "sfx" else MAX_EXTERNAL_MUSIC_BYTES
+        )
+        if cached.is_file():
+            if 0 < cached.stat().st_size <= size_limit:
+                return cached, True
+            cached.unlink(missing_ok=True)
+        _assert_pixabay_available()
+    if relative_file.startswith(OPENVERSE_EXTERNAL_PREFIX):
         download_options = {
-            "allowed_hosts": {host},
+            "allowed_hosts": {source_host},
             "require_https": True,
             "max_bytes": (
                 MAX_EXTERNAL_SFX_BYTES
@@ -202,7 +290,6 @@ def materialize_audio_catalog_entry(
             ),
         }
     elif relative_file.startswith(MANUAL_EXTERNAL_PREFIX):
-        source_host = (urlparse(download_url).hostname or "").casefold()
         download_url = _resolve_manual_audio_url(download_url, label)
         download_options = {
             "require_https": True,
@@ -217,16 +304,22 @@ def materialize_audio_catalog_entry(
         elif source_host in MYINSTANTS_HOSTS:
             download_options["allowed_hosts"] = MYINSTANTS_HOSTS
 
-    return (
-        download_to_cache(
+    try:
+        downloaded = download_to_cache(
             download_url,
             cache_dir,
             entry.relative_file,
             f"{kind} {entry.relative_file!r}",
             **download_options,
-        ),
-        True,
-    )
+        )
+    except RuntimeError as exc:
+        # Page failures are counted by the page resolver; count CDN failures here.
+        if is_pixabay and re.search(r"\bHTTP 403\b", str(exc)):
+            _record_pixabay_http_403()
+        raise
+    if is_pixabay:
+        _set_pixabay_http_403_failures(0)
+    return downloaded, True
 
 
 def _resolve_manual_audio_url(url: str, label: str) -> str:
@@ -265,6 +358,7 @@ def _validate_pixabay_mp3_url(value: str, label: str) -> str:
 
 
 def _resolve_pixabay_audio_url(page_url: str, label: str) -> str:
+    _assert_pixabay_available()
     try:
         response = requests.get(
             page_url,
@@ -290,6 +384,8 @@ def _resolve_pixabay_audio_url(page_url: str, label: str) -> str:
     try:
         status = int(response.status_code)
         if status >= 400:
+            if status == 403:
+                _record_pixabay_http_403()
             raise RuntimeError(
                 f"Falha ao resolver pagina Pixabay em {label}: HTTP {status}."
             )

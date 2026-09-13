@@ -5,8 +5,10 @@ from collections.abc import Sequence
 import ipaddress
 import json
 import math
+import os
 from pathlib import Path
 import re
+import tempfile
 from typing import Literal
 from urllib.parse import unquote, urlparse
 
@@ -15,6 +17,7 @@ import requests
 from .ffmpeg import probe_video_stream
 from .media_cache import media_cache_directory
 from .models import VIDEO_ASSET_EXTENSIONS
+from .youtube import canonical_youtube_url, extract_youtube_video_id
 from .visual_repetition import VisualHistoryEntry, load_visual_history
 from .visual_search import (
     MAX_EXTERNAL_VIDEO_BYTES,
@@ -613,33 +616,71 @@ def _parse_youtube_result(raw: dict[object, object], rank: int) -> VisualSearchR
     )
 
 
-def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
-    cache_dir = media_cache_directory(project_root.resolve(), None, "video")
+MIN_WEB_VIDEO_BYTES = 1024
+
+
+def download_youtube_video(url: str, cache_dir: Path, file_name: str) -> Path:
+    """Use the same PO/default -> permitted cookies acquisition as web candidates."""
+    canonical = canonical_youtube_url(url)
+    video_id = extract_youtube_video_id(url)
+    if not canonical or not video_id:
+        raise VisualSearchError("URL YouTube sem VIDEO_ID valido.")
+    # Lazy import avoids a cycle with the CLI adapter and, importantly, does not
+    # create a second auth strategy for AssetManager/check_episode_media.
+    from resolve_visual_candidates_web_auth import _install_po_then_cookie
+
+    _install_po_then_cookie()
+    result = VisualSearchResult(
+        provider_id=video_id, name=video_id, kind="video", source="youtube",
+        source_page_url=canonical, creator="", license="", license_url="",
+        attribution="", search_provider="youtube_web",
+    )
+    return _download_web_video(cache_dir.parent.parent, result, cache_dir=cache_dir, cache_file=file_name)
+
+
+def _validate_web_video(path: Path) -> None:
+    if not path.is_file():
+        raise RuntimeError("downloader nao produziu arquivo de video")
+    size = path.stat().st_size
+    if not MIN_WEB_VIDEO_BYTES <= size <= MAX_EXTERNAL_VIDEO_BYTES:
+        raise RuntimeError(f"tamanho de video implausivel ou excessivo ({size} bytes)")
+    probe_video_stream(path)
+
+
+def _download_web_video(
+    project_root: Path, result: VisualSearchResult, *,
+    cache_dir: Path | None = None, cache_file: str | None = None,
+) -> Path:
+    cache_dir = (cache_dir or media_cache_directory(project_root.resolve(), None, "video")).resolve()
     cache_dir.mkdir(parents=True, exist_ok=True)
     raw_id = str(result.provider_id or "video")
     log_id = re.sub(r"[^A-Za-z0-9._-]+", "_", raw_id).strip("._")[:100] or "video"
     safe_id = _safe_component(raw_id)[:54]
     source_digest = _stable_web_id(raw_id)[:12]
     stem = _safe_component(f"web-{safe_id}-{source_digest}")[:80]
-    legacy_prefix = _safe_component(f"web-{raw_id}")[:70]
+    if cache_file is not None:
+        if Path(cache_file).name != cache_file or Path(cache_file).suffix.casefold() not in VIDEO_ASSET_EXTENSIONS:
+            raise VisualSearchError("Nome de cache de video invalido.")
     cache_candidates: list[Path] = []
+    if cache_file is not None:
+        cache_candidates.append(cache_dir / cache_file)
     for suffix in VIDEO_ASSET_EXTENSIONS:
         cache_candidates.append(cache_dir / f"{stem}{suffix}")
-        cache_candidates.extend(sorted(cache_dir.glob(f"{legacy_prefix}-*{suffix}")))
+        # AssetManager used to save the YouTube HTML page under this filename.
+        # Invalidate those legacy payloads too, even from the web-candidate path.
+        if extract_youtube_video_id(result.source_page_url):
+            cache_candidates.append(cache_dir / f"youtube-{raw_id}{suffix}")
+    # A case-folded glob web-<id>-* also matches OTHER case-sensitive YouTube IDs.
+    # Only exact, reconstructible legacy names and the case-sensitive digest are
+    # eligible. Check actual directory-entry spelling on Windows as well.
+    actual_names = {entry.name for entry in cache_dir.iterdir()}
     for cached in dict.fromkeys(cache_candidates):
+        if cached.name not in actual_names:
+            continue
         if not cached.is_file():
             continue
-        cached_size = cached.stat().st_size
-        if not 0 < cached_size <= MAX_EXTERNAL_VIDEO_BYTES:
-            cached.unlink(missing_ok=True)
-            print(
-                f"YT_DLP_RESULT id={log_id} status=CACHE_INVALID "
-                "reason=empty_or_oversized; retrying=download",
-                flush=True,
-            )
-            continue
         try:
-            probe_video_stream(cached)
+            _validate_web_video(cached)
         except (OSError, RuntimeError) as exc:
             cached.unlink(missing_ok=True)
             detail = _safe_yt_dlp_diagnostic(exc)
@@ -651,19 +692,26 @@ def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
             continue
         print(
             f"YT_DLP_RESULT id={log_id} status=CACHE_HIT "
-            f"container={cached.suffix.casefold()} bytes={cached_size}",
+            f"container={cached.suffix.casefold()} bytes={cached.stat().st_size}",
             flush=True,
         )
         return cached
 
     YoutubeDL, DownloadError = _yt_dlp_api()
-    outtmpl = str(cache_dir / f"{stem}.%(ext)s")
+    # yt-dlp may leave a completed-looking MP4 after a fragment/network error.
+    # Isolate every attempt on the same filesystem; only ffprobe PASS is promoted.
+    staging = tempfile.TemporaryDirectory(prefix=f".{stem}-", dir=cache_dir)
+    staging_dir = Path(staging.name).resolve()
+    outtmpl = str(staging_dir / f"{stem}.part.%(ext)s")
     options = {
         "quiet": True,
         "no_warnings": True,
         "noplaylist": True,
         "outtmpl": outtmpl,
-        "overwrites": False,
+        "overwrites": True,
+        "continuedl": False,
+        "skip_unavailable_fragments": False,
+        "logger": _SafeYoutubeLogger(),
         "max_filesize": MAX_EXTERNAL_VIDEO_BYTES,
         "format": (
             "bestvideo[height<=720][ext=mp4]/best[height<=720][ext=mp4]/"
@@ -678,7 +726,34 @@ def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
     try:
         with YoutubeDL(options) as ydl:
             info = ydl.extract_info(result.source_page_url, download=True)
+            return_code = getattr(ydl, "_download_retcode", 0)
+            if return_code:
+                raise DownloadError(f"downloader exit code={return_code}")
             prepared = Path(ydl.prepare_filename(info)) if isinstance(info, dict) else None
+        candidates: list[Path] = []
+        if prepared is not None:
+            candidates.append(prepared)
+        candidates.extend(sorted(staging_dir.glob("*")))
+        validation_errors: list[str] = []
+        for candidate in dict.fromkeys(candidates):
+            if not candidate.is_file() or candidate.suffix.casefold() not in VIDEO_ASSET_EXTENSIONS:
+                continue
+            try:
+                candidate.resolve().relative_to(staging_dir)
+                _validate_web_video(candidate)
+            except (ValueError, OSError, RuntimeError) as exc:
+                validation_errors.append(_safe_yt_dlp_diagnostic(exc))
+                continue
+            destination = cache_dir / f"{stem}{candidate.suffix.casefold()}"
+            candidate.replace(destination)
+            print(
+                f"YT_DLP_RESULT id={log_id} status=DOWNLOADED exit_code=0 ffprobe=PASS "
+                f"container={destination.suffix.casefold()} bytes={destination.stat().st_size}",
+                flush=True,
+            )
+            return destination
+        detail = "; ".join(validation_errors) or "yt-dlp terminou sem gerar um arquivo de video suportado"
+        raise DownloadError(f"validacao do download falhou: {detail}")
     except DownloadError as exc:
         detail = _safe_yt_dlp_diagnostic(exc)
         print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
@@ -691,32 +766,20 @@ def _download_web_video(project_root: Path, result: VisualSearchResult) -> Path:
         raise VisualSearchError(
             f"yt-dlp falhou ao obter o video id={log_id}: {detail}"
         ) from exc
-
-    candidates: list[Path] = []
-    if prepared is not None:
-        candidates.append(prepared)
-    candidates.extend(sorted(cache_dir.glob(f"{stem}.*")))
-    for candidate in candidates:
-        if (
-            candidate.is_file()
-            and candidate.suffix.casefold() in VIDEO_ASSET_EXTENSIONS
-            and 0 < candidate.stat().st_size <= MAX_EXTERNAL_VIDEO_BYTES
-        ):
-            print(
-                f"YT_DLP_RESULT id={log_id} status=DOWNLOADED "
-                f"container={candidate.suffix.casefold()} bytes={candidate.stat().st_size}",
-                flush=True,
-            )
-            return candidate
-    detail = "yt-dlp terminou sem gerar um arquivo de video suportado"
-    print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
-    raise VisualSearchError(f"Video web id={log_id}: {detail}.")
+    finally:
+        staging.cleanup()
 
 
 def _safe_yt_dlp_diagnostic(exc: BaseException) -> str:
     """Keep the actionable yt-dlp reason while redacting URLs and credentials."""
     text = re.sub(r"\x1b\[[0-9;]*m", "", str(exc or ""))
     text = re.sub(r"[\x00-\x1f\x7f]+", " ", text).strip()
+    # Cookie parser errors may contain a whole Netscape row, not a labeled token.
+    for row in str(os.getenv("YOUTUBE_COOKIES") or "").splitlines():
+        fields = row.split("\t")
+        if len(fields) >= 7 and fields[-1]:
+            text = text.replace(fields[-1], "<redacted>")
+    text = re.sub(r"\S*music-short-factory-youtube-cookies-\d+\.txt", "<cookie-file>", text)
     text = re.sub(r"https?://\S+", "<url>", text, flags=re.IGNORECASE)
     text = re.sub(
         r"(?i)\bauthorization\s*[:=]\s*(?:bearer\s+)?[^\s,;|]+",
@@ -737,6 +800,19 @@ def _safe_yt_dlp_diagnostic(exc: BaseException) -> str:
         text,
     )
     return (text or type(exc).__name__)[:500]
+
+
+class _SafeYoutubeLogger:
+    """Do not let yt-dlp print signed URLs or raw credential parser errors."""
+
+    def debug(self, _message: object) -> None:
+        pass
+
+    def warning(self, message: object) -> None:
+        print(f"YT_DLP_WARNING reason={_safe_yt_dlp_diagnostic(RuntimeError(str(message)))}", flush=True)
+
+    def error(self, message: object) -> None:
+        print(f"YT_DLP_ERROR reason={_safe_yt_dlp_diagnostic(RuntimeError(str(message)))}", flush=True)
 
 
 def _yt_dlp_api():

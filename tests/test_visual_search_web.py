@@ -323,7 +323,7 @@ class WebVideoDownloadTests(unittest.TestCase):
 
             def extract_info(self, _url, download=True):
                 target = Path(self.options["outtmpl"].replace("%(ext)s", "mp4"))
-                target.write_bytes(b"synthetic-video")
+                target.write_bytes(b"synthetic-video" * 128)
                 return {"id": "-safe-video-id", "ext": "mp4", "_filename": str(target)}
 
             def prepare_filename(self, info):
@@ -338,6 +338,7 @@ class WebVideoDownloadTests(unittest.TestCase):
                     "_yt_dlp_api",
                     return_value=(SuccessfulYoutubeDL, FakeDownloadError),
                 ),
+                patch.object(visual_search_web, "probe_video_stream"),
                 redirect_stdout(first_logs),
             ):
                 first = visual_search_web._download_web_video(root, self._candidate())
@@ -378,7 +379,7 @@ class WebVideoDownloadTests(unittest.TestCase):
 
             def extract_info(self, _url, download=True):
                 target = Path(self.options["outtmpl"].replace("%(ext)s", "mp4"))
-                target.write_bytes(b"fresh-video")
+                target.write_bytes(b"fresh-video" * 128)
                 return {"id": "-safe-video-id", "ext": "mp4", "_filename": str(target)}
 
             def prepare_filename(self, info):
@@ -391,13 +392,13 @@ class WebVideoDownloadTests(unittest.TestCase):
             digest = visual_search_web._stable_web_id(candidate.provider_id)[:12]
             cached = root / "cache" / "video" / f"web-{safe_id}-{digest}.mp4"
             cached.parent.mkdir(parents=True)
-            cached.write_bytes(b"corrupt-cache")
+            cached.write_bytes(b"corrupt-cache" * 128)
             output = io.StringIO()
             with (
                 patch.object(
                     visual_search_web,
                     "probe_video_stream",
-                    side_effect=RuntimeError("ffprobe found no video stream"),
+                    side_effect=[RuntimeError("ffprobe found no video stream"), None],
                 ),
                 patch.object(
                     visual_search_web,
@@ -409,7 +410,7 @@ class WebVideoDownloadTests(unittest.TestCase):
                 downloaded = visual_search_web._download_web_video(root, candidate)
 
             self.assertEqual(downloaded, cached)
-            self.assertEqual(downloaded.read_bytes(), b"fresh-video")
+            self.assertEqual(downloaded.read_bytes(), b"fresh-video" * 128)
             self.assertEqual(len(calls), 1)
             self.assertIn("status=CACHE_INVALID", output.getvalue())
             self.assertIn("status=DOWNLOADED", output.getvalue())

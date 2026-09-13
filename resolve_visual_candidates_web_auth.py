@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import atexit
+from contextlib import redirect_stderr, redirect_stdout
+import io
 import os
 from pathlib import Path
 import tempfile
@@ -13,6 +15,7 @@ from engine.visual_resolution_policy import (
     reuse_penalty_for_prior_uses,
     video_fallback_block_reason,
 )
+from engine.youtube import extract_youtube_video_id
 
 
 YOUTUBE_HOSTS = frozenset({"youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"})
@@ -46,6 +49,9 @@ def _is_auth_error(exc: BaseException) -> bool:
 
 
 def _youtube_log_id(raw: object) -> str:
+    canonical_id = extract_youtube_video_id(str(raw or ""))
+    if canonical_id:
+        return canonical_id
     parsed = urlparse(str(raw or "").strip())
     host = (parsed.hostname or "").casefold()
     if host == "youtu.be":
@@ -95,6 +101,22 @@ def _prepare_cookie_file() -> Path | None:
         cookie_file.chmod(0o600)
     except OSError:
         pass
+    # yt-dlp's cookie parser can print an invalid Netscape row directly to stderr
+    # (outside its configured logger). Validate quietly before passing the file
+    # into the downloader; never echo a rejected row containing credentials.
+    try:
+        from yt_dlp.cookies import YoutubeDLCookieJar
+
+        diagnostic = io.StringIO()
+        with redirect_stdout(diagnostic), redirect_stderr(diagnostic):
+            jar = YoutubeDLCookieJar(str(cookie_file))
+            jar.load(ignore_discard=True, ignore_expires=True)
+        if not list(jar) or diagnostic.getvalue():
+            raise ValueError("invalid cookie file")
+    except Exception:
+        _remove_cookie_file(cookie_file)
+        _warn("YOUTUBE_COOKIES presente, mas nao parseavel pelo yt-dlp; fallback ignorado.")
+        return None
     atexit.register(_remove_cookie_file, cookie_file)
     return cookie_file
 
@@ -111,6 +133,10 @@ def _with_node_ejs_options(params: dict | None) -> dict:
 def _with_cookie_fallback_options(params: dict | None, cookie_file: Path) -> dict:
     patched = _with_node_ejs_options(params)
     patched["cookiefile"] = str(cookie_file)
+    # Never resume a fragment/partial payload from the failed primary strategy.
+    patched["continuedl"] = False
+    patched["overwrites"] = True
+    patched["skip_unavailable_fragments"] = False
 
     raw_extractor_args = patched.get("extractor_args")
     extractor_args = dict(raw_extractor_args) if isinstance(raw_extractor_args, dict) else {}
@@ -171,6 +197,10 @@ def _install_cookie_fallback() -> None:
                     try:
                         with CookieYoutubeDL(fallback_params) as fallback_ydl:
                             result = fallback_ydl.extract_info(url, *args, **kwargs)
+                            return_code = getattr(fallback_ydl, "_download_retcode", 0)
+                            if return_code:
+                                raise _CookieDownloadError(f"downloader exit code={return_code}")
+                            self._download_retcode = return_code
                     except _CookieDownloadError as fallback_exc:
                         fallback_detail = web_engine._safe_yt_dlp_diagnostic(fallback_exc)
                         print(
@@ -213,8 +243,11 @@ _original_resolver_score_record = resolver._score_record
 
 
 def _install_po_then_cookie() -> None:
+    if getattr(web_engine, "_youtube_auth_configured", False):
+        return
     _original_install_youtube_po_patch()
     _install_cookie_fallback()
+    web_engine._youtube_auth_configured = True
 
 
 def _inspect_candidate_with_safe_video_fallback(

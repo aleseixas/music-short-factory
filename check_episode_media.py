@@ -13,6 +13,7 @@ from engine.config import load_project_config
 from engine.episode import load_episode
 from engine.models import AssetSpec, BackgroundMusicSpec, Episode
 from engine.music import MUSIC_ROOT, background_music_candidates, resolve_background_music
+from engine.youtube import canonical_youtube_url, extract_youtube_video_id
 
 
 RECENT_BACKGROUND_TRACK_WINDOW = 20
@@ -239,6 +240,9 @@ def _recent_episode_slugs(
 
 
 def _normalize_url_identity(value: str) -> str:
+    youtube = canonical_youtube_url(value)
+    if youtube:
+        return youtube
     parsed = urlsplit(value.strip())
     return urlunsplit(
         (
@@ -252,12 +256,16 @@ def _normalize_url_identity(value: str) -> str:
 
 
 def _visual_aliases(asset: AssetSpec) -> tuple[tuple[str, str], ...]:
+    video_id = extract_youtube_video_id(asset.url) if asset.url else None
     aliases: list[tuple[str, str]] = [
         ("asset_id", asset.id.casefold()),
-        ("file", asset.file.casefold()),
+        # YouTube IDs are case-sensitive, including when embedded in filenames.
+        # Preserve their identity on the Linux runner; legacy assets keep the
+        # historical case-insensitive filename comparison.
+        ("file", asset.file if video_id else asset.file.casefold()),
     ]
     if asset.url:
-        aliases.append(("url", _normalize_url_identity(asset.url)))
+        aliases.append(("youtube", video_id) if video_id else ("url", _normalize_url_identity(asset.url)))
     return tuple(aliases)
 
 

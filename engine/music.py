@@ -5,6 +5,7 @@ from pathlib import Path
 
 from .audio_library import (
     AudioCatalogEntry,
+    AudioProviderUnavailable,
     SUPPORTED_AUDIO_SUFFIXES,
     materialize_audio_catalog_entry,
     parse_audio_catalog_entry,
@@ -143,6 +144,7 @@ def resolve_background_music(
     ordered_candidates = background_music_candidates(project_root, spec, episode_slug)
     cache_dir = media_cache_directory(project_root, cache_root, "music")
     failures: list[str] = []
+    skipped_provider = False
 
     for attempt, selected_entry in enumerate(ordered_candidates, start=1):
         try:
@@ -168,6 +170,14 @@ def resolve_background_music(
                 path=selected,
                 volume=spec.volume,
             )
+        except AudioProviderUnavailable as exc:
+            if not skipped_provider:
+                failures.append(str(exc))
+                print(
+                    f"[musica] profile={spec.profile}: Pixabay indisponivel nesta execucao; "
+                    "pulando rede, preservando cache e outras fontes."
+                )
+                skipped_provider = True
         except RuntimeError as exc:
             failures.append(f"{selected_entry.relative_file}: {exc}")
             if attempt < len(ordered_candidates):

@@ -14,6 +14,9 @@ permissions:
 jobs:
   media-preflight:
     runs-on: ubuntu-latest
+    env:
+      # Share provider failures across batch/repair subprocesses, never across runs.
+      AUDIO_PROVIDER_CIRCUIT_STATE: ${{ runner.temp }}/music-provider-circuit-${{ github.run_id }}-${{ github.run_attempt }}.json
 
     steps:
       - name: Check out repository

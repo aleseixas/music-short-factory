@@ -273,15 +273,15 @@ class RemoteVideoAssetTests(unittest.TestCase):
             with (
                 patch(
                     "engine.media_cache.requests.get",
-                    return_value=FakeResponse((b"synthetic-webm",)),
+                    return_value=FakeResponse((b"synthetic-webm" * 128,)),
                 ) as get,
                 patch("engine.assets.probe_video_stream", return_value=info) as probe,
             ):
                 result = manager.ensure(self.asset())
 
             self.assertEqual(result, root / "cache" / "video" / "studio.webm")
-            self.assertEqual(result.read_bytes(), b"synthetic-webm")
-            probe.assert_called_once_with(result)
+            self.assertEqual(result.read_bytes(), b"synthetic-webm" * 128)
+            probe.assert_called_once_with(result.with_name(result.name + ".part"))
             get.assert_called_once()
 
             cached_manager = self.make_manager(root)
@@ -316,8 +316,10 @@ class RemoteVideoAssetTests(unittest.TestCase):
             with (
                 patch(
                     "engine.media_cache.requests.get",
-                    return_value=FakeResponse((b"not-a-video",)),
+                    return_value=FakeResponse((b"not-a-video" * 128,)),
                 ),
+                patch("engine.media_cache.time.sleep"),
+                patch("engine.media_cache._wait_for_host_slot"),
                 patch(
                     "engine.assets.probe_video_stream",
                     side_effect=RuntimeError("stream de video ausente"),

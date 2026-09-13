@@ -14,6 +14,7 @@ from engine.assets import AssetManager
 from engine.config import load_project_config
 from engine.episode import load_episode
 from engine.music import resolve_background_music
+from engine.visual_candidates import validate_visual_candidate_pool
 
 
 def _error_record(exc: Exception, slug: str, *, scope: str = "") -> dict[str, object]:
@@ -112,16 +113,7 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
     else:
         try:
             pool = json.loads(pool_path.read_text(encoding="utf-8"))
-            slots = pool.get("slots") if isinstance(pool, dict) else None
-            if (
-                not isinstance(pool, dict)
-                or pool.get("schema_version") != 1
-                or not isinstance(slots, list)
-                or not slots
-                or not all(isinstance(slot, dict) for slot in slots)
-            ):
-                raise ValueError("schema_version=1 e slots nao vazios sao obrigatorios")
-            pool_slots = slots
+            pool_slots = validate_visual_candidate_pool(pool)["slots"]
             print(f"[preflight] visual candidate pool OK: {len(pool_slots)} slot(s)")
         except Exception as exc:
             errors.append(
@@ -131,7 +123,7 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
                     detail=f"visual_candidates.json invalido: {_single_line(exc)}",
                     target=f"{episode_root}/visual_candidates.json",
                     recommended_action=(
-                        "Fix visual_candidates.json for this same episode using schema_version=1 and non-empty slots, "
+                        "Fix visual_candidates.json for this same episode with real usable media URLs/locators, "
                         "then rerun media preflight."
                     ),
                     scope="visual-candidate-pool",

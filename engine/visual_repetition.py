@@ -14,6 +14,8 @@ import tempfile
 from typing import Literal
 from urllib.parse import parse_qsl, quote, unquote, urlencode, urlsplit, urlunsplit
 
+from .youtube import canonical_youtube_url
+
 from PIL import Image, ImageOps, ImageStat, UnidentifiedImageError
 
 from .ffmpeg import probe_video_stream, run_ffmpeg
@@ -307,6 +309,9 @@ def canonicalize_visual_url(raw_url: str) -> str:
     value = str(raw_url or "").strip()
     if not value:
         return ""
+    youtube = canonical_youtube_url(value)
+    if youtube:
+        return youtube
     try:
         parsed = urlsplit(value)
         scheme = parsed.scheme.casefold()

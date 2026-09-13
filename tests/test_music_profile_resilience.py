@@ -1,14 +1,45 @@
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
 
+from engine.audio_library import AudioCatalogEntry
 from engine.models import BackgroundMusicSpec
 from engine.music import resolve_background_music
 
 
 class MusicProfileResilienceTests(unittest.TestCase):
+    def test_open_pixabay_circuit_probes_cached_audio_and_discards_invalid_cache(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            cached = root / "cache/music/external/manual/pixabay/invalid.mp3"
+            cached.parent.mkdir(parents=True)
+            cached.write_bytes(b"invalid cached audio")
+            local = root / "assets/audio/music/local/fresh.mp3"
+            local.parent.mkdir(parents=True)
+            local.write_bytes(b"known local catalog fixture")
+            candidates = (
+                AudioCatalogEntry(
+                    root / "missing.mp3", "external/manual/pixabay/invalid.mp3",
+                    "https://pixabay.com/music/cached/",
+                ),
+                AudioCatalogEntry(local, "local/fresh.mp3", None),
+            )
+            with (
+                patch.dict(os.environ, {"AUDIO_PROVIDER_CIRCUIT_STATE": ""}),
+                patch.dict("engine.audio_library._PIXABAY_HTTP_403_FAILURES", {"process": 2}, clear=True),
+                patch("engine.music.background_music_candidates", return_value=candidates),
+                patch("engine.music.probe_audio_duration", side_effect=RuntimeError("invalid audio")) as probe,
+                patch("engine.audio_library.requests.get") as request,
+            ):
+                result = resolve_background_music(root, BackgroundMusicSpec("mixed", 0.1), "same_slug")
+            probe.assert_called_once_with(cached)
+            request.assert_not_called()
+            self.assertFalse(cached.exists())
+            self.assertEqual(result.path, local)
+
     def _write_remote_profile(self, root: Path) -> None:
         music_root = root / "assets" / "audio" / "music"
         music_root.mkdir(parents=True, exist_ok=True)

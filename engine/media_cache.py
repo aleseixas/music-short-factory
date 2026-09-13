@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from collections.abc import Collection
+from collections.abc import Callable, Collection
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 import math
@@ -57,16 +57,21 @@ def download_to_cache(
     allowed_hosts: Collection[str] | None = None,
     require_https: bool = False,
     max_bytes: int | None = None,
+    min_bytes: int = 1,
+    validator: Callable[[Path], object] | None = None,
 ) -> Path:
-    """Download one remote media URL atomically, or reuse its non-empty cache file.
+    """Download atomically; validate staged media before publishing a cache entry.
 
     The remote URL does not need to expose the media extension in its path. Many
     legitimate CDNs (for example Unsplash and LinkedIn) serve media from opaque
     paths or query-string based URLs. The downloaded payload is validated by the
-    media-specific consumer (Pillow for images, ffprobe for video, etc.).
+    optional media-specific validator also checks existing cache entries. Corrupt
+    entries are removed and reacquired instead of being reused indefinitely.
     """
     if attempts < 1:
         raise RuntimeError("A quantidade de tentativas de download precisa ser positiva.")
+    if isinstance(min_bytes, bool) or not isinstance(min_bytes, int) or min_bytes < 1:
+        raise RuntimeError("O tamanho minimo do download precisa ser positivo.")
     if max_bytes is not None and (
         isinstance(max_bytes, bool) or not isinstance(max_bytes, int) or max_bytes < 1
     ):
@@ -83,12 +88,22 @@ def download_to_cache(
     )
     if destination.is_file():
         cached_size = destination.stat().st_size
-        if cached_size <= 0:
+        if validator is not None:
+            try:
+                if cached_size < min_bytes or (max_bytes is not None and cached_size > max_bytes):
+                    raise RuntimeError("tamanho de cache invalido")
+                validator(destination)
+            except (OSError, RuntimeError):
+                destination.unlink(missing_ok=True)
+            else:
+                return destination
+        elif cached_size <= 0:
             raise RuntimeError(f"Arquivo vazio no cache para {label}: {destination}")
-        if max_bytes is not None and cached_size > max_bytes:
+        elif max_bytes is not None and cached_size > max_bytes:
             destination.unlink(missing_ok=True)
             raise RuntimeError(f"Arquivo no cache excede o limite para {label}.")
-        return destination
+        else:
+            return destination
     if destination.exists():
         raise RuntimeError(f"Destino de cache invalido para {label}: {destination}")
 
@@ -118,6 +133,9 @@ def download_to_cache(
                 raise RuntimeError("HTTP 429")
             if status >= 400:
                 raise RuntimeError(f"HTTP {status}")
+            content_type = str(getattr(response, "headers", {}).get("Content-Type", "")).casefold()
+            if validator is not None and ("text/html" in content_type or "application/xhtml" in content_type):
+                raise RuntimeError("HTTP 200 retornou pagina HTML, nao midia de video")
 
             _validate_direct_file_url(
                 final_url,
@@ -142,6 +160,10 @@ def download_to_cache(
                     written += len(chunk)
             if written <= 0:
                 raise RuntimeError("resposta vazia")
+            if written < min_bytes:
+                raise RuntimeError(f"resposta com tamanho implausivel ({written} bytes)")
+            if validator is not None:
+                validator(partial)
             partial.replace(destination)
             return destination
         except RuntimeError as exc:

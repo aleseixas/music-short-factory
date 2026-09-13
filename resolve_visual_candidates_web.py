@@ -15,6 +15,7 @@ import resolve_visual_candidates as legacy
 import engine.visual_search_web as web_engine
 
 from engine.models import VIDEO_ASSET_EXTENSIONS
+from engine.visual_candidates import normalize_visual_candidate
 from engine.visual_search import VisualInspection, VisualSearchResult
 from engine.visual_search_web import (
     candidate_rights_status,
@@ -247,6 +248,10 @@ def _assign_auto_video_start(slot: dict, candidate: dict, source_identity: str) 
 
 
 def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearchResult:
+    try:
+        candidate = normalize_visual_candidate(candidate)
+    except ValueError as exc:
+        raise RuntimeError(f"{slot_id}[{index}]: {exc}") from exc
     kind = _kind(candidate)
     file_name = str(candidate.get("file") or "").strip()
     provider_id = str(candidate.get("provider_id") or f"{slot_id}-{index}")

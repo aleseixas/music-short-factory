@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse
 
+from engine.youtube import extract_youtube_video_id, is_youtube_video_id
 from engine.visual_search import VisualSearchResult, assess_trim, inspect_visual_result
 from engine.visual_repetition import (
     VisualFingerprint,
@@ -85,7 +86,13 @@ def _candidate_source_key(candidate: dict) -> str:
     provider = str(candidate.get("search_provider") or "").strip().casefold()
     provider_id = str(candidate.get("provider_id") or "").strip()
     raw_url = str(candidate.get("source_page_url") or candidate.get("url") or "").strip()
-    host = (urlparse(raw_url).hostname or "").casefold()
+    video_id = extract_youtube_video_id(raw_url) or extract_youtube_video_id(candidate.get("url"))
+    if kind == "video" and video_id:
+        return f"video:youtube:{video_id}"
+    try:
+        host = (urlparse(raw_url).hostname or "").casefold()
+    except ValueError:
+        host = ""
     if kind == "video" and provider_id and (provider == "youtube_web" or host in YOUTUBE_HOSTS):
         return f"video:youtube:{provider_id}"
     canonical = canonicalize_visual_url(raw_url)
@@ -136,14 +143,26 @@ def _candidate_log_reference(candidate: dict, index: int) -> tuple[str, str, str
         str(candidate.get("provider_id") or index),
     ).strip("._")[:100] or str(index)
     raw_url = str(candidate.get("source_page_url") or candidate.get("url") or "").strip()
-    parsed = urlparse(raw_url)
-    host = (parsed.hostname or "").casefold()
+    try:
+        parsed = urlparse(raw_url)
+        host = (parsed.hostname or "").casefold()
+        if parsed.username or parsed.password:
+            raise ValueError("credentials are not a public media locator")
+    except ValueError:
+        parsed = urlparse("")
+        host = ""
+    video_id = extract_youtube_video_id(raw_url) or extract_youtube_video_id(candidate.get("url"))
     is_youtube = (
         str(candidate.get("search_provider") or "").strip().casefold() == "youtube_web"
-        or host in YOUTUBE_HOSTS
+        or host in YOUTUBE_HOSTS or video_id is not None
     )
     if is_youtube:
-        safe_url = f"https://www.youtube.com/watch?v={provider_id}"
+        if video_id:
+            provider_id = video_id
+        safe_url = (
+            f"https://www.youtube.com/watch?v={provider_id}"
+            if video_id or is_youtube_video_id(provider_id) else "<invalid>"
+        )
         downloader = "yt-dlp"
     elif parsed.scheme.casefold() == "https" and parsed.netloc:
         safe_url = f"https://{parsed.netloc}{parsed.path}"
@@ -466,8 +485,23 @@ def resolve_episode(
 
         inspected = []
         skipped_records: list[dict] = []
-        for index, candidate in shortlist:
+        initial_indices = {index for index, _candidate in shortlist}
+        deferred = [pair for pair in indexed if pair[0] not in initial_indices]
+        attempted_indices: set[int] = set()
+        for index, candidate in shortlist + deferred:
             candidate_kind = str(candidate.get("kind") or "").strip().casefold()
+            if index not in initial_indices:
+                # inspect_top limits normal ranking work, not recovery. If its
+                # candidates failed, try the remaining authored pool before
+                # keeping a broken base asset or accepting an image fallback.
+                usable = [item for item in inspected if not item[5]]
+                if prefer_video_candidates and candidate_kind == "video":
+                    if any(item[3].kind == "video" for item in usable):
+                        continue
+                elif usable:
+                    continue
+                print(f"Visual slot {slot_id}: recovery inspeciona candidato {index} fora do shortlist.")
+            attempted_indices.add(index)
             provider_id, safe_url, downloader = _candidate_log_reference(candidate, index)
             source_key = _candidate_source_key(candidate)
             if prefer_video_candidates and source_key and source_key in reserved_candidate_sources:
@@ -534,7 +568,7 @@ def resolve_episode(
             reverse=True,
         )
         candidate_scores[slot_id] = [item[6] for item in inspected] + skipped_records
-        shortlisted = {index for index, _candidate in shortlist}
+        shortlisted = attempted_indices
         candidate_scores[slot_id].extend({
             "candidate_index": index,
             "name": str(candidate.get("name") or ""),

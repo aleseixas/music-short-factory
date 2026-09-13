@@ -2,6 +2,19 @@
 
 Leia esta regra antes de fechar `assets.json`, `visual_candidates.json` e `timeline.json`.
 
+Gate obrigatório de autoria, antes de `.episode-check`:
+
+```text
+python -m engine.visual_candidates episodes/<slug>/visual_candidates.json
+```
+
+Cada candidato precisa preservar URL HTTPS/localizador real, `kind`, origem/provider
+e metadata de aquisição. Para YouTube, preserve o `VIDEO_ID` e a página pública;
+nunca use apenas um título de busca ou `id: 1`. Um ID de vídeo válido com provider
+YouTube pode reconstruir a URL. `watch?v=`, `shorts/`, `embed/` e `youtu.be/` do
+mesmo ID são o mesmo visual; IDs diferentes, inclusive por maiúsculas/minúsculas,
+são origens diferentes. Não descarte o parâmetro `v` ao comparar URLs.
+
 Esta é a regra vigente e **SOBREPÕE qualquer texto anterior que diga que o mesmo vídeo-fonte nunca pode aparecer em dois shots OU que permita vídeo `contextual`, `generic` ou sem `semantic_fit` como fallback**.
 
 ## Imagens — zero reuso

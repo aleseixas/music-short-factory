@@ -16,6 +16,7 @@ import requests
 
 from .ffmpeg import probe_video_stream, run_ffmpeg_capture
 from .media_cache import download_to_cache, media_cache_directory
+from .youtube import canonical_youtube_url, extract_youtube_video_id
 from .models import (
     DEFAULT_VIDEO_SPEED,
     MAX_FREEZE_DURATION_SECONDS,
@@ -141,7 +142,7 @@ class VisualSearchResult:
         }
 
     def as_dict(self) -> dict[str, object]:
-        return {
+        payload = {
             "name": self.name,
             "kind": self.kind,
             "source": self.source,
@@ -174,6 +175,13 @@ class VisualSearchResult:
             "inspection_required_for_visual_score": True,
             "candidate_asset_entry": self.candidate_asset_entry,
         }
+        # Preserve an acquisition locator at the same level as kind/provider.
+        # YouTube discovery intentionally has no direct MP4 URL before yt-dlp.
+        youtube_url = canonical_youtube_url(self.source_page_url) if self.kind == "video" else None
+        payload["url"] = youtube_url or self.download_url
+        if youtube_url:
+            payload["video_id"] = extract_youtube_video_id(youtube_url)
+        return payload
 
 
 @dataclass(frozen=True)
