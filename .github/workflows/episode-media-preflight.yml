@@ -14,9 +14,6 @@ permissions:
 jobs:
   media-preflight:
     runs-on: ubuntu-latest
-    env:
-      # Share provider failures across batch/repair subprocesses, never across runs.
-      AUDIO_PROVIDER_CIRCUIT_STATE: ${{ runner.temp }}/music-provider-circuit-${{ github.run_id }}-${{ github.run_attempt }}.json
 
     steps:
       - name: Check out repository
@@ -82,6 +79,9 @@ jobs:
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          # runner context is available at step scope, not at job.env scope.
+          # Share failures across batch/repair subprocesses, never across runs.
+          AUDIO_PROVIDER_CIRCUIT_STATE: ${{ runner.temp }}/music-provider-circuit-${{ github.run_id }}-${{ github.run_attempt }}.json
         run: |
           set -uo pipefail
           # Each pass collects all independent failures it can observe. Repairs are
