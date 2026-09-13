@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "A primeira música de Zé Neto & Cristiano quase foi de outra dupla",
+  "slug": "ze_neto_cristiano_magia_das_estrelas",
+  "target_duration_seconds": 80,
+  "segments": [
+    {"id":"hook","text":"A primeira música de Zé Neto e Cristiano quase foi parar em outra dupla.","delivery":"hook"},
+    {"id":"primeira","text":"Era Magia das Estrelas, a primeira composição dos dois juntos.","delivery":"curious"},
+    {"id":"ano","text":"Eles escreveram a faixa em 2011, ainda no começo da carreira.","delivery":"neutral"},
+    {"id":"oferta","text":"Um amigo disse que poderia mostrar a música para Jorge.","delivery":"dramatic"},
+    {"id":"medo","text":"E aí bateu o medo de perder a composição.","delivery":"reveal"},
+    {"id":"guardada","text":"No fim, a música ficou com Zé Neto e Cristiano.","delivery":"neutral"},
+    {"id":"explosao","text":"Anos depois, Seu Polícia ajudou a transformar a dupla em gigante.","delivery":"reveal"},
+    {"id":"sucessos","text":"Vieram hits, turnês e números absurdos no sertanejo.","delivery":"neutral"},
+    {"id":"bilhao","text":"Dois clipes da dupla já passaram de um bilhão no YouTube.","delivery":"dramatic"},
+    {"id":"origem","text":"Só que, para comemorar a trajetória, eles olharam para trás.","delivery":"curious"},
+    {"id":"projeto","text":"Em 2025, criaram um acústico para revisitar dez anos de sucessos.","delivery":"neutral"},
+    {"id":"cidade","text":"O projeto foi gravado em São José do Rio Preto.","delivery":"neutral"},
+    {"id":"titulo","text":"E recebeu justamente o nome Magia das Estrelas.","delivery":"reveal"},
+    {"id":"simbolo","text":"A primeira composição virou o símbolo de toda a celebração.","delivery":"emotional"},
+    {"id":"completo","text":"Em 2026, o acústico chegou completo às plataformas.","delivery":"neutral"},
+    {"id":"agora","text":"E a história ficou ainda mais curiosa agora.","delivery":"curious"},
+    {"id":"vocesesdeus","text":"A dupla entrou numa nova fase com o álbum Vocês e Deus.","delivery":"neutral"},
+    {"id":"cadeira","text":"Cadeira Cativa ficou meses entre as mais ouvidas do Spotify Brasil.","delivery":"reveal"},
+    {"id":"volta","text":"Mas a música do começo voltou para o centro da história.","delivery":"emotional"},
+    {"id":"cta","text":"Quase entregue a outros artistas, ela acabou batizando a própria celebração. Você sabia? Comenta.","delivery":"payoff"}
+  ]
+}
