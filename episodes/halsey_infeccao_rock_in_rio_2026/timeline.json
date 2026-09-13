@@ -4,7 +4,7 @@
     "enabled": true
   },
   "background_music": {
-    "profile": "fallback_social_dark",
+    "profile": "external_apt_monkeys_spinning_monkeys",
     "volume": 0.09
   },
   "sfx_cues": [
