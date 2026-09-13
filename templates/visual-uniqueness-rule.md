@@ -58,6 +58,22 @@ Se nenhum vídeo `direct/exact` funcionar tecnicamente em um slot comum, prefira
 
 O primeiro visual editorial continua obrigatoriamente sendo VÍDEO. Portanto, o primeiro slot deve ter candidatos `direct/exact` reais e redundantes. Se um download falhar, tente os próximos vídeos `direct/exact`; não substitua a abertura por imagem nem por vídeo genérico. Monte o pool de abertura já com redundância suficiente para o auto-repair resolver sozinho.
 
+## Prioridade global — VIDEO FIRST para TikTok/Reels/Shorts
+
+Esta seção é um **override editorial vigente** e SOBREPÕE qualquer regra antiga de proporção fixa entre vídeo e imagem, inclusive referências como `60–80% vídeo / 20–40% imagem` ou qualquer quota equivalente presente em outros templates/docs.
+
+A regra correta agora é:
+
+- **o primeiro take editorial é SEMPRE vídeo real**, sem exceção;
+- ao longo de todo o episódio, **priorize fortemente vídeo `exact/direct` sempre que houver material relevante e tecnicamente utilizável**;
+- não existe meta mínima nem máxima de imagens e não existe proporção fixa vídeo/imagem;
+- um episódio pode terminar com 70%, 80%, 90% ou até 100% dos takes em vídeo se essa for a melhor seleção disponível;
+- use imagem estática somente quando ela trouxer contexto, valor histórico, emoção ou informação claramente melhor do que os vídeos disponíveis para aquele beat;
+- não escolha uma imagem apenas para “equilibrar” a proporção e não reserve slots de imagem por quota;
+- também não aceite vídeo fraco, genérico ou semanticamente inferior apenas para aumentar artificialmente a quantidade de vídeo: `semantic_fit` e relevância continuam sendo hard gates.
+
+Em resumo: **entrada obrigatoriamente em vídeo + preferência forte por vídeo no restante + imagem apenas quando ela for editorialmente melhor para aquele momento**.
+
 ## Prioridade editorial
 
 A ordem editorial é:
@@ -105,6 +121,7 @@ Antes de finalizar o episódio, confirme:
 - a escolha de reutilizar uma fonte preserva ou melhora relevância semântica;
 - slots visualmente ricos receberam variedade real de candidatos, em vez de pequenas variações dos mesmos poucos IDs;
 - **todo vídeo usado é `exact` ou `direct`; nenhum vídeo `contextual`, `generic` ou sem `semantic_fit` foi usado**;
-- o primeiro shot tem vídeo `exact/direct` e o pool de abertura possui alternativas reais para auto-recovery.
+- **o primeiro shot é vídeo `exact/direct` sem exceção** e o pool de abertura possui alternativas reais para auto-recovery;
+- **nenhuma imagem foi escolhida apenas para cumprir quota/proporção** e, sempre que havia vídeo `exact/direct` claramente melhor, ele recebeu prioridade.
 
-Esta regra substitui a política anterior de `zero reuso do vídeo-fonte` e qualquer fallback que aceitasse vídeo genérico. A política correta agora é: **zero reuso da mesma imagem, zero reuso do mesmo trecho de vídeo e zero vídeo genérico; uma mesma fonte relevante pode abastecer takes distintos com segmentos não sobrepostos, dentro do limite definido acima**.
+Esta regra substitui a política anterior de `zero reuso do vídeo-fonte`, qualquer fallback que aceitasse vídeo genérico e qualquer regra de proporção fixa vídeo/imagem. A política correta agora é: **zero reuso da mesma imagem, zero reuso do mesmo trecho de vídeo, zero vídeo genérico, abertura sempre em vídeo e preferência forte por vídeo relevante ao longo do episódio; uma mesma fonte relevante pode abastecer takes distintos com segmentos não sobrepostos, dentro do limite definido acima**.
