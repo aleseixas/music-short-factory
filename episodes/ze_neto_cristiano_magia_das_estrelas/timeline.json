@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile": "fallback_social_chill", "volume": 0.085},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"impact","volume":0.11},
+    {"time_seconds":13.0,"type":"whoosh_fast","volume":0.075},
+    {"time_seconds":31.0,"type":"camera_shutter","volume":0.06},
+    {"time_seconds":49.0,"type":"riser_build_up","volume":0.07},
+    {"time_seconds":67.0,"type":"impact","volume":0.09}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.1,"end_seconds":0.85,"type":"punch_zoom","intensity":0.82},
+    {"start_seconds":36.0,"end_seconds":37.0,"type":"slow_zoom_in","intensity":0.6},
+    {"start_seconds":67.0,"end_seconds":68.0,"type":"punch_zoom","intensity":0.7}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":0.9,"text":"QUASE FOI DE OUTRA DUPLA","accent_text":"OUTRA DUPLA","animation":"scale_bounce","position":"center","intensity":0.9},
+    {"segment":"primeira","offset_seconds":0.1,"duration_seconds":0.9,"text":"A PRIMEIRA COMPOSIÇÃO","accent_text":"PRIMEIRA","animation":"pop_in","position":"center","intensity":0.82},
+    {"segment":"explosao","offset_seconds":0.1,"duration_seconds":0.9,"text":"DEPOIS VEIO SEU POLÍCIA","accent_text":"SEU POLÍCIA","animation":"fade_pop","position":"center","intensity":0.86},
+    {"segment":"titulo","offset_seconds":0.1,"duration_seconds":0.9,"text":"MAGIA DAS ESTRELAS","accent_text":"MAGIA","animation":"scale_bounce","position":"center","intensity":0.9},
+    {"segment":"cadeira","offset_seconds":0.1,"duration_seconds":0.9,"text":"MESES ENTRE AS MAIS OUVIDAS","accent_text":"MAIS OUVIDAS","animation":"slide_up","position":"center","intensity":0.84},
+    {"segment":"cta","offset_seconds":0.1,"duration_seconds":0.9,"text":"VOCÊ SABIA?","accent_text":"SABIA?","animation":"pop_in","position":"center","intensity":0.82}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8,"highlight":"QUASE FOI DE OUTRA DUPLA"},
+    {"id":"shot_02","segment":"primeira","asset":"primeira_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":10},
+    {"id":"shot_03","segment":"ano","asset":"ano_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":8},
+    {"id":"shot_04","segment":"oferta","asset":"oferta_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":12},
+    {"id":"shot_05","segment":"medo","asset":"medo_visual","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_06","segment":"guardada","asset":"guardada_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":8},
+    {"id":"shot_07","segment":"explosao","asset":"explosao_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":9,"highlight":"SEU POLÍCIA"},
+    {"id":"shot_08","segment":"sucessos","asset":"sucessos_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":12},
+    {"id":"shot_09","segment":"bilhao","asset":"bilhao_visual","motion":"push_in","transition_out":"cut","source_start_seconds":10},
+    {"id":"shot_10","segment":"origem","asset":"origem_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_11","segment":"projeto","asset":"projeto_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":0},
+    {"id":"shot_12","segment":"cidade","asset":"cidade_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":10},
+    {"id":"shot_13","segment":"titulo","asset":"titulo_visual","motion":"push_in","transition_out":"cut","source_start_seconds":9,"highlight":"MAGIA DAS ESTRELAS"},
+    {"id":"shot_14","segment":"simbolo","asset":"simbolo_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":11},
+    {"id":"shot_15","segment":"completo","asset":"completo_visual","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_16","segment":"agora","asset":"agora_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":2822},
+    {"id":"shot_17","segment":"vocesesdeus","asset":"vocesesdeus_visual","motion":"push_in","transition_out":"cut","source_start_seconds":10},
+    {"id":"shot_18","segment":"cadeira","asset":"cadeira_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":11,"highlight":"ENTRE AS MAIS OUVIDAS"},
+    {"id":"shot_19","segment":"volta","asset":"volta_visual","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_20","segment":"cta","asset":"cta_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":10}
+  ]
+}
