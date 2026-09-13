@@ -1,1 +1,225 @@
-{"schema_version":1,"assets":[{"id":"hook_visual","file":"youtube-jsz2fjVDtEo.mp4","url":"https://www.youtube.com/watch?v=jsz2fjVDtEo","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"bruxas_visual","file":"youtube-3wn9ec2Emuc.mp4","url":"https://www.youtube.com/watch?v=3wn9ec2Emuc","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"virada_visual","file":"Halsey 2019 by Glenn Francis.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%202019%20by%20Glenn%20Francis.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"hospital_visual","file":"Halsey 2019 by Glenn Francis (cropped).jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%202019%20by%20Glenn%20Francis%20%28cropped%29.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"medicacao_visual","file":"Halsey 2019 by Glenn Francis (cropped) 2.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%202019%20by%20Glenn%20Francis%20%28cropped%29%202.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"historico_visual","file":"Halsey @ Grammy Museum 09 23 2019 (49310988653).jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%20%40%20Grammy%20Museum%2009%2023%202019%20%2849310988653%29.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"risco_visual","file":"Halsey @ Grammy Museum 09 23 2019 (49311488251).jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%20%40%20Grammy%20Museum%2009%2023%202019%20%2849311488251%29.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"humor_visual","file":"Halsey @ Grammy Museum 09 23 2019 (49311488721).jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%20%40%20Grammy%20Museum%2009%2023%202019%20%2849311488721%29.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"dentes_visual","file":"Halsey @ Grammy Museum 09 23 2019 (49311490491).jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Halsey%20%40%20Grammy%20Museum%2009%2023%202019%20%2849311490491%29.jpg","credit":"Wikimedia Commons","license":"","focus":{"x":0.5,"y":0.5}},{"id":"rio_visual","file":"youtube-qPwZm0tv5Lo.mp4","url":"https://www.youtube.com/watch?v=qPwZm0tv5Lo","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"hoje_visual","file":"youtube-HAQTCUtV7jM.mp4","url":"https://www.youtube.com/watch?v=HAQTCUtV7jM","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"palco_visual","file":"youtube-g2Z6CPZeRsE.mp4","url":"https://www.youtube.com/watch?v=g2Z6CPZeRsE","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"europa_visual","file":"youtube-zdJYdfkOJeg.mp4","url":"https://www.youtube.com/watch?v=zdJYdfkOJeg","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"filme_visual","file":"youtube-tqgqz2vPUS4.mp4","url":"https://www.youtube.com/watch?v=tqgqz2vPUS4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"projeto_visual","file":"youtube-d4WEy6yvYQs.mp4","url":"https://www.youtube.com/watch?v=d4WEy6yvYQs","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"sequencia_visual","file":"youtube-pRaUMeEEcl0.mp4","url":"https://www.youtube.com/watch?v=pRaUMeEEcl0","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"confirmado_visual","file":"youtube-_ObA_tbkTas.mp4","url":"https://www.youtube.com/watch?v=_ObA_tbkTas","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"suspense_visual","file":"youtube-ndaPI_EdOeg.mp4","url":"https://www.youtube.com/watch?v=ndaPI_EdOeg","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"historia_visual","file":"youtube-jsz2fjVDtEo.mp4","url":"https://www.youtube.com/watch?v=jsz2fjVDtEo","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},{"id":"cta_visual","file":"youtube-3wn9ec2Emuc.mp4","url":"https://www.youtube.com/watch?v=3wn9ec2Emuc","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}}]}
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "hook_visual",
+      "file": "halsey-hook_visual-jsz2fjVDtEo.mp4",
+      "url": "https://www.youtube.com/watch?v=jsz2fjVDtEo",
+      "credit": "eBilet / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "bruxas_visual",
+      "file": "halsey-posts_x_september_10.jpg",
+      "url": "https://s2-gshow.glbimg.com/54H_A1l5oY00Y3B2Tjy3Ou9Zpis=/0x0:800x649/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2026/e/2/CdoBKiQuyVWSRZ1RtmRg/screenshot-2026-09-10t210204.876.png",
+      "credit": "Halsey / Reprodução X, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "virada_visual",
+      "file": "halsey-portrait_terra.jpg",
+      "url": "https://p2.trrsf.com/image/fget/cf/1200/630/middle/images.terra.com/2026/09/11/1425396235-3y6iaoyywzhm5avk3qzh6dvgcm.jpg",
+      "credit": "@iamhalsey via Instagram / Estadão, via Terra",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "hospital_visual",
+      "file": "halsey-portrait_gshow.jpg",
+      "url": "https://s2-gshow.glbimg.com/O3qzZZa1FGttgUjRCvcTAI33Ckc=/1200x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2026/x/0/onSISIS9OBqeqZJ51kVQ/halsey-capa.jpg",
+      "credit": "Instagram/Halsey, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "medicacao_visual",
+      "file": "halsey-portrait_getty.jpg",
+      "url": "https://s2-gshow.glbimg.com/k07U4WEfbxtceV9HORPP0XWkXhc=/0x0:1024x683/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2026/M/O/Fy3h00Q3qUIxzSPzXvUA/gettyimages-2269743523.jpg",
+      "credit": "JC Olivera / Getty, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "historico_visual",
+      "file": "halsey-album_the_great_impersonator.jpg",
+      "url": "https://s2-gshow.glbimg.com/NHdwWPi3Jf09qdLlxzVz1YO7a40=/0x0:1200x1200/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2026/p/t/v6LOjESZyZtjUGM5lFXA/halsey-na-capa-do-the-great-impersonator.jpg",
+      "credit": "Reprodução/Instagram, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "risco_visual",
+      "file": "halsey-halsey_marty_supreme_portrait_archive.jpg",
+      "url": "https://s2-gshow.glbimg.com/gFd5e-1ECU3w_QvnyXwPEcn49Ak=/0x0:3288x5000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2025/Y/v/ufia9PQWOC5LlyAt6viw/gettyimages-2250849944.jpg",
+      "credit": "JC Olivera/GA/The Hollywood Reporter via Getty Images, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "humor_visual",
+      "file": "halsey-halsey_fans_archive.jpg",
+      "url": "https://s2-gshow.glbimg.com/ThJIPYHCR5r_UZNgVATSTDI9-D0=/0x0:4352x3197/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2026/N/t/KMHl8XTBqrrhoXY1KjOA/000-1hh9gs.jpg",
+      "credit": "Grosby, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "dentes_visual",
+      "file": "halsey-halsey_cannes_portrait_archive.jpg",
+      "url": "https://s2-gshow.glbimg.com/aK1mvDd9yIGcqow5NwB0VXdt8Gk=/0x0:3333x5000/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2026/n/S/Uz7WrBQAGFNTuM8dAbjA/gettyimages-2276756651.jpg",
+      "credit": "Amy Sussman/Getty Images, via gshow",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "rio_visual",
+      "file": "halsey-rio_visual-qPwZm0tv5Lo.mp4",
+      "url": "https://www.youtube.com/watch?v=qPwZm0tv5Lo",
+      "credit": "ChrisB / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "hoje_visual",
+      "file": "halsey-hoje_visual-HAQTCUtV7jM.mp4",
+      "url": "https://www.youtube.com/watch?v=HAQTCUtV7jM",
+      "credit": "Thomas Metalum / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "palco_visual",
+      "file": "halsey-palco_visual-GkedAgriuyg.mp4",
+      "url": "https://www.youtube.com/watch?v=GkedAgriuyg",
+      "credit": "ChrisB / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "europa_visual",
+      "file": "halsey-europa_visual-YJFdKcURUrY.mp4",
+      "url": "https://www.youtube.com/watch?v=YJFdKcURUrY",
+      "credit": "jay martens / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "filme_visual",
+      "file": "halsey-performance_the_girl_in_the_tower.webp",
+      "url": "https://img.festasemsp.com/assets/10901cf1-a144-4840-93fa-cbac32a33c60?w=600",
+      "credit": "FESTAS (crédito fotográfico não informado no artigo)",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "projeto_visual",
+      "file": "halsey-projeto_visual-F8mmdj3HipE.mp4",
+      "url": "https://www.youtube.com/watch?v=F8mmdj3HipE",
+      "credit": "ChrisB / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "sequencia_visual",
+      "file": "halsey-sequencia_visual-3oBTwS6BH1Q.mp4",
+      "url": "https://www.youtube.com/watch?v=3oBTwS6BH1Q",
+      "credit": "ChrisB / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "confirmado_visual",
+      "file": "halsey-confirmado_visual-3wn9ec2Emuc.mp4",
+      "url": "https://www.youtube.com/watch?v=3wn9ec2Emuc",
+      "credit": "Thomas Metalum / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "suspense_visual",
+      "file": "halsey-suspense_visual-3dTilQMiuxg.mp4",
+      "url": "https://www.youtube.com/watch?v=3dTilQMiuxg",
+      "credit": "ACtitud 50 Rocks / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "historia_visual",
+      "file": "halsey-historia_visual-NGY7Bii0n4U.mp4",
+      "url": "https://www.youtube.com/watch?v=NGY7Bii0n4U",
+      "credit": "Chasing Encores Live / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "cta_visual",
+      "file": "halsey-cta_visual-ASsRUlSja4U.mp4",
+      "url": "https://www.youtube.com/watch?v=ASsRUlSja4U",
+      "credit": "Thomas Metalum / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}

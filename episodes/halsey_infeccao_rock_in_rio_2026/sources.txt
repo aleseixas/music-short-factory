@@ -17,3 +17,30 @@ VISUAIS WEB-FIRST
 
 BACKGROUND — pesquisa externa real
 Foram pesquisadas cinco variações semânticas no Pixabay para tensão moderna/cinemática/documental. Candidatas comparadas incluíram Dark Pop Instrumental 02 (alanajordan), Deep Bass Cinematic Tension (Ovrsoull), Dark Pulse (MeeGiStudio), Cinematic Tension Pulse (DesiFreeMusic) e Dark Ambient Investigative Pulse (Ovrsoull). Embora as páginas indiquem Pixabay Content License, nesta rodada não havia evidência operacional suficiente de ausência de Content ID e aquisição dedicada que justificasse uma mutação global nova no catálogo. Seguindo docs/audio-search.md, foi escolhido o fallback curado `fallback_social_dark`, já suportado pela main e com múltiplas faixas Pixabay remotas.
+
+REPARO DE AQUISIÇÃO E PROVENIÊNCIA — 2026-09-13
+- Mesmo slug e mesmo roteiro; removidas as referências youtube-ID.mp4 associadas aos downloads HTML inválidos e as páginas Special:Redirect/file bloqueadas.
+- visual_candidates.json agora preserva URL real, provider, VIDEO_ID, kind, crédito, intenção e metadata. As consultas usam YouTubeWebVideoProvider existente; títulos não são tratados como URLs.
+- IDs YouTube foram confirmados por oEmbed/busca do próprio YouTube. Download/ffprobe completo continua obrigatório no Media Preflight, sem declarar mídia validada só pela existência da URL.
+- Bases: 11 vídeos de performances de Halsey em festivais de 2026 e 9 imagens distintas verificadas com HTTP 200 + decode. Film beat usa imagem da matéria sobre The Girl in the Tower; o vídeo oficial zdJYdfkOJeg também está no pool.
+- Retratos de eventos/arquivo e a capa de álbum são CONTEXTUAIS: não representam hospitalização, tratamento ou diagnóstico de osteomielite. O registro dos posts de 10/09 ilustra somente o pedido das cem bruxas.
+- Não foram selecionadas montagens de atendimento de 2024 como se fossem o episódio clínico de 2026. Não foram inventadas licenças; direitos permanecem desconhecidos onde a fonte não os informa.
+- Probe seguro GitHub 34758009711: YOUTUBE_COOKIE_STATUS=VALID; primary recebeu BOT_CHALLENGE, fallback com cookies passou e um trecho de 8.01 s foi validado pelo ffprobe. Não foi demonstrada expiração dos cookies.
+- Imagem portrait_terra: https://www.terra.com.br/diversao/musica/rock-in-rio/halsey-revela-infeccao-no-rosto-antes-do-rock-in-rio-me-entupiram-de-remedios,c7e105acb1eba5c40010ff40f7e97a2e1hlq7fxj.html
+  Crédito: @iamhalsey via Instagram / Estadão, via Terra. Contexto: Retrato publicado junto da notícia da infecção; não é imagem do hospital.
+- Imagem portrait_gshow: https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/depois-de-chamada-de-brasileiros-halsey-diz-que-esta-melhorando-e-cita-vinda-ao-rio-mal-posso-esperar.ghtml
+  Crédito: Instagram/Halsey, via gshow. Contexto: Retrato com cabelo azul publicado junto da atualização de saúde; imagem contextual, não atendimento médico.
+- Imagem posts_x_september_10: https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/depois-de-chamada-de-brasileiros-halsey-diz-que-esta-melhorando-e-cita-vinda-ao-rio-mal-posso-esperar.ghtml
+  Crédito: Halsey / Reprodução X, via gshow. Contexto: Captura real dos posts de 10/09/2026 sobre resfriado e 100 bruxas. Não é a atualização hospitalar do dia 11.
+- Imagem performance_the_girl_in_the_tower: https://festas.me/editorial/halsey-libera-filme-concerto-the-girl-in-the-tower-gratuitamente-no-youtube-antes-do-rock-in-rio
+  Crédito: FESTAS (crédito fotográfico não informado no artigo). Contexto: Halsey cantando e tocando guitarra, imagem da matéria sobre The Girl in the Tower; não associar ao hospital.
+- Imagem album_the_great_impersonator: https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/atracao-do-rock-in-rio-halsey-volta-ao-brasil-apos-tratamento-contra-lupus-e-leucemia.ghtml
+  Crédito: Reprodução/Instagram, via gshow. Contexto: Arte de The Great Impersonator (2024). Contexto de carreira, não imagem clínica nem evidência de osteomielite.
+- Imagem portrait_getty: https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/britney-spears-g-eazy-e-mais-relembre-as-polemicas-de-halsey.ghtml
+  Crédito: JC Olivera / Getty, via gshow. Contexto: Retrato em evento da artista; arquivo contextual, não recente crise de saúde.
+- Imagem halsey_fans_archive: https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/britney-spears-g-eazy-e-mais-relembre-as-polemicas-de-halsey.ghtml
+  Crédito: Grosby, via gshow. Contexto: Halsey autografando para fãs; arquivo contextual, não hospital nem Rock in Rio 2026.
+- Imagem halsey_marty_supreme_portrait_archive: https://gshow.globo.com/cultura-pop/famosos/noticia/famosos-marcam-presenca-em-premiere-de-marty-supreme-em-los-angeles-veja-as-fotos.ghtml
+  Crédito: JC Olivera/GA/The Hollywood Reporter via Getty Images, via gshow. Contexto: Retrato solo de Halsey na première de Marty Supreme em Los Angeles. Arquivo de evento social, não atendimento médico nem crise de setembro de 2026.
+- Imagem halsey_cannes_portrait_archive: https://gshow.globo.com/cultura-pop/famosos/noticia/famosos-apostam-em-looks-luxuosos-para-evento-em-cannes.ghtml
+  Crédito: Amy Sussman/Getty Images, via gshow. Contexto: Retrato solo de Halsey no jantar Women in Motion em Cannes. Arquivo contextual de evento social, não atendimento médico nem crise de setembro de 2026.

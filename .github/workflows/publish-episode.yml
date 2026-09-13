@@ -274,6 +274,13 @@ jobs:
           python-version: "3.13"
           cache: pip
 
+      # The handoff is optional; repository YouTube assets must also be
+      # acquirable on this runner if artifact transfer is unavailable.
+      - name: Set up Node.js for render-time yt-dlp EJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
       - name: Ensure FFmpeg
         shell: bash
         run: |
@@ -335,6 +342,8 @@ jobs:
 
       - name: Render episode
         id: render
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         run: python generate.py "$EPISODE"
 
       - name: Upload visual usage history

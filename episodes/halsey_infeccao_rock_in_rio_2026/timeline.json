@@ -1,1 +1,301 @@
-{"schema_version":1,"smart_visual_pacing":{"enabled":true},"background_music":{"profile":"fallback_social_dark","volume":0.09},"sfx_cues":[{"time_seconds":0.1,"type":"impact","volume":0.11},{"time_seconds":7.5,"type":"suspense_build_up","volume":0.075},{"time_seconds":16.0,"type":"heartbeat_fast","volume":0.07},{"time_seconds":27.0,"type":"whoosh_fast","volume":0.08},{"time_seconds":38.0,"type":"dramatic_dun_dun","volume":0.075},{"time_seconds":49.0,"type":"crowd_cheer","volume":0.07},{"time_seconds":60.0,"type":"camera_shutter","volume":0.065},{"time_seconds":70.0,"type":"riser_build_up","volume":0.075},{"time_seconds":81.0,"type":"impact","volume":0.1}],"visual_fx_cues":[{"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.9},{"start_seconds":17.0,"end_seconds":18.0,"type":"punch_zoom","intensity":0.82},{"start_seconds":70.0,"end_seconds":72.0,"type":"slow_zoom_in","intensity":0.7}],"text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"DO HOSPITAL AO ROCK IN RIO","accent_text":"HOSPITAL","animation":"scale_bounce","position":"center","intensity":0.95},{"segment":"hospital","offset_seconds":0.1,"duration_seconds":1.1,"text":"INFECÇÃO NO ROSTO","accent_text":"INFECÇÃO","animation":"pop_in","position":"center","intensity":0.92},{"segment":"historico","offset_seconds":0.1,"duration_seconds":1.1,"text":"JÁ TEVE OSTEOMIELITE","accent_text":"OSTEOMIELITE","animation":"slide_up","position":"center","intensity":0.9},{"segment":"rio","offset_seconds":0.1,"duration_seconds":1.0,"text":"RIO: MAL POSSO ESPERAR","accent_text":"RIO","animation":"fade_pop","position":"center","intensity":0.86},{"segment":"hoje","offset_seconds":0.1,"duration_seconds":1.15,"text":"ROCK IN RIO HOJE","accent_text":"HOJE","animation":"scale_bounce","position":"center","intensity":0.94},{"segment":"confirmado","offset_seconds":0.1,"duration_seconds":1.1,"text":"SHOW CONFIRMADO","accent_text":"CONFIRMADO","animation":"pop_in","position":"center","intensity":0.92}],"shots":[{"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0,"highlight":"SAIU DO HOSPITAL"},{"id":"shot_02","segment":"bruxas","asset":"bruxas_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":3.0},{"id":"shot_03","segment":"virada","asset":"virada_visual","motion":"pan_left","transition_out":"cut"},{"id":"shot_04","segment":"hospital","asset":"hospital_visual","motion":"pan_right","transition_out":"cut","highlight":"INFECÇÃO NO ROSTO"},{"id":"shot_05","segment":"medicacao","asset":"medicacao_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_06","segment":"historico","asset":"historico_visual","motion":"pull_out","transition_out":"cut","highlight":"OSTEOMIELITE"},{"id":"shot_07","segment":"risco","asset":"risco_visual","motion":"pan_left","transition_out":"cut"},{"id":"shot_08","segment":"humor","asset":"humor_visual","motion":"pan_right","transition_out":"cut"},{"id":"shot_09","segment":"dentes","asset":"dentes_visual","motion":"push_in","transition_out":"cut"},{"id":"shot_10","segment":"rio","asset":"rio_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":12.0,"highlight":"RIO"},{"id":"shot_11","segment":"hoje","asset":"hoje_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":0.0,"highlight":"ROCK IN RIO HOJE"},{"id":"shot_12","segment":"palco","asset":"palco_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":3.0},{"id":"shot_13","segment":"europa","asset":"europa_visual","motion":"push_in","transition_out":"cut","source_start_seconds":6.0},{"id":"shot_14","segment":"filme","asset":"filme_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":9.0},{"id":"shot_15","segment":"projeto","asset":"projeto_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":12.0},{"id":"shot_16","segment":"sequencia","asset":"sequencia_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":0.0,"highlight":"HOSPITAL → PALCO"},{"id":"shot_17","segment":"confirmado","asset":"confirmado_visual","motion":"push_in","transition_out":"cut","source_start_seconds":3.0,"highlight":"SHOW CONFIRMADO"},{"id":"shot_18","segment":"suspense","asset":"suspense_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":6.0},{"id":"shot_19","segment":"historia","asset":"historia_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":44.0,"highlight":"RECUPERAÇÃO"},{"id":"shot_20","segment":"cta","asset":"cta_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":47.0,"highlight":"VOCÊ IRIA?"}]}
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "fallback_social_dark",
+    "volume": 0.09
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.1,
+      "type": "impact",
+      "volume": 0.11
+    },
+    {
+      "time_seconds": 7.5,
+      "type": "suspense_build_up",
+      "volume": 0.075
+    },
+    {
+      "time_seconds": 16,
+      "type": "heartbeat_fast",
+      "volume": 0.07
+    },
+    {
+      "time_seconds": 27,
+      "type": "whoosh_fast",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 38,
+      "type": "dramatic_dun_dun",
+      "volume": 0.075
+    },
+    {
+      "time_seconds": 49,
+      "type": "crowd_cheer",
+      "volume": 0.07
+    },
+    {
+      "time_seconds": 60,
+      "type": "camera_shutter",
+      "volume": 0.065
+    },
+    {
+      "time_seconds": 70,
+      "type": "riser_build_up",
+      "volume": 0.075
+    },
+    {
+      "time_seconds": 81,
+      "type": "impact",
+      "volume": 0.1
+    }
+  ],
+  "visual_fx_cues": [
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.9,
+      "type": "punch_zoom",
+      "intensity": 0.9
+    },
+    {
+      "start_seconds": 17,
+      "end_seconds": 18,
+      "type": "punch_zoom",
+      "intensity": 0.82
+    },
+    {
+      "start_seconds": 70,
+      "end_seconds": 72,
+      "type": "slow_zoom_in",
+      "intensity": 0.7
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "DO HOSPITAL AO ROCK IN RIO",
+      "accent_text": "HOSPITAL",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.95
+    },
+    {
+      "segment": "hospital",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "INFECÇÃO NO ROSTO",
+      "accent_text": "INFECÇÃO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.92
+    },
+    {
+      "segment": "historico",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "JÁ TEVE OSTEOMIELITE",
+      "accent_text": "OSTEOMIELITE",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "rio",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1,
+      "text": "RIO: MAL POSSO ESPERAR",
+      "accent_text": "RIO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.86
+    },
+    {
+      "segment": "hoje",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.15,
+      "text": "ROCK IN RIO HOJE",
+      "accent_text": "HOJE",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.94
+    },
+    {
+      "segment": "confirmado",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "SHOW CONFIRMADO",
+      "accent_text": "CONFIRMADO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.92
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 0,
+      "highlight": "SAIU DO HOSPITAL"
+    },
+    {
+      "id": "shot_02",
+      "segment": "bruxas",
+      "asset": "bruxas_visual",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "virada",
+      "asset": "virada_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_04",
+      "segment": "hospital",
+      "asset": "hospital_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "highlight": "INFECÇÃO NO ROSTO"
+    },
+    {
+      "id": "shot_05",
+      "segment": "medicacao",
+      "asset": "medicacao_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_06",
+      "segment": "historico",
+      "asset": "historico_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "OSTEOMIELITE"
+    },
+    {
+      "id": "shot_07",
+      "segment": "risco",
+      "asset": "risco_visual",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "humor",
+      "asset": "humor_visual",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_09",
+      "segment": "dentes",
+      "asset": "dentes_visual",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_10",
+      "segment": "rio",
+      "asset": "rio_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 12,
+      "highlight": "RIO"
+    },
+    {
+      "id": "shot_11",
+      "segment": "hoje",
+      "asset": "hoje_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 12,
+      "highlight": "ROCK IN RIO HOJE"
+    },
+    {
+      "id": "shot_12",
+      "segment": "palco",
+      "asset": "palco_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 12
+    },
+    {
+      "id": "shot_13",
+      "segment": "europa",
+      "asset": "europa_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 12
+    },
+    {
+      "id": "shot_14",
+      "segment": "filme",
+      "asset": "filme_visual",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_15",
+      "segment": "projeto",
+      "asset": "projeto_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 12
+    },
+    {
+      "id": "shot_16",
+      "segment": "sequencia",
+      "asset": "sequencia_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 12,
+      "highlight": "HOSPITAL → PALCO"
+    },
+    {
+      "id": "shot_17",
+      "segment": "confirmado",
+      "asset": "confirmado_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 12,
+      "highlight": "SHOW CONFIRMADO"
+    },
+    {
+      "id": "shot_18",
+      "segment": "suspense",
+      "asset": "suspense_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 12
+    },
+    {
+      "id": "shot_19",
+      "segment": "historia",
+      "asset": "historia_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 12,
+      "highlight": "RECUPERAÇÃO"
+    },
+    {
+      "id": "shot_20",
+      "segment": "cta",
+      "asset": "cta_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 12,
+      "highlight": "VOCÊ IRIA?"
+    }
+  ]
+}
