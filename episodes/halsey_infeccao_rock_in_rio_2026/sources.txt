@@ -1,0 +1,19 @@
+FONTES FACTUAIS — consultadas em 2026-09-13
+- Terra, 2026-09-11 — Halsey revela infecção no rosto antes do Rock in Rio: https://www.terra.com.br/diversao/musica/rock-in-rio/halsey-revela-infeccao-no-rosto-antes-do-rock-in-rio-me-entupiram-de-remedios,c7e105acb1eba5c40010ff40f7e97a2e1hlq7fxj.html
+  Sustenta: sintomas inicialmente tratados como resfriado; pedido de “100 bruxas”; ida ao hospital; infecção facial; medicação; melhora; histórico relatado de osteomielite facial; intenção de se apresentar no Rio.
+- Gshow, 2026-09-12 — atualização de Halsey e show de 13/9: https://gshow.globo.com/festivais/rock-in-rio/2026/noticia/depois-de-chamada-de-brasileiros-halsey-diz-que-esta-melhorando-e-cita-vinda-ao-rio-mal-posso-esperar.ghtml
+  Sustenta: melhora e manutenção do show no Palco Mundo em 13/9.
+- POPLine, 2026-09-11 — confirmação após hospital: https://portalpopline.com.br/halsey-confirma-show-rock-in-rio-apos-ida-ao-hospital/
+  Sustenta: alta/recuperação, apresentação mantida, posição na noite e repertório abrangendo os álbuns.
+- Festas, 2026-09-01 — filme-concerto The Girl in the Tower: https://festas.me/editorial/halsey-libera-filme-concerto-the-girl-in-the-tower-gratuitamente-no-youtube-antes-do-rock-in-rio
+  Sustenta: filme-concerto disponibilizado gratuitamente em 27/8, reunindo performances de festivais europeus de 2026.
+- HalseyFan, agenda de performances 2026: https://halseyfan.com/category/performances/
+  Apoio secundário para sequência de festivais europeus e data do Rock in Rio.
+
+VISUAIS WEB-FIRST
+- YouTube, Halsey — fontes candidatas registradas em visual_candidates.json, incluindo performances 2026 e The Girl in the Tower.
+- Wikimedia Commons — imagens candidatas/ativos com URLs registradas em assets.json e visual_candidates.json.
+- IA=0.
+
+BACKGROUND — pesquisa externa real
+Foram pesquisadas cinco variações semânticas no Pixabay para tensão moderna/cinemática/documental. Candidatas comparadas incluíram Dark Pop Instrumental 02 (alanajordan), Deep Bass Cinematic Tension (Ovrsoull), Dark Pulse (MeeGiStudio), Cinematic Tension Pulse (DesiFreeMusic) e Dark Ambient Investigative Pulse (Ovrsoull). Embora as páginas indiquem Pixabay Content License, nesta rodada não havia evidência operacional suficiente de ausência de Content ID e aquisição dedicada que justificasse uma mutação global nova no catálogo. Seguindo docs/audio-search.md, foi escolhido o fallback curado `fallback_social_dark`, já suportado pela main e com múltiplas faixas Pixabay remotas.
