@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"znc-hook_visual-seWDU1XxI2k.mp4","url":"https://www.youtube.com/watch?v=seWDU1XxI2k","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"primeira_visual","file":"znc-primeira_visual-zwPnBX5lGgg.mp4","url":"https://www.youtube.com/watch?v=zwPnBX5lGgg","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"ano_visual","file":"znc-ano_visual-Ug-Q74srhAg.mp4","url":"https://www.youtube.com/watch?v=Ug-Q74srhAg","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"oferta_visual","file":"znc-oferta_visual-a8gRifkyHcU.mp4","url":"https://www.youtube.com/watch?v=a8gRifkyHcU","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"medo_visual","file":"znc-billboard-origens.webp","url":"https://billboard-com-br.s3.amazonaws.com/wp-content/uploads/2025/05/04015603/ZC.webp","credit":"Drone JC/Divulgação via Billboard Brasil","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"guardada_visual","file":"znc-guardada_visual-obuWsEnmKvw.mp4","url":"https://www.youtube.com/watch?v=obuWsEnmKvw","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"explosao_visual","file":"znc-explosao_visual-ceaxvgVD75s.mp4","url":"https://www.youtube.com/watch?v=ceaxvgVD75s","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sucessos_visual","file":"znc-sucessos_visual-NDWE8YbbWnA.mp4","url":"https://www.youtube.com/watch?v=NDWE8YbbWnA","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"bilhao_visual","file":"znc-bilhao_visual-rLX0oK17ySQ.mp4","url":"https://www.youtube.com/watch?v=rLX0oK17ySQ","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"origem_visual","file":"znc-billboard-2026.jpg","url":"https://billboard-com-br.s3.amazonaws.com/wp-content/uploads/2026/04/09110323/ze-neto-e-cristiano-1024x538.jpg","credit":"Divulgação via Billboard Brasil","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"projeto_visual","file":"znc-projeto_visual-wW8s-oNkHPc.mp4","url":"https://www.youtube.com/watch?v=wW8s-oNkHPc","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"cidade_visual","file":"znc-cidade_visual-aS_6OfU0iXs.mp4","url":"https://www.youtube.com/watch?v=aS_6OfU0iXs","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"titulo_visual","file":"znc-titulo_visual-47j_RknfQK0.mp4","url":"https://www.youtube.com/watch?v=47j_RknfQK0","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"simbolo_visual","file":"znc-simbolo_visual-KZwDPV-g37g.mp4","url":"https://www.youtube.com/watch?v=KZwDPV-g37g","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"completo_visual","file":"znc-quase-todo-dia-thumb.jpg","url":"https://i.ytimg.com/vi/l2-aGJe8W4s/maxresdefault.jpg","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"agora_visual","file":"znc-agora_visual-7fUsnFf8mLI.mp4","url":"https://www.youtube.com/watch?v=7fUsnFf8mLI","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"vocesesdeus_visual","file":"znc-vocesesdeus_visual-4_ZuLhvbfIE.mp4","url":"https://www.youtube.com/watch?v=4_ZuLhvbfIE","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"cadeira_visual","file":"znc-cadeira_visual-d0XG0-KgvNw.mp4","url":"https://www.youtube.com/watch?v=d0XG0-KgvNw","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"volta_visual","file":"znc-antes-amor-thumb.jpg","url":"https://i.ytimg.com/vi/RFRCFqu5eKY/maxresdefault.jpg","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"cta_visual","file":"znc-cta_visual-OBsHVOyMiDg.mp4","url":"https://www.youtube.com/watch?v=OBsHVOyMiDg","credit":"Zé Neto e Cristiano / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
