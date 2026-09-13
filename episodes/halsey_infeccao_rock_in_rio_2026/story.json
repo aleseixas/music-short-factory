@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "Halsey saiu do hospital antes do Rock in Rio",
+  "slug": "halsey_infeccao_rock_in_rio_2026",
+  "target_duration_seconds": 88,
+  "segments": [
+    {"id":"hook","text":"Halsey sobe no Rock in Rio hoje depois de sair do hospital por uma infecção no rosto.","delivery":"hook"},
+    {"id":"bruxas","text":"Na quinta, ela disse que estava muito doente e pediu ajuda de “cem bruxas” para melhorar.","delivery":"curious"},
+    {"id":"virada","text":"Só que no dia seguinte a história ficou bem menos engraçada.","delivery":"dramatic"},
+    {"id":"hospital","text":"Halsey contou que foi ao hospital e descobriu uma infecção forte no rosto.","delivery":"reveal"},
+    {"id":"medicacao","text":"Segundo ela, recebeu medicação e começou a melhorar.","delivery":"neutral"},
+    {"id":"historico","text":"O susto tinha um motivo extra: ela já teve osteomielite facial no passado.","delivery":"dramatic"},
+    {"id":"risco","text":"Por isso, uma crise aparentemente comum podia virar um problema maior.","delivery":"curious"},
+    {"id":"humor","text":"Mesmo assim, a atualização seguinte veio com o humor típico dela.","delivery":"neutral"},
+    {"id":"dentes","text":"Ela brincou que já não queria que arrancassem seus dentes e olhos.","delivery":"reveal"},
+    {"id":"rio","text":"E disse que mal podia esperar para encontrar o público no Rio.","delivery":"emotional"},
+    {"id":"hoje","text":"O timing é absurdo: o show acontece hoje, no último dia do Rock in Rio.","delivery":"dramatic"},
+    {"id":"palco","text":"Halsey sobe ao Palco Mundo na mesma noite de Ivete Sangalo e Twenty One Pilots.","delivery":"neutral"},
+    {"id":"europa","text":"Ela chega ao Brasil depois de uma sequência de festivais europeus em 2026.","delivery":"neutral"},
+    {"id":"filme","text":"Em agosto, ainda lançou gratuitamente o filme-concerto The Girl in the Tower no YouTube.","delivery":"curious"},
+    {"id":"projeto","text":"O projeto reúne performances dessa fase e antecipou o clima da passagem pelo Brasil.","delivery":"neutral"},
+    {"id":"sequencia","text":"Então a sequência virou: turnê, filme, infecção, hospital… e Rock in Rio.","delivery":"reveal"},
+    {"id":"confirmado","text":"Até agora, a apresentação continua confirmada.","delivery":"payoff"},
+    {"id":"suspense","text":"O que parecia um resfriado virou o maior suspense antes do show.","delivery":"payoff"},
+    {"id":"historia","text":"Se ela subir no palco hoje, a recuperação já entra na história da apresentação.","delivery":"emotional"},
+    {"id":"cta","text":"Você iria ao show depois de um susto desses? Comenta.","delivery":"payoff"}
+  ]
+}
