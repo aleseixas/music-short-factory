@@ -17,6 +17,10 @@ from engine.music import resolve_background_music
 from engine.visual_candidates import validate_visual_candidate_pool
 
 
+MAX_VIDEO_SOURCE_USES = 3
+DEFAULT_VIDEO_REUSE_WINDOW_SECONDS = 4.0
+
+
 def _error_record(exc: Exception, slug: str, *, scope: str = "") -> dict[str, object]:
     code, recoverable, target, action = _classify_preflight_failure(exc, slug)
     record: dict[str, object] = {
@@ -185,9 +189,37 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
     return errors
 
 
+def _video_source_identity(asset) -> tuple[str, str]:
+    aliases = _visual_aliases(asset)
+    for preferred_kind in ("youtube", "url", "file"):
+        for identity in aliases:
+            if identity[0] == preferred_kind:
+                return identity
+    return ("asset_id", asset.id.casefold())
+
+
+def _shot_source_interval(shot) -> tuple[float, float]:
+    start = float(shot.source_start_seconds or 0.0)
+    if shot.source_end_seconds is not None:
+        end = float(shot.source_end_seconds)
+    else:
+        end = start + DEFAULT_VIDEO_REUSE_WINDOW_SECONDS
+    return start, end
+
+
 def _collect_visual_structure_errors(episode, slug: str) -> list[dict[str, object]]:
+    """Validate image uniqueness and bounded, non-overlapping video-source reuse.
+
+    Current editorial policy allows one video source to feed up to three shots when
+    each shot uses a genuinely different, non-overlapping temporal segment. Images
+    remain zero-reuse. This check intentionally uses a conservative four-second
+    window when source_end_seconds is omitted; render-time validation still verifies
+    the real source duration needed by each resolved shot.
+    """
+
     errors: list[dict[str, object]] = []
-    seen: dict[tuple[str, str], tuple[str, str]] = {}
+    seen_images: dict[tuple[str, str], tuple[str, str]] = {}
+    video_usages: dict[tuple[str, str], list[tuple[str, str, float, float]]] = {}
 
     for shot in episode.shots:
         asset = episode.assets.get(shot.asset_id)
@@ -198,34 +230,80 @@ def _collect_visual_structure_errors(episode, slug: str) -> list[dict[str, objec
             errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
             continue
 
-        aliases = _visual_aliases(asset)
-        duplicate_found = False
-        for identity in aliases:
-            previous = seen.get(identity)
-            if previous is None:
-                continue
-            previous_shot, previous_asset = previous
-            identity_kind, identity_value = identity
+        if not asset.is_video:
+            aliases = _visual_aliases(asset)
+            duplicate_found = False
+            for identity in aliases:
+                previous = seen_images.get(identity)
+                if previous is None:
+                    continue
+                previous_shot, previous_asset = previous
+                identity_kind, identity_value = identity
+                exc = RuntimeError(
+                    "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: a mesma imagem foi usada "
+                    "mais de uma vez dentro do episodio. "
+                    f"Shot {shot.id!r} (asset={asset.id!r}) repete a imagem de "
+                    f"{previous_shot!r} (asset={previous_asset!r}); "
+                    f"identidade={identity_kind}:{identity_value}."
+                )
+                errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
+                duplicate_found = True
+                break
+            if not duplicate_found:
+                for identity in aliases:
+                    seen_images[identity] = (shot.id, asset.id)
+            continue
+
+        identity = _video_source_identity(asset)
+        usages = video_usages.setdefault(identity, [])
+        start, end = _shot_source_interval(shot)
+
+        if end <= start:
             exc = RuntimeError(
-                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: o mesmo visual foi usado "
-                "mais de uma vez dentro do episodio. "
-                f"Shot {shot.id!r} (asset={asset.id!r}) repete o visual de "
-                f"{previous_shot!r} (asset={previous_asset!r}); "
-                f"identidade={identity_kind}:{identity_value}. "
-                "Cada shot principal deve usar uma imagem ou video diferente."
+                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: intervalo de video invalido para "
+                f"shot={shot.id!r} asset={asset.id!r}; start={start:.3f} end={end:.3f}."
             )
             errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
-            duplicate_found = True
-            break
+            continue
 
-        if not duplicate_found:
-            for identity in aliases:
-                seen[identity] = (shot.id, asset.id)
+        if len(usages) >= MAX_VIDEO_SOURCE_USES:
+            identity_kind, identity_value = identity
+            exc = RuntimeError(
+                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: a mesma fonte de video excedeu "
+                f"o limite de {MAX_VIDEO_SOURCE_USES} shots; shot={shot.id!r} "
+                f"asset={asset.id!r} identidade={identity_kind}:{identity_value}."
+            )
+            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
+            continue
+
+        overlap = next(
+            (
+                previous
+                for previous in usages
+                if start < previous[3] and previous[2] < end
+            ),
+            None,
+        )
+        if overlap is not None:
+            previous_shot, previous_asset, previous_start, previous_end = overlap
+            identity_kind, identity_value = identity
+            exc = RuntimeError(
+                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: a mesma fonte de video usa "
+                "intervalos sobrepostos. "
+                f"Shot {shot.id!r} (asset={asset.id!r}, {start:.3f}-{end:.3f}s) "
+                f"sobrepoe {previous_shot!r} (asset={previous_asset!r}, "
+                f"{previous_start:.3f}-{previous_end:.3f}s); "
+                f"identidade={identity_kind}:{identity_value}."
+            )
+            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
+            continue
+
+        usages.append((shot.id, asset.id, start, end))
 
     if not errors:
         print(
             "[preflight] intra-episode visual uniqueness OK: "
-            f"{len(episode.shots)} shot(s) sem reutilizacao"
+            f"{len(episode.shots)} shot(s); imagens unicas e videos com segmentos nao sobrepostos"
         )
     return errors
 
@@ -317,7 +395,6 @@ def main() -> int:
             except Exception as exc:
                 errors.append(_error_record(exc, slug, scope="background-music-freshness"))
 
-    # De-duplicate identical diagnostics while preserving deterministic order.
     unique: list[dict[str, object]] = []
     seen_keys: set[tuple[str, str, str]] = set()
     for error in errors:
