@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"fallback_social_urban","volume":0.055},
+  "sfx_cues": [
+    {"time_seconds":0.1,"type":"impact","volume":0.09},
+    {"time_seconds":10.0,"type":"whoosh_fast","volume":0.055},
+    {"time_seconds":21.0,"type":"camera_shutter","volume":0.045},
+    {"time_seconds":35.0,"type":"cash_register_short","volume":0.055},
+    {"time_seconds":49.0,"type":"crowd_cheer","volume":0.05},
+    {"time_seconds":64.0,"type":"riser_build_up","volume":0.05}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.82},
+    {"start_seconds":35.0,"end_seconds":35.9,"type":"punch_zoom","intensity":0.62},
+    {"start_seconds":55.0,"end_seconds":55.9,"type":"slow_zoom_in","intensity":0.55}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.0,"text":"O SONHO DO KEVIN","accent_text":"KEVIN","animation":"scale_bounce","position":"center","intensity":0.9},
+    {"segment":"meno_k","offset_seconds":0.1,"duration_seconds":0.9,"text":"R$ 200 MIL","accent_text":"R$ 200 MIL","animation":"pop_in","position":"center","intensity":0.84},
+    {"segment":"billboard","offset_seconds":0.1,"duration_seconds":0.9,"text":"Nº 1 NO BRASIL","accent_text":"Nº 1","animation":"scale_bounce","position":"center","intensity":0.9},
+    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.0,"text":"DO SONHO À ESTRUTURA","accent_text":"ESTRUTURA","animation":"fade_pop","position":"center","intensity":0.86}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0,"highlight":"O SONHO DO KEVIN"},
+    {"id":"shot_02","segment":"kevin_independencia","asset":"kevin_independencia_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_03","segment":"interrupcao","asset":"interrupcao_visual","motion":"push_in","transition_out":"crossfade"},
+    {"id":"shot_04","segment":"sonho","asset":"sonho_visual","motion":"pan_left","transition_out":"cut"},
+    {"id":"shot_05","segment":"sede","asset":"sede_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_06","segment":"empresario","asset":"empresario_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_07","segment":"daniel","asset":"daniel_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_08","segment":"negao","asset":"negao_visual","motion":"push_in","transition_out":"cut"},
+    {"id":"shot_09","segment":"meno_k","asset":"meno_k_visual","motion":"pull_out","transition_out":"cut","highlight":"R$ 200 MIL"},
+    {"id":"shot_10","segment":"primeiro_hit","asset":"primeiro_hit_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_11","segment":"spotify","asset":"spotify_visual","motion":"pull_out","transition_out":"cut","highlight":"TOP 1"},
+    {"id":"shot_12","segment":"billboard","asset":"billboard_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8.0,"highlight":"Nº 1 NO BRASIL"},
+    {"id":"shot_13","segment":"modelo","asset":"modelo_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_14","segment":"ada","asset":"ada_visual","motion":"pull_out","transition_out":"cut"},
+    {"id":"shot_15","segment":"payoff","asset":"payoff_visual","motion":"push_in","transition_out":"cut","source_start_seconds":16.0,"highlight":"DO SONHO À ESTRUTURA"},
+    {"id":"shot_16","segment":"cta","asset":"cta_visual","motion":"push_in","transition_out":"cut","source_start_seconds":16.0}
+  ]
+}
