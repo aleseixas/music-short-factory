@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile": "fallback_social_urban", "volume": 0.09},
+  "background_music": {"profile": "external_i_knew_it_taylor_warm_sunset", "volume": 0.09},
   "sfx_cues": [
     {"time_seconds":0.1,"type":"impact","volume":0.13},
     {"time_seconds":15.0,"type":"error_sound","volume":0.10},
@@ -33,7 +33,7 @@
     {"id":"shot_07","segment":"oceano","asset":"oceano_visual","motion":"push_in","transition_out":"cut","source_start_seconds":20.0},
     {"id":"shot_08","segment":"harmony","asset":"harmony_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":20.0},
     {"id":"shot_09","segment":"keyboard","asset":"keyboard_visual","motion":"push_in","transition_out":"cut","source_start_seconds":40.0},
-    {"id":"shot_10","segment":"authorization","asset":"authorization_visual","motion":"pull_out","transition_out":"crossfade"},
+    {"id":"shot_10","segment":"authorization","asset":"authorization_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":20.0},
     {"id":"shot_11","segment":"request","asset":"request_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
     {"id":"shot_12","segment":"approved","asset":"approved_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":20.0},
     {"id":"shot_13","segment":"charts","asset":"charts_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
