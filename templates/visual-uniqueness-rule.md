@@ -74,6 +74,25 @@ A regra correta agora é:
 
 Em resumo: **entrada obrigatoriamente em vídeo + preferência forte por vídeo no restante + imagem apenas quando ela for editorialmente melhor para aquele momento**.
 
+## Bom senso de densidade visual — evitar TikTok poluído
+
+VIDEO FIRST **não significa trocar de vídeo a cada frase** e não significa maximizar o número de fontes ou takes diferentes.
+
+Use bom senso editorial para a experiência final:
+
+- se o episódio já tem bons vídeos `exact/direct`, prefira **menos fontes fortes e mais coerentes**, reaproveitando trechos realmente diferentes e não sobrepostos quando isso deixar a edição mais limpa;
+- **não force 15–20 vídeos diferentes em um short só porque há 15–20 beats**; isso pode deixar TikTok/Reels/Shorts visualmente cansativo, picotado e poluído;
+- quando vários beats consecutivos pertencem ao mesmo contexto, pessoa, show, entrevista ou fase, é aceitável manter a mesma fonte por mais tempo ou voltar a ela em outro trecho, respeitando o limite de uso e a não sobreposição;
+- use uma troca de vídeo quando ela trouxer ganho real de contexto, ritmo, informação ou emoção — não apenas para aumentar variedade;
+- imagens estáticas podem aparecer com mais frequência sem o mesmo problema de poluição, desde que sejam relevantes e tenham função editorial clara; foto histórica, capa, documento, manchete, frame de arquivo ou registro específico podem quebrar o ritmo de forma positiva;
+- não transforme o episódio num slideshow apenas porque fotos são permitidas: a abertura continua em vídeo e vídeo relevante segue prioritário;
+- considere a **densidade de mudanças visuais** do short inteiro. Se a edição parecer frenética só pelo número de fontes, simplifique;
+- o objetivo é manter atenção com clareza, não impressionar pela contagem de assets.
+
+Não existe um número fixo ideal de takes ou vídeos por episódio. Um vídeo com 8–12 mudanças visuais bem escolhidas pode ser melhor que outro com 20 mudanças. Da mesma forma, 20 takes podem funcionar se vários forem fotos, overlays ou continuações coerentes e a montagem não parecer fragmentada.
+
+Regra prática: **variedade suficiente para não ficar monótono, continuidade suficiente para não ficar poluído**.
+
 ## Prioridade editorial
 
 A ordem editorial é:
@@ -122,6 +141,8 @@ Antes de finalizar o episódio, confirme:
 - slots visualmente ricos receberam variedade real de candidatos, em vez de pequenas variações dos mesmos poucos IDs;
 - **todo vídeo usado é `exact` ou `direct`; nenhum vídeo `contextual`, `generic` ou sem `semantic_fit` foi usado**;
 - **o primeiro shot é vídeo `exact/direct` sem exceção** e o pool de abertura possui alternativas reais para auto-recovery;
-- **nenhuma imagem foi escolhida apenas para cumprir quota/proporção** e, sempre que havia vídeo `exact/direct` claramente melhor, ele recebeu prioridade.
+- **nenhuma imagem foi escolhida apenas para cumprir quota/proporção** e, sempre que havia vídeo `exact/direct` claramente melhor, ele recebeu prioridade;
+- **a quantidade de mudanças/fontes de vídeo faz sentido editorialmente e não deixa o short picotado ou poluído**;
+- **não houve criação de takes extras apenas para atingir uma contagem alta de vídeos**.
 
-Esta regra substitui a política anterior de `zero reuso do vídeo-fonte`, qualquer fallback que aceitasse vídeo genérico e qualquer regra de proporção fixa vídeo/imagem. A política correta agora é: **zero reuso da mesma imagem, zero reuso do mesmo trecho de vídeo, zero vídeo genérico, abertura sempre em vídeo e preferência forte por vídeo relevante ao longo do episódio; uma mesma fonte relevante pode abastecer takes distintos com segmentos não sobrepostos, dentro do limite definido acima**.
+Esta regra substitui a política anterior de `zero reuso do vídeo-fonte`, qualquer fallback que aceitasse vídeo genérico e qualquer regra de proporção fixa vídeo/imagem. A política correta agora é: **zero reuso da mesma imagem, zero reuso do mesmo trecho de vídeo, zero vídeo genérico, abertura sempre em vídeo e preferência forte por vídeo relevante ao longo do episódio; uma mesma fonte relevante pode abastecer takes distintos com segmentos não sobrepostos, dentro do limite definido acima; e a densidade final de mudanças visuais deve preservar clareza e continuidade, sem poluir o short**.
