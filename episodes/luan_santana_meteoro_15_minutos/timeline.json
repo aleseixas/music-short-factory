@@ -1,49 +1,297 @@
 {
   "schema_version": 1,
-  "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile": "fallback_social_modern", "volume": 0.085},
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_cadeira_cativa_romance_anonimo",
+    "volume": 0.085
+  },
   "sfx_cues": [
-    {"time_seconds":0.10,"type":"impact","volume":0.11},
-    {"time_seconds":12.5,"type":"whoosh_fast","volume":0.075},
-    {"time_seconds":29.0,"type":"record_scratch","volume":0.07},
-    {"time_seconds":42.0,"type":"notification_iphone","volume":0.06},
-    {"time_seconds":57.0,"type":"crowd_cheer","volume":0.065},
-    {"time_seconds":70.0,"type":"riser_build_up","volume":0.07}
+    {
+      "time_seconds": 0.1,
+      "type": "impact",
+      "volume": 0.11
+    },
+    {
+      "time_seconds": 12.5,
+      "type": "whoosh_fast",
+      "volume": 0.075
+    },
+    {
+      "time_seconds": 29.0,
+      "type": "record_scratch",
+      "volume": 0.07
+    },
+    {
+      "time_seconds": 42.0,
+      "type": "notification_iphone",
+      "volume": 0.06
+    },
+    {
+      "time_seconds": 57.0,
+      "type": "crowd_cheer",
+      "volume": 0.065
+    },
+    {
+      "time_seconds": 70.0,
+      "type": "riser_build_up",
+      "volume": 0.07
+    }
   ],
   "visual_fx_cues": [
-    {"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.85},
-    {"start_seconds":27.0,"end_seconds":28.0,"type":"slow_zoom_in","intensity":0.58},
-    {"start_seconds":47.0,"end_seconds":48.0,"type":"punch_zoom","intensity":0.68},
-    {"start_seconds":69.0,"end_seconds":70.0,"type":"slow_zoom_in","intensity":0.58}
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.9,
+      "type": "punch_zoom",
+      "intensity": 0.85
+    },
+    {
+      "start_seconds": 27.0,
+      "end_seconds": 28.0,
+      "type": "slow_zoom_in",
+      "intensity": 0.58
+    },
+    {
+      "start_seconds": 47.0,
+      "end_seconds": 48.0,
+      "type": "punch_zoom",
+      "intensity": 0.68
+    },
+    {
+      "start_seconds": 69.0,
+      "end_seconds": 70.0,
+      "type": "slow_zoom_in",
+      "intensity": 0.58
+    }
   ],
   "text_fx_cues": [
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":0.9,"text":"15 MINUTOS","accent_text":"15 MINUTOS","animation":"scale_bounce","position":"center","intensity":0.92},
-    {"segment":"quinze","offset_seconds":0.1,"duration_seconds":0.9,"text":"PRONTA EM 15 MIN","accent_text":"15 MIN","animation":"pop_in","position":"center","intensity":0.86},
-    {"segment":"surpresa","offset_seconds":0.1,"duration_seconds":0.9,"text":"NÃO ERA A FAVORITA","accent_text":"NÃO ERA","animation":"fade_pop","position":"center","intensity":0.88},
-    {"segment":"pedidos","offset_seconds":0.1,"duration_seconds":0.9,"text":"A MAIS PEDIDA","accent_text":"MAIS PEDIDA","animation":"scale_bounce","position":"center","intensity":0.9},
-    {"segment":"multidao","offset_seconds":0.1,"duration_seconds":0.9,"text":"70 MIL PESSOAS","accent_text":"70 MIL","animation":"slide_up","position":"center","intensity":0.85},
-    {"segment":"cta","offset_seconds":0.1,"duration_seconds":0.9,"text":"QUAL HIT?","accent_text":"QUAL HIT?","animation":"pop_in","position":"center","intensity":0.82}
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 0.9,
+      "text": "15 MINUTOS",
+      "accent_text": "15 MINUTOS",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.92
+    },
+    {
+      "segment": "quinze",
+      "offset_seconds": 0.1,
+      "duration_seconds": 0.9,
+      "text": "PRONTA EM 15 MIN",
+      "accent_text": "15 MIN",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.86
+    },
+    {
+      "segment": "surpresa",
+      "offset_seconds": 0.1,
+      "duration_seconds": 0.9,
+      "text": "NÃO ERA A FAVORITA",
+      "accent_text": "NÃO ERA",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.88
+    },
+    {
+      "segment": "pedidos",
+      "offset_seconds": 0.1,
+      "duration_seconds": 0.9,
+      "text": "A MAIS PEDIDA",
+      "accent_text": "MAIS PEDIDA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "multidao",
+      "offset_seconds": 0.1,
+      "duration_seconds": 0.9,
+      "text": "70 MIL PESSOAS",
+      "accent_text": "70 MIL",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.85
+    },
+    {
+      "segment": "cta",
+      "offset_seconds": 0.1,
+      "duration_seconds": 0.9,
+      "text": "QUAL HIT?",
+      "accent_text": "QUAL HIT?",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.82
+    }
   ],
   "shots": [
-    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8,"highlight":"15 MINUTOS"},
-    {"id":"shot_02","segment":"autor","asset":"autor_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":25},
-    {"id":"shot_03","segment":"quarto","asset":"quarto_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":18},
-    {"id":"shot_04","segment":"quinze","asset":"quinze_visual","motion":"push_in","transition_out":"cut","source_start_seconds":45,"highlight":"15 MINUTOS"},
-    {"id":"shot_05","segment":"projeto","asset":"projeto_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":90},
-    {"id":"shot_06","segment":"jovem","asset":"jovem_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":20},
-    {"id":"shot_07","segment":"limite","asset":"limite_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":8},
-    {"id":"shot_08","segment":"surpresa","asset":"surpresa_visual","motion":"push_in","transition_out":"cut","source_start_seconds":85,"highlight":"NÃO ERA A FAVORITA"},
-    {"id":"shot_09","segment":"tocara","asset":"tocara_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":50},
-    {"id":"shot_10","segment":"primeira","asset":"primeira_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":35},
-    {"id":"shot_11","segment":"radio","asset":"radio_visual","motion":"push_in","transition_out":"cut","source_start_seconds":10},
-    {"id":"shot_12","segment":"pedidos","asset":"pedidos_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":35,"highlight":"A MAIS PEDIDA"},
-    {"id":"shot_13","segment":"troca","asset":"troca_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":15},
-    {"id":"shot_14","segment":"dezoito","asset":"dezoito_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":5},
-    {"id":"shot_15","segment":"dvd","asset":"dvd_visual","motion":"push_in","transition_out":"cut","source_start_seconds":55},
-    {"id":"shot_16","segment":"multidao","asset":"multidao_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":75,"highlight":"70 MIL PESSOAS"},
-    {"id":"shot_17","segment":"lancamento","asset":"lancamento_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":80},
-    {"id":"shot_18","segment":"premio","asset":"premio_visual","motion":"push_in","transition_out":"cut","source_start_seconds":160},
-    {"id":"shot_19","segment":"legado","asset":"legado_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":110},
-    {"id":"shot_20","segment":"cta","asset":"cta_visual","motion":"push_in","transition_out":"cut","source_start_seconds":115}
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0,
+      "highlight": "15 MINUTOS"
+    },
+    {
+      "id": "shot_02",
+      "segment": "autor",
+      "asset": "autor_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_03",
+      "segment": "quarto",
+      "asset": "quarto_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_04",
+      "segment": "quinze",
+      "asset": "quinze_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 6.525,
+      "highlight": "15 MINUTOS"
+    },
+    {
+      "id": "shot_05",
+      "segment": "projeto",
+      "asset": "projeto_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_06",
+      "segment": "jovem",
+      "asset": "jovem_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 6.525
+    },
+    {
+      "id": "shot_07",
+      "segment": "limite",
+      "asset": "limite_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 6.525
+    },
+    {
+      "id": "shot_08",
+      "segment": "surpresa",
+      "asset": "surpresa_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 13.05,
+      "highlight": "NÃO ERA A FAVORITA"
+    },
+    {
+      "id": "shot_09",
+      "segment": "tocara",
+      "asset": "tocara_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 13.05
+    },
+    {
+      "id": "shot_10",
+      "segment": "primeira",
+      "asset": "primeira_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 13.05
+    },
+    {
+      "id": "shot_11",
+      "segment": "radio",
+      "asset": "radio_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_12",
+      "segment": "pedidos",
+      "asset": "pedidos_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0,
+      "highlight": "A MAIS PEDIDA"
+    },
+    {
+      "id": "shot_13",
+      "segment": "troca",
+      "asset": "troca_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 6.525
+    },
+    {
+      "id": "shot_14",
+      "segment": "dezoito",
+      "asset": "dezoito_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 6.525
+    },
+    {
+      "id": "shot_15",
+      "segment": "dvd",
+      "asset": "dvd_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 13.05
+    },
+    {
+      "id": "shot_16",
+      "segment": "multidao",
+      "asset": "multidao_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 6.525,
+      "highlight": "70 MIL PESSOAS"
+    },
+    {
+      "id": "shot_17",
+      "segment": "lancamento",
+      "asset": "lancamento_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 13.05
+    },
+    {
+      "id": "shot_18",
+      "segment": "premio",
+      "asset": "premio_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 13.05
+    },
+    {
+      "id": "shot_19",
+      "segment": "legado",
+      "asset": "legado_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 110
+    },
+    {
+      "id": "shot_20",
+      "segment": "cta",
+      "asset": "cta_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 115
+    }
   ]
 }

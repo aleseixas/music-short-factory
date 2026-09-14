@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "episode": "luan_santana_meteoro_15_minutos",
+  "error_code": "VISUAL_ASSET_INVALID",
+  "error_detail": "Asset de video invalido 'premio_visual': yt-dlp falhou ao obter o video id=LB9vnCDPjM8: validacao do download falhou: yt-dlp terminou sem gerar um arquivo de video suportado",
+  "target_slot": "premio_visual",
+  "failing_file": "",
+  "selection_mode": "same_kind_eligible",
+  "selected_kind": "video",
+  "selected_name": "MKY9bmNrSP0",
+  "selected_file": "youtube-MKY9bmNrSP0.mp4",
+  "selected_url": null,
+  "visual_score": 53.66,
+  "selection_score": 88.41,
+  "inspection_failures": [
+    "premio_visual[2]: candidato atual quebrado ignorado",
+    "premio_visual[4]: practically_static_not_fallbackable"
+  ]
+}
