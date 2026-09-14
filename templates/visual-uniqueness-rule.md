@@ -15,7 +15,7 @@ YouTube pode reconstruir a URL. `watch?v=`, `shorts/`, `embed/` e `youtu.be/` do
 mesmo ID são o mesmo visual; IDs diferentes, inclusive por maiúsculas/minúsculas,
 são origens diferentes. Não descarte o parâmetro `v` ao comparar URLs.
 
-Esta é a regra vigente e **SOBREPÕE qualquer texto anterior que diga que o mesmo vídeo-fonte nunca pode aparecer em dois shots OU que permita vídeo `contextual`, `generic` ou sem `semantic_fit` como fallback**.
+Esta é a regra vigente e **SOBREPÕE qualquer texto anterior que imponha quantidade editorial fixa de vídeos, imagens, takes, mudanças visuais ou candidatos por slot, OU que permita vídeo `contextual`, `generic` ou sem `semantic_fit` como fallback**.
 
 ## Imagens — zero reuso
 
@@ -29,16 +29,16 @@ O mesmo vídeo-fonte PODE ser usado em mais de um shot quando cada uso correspon
 
 Regras obrigatórias:
 
-- use normalmente no máximo **3 shots por vídeo-fonte** no mesmo episódio;
+- respeite somente os limites técnicos reais vigentes da `main` para quantidade de usos por fonte, sobreposição e trims;
 - para cada uso, escolha `source_start_seconds` e, quando fizer sentido, `source_end_seconds` com intenção semântica própria;
 - NÃO reutilize o mesmo intervalo nem intervalos que se sobreponham;
 - mudar crop, focus, speed, motion, transition, visual FX, overlay ou outro tratamento sobre o MESMO TRECHO não cria um novo take;
-- distribua os reaproveitamentos ao longo do episódio e evite shots consecutivos da mesma fonte quando houver alternativa equivalente;
+- distribua reaproveitamentos de forma editorialmente natural e evite repetição cansativa;
 - quando um candidato repetido não trouxer trim explícito, o resolver pode atribuir um baseline temporal distinto automaticamente; ainda assim, um trim editorial explícito e semanticamente escolhido é preferível;
 - o Best Segment continua podendo otimizar cada baseline dentro da sua vizinhança conservadora e não deve criar sobreposição com outro shot da mesma fonte;
-- ao atingir o limite de usos ou quando não houver outro intervalo seguro, escolha outro vídeo relevante ou uma imagem relevante.
+- se uma fonte continuar sendo a melhor escolha editorial e a `main` permitir tecnicamente seu uso, ela pode ser reutilizada em trechos distintos; se começar a ficar repetitiva, escolha outra fonte ou imagem relevante.
 
-URLs, aliases ou nomes de arquivo diferentes que resolvam para o mesmo vídeo/provider continuam sendo a **mesma fonte** para controle de limite e sobreposição.
+URLs, aliases ou nomes de arquivo diferentes que resolvam para o mesmo vídeo/provider continuam sendo a **mesma fonte** para controle técnico e de sobreposição.
 
 ## Hard gate — vídeo nunca pode ser genérico
 
@@ -56,46 +56,44 @@ Se nenhum vídeo `direct/exact` funcionar tecnicamente em um slot comum, prefira
 
 ### Abertura
 
-O primeiro visual editorial continua obrigatoriamente sendo VÍDEO. Portanto, o primeiro slot deve ter candidatos `direct/exact` reais e redundantes. Se um download falhar, tente os próximos vídeos `direct/exact`; não substitua a abertura por imagem nem por vídeo genérico. Monte o pool de abertura já com redundância suficiente para o auto-repair resolver sozinho.
+O primeiro visual editorial continua obrigatoriamente sendo VÍDEO. Portanto, o primeiro slot deve ter candidatos `direct/exact` reais e redundantes. Se um download falhar, tente outros vídeos `direct/exact`; não substitua a abertura por imagem nem por vídeo genérico.
 
-## Prioridade global — VIDEO FIRST para TikTok/Reels/Shorts
+## Autonomia editorial total — qualidade, clareza e aprendizado acima de contagem
 
-Esta seção é um **override editorial vigente** e SOBREPÕE qualquer regra antiga de proporção fixa entre vídeo e imagem, inclusive referências como `60–80% vídeo / 20–40% imagem` ou qualquer quota equivalente presente em outros templates/docs.
+A partir daqui, a escolha visual é guiada por **bom senso editorial e pela qualidade final do vídeo**, não por metas numéricas.
 
-A regra correta agora é:
+O agente tem autonomia para decidir livremente:
 
-- **o primeiro take editorial é SEMPRE vídeo real**, sem exceção;
-- ao longo de todo o episódio, **priorize fortemente vídeo `exact/direct` sempre que houver material relevante e tecnicamente utilizável**;
-- não existe meta mínima nem máxima de imagens e não existe proporção fixa vídeo/imagem;
-- um episódio pode terminar com 70%, 80%, 90% ou até 100% dos takes em vídeo se essa for a melhor seleção disponível;
-- use imagem estática somente quando ela trouxer contexto, valor histórico, emoção ou informação claramente melhor do que os vídeos disponíveis para aquele beat;
-- não escolha uma imagem apenas para “equilibrar” a proporção e não reserve slots de imagem por quota;
-- também não aceite vídeo fraco, genérico ou semanticamente inferior apenas para aumentar artificialmente a quantidade de vídeo: `semantic_fit` e relevância continuam sendo hard gates.
+- quantos takes o episódio precisa;
+- quantos vídeos diferentes usar;
+- quantas imagens usar;
+- quantas vezes trocar de fonte;
+- quando manter a mesma fonte por mais tempo;
+- quando reutilizar outra parte da mesma fonte, desde que tecnicamente válido;
+- quanto material buscar para cada slot;
+- quando parar de buscar porque a seleção já está boa o suficiente.
 
-Em resumo: **entrada obrigatoriamente em vídeo + preferência forte por vídeo no restante + imagem apenas quando ela for editorialmente melhor para aquele momento**.
+Não existe meta editorial fixa de vídeos, fotos, takes, mudanças visuais ou candidatos. Também não existe proporção obrigatória vídeo/imagem.
 
-## Bom senso de densidade visual — evitar TikTok poluído
+A prioridade é sempre produzir **o melhor short possível** para TikTok/Reels/Shorts, com três objetivos principais:
 
-VIDEO FIRST **não significa trocar de vídeo a cada frase** e não significa maximizar o número de fontes ou takes diferentes.
+1. **qualidade percebida** — os visuais devem parecer bons, nítidos, relevantes e coerentes entre si;
+2. **clareza** — quem assiste deve conseguir acompanhar a história sem edição confusa, frenética ou poluída;
+3. **aprendizado** — o visual deve ajudar a pessoa a entender e aprender algo sobre a história narrada, e não apenas manter movimento na tela.
 
-Use bom senso editorial para a experiência final:
+VIDEO FIRST continua significando que a abertura editorial é vídeo real e que vídeo relevante deve ser considerado com prioridade. Mas isso NÃO significa maximizar o número de vídeos nem trocar de asset a cada frase.
 
-- se o episódio já tem bons vídeos `exact/direct`, prefira **menos fontes fortes e mais coerentes**, reaproveitando trechos realmente diferentes e não sobrepostos quando isso deixar a edição mais limpa;
-- **não force 15–20 vídeos diferentes em um short só porque há 15–20 beats**; isso pode deixar TikTok/Reels/Shorts visualmente cansativo, picotado e poluído;
-- quando vários beats consecutivos pertencem ao mesmo contexto, pessoa, show, entrevista ou fase, é aceitável manter a mesma fonte por mais tempo ou voltar a ela em outro trecho, respeitando o limite de uso e a não sobreposição;
-- use uma troca de vídeo quando ela trouxer ganho real de contexto, ritmo, informação ou emoção — não apenas para aumentar variedade;
-- imagens estáticas podem aparecer com mais frequência sem o mesmo problema de poluição, desde que sejam relevantes e tenham função editorial clara; foto histórica, capa, documento, manchete, frame de arquivo ou registro específico podem quebrar o ritmo de forma positiva;
-- não transforme o episódio num slideshow apenas porque fotos são permitidas: a abertura continua em vídeo e vídeo relevante segue prioritário;
-- considere a **densidade de mudanças visuais** do short inteiro. Se a edição parecer frenética só pelo número de fontes, simplifique;
-- o objetivo é manter atenção com clareza, não impressionar pela contagem de assets.
+Use vídeo quando ele realmente ensina, mostra, contextualiza ou melhora a experiência. Use foto, documento, capa, manchete, frame histórico ou imagem contextual quando isso explicar melhor o que está sendo narrado. Se uma única fonte de vídeo tiver vários momentos excelentes, pode ser melhor explorar bons trechos dela do que usar várias fontes medianas só para aumentar variedade.
 
-Não existe um número fixo ideal de takes ou vídeos por episódio. Um vídeo com 8–12 mudanças visuais bem escolhidas pode ser melhor que outro com 20 mudanças. Da mesma forma, 20 takes podem funcionar se vários forem fotos, overlays ou continuações coerentes e a montagem não parecer fragmentada.
+O agente deve assistir mentalmente à montagem como um editor humano: se a sequência parecer cansativa, poluída, repetitiva, confusa, apressada ou visualmente pobre, simplifique ou troque os visuais. Se estiver clara, interessante, fluida e didática, mantenha mesmo que use menos fontes.
 
-Regra prática: **variedade suficiente para não ficar monótono, continuidade suficiente para não ficar poluído**.
+A regra central é:
+
+> **não otimize para quantidade de assets; otimize para qualidade, entendimento, retenção e valor informativo.**
 
 ## Prioridade editorial
 
-A ordem editorial é:
+A ordem editorial continua sendo:
 
 1. vídeo `exact`;
 2. vídeo `direct`;
@@ -103,46 +101,44 @@ A ordem editorial é:
 4. imagem `contextual`;
 5. imagem `generic` apenas como último recurso real.
 
-Vídeo `contextual`, `generic` ou sem classificação não entra nessa ordem porque é inelegível.
+Essa ordem é um guia de qualidade, não uma obrigação de preencher o episódio com o maior número possível de vídeos.
 
-## Pool de candidatos — diversidade antes do resolver
+## Pool de candidatos — buscar o suficiente, não maximizar quantidade
 
-Esta seção **SOBREPÕE o alvo antigo de 4–5 candidatos por slot** quando o tema tiver material visual suficiente. O resolver só consegue escolher entre o que recebeu; portanto, a qualidade e a diversidade do `visual_candidates.json` são responsabilidade editorial obrigatória.
+O pool existe para dar boas opções ao resolver, não para cumprir uma meta numérica.
 
-Para slots visualmente ricos, mire normalmente em **8 candidatos reais por slot**, com a composição preferencial de **até 5 vídeos `exact/direct` de IDs/fontes distintos + até 3 imagens**. Quando a disponibilidade real não permitir isso, aceite um pool menor, mas tente manter **pelo menos 5 candidatos úteis** antes de desistir da busca. Não complete quantidade com material genérico ou irrelevante.
+Pesquise candidatos até existir **confiança editorial razoável** de que o slot tem boas alternativas reais. Quando houver material abundante, traga variedade suficiente para evitar dependência excessiva de uma única fonte ruim. Quando poucas opções realmente boas existirem, aceite um pool menor em vez de completar quantidade com material irrelevante.
 
-Regras obrigatórias para montar o pool:
+Regras obrigatórias:
 
 - cada slot deve pesquisar a partir do seu `visual_intent`, e não apenas pelo nome do artista ou da música;
-- quando a primeira busca trouxer vídeos repetidos, genéricos ou pouco ligados à fala, descarte-os e faça novas consultas semanticamente diferentes antes de fechar o slot;
-- um mesmo YouTube `provider_id` conta como **uma única fonte** para diversidade do pool, mesmo que apareça com títulos, URLs ou trims diferentes;
-- não deixe 2–3 IDs populares dominarem candidatos de muitos slots sem relação direta entre si;
-- se a mesma fonte começar a aparecer em vários slots, continue pesquisando alternativas antes de aceitá-la novamente;
+- descarte vídeos repetidos, genéricos ou pouco ligados à fala;
+- um mesmo YouTube `provider_id` continua sendo uma única fonte real;
+- não faça busca adicional apenas para aumentar contagem se as melhores opções já estiverem claras;
+- continue buscando quando os candidatos disponíveis ainda forem fracos, genéricos, redundantes ou pouco informativos;
 - todo candidato de vídeo deve declarar `semantic_fit` e ele deve ser `exact` ou `direct`;
-- `contextual` e `generic` continuam permitidos somente para IMAGENS, respeitando a prioridade editorial acima;
-- para pessoas, colaborações, bastidores, eventos ou locais citados na narração, faça buscas específicas com esses nomes/contextos em vez de substituir por um clipe musical genérico do artista;
-- preserve diversidade entre fontes, eventos e momentos: performance, entrevista, bastidor, arquivo histórico, gravação, premiação e contexto documental podem coexistir quando fizerem sentido para a história;
-- não trate cinco trims do mesmo vídeo como cinco bons candidatos de vídeo para o slot;
-- antes de fechar `visual_candidates.json`, revise os IDs de vídeo do episódio inteiro. Se poucos IDs estiverem aparecendo repetidamente em muitos slots, reabra as buscas dos slots mais fracos;
-- no primeiro slot, tenha redundância real de vídeos `direct/exact` para que falha de um provider/download não exija intervenção humana.
+- `contextual` e `generic` continuam permitidos somente para IMAGENS;
+- para pessoas, colaborações, bastidores, eventos ou locais citados na narração, faça buscas específicas com esses nomes/contextos;
+- preserve diversidade quando ela melhora a história, não como fim em si mesma;
+- não trate trims diferentes do mesmo vídeo como fontes diferentes;
+- no primeiro slot, garanta redundância suficiente de vídeos `direct/exact` para permitir auto-recovery se uma aquisição falhar.
 
-O objetivo não é maximizar contagem. É entregar ao resolver **opções semanticamente fortes e realmente diferentes** para que download, semantic gates, Best Segment, motion/static checks e ranking técnico tenham matéria-prima suficiente.
+O objetivo é entregar ao resolver **as melhores opções disponíveis**, e não a maior quantidade possível.
 
 ## Gate antes da queue
 
 Antes de finalizar o episódio, confirme:
 
 - nenhuma imagem principal foi reutilizada;
-- todo vídeo-fonte usado mais de uma vez ficou em no máximo 3 shots;
-- os intervalos reutilizados da mesma fonte são distintos e não se sobrepõem;
+- intervalos reutilizados da mesma fonte de vídeo são distintos e não se sobrepõem;
 - o mesmo trecho não foi mascarado como novo take por crop/FX/speed;
-- o Best Segment pode operar sem empurrar um take para cima do intervalo de outro shot da mesma fonte;
-- a escolha de reutilizar uma fonte preserva ou melhora relevância semântica;
-- slots visualmente ricos receberam variedade real de candidatos, em vez de pequenas variações dos mesmos poucos IDs;
-- **todo vídeo usado é `exact` ou `direct`; nenhum vídeo `contextual`, `generic` ou sem `semantic_fit` foi usado**;
-- **o primeiro shot é vídeo `exact/direct` sem exceção** e o pool de abertura possui alternativas reais para auto-recovery;
-- **nenhuma imagem foi escolhida apenas para cumprir quota/proporção** e, sempre que havia vídeo `exact/direct` claramente melhor, ele recebeu prioridade;
-- **a quantidade de mudanças/fontes de vídeo faz sentido editorialmente e não deixa o short picotado ou poluído**;
-- **não houve criação de takes extras apenas para atingir uma contagem alta de vídeos**.
+- a seleção respeita os limites técnicos reais vigentes da `main`;
+- todo vídeo usado é `exact` ou `direct`;
+- o primeiro shot editorial é vídeo `exact/direct`;
+- nenhuma imagem foi escolhida apenas para cumprir proporção;
+- nenhum vídeo foi escolhido apenas para aumentar contagem;
+- a quantidade de mudanças visuais parece natural para a história;
+- a montagem ajuda o público a entender e aprender o conteúdo;
+- a edição final prioriza qualidade, clareza e retenção, sem ficar poluída, monótona ou artificialmente frenética.
 
-Esta regra substitui a política anterior de `zero reuso do vídeo-fonte`, qualquer fallback que aceitasse vídeo genérico e qualquer regra de proporção fixa vídeo/imagem. A política correta agora é: **zero reuso da mesma imagem, zero reuso do mesmo trecho de vídeo, zero vídeo genérico, abertura sempre em vídeo e preferência forte por vídeo relevante ao longo do episódio; uma mesma fonte relevante pode abastecer takes distintos com segmentos não sobrepostos, dentro do limite definido acima; e a densidade final de mudanças visuais deve preservar clareza e continuidade, sem poluir o short**.
+Esta regra substitui políticas editoriais anteriores baseadas em quotas, contagens ou proporções. A política correta agora é: **hard gates técnicos e semânticos onde realmente necessários; autonomia editorial total no restante; abertura em vídeo; e decisões visuais guiadas pela melhor qualidade final, clareza, retenção e aprendizado do público**.
