@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "title": "Meteoro foi escrita em 15 minutos e quase não virou a aposta principal",
+  "slug": "luan_santana_meteoro_15_minutos",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"O hit que apresentou Luan Santana ao Brasil foi escrito em só quinze minutos — e nem era a primeira aposta.","delivery":"hook"},
+    {"id":"autor","text":"Meteoro nasceu pelas mãos de Sorocaba, da dupla Fernando e Sorocaba.","delivery":"curious"},
+    {"id":"quarto","text":"Fernando contou que, depois de um show, Sorocaba subiu para o quarto para compor.","delivery":"neutral"},
+    {"id":"quinze","text":"Quinze minutos depois, ele voltou com Meteoro pronta.","delivery":"reveal"},
+    {"id":"projeto","text":"E Sorocaba disse que a música já foi pensada especificamente para o projeto do Luan.","delivery":"curious"},
+    {"id":"jovem","text":"A ideia era conversar com um público jovem e familiar.","delivery":"neutral"},
+    {"id":"limite","text":"Por isso, ele evitou referências a bebida e sexo na composição.","delivery":"neutral"},
+    {"id":"surpresa","text":"Só que o mais curioso vem depois: Meteoro não era a favorita da equipe.","delivery":"dramatic"},
+    {"id":"tocara","text":"O próprio Luan contou que eles achavam Tô de Cara mais forte.","delivery":"reveal"},
+    {"id":"primeira","text":"Então foi Tô de Cara que começou sendo empurrada como música de trabalho.","delivery":"neutral"},
+    {"id":"radio","text":"A virada veio quando as rádios mostraram outra coisa.","delivery":"dramatic"},
+    {"id":"pedidos","text":"Meteoro aparecia como a mais pedida pelo público.","delivery":"reveal"},
+    {"id":"troca","text":"A equipe ouviu o sinal e mudou o single.","delivery":"curious"},
+    {"id":"dezoito","text":"Em 2009, Luan tinha só dezoito anos quando a faixa acelerou sua projeção nacional.","delivery":"neutral"},
+    {"id":"dvd","text":"Naquele mesmo ano, ele gravou seu primeiro DVD ao vivo em Campo Grande.","delivery":"neutral"},
+    {"id":"multidao","text":"A produção esperava cerca de setenta mil pessoas no Parque das Nações Indígenas.","delivery":"dramatic"},
+    {"id":"lancamento","text":"Meteoro foi lançada nacionalmente em novembro e virou o símbolo daquela explosão.","delivery":"reveal"},
+    {"id":"premio","text":"Depois, ainda foi eleita Música do Ano no Melhores do Ano.","delivery":"payoff"},
+    {"id":"legado","text":"Anos depois, Luan continuou revisitando Meteoro em projetos que celebram a própria trajetória.","delivery":"emotional"},
+    {"id":"cta","text":"Tudo isso começou com quinze minutos e uma música que nem era a primeira escolha. Qual hit você quase ignorou antes de amar? Comenta.","delivery":"payoff"}
+  ]
+}
