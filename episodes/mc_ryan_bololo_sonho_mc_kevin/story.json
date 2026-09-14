@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "title": "MC Ryan transformou um sonho interrompido de MC Kevin em uma gravadora número 1",
+  "slug": "mc_ryan_bololo_sonho_mc_kevin",
+  "target_duration_seconds": 82,
+  "segments": [
+    {"id":"hook","text":"MC Ryan SP pegou um sonho que MC Kevin não conseguiu terminar — e transformou aquilo numa gravadora que chegou ao topo do Brasil.","delivery":"hook"},
+    {"id":"kevin_independencia","text":"Antes de morrer, Kevin tentava assumir as rédeas da própria carreira e ganhar independência.","delivery":"curious"},
+    {"id":"interrupcao","text":"A morte dele, em 2021, interrompeu esse plano.","delivery":"emotional"},
+    {"id":"sonho","text":"Quatro anos depois, Ryan disse à Billboard que a Bololô Records realiza justamente aquele sonho.","delivery":"reveal"},
+    {"id":"sede","text":"A sede fica numa casa de três andares no Tatuapé, em São Paulo.","delivery":"neutral"},
+    {"id":"empresario","text":"Ryan passou de artista a empresário, escolhendo e desenvolvendo novos nomes.","delivery":"curious"},
+    {"id":"daniel","text":"Antes da Bololô, ele diz que enxergou o carisma de MC Daniel e o empurrou para a música.","delivery":"curious"},
+    {"id":"negao","text":"Depois, fez algo parecido com MC Negão Original.","delivery":"neutral"},
+    {"id":"meno_k","text":"Com Meno K, ajudou quando ele estava em baixa e depois pagou duzentos mil reais pelo passe.","delivery":"dramatic"},
+    {"id":"primeiro_hit","text":"A aposta entrou no primeiro estouro da casa: Posso Até Não Te Dar Flores.","delivery":"reveal"},
+    {"id":"spotify","text":"A faixa chegou ao topo do Spotify Brasil e Portugal.","delivery":"reveal"},
+    {"id":"billboard","text":"Meses depois, virou número um do Billboard Brasil Hot 100.","delivery":"payoff"},
+    {"id":"modelo","text":"A virada é essa: funkeiros passaram a administrar funkeiros e negociar com grandes gravadoras.","delivery":"curious"},
+    {"id":"ada","text":"A Bololô ganhou distribuição da ADA, braço da Warner Music Group.","delivery":"neutral"},
+    {"id":"payoff","text":"Kevin tentou abrir esse caminho. Ryan transformou a ideia em estrutura — e ela já nasceu no topo.","delivery":"payoff"},
+    {"id":"cta","text":"Qual outro sonho de um artista que se foi merece virar história aqui? Comenta.","delivery":"payoff"}
+  ]
+}
