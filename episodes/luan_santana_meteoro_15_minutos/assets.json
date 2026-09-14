@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"luan-hook-MKY9bmNrSP0.mp4","url":"https://www.youtube.com/watch?v=MKY9bmNrSP0","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"autor_visual","file":"luan-autor-LB9vnCDPjM8.mp4","url":"https://www.youtube.com/watch?v=LB9vnCDPjM8","credit":"Fernando e Sorocaba / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"quarto_visual","file":"luan-quarto-nfv-sNt4H9Y.mp4","url":"https://www.youtube.com/watch?v=nfv-sNt4H9Y","credit":"Fernando e Sorocaba / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"quinze_visual","file":"luan-quinze-59wSkQK3p1g.mp4","url":"https://www.youtube.com/watch?v=59wSkQK3p1g","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"projeto_visual","file":"luan-projeto-LB9vnCDPjM8.mp4","url":"https://www.youtube.com/watch?v=LB9vnCDPjM8","credit":"Fernando e Sorocaba / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"jovem_visual","file":"luan-jovem-TBQcZzlRY6E.mp4","url":"https://www.youtube.com/watch?v=TBQcZzlRY6E","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"limite_visual","file":"luan-limite-MWOR79elKR0.mp4","url":"https://www.youtube.com/watch?v=MWOR79elKR0","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"surpresa_visual","file":"luan-surpresa-MKY9bmNrSP0.mp4","url":"https://www.youtube.com/watch?v=MKY9bmNrSP0","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"tocara_visual","file":"luan-tocara-TBQcZzlRY6E.mp4","url":"https://www.youtube.com/watch?v=TBQcZzlRY6E","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"primeira_visual","file":"luan-primeira-MWOR79elKR0.mp4","url":"https://www.youtube.com/watch?v=MWOR79elKR0","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"radio_visual","file":"luan-radio-yBx0SF4vJ2A.mp4","url":"https://www.youtube.com/watch?v=yBx0SF4vJ2A","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"pedidos_visual","file":"luan-pedidos-59wSkQK3p1g.mp4","url":"https://www.youtube.com/watch?v=59wSkQK3p1g","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"troca_visual","file":"luan-troca-MKY9bmNrSP0.mp4","url":"https://www.youtube.com/watch?v=MKY9bmNrSP0","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"dezoito_visual","file":"luan-dezoito-mfstR8BWG3Y.mp4","url":"https://www.youtube.com/watch?v=mfstR8BWG3Y","credit":"JephersOn Liima / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"dvd_visual","file":"luan-dvd-dWpGsK8Md28.mp4","url":"https://www.youtube.com/watch?v=dWpGsK8Md28","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"multidao_visual","file":"luan-multidao-5IXPnPnoYns.mp4","url":"https://www.youtube.com/watch?v=5IXPnPnoYns","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"lancamento_visual","file":"luan-lancamento-59wSkQK3p1g.mp4","url":"https://www.youtube.com/watch?v=59wSkQK3p1g","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"premio_visual","file":"luan-premio-SQjYO1UMzE0.mp4","url":"https://www.youtube.com/watch?v=SQjYO1UMzE0","credit":"Douglas Pereira da Silva / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"legado_visual","file":"luan-legado-WKKCOd7w0YU.mp4","url":"https://www.youtube.com/watch?v=WKKCOd7w0YU","credit":"Luan Santana / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"cta_visual","file":"luan-cta-F-5Z9IjfS0c.mp4","url":"https://www.youtube.com/watch?v=F-5Z9IjfS0c","credit":"Jh Músic / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
