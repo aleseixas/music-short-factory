@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "title": "A goteira, Djavan e o beat improvável de Crack com Mussilon",
+  "slug": "crack_com_mussilon_matue",
+  "target_duration_seconds": 82,
+  "segments": [
+    {"id":"hook","text":"Matuê quase perdeu equipamento gravando 333 — e uma goteira entrou na história de uma das faixas mais ouvidas do país.","delivery":"hook"},
+    {"id":"studio","text":"Crack com Mussilon nasceu enquanto o estúdio da 30PRAUM ainda estava sendo ampliado.","delivery":"curious"},
+    {"id":"leak","text":"O co-produtor Samuel Batista contou que uma chuva derrubou uma placa e a água chegou a queimar um instrumento.","delivery":"dramatic"},
+    {"id":"provisional","text":"Depois da pausa, eles improvisaram outro estúdio e seguiram criando.","delivery":"reveal"},
+    {"id":"sample_mission","text":"Num desses dias, a missão era procurar um sample.","delivery":"curious"},
+    {"id":"djavan","text":"Samuel sugeriu Djavan, porque o grupo tinha acabado de sair de um show dele.","delivery":"reveal"},
+    {"id":"oceano","text":"No YouTube, Tuê encontrou uma versão ao vivo de Oceano, da turnê Rua dos Amores.","delivery":"curious"},
+    {"id":"harmony","text":"Só que a harmonia era complexa demais para virar um loop fácil.","delivery":"dramatic"},
+    {"id":"keyboard","text":"Ele pediu para simplificar os acordes, e o violão acabou cedendo espaço ao teclado.","delivery":"reveal"},
+    {"id":"authorization","text":"Ainda faltava a parte mais delicada: conseguir autorização de Djavan.","delivery":"dramatic"},
+    {"id":"request","text":"Matuê contou à Billboard que preparou um pedido detalhado, explicando a música e a letra.","delivery":"curious"},
+    {"id":"approved","text":"E aí veio a resposta: aprovado. Ele disse que foi um dos dias mais felizes daquele processo.","delivery":"reveal"},
+    {"id":"charts","text":"Crack com Mussilon abriu 333 e chegou ao topo das paradas brasileiras.","delivery":"payoff"},
+    {"id":"cta","text":"De uma goteira a Djavan: esse beat quase parece impossível. Qual bastidor de 333 você quer ver depois?","delivery":"payoff"}
+  ]
+}
