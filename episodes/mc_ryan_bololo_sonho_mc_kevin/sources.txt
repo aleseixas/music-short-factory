@@ -1,0 +1,63 @@
+FONTES FACTUAIS
+
+1. Billboard Brasil — "MC Ryan SP: o sucesso da Bololô Records e o topo do Hot 100" — 09/01/2026
+https://billboard.com.br/mc-ryan-sp-o-sucesso-da-bololo-records-e-o-topo-do-hot-100/
+Uso: fonte principal. Ryan afirma que a Bololô Records realiza um sonho de MC Kevin; Kevin havia assumido as rédeas da carreira antes de morrer; Ryan aperfeiçoou a ideia quatro anos depois; sede de três andares no Tatuapé; relato sobre MC Daniel, MC Negão Original e Meno K; pagamento de R$ 200 mil pelo passe de Meno K; nº 1 no Billboard Brasil Hot 100; distribuição pela Warner Music.
+
+2. Estado de Minas — "Bololô Records, Selo de MC Ryan, conquista Top 1 com primeiro lançamento" — 24/10/2025
+https://www.em.com.br/colunistas/marcelo-de-assis/2025/10/7278333-bololo-records-selo-de-mc-ryan-conquista-top-1-com-primeiro-lancamento.html
+Uso: criação da Bololô em agosto de 2025; Posso Até Não Te Dar Flores no topo do Spotify Brasil e Portugal; estrutura de três andares no Tatuapé; proposta de dar visibilidade a artistas do funk e trap.
+
+3. Mundo da Música — "Bololô Records, selo do MC Ryan SP, fecha parceria com a ADA Brasil" — 03/11/2025
+https://mundodamusicamm.com.br/bololo-records-mc-ryan-sp-ada-warner/
+Uso: confirmação da parceria de distribuição/estrutura com a ADA Brasil, braço de distribuição independente do Warner Music Group, mantendo a visão de Ryan sobre desenvolvimento de talentos.
+
+VISUAIS
+
+YouTube — AQUI É FUNK — SET POSSO ATÉ NÃO TE DAR FLORES
+https://www.youtube.com/watch?v=M6ZogjlMeMg
+Uso: vídeo direto de MC Ryan SP e universo do hit da Bololô para hook, hit e payoff.
+
+YouTube — Glow Records Oficial — Posso Até Não Te Dar Flores (Extended Version)
+https://www.youtube.com/watch?v=KSWiKta11rs
+Uso: vídeo direto do hit para beats de empresa, charts e CTA.
+
+YouTube — Canal do JF — MC Ryan SP e MC Daniel
+https://www.youtube.com/watch?v=hwd7IDX_KgM
+Uso: vídeo direto com Ryan e Daniel para o beat sobre o primeiro olhar empresarial de Ryan e para contexto do modelo.
+
+SoundCloud artwork / reprodução — MC Kevin
+https://i1.sndcdn.com/artworks-oP4q18qvuvSSBgpB-HOa2oQ-t500x500.jpg
+Uso: imagem de MC Kevin na fase artística.
+
+Band / reprodução — MC Kevin
+https://pubimg.band.com.br/files/ac32e89292bd57237eaa.png
+Uso: retrato de MC Kevin no beat emocional sobre 2021.
+
+UOL / Eduardo Knapp — MC Ryan SP no universo Bololô
+https://conteudo.imguol.com.br/c/entretenimento/45/2024/05/07/retrato-durante-entrevista-com-o-mc-ryan-no-restaurante-bololo-que-ele-montou-para-a-mae-1715103292288_v2_750x1.jpg
+https://conteudo.imguol.com.br/c/entretenimento/6f/2024/05/07/retrato-durante-entrevista-com-o-mc-ryan-no-restaurante-bololo-que-ele-montou-para-a-mae-1715103402617_v2_750x1.jpg
+Uso: Ryan reconhecível e marca Bololô em contexto de empreendedorismo.
+
+Billboard Brasil / divulgação — MC Negão Original
+https://billboard-com-br.s3.amazonaws.com/wp-content/uploads/2025/03/26091337/negao_original.webp
+Uso: identificação direta de MC Negão Original.
+
+DJ Sound / divulgação — MC Meno K
+https://djsound.com.br/wp-content/uploads/2026/01/IMG_20260108_070643-1024x803.jpg
+Uso: identificação direta de Meno K.
+
+Apple Music artwork — Posso Até Não Te Dar Flores
+https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fa/17/7b/fa177bab-2419-4fb5-0a8f-a670efe882af/8447536704293.jpg/600x600bf-60.jpg
+Uso: capa/arte da faixa no beat de chart.
+
+Gshow / divulgação — MC Ryan SP
+https://s2-gshow.glbimg.com/qcSYjaIYxd6Tm3T8WOVISjOikmc=/570x620/top/smart/https:/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2024/r/E/A2JBF0S4q9cOxSXrPFTg/mcryan-gshow-5.jpg
+Uso: Ryan reconhecível no beat sobre ADA/Warner.
+
+BACKGROUND SEARCH — EXTERNAL-FIRST
+Consultas comparadas: royalty free urban hip hop instrumental creative commons; Brazilian funk instrumental creative commons; trap beat creative commons; hip hop documentary beat Pixabay no Content ID; emotional urban beat Pixabay no Content ID.
+Foram encontradas opções externas, mas várias estavam marcadas como Content ID Registered no Pixabay; para não introduzir uma nova entrada global desnecessária durante esta autoria e manter aquisição previsível, foi usado o fallback curado `fallback_social_urban`, já suportado pela main e semanticamente adequado a narrativa urbana/funk.
+
+SFX
+Todos os SFX vêm exclusivamente do catálogo curado atual da repo: impact, whoosh_fast, camera_shutter, cash_register_short, crowd_cheer e riser_build_up.
