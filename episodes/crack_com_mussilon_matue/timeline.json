@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile": "fallback_social_urban", "volume": 0.09},
+  "sfx_cues": [
+    {"time_seconds":0.1,"type":"impact","volume":0.13},
+    {"time_seconds":15.0,"type":"water_drop","volume":0.10},
+    {"time_seconds":28.0,"type":"whoosh_fast","volume":0.09},
+    {"time_seconds":43.0,"type":"record_scratch","volume":0.09},
+    {"time_seconds":58.0,"type":"notification_iphone","volume":0.09},
+    {"time_seconds":69.0,"type":"correct_ding","volume":0.11},
+    {"time_seconds":76.0,"type":"crowd_cheer","volume":0.10}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.78},
+    {"start_seconds":14.5,"end_seconds":15.4,"type":"slow_zoom_in","intensity":0.56},
+    {"start_seconds":67.5,"end_seconds":68.4,"type":"punch_zoom","intensity":0.68}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.0,"text":"UMA GOTEIRA NO 333","accent_text":"GOTEIRA","animation":"scale_bounce","position":"center","intensity":0.90},
+    {"segment":"leak","offset_seconds":0.2,"duration_seconds":1.0,"text":"QUEIMOU UM INSTRUMENTO","accent_text":"QUEIMOU","animation":"pop_in","position":"center","intensity":0.84},
+    {"segment":"authorization","offset_seconds":0.1,"duration_seconds":0.9,"text":"FALTAVA A AUTORIZAÇÃO","accent_text":"AUTORIZAÇÃO","animation":"fade_pop","position":"center","intensity":0.82},
+    {"segment":"approved","offset_seconds":0.1,"duration_seconds":0.9,"text":"DJAVAN APROVOU","accent_text":"APROVOU","animation":"scale_bounce","position":"center","intensity":0.90},
+    {"segment":"charts","offset_seconds":0.1,"duration_seconds":1.0,"text":"TOPO DO BRASIL","accent_text":"TOPO","animation":"pop_in","position":"center","intensity":0.88}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_02","segment":"studio","asset":"studio_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_03","segment":"leak","asset":"leak_visual","motion":"push_in","transition_out":"cut","source_start_seconds":20.0},
+    {"id":"shot_04","segment":"provisional","asset":"provisional_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_05","segment":"sample_mission","asset":"sample_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_06","segment":"djavan","asset":"djavan_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":0.0},
+    {"id":"shot_07","segment":"oceano","asset":"oceano_visual","motion":"push_in","transition_out":"cut","source_start_seconds":20.0},
+    {"id":"shot_08","segment":"harmony","asset":"harmony_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":20.0},
+    {"id":"shot_09","segment":"keyboard","asset":"keyboard_visual","motion":"push_in","transition_out":"cut","source_start_seconds":40.0},
+    {"id":"shot_10","segment":"authorization","asset":"authorization_visual","motion":"pull_out","transition_out":"crossfade"},
+    {"id":"shot_11","segment":"request","asset":"request_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_12","segment":"approved","asset":"approved_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":20.0},
+    {"id":"shot_13","segment":"charts","asset":"charts_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
+    {"id":"shot_14","segment":"cta","asset":"cta_visual","motion":"push_in","transition_out":"cut","source_start_seconds":20.0}
+  ]
+}
