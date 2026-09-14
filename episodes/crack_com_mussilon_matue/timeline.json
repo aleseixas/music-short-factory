@@ -4,7 +4,7 @@
   "background_music": {"profile": "fallback_social_urban", "volume": 0.09},
   "sfx_cues": [
     {"time_seconds":0.1,"type":"impact","volume":0.13},
-    {"time_seconds":15.0,"type":"water_drop","volume":0.10},
+    {"time_seconds":15.0,"type":"error_sound","volume":0.10},
     {"time_seconds":28.0,"type":"whoosh_fast","volume":0.09},
     {"time_seconds":43.0,"type":"record_scratch","volume":0.09},
     {"time_seconds":58.0,"type":"notification_iphone","volume":0.09},
