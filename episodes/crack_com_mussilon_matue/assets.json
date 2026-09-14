@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-PXnY2TZ87po.mp4","url":"https://www.youtube.com/watch?v=PXnY2TZ87po","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"studio_visual","file":"youtube-pbxBFFVGgXE.mp4","url":"https://www.youtube.com/watch?v=pbxBFFVGgXE","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"leak_visual","file":"youtube-pbxBFFVGgXE-leak.mp4","url":"https://www.youtube.com/watch?v=pbxBFFVGgXE","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"provisional_visual","file":"youtube-pbxBFFVGgXE-studio.mp4","url":"https://www.youtube.com/watch?v=pbxBFFVGgXE","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"sample_visual","file":"youtube-nXswujXzMnk.mp4","url":"https://www.youtube.com/watch?v=nXswujXzMnk","credit":"30PRAUM / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"djavan_visual","file":"youtube-pbxBFFVGgXE-djavan.mp4","url":"https://www.youtube.com/watch?v=pbxBFFVGgXE","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"oceano_visual","file":"djavan-rua-dos-amores-ao-vivo.jpg","url":"https://is1-ssl.mzstatic.com/image/thumb/Video128/v4/35/de/46/35de4634-8ea0-53f6-609e-2fbd82d79473/Job0017500b-41c7-4d12-9dd0-c15650778e5b-95537630-PreviewImage_Chocolate-Time1490615772932.png/1200x675.jpg","credit":"Apple TV / Rua dos Amores Ao Vivo","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"harmony_visual","file":"youtube-nXswujXzMnk-harmony.mp4","url":"https://www.youtube.com/watch?v=nXswujXzMnk","credit":"30PRAUM / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"keyboard_visual","file":"youtube-pbxBFFVGgXE-keyboard.mp4","url":"https://www.youtube.com/watch?v=pbxBFFVGgXE","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"authorization_visual","file":"djavan-oceano.jpg","url":"https://i.scdn.co/image/ab67616d0000b27325b58a31f35a0878c3254a23","credit":"Spotify / artwork de Oceano","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"request_visual","file":"youtube-aq-DH4iwviE.mp4","url":"https://www.youtube.com/watch?v=aq-DH4iwviE","credit":"30PRAUM / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"approved_visual","file":"youtube-aq-DH4iwviE-approved.mp4","url":"https://www.youtube.com/watch?v=aq-DH4iwviE","credit":"30PRAUM / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"charts_visual","file":"youtube-zctKiN-okXI.mp4","url":"https://www.youtube.com/watch?v=zctKiN-okXI","credit":"30PRAUM / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"cta_visual","file":"youtube-PXnY2TZ87po-cta.mp4","url":"https://www.youtube.com/watch?v=PXnY2TZ87po","credit":"Samuel Batista / YouTube","license":"","focus":{"x":0.5,"y":0.42}}
+  ]
+}
