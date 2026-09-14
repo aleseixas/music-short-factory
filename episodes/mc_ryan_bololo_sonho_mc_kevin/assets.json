@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-M6ZogjlMeMg.mp4","url":"https://www.youtube.com/watch?v=M6ZogjlMeMg","credit":"AQUI É FUNK / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"kevin_independencia_visual","file":"mc-kevin-live.jpg","url":"https://i1.sndcdn.com/artworks-oP4q18qvuvSSBgpB-HOa2oQ-t500x500.jpg","credit":"SoundCloud / reprodução","license":"","focus":{"x":0.5,"y":0.38}},
+    {"id":"interrupcao_visual","file":"mc-kevin-portrait.png","url":"https://pubimg.band.com.br/files/ac32e89292bd57237eaa.png","credit":"Band / reprodução","license":"","focus":{"x":0.5,"y":0.34}},
+    {"id":"sonho_visual","file":"mc-ryan-uol.jpg","url":"https://conteudo.imguol.com.br/c/entretenimento/45/2024/05/07/retrato-durante-entrevista-com-o-mc-ryan-no-restaurante-bololo-que-ele-montou-para-a-mae-1715103292288_v2_750x1.jpg","credit":"UOL / Eduardo Knapp","license":"","focus":{"x":0.5,"y":0.38}},
+    {"id":"sede_visual","file":"mc-ryan-bololo-restaurante.jpg","url":"https://conteudo.imguol.com.br/c/entretenimento/6f/2024/05/07/retrato-durante-entrevista-com-o-mc-ryan-no-restaurante-bololo-que-ele-montou-para-a-mae-1715103402617_v2_750x1.jpg","credit":"UOL / Eduardo Knapp","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"empresario_visual","file":"youtube-KSWiKta11rs.mp4","url":"https://www.youtube.com/watch?v=KSWiKta11rs","credit":"Glow Records Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"daniel_visual","file":"youtube-hwd7IDX_KgM.mp4","url":"https://www.youtube.com/watch?v=hwd7IDX_KgM","credit":"Canal do JF / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"negao_visual","file":"negao-original.webp","url":"https://billboard-com-br.s3.amazonaws.com/wp-content/uploads/2025/03/26091337/negao_original.webp","credit":"Billboard Brasil / divulgação","license":"","focus":{"x":0.5,"y":0.38}},
+    {"id":"meno_k_visual","file":"meno-k.jpg","url":"https://djsound.com.br/wp-content/uploads/2026/01/IMG_20260108_070643-1024x803.jpg","credit":"DJ Sound / divulgação","license":"","focus":{"x":0.5,"y":0.36}},
+    {"id":"primeiro_hit_visual","file":"youtube-M6ZogjlMeMg-hit.mp4","url":"https://www.youtube.com/watch?v=M6ZogjlMeMg","credit":"AQUI É FUNK / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"spotify_visual","file":"posso-flores-cover.jpg","url":"https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fa/17/7b/fa177bab-2419-4fb5-0a8f-a670efe882af/8447536704293.jpg/600x600bf-60.jpg","credit":"Apple Music / artwork","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"billboard_visual","file":"youtube-KSWiKta11rs-chart.mp4","url":"https://www.youtube.com/watch?v=KSWiKta11rs","credit":"Glow Records Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"modelo_visual","file":"youtube-hwd7IDX_KgM-modelo.mp4","url":"https://www.youtube.com/watch?v=hwd7IDX_KgM","credit":"Canal do JF / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"ada_visual","file":"mc-ryan-gshow.jpg","url":"https://s2-gshow.glbimg.com/qcSYjaIYxd6Tm3T8WOVISjOikmc=/570x620/top/smart/https:/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2024/r/E/A2JBF0S4q9cOxSXrPFTg/mcryan-gshow-5.jpg","credit":"Gshow / divulgação","license":"","focus":{"x":0.5,"y":0.34}},
+    {"id":"payoff_visual","file":"youtube-M6ZogjlMeMg-payoff.mp4","url":"https://www.youtube.com/watch?v=M6ZogjlMeMg","credit":"AQUI É FUNK / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"cta_visual","file":"youtube-KSWiKta11rs-cta.mp4","url":"https://www.youtube.com/watch?v=KSWiKta11rs","credit":"Glow Records Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.45}}
+  ]
+}
