@@ -1,0 +1,56 @@
+FONTES FACTUAIS
+
+1. Gshow — Sorocaba revela como compôs “Meteoro”, 1º hit de Luan Santana
+https://gshow.globo.com/realities/the-voice-kids/2023/noticia/sorocaba-revela-como-compos-meteoro1o-hit-de-luan-santana-e-comemora-musica-no-the-voice-kids.ghtml
+Uso: relato de que Sorocaba compôs Meteoro em cerca de 15 minutos; composição pensada para o projeto de Luan e para público jovem/familiar; estratégia de evitar referências a sexo e bebida; lançamento nacional em novembro de 2009.
+
+2. Gshow / Domingão do Faustão — arquivo de 2011 sobre Luan Santana
+https://gshow.globo.com/programas/domingao-do-faustao/programa/platb/tag/luan-santana/
+https://gshow.globo.com/programas/domingao-do-faustao/programa/platb/2011/05/01/
+Uso: Luan relata que a equipe considerava Tô de Cara mais forte; a resposta das rádios indicou Meteoro como a mais pedida e levou à troca da música de trabalho. Fernando também relata a rapidez da composição.
+
+3. Campo Grande News — Luan Santana lança CD em Campo Grande
+https://www.campograndenews.com.br/entretenimento/luan-santana-lanca-cd-nesta-sexta-em-campo-grande-04-16-2009
+Uso: contexto da fase Tô de Cara e crédito de Meteoro a Sorocaba.
+
+4. Campo Grande News — Luan Santana grava DVD ao vivo em Campo Grande
+https://cdn1.campograndenews.com.br/entretenimento/luan-santana-grava-dvd-ao-vivo-dia-23-de-agosto-08-12-2009
+Uso: primeiro DVD ao vivo em Campo Grande e expectativa de público de cerca de 70 mil pessoas.
+
+5. UOL Splash — 15 anos de Meteoro
+https://www.uol.com.br/splash/noticias/2024/12/11/luan-santana-meteoro.amp.htm
+Uso: Meteoro como marco da projeção nacional e da trajetória de Luan Santana.
+
+6. Bem Paraná — Registro Histórico de Luan Santana
+https://www.bemparana.com.br/cultura/gravado-em-curitiba-album-de-luan-santana-e-um-dos-mais-escutados-nos-rankings/
+Uso: contexto posterior de revisita a Meteoro em projeto que celebra a trajetória do artista.
+
+VISUAIS WEB-FIRST
+
+Vídeos-base e candidatos pesquisados/selecionados no YouTube, todos tratados com direitos_status desconhecido quando não há licença aberta explícita; nenhuma licença foi inventada e IA=0:
+https://www.youtube.com/watch?v=MKY9bmNrSP0
+https://www.youtube.com/watch?v=LB9vnCDPjM8
+https://www.youtube.com/watch?v=nfv-sNt4H9Y
+https://www.youtube.com/watch?v=TBQcZzlRY6E
+https://www.youtube.com/watch?v=MWOR79elKR0
+https://www.youtube.com/watch?v=5IXPnPnoYns
+https://www.youtube.com/watch?v=dWpGsK8Md28
+https://www.youtube.com/watch?v=mvWXaz0Gtbo
+
+A abertura usa vídeo real e o pool editorial aceita somente vídeos semantic_fit exact/direct. O pool final de autoria contém 100 candidatos distribuídos em 20 slots, com cinco alternativas reais por slot e redundância de vídeo no hook.
+
+BACKGROUND MUSIC — EXTERNAL-FIRST
+
+Buscas externas realizadas antes do fallback, com variações semânticas de instrumental acústico romântico/documental, guitarra brasileira nostálgica, country-pop otimista, storytelling acústico e trilha moderna leve para creator.
+
+Candidatas comparadas incluíram páginas de Pixabay/Openverse, entre elas Upbeat Country Background Music (Petrushkasound), Upbeat Happy Country Background, Romantic Acoustic Guitar Background (ArtMyLife), Instrumental Jazz Bossa Nova Brazilian Guitar Vibes (Denis-Pavlov), Upbeat Country (Positive_Sound), Emotional Guitar Music (DELOSound), Romantic Story (Grand_Project), Country Pop (Music_for_Creators) e Sentimental Nostalgic Warm Trumpet and Guitar. Várias páginas pesquisadas indicavam Content ID Registered; nas candidatas restantes não foi possível confirmar vantagem operacional suficiente sobre o fallback curado da main, inclusive ausência explícita e estável de Content ID para uso multiplataforma.
+
+Escolha final: profile REPO fallback_social_modern. Motivo: mantém clima moderno e leve para narrativa de descoberta/virada e oferece risco operacional mais controlado do que as candidatas externas pesquisadas nesta execução. A busca externa foi feita; o fallback só foi escolhido depois da comparação.
+
+SFX
+
+Somente types já existentes em assets/audio/sfx/catalog.json foram usados; o catálogo não foi alterado: impact, whoosh_fast, record_scratch, notification_iphone, crowd_cheer e riser_build_up.
+
+TTS
+
+O episódio permanece provider-independent no schema e usa apenas deliveries editoriais suportados. O runtime atual da main decide Gemini principal e Edge fallback, conforme docs/tts-provider.md.
