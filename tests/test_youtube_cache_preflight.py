@@ -85,7 +85,8 @@ class YoutubeCachePreflightTests(unittest.TestCase):
                 path = web._download_web_video(root, candidate())
             self.assertEqual(path.parent, cache)
             self.assertNotIn(".part.", path.name)
-            self.assertEqual(list(cache.iterdir()), [path])
+            self.assertEqual(list(cache.glob("*.mp4")), [path])
+            self.assertTrue(web._cache_matches_quality_policy(path))
 
     def test_ffprobe_failure_removes_download_and_staging_without_final_mp4(self):
         with tempfile.TemporaryDirectory() as directory:
