@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-k6DePaKr-7g-hook.mp4","url":"https://www.youtube.com/watch?v=k6DePaKr-7g","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"origin_visual","file":"youtube-k6DePaKr-7g-origin.mp4","url":"https://www.youtube.com/watch?v=k6DePaKr-7g","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"respect_visual","file":"youtube-iBvNBU2wNns-respect.mp4","url":"https://www.youtube.com/watch?v=iBvNBU2wNns","credit":"NPR Tiny Desk / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"recorde_visual","file":"youtube-k6DePaKr-7g-recorde.mp4","url":"https://www.youtube.com/watch?v=k6DePaKr-7g","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"visual_visual","file":"youtube-Lg2UXs9SDx4-visual.mp4","url":"https://www.youtube.com/watch?v=Lg2UXs9SDx4","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"album_visual","file":"youtube-7WBy2u9epeM-album.mp4","url":"https://www.youtube.com/watch?v=7WBy2u9epeM","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.43}},
+    {"id":"identity_visual","file":"youtube-iBvNBU2wNns-identity.mp4","url":"https://www.youtube.com/watch?v=iBvNBU2wNns","credit":"NPR Tiny Desk / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"brazil_visual","file":"youtube-l5u9AMn30yY-brazil.mp4","url":"https://www.youtube.com/watch?v=l5u9AMn30yY","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.43}},
+    {"id":"now_visual","file":"youtube-iBvNBU2wNns-now.mp4","url":"https://www.youtube.com/watch?v=iBvNBU2wNns","credit":"NPR Tiny Desk / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"payoff_visual","file":"youtube-Lg2UXs9SDx4-payoff.mp4","url":"https://www.youtube.com/watch?v=Lg2UXs9SDx4","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"cta_visual","file":"youtube-7WBy2u9epeM-cta.mp4","url":"https://www.youtube.com/watch?v=7WBy2u9epeM","credit":"MILO J / YouTube","license":"","focus":{"x":0.5,"y":0.43}}
+  ]
+}
