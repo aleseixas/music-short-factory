@@ -623,6 +623,9 @@ def _parse_background_music(raw: object) -> BackgroundMusicSpec | None:
     return BackgroundMusicSpec(
         profile=_parse_effect_name(raw.get("profile"), "background_music.profile"),
         volume=_parse_volume(raw.get("volume"), "background_music.volume"),
+        start_seconds=_parse_non_negative_seconds(
+            raw.get("start_seconds", 0), "background_music.start_seconds"
+        ),
     )
 
 

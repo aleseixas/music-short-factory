@@ -92,6 +92,7 @@ class HighlightSpec:
 class BackgroundMusicSpec:
     profile: str
     volume: float
+    start_seconds: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -99,6 +100,7 @@ class ResolvedBackgroundMusic:
     profile: str
     path: Path
     volume: float
+    start_seconds: float = 0.0
 
 
 @dataclass(frozen=True)

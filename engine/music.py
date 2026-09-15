@@ -169,6 +169,7 @@ def resolve_background_music(
                 profile=spec.profile,
                 path=selected,
                 volume=spec.volume,
+                start_seconds=spec.start_seconds,
             )
         except AudioProviderUnavailable as exc:
             if not skipped_provider:
