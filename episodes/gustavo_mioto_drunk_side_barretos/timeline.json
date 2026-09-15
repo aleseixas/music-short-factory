@@ -160,7 +160,7 @@
       "asset": "bridge_visual",
       "motion": "pull_out",
       "transition_out": "cut",
-      "source_start_seconds": 38.0
+      "source_start_seconds": 20.0
     },
     {
       "id": "shot_11",
@@ -176,7 +176,7 @@
       "asset": "cta_visual",
       "motion": "push_in",
       "transition_out": "cut",
-      "source_start_seconds": 66.0
+      "source_start_seconds": 30.0
     }
   ]
 }
