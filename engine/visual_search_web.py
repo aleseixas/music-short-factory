@@ -51,6 +51,21 @@ WEB_IMAGE_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".webp"})
 RIGHTS_RESTRICTED_PENALTY = -12.0
 MAX_WEB_IMAGE_BYTES = 50 * 1024 * 1024
 
+# YouTube visual acquisition policy. ``res`` is the smallest source dimension,
+# so the same preference works for both 1920x1080 and 1080x1920 footage.
+# ``res:1440`` is intentionally a preference, not a hard gate: yt-dlp falls back
+# to the best lower resolution when 1440p is unavailable. Source audio is not
+# used by the renderer, so video-only formats are preferred.
+YOUTUBE_PREFERRED_RESOLUTION = 1440
+YOUTUBE_PREFERRED_FPS = 30
+YOUTUBE_QUALITY_POLICY_VERSION = "res1440-fps30-v1"
+YOUTUBE_FORMAT_SELECTOR = "bestvideo/best"
+YOUTUBE_FORMAT_SORT = (
+    f"res:{YOUTUBE_PREFERRED_RESOLUTION}",
+    f"fps:{YOUTUBE_PREFERRED_FPS}",
+    "vext:mp4",
+)
+
 
 def infer_rights_status(
     *,
@@ -647,6 +662,36 @@ def _validate_web_video(path: Path) -> None:
     probe_video_stream(path)
 
 
+def _quality_policy_marker(path: Path) -> Path:
+    return path.with_name(f"{path.name}.quality-policy")
+
+
+def _cache_matches_quality_policy(path: Path) -> bool:
+    marker = _quality_policy_marker(path)
+    try:
+        return marker.read_text(encoding="utf-8").strip() == YOUTUBE_QUALITY_POLICY_VERSION
+    except OSError:
+        return False
+
+
+def _mark_current_quality_policy(path: Path) -> None:
+    marker = _quality_policy_marker(path)
+    try:
+        marker.write_text(YOUTUBE_QUALITY_POLICY_VERSION + "\n", encoding="utf-8")
+    except OSError as exc:
+        print(
+            f"YT_DLP_WARNING reason=quality-policy-marker-unavailable:{type(exc).__name__}",
+            flush=True,
+        )
+
+
+def _remove_quality_policy_marker(path: Path) -> None:
+    try:
+        _quality_policy_marker(path).unlink(missing_ok=True)
+    except OSError:
+        pass
+
+
 def _download_web_video(
     project_root: Path, result: VisualSearchResult, *,
     cache_dir: Path | None = None, cache_file: str | None = None,
@@ -674,6 +719,7 @@ def _download_web_video(
     # Only exact, reconstructible legacy names and the case-sensitive digest are
     # eligible. Check actual directory-entry spelling on Windows as well.
     actual_names = {entry.name for entry in cache_dir.iterdir()}
+    stale_cache: Path | None = None
     for cached in dict.fromkeys(cache_candidates):
         if cached.name not in actual_names:
             continue
@@ -683,6 +729,7 @@ def _download_web_video(
             _validate_web_video(cached)
         except (OSError, RuntimeError) as exc:
             cached.unlink(missing_ok=True)
+            _remove_quality_policy_marker(cached)
             detail = _safe_yt_dlp_diagnostic(exc)
             print(
                 f"YT_DLP_RESULT id={log_id} status=CACHE_INVALID "
@@ -690,12 +737,22 @@ def _download_web_video(
                 flush=True,
             )
             continue
-        print(
-            f"YT_DLP_RESULT id={log_id} status=CACHE_HIT "
-            f"container={cached.suffix.casefold()} bytes={cached.stat().st_size}",
-            flush=True,
-        )
-        return cached
+        if _cache_matches_quality_policy(cached):
+            print(
+                f"YT_DLP_RESULT id={log_id} status=CACHE_HIT "
+                f"container={cached.suffix.casefold()} bytes={cached.stat().st_size} "
+                f"quality_policy={YOUTUBE_QUALITY_POLICY_VERSION}",
+                flush=True,
+            )
+            return cached
+        if stale_cache is None:
+            stale_cache = cached
+            print(
+                f"YT_DLP_RESULT id={log_id} status=CACHE_STALE "
+                f"container={cached.suffix.casefold()} bytes={cached.stat().st_size} "
+                f"quality_policy={YOUTUBE_QUALITY_POLICY_VERSION}; retrying=quality_refresh",
+                flush=True,
+            )
 
     YoutubeDL, DownloadError = _yt_dlp_api()
     # yt-dlp may leave a completed-looking MP4 after a fragment/network error.
@@ -713,14 +770,13 @@ def _download_web_video(
         "skip_unavailable_fragments": False,
         "logger": _SafeYoutubeLogger(),
         "max_filesize": MAX_EXTERNAL_VIDEO_BYTES,
-        "format": (
-            "bestvideo[height<=720][ext=mp4]/best[height<=720][ext=mp4]/"
-            "bestvideo[height<=720]/best[height<=720]"
-        ),
+        "format": YOUTUBE_FORMAT_SELECTOR,
+        "format_sort": list(YOUTUBE_FORMAT_SORT),
     }
     print(
         f"YT_DLP_ATTEMPT id={log_id} "
-        f"url=https://www.youtube.com/watch?v={log_id}",
+        f"url=https://www.youtube.com/watch?v={log_id} "
+        f"quality_policy={YOUTUBE_QUALITY_POLICY_VERSION} max_bytes={MAX_EXTERNAL_VIDEO_BYTES}",
         flush=True,
     )
     try:
@@ -746,9 +802,11 @@ def _download_web_video(
                 continue
             destination = cache_dir / f"{stem}{candidate.suffix.casefold()}"
             candidate.replace(destination)
+            _mark_current_quality_policy(destination)
             print(
                 f"YT_DLP_RESULT id={log_id} status=DOWNLOADED exit_code=0 ffprobe=PASS "
-                f"container={destination.suffix.casefold()} bytes={destination.stat().st_size}",
+                f"container={destination.suffix.casefold()} bytes={destination.stat().st_size} "
+                f"quality_policy={YOUTUBE_QUALITY_POLICY_VERSION}",
                 flush=True,
             )
             return destination
@@ -756,12 +814,28 @@ def _download_web_video(
         raise DownloadError(f"validacao do download falhou: {detail}")
     except DownloadError as exc:
         detail = _safe_yt_dlp_diagnostic(exc)
+        if stale_cache is not None and stale_cache.is_file():
+            print(
+                f"YT_DLP_RESULT id={log_id} status=CACHE_FALLBACK "
+                f"reason={detail} container={stale_cache.suffix.casefold()} "
+                f"bytes={stale_cache.stat().st_size}",
+                flush=True,
+            )
+            return stale_cache
         print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
         raise VisualSearchError(
             f"yt-dlp falhou ao obter o video id={log_id}: {detail}"
         ) from exc
     except Exception as exc:
         detail = _safe_yt_dlp_diagnostic(exc)
+        if stale_cache is not None and stale_cache.is_file():
+            print(
+                f"YT_DLP_RESULT id={log_id} status=CACHE_FALLBACK "
+                f"reason={detail} container={stale_cache.suffix.casefold()} "
+                f"bytes={stale_cache.stat().st_size}",
+                flush=True,
+            )
+            return stale_cache
         print(f"YT_DLP_RESULT id={log_id} status=FAIL reason={detail}", flush=True)
         raise VisualSearchError(
             f"yt-dlp falhou ao obter o video id={log_id}: {detail}"
