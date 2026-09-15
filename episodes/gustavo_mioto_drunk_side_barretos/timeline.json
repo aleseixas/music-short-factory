@@ -1,35 +1,182 @@
 {
   "schema_version": 1,
-  "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile": "fallback_social_fun", "volume": 0.09},
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_iris_sincere_love",
+    "volume": 0.09
+  },
   "sfx_cues": [
-    {"time_seconds":0.1,"type":"impact","volume":0.13},
-    {"time_seconds":24.0,"type":"whoosh_fast","volume":0.09},
-    {"time_seconds":36.0,"type":"correct_ding","volume":0.11},
-    {"time_seconds":60.0,"type":"whoosh_fast","volume":0.09}
+    {
+      "time_seconds": 0.1,
+      "type": "impact",
+      "volume": 0.13
+    },
+    {
+      "time_seconds": 24.0,
+      "type": "whoosh_fast",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 36.0,
+      "type": "correct_ding",
+      "volume": 0.11
+    },
+    {
+      "time_seconds": 60.0,
+      "type": "whoosh_fast",
+      "volume": 0.09
+    }
   ],
   "visual_fx_cues": [
-    {"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.78},
-    {"start_seconds":34.5,"end_seconds":35.4,"type":"slow_zoom_in","intensity":0.56},
-    {"start_seconds":67.0,"end_seconds":68.0,"type":"punch_zoom","intensity":0.68}
+    {
+      "start_seconds": 0.1,
+      "end_seconds": 0.9,
+      "type": "punch_zoom",
+      "intensity": 0.78
+    },
+    {
+      "start_seconds": 34.5,
+      "end_seconds": 35.4,
+      "type": "slow_zoom_in",
+      "intensity": 0.56
+    },
+    {
+      "start_seconds": 67.0,
+      "end_seconds": 68.0,
+      "type": "punch_zoom",
+      "intensity": 0.68
+    }
   ],
   "text_fx_cues": [
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.0,"text":"ERA SÓ MAIS UMA FAIXA","accent_text":"SÓ MAIS UMA","animation":"scale_bounce","position":"center","intensity":0.88},
-    {"segment":"theme","offset_seconds":0.2,"duration_seconds":1.0,"text":"TEMA DE BARRETOS 2026","accent_text":"BARRETOS","animation":"pop_in","position":"center","intensity":0.88},
-    {"segment":"bridge","offset_seconds":0.2,"duration_seconds":1.0,"text":"NASHVILLE ↔ BRASIL","accent_text":"BRASIL","animation":"fade_pop","position":"center","intensity":0.82}
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.0,
+      "text": "ERA SÓ MAIS UMA FAIXA",
+      "accent_text": "SÓ MAIS UMA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.88
+    },
+    {
+      "segment": "theme",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.0,
+      "text": "TEMA DE BARRETOS 2026",
+      "accent_text": "BARRETOS",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.88
+    },
+    {
+      "segment": "bridge",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.0,
+      "text": "NASHVILLE ↔ BRASIL",
+      "accent_text": "BRASIL",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.82
+    }
   ],
   "shots": [
-    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0.0},
-    {"id":"shot_02","segment":"nashville","asset":"nashville_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":8.0},
-    {"id":"shot_03","segment":"writers","asset":"writers_visual","motion":"push_in","transition_out":"cut","source_start_seconds":35.0},
-    {"id":"shot_04","segment":"unexpected","asset":"unexpected_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":28.0},
-    {"id":"shot_05","segment":"reaction","asset":"reaction_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":18.0},
-    {"id":"shot_06","segment":"theme","asset":"theme_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":62.0},
-    {"id":"shot_07","segment":"clip","asset":"clip_visual","motion":"push_in","transition_out":"cut","source_start_seconds":72.0},
-    {"id":"shot_08","segment":"firststep","asset":"firststep_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":10.0},
-    {"id":"shot_09","segment":"roots","asset":"roots_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":52.0},
-    {"id":"shot_10","segment":"bridge","asset":"bridge_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":38.0},
-    {"id":"shot_11","segment":"payoff","asset":"payoff_visual","motion":"push_in","transition_out":"cut","source_start_seconds":86.0},
-    {"id":"shot_12","segment":"cta","asset":"cta_visual","motion":"push_in","transition_out":"cut","source_start_seconds":66.0}
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
+    },
+    {
+      "id": "shot_02",
+      "segment": "nashville",
+      "asset": "nashville_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 8.0
+    },
+    {
+      "id": "shot_03",
+      "segment": "writers",
+      "asset": "writers_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 35.0
+    },
+    {
+      "id": "shot_04",
+      "segment": "unexpected",
+      "asset": "unexpected_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 28.0
+    },
+    {
+      "id": "shot_05",
+      "segment": "reaction",
+      "asset": "reaction_visual",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "source_start_seconds": 18.0
+    },
+    {
+      "id": "shot_06",
+      "segment": "theme",
+      "asset": "theme_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 62.0
+    },
+    {
+      "id": "shot_07",
+      "segment": "clip",
+      "asset": "clip_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 72.0
+    },
+    {
+      "id": "shot_08",
+      "segment": "firststep",
+      "asset": "firststep_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 10.0
+    },
+    {
+      "id": "shot_09",
+      "segment": "roots",
+      "asset": "roots_visual",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "source_start_seconds": 52.0
+    },
+    {
+      "id": "shot_10",
+      "segment": "bridge",
+      "asset": "bridge_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 38.0
+    },
+    {
+      "id": "shot_11",
+      "segment": "payoff",
+      "asset": "payoff_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 86.0
+    },
+    {
+      "id": "shot_12",
+      "segment": "cta",
+      "asset": "cta_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 66.0
+    }
   ]
 }
