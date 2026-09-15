@@ -59,6 +59,7 @@ class ScriptSegment:
     # None preserves the monolithic legacy TTS path. Its effective editorial
     # meaning is still neutral.
     delivery: str | None = None
+    visual_role: str | None = None
 
     @property
     def effective_delivery(self) -> str:
@@ -71,6 +72,7 @@ class Story:
     slug: str
     segments: tuple[ScriptSegment, ...]
     target_duration_seconds: float = 75.0
+    visual_direction: dict | None = None
 
     @property
     def narration(self) -> str:
