@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "title": "Milo J colocou um canto sagrado brasileiro em Recordé",
+  "slug": "milo_j_recorde_sample_brasileiro",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Milo J colocou um canto sagrado brasileiro logo no começo de Recordé — e tratou o sample como algo muito maior que um efeito bonito.","delivery":"hook"},
+    {"id":"origin","text":"O trecho vem de Meu Labor das Matas, do grupo Morro da Crioula, ligado a uma tradição afro-indígena brasileira e à figura de Malunguinho.","delivery":"curious"},
+    {"id":"respect","text":"Quando falou sobre a escolha, Milo explicou que a equipe tentou lidar com esse material com cuidado e respeito, justamente pelo peso espiritual e cultural do registro.","delivery":"dramatic"},
+    {"id":"recorde","text":"Aí Recordé faz uma coisa muito doida: uma música argentina sobre memória começa com uma voz em português que já carrega outra memória antes mesmo de Milo cantar.","delivery":"reveal"},
+    {"id":"visual","text":"E o clipe reforça essa ideia. Em vez de cenário genérico, ele mostra crianças de Suncho Corral representando a lembrança de trabalhadores rurais reais da região.","delivery":"curious"},
+    {"id":"album","text":"Isso combina com La Vida Era Más Corta inteiro. Milo saiu do trap puro e misturou folclore argentino, murga, instrumentos tradicionais, samples e produção urbana.","delivery":"neutral"},
+    {"id":"identity","text":"Ele diz que o folclore é a raiz, o núcleo. Por isso o disco não usa tradição como decoração: memória, território e identidade viraram parte da própria produção.","delivery":"reveal"},
+    {"id":"brazil","text":"E o Brasil aparece de novo em Olimpo, que sampleia um funk brasileiro. Ou seja: essa ponte latino-americana não ficou só no discurso.","delivery":"reveal"},
+    {"id":"now","text":"Agora essa conexão ficou ainda mais curiosa: aos 19 anos, Milo estreou no Brasil e encontrou fãs cantando essas músicas em português e espanhol.","delivery":"emotional"},
+    {"id":"payoff","text":"No fim, Recordé não pega um som brasileiro para parecer exótico. O sample ajuda a contar exatamente o assunto central do disco: como uma memória de outro lugar pode continuar viva dentro de uma música nova.","delivery":"payoff"},
+    {"id":"cta","text":"Você já tinha percebido esse Brasil escondido em Recordé?","delivery":"payoff"}
+  ]
+}
