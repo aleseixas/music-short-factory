@@ -50,6 +50,12 @@ def main() -> int:
     print(f"YouTube real download smoke test: {target_url}")
     print(f"Requested clip length: {seconds}s")
     print(f"Cookies configured: {'yes' if cookies_configured else 'no'}")
+    print(
+        "Quality policy: "
+        f"{web_engine.YOUTUBE_QUALITY_POLICY_VERSION} "
+        f"format={web_engine.YOUTUBE_FORMAT_SELECTOR} "
+        f"sort={','.join(web_engine.YOUTUBE_FORMAT_SORT)}"
+    )
 
     resolver._install_patches()
     YoutubeDL, DownloadError = web_engine._yt_dlp_api()
@@ -72,8 +78,9 @@ def main() -> int:
             "overwrites": True,
             "skip_unavailable_fragments": False,
             "outtmpl": outtmpl,
-            "format": "bv*+ba/b",
-            "merge_output_format": "mp4",
+            "max_filesize": web_engine.MAX_EXTERNAL_VIDEO_BYTES,
+            "format": web_engine.YOUTUBE_FORMAT_SELECTOR,
+            "format_sort": list(web_engine.YOUTUBE_FORMAT_SORT),
             "download_ranges": download_range_func(None, [(0, seconds)]),
             "force_keyframes_at_cuts": True,
         }
@@ -115,7 +122,8 @@ def main() -> int:
         print(
             "YOUTUBE_REAL_DOWNLOAD_OK "
             f"id={video_id} title={title!r} duration={duration:.2f}s "
-            f"size={size} video={codec} {width}x{height}"
+            f"size={size} video={codec} {width}x{height} "
+            f"quality_policy={web_engine.YOUTUBE_QUALITY_POLICY_VERSION}"
         )
         print("Temporary downloaded media validated by ffprobe and will now be deleted.")
 
