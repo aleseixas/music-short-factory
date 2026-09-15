@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "title": "A música em inglês que era só mais uma e virou tema de Barretos",
+  "slug": "gustavo_mioto_drunk_side_barretos",
+  "target_duration_seconds": 78,
+  "segments": [
+    {"id":"hook","text":"Gustavo Mioto escreveu Drunk Side em inglês achando que seria só mais uma faixa — e ela acabou virando o tema oficial de Barretos 2026.","delivery":"hook"},
+    {"id":"nashville","text":"A música nasceu em Nashville, durante a fase em que Mioto decidiu mergulhar de verdade no country americano.","delivery":"curious"},
+    {"id":"writers","text":"Ele compôs a faixa com Beau Bailey e Seth Mosley, que também produziu a gravação.","delivery":"neutral"},
+    {"id":"unexpected","text":"Só que o mais doido é que, segundo o próprio Gustavo, Drunk Side não nasceu com missão de ser hino de nada.","delivery":"curious"},
+    {"id":"reaction","text":"Era para ser apenas uma música do álbum. Quando a equipe chegou a Barretos, a reação mudou completamente o tamanho dela.","delivery":"reveal"},
+    {"id":"theme","text":"A faixa foi escolhida como tema oficial da Festa do Peão de Barretos, justamente na primeira grande fase internacional do cantor.","delivery":"reveal"},
+    {"id":"clip","text":"E a conexão ficou literal: o videoclipe foi gravado dentro da arena do Parque do Peão, antes mesmo da festa começar.","delivery":"curious"},
+    {"id":"firststep","text":"Para Mioto, Barretos virou um primeiro passo estratégico para apresentar esse novo country a um público muito maior.","delivery":"neutral"},
+    {"id":"roots","text":"Mas ele insiste que cantar em inglês não significa abandonar o sertanejo nem o público brasileiro.","delivery":"emotional"},
+    {"id":"bridge","text":"A ideia é construir uma ponte entre Nashville e o Brasil, levando a identidade que ele já criou aqui para outro mercado.","delivery":"reveal"},
+    {"id":"payoff","text":"Então uma faixa que seria só mais uma acabou resumindo a aposta mais arriscada da carreira dele: começar de novo sem apagar as próprias raízes.","delivery":"payoff"},
+    {"id":"cta","text":"Você acha que o sertanejo brasileiro consegue conquistar o country americano?","delivery":"payoff"}
+  ]
+}
