@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-hOYUOk8mBmk-hook.mp4","url":"https://www.youtube.com/watch?v=hOYUOk8mBmk","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"nashville_visual","file":"youtube-IUIxVW5n89A-nashville.mp4","url":"https://www.youtube.com/watch?v=IUIxVW5n89A","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"writers_visual","file":"youtube-IUIxVW5n89A-writers.mp4","url":"https://www.youtube.com/watch?v=IUIxVW5n89A","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"unexpected_visual","file":"youtube-hOYUOk8mBmk-unexpected.mp4","url":"https://www.youtube.com/watch?v=hOYUOk8mBmk","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"reaction_visual","file":"youtube-af8fdbaB8JY-reaction.mp4","url":"https://www.youtube.com/watch?v=af8fdbaB8JY","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"theme_visual","file":"youtube-hOYUOk8mBmk-theme.mp4","url":"https://www.youtube.com/watch?v=hOYUOk8mBmk","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"clip_visual","file":"youtube-IUIxVW5n89A-clip.mp4","url":"https://www.youtube.com/watch?v=IUIxVW5n89A","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"firststep_visual","file":"youtube-9i2l57gblCM-firststep.mp4","url":"https://www.youtube.com/watch?v=9i2l57gblCM","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"roots_visual","file":"youtube-af8fdbaB8JY-roots.mp4","url":"https://www.youtube.com/watch?v=af8fdbaB8JY","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"bridge_visual","file":"youtube-9i2l57gblCM-bridge.mp4","url":"https://www.youtube.com/watch?v=9i2l57gblCM","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"payoff_visual","file":"youtube-af8fdbaB8JY-payoff.mp4","url":"https://www.youtube.com/watch?v=af8fdbaB8JY","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"cta_visual","file":"youtube-9i2l57gblCM-cta.mp4","url":"https://www.youtube.com/watch?v=9i2l57gblCM","credit":"Gustavo Mioto / YouTube","license":"","focus":{"x":0.5,"y":0.42}}
+  ]
+}
