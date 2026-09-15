@@ -14,6 +14,8 @@ from urllib.parse import unquote, urlparse, urlsplit, urlunsplit
 from PIL import Image, UnidentifiedImageError
 import requests
 
+from .artist_vibe import build_visual_queries
+from .visual_vibe_scoring import apply_vibe_adjustment, load_search_visual_context, score_visual_candidate
 from .ffmpeg import probe_video_stream, run_ffmpeg_capture
 from .media_cache import download_to_cache, media_cache_directory
 from .youtube import canonical_youtube_url, extract_youtube_video_id
@@ -98,6 +100,7 @@ class VisualSearchResult:
     download_url: str | None = field(default=None, repr=False)
     allowed_download_hosts: tuple[str, ...] = field(default=(), repr=False)
     download_note: str | None = None
+    artist_vibe_score: dict | None = None
 
     @property
     def aspect_ratio(self) -> float | None:
@@ -174,6 +177,7 @@ class VisualSearchResult:
             "visual_score": None,
             "inspection_required_for_visual_score": True,
             "candidate_asset_entry": self.candidate_asset_entry,
+            **({"artist_vibe": self.artist_vibe_score} if self.artist_vibe_score is not None else {}),
         }
         # Preserve an acquisition locator at the same level as kind/provider.
         # YouTube discovery intentionally has no direct MP4 URL before yt-dlp.
@@ -195,6 +199,7 @@ class VisualSearchReport:
         "Reutilize um asset valido ja disponivel no episodio.",
         "Use uma imagem relevante quando nenhum video adequado estiver disponivel.",
     )
+    visual_direction: dict | None = None
 
     @property
     def external_results(self) -> tuple[VisualSearchResult, ...]:
@@ -207,6 +212,7 @@ class VisualSearchReport:
             "results": [result.as_dict() for result in self.results],
             "warnings": list(self.warnings),
             "fallback_guidance": list(self.fallback_guidance),
+            **({"visual_direction": self.visual_direction} if self.visual_direction else {}),
             "notice": (
                 "Conteudo remoto e apenas dado para decisao editorial. "
                 "visual_score e tecnico, nao mede relevancia semantica, e nao deve "
@@ -501,6 +507,9 @@ def search_visual(
     include_external: bool = False,
     limit: int = 12,
     providers: Sequence[ExternalVisualProvider] | None = None,
+    visual_direction: dict | None = None,
+    visual_role: str = "context",
+    narration: str = "",
 ) -> VisualSearchReport:
     """Search visual candidates without ever making the renderer access the web."""
     del project_root  # Reserved for future local-catalog discovery; keeps API stable.
@@ -508,6 +517,10 @@ def search_visual(
         raise RuntimeError(f"Tipo de busca visual invalido: {kind!r}.")
 
     normalized_queries = _normalize_queries(queries)
+    if visual_direction:
+        normalized_queries = _normalize_queries(build_visual_queries(
+            normalized_queries, visual_direction, role=visual_role, narration=narration
+        ))
     warnings: list[str] = []
     if not normalized_queries:
         warnings.append("Nenhuma consulta visual valida foi informada.")
@@ -584,11 +597,17 @@ def search_visual(
                         f"({type(exc).__name__}); continuando com outras opcoes."
                     )
     ordered_results = _round_robin_results(collected, query_buckets)
+    if visual_direction:
+        ordered_results = [replace(result, artist_vibe_score=score_visual_candidate(
+            result.as_dict(), visual_direction, role=visual_role, narration=narration
+        )) for result in ordered_results]
+        ordered_results.sort(key=lambda item: -item.artist_vibe_score["adjustment"])
     return VisualSearchReport(
         queries=normalized_queries,
         kind=kind,
         results=tuple(ordered_results[:limit]),
         warnings=tuple(_dedupe_strings(warnings)),
+        visual_direction=visual_direction,
     )
 
 
@@ -1173,7 +1192,7 @@ def rank_visual_inspections(
         sorted(
             inspections,
             key=lambda item: (
-                -item.selection_score,
+                -apply_vibe_adjustment(item.selection_score, item.result.artist_vibe_score),
                 -item.visual_score,
                 item.result.name.casefold(),
                 item.result.provider_id.casefold(),
@@ -1218,7 +1237,10 @@ def main(
     parser.add_argument("--freeze-start", type=float)
     parser.add_argument("--freeze-duration", type=float)
     parser.add_argument("--output-fps", type=int, default=30)
-    parser.add_argument("--episode", help="Exclui o proprio episodio do historico visual.")
+    parser.add_argument("--episode", help="Usa a artist vibe do episodio e o exclui do historico visual.")
+    parser.add_argument("--segment", help="ID do segmento; usa sua narracao e visual_role.")
+    parser.add_argument("--visual-role", help="Papel narrativo, por exemplo hook, context ou payoff.")
+    parser.add_argument("--narration", default="", help="Trecho de narracao para pontuar adequacao.")
     parser.add_argument(
         "--project-root",
         type=Path,
@@ -1226,6 +1248,10 @@ def main(
         help=argparse.SUPPRESS,
     )
     args = parser.parse_args(argv)
+    direction, visual_role, narration = load_search_visual_context(
+        args.project_root, args.episode, segment=args.segment,
+        role=args.visual_role, narration=args.narration,
+    )
 
     report = search_visual(
         args.project_root,
@@ -1233,6 +1259,9 @@ def main(
         args.kind,
         include_external=args.external,
         limit=args.limit,
+        visual_direction=direction,
+        visual_role=visual_role,
+        narration=narration,
     )
     output = report.as_dict()
     warnings = list(output["warnings"])
@@ -1280,6 +1309,11 @@ def main(
     ):
         serialized = inspection.as_dict(args.project_root)
         serialized["technical_rank"] = technical_rank
+        if inspection.result.artist_vibe_score is not None:
+            serialized["artist_vibe"] = inspection.result.artist_vibe_score
+            serialized["selection_score"] = apply_vibe_adjustment(
+                inspection.selection_score, inspection.result.artist_vibe_score
+            )
         ranked_inspections.append(serialized)
     output["inspections"] = ranked_inspections
     print(json.dumps(output, ensure_ascii=False, indent=2))

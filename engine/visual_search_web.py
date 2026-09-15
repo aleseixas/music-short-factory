@@ -14,6 +14,7 @@ from urllib.parse import unquote, urlparse
 
 import requests
 
+from .visual_vibe_scoring import apply_vibe_adjustment, load_search_visual_context
 from .ffmpeg import probe_video_stream
 from .media_cache import media_cache_directory
 from .models import VIDEO_ASSET_EXTENSIONS
@@ -338,7 +339,10 @@ def rank_inspections_for_selection(
             inspections,
             key=lambda item: (
                 item.result.kind,
-                -selection_score(item.selection_score, candidate_rights_status(item.result)),
+                -apply_vibe_adjustment(
+                    selection_score(item.selection_score, candidate_rights_status(item.result)),
+                    item.result.artist_vibe_score,
+                ),
                 -item.visual_score,
                 item.result.name.casefold(),
                 item.result.provider_id.casefold(),
@@ -392,7 +396,10 @@ def main(
     parser.add_argument("--freeze-start", type=float)
     parser.add_argument("--freeze-duration", type=float)
     parser.add_argument("--output-fps", type=int, default=30)
-    parser.add_argument("--episode", help="Exclui o proprio episodio do historico visual.")
+    parser.add_argument("--episode", help="Usa a artist vibe do episodio e o exclui do historico visual.")
+    parser.add_argument("--segment", help="ID do segmento; usa sua narracao e visual_role.")
+    parser.add_argument("--visual-role", help="Papel narrativo, por exemplo hook, context ou payoff.")
+    parser.add_argument("--narration", default="", help="Trecho de narracao para pontuar adequacao.")
     parser.add_argument(
         "--project-root",
         type=Path,
@@ -400,6 +407,10 @@ def main(
         help=argparse.SUPPRESS,
     )
     args = parser.parse_args(argv)
+    direction, visual_role, narration = load_search_visual_context(
+        args.project_root, args.episode, segment=args.segment,
+        role=args.visual_role, narration=args.narration,
+    )
 
     providers = [WikimediaCommonsProvider(), OpenverseImageProvider()]
     if not args.no_web:
@@ -412,6 +423,9 @@ def main(
         include_external=args.external,
         limit=args.limit,
         providers=tuple(providers),
+        visual_direction=direction,
+        visual_role=visual_role,
+        narration=narration,
     )
     output = report.as_dict()
     output["results"] = [serialize_candidate(result) for result in report.results]
@@ -475,6 +489,11 @@ def main(
         payload["rights_status"] = status
         payload["rights_rank_adjustment"] = rights_rank_adjustment(status)
         payload["selection_score"] = selection_score(inspection.selection_score, status)
+        if inspection.result.artist_vibe_score is not None:
+            payload["artist_vibe"] = inspection.result.artist_vibe_score
+            payload["selection_score"] = apply_vibe_adjustment(
+                payload["selection_score"], inspection.result.artist_vibe_score
+            )
         payload["rights_blocks_selection"] = False
         serialized_inspections.append(payload)
 

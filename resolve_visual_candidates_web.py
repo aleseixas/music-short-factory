@@ -16,6 +16,9 @@ import engine.visual_search_web as web_engine
 
 from engine.models import VIDEO_ASSET_EXTENSIONS
 from engine.visual_candidates import normalize_visual_candidate
+from engine.visual_vibe_scoring import (
+    SEMANTIC_FIT_RANK, apply_vibe_adjustment, semantic_selection_score,
+)
 from engine.visual_search import VisualInspection, VisualSearchResult
 from engine.visual_search_web import (
     candidate_rights_status,
@@ -43,14 +46,6 @@ YOUTUBE_PO_PROVIDER_HOST = "127.0.0.1"
 YOUTUBE_PO_PROVIDER_PORT = 4416
 YOUTUBE_PO_PROVIDER_URL = f"http://{YOUTUBE_PO_PROVIDER_HOST}:{YOUTUBE_PO_PROVIDER_PORT}"
 _LEGACY_CANDIDATE_SOURCE_KEY = legacy._candidate_source_key
-SEMANTIC_FIT_RANK = {
-    "generic": 0,
-    "contextual": 1,
-    "direct": 2,
-    "exact": 3,
-}
-SEMANTIC_RANKING_BAND = 25.0
-SEMANTIC_TECHNICAL_SPAN = 24.99
 
 
 @dataclass(frozen=True)
@@ -107,14 +102,11 @@ def _semantic_ranking_score(candidate: dict, technical_selection_score: float) -
     so a technically excellent generic candidate cannot beat a direct/exact candidate.
     """
     fit = _semantic_fit(candidate)
-    technical = max(0.0, min(100.0, float(technical_selection_score)))
-    if fit is None:
-        return round(technical, 2)
-    band_start = SEMANTIC_FIT_RANK[fit] * SEMANTIC_RANKING_BAND
-    return round(
-        min(99.99, band_start + (technical / 100.0) * SEMANTIC_TECHNICAL_SPAN),
-        2,
+    technical = apply_vibe_adjustment(
+        max(0.0, min(100.0, float(technical_selection_score))),
+        candidate.get("_artist_vibe_score"),
     )
+    return semantic_selection_score(technical, fit)
 
 
 def _best_explicit_semantic_rank(slot: dict) -> int | None:
@@ -424,6 +416,7 @@ def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspe
         "visual_score": inspection.technical_visual_score,
         "selection_score": final_ranking_score,
         "technical_selection_score": technical_selection_score,
+        **({"artist_vibe": candidate["_artist_vibe_score"]} if candidate.get("_artist_vibe_score") is not None else {}),
         "semantic_fit": fit or "unspecified",
         "semantic_rank": SEMANTIC_FIT_RANK.get(fit) if fit is not None else None,
         "repetition": inspection.repetition.as_dict() if inspection.repetition else None,
@@ -517,9 +510,13 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
 def _metadata_priority(candidate: dict, index: int):
     # Semantic fit decides the inspection order when authored; technical/editorial
     # metadata remains the tie-breaker. Unlabelled legacy pools keep rank -1.
+    priority = legacy._metadata_priority_original(candidate, index)
+    if candidate.get("_artist_vibe_score") is not None:
+        # The vibe-aware legacy priority already starts with semantic rank.
+        return priority
     return (
         _semantic_rank(candidate),
-        *legacy._metadata_priority_original(candidate, index),
+        *priority,
     )
 
 
