@@ -8,12 +8,21 @@ on:
       - ".episode-check/*.json"
 
 permissions:
-  contents: write
-  actions: write
+  contents: read
+  actions: read
+
+concurrency:
+  group: episode-media-preflight-main
+  cancel-in-progress: false
 
 jobs:
   media-preflight:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      episode: ${{ steps.request.outputs.slug }}
+      source_sha: ${{ steps.source.outputs.source_sha }}
 
     steps:
       - name: Check out repository
@@ -276,11 +285,259 @@ jobs:
           if-no-files-found: warn
           retention-days: 1
 
-      - name: Persist repairs and create publish queue
-        id: queue
+      - name: Persist media repairs
+        id: source
         shell: bash
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Persist only authored/repaired metadata. Downloaded media belongs to
+          # the validated artifact and must never be committed by this workflow.
+          shopt -s nullglob
+          metadata_files=("episodes/$EPISODE"/*.json "episodes/$EPISODE"/*.txt)
+          if [[ ${#metadata_files[@]} -eq 0 ]]; then
+            echo "::error::No episode metadata files found for $EPISODE."
+            exit 1
+          fi
+          git add -- "${metadata_files[@]}"
+
+          if git diff --cached --quiet; then
+            echo "No media repairs to persist."
+          else
+            git commit -m "Auto-repair media for $EPISODE"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+          # Freeze the exact online-main revision used by every downstream gate.
+          git fetch origin main
+          source_sha="$(git rev-parse origin/main)"
+          echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
+          echo "Pinned media preflight source: $source_sha"
+
+  resolve-visuals:
+    needs: media-preflight
+    runs-on: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' && 'self-hosted' || 'ubuntu-latest' }}
+    env:
+      EPISODE: ${{ needs.media-preflight.outputs.episode }}
+
+    steps:
+      - name: Check out repaired episode
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.media-preflight.outputs.source_sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Set up Node.js for yt-dlp EJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Ensure FFmpeg on GitHub-hosted runner
+        if: ${{ vars.USE_SELF_HOSTED_VISUALS != 'true' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v ffmpeg >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+            exit 0
+          fi
+
+          while IFS= read -r source; do
+            if sudo grep -q 'dl.google.com/linux/chrome' "$source"; then
+              sudo mv "$source" "${source}.disabled"
+            fi
+          done < <(find /etc/apt/sources.list.d -maxdepth 1 -type f -print)
+
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+          ffmpeg -version | head -n 1
+
+      - name: Verify FFmpeg on self-hosted runner
+        if: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' }}
+        run: ffmpeg -version
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Verify visual download stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import yt_dlp
+          print(f"yt-dlp: {yt_dlp.version.__version__}")
+          PY
+          node --version
+          ffmpeg -version | head -n 1
+
+      - name: Show visual runner mode
+        env:
+          USE_SELF_HOSTED_VISUALS: ${{ vars.USE_SELF_HOSTED_VISUALS }}
+        run: python -c "import os, socket; print('Visual runner:', 'self-hosted/residential' if os.getenv('USE_SELF_HOSTED_VISUALS') == 'true' else 'github-hosted'); print('Host:', socket.gethostname())"
+
+      - name: Score and resolve final visual candidates
+        id: visuals
+        continue-on-error: true
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # A failed resolver must never be masked by a report from an older run.
+          rm -f "episodes/$EPISODE/visual_resolution_report.json"
+          python resolve_visual_candidates_web_auth.py "$EPISODE"
+
+      - name: Enforce final visual semantics and stage handoff
+        if: always()
+        run: python scripts/stage_visual_handoff.py
+
+      - name: Upload resolved visual handoff
+        uses: actions/upload-artifact@v7
+        with:
+          name: visual-handoff-${{ needs.media-preflight.outputs.episode }}
+          path: .visual-handoff
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 1
+          compression-level: 0
+
+  render-preflight:
+    needs:
+      - media-preflight
+      - resolve-visuals
+    runs-on: ubuntu-latest
+    env:
+      EPISODE: ${{ needs.media-preflight.outputs.episode }}
+
+    steps:
+      - name: Check out repaired episode
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.media-preflight.outputs.source_sha }}
+          fetch-depth: 0
+
+      - name: Download resolved visual handoff
+        uses: actions/download-artifact@v7
+        with:
+          name: visual-handoff-${{ needs.media-preflight.outputs.episode }}
+          path: .visual-handoff
+
+      - name: Apply resolved visual handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          payload=".visual-handoff/episodes/$EPISODE"
+          if [[ ! -d "$payload" ]]; then
+            echo "::error::VISUAL_HANDOFF_MISSING: artifact has no payload for $EPISODE."
+            exit 1
+          fi
+          cp -R "$payload/." "episodes/$EPISODE/"
+          echo "Applied final visual handoff for $EPISODE."
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Set up Node.js for render-time yt-dlp EJS
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Ensure FFmpeg
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v ffmpeg >/dev/null 2>&1; then
+            ffmpeg -version | head -n 1
+            ffprobe -version | head -n 1
+            exit 0
+          fi
+
+          while IFS= read -r source; do
+            if sudo grep -q 'dl.google.com/linux/chrome' "$source"; then
+              sudo mv "$source" "${source}.disabled"
+            fi
+          done < <(find /etc/apt/sources.list.d -maxdepth 1 -type f -print)
+
+          sudo apt-get clean
+          sudo rm -rf /var/lib/apt/lists/*
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+          ffmpeg -version | head -n 1
+          ffprobe -version | head -n 1
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Revalidate final media after visual resolution
+        env:
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+          AUDIO_PROVIDER_CIRCUIT_STATE: ${{ runner.temp }}/music-provider-circuit-${{ github.run_id }}-${{ github.run_attempt }}-final.json
+        run: python check_episode_media_batch.py "$EPISODE"
+
+      - name: Render complete episode
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: python generate.py "$EPISODE"
+
+      - name: Prepare publishing metadata and cover
+        run: python prepare_post.py "$EPISODE"
+
+      - name: Validate every platform locally without publishing
+        run: python publish.py "$EPISODE" --platform all --dry-run
+
+      - name: Validate final media and create publish-ready bundle
+        env:
+          PREFLIGHT_SOURCE_RUN_ID: ${{ github.run_id }}
+          PREFLIGHT_SOURCE_SHA: ${{ needs.media-preflight.outputs.source_sha }}
+        run: python scripts/publish_ready_bundle.py create "$EPISODE" --bundle-dir .publish-ready
+
+      - name: Upload mandatory publish-ready artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: publish-ready-${{ needs.media-preflight.outputs.episode }}
+          path: .publish-ready
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 3
+          compression-level: 0
+
+  queue-publication:
+    needs:
+      - media-preflight
+      - render-preflight
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    env:
+      EPISODE: ${{ needs.media-preflight.outputs.episode }}
+
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Create publish queue only after render preflight passes
+        id: queue
+        shell: bash
         run: |
           set -euo pipefail
 
@@ -289,9 +546,9 @@ jobs:
           should_dispatch=false
 
           if [[ ! -f "$queue_file" ]]; then
-            printf '%s\n' "$EPISODE" > "$queue_file"
+            printf '%s\n%s\n' "$EPISODE" "$GITHUB_RUN_ID" > "$queue_file"
             should_dispatch=true
-            echo "Created publish queue: $queue_file"
+            echo "Created validated publish queue: $queue_file (source run $GITHUB_RUN_ID)."
           else
             echo "Publish queue already exists: $queue_file; publication will not be dispatched again."
           fi
@@ -299,24 +556,26 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "episodes/$EPISODE" "$queue_file"
+          git add "$queue_file"
 
           if git diff --cached --quiet; then
-            echo "No episode/queue changes to commit."
+            echo "No publish queue change to commit."
             exit 0
           fi
 
-          git commit -m "Auto-repair media and queue $EPISODE"
+          git commit -m "Queue validated artifact for $EPISODE"
           git pull --rebase origin main
           git push origin HEAD:main
 
-      - name: Dispatch publish workflow
+      - name: Dispatch publication of validated artifact
         if: ${{ steps.queue.outputs.should_dispatch == 'true' }}
         shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-          EPISODE: ${{ steps.request.outputs.slug }}
         run: |
           set -euo pipefail
-          echo "Dispatching Publish episode for $EPISODE after exact media preflight PASS."
-          gh workflow run publish-episode.yml --ref main -f episode="$EPISODE"
+          echo "Dispatching Publish episode for $EPISODE from validated run $GITHUB_RUN_ID."
+          gh workflow run publish-episode.yml \
+            --ref main \
+            -f episode="$EPISODE" \
+            -f source_run_id="$GITHUB_RUN_ID"

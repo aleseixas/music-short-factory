@@ -14,23 +14,29 @@ Nunca faça uma quarta tentativa automática.
 
 ## Tentativa inicial
 
-Depois de todos os arquivos do episódio estarem completos e validados, crie por último:
+O workflow `Episode media preflight` cria por último, e somente depois do render e de
+todas as validações locais:
 
 ```text
 .publish-queue/<slug>.txt
 ```
 
-O conteúdo deve ser exatamente:
+O conteúdo registra o artefato imutável aprovado:
 
 ```text
 <slug>
+<source_run_id>
 ```
 
-Esse arquivo é o gatilho da primeira execução da Action.
+`source_run_id` é a execução do preflight que contém `publish-ready-<slug>`. O
+preflight faz o dispatch explícito de `Publish episode`; o push da queue feito pelo
+`GITHUB_TOKEN` não é usado como único gatilho.
 
 ## Retry com commit corrigido
 
-Se a Action falhar e a falha for segura para retry, corrija primeiro os arquivos do episódio no branch `main`. Somente depois da correção crie um novo arquivo de retry.
+Se `Publish episode` falhar e a falha for segura para retry, reutilize o mesmo bundle
+validado. Alterar apenas os arquivos do episódio na `main` não altera os bytes que
+serão publicados.
 
 Primeiro retry:
 
@@ -44,7 +50,11 @@ Segundo e último retry:
 .publish-retry/<slug>-retry-2.txt
 ```
 
-Em ambos os casos, o conteúdo deve ser exatamente o slug original. Cada retry dispara uma nova execução usando a `main` mais recente. Não use rerun de uma execução antiga depois de alterar o episódio, porque ela pode continuar associada ao SHA anterior.
+Em ambos os casos, a primeira linha deve ser o slug original. Sem segunda linha, o
+workflow recupera `source_run_id` da queue original. Se uma correção de mídia,
+render, capa ou metadata for realmente necessária, execute antes um novo `Episode
+media preflight` e coloque o novo `source_run_id` na segunda linha do retry. Nunca
+publique um arquivo modificado que não tenha passado pelo novo preflight.
 
 ## Quando o retry automático é permitido
 
@@ -101,15 +111,15 @@ A prioridade é evitar publicação duplicada. Uma mensagem genérica de workflo
 ```text
 criar episódio
     ↓
-validação pré-queue
+media preflight: resolução visual + render + capa + dry-run + validação do bundle
     ↓
-.publish-queue/<slug>.txt
+.publish-queue/<slug>.txt com source_run_id
     ↓
-ACTION — tentativa 1
+Publish episode baixa o bundle validado — tentativa 1
     ↓
 SUCESSO → encerrar
     ↓ falha segura antes da publicação
-metadados/outputs/artefato OU reprodução do validator → causa concreta → corrigir episódio
+metadados/outputs/artefato → causa concreta → confirmar se o mesmo bundle pode ser reenviado
     ↓
 .publish-retry/<slug>-retry-1.txt
     ↓
@@ -117,7 +127,7 @@ ACTION — tentativa 2
     ↓
 SUCESSO → encerrar
     ↓ falha segura antes da publicação
-metadados/outputs/artefato OU reprodução do validator → causa concreta → corrigir episódio
+metadados/outputs/artefato → causa concreta → confirmar se o mesmo bundle pode ser reenviado
     ↓
 .publish-retry/<slug>-retry-2.txt
     ↓
@@ -166,6 +176,11 @@ Se a execução ainda estiver em andamento e não houver mecanismo apropriado pa
 
 ## Segurança de publicação
 
-No workflow atual, renderização e preparação acontecem antes das etapas de publicação. Uma falha comprovadamente anterior à primeira etapa de publicação pode ser elegível a retry. Depois que a execução alcançar uma etapa de publicação, a decisão deve ser conservadora: não iniciar automaticamente outra publicação sem confirmar o estado real das plataformas.
+No workflow atual, resolução visual, renderização, capa e validações locais acontecem
+inteiramente em `Episode media preflight`. `Publish episode` apenas verifica a
+integridade do bundle aprovado e chama as APIs. Uma falha comprovadamente anterior
+à primeira chamada de publicação pode ser elegível a retry. Depois que a execução
+alcançar uma etapa de publicação, a decisão deve ser conservadora: não iniciar
+automaticamente outra publicação sem confirmar o estado real das plataformas.
 
 A existência de `.publish-retry/` não torna o publisher idempotente. Ela apenas garante que uma nova Action use a `main` corrigida. A proteção contra duplicidade continua sendo responsabilidade do agente ao decidir se é seguro criar o próximo retry.
