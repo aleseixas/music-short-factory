@@ -10,6 +10,8 @@ from typing import Any, Mapping
 
 from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
 
+from engine.artist_style import artist_font_path
+from engine.artist_vibe import profile_catalog_path, resolve_visual_direction
 from engine.media_cache import download_to_cache
 
 
@@ -24,6 +26,27 @@ def generate_cover(
 ) -> Path:
     config = _load_json(project_root / "config" / "config.json")
     style = _load_json(project_root / "config" / "style.json")
+    story_path = episode_dir / "story.json"
+    direction = (
+        resolve_visual_direction(
+            _load_json(story_path),
+            profiles_path=profile_catalog_path(project_root),
+        )
+        if story_path.is_file()
+        else None
+    )
+    if direction:
+        # Preserve the authored headline, source frame and crop. Its design
+        # shares the same resolved palette and typeface as the episode text.
+        highlights = dict(style.get("highlights", {}))
+        for key in ("text_color", "accent_color", "background_color", "font_name"):
+            if key in direction.get("cover", {}):
+                highlights[key] = direction["cover"][key]
+        if "font_name" in direction.get("cover", {}):
+            font = artist_font_path(str(direction["cover"]["font_name"]))
+            if font is not None:
+                highlights["font_file"] = str(font)
+        style = {**style, "highlights": highlights}
     render = config.get("render", {})
     try:
         width = int(render.get("width", 720))
@@ -45,7 +68,7 @@ def generate_cover(
         default_focus, temporary_source = (0.5, 0.5), True
     else:
         source_path, default_focus, temporary_source = _resolve_source(
-            episode_dir, source, output_path.parent
+            episode_dir, source, output_path.parent, visual_direction=direction
         )
     focus = cover.get("focus", {})
     focus_x = float(focus.get("x", default_focus[0]))
@@ -168,6 +191,8 @@ def _resolve_source(
     episode_dir: Path,
     source: Mapping[str, Any],
     temporary_dir: Path,
+    *,
+    visual_direction: Mapping[str, Any] | None = None,
 ) -> tuple[Path, tuple[float, float], bool]:
     if source.get("type") == "asset":
         catalog = _load_json(episode_dir / "assets.json")
@@ -232,6 +257,10 @@ def _resolve_source(
 
         if path.suffix.lower() in _VIDEO_SUFFIXES:
             timestamp = float(source.get("timestamp_seconds", 1.0))
+            if visual_direction and "timestamp_seconds" not in source:
+                hook_start = _directed_hook_source_start(episode_dir, asset_id)
+                if hook_start is not None:
+                    timestamp = hook_start
             temporary_dir.mkdir(parents=True, exist_ok=True)
             frame_path = temporary_dir / f".{episode_dir.name}_cover_asset_frame.png"
             _extract_frame(path, timestamp, frame_path)
@@ -254,6 +283,32 @@ def _resolve_source(
     frame_path = temporary_dir / f".{episode_dir.name}_cover_frame.png"
     _extract_frame(video_path, timestamp, frame_path)
     return frame_path, (0.5, 0.5), True
+
+
+def _directed_hook_source_start(episode_dir: Path, asset_id: str) -> float | None:
+    """Keep a default cover inside the directed hook's selected source window.
+
+    Asset slots keep their IDs when the resolver swaps a candidate. Therefore
+    source second 1 may be unrelated to a hook selected at second 20. An
+    explicit cover timestamp still takes precedence in the caller.
+    """
+    timeline_path = episode_dir / "timeline.json"
+    if not timeline_path.is_file():
+        return None
+    shots = _load_json(timeline_path).get("shots")
+    if not isinstance(shots, list) or not shots or not isinstance(shots[0], Mapping):
+        return None
+    opening = shots[0]
+    if opening.get("asset") != asset_id:
+        return None
+    raw_start = opening.get("source_start_seconds", 0.0)
+    try:
+        start = float(raw_start)
+    except (TypeError, ValueError) as exc:
+        raise RuntimeError("source_start_seconds do hook invalido para a capa.") from exc
+    if isinstance(raw_start, bool) or not math.isfinite(start) or start < 0:
+        raise RuntimeError("source_start_seconds do hook invalido para a capa.")
+    return start
 
 
 def _extract_frame(video_path: Path, timestamp: float, frame_path: Path) -> None:

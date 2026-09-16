@@ -116,6 +116,7 @@ def load_episode(project_root: Path, episodes_dir: str, name: str) -> Episode:
         story=story,
         assets=assets,
         shots=timeline.shots,
+        preserve_authored_video_trims=timeline.preserve_authored_video_trims,
         smart_visual_pacing=timeline.smart_visual_pacing,
         background_music=timeline.background_music,
         sfx_cues=timeline.sfx_cues,

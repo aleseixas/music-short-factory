@@ -64,14 +64,21 @@ def load_timeline(
 
     shots: list[ShotSpec] = []
     seen_ids: set[str] = set()
+    direction = getattr(story, "visual_direction", None)
+    editing = direction.get("editing", {}) if direction else {}
     for index, raw in enumerate(raw_shots, start=1):
         if not isinstance(raw, dict):
             raise RuntimeError(f"Plano {index} da timeline e invalido.")
         shot_id = str(raw.get("id", "")).strip()
         segment_id = str(raw.get("segment", "")).strip()
         asset_id = str(raw.get("asset", "")).strip()
-        motion = str(raw.get("motion", "hold")).strip()
-        transition = str(raw.get("transition_out", "cut")).strip()
+        motion = str(raw.get("motion", editing.get("motion", "hold"))).strip()
+        # Profile defaults fill omissions; an authored cut always wins. The
+        # final shot remains a cut regardless of the artist's default.
+        transition_default = (
+            editing.get("transition", "cut") if index < len(raw_shots) else "cut"
+        )
+        transition = str(raw.get("transition_out", transition_default)).strip()
         if not re.fullmatch(r"[A-Za-z0-9_-]+", shot_id) or shot_id in seen_ids:
             raise RuntimeError(f"ID de plano ausente ou duplicado: {shot_id!r}")
         if asset_id not in assets:
@@ -166,13 +173,21 @@ def load_timeline(
         )
     if shots[-1].transition_out != "cut":
         raise RuntimeError("O ultimo plano precisa terminar com transition_out='cut'.")
+    # Artist-directed windows already carry editorial meaning. Avoid silently
+    # replacing them with a window chosen only for motion/sharpness.
+    preserve_trims = data.get("preserve_authored_video_trims", bool(direction))
+    if not isinstance(preserve_trims, bool):
+        raise RuntimeError("preserve_authored_video_trims precisa ser booleano.")
     return TimelineSpec(
         shots=tuple(shots),
-        smart_visual_pacing=_parse_smart_visual_pacing(data.get("smart_visual_pacing")),
+        preserve_authored_video_trims=preserve_trims,
+        smart_visual_pacing=_parse_smart_visual_pacing(
+            data.get("smart_visual_pacing", {"enabled": True} if direction else None)
+        ),
         background_music=_parse_background_music(data.get("background_music")),
         sfx_cues=_parse_sfx_cues(data.get("sfx_cues")),
         visual_fx_cues=_parse_visual_fx_cues(data.get("visual_fx_cues")),
-        text_fx_cues=_parse_text_fx_cues(data.get("text_fx_cues")),
+        text_fx_cues=_parse_text_fx_cues(data.get("text_fx_cues"), editing=editing),
         overlay_cues=_parse_overlay_cues(data.get("overlay_cues"), assets),
     )
 
@@ -712,7 +727,11 @@ def _parse_visual_fx_cues(raw: object) -> tuple[VisualFxCue, ...]:
     return tuple(cues)
 
 
-def _parse_text_fx_cues(raw: object) -> tuple[TextFxCueSpec, ...]:
+def _parse_text_fx_cues(
+    raw: object,
+    *,
+    editing: dict[str, object] | None = None,
+) -> tuple[TextFxCueSpec, ...]:
     if raw is None:
         return ()
     if not isinstance(raw, list):
@@ -722,6 +741,12 @@ def _parse_text_fx_cues(raw: object) -> tuple[TextFxCueSpec, ...]:
         label = f"text_fx_cues[{index}]"
         if not isinstance(cue, dict):
             raise RuntimeError(f"{label} precisa ser um objeto.")
+        if editing:
+            cue = dict(cue)
+            if "text_animation" in editing:
+                cue.setdefault("animation", editing["text_animation"])
+            if "text_intensity" in editing:
+                cue.setdefault("intensity", editing["text_intensity"])
         absolute_fields = {"start_seconds", "end_seconds"}
         relative_fields = {"segment", "offset_seconds", "duration_seconds"}
         present_absolute = absolute_fields.intersection(cue)

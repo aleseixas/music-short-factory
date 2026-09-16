@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import replace
+import json
 import shutil
 from pathlib import Path
 
 from .assets import AssetManager
+from .artist_style import apply_artist_style
 from .audio import resolve_audio, validate_audio_duration
 from .best_segment import select_best_segments_safely
 from .captions import create_highlight_overlay, write_ass_captions
@@ -63,8 +65,15 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         episode.name,
         cache_root,
     )
+    direction = getattr(getattr(episode, "story", None), "visual_direction", None)
+    style = apply_artist_style(style, direction)
     validate_episode_cover_opening(episode)
     work_dir = _reset_episode_work_dir(project_root, work_root, episode.name)
+    if direction is not None:
+        (work_dir / "visual_direction.resolved.json").write_text(
+            json.dumps(direction, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        )
+        print(f"[artist-vibe] profile={direction['profile']} | mood={', '.join(direction['mood'])}")
     audio_cache_dir = _safe_project_child(
         project_root,
         cache_root / "audio",
@@ -263,14 +272,17 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
     for warning in editorial_report.warnings:
         print(f"[direcao] aviso {warning.code}: {warning.message}")
 
-    plan = select_best_segments_safely(
-        plan,
-        resolved_asset_paths,
-        video_infos,
-        work_dir / "best_segment_selection.json",
-        project_root=project_root,
-        exclude_episode=episode.name,
-    )
+    if getattr(episode, "preserve_authored_video_trims", False):
+        print("[best-segment] recortes autorais preservados por configuracao do episodio.")
+    else:
+        plan = select_best_segments_safely(
+            plan,
+            resolved_asset_paths,
+            video_infos,
+            work_dir / "best_segment_selection.json",
+            project_root=project_root,
+            exclude_episode=episode.name,
+        )
     for scene in plan.scenes:
         info = asset_manager.preflight_video_scene(scene, config.render.fps)
         if info is not None:

@@ -73,6 +73,18 @@ class EpisodeTests(unittest.TestCase):
         self.assertEqual(episode.text_fx_cues, ())
         self.assertEqual(episode.overlay_cues, ())
         self.assertIsNone(episode.smart_visual_pacing)
+        self.assertFalse(episode.preserve_authored_video_trims)
+
+    def test_authored_video_trim_policy_is_loaded_from_timeline(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            episode_dir = create_episode(root, "episodes", "demo")
+            path = episode_dir / "timeline.json"
+            timeline = json.loads(path.read_text(encoding="utf-8"))
+            timeline["preserve_authored_video_trims"] = True
+            write_json(path, timeline)
+            episode = load_episode(root, "episodes", "demo")
+        self.assertTrue(episode.preserve_authored_video_trims)
 
     def test_load_story_reports_invalid_json(self):
         with tempfile.TemporaryDirectory() as temp_dir:

@@ -241,6 +241,7 @@ class TimelineSpec:
     text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
     smart_visual_pacing: SmartVisualPacingSpec | None = None
+    preserve_authored_video_trims: bool = False
 
 
 @dataclass(frozen=True)
@@ -309,6 +310,7 @@ class Episode:
     text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
     smart_visual_pacing: SmartVisualPacingSpec | None = None
+    preserve_authored_video_trims: bool = False
 
     @property
     def assets_dir(self) -> Path:
