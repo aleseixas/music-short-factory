@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "title": "Anitta e Alceu gravaram Não Me Cutuca numa brecha do São João",
+  "slug": "anitta_alceu_nao_me_cutuca_salvador",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"Uma das músicas brasileiras mais ouvidas agora nasceu de uma brecha improvável no meio da turnê de São João de Alceu Valença.","delivery":"hook"},
+    {"id":"chart","text":"Não Me Cutuca, parceria de Anitta com Alceu, entrou nesta semana entre as faixas brasileiras em destaque e voltou a ganhar força nas plataformas.","delivery":"curious"},
+    {"id":"salvador","text":"A história da gravação é melhor ainda: segundo o próprio Alceu, no meio da turnê de São João eles acharam uma brecha, correram para um estúdio em Salvador e fizeram a música.","delivery":"reveal"},
+    {"id":"forro","text":"O resultado é um forró leve e provocador. Anitta descreveu a faixa como debochada, mas com uma ideia simples: ficar longe de conflito e absorver só o que faz bem.","delivery":"curious"},
+    {"id":"alceu","text":"E Alceu entrou no espírito até para contar a história: chamou Anitta de uma parceria bonita e brincou com as palavras ao celebrar o encontro.","delivery":"neutral"},
+    {"id":"album","text":"Não Me Cutuca está em EQUILIBRIVM II, disco em que Anitta aproxima funk e pop de forró, samba, reggae e outras referências brasileiras, com encontros de várias gerações.","delivery":"reveal"},
+    {"id":"context","text":"A parceria funciona justamente porque Alceu não aparece como participação decorativa. O sotaque, a voz e a tradição nordestina dele fazem parte da identidade da faixa.","delivery":"dramatic"},
+    {"id":"payoff","text":"Então um feat que parece planejado por meses nasceu, na prática, de agenda apertada, uma corrida até um estúdio em Salvador e dois artistas aproveitando a oportunidade certa.","delivery":"payoff"},
+    {"id":"cta","text":"Você imaginava que Não Me Cutuca tinha nascido assim?","delivery":"payoff"}
+  ]
+}
