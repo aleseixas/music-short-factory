@@ -2,13 +2,13 @@
   "schema_version": 1,
   "assets": [
     {"id":"hook_visual","file":"youtube-xzJXKGN4lec-hook.mp4","url":"https://www.youtube.com/watch?v=xzJXKGN4lec","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
-    {"id":"chart_visual","file":"youtube-LgGZdtEQy24-chart.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"chart_visual","file":"youtube-PSB7uxRtpaU-chart.mp4","url":"https://www.youtube.com/watch?v=PSB7uxRtpaU","credit":"Anitta Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
     {"id":"salvador_visual","file":"youtube-xzJXKGN4lec-salvador.mp4","url":"https://www.youtube.com/watch?v=xzJXKGN4lec","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
-    {"id":"forro_visual","file":"youtube-uS2p2v_wPkU-forro.mp4","url":"https://www.youtube.com/watch?v=uS2p2v_wPkU","credit":"Sua Música / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
-    {"id":"alceu_visual","file":"youtube-uS2p2v_wPkU-alceu.mp4","url":"https://www.youtube.com/watch?v=uS2p2v_wPkU","credit":"Sua Música / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
-    {"id":"album_visual","file":"youtube-LgGZdtEQy24-album.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
-    {"id":"context_visual","file":"youtube-LgGZdtEQy24-context.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"forro_visual","file":"youtube-PSB7uxRtpaU-forro.mp4","url":"https://www.youtube.com/watch?v=PSB7uxRtpaU","credit":"Anitta Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"alceu_visual","file":"youtube-Zg3knVNY738-alceu.mp4","url":"https://www.youtube.com/watch?v=Zg3knVNY738","credit":"Anitta Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"album_visual","file":"youtube-PSB7uxRtpaU-album.mp4","url":"https://www.youtube.com/watch?v=PSB7uxRtpaU","credit":"Anitta Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"context_visual","file":"youtube-_JlUj2m1qMk-context.mp4","url":"https://www.youtube.com/watch?v=_JlUj2m1qMk","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
     {"id":"payoff_visual","file":"youtube-xzJXKGN4lec-payoff.mp4","url":"https://www.youtube.com/watch?v=xzJXKGN4lec","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
-    {"id":"cta_visual","file":"youtube-LgGZdtEQy24-cta.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}}
+    {"id":"cta_visual","file":"youtube-_JlUj2m1qMk-cta.mp4","url":"https://www.youtube.com/watch?v=_JlUj2m1qMk","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}}
   ]
 }
