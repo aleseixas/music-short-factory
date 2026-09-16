@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-xzJXKGN4lec-hook.mp4","url":"https://www.youtube.com/watch?v=xzJXKGN4lec","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"chart_visual","file":"youtube-LgGZdtEQy24-chart.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"salvador_visual","file":"youtube-xzJXKGN4lec-salvador.mp4","url":"https://www.youtube.com/watch?v=xzJXKGN4lec","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"forro_visual","file":"youtube-uS2p2v_wPkU-forro.mp4","url":"https://www.youtube.com/watch?v=uS2p2v_wPkU","credit":"Sua Música / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"alceu_visual","file":"youtube-uS2p2v_wPkU-alceu.mp4","url":"https://www.youtube.com/watch?v=uS2p2v_wPkU","credit":"Sua Música / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"album_visual","file":"youtube-LgGZdtEQy24-album.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"context_visual","file":"youtube-LgGZdtEQy24-context.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"payoff_visual","file":"youtube-xzJXKGN4lec-payoff.mp4","url":"https://www.youtube.com/watch?v=xzJXKGN4lec","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"cta_visual","file":"youtube-LgGZdtEQy24-cta.mp4","url":"https://www.youtube.com/watch?v=LgGZdtEQy24","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.44}}
+  ]
+}
