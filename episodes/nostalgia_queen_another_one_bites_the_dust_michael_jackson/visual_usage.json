@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+  "recorded_at": "2026-09-16T19:15:26Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9ae2048fe4b99da61f3185c7420df73dbd8231c55d0caa8551549515363d1549",
+        "url_hashes": [
+          "eeec58f5989426f47a318b2eda40ea6da7a0aab408b3d40dcb3b91145eade6ed"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b068562fd885abb6",
+          "cc333327cc957362",
+          "cc333327cc957362",
+          "cc333326c89d7366",
+          "939c64eb49696a9c",
+          "9690748b6b61cbbc",
+          "9690748b6963cbbc",
+          "9691658a49e7cb9c"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 7.2
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_02",
+      "asset_id": "deacon_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1d75ed74cb59475025a968c70032e27f85a9fe96aa77fd5610f3911b2594f4ef",
+        "url_hashes": [
+          "fc891bfc75778766a57507eab1b7076a6b9edc16e6cedfc7a7a22351c312ef26"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "99336666dcb49326",
+          "9d996666cc893393",
+          "9d996766cc993390",
+          "dc997366cc993388",
+          "dc8c3331cce63399",
+          "cccc3333cecf9910",
+          "cf99306662663373",
+          "d2c96cf20363d347"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 9.133333
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_03",
+      "asset_id": "roger_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6443cfe8ca3ed100999df3b9b942698411038606b1f7df2aaee7121423238199",
+        "url_hashes": [
+          "5e8e51797f97489d897f7ba571ea739876be6dda26536e115562023c994ef492"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95aa237873634c57",
+          "91a22e537a66715b",
+          "95a22e7378666353",
+          "9da26c63734c6559",
+          "d9d93e1f8026e265",
+          "d1e53e9b2438ca66",
+          "c9d93a9e8522ce35",
+          "89d97a9e07628637"
+        ],
+        "source_start_seconds": 42.0,
+        "source_duration_seconds": 8.7
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_04",
+      "asset_id": "michael_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1e02cbb8a92a248e37aa87c041490d8ba2e710ad08d367539bdc82872e5c8b52",
+        "url_hashes": [
+          "a631d92586d043ef434452ad55abead412df0c8860176050a89254bbefd174df"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9685e9db362ca692",
+          "ea5522f88de03799",
+          "aa55ea513b395538",
+          "d8e62139369c3c9b",
+          "999967669b8c9964",
+          "999b64669932d966",
+          "99996566cc99d964",
+          "99996466399bcc66"
+        ],
+        "source_start_seconds": 12.0,
+        "source_duration_seconds": 11.433333
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_05",
+      "asset_id": "freddie_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9ae2048fe4b99da61f3185c7420df73dbd8231c55d0caa8551549515363d1549",
+        "url_hashes": [
+          "eeec58f5989426f47a318b2eda40ea6da7a0aab408b3d40dcb3b91145eade6ed"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce0f31e60cfcec06",
+          "c49772c29587c7c3",
+          "cc37318c2cf3c3b8",
+          "c03fe4631cf3057c",
+          "9335c83bec2536c6",
+          "de69945b83689c66",
+          "e03734cde10d3b53",
+          "95c4d0baab6c372c"
+        ],
+        "source_start_seconds": 58.0,
+        "source_duration_seconds": 8.4
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_06",
+      "asset_id": "release_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6443cfe8ca3ed100999df3b9b942698411038606b1f7df2aaee7121423238199",
+        "url_hashes": [
+          "5e8e51797f97489d897f7ba571ea739876be6dda26536e115562023c994ef492"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "92442b596d695dab",
+          "c41e3cc7333133d9",
+          "c44624cb3f333b66",
+          "c1701eef508d629f",
+          "d4196f645ba61ca9",
+          "84943ddc3c663e59",
+          "95a9ad984e4e5aa6",
+          "994c2c9edb673231"
+        ],
+        "source_start_seconds": 95.0,
+        "source_duration_seconds": 6.266667
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_07",
+      "asset_id": "impact_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1d75ed74cb59475025a968c70032e27f85a9fe96aa77fd5610f3911b2594f4ef",
+        "url_hashes": [
+          "fc891bfc75778766a57507eab1b7076a6b9edc16e6cedfc7a7a22351c312ef26"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9b65966c9e498798",
+          "9b65966c9e619619",
+          "9b6736649c619365",
+          "9d83616c9a83cd67",
+          "dd83663c98938d87",
+          "9d996626cc993399",
+          "df9931e6cc0c9391",
+          "de993163cccc9331"
+        ],
+        "source_start_seconds": 78.0,
+        "source_duration_seconds": 6.666667
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_08",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1e02cbb8a92a248e37aa87c041490d8ba2e710ad08d367539bdc82872e5c8b52",
+        "url_hashes": [
+          "a631d92586d043ef434452ad55abead412df0c8860176050a89254bbefd174df"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c5267870a7b9c0cf",
+          "f1015e90a7cf7067",
+          "e523181ef5e48f43",
+          "cb986561389b71ce",
+          "ce983d67711c32c3",
+          "c9c8396567993666",
+          "c999396663c398cd",
+          "cd996b64653312cd"
+        ],
+        "source_start_seconds": 65.0,
+        "source_duration_seconds": 9.133333
+      }
+    },
+    {
+      "episode": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
+      "shot_id": "shot_09",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-16T19:15:26Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9ae2048fe4b99da61f3185c7420df73dbd8231c55d0caa8551549515363d1549",
+        "url_hashes": [
+          "eeec58f5989426f47a318b2eda40ea6da7a0aab408b3d40dcb3b91145eade6ed"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e0bd704e1f07352d",
+          "e1b84e47b12d78ca",
+          "9d728d5a26996699",
+          "8435c639cb7bc23c",
+          "8433847bcd7b874a",
+          "8633c679cd638636",
+          "c6b23939cc33c6b2",
+          "c6b67339cc388636"
+        ],
+        "source_start_seconds": 128.0,
+        "source_duration_seconds": 4.6
+      }
+    }
+  ]
+}
