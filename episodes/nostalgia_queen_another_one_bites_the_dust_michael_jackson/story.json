@@ -4,14 +4,14 @@
   "slug": "nostalgia_queen_another_one_bites_the_dust_michael_jackson",
   "target_duration_seconds": 76,
   "segments": [
-    {"id":"hook","text":"Queen quase deixou Another One Bites the Dust escondida no álbum The Game — até Michael Jackson dizer que eles seriam malucos se não lançassem aquilo como single.","delivery":"hook"},
-    {"id":"deacon","text":"A música era de John Deacon, o baixista mais ligado ao funk e à disco dentro da banda. E esse groove já dividia opiniões no próprio Queen.","delivery":"curious"},
-    {"id":"roger","text":"Roger Taylor contou depois que nem queria entrar naquela onda de dance music. Quando Michael insistiu que a faixa tinha cara de hit, Roger achou a ideia absurda.","delivery":"dramatic"},
-    {"id":"michael","text":"Só que Michael frequentava shows do Queen em Los Angeles e ouviu uma coisa que a própria banda ainda não enxergava: aquela linha de baixo podia atravessar o rock e chegar em outro público.","delivery":"reveal"},
-    {"id":"freddie","text":"Freddie Mercury comprou a ideia de Deacon de verdade. Brian May lembrou que Freddie se entregou à gravação para chegar naquele som mais seco, pesado e funk que John queria.","delivery":"curious"},
-    {"id":"release","text":"A faixa saiu como single em 1980. Resultado: virou o segundo número um do Queen nos Estados Unidos e ficou semanas no topo da Billboard Hot 100.","delivery":"reveal"},
-    {"id":"impact","text":"O mais doido é que a música que parte da banda não via como single acabou ajudando a empurrar o Queen para um território muito maior do que o rock tradicional.","delivery":"dramatic"},
-    {"id":"payoff","text":"E tem uma ironia perfeita nisso: antes de Thriller transformar Michael Jackson num fenômeno ainda maior, ele já tinha ouvido no Queen a mistura de funk e rock que o mundo inteiro acabaria abraçando.","delivery":"payoff"},
-    {"id":"cta","text":"Você já sabia que Michael Jackson teve esse papel nesse clássico do Queen?","delivery":"payoff"}
+    {"id":"hook","text":"Queen quase deixou Another One Bites the Dust no álbum The Game — até Michael Jackson dizer que eles seriam malucos se não lançassem a faixa como single.","delivery":"hook"},
+    {"id":"deacon","text":"A música era de John Deacon, o baixista mais ligado ao funk dentro da banda. E esse groove dividia opiniões no próprio Queen.","delivery":"curious"},
+    {"id":"roger","text":"Roger Taylor contou que nem queria entrar naquela onda de dance music. Quando Michael insistiu que aquilo tinha cara de hit, Roger achou a ideia absurda.","delivery":"dramatic"},
+    {"id":"michael","text":"Michael frequentava shows do Queen em Los Angeles e percebeu algo que a banda ainda não enxergava: aquela linha de baixo podia atravessar o rock e alcançar outro público.","delivery":"reveal"},
+    {"id":"freddie","text":"Freddie Mercury comprou a visão de Deacon. Brian May lembrou que Freddie se entregou à gravação para chegar ao som funk que John queria.","delivery":"curious"},
+    {"id":"release","text":"A faixa saiu como single em 1980 e virou o segundo número um do Queen nos Estados Unidos.","delivery":"reveal"},
+    {"id":"impact","text":"Uma música que parte da banda nem via como single acabou levando o Queen para muito além do rock tradicional.","delivery":"dramatic"},
+    {"id":"payoff","text":"E a ironia é perfeita: antes de Thriller, Michael já tinha ouvido no Queen a mistura de funk e rock que logo dominaria o pop.","delivery":"payoff"},
+    {"id":"cta","text":"Você sabia que Michael Jackson teve esse papel nesse clássico do Queen?","delivery":"payoff"}
   ]
 }
