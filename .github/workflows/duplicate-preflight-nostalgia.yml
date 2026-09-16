@@ -1,0 +1,269 @@
+name: Duplicate nostalgia candidate preflight
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".duplicate-check-nostalgia/*.json"
+
+permissions:
+  contents: read
+
+jobs:
+  duplicate-preflight-nostalgia:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Resolve nostalgia preflight request
+        id: request
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            mapfile -t request_files < <(
+              git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.duplicate-check-nostalgia/*.json'
+            )
+          else
+            mapfile -t request_files < <(
+              git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.duplicate-check-nostalgia/*.json'
+            )
+          fi
+
+          if [[ ${#request_files[@]} -ne 1 ]]; then
+            echo "::error::Expected exactly one newly added nostalgia duplicate preflight request, found ${#request_files[@]}."
+            exit 1
+          fi
+
+          request_file="${request_files[0]}"
+          python - "$request_file" "$GITHUB_OUTPUT" <<'PY'
+          import json
+          import re
+          import sys
+          from pathlib import Path
+
+          request_file = Path(sys.argv[1])
+          output_file = Path(sys.argv[2])
+          data = json.loads(request_file.read_text(encoding="utf-8"))
+          song = str(data.get("song", "")).strip()
+          artist = str(data.get("artist", "")).strip()
+          slug = str(data.get("slug", "")).strip()
+
+          if not song or not artist or not slug:
+              raise SystemExit("request precisa conter song, artist e slug nao vazios")
+          if not re.fullmatch(r"nostalgia_[a-z0-9]+([_-][a-z0-9]+)*", slug):
+              raise SystemExit("nostalgia slug invalido: use prefixo nostalgia_")
+
+          with output_file.open("a", encoding="utf-8") as handle:
+              handle.write(f"song={song}\n")
+              handle.write(f"artist={artist}\n")
+              handle.write(f"slug={slug}\n")
+              handle.write(f"request_file={request_file.as_posix()}\n")
+          PY
+
+      - name: Enforce nostalgia-only continuity and candidate cap
+        id: execution_guard
+        shell: bash
+        env:
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+
+          # O slot de nostalgia e isolado do fluxo normal. Somente queues,
+          # episodios e requests com namespace nostalgia_ participam desta
+          # continuidade. Episodios normais nunca podem sequestrar o slot das 12h.
+          latest_queue_commit="$(git log -1 --format=%H --diff-filter=A -- '.publish-queue/nostalgia_*.txt' || true)"
+          echo "latest_queue_commit=$latest_queue_commit" >> "$GITHUB_OUTPUT"
+
+          if [[ -n "$latest_queue_commit" ]]; then
+            history_range="$latest_queue_commit..$AFTER_SHA"
+          else
+            history_range="$AFTER_SHA"
+          fi
+
+          mapfile -t authored_story_files < <(
+            git log "$history_range" \
+              --diff-filter=A \
+              --name-only \
+              --format='' \
+              -- 'episodes/nostalgia_*/story.json' \
+            | sed '/^[[:space:]]*$/d' \
+            | sort -u
+          )
+
+          mapfile -t episode_checks_after_queue < <(
+            git log "$history_range" \
+              --diff-filter=A \
+              --name-only \
+              --format='' \
+              -- '.episode-check/nostalgia_*.json' \
+            | sed '/^[[:space:]]*$/d' \
+            | sort -u
+          )
+
+          mapfile -t candidate_requests_after_queue < <(
+            git log "$history_range" \
+              --diff-filter=A \
+              --name-only \
+              --format='' \
+              -- '.duplicate-check-nostalgia/*.json' \
+            | sed '/^[[:space:]]*$/d' \
+            | sort -u \
+            || true
+          )
+
+          candidate_attempts=${#candidate_requests_after_queue[@]}
+          echo "candidate_attempts=$candidate_attempts" >> "$GITHUB_OUTPUT"
+          echo "candidate_limit=15" >> "$GITHUB_OUTPUT"
+
+          declare -A active_slug_map=()
+
+          for story_file in "${authored_story_files[@]}"; do
+            slug="${story_file#episodes/}"
+            slug="${slug%/story.json}"
+            if [[ "$slug" =~ ^nostalgia_[a-z0-9]+([_-][a-z0-9]+)*$ ]] \
+              && [[ -f "episodes/$slug/story.json" ]] \
+              && [[ ! -f ".publish-queue/$slug.txt" ]]; then
+              active_slug_map["$slug"]=1
+            fi
+          done
+
+          for check_file in "${episode_checks_after_queue[@]}"; do
+            [[ -f "$check_file" ]] || continue
+            slug="$(python - "$check_file" <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          path = Path(sys.argv[1])
+          try:
+              data = json.loads(path.read_text(encoding="utf-8"))
+          except Exception:
+              print("")
+              raise SystemExit(0)
+          print(str(data.get("slug", "")).strip())
+          PY
+            )"
+            if [[ "$slug" =~ ^nostalgia_[a-z0-9]+([_-][a-z0-9]+)*$ ]] \
+              && [[ -f "episodes/$slug/story.json" ]] \
+              && [[ ! -f ".publish-queue/$slug.txt" ]]; then
+              active_slug_map["$slug"]=1
+            fi
+          done
+
+          active_slugs=()
+          if (( ${#active_slug_map[@]} > 0 )); then
+            mapfile -t active_slugs < <(printf '%s\n' "${!active_slug_map[@]}" | sort)
+          fi
+
+          continuity_slugs=""
+          if (( ${#active_slugs[@]} > 0 )); then
+            continuity_slugs="$(IFS=,; echo "${active_slugs[*]}")"
+          fi
+          echo "continuity_slugs=$continuity_slugs" >> "$GITHUB_OUTPUT"
+
+          if [[ ${#active_slugs[@]} -eq 1 ]]; then
+            resume_slug="${active_slugs[0]}"
+            echo "PREFLIGHT_RESULT=RESUME_EXISTING_NOSTALGIA_EPISODE"
+            echo "RESUME_SLUG=$resume_slug"
+            echo "result=RESUME_EXISTING_NOSTALGIA_EPISODE" >> "$GITHUB_OUTPUT"
+            echo "resume_slug=$resume_slug" >> "$GITHUB_OUTPUT"
+            echo "::warning::Unfinished nostalgia episode $resume_slug found. Resume only this nostalgia slug. Normal episodes are intentionally ignored."
+            exit 0
+          fi
+
+          if [[ ${#active_slugs[@]} -gt 1 ]]; then
+            echo "PREFLIGHT_RESULT=NOSTALGIA_CONTINUITY_CONFLICT"
+            echo "result=NOSTALGIA_CONTINUITY_CONFLICT" >> "$GITHUB_OUTPUT"
+            echo "::error::Multiple unfinished nostalgia episodes found. Refusing another nostalgia candidate."
+            printf 'Unfinished nostalgia episode: %s\n' "${active_slugs[@]}"
+            exit 0
+          fi
+
+          if (( candidate_attempts > 15 )); then
+            echo "PREFLIGHT_RESULT=CANDIDATE_LIMIT_REACHED"
+            echo "FINAL_STATUS=SEM_CANDIDATO"
+            echo "CANDIDATE_ATTEMPTS=$candidate_attempts"
+            echo "result=CANDIDATE_LIMIT_REACHED" >> "$GITHUB_OUTPUT"
+            echo "::warning::Nostalgia candidate limit reached: max 15 candidates for this nostalgia execution."
+            exit 0
+          fi
+
+          echo "result=OPEN" >> "$GITHUB_OUTPUT"
+          echo "Nostalgia candidate preflight is open (attempt $candidate_attempts of 15)."
+
+      - name: Check nostalgia candidate duplicate
+        id: duplicate
+        if: ${{ steps.execution_guard.outputs.result == 'OPEN' }}
+        shell: bash
+        env:
+          SONG: ${{ steps.request.outputs.song }}
+          ARTIST: ${{ steps.request.outputs.artist }}
+          SLUG: ${{ steps.request.outputs.slug }}
+        run: |
+          set +e
+          output="$(python check_duplicate.py --song "$SONG" --artist "$ARTIST" --slug "$SLUG" 2>&1)"
+          status=$?
+          set -e
+
+          printf '%s\n' "$output"
+
+          if [[ $status -eq 0 ]]; then
+            echo "PREFLIGHT_RESULT=UNIQUE_CANDIDATE"
+            echo "result=UNIQUE_CANDIDATE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [[ $status -eq 2 ]]; then
+            echo "PREFLIGHT_RESULT=DUPLICATE_CANDIDATE"
+            echo "result=DUPLICATE_CANDIDATE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "::error::Nostalgia duplicate preflight infrastructure failed with exit code $status."
+          exit "$status"
+
+      - name: Write nostalgia preflight summary
+        if: always()
+        shell: bash
+        env:
+          GUARD_RESULT: ${{ steps.execution_guard.outputs.result }}
+          DUPLICATE_RESULT: ${{ steps.duplicate.outputs.result }}
+          LATEST_QUEUE_COMMIT: ${{ steps.execution_guard.outputs.latest_queue_commit }}
+          RESUME_SLUG: ${{ steps.execution_guard.outputs.resume_slug }}
+          CONTINUITY_SLUGS: ${{ steps.execution_guard.outputs.continuity_slugs }}
+          CANDIDATE_ATTEMPTS: ${{ steps.execution_guard.outputs.candidate_attempts }}
+          CANDIDATE_LIMIT: ${{ steps.execution_guard.outputs.candidate_limit }}
+          SONG: ${{ steps.request.outputs.song }}
+          ARTIST: ${{ steps.request.outputs.artist }}
+          SLUG: ${{ steps.request.outputs.slug }}
+        run: |
+          result="$GUARD_RESULT"
+          if [[ "$GUARD_RESULT" == "OPEN" ]]; then
+            result="$DUPLICATE_RESULT"
+          fi
+          {
+            echo "## Duplicate nostalgia candidate preflight"
+            echo
+            echo "- Result: ${result:-INFRA_FAILURE}"
+            echo "- Latest nostalgia publish queue boundary: ${LATEST_QUEUE_COMMIT:-NONE}"
+            echo "- Candidate attempts: ${CANDIDATE_ATTEMPTS:-N/A}/${CANDIDATE_LIMIT:-15}"
+            echo "- Requested song: $SONG"
+            echo "- Requested artist: $ARTIST"
+            echo "- Requested slug: $SLUG"
+            echo "- Resume nostalgia slug: ${RESUME_SLUG:-N/A}"
+            echo "- Nostalgia continuity slugs: ${CONTINUITY_SLUGS:-N/A}"
+            echo "- Normal episodes: intentionally ignored by this workflow"
+            if [[ "$result" == "CANDIDATE_LIMIT_REACHED" ]]; then
+              echo "- Final status: SEM_CANDIDATO"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
