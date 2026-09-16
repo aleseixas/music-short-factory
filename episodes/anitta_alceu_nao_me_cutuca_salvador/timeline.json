@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile":"fallback_social_fun","volume":0.08},
+  "background_music": {"profile":"external_oke_funkhouser","volume":0.08},
   "sfx_cues": [
     {"time_seconds":0.1,"type":"impact","volume":0.14},
     {"time_seconds":18.0,"type":"whoosh_fast","volume":0.09},
@@ -17,13 +17,13 @@
   ],
   "shots": [
     {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":1.0},
-    {"id":"shot_02","segment":"chart","asset":"chart_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":90.0},
+    {"id":"shot_02","segment":"chart","asset":"chart_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":5.0},
     {"id":"shot_03","segment":"salvador","asset":"salvador_visual","motion":"push_in","transition_out":"cut","source_start_seconds":17.0},
-    {"id":"shot_04","segment":"forro","asset":"forro_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":150.0},
-    {"id":"shot_05","segment":"alceu","asset":"alceu_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":220.0},
-    {"id":"shot_06","segment":"album","asset":"album_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":260.0},
-    {"id":"shot_07","segment":"context","asset":"context_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":320.0},
+    {"id":"shot_04","segment":"forro","asset":"forro_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":35.0},
+    {"id":"shot_05","segment":"alceu","asset":"alceu_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":0.0},
+    {"id":"shot_06","segment":"album","asset":"album_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":70.0},
+    {"id":"shot_07","segment":"context","asset":"context_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":0.0},
     {"id":"shot_08","segment":"payoff","asset":"payoff_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":63.0},
-    {"id":"shot_09","segment":"cta","asset":"cta_visual","motion":"push_in","transition_out":"cut","source_start_seconds":450.0}
+    {"id":"shot_09","segment":"cta","asset":"cta_visual","motion":"push_in","transition_out":"cut","source_start_seconds":10.0}
   ]
 }
