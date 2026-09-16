@@ -64,6 +64,12 @@ jobs:
             reason=""
 
             case "$name" in
+              publish-ready-*)
+                if (( age >= 259200 )); then
+                  delete=true
+                  reason="validated publish bundle older than 72h"
+                fi
+                ;;
               visual-handoff-*|visual-usage-*|visual-handoff-smoke-*|visual-pipeline-smoke-handoff)
                 delete=true
                 reason="completed transient handoff"

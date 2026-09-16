@@ -385,13 +385,19 @@ Salve hashtags sem `#`; o payload final acrescenta o caractere quando necessári
 
 ## Queue e automação
 
-O episódio deve estar completo e validado antes de criar:
+O workflow `Episode media preflight` resolve os visuais finais, renderiza o episódio,
+gera a capa, executa o dry-run das três plataformas e valida integralmente o MP4.
+Somente depois desse gate ele cria:
 
 ```text
 .publish-queue/<slug>.txt
 ```
 
-A queue é criada por último. A automação não deve executar `publish.py` diretamente nem recriar queue automaticamente quando houver risco de publicação duplicada.
+A primeira linha contém o slug e a segunda contém o `run_id` do preflight que gerou
+o bundle `publish-ready-<slug>`. O workflow `Publish episode` baixa e publica esses
+mesmos bytes; ele não resolve visuais, não prepara capa e não renderiza novamente.
+A queue é criada por último. A automação não deve executar `publish.py` diretamente
+nem recriar queue automaticamente quando houver risco de publicação duplicada.
 
 Durante criação normal de episódio, o agente não deve alterar `engine/`, `publishing/`, `config/`, `style.json`, `.github/`, episódios anteriores, queues existentes ou `assets/audio/sfx/catalog.json`.
 
