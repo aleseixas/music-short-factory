@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"fallback_social_fun","volume":0.10},
+  "sfx_cues": [
+    {"time_seconds":0.1,"type":"impact","volume":0.14},
+    {"time_seconds":21.0,"type":"record_scratch","volume":0.10},
+    {"time_seconds":48.0,"type":"whoosh_fast","volume":0.10},
+    {"time_seconds":65.0,"type":"ding","volume":0.10}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.68},
+    {"start_seconds":47.5,"end_seconds":48.3,"type":"slow_zoom_in","intensity":0.45}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.1,"text":"MICHAEL DISSE: LANCEM ISSO","accent_text":"LANCEM ISSO","animation":"scale_bounce","position":"center","intensity":0.82},
+    {"segment":"release","offset_seconds":0.15,"duration_seconds":1.0,"text":"2º Nº 1 DO QUEEN NOS EUA","accent_text":"Nº 1","animation":"pop_in","position":"center","intensity":0.76}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_02","segment":"deacon","asset":"deacon_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":18.0},
+    {"id":"shot_03","segment":"roger","asset":"roger_visual","motion":"hold","transition_out":"cut","source_start_seconds":42.0},
+    {"id":"shot_04","segment":"michael","asset":"michael_visual","motion":"push_in","transition_out":"crossfade","source_start_seconds":12.0},
+    {"id":"shot_05","segment":"freddie","asset":"freddie_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":58.0},
+    {"id":"shot_06","segment":"release","asset":"release_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":95.0},
+    {"id":"shot_07","segment":"impact","asset":"impact_visual","motion":"push_in","transition_out":"cut","source_start_seconds":78.0},
+    {"id":"shot_08","segment":"payoff","asset":"payoff_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":65.0},
+    {"id":"shot_09","segment":"cta","asset":"cta_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":128.0}
+  ]
+}
