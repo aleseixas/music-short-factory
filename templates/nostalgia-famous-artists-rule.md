@@ -2,19 +2,73 @@
 
 Esta regra existe para o **agendamento diário de nostalgia das 12h** do Além do Hit / Music Short Factory.
 
-Ela é uma especialização de seleção de tema. Não altera schemas, renderer, publishing, media preflight, regras de continuidade, regras de um único episódio por execução, direção visual, áudio, legenda ou CTA. A `main` continua sendo a fonte da verdade técnica.
+Ela especializa o agendamento principal para um fluxo editorial próprio de nostalgia. A `main` continua sendo a fonte da verdade técnica para schemas, renderer, media preflight, publishing, áudio e demais capacidades.
 
-## 0. Continuidade vem antes da nostalgia
+## 0. REGRA CRÍTICA — o slot das 12h é isolado do fluxo normal
 
-Antes de pesquisar qualquer tema novo, siga integralmente `templates/execution-single-episode-rule.md`, `templates/music-universe-topic-rule.md` e `templates/publishing-completion-rule.md` para descobrir se existe episódio ativo/incompleto que precisa ser retomado.
+O slot de nostalgia NÃO pode ser sequestrado por episódio criado pelos agendamentos normais de 8h/19h.
 
-Se existir um episódio ativo de execução anterior, termine o mesmo slug. **Não abandone um episódio em andamento apenas para cumprir o tema nostalgia.** O modo nostalgia só entra na seleção de uma NOVA candidata quando a execução estiver livre para escolher tema.
+Todo novo episódio criado por este fluxo deve usar obrigatoriamente um slug com prefixo:
+
+```text
+nostalgia_<slug>
+```
+
+Exemplo:
+
+```text
+nostalgia_michael_jackson_beat_it_van_halen
+```
+
+Para esta execução, somente slugs `nostalgia_*` pertencem ao namespace de continuidade da nostalgia.
+
+Portanto:
+
+- episódio normal sem prefixo `nostalgia_` NÃO pode virar `EXECUTION_SLUG` desta chamada;
+- queue normal existente NÃO bloqueia o slot das 12h;
+- retry normal existente NÃO bloqueia o slot das 12h;
+- Publish Action normal falhando, rodando ou aguardando NÃO bloqueia o slot das 12h;
+- episódio normal incompleto NÃO deve ser retomado pelo agendamento de nostalgia;
+- o agendamento das 12h só retoma um episódio anterior se ele próprio tiver slug `nostalgia_*` e estiver realmente inacabado antes de queue;
+- uma queue `nostalgia_*` que já existia no início desta nova chamada pertence a execução anterior e, assim como no scheduled principal, NÃO autoriza nem impede a identidade da nova execução.
+
+Esta seção é um **override deliberado de escopo de continuidade** para o agendamento das 12h. Ela prevalece, somente neste slot, sobre qualquer instrução genérica em `templates/music-universe-topic-rule.md` ou outro template que mande retomar qualquer episódio ativo independentemente de origem.
+
+A regra de `templates/execution-single-episode-rule.md` continua absoluta **dentro desta chamada**: depois que um slug `nostalgia_*` for retomado ou autorizado, `EXECUTION_SLUG` fica imutável até a resposta final e nenhum segundo episódio pode ser criado.
+
+### Duplicate preflight exclusivo da nostalgia
+
+Para novas candidatas deste slot, NÃO use `.duplicate-check/*.json` nem o workflow normal de duplicate preflight.
+
+Use exclusivamente:
+
+```text
+.duplicate-check-nostalgia/<nonce>.json
+```
+
+com o mesmo contrato de `song`, `artist` e `slug`, sendo obrigatório que `slug` comece com `nostalgia_`.
+
+O workflow correspondente é:
+
+```text
+.github/workflows/duplicate-preflight-nostalgia.yml
+```
+
+Esse workflow replica o duplicate check do fluxo principal, mas sua continuidade e seu limite de candidatas consideram somente o namespace `nostalgia_*`. Episódios normais são intencionalmente ignorados.
+
+Resultados relevantes:
+
+- `UNIQUE_CANDIDATE` → autorize essa candidata e fixe `EXECUTION_SLUG`;
+- `DUPLICATE_CANDIDATE` → descarte apenas essa candidata e teste a próxima;
+- `RESUME_EXISTING_NOSTALGIA_EPISODE` → retome somente o slug `nostalgia_*` indicado;
+- `NOSTALGIA_CONTINUITY_CONFLICT` → reporte `BLOQUEADO` sem criar terceiro episódio;
+- `CANDIDATE_LIMIT_REACHED` → `STATUS: SEM_CANDIDATO`.
 
 ## 1. Objetivo do slot
 
 O episódio das 12h deve explorar **nostalgia musical mainstream**, usando artistas, bandas, músicas, álbuns, performances ou histórias que despertem reconhecimento e memória afetiva imediatos no público amplo.
 
-O objetivo NÃO é procurar simplesmente “música antiga”. O objetivo é combinar:
+O objetivo NÃO é simplesmente procurar “música antiga”. O objetivo é combinar:
 
 - artista de enorme reconhecimento;
 - memória afetiva forte;
@@ -43,11 +97,11 @@ Não trate esses exemplos como lista fechada. Pesquise outros artistas do mesmo 
 
 Priorize histórias ligadas principalmente às décadas de 1960, 1970, 1980, 1990 e 2000, sem transformar datas em uma trava matemática.
 
-Também é válido usar um artista ainda ativo hoje quando a história escolhida estiver claramente ligada a uma fase, música, álbum, performance, TV, turnê, clipe, momento cultural ou memória coletiva do passado.
+Também é válido usar artista ainda ativo hoje quando a história escolhida estiver claramente ligada a uma fase, música, álbum, performance, TV, turnê, clipe, momento cultural ou memória coletiva do passado.
 
 Nostalgia pode vir de:
 
-- uma música que marcou uma geração;
+- música que marcou uma geração;
 - história inesperada por trás de um hit clássico;
 - gravação ou decisão de estúdio;
 - clipe icônico;
@@ -76,20 +130,13 @@ Um acontecimento atual pode servir de gancho secundário quando reacender uma me
 
 Em conflito de seleção de tema para este agendamento, esta regra substitui as preferências de `music-universe-topic-rule.md` que favorecem hype atual, assuntos recentes ou mix obrigatório de atualidade.
 
-As regras de factualidade, duplicidade, qualidade, continuidade e execução de `music-universe-topic-rule.md` continuam valendo.
-
-`templates/live-event-priority-rule.md` NÃO deve forçar um tema de evento atual neste slot. Só use evento/show atual se a melhor história continuar sendo essencialmente nostálgica e centrada em um artista famoso.
+`templates/live-event-priority-rule.md` NÃO deve forçar um tema atual neste slot. Só use evento/show atual se a história continuar essencialmente nostálgica e centrada em artista famoso.
 
 ## 5. Pool e seleção
 
 Monte um pool real de aproximadamente 10–15 candidatas de nostalgia com artistas que já tenham passado pelo hard gate de fama.
 
-Busque variedade entre:
-
-- Brasil e internacional;
-- décadas diferentes;
-- gêneros populares diferentes;
-- histórias sobre música, carreira, show, clipe, estúdio, indústria e cultura pop.
+Busque variedade entre Brasil e internacional, décadas diferentes, gêneros populares diferentes e histórias sobre música, carreira, show, clipe, estúdio, indústria e cultura pop.
 
 Não coloque artista obscuro no pool apenas para completar quantidade.
 
@@ -106,7 +153,9 @@ Avalie cada candidata em 0–10:
 
 Use como orientação:
 
-`NOSTALGIA SCORE = 2.0*S + 2.2*H + 1.8*N + 1.8*R + 1.7*A + 1.2*C + 1.6*F + 0.7*V`
+```text
+NOSTALGIA SCORE = 2.0*S + 2.2*H + 1.8*N + 1.8*R + 1.7*A + 1.2*C + 1.6*F + 0.7*V
+```
 
 Hard gates mínimos:
 
@@ -119,85 +168,71 @@ Hard gates mínimos:
 
 Se o nome não tiver reconhecimento amplo, descarte antes de aprofundar a pesquisa.
 
-Entre duas histórias de força semelhante, prefira:
-
-1. maior reconhecimento imediato do artista;
-2. maior memória afetiva para público amplo;
-3. história mais surpreendente/não óbvia;
-4. melhor disponibilidade de vídeo/foto real da época;
-5. maior potencial natural de comentários como “eu vivi isso”, “essa marcou”, “não sabia dessa”.
+Entre duas histórias de força semelhante, prefira maior reconhecimento imediato do artista, maior memória afetiva, história mais surpreendente, melhor material visual real da época e maior potencial natural de comentários.
 
 ## 6. Repetição e variedade
 
 É permitido voltar ao mesmo artista em episódios futuros se a história central for diferente.
 
-Porém, para o slot de nostalgia:
+Porém:
 
 - evite repetir o mesmo artista nos episódios muito recentes quando houver alternativas fortes;
 - como referência, tente não usar o mesmo artista novamente dentro dos últimos ~14 dias;
 - nunca repita a mesma história/fato central;
 - nunca repita a mesma música como assunto central se ela já tiver episódio equivalente;
-- o duplicate preflight técnico e a checagem editorial por história continuam obrigatórios.
+- o duplicate check continua pesquisando o repositório inteiro, inclusive episódios normais, para evitar conteúdo duplicado entre os dois fluxos.
 
-Essa janela de ~14 dias é preferência editorial, não justificativa para escolher artista menos famoso ou história fraca.
+A janela de ~14 dias é preferência editorial, não justificativa para escolher artista menos famoso ou história fraca.
 
 ## 7. Hook e narrativa
 
-A nostalgia deve aparecer como força emocional do episódio, mas o hook precisa vender a HISTÓRIA, não apenas a lembrança.
+A nostalgia deve aparecer como força emocional, mas o hook precisa vender a HISTÓRIA, não apenas a lembrança.
 
-Evite aberturas genéricas como:
-
-- `Quem lembra de...`;
-- `Essa música marcou uma geração...` sem fato novo;
-- `Hoje vamos relembrar...`;
-- `Você sabia que esse clássico...` quando não há informação forte imediatamente depois.
+Evite aberturas genéricas como `Quem lembra de...`, `Hoje vamos relembrar...` ou nostalgia vazia sem fato forte.
 
 Prefira abrir com artista + fato surpreendente, conflito, decisão, consequência ou contradição.
 
 A narrativa deve seguir aproximadamente:
 
-`fato forte -> contexto mínimo da época -> detalhe inesperado -> consequência -> nova camada -> payoff nostálgico`
+```text
+fato forte -> contexto mínimo da época -> detalhe inesperado -> consequência -> nova camada -> payoff nostálgico
+```
 
 O espectador deve sair com duas sensações: **“eu conheço muito esse artista/música”** e **“eu não sabia dessa história”**.
 
 ## 8. Direção visual específica
 
-A abertura continua obedecendo às regras vigentes do projeto e deve usar vídeo real `exact/direct` quando exigido pela `main`/templates atuais.
+A abertura continua obedecendo às regras vigentes e deve usar vídeo real `exact/direct` quando exigido.
 
-Para nostalgia, dê preferência a visuais que realmente transportem para a época:
+Para nostalgia, dê preferência a material visual real da época: performances, entrevistas antigas, clipes/registros contextuais, fotos históricas, capas, jornais, revistas, documentos, programas de TV, palcos, estúdios e locais diretamente ligados à história.
 
-- performances e entrevistas antigas;
-- clipes e registros contextuais reutilizáveis quando compatíveis;
-- fotos históricas reais;
-- capas, jornais, revistas, documentos e materiais de arquivo;
-- programas de TV, palcos, estúdios e locais diretamente ligados à história;
-- versões antigas do artista quando a história for daquela fase.
+Não use apenas fotos atuais do artista para contar história antiga quando existir material contextual melhor.
 
-Não use apenas fotos atuais do artista para contar uma história antiga quando existir material contextual melhor.
-
-Não force dezenas de fontes/takes. Continue seguindo a regra geral: qualidade, entendimento, retenção e valor informativo acima da quantidade de assets.
+Não force dezenas de fontes/takes. Qualidade, entendimento, retenção e valor informativo ficam acima da quantidade de assets.
 
 ## 9. Brasil x internacional
 
-O slot deve poder alternar livremente entre Brasil e internacional.
-
-A meta global do canal pode continuar sendo consultada como contexto, mas este agendamento NÃO deve escolher artista menos famoso só para fechar quota geográfica.
-
-Grandes nomes brasileiros e internacionais têm prioridade equivalente quando a história e o potencial de audiência forem comparáveis.
+O slot alterna livremente entre Brasil e internacional. A meta global do canal pode ser consultada como contexto, mas este agendamento NÃO deve escolher artista menos famoso só para fechar quota geográfica.
 
 ## 10. Precedência deste agendamento
 
-Quando o agendamento das 12h estiver executando e não houver episódio anterior para retomar, aplique:
+Durante a execução das 12h aplique:
 
 1. `main` para contratos e capacidades técnicas;
-2. `templates/execution-single-episode-rule.md` para identidade e limite de um episódio;
-3. `templates/publishing-completion-rule.md` + `docs/publishing-retry.md` para preflight/publicação/retries;
-4. **esta regra** para pool, fama, nostalgia e escolha de nova candidata;
-5. `templates/music-universe-topic-rule.md` para factualidade, duplicidade por história e estrutura geral, exceto onde esta regra explicitamente substituir hype/atualidade/mix de temas;
+2. `templates/execution-single-episode-rule.md` para uma única chamada/um único slug depois de autorizado;
+3. **esta regra** para isolamento do namespace, continuidade exclusiva `nostalgia_*`, duplicate preflight de nostalgia, fama e seleção editorial;
+4. `templates/publishing-completion-rule.md` + `docs/publishing-retry.md` para media preflight/publicação/retries do `EXECUTION_SLUG` desta chamada;
+5. `templates/music-universe-topic-rule.md` para factualidade, duplicidade por história e estrutura geral, exceto onde esta regra substitui continuidade global, hype, atualidade ou mix;
 6. demais templates/docs para edição, visuais, áudio, legendas, CTA e qualidade.
 
 Regra de ouro deste slot:
 
-`12H = NOSTALGIA MAINSTREAM + ARTISTA MUITO FAMOSO + HISTÓRIA NÃO ÓBVIA + FONTE FORTE`.
+```text
+12H = NOSTALGIA MAINSTREAM + ARTISTA MUITO FAMOSO + HISTÓRIA NÃO ÓBVIA + FONTE FORTE
+NORMAL != NOSTALGIA
+SLUG NORMAL NUNCA BLOQUEIA OU É RETOMADO PELO SLOT DAS 12H
+NOVO EPISÓDIO DAS 12H SEMPRE USA nostalgia_
+UMA CHAMADA = NO MÁXIMO UM EPISÓDIO
+```
 
 Se nenhuma candidata famosa passar pelos gates, retorne `SEM_CANDIDATO`. **Nunca preencha o slot com artista obscuro só para produzir alguma coisa.**
