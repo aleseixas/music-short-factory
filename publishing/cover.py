@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
+import shutil
 import subprocess
+from tempfile import TemporaryDirectory
 from typing import Any, Mapping
 
 from PIL import Image, ImageColor, ImageDraw, ImageFont, ImageOps, UnidentifiedImageError
@@ -33,9 +36,17 @@ def generate_cover(
     cover = post["cover"]
     headline = str(cover["headline"]).strip()
     source = cover["source"]
-    source_path, default_focus, temporary_source = _resolve_source(
-        episode_dir, source, output_path.parent
-    )
+    if source.get("selection") == "auto_first_shot":
+        if source.get("type") != "video_frame" or cover.get("intro_enabled", True):
+            raise RuntimeError("auto_first_shot exige video_frame e intro_enabled=false.")
+        source_path = _resolve_opening_frame(
+            project_root, episode_dir, output_path, config, (width, height)
+        )
+        default_focus, temporary_source = (0.5, 0.5), True
+    else:
+        source_path, default_focus, temporary_source = _resolve_source(
+            episode_dir, source, output_path.parent
+        )
     focus = cover.get("focus", {})
     focus_x = float(focus.get("x", default_focus[0]))
     focus_y = float(focus.get("y", default_focus[1]))
@@ -65,6 +76,92 @@ def generate_cover(
         canvas.save(temporary, format="JPEG", quality=86, optimize=True)
     temporary.replace(output_path)
     return output_path
+
+
+def _resolve_opening_frame(
+    project_root: Path,
+    episode_dir: Path,
+    output_path: Path,
+    config: Mapping[str, Any],
+    size: tuple[int, int],
+) -> Path:
+    """Choose an actual opening-source frame, before burned-in text is applied.
+
+    Resolved timings include best-segment changes and source speed. Restricting
+    quality ranking to this one authored take preserves its narrative meaning.
+    """
+    from engine.best_segment import _exposure_score, _sharpness_score, _subject_visibility
+
+    root = project_root.resolve()
+    work = (root / str(config.get("paths", {}).get("work_dir", "work"))).resolve()
+    if not work.is_relative_to(root):
+        raise RuntimeError("Pasta work da capa precisa ficar dentro do projeto.")
+    plan_path = work / episode_dir.name / "timeline.resolved.json"
+    if not plan_path.is_file():
+        raise RuntimeError("Capa automatica exige o render primeiro: timeline.resolved.json ausente.")
+    resolved = _load_json(plan_path)
+    timeline = _load_json(episode_dir / "timeline.json")
+    catalog = _load_json(episode_dir / "assets.json")
+    scenes, shots = resolved.get("scenes", []), timeline.get("shots", [])
+    if not scenes or not shots:
+        raise RuntimeError("Capa automatica exige um primeiro take resolvido.")
+    opening, authored = scenes[0], shots[0]
+    if opening.get("asset") != authored.get("asset") or opening.get("start_frame") != 0:
+        raise RuntimeError("A timeline resolvida nao corresponde ao primeiro take do episodio.")
+    asset = next((a for a in catalog.get("assets", []) if a.get("id") == opening["asset"]), None)
+    filename = str(asset.get("file", "")) if asset else ""
+    if not filename or Path(filename).name != filename or Path(filename).suffix.lower() not in _VIDEO_SUFFIXES:
+        raise RuntimeError("A capa automatica exige video real no primeiro take.")
+    source = (episode_dir / "assets" / filename).resolve()
+    if not source.is_relative_to((episode_dir / "assets").resolve()) or not source.is_file():
+        raise RuntimeError(f"Video da abertura ausente ou fora do episodio: {source}")
+    if opening.get("freeze_frame") or authored.get("freeze_frame"):
+        raise RuntimeError("O primeiro take da capa automatica nao pode conter freeze_frame.")
+    fps = float(resolved.get("fps", 0))
+    end = float(opening.get("end", 0))
+    speed = float(opening.get("speed", 1))
+    source_start = float(opening.get("source_start_seconds", 0))
+    if not all(math.isfinite(v) for v in (fps, end, speed, source_start)) or min(fps, end, speed) <= 0 or source_start < 0:
+        raise RuntimeError("Tempos invalidos no primeiro take para gerar capa.")
+    # Whole output-frame indices guarantee every sample precedes the next cut.
+    last_frame = min(round(2 * fps), int(opening["end_frame"]) - 1)
+    if last_frame < 0:
+        raise RuntimeError("Primeiro take sem frames para gerar capa.")
+    first_frame = min(max(1, round(.20 * fps)), last_frame)
+    frames = sorted({round(first_frame + (last_frame - first_frame) * i / 6) for i in range(7)})
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    selected_frame = output_path.parent / f".{episode_dir.name}_cover_opening_frame.png"
+    candidates = []
+    with TemporaryDirectory(prefix="msf-cover-opening-") as temporary:
+        best_path, best_score = None, -1.0
+        for index, frame_number in enumerate(frames):
+            timestamp = frame_number / fps
+            source_timestamp = source_start + timestamp * speed
+            candidate = Path(temporary) / f"frame-{index}.png"
+            _extract_frame(source, source_timestamp, candidate)
+            with Image.open(candidate) as opened:
+                fitted = ImageOps.fit(opened.convert("RGB"), size, method=Image.Resampling.LANCZOS)
+                # Reuse the factory's existing technical quality signals. No
+                # face recognition or semantic certainty is inferred here.
+                gray = ImageOps.grayscale(fitted.resize((180, 320)))
+                subject, _ = _subject_visibility(gray, .5, .5)
+                score = .4 * _sharpness_score(gray) + .4 * _exposure_score(gray) + .2 * subject
+                fitted.save(candidate)
+            record = {"timestamp_seconds": round(timestamp, 6),
+                      "source_timestamp_seconds": round(source_timestamp, 6), "score": round(score, 3)}
+            candidates.append(record)
+            if score > best_score:
+                best_path, best_score, chosen = candidate, score, record
+        if best_path is None:
+            raise RuntimeError("Nenhum frame da abertura disponivel para capa.")
+        shutil.copyfile(best_path, selected_frame)
+    report = {"selection": "auto_first_shot", "asset": opening["asset"],
+              "source_file": source.relative_to(episode_dir.resolve()).as_posix(),
+              "first_shot_end_seconds": end, **chosen, "candidates": candidates}
+    output_path.with_suffix(".selection.json").write_text(
+        json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return selected_frame
 
 
 def _resolve_source(

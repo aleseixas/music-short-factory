@@ -4,6 +4,7 @@ from copy import deepcopy
 from collections.abc import Sequence
 from dataclasses import dataclass
 import json
+import math
 from pathlib import Path
 import re
 from typing import Any, Mapping
@@ -307,6 +308,8 @@ def prepare_episode_post(project_root: Path, episode: str) -> PreparedPost:
     cover_path = (project_root / output_dir / f"{episode}_cover.jpg").resolve()
     cover_path.parent.mkdir(parents=True, exist_ok=True)
     generate_cover(project_root, episode_dir, post.data, cover_path)
+    if sync_selected_cover_timestamp(episode_dir, cover_path):
+        post = load_post(post_path)
     previews = {platform: render_platform_text(post.data, platform) for platform in PLATFORMS}
     return PreparedPost(
         episode=episode,
@@ -320,6 +323,8 @@ def prepare_episode_post(project_root: Path, episode: str) -> PreparedPost:
 def _validate_cover(raw: Any, label: str) -> None:
     if not isinstance(raw, Mapping):
         raise RuntimeError(f"post.json precisa conter o objeto 'cover' em {label}.")
+    if not isinstance(raw.get("intro_enabled", True), bool):
+        raise RuntimeError(f"cover.intro_enabled precisa ser booleano em {label}.")
     headline = str(raw.get("headline", "")).strip()
     if not headline:
         raise RuntimeError(f"cover.headline nao pode ficar vazio em {label}.")
@@ -334,19 +339,27 @@ def _validate_cover(raw: Any, label: str) -> None:
     if not isinstance(source, Mapping):
         raise RuntimeError(f"cover.source precisa ser um objeto em {label}.")
     source_type = source.get("type")
+    selection = source.get("selection")
+    if selection is not None and selection != "auto_first_shot":
+        raise RuntimeError(f"cover.source.selection invalida em {label}.")
+    automatic = selection == "auto_first_shot"
+    if automatic and (source_type != "video_frame" or raw.get("intro_enabled", True)):
+        raise RuntimeError(
+            f"auto_first_shot exige source.type=video_frame e intro_enabled=false em {label}."
+        )
     if source_type == "asset":
         asset_id = str(source.get("asset_id", "")).strip()
         if not re.fullmatch(r"[A-Za-z0-9_-]+", asset_id):
             raise RuntimeError(f"cover.source.asset_id invalido em {label}.")
     elif source_type == "video_frame":
-        value = source.get("timestamp_seconds")
+        value = source.get("timestamp_seconds", 0 if automatic else None)
         try:
             timestamp = float(value)
         except (TypeError, ValueError) as exc:
             raise RuntimeError(
                 f"cover.source.timestamp_seconds precisa ser numerico em {label}."
             ) from exc
-        if timestamp < 0:
+        if not math.isfinite(timestamp) or timestamp < 0:
             raise RuntimeError(
                 f"cover.source.timestamp_seconds nao pode ser negativo em {label}."
             )
@@ -366,6 +379,30 @@ def _validate_cover(raw: Any, label: str) -> None:
                 raise RuntimeError(f"cover.focus.{axis} invalido em {label}.") from exc
             if not 0 <= value <= 1:
                 raise RuntimeError(f"cover.focus.{axis} precisa ficar entre 0 e 1 em {label}.")
+
+
+def sync_selected_cover_timestamp(episode_dir: Path, cover_path: Path) -> bool:
+    """Keep platform frame offsets aligned with the automatically chosen cover."""
+    post_path = episode_dir / "post.json"
+    if not post_path.is_file():
+        return False
+    post = _load_json(post_path)
+    cover = post.get("cover")
+    if not isinstance(cover, dict):
+        return False
+    source = cover.get("source")
+    if not isinstance(source, dict) or source.get("selection") != "auto_first_shot":
+        return False
+    selected = _load_json(cover_path.with_suffix(".selection.json"))
+    timestamp = float(selected["timestamp_seconds"])
+    milliseconds = round(timestamp * 1000)
+    source["timestamp_seconds"] = timestamp
+    if isinstance(post.get("instagram"), dict):
+        post["instagram"]["thumb_offset_ms"] = milliseconds
+    if isinstance(post.get("tiktok"), dict):
+        post["tiktok"]["video_cover_timestamp_ms"] = milliseconds
+    _write_json_atomic(post_path, post)
+    return True
 
 
 def _platform_object(data: Mapping[str, Any], platform: str, label: str) -> Mapping[str, Any]:

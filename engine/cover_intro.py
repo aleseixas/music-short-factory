@@ -5,13 +5,34 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from publishing.cover import generate_cover
-from publishing.metadata import build_post_defaults
+from publishing.metadata import build_post_defaults, sync_selected_cover_timestamp
 
 from .config import ProjectConfig
 from .ffmpeg import probe_duration, probe_video_frame_count, run_ffmpeg
+from .models import Episode
 
 
 COVER_INTRO_SECONDS = 0.30
+
+
+def validate_episode_cover_opening(episode: Episode) -> None:
+    """Check the opt-in moving opening before synthesis or rendering."""
+    if not (episode.directory / "post.json").is_file():
+        return
+    post = _load_cover_post(episode.directory)
+    cover = post["cover"]
+    enabled = cover.get("intro_enabled", True)
+    if not isinstance(enabled, bool):
+        raise RuntimeError("cover.intro_enabled precisa ser booleano.")
+    automatic = cover["source"].get("selection") == "auto_first_shot"
+    if automatic and enabled:
+        raise RuntimeError("auto_first_shot exige cover.intro_enabled=false.")
+    if not enabled:
+        opening = episode.shots[0]
+        if not episode.assets[opening.asset_id].is_video:
+            raise RuntimeError("A abertura sem capa estatica exige video no primeiro take.")
+        if opening.freeze_frame is not None:
+            raise RuntimeError("O primeiro take da abertura em video nao pode ter freeze_frame.")
 
 
 def embed_episode_cover_intro(
@@ -21,7 +42,7 @@ def embed_episode_cover_intro(
     config: ProjectConfig,
     duration_seconds: float = COVER_INTRO_SECONDS,
 ) -> tuple[Path, Path, float]:
-    """Generate the episode cover and prepend it to the rendered MP4.
+    """Generate the cover and, by default, prepend it to the rendered MP4.
 
     The intro is intentionally short and silent. The existing rendered video is
     appended after it as a complete A/V unit, so narration, music, SFX and all
@@ -31,6 +52,10 @@ def embed_episode_cover_intro(
     post = _load_cover_post(episode_dir)
     cover_path = video_path.with_name(f"{episode_dir.name}_cover.jpg")
     generate_cover(project_root, episode_dir, post, cover_path)
+    sync_selected_cover_timestamp(episode_dir, cover_path)
+
+    if post["cover"].get("intro_enabled", True) is False:
+        return video_path, cover_path, 0.0
 
     fps = config.render.fps
     intro_frames = max(1, round(duration_seconds * fps))

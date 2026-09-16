@@ -9,7 +9,7 @@ from .audio import resolve_audio, validate_audio_duration
 from .best_segment import select_best_segments_safely
 from .captions import create_highlight_overlay, write_ass_captions
 from .config import load_project_config, load_style_config
-from .cover_intro import embed_episode_cover_intro
+from .cover_intro import embed_episode_cover_intro, validate_episode_cover_opening
 from .episode import load_episode
 from .editorial import load_editorial_catalogs, validate_editorial_direction
 from .ffmpeg import preflight
@@ -63,6 +63,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         episode.name,
         cache_root,
     )
+    validate_episode_cover_opening(episode)
     work_dir = _reset_episode_work_dir(project_root, work_root, episode.name)
     audio_cache_dir = _safe_project_child(
         project_root,
@@ -357,7 +358,7 @@ async def build_video(project_root: Path, episode_name: str) -> Path:
         background_music=background_music,
         sfx_cues=sfx_cues,
     )
-    print("[capa] gerando capa e incorporando abertura padrao...")
+    print("[capa] gerando capa e aplicando configuracao da abertura...")
     output, cover_path, cover_duration = embed_episode_cover_intro(
         project_root,
         episode.directory,
