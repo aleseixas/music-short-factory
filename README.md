@@ -32,6 +32,12 @@ A autoria segue três passadas principais:
 
 O contrato editorial completo está em [`docs/editorial-direction.md`](docs/editorial-direction.md), e o prompt operacional em [`templates/editorial-direction-prompt.md`](templates/editorial-direction-prompt.md).
 
+Episódios HERO podem herdar uma direção visual do artista: adicione
+`"artist_vibe": "taylor_swift"` ao `story.json`, ou use `"auto"` junto de `artist`.
+O perfil orienta busca, ranking por trecho, ritmo, textos e capa, preservando as
+escolhas explícitas da timeline. Episódios sem esse campo mantêm o comportamento
+anterior. Veja o [contrato de artist vibe](docs/artist-vibe.md).
+
 ## Requisitos
 
 - Python 3.10 ou mais recente;
