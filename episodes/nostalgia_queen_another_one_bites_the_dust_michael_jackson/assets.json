@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-rY0WxgSXdEE-hook.mp4","url":"https://www.youtube.com/watch?v=rY0WxgSXdEE","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"deacon_visual","file":"youtube-OdurVND-DSs-deacon.mp4","url":"https://www.youtube.com/watch?v=OdurVND-DSs","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"roger_visual","file":"youtube-x3SlTBOfMww-roger.mp4","url":"https://www.youtube.com/watch?v=x3SlTBOfMww","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"michael_visual","file":"youtube-5X-Mrc2l1d0-michael.mp4","url":"https://www.youtube.com/watch?v=5X-Mrc2l1d0","credit":"Michael Jackson Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"freddie_visual","file":"youtube-rY0WxgSXdEE-freddie.mp4","url":"https://www.youtube.com/watch?v=rY0WxgSXdEE","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"release_visual","file":"youtube-x3SlTBOfMww-release.mp4","url":"https://www.youtube.com/watch?v=x3SlTBOfMww","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.43}},
+    {"id":"impact_visual","file":"youtube-OdurVND-DSs-impact.mp4","url":"https://www.youtube.com/watch?v=OdurVND-DSs","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff_visual","file":"youtube-5X-Mrc2l1d0-payoff.mp4","url":"https://www.youtube.com/watch?v=5X-Mrc2l1d0","credit":"Michael Jackson Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"cta_visual","file":"youtube-rY0WxgSXdEE-cta.mp4","url":"https://www.youtube.com/watch?v=rY0WxgSXdEE","credit":"Queen Official / YouTube","license":"","focus":{"x":0.5,"y":0.42}}
+  ]
+}
