@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "pitty_sobremesa_recomeco",
+  "recorded_at": "2026-09-17T11:34:46Z",
+  "visual_usage": [
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_hook",
+      "asset_id": "pitty_open",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c7713b02f9876993d072d6f63058332c0d5d49c72e80ff4a6eabce087f70b032",
+        "url_hashes": [
+          "4c00fe27719bed54e046b3a76024a1efc3afb28a239102b49ebb3d9371b5d650"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "900fd6f04af70877",
+          "85524ab1e61fcd33",
+          "813c56a97e07d947",
+          "853be55e1be649a0",
+          "8638fd6a1de05d8a",
+          "861dee4f10e49fb0",
+          "df17c01986f8b38c",
+          "941ee74b0ee13ea8"
+        ],
+        "source_start_seconds": 4.0,
+        "source_duration_seconds": 8.6
+      }
+    },
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_hiato",
+      "asset_id": "pitty_2007",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8d57111bf02a33a9fce885b75a8ad894022cf9121b4e799ee782f755163ff107",
+        "url_hashes": [
+          "ba37987978e0310f859a209e5d4746f2ece9eb0e3128202caa8711fc9fa4a526"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c9933e6e6e3c3032",
+          "d3d92d2536363a49",
+          "dcff3160260c279e",
+          "ffff000080d67f31",
+          "c0633d9c2f9c722d",
+          "cead3373cc187146",
+          "9364499b6d999a6c",
+          "f3fb0d0e0605935b"
+        ],
+        "source_start_seconds": 28.0,
+        "source_duration_seconds": 11.333333
+      }
+    },
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_mudancas",
+      "asset_id": "pitty_4",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c7713b02f9876993d072d6f63058332c0d5d49c72e80ff4a6eabce087f70b032",
+        "url_hashes": [
+          "4c00fe27719bed54e046b3a76024a1efc3afb28a239102b49ebb3d9371b5d650"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a03ec1335ec338cf",
+          "b514e17ec126d92e",
+          "9629879679016ff1",
+          "993cba45d9037da2",
+          "991e87f885235cb9",
+          "9384f1f0c7a9d48b",
+          "9dc2fbf4a04d9641",
+          "ccc0a35cb34fb847"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 7.7
+      }
+    },
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_producao",
+      "asset_id": "pitty_live",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8d57111bf02a33a9fce885b75a8ad894022cf9121b4e799ee782f755163ff107",
+        "url_hashes": [
+          "ba37987978e0310f859a209e5d4746f2ece9eb0e3128202caa8711fc9fa4a526"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8a1736aa5d6c2b55",
+          "c32c1fe3649b2ec1",
+          "8c337bce94334acc",
+          "a4565aa9552e6d4e",
+          "b5a5294a5a5a5aad",
+          "9c8b63748c8bc576",
+          "92396cc6b31671c7",
+          "94376dc9325e6591"
+        ],
+        "source_start_seconds": 52.0,
+        "source_duration_seconds": 11.5
+      }
+    },
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_sobremesa",
+      "asset_id": "pitty_3",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "43f19c89ed9f15897bee2e2a7b3f643e352811699757733a8b4919594147fd08",
+        "url_hashes": [
+          "2909cbe14854d73814c2d28dc2f3facc4a3e69ce5b182d88a7e28c656e478707"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "96586d835aa65db1",
+          "d33e6cc19bc23cb0",
+          "d165269af92c16cb",
+          "a5a55a5aada5345a",
+          "96736a85b542cab9",
+          "967b6a95316a8ab1",
+          "96966b6b84b5694a",
+          "96966b6925b4694b"
+        ],
+        "source_start_seconds": 60.0,
+        "source_duration_seconds": 9.2
+      }
+    },
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_payoff",
+      "asset_id": "pitty_estante",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "43f19c89ed9f15897bee2e2a7b3f643e352811699757733a8b4919594147fd08",
+        "url_hashes": [
+          "2909cbe14854d73814c2d28dc2f3facc4a3e69ce5b182d88a7e28c656e478707"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "929669696d9b6435",
+          "9c62239d6cb62dd8",
+          "c770399e66a938c6",
+          "c57f3ec0791ed030",
+          "c0331fc83f8fe053",
+          "c64931f64c966b95",
+          "c36c3493cc876d99",
+          "c36c389b6c837791"
+        ],
+        "source_start_seconds": 88.0,
+        "source_duration_seconds": 9.333333
+      }
+    },
+    {
+      "episode": "pitty_sobremesa_recomeco",
+      "shot_id": "shot_cta",
+      "asset_id": "pitty_2",
+      "recorded_at": "2026-09-17T11:34:46Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c7713b02f9876993d072d6f63058332c0d5d49c72e80ff4a6eabce087f70b032",
+        "url_hashes": [
+          "4c00fe27719bed54e046b3a76024a1efc3afb28a239102b49ebb3d9371b5d650"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9367986e9169bc23",
+          "bc12a57a944bfc29",
+          "bd887220ddf3249b",
+          "bd80621dda2709fb",
+          "bb806609e67f10e7",
+          "a999e6760999f624",
+          "a4987365ce377388",
+          "a999746b88345b9b"
+        ],
+        "source_start_seconds": 105.0,
+        "source_duration_seconds": 4.066667
+      }
+    }
+  ]
+}
