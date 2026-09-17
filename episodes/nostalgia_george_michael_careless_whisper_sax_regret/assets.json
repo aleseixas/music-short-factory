@@ -3,104 +3,83 @@
   "assets": [
     {
       "id": "cta_visual",
-      "file": "youtube-zwtnCErn0I8.mp4",
-      "url": "https://www.youtube.com/watch?v=zwtnCErn0I8",
-      "credit": "George Michael / YouTube",
+      "file": "youtube-izGwDsrQ1eQ.mp4",
+      "url": "https://www.youtube.com/watch?v=izGwDsrQ1eQ",
+      "credit": "George Michael Official Artist Channel / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "hook_visual",
       "file": "youtube-zwtnCErn0I8.mp4",
+      "url": "https://www.youtube.com/watch?v=zwtnCErn0I8",
       "credit": "George Michael / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "origem_visual",
       "file": "youtube-zwtnCErn0I8.mp4",
+      "url": "https://www.youtube.com/watch?v=zwtnCErn0I8",
       "credit": "George Michael / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "wexler_visual",
       "file": "youtube-zwtnCErn0I8.mp4",
+      "url": "https://www.youtube.com/watch?v=zwtnCErn0I8",
       "credit": "George Michael / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "busca_visual",
       "file": "youtube-qNzEBprHJAo.mp4",
+      "url": "https://www.youtube.com/watch?v=qNzEBprHJAo",
       "credit": "Rock in Rio 1991 archive / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "problema_visual",
       "file": "youtube-qNzEBprHJAo.mp4",
+      "url": "https://www.youtube.com/watch?v=qNzEBprHJAo",
       "credit": "Rock in Rio 1991 archive / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "truque_visual",
       "file": "youtube-PNdVt-3FCKQ.mp4",
+      "url": "https://www.youtube.com/watch?v=PNdVt-3FCKQ",
       "credit": "Filtr Music / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "resultado_visual",
       "file": "youtube-PNdVt-3FCKQ.mp4",
+      "url": "https://www.youtube.com/watch?v=PNdVt-3FCKQ",
       "credit": "Filtr Music / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "brasil_visual",
       "file": "youtube-qNzEBprHJAo.mp4",
+      "url": "https://www.youtube.com/watch?v=qNzEBprHJAo",
       "credit": "Rock in Rio 1991 archive / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "payoff_visual",
       "file": "youtube-PNdVt-3FCKQ.mp4",
+      "url": "https://www.youtube.com/watch?v=PNdVt-3FCKQ",
       "credit": "Filtr Music / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     }
   ]
 }
