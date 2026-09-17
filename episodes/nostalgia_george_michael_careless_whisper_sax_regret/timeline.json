@@ -112,7 +112,7 @@
       "asset": "truque_visual",
       "motion": "hold",
       "transition_out": "crossfade",
-      "source_start_seconds": 92.0
+      "source_start_seconds": 5.0
     },
     {
       "id": "shot_07",
@@ -120,7 +120,7 @@
       "asset": "resultado_visual",
       "motion": "push_in",
       "transition_out": "cut",
-      "source_start_seconds": 124.0
+      "source_start_seconds": 15.0
     },
     {
       "id": "shot_08",
@@ -136,7 +136,7 @@
       "asset": "payoff_visual",
       "motion": "pull_out",
       "transition_out": "crossfade",
-      "source_start_seconds": 95.0
+      "source_start_seconds": 25.0
     },
     {
       "id": "shot_10",

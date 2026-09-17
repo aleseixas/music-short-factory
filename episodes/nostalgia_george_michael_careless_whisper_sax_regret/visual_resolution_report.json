@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
-  "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+  "recorded_at": "2026-09-17T15:13:21.116181+00:00",
   "visual_usage_stage": "candidate_resolution",
   "visual_usage": [
     {
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_01",
       "asset_id": "hook_visual",
-      "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
@@ -34,7 +34,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_02",
       "asset_id": "origem_visual",
-      "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
@@ -60,7 +60,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_03",
       "asset_id": "wexler_visual",
-      "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
@@ -86,7 +86,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_04",
       "asset_id": "busca_visual",
-      "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
@@ -110,9 +110,87 @@
     },
     {
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_05",
+      "asset_id": "problema_visual",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
+        "url_hashes": [
+          "cb3c0339525fe1bff79b601d54163b6ff2ed3108b3b767da44c02dfa46a97a9c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "895c6ea1ac623fa6",
+          "89586ea1e4627fa6",
+          "89506ea3e5623fa6",
+          "89586ea1dd533d26",
+          "89586ea3c5632fa6",
+          "c44a63bcc678a733",
+          "c64f70bf5368b130",
+          "c24d7897d96cb518"
+        ],
+        "source_start_seconds": 42.0,
+        "source_duration_seconds": 8.35
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_06",
+      "asset_id": "truque_visual",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
+        "url_hashes": [
+          "f9db86876ead3c7d2a8b27120b62072b8ed047c64e3f49c8469a250b0ead2648"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95315c4bcb9a259e",
+          "8d67706a9ba4354d",
+          "8d5a30f5dae87470",
+          "c86e319bcfc0292f",
+          "9c6bb46b8c9a6592",
+          "9b4e254d9a9568b5",
+          "cec4647e88ef6486",
+          "9657294a969d366c"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 8.35
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_07",
+      "asset_id": "resultado_visual",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
+        "url_hashes": [
+          "f9db86876ead3c7d2a8b27120b62072b8ed047c64e3f49c8469a250b0ead2648"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9d63344b9f4e3170",
+          "9d63344a9b4c31dd",
+          "9d6335489bce6135",
+          "ce7334c89b4631b9",
+          "8f78344b9966613d",
+          "9c6334c89b4631f7",
+          "9c5b35489b4e61b9",
+          "c06f3f30999c60f3"
+        ],
+        "source_start_seconds": 15.0,
+        "source_duration_seconds": 8.35
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_08",
       "asset_id": "brasil_visual",
-      "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
@@ -136,28 +214,28 @@
     },
     {
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
-      "shot_id": "shot_10",
-      "asset_id": "cta_visual",
-      "recorded_at": "2026-09-17T15:07:01.925270+00:00",
+      "shot_id": "shot_09",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
       "fingerprint": {
         "kind": "video",
-        "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
+        "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
         "url_hashes": [
-          "cb3c0339525fe1bff79b601d54163b6ff2ed3108b3b767da44c02dfa46a97a9c"
+          "f9db86876ead3c7d2a8b27120b62072b8ed047c64e3f49c8469a250b0ead2648"
         ],
         "perceptual_hashes": [],
         "video_frame_hashes": [
-          "956cdb6964916c93",
-          "916cd26b6c936c93",
-          "936cd24b2c9b6d92",
-          "9564db4b64996c93",
-          "9566db4964996e91",
-          "956cdb6924996c93",
-          "956cda69259b6493",
-          "976832cbb5916d92"
+          "cccc63379f716064",
+          "a7b43451cfa9e618",
+          "f166203ecfc07571",
+          "cb2c35e89e1a65f0",
+          "998b626eaca5654e",
+          "e0f0273f9cc6253c",
+          "d09f696985b43d70",
+          "886f7450df8d2578"
         ],
-        "source_start_seconds": 125.0,
-        "source_duration_seconds": 5.35
+        "source_start_seconds": 25.0,
+        "source_duration_seconds": 8.35
       }
     }
   ],
@@ -282,22 +360,91 @@
       "source_end_seconds": null
     },
     "problema_visual": {
-      "status": "kept_existing_asset",
+      "status": "selected",
+      "selection_mode": "eligible",
       "kind": "video",
-      "visual_score": 85.0,
-      "reason": "no_render_safe_candidate"
+      "name": "qNzEBprHJAo",
+      "visual_score": 52.47,
+      "selection_score": 78.11,
+      "repetition": {
+        "is_repeated": false,
+        "repetition_detected": false,
+        "penalty": 0.0,
+        "score_adjustment": 0.0,
+        "blocked": false,
+        "reason_codes": [],
+        "matches": [],
+        "warnings": []
+      },
+      "downgraded_for_repetition": false,
+      "width": 632,
+      "height": 480,
+      "duration_seconds": 445.978867,
+      "fps": 29.97002997002997,
+      "opening_motion_score": 38.83,
+      "motion_score": 61.88,
+      "practically_static": false,
+      "warnings": [],
+      "source_start_seconds": 42.0,
+      "source_end_seconds": null
     },
     "truque_visual": {
-      "status": "kept_existing_asset",
+      "status": "selected",
+      "selection_mode": "eligible",
       "kind": "video",
-      "visual_score": null,
-      "reason": "no_render_safe_candidate"
+      "name": "PNdVt-3FCKQ",
+      "visual_score": 86.32,
+      "selection_score": 96.57,
+      "repetition": {
+        "is_repeated": false,
+        "repetition_detected": false,
+        "penalty": 0.0,
+        "score_adjustment": 0.0,
+        "blocked": false,
+        "reason_codes": [],
+        "matches": [],
+        "warnings": []
+      },
+      "downgraded_for_repetition": false,
+      "width": 1080,
+      "height": 1920,
+      "duration_seconds": 44.8,
+      "fps": 30.0,
+      "opening_motion_score": 41.78,
+      "motion_score": 62.8,
+      "practically_static": false,
+      "warnings": [],
+      "source_start_seconds": 5.0,
+      "source_end_seconds": null
     },
     "resultado_visual": {
-      "status": "kept_existing_asset",
+      "status": "selected",
+      "selection_mode": "eligible",
       "kind": "video",
-      "visual_score": null,
-      "reason": "no_render_safe_candidate"
+      "name": "PNdVt-3FCKQ",
+      "visual_score": 80.37,
+      "selection_score": 85.08,
+      "repetition": {
+        "is_repeated": false,
+        "repetition_detected": false,
+        "penalty": 0.0,
+        "score_adjustment": 0.0,
+        "blocked": false,
+        "reason_codes": [],
+        "matches": [],
+        "warnings": []
+      },
+      "downgraded_for_repetition": false,
+      "width": 1080,
+      "height": 1920,
+      "duration_seconds": 44.8,
+      "fps": 30.0,
+      "opening_motion_score": 29.89,
+      "motion_score": 37.7,
+      "practically_static": false,
+      "warnings": [],
+      "source_start_seconds": 15.0,
+      "source_end_seconds": null
     },
     "brasil_visual": {
       "status": "selected",
@@ -305,7 +452,7 @@
       "kind": "video",
       "name": "qNzEBprHJAo",
       "visual_score": 50.66,
-      "selection_score": 77.66,
+      "selection_score": 67.66,
       "repetition": {
         "is_repeated": false,
         "repetition_detected": false,
@@ -329,18 +476,12 @@
       "source_end_seconds": null
     },
     "payoff_visual": {
-      "status": "kept_existing_asset",
-      "kind": "video",
-      "visual_score": 85.0,
-      "reason": "no_render_safe_candidate"
-    },
-    "cta_visual": {
       "status": "selected",
-      "selection_mode": "best_same_kind_fallback",
+      "selection_mode": "eligible",
       "kind": "video",
-      "name": "qNzEBprHJAo",
-      "visual_score": 44.36,
-      "selection_score": 66.09,
+      "name": "PNdVt-3FCKQ",
+      "visual_score": 99.5,
+      "selection_score": 79.87,
       "repetition": {
         "is_repeated": false,
         "repetition_detected": false,
@@ -352,18 +493,22 @@
         "warnings": []
       },
       "downgraded_for_repetition": false,
-      "width": 632,
-      "height": 480,
-      "duration_seconds": 445.978867,
-      "fps": 29.97002997002997,
-      "opening_motion_score": 23.21,
-      "motion_score": 27.28,
+      "width": 1080,
+      "height": 1920,
+      "duration_seconds": 44.8,
+      "fps": 30.0,
+      "opening_motion_score": 100.0,
+      "motion_score": 97.23,
       "practically_static": false,
-      "warnings": [
-        "score_below_45.0"
-      ],
-      "source_start_seconds": 125.0,
+      "warnings": [],
+      "source_start_seconds": 25.0,
       "source_end_seconds": null
+    },
+    "cta_visual": {
+      "status": "kept_existing_asset",
+      "kind": "video",
+      "visual_score": null,
+      "reason": "no_render_safe_candidate"
     }
   },
   "candidate_scores": {
@@ -532,11 +677,51 @@
     "problema_visual": [
       {
         "candidate_index": 1,
+        "name": "qNzEBprHJAo",
+        "kind": "video",
+        "visual_score": 52.47,
+        "selection_score": 78.11,
+        "technical_selection_score": 52.47,
+        "semantic_fit": "exact",
+        "semantic_rank": 3,
+        "repetition": {
+          "is_repeated": false,
+          "repetition_detected": false,
+          "penalty": 0.0,
+          "score_adjustment": 0.0,
+          "blocked": false,
+          "reason_codes": [],
+          "matches": [],
+          "warnings": []
+        },
+        "downgraded_for_repetition": false,
+        "rights_status": "unknown",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 632,
+        "height": 480,
+        "duration_seconds": 445.978867,
+        "fps": 29.97002997002997,
+        "opening_motion_score": 38.83,
+        "motion_score": 61.88,
+        "practically_static": false,
+        "trim_safe": true,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1,
+        "selection_score_before_episode_reuse_penalty": 88.11,
+        "current_episode_reuse_count": 1,
+        "current_episode_reuse_penalty": -10.0
+      }
+    ],
+    "truque_visual": [
+      {
+        "candidate_index": 1,
         "name": "PNdVt-3FCKQ",
         "kind": "video",
-        "visual_score": 40.0,
-        "selection_score": 85.0,
-        "technical_selection_score": 40.0,
+        "visual_score": 86.32,
+        "selection_score": 96.57,
+        "technical_selection_score": 86.32,
         "semantic_fit": "exact",
         "semantic_rank": 3,
         "repetition": {
@@ -557,31 +742,65 @@
         "height": 1920,
         "duration_seconds": 44.8,
         "fps": 30.0,
-        "opening_motion_score": 44.53,
-        "motion_score": 44.53,
+        "opening_motion_score": 41.78,
+        "motion_score": 62.8,
         "practically_static": false,
-        "trim_safe": false,
-        "eligible_for_auto_selection": false,
-        "warnings": [
-          "score_below_45.0",
-          "unsafe_trim",
-          "Fingerprint do trecho requer duracao de shot/trim seguro; comparacao por URL mantida."
-        ],
+        "trim_safe": true,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
         "editorial_rank": 1,
-        "selection_score_before_episode_reuse_penalty": 85.0,
+        "selection_score_before_episode_reuse_penalty": 96.57,
         "current_episode_reuse_count": 0,
         "current_episode_reuse_penalty": -0.0
       }
     ],
-    "truque_visual": [],
-    "resultado_visual": [],
+    "resultado_visual": [
+      {
+        "candidate_index": 1,
+        "name": "PNdVt-3FCKQ",
+        "kind": "video",
+        "visual_score": 80.37,
+        "selection_score": 85.08,
+        "technical_selection_score": 80.37,
+        "semantic_fit": "exact",
+        "semantic_rank": 3,
+        "repetition": {
+          "is_repeated": false,
+          "repetition_detected": false,
+          "penalty": 0.0,
+          "score_adjustment": 0.0,
+          "blocked": false,
+          "reason_codes": [],
+          "matches": [],
+          "warnings": []
+        },
+        "downgraded_for_repetition": false,
+        "rights_status": "unknown",
+        "rights_rank_adjustment": 0.0,
+        "rights_blocks_selection": false,
+        "width": 1080,
+        "height": 1920,
+        "duration_seconds": 44.8,
+        "fps": 30.0,
+        "opening_motion_score": 29.89,
+        "motion_score": 37.7,
+        "practically_static": false,
+        "trim_safe": true,
+        "eligible_for_auto_selection": true,
+        "warnings": [],
+        "editorial_rank": 1,
+        "selection_score_before_episode_reuse_penalty": 95.08,
+        "current_episode_reuse_count": 1,
+        "current_episode_reuse_penalty": -10.0
+      }
+    ],
     "brasil_visual": [
       {
         "candidate_index": 1,
         "name": "qNzEBprHJAo",
         "kind": "video",
         "visual_score": 50.66,
-        "selection_score": 77.66,
+        "selection_score": 67.66,
         "technical_selection_score": 50.66,
         "semantic_fit": "exact",
         "semantic_rank": 3,
@@ -611,8 +830,8 @@
         "warnings": [],
         "editorial_rank": 1,
         "selection_score_before_episode_reuse_penalty": 87.66,
-        "current_episode_reuse_count": 1,
-        "current_episode_reuse_penalty": -10.0
+        "current_episode_reuse_count": 2,
+        "current_episode_reuse_penalty": -20.0
       }
     ],
     "payoff_visual": [
@@ -620,9 +839,9 @@
         "candidate_index": 1,
         "name": "PNdVt-3FCKQ",
         "kind": "video",
-        "visual_score": 40.0,
-        "selection_score": 85.0,
-        "technical_selection_score": 40.0,
+        "visual_score": 99.5,
+        "selection_score": 79.87,
+        "technical_selection_score": 99.5,
         "semantic_fit": "exact",
         "semantic_rank": 3,
         "repetition": {
@@ -643,68 +862,21 @@
         "height": 1920,
         "duration_seconds": 44.8,
         "fps": 30.0,
-        "opening_motion_score": null,
-        "motion_score": null,
-        "practically_static": null,
-        "trim_safe": false,
-        "eligible_for_auto_selection": false,
-        "warnings": [
-          "score_below_45.0",
-          "unsafe_trim",
-          "Analise de movimento web indisponivel (RuntimeError); o candidato continua valido.",
-          "Fingerprint do trecho requer duracao de shot/trim seguro; comparacao por URL mantida."
-        ],
-        "editorial_rank": 1,
-        "selection_score_before_episode_reuse_penalty": 85.0,
-        "current_episode_reuse_count": 0,
-        "current_episode_reuse_penalty": -0.0
-      }
-    ],
-    "cta_visual": [
-      {
-        "candidate_index": 1,
-        "name": "qNzEBprHJAo",
-        "kind": "video",
-        "visual_score": 44.36,
-        "selection_score": 66.09,
-        "technical_selection_score": 44.36,
-        "semantic_fit": "exact",
-        "semantic_rank": 3,
-        "repetition": {
-          "is_repeated": false,
-          "repetition_detected": false,
-          "penalty": 0.0,
-          "score_adjustment": 0.0,
-          "blocked": false,
-          "reason_codes": [],
-          "matches": [],
-          "warnings": []
-        },
-        "downgraded_for_repetition": false,
-        "rights_status": "unknown",
-        "rights_rank_adjustment": 0.0,
-        "rights_blocks_selection": false,
-        "width": 632,
-        "height": 480,
-        "duration_seconds": 445.978867,
-        "fps": 29.97002997002997,
-        "opening_motion_score": 23.21,
-        "motion_score": 27.28,
+        "opening_motion_score": 100.0,
+        "motion_score": 97.23,
         "practically_static": false,
         "trim_safe": true,
-        "eligible_for_auto_selection": false,
-        "warnings": [
-          "score_below_45.0"
-        ],
+        "eligible_for_auto_selection": true,
+        "warnings": [],
         "editorial_rank": 1,
-        "selection_score_before_episode_reuse_penalty": 86.09,
+        "selection_score_before_episode_reuse_penalty": 99.87,
         "current_episode_reuse_count": 2,
         "current_episode_reuse_penalty": -20.0
       }
-    ]
+    ],
+    "cta_visual": []
   },
   "inspection_failures": [
-    "truque_visual[1]: video_source_reuse_limit",
-    "resultado_visual[1]: video_source_reuse_limit"
+    "cta_visual[1]: video_source_reuse_limit"
   ]
 }
