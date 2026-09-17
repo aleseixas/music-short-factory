@@ -1,109 +1,15 @@
 {
   "schema_version": 1,
   "assets": [
-    {
-      "id": "problema_visual",
-      "file": "youtube-PNdVt-3FCKQ-problema.mp4",
-      "url": "https://www.youtube.com/watch?v=PNdVt-3FCKQ",
-      "credit": "Filtr Music / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.44
-      }
-    },
-    {
-      "id": "truque_visual",
-      "file": "youtube-zwtnCErn0I8-truque.mp4",
-      "url": "https://www.youtube.com/watch?v=zwtnCErn0I8",
-      "credit": "George Michael / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.43
-      }
-    },
-    {
-      "id": "resultado_visual",
-      "file": "youtube-zwtnCErn0I8-resultado.mp4",
-      "url": "https://www.youtube.com/watch?v=zwtnCErn0I8",
-      "credit": "George Michael / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.4
-      }
-    },
-    {
-      "id": "payoff_visual",
-      "file": "youtube-PNdVt-3FCKQ-payoff.mp4",
-      "url": "https://www.youtube.com/watch?v=PNdVt-3FCKQ",
-      "credit": "Filtr Music / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.42
-      }
-    },
-    {
-      "id": "hook_visual",
-      "file": "youtube-zwtnCErn0I8.mp4",
-      "credit": "George Michael / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "id": "origem_visual",
-      "file": "youtube-zwtnCErn0I8.mp4",
-      "credit": "George Michael / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "id": "wexler_visual",
-      "file": "youtube-zwtnCErn0I8.mp4",
-      "credit": "George Michael / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "id": "busca_visual",
-      "file": "youtube-qNzEBprHJAo.mp4",
-      "credit": "Rock in Rio 1991 archive / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "id": "brasil_visual",
-      "file": "youtube-qNzEBprHJAo.mp4",
-      "credit": "Rock in Rio 1991 archive / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    },
-    {
-      "id": "cta_visual",
-      "file": "youtube-qNzEBprHJAo.mp4",
-      "credit": "Rock in Rio 1991 archive / YouTube",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
-    }
+    {"id":"hook_visual","file":"youtube-zwtnCErn0I8.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"origem_visual","file":"youtube-zwtnCErn0I8.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"wexler_visual","file":"youtube-zwtnCErn0I8.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"busca_visual","file":"youtube-qNzEBprHJAo.mp4","url":"https://www.youtube.com/watch?v=qNzEBprHJAo","credit":"Rock in Rio 1991 archive / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"problema_visual","file":"youtube-PNdVt-3FCKQ.mp4","url":"https://www.youtube.com/watch?v=PNdVt-3FCKQ","credit":"Filtr Music / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"truque_visual","file":"youtube-PNdVt-3FCKQ.mp4","url":"https://www.youtube.com/watch?v=PNdVt-3FCKQ","credit":"Filtr Music / YouTube","license":"","focus":{"x":0.5,"y":0.43}},
+    {"id":"resultado_visual","file":"youtube-PNdVt-3FCKQ.mp4","url":"https://www.youtube.com/watch?v=PNdVt-3FCKQ","credit":"Filtr Music / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"brasil_visual","file":"youtube-qNzEBprHJAo.mp4","url":"https://www.youtube.com/watch?v=qNzEBprHJAo","credit":"Rock in Rio 1991 archive / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff_visual","file":"youtube-PNdVt-3FCKQ.mp4","url":"https://www.youtube.com/watch?v=PNdVt-3FCKQ","credit":"Filtr Music / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"cta_visual","file":"youtube-zwtnCErn0I8.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
   ]
 }
