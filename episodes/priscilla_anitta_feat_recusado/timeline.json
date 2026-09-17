@@ -1,24 +1,16 @@
 {
-  "schema_version": 1,
+  "schema_version":1,
   "smart_visual_pacing":{"enabled":true},
   "background_music":{"profile":"hiphop_groove","volume":0.10},
-  "sfx_cues":[
-    {"time_seconds":0.10,"type":"impact","volume":0.14},
-    {"time_seconds":20.0,"type":"whoosh_fast","volume":0.10},
-    {"time_seconds":31.0,"type":"correct_ding","volume":0.11}
-  ],
-  "text_fx_cues":[
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"ANITTA DISSE NÃO","accent_text":"DISSE NÃO","animation":"scale_bounce","position":"center","intensity":0.58},
-    {"segment":"resposta","offset_seconds":0.1,"duration_seconds":1.1,"text":"NÃO AMEI A MÚSICA","accent_text":"NÃO AMEI","animation":"pop_in","position":"center","intensity":0.55},
-    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"SINCERIDADE OU CLIMÃO?","accent_text":"SINCERIDADE","animation":"pop_in","position":"center","intensity":0.48}
-  ],
+  "sfx_cues":[{"time_seconds":0.10,"type":"impact","volume":0.14},{"time_seconds":20.0,"type":"whoosh_fast","volume":0.10},{"time_seconds":31.0,"type":"correct_ding","volume":0.11}],
+  "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"ANITTA DISSE NÃO","accent_text":"DISSE NÃO","animation":"scale_bounce","position":"center","intensity":0.58},{"segment":"resposta","offset_seconds":0.1,"duration_seconds":1.1,"text":"NÃO AMEI A MÚSICA","accent_text":"NÃO AMEI","animation":"pop_in","position":"center","intensity":0.55},{"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"SINCERIDADE OU CLIMÃO?","accent_text":"SINCERIDADE","animation":"pop_in","position":"center","intensity":0.48}],
   "shots":[
-    {"id":"shot_hook","segment":"hook","asset":"priscilla_tvz","motion":"push_in","transition_out":"cut","highlight":"ANITTA RECUSOU O FEAT"},
+    {"id":"shot_hook","segment":"hook","asset":"hook_video","motion":"push_in","transition_out":"cut","highlight":"ANITTA RECUSOU O FEAT"},
     {"id":"shot_convite","segment":"convite","asset":"priscilla_2018","motion":"push_in","transition_out":"crossfade","highlight":"MEU SANTO ME GUARDE"},
     {"id":"shot_envio","segment":"envio","asset":"priscilla_tvz","motion":"pull_out","transition_out":"cut","highlight":"O CONVITE FOI ENVIADO"},
     {"id":"shot_resposta","segment":"resposta","asset":"priscilla_2010","motion":"push_in","transition_out":"cut","highlight":"ANITTA: NÃO AMOU"},
-    {"id":"shot_reacao","segment":"reacao","asset":"priscilla_tvz","motion":"hold","transition_out":"crossfade","highlight":"SEM TRETA"},
-    {"id":"shot_payoff","segment":"payoff","asset":"priscilla_2018","motion":"pull_out","transition_out":"cut","highlight":"BASTIDOR DE UM NÃO"},
-    {"id":"shot_cta","segment":"cta","asset":"priscilla_2010","motion":"push_in","transition_out":"cut","highlight":"SINCERIDADE OU CLIMÃO?"}
+    {"id":"shot_reacao","segment":"reacao","asset":"priscilla_festival_77","motion":"hold","transition_out":"crossfade","highlight":"SEM TRETA"},
+    {"id":"shot_payoff","segment":"payoff","asset":"priscilla_festival_78","motion":"pull_out","transition_out":"cut","highlight":"BASTIDOR DE UM NÃO"},
+    {"id":"shot_cta","segment":"cta","asset":"priscilla_festival_82","motion":"push_in","transition_out":"cut","highlight":"SINCERIDADE OU CLIMÃO?"}
   ]
 }
