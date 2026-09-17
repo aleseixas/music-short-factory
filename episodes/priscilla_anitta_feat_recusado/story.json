@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "Anitta recusou um feat de Priscilla porque não amou a música",
+  "slug": "priscilla_anitta_feat_recusado",
+  "target_duration_seconds": 58,
+  "segments": [
+    {"id":"hook","text":"Anitta recusou gravar com Priscilla por um motivo bem direto: ela ouviu a música e disse que não amou.","delivery":"hook"},
+    {"id":"convite","text":"Priscilla contou que as duas já tinham conversado sobre fazer uma parceria e, quando nasceu Meu Santo Me Guarde, ela achou que tinha encontrado a faixa certa.","delivery":"curious"},
+    {"id":"envio","text":"Então ela mandou a música para Anitta com o convite do feat.","delivery":"neutral"},
+    {"id":"resposta","text":"Só que a resposta veio sem enrolação: segundo Priscilla, Anitta falou que não tinha amado a canção.","delivery":"reveal"},
+    {"id":"reacao","text":"E o mais curioso é que Priscilla não transformou isso em treta. Ela contou a história rindo e tratou a sinceridade da Anitta com bom humor.","delivery":"curious"},
+    {"id":"payoff","text":"No fim, o feat não aconteceu, mas a recusa virou um bastidor raro de como artistas grandes também dizem não quando a música simplesmente não encaixa.","delivery":"payoff"},
+    {"id":"cta","text":"Você preferia sinceridade assim? Comenta.","delivery":"curious"}
+  ]
+}
