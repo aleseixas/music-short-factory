@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+  "recorded_at": "2026-09-17T15:47:56Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
+        "url_hashes": [
+          "c9175f3479e32a2b9a5955c7cbf10b8a916a3897551bdd560fee656dd981e595"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e2af1df2195e0278",
+          "e83e1fc8377d0341",
+          "ed3802cf185e537a",
+          "ef1414eb1a565378",
+          "ff3402cf1852636d",
+          "c1193efe00e1395f",
+          "e6391eef31e0240f",
+          "9c69659762166b99"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 8.7
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_02",
+      "asset_id": "origem_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
+        "url_hashes": [
+          "c9175f3479e32a2b9a5955c7cbf10b8a916a3897551bdd560fee656dd981e595"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "91b5664b6e2c703e",
+          "ea9a1943676c3c17",
+          "c56b329a08ed7693",
+          "d1832e7d2c3e5907",
+          "a46353973dbd3098",
+          "bb2446d932a66c79",
+          "d9b7004c666a3ef1",
+          "dfbc20603a4f36d8"
+        ],
+        "source_start_seconds": 32.0,
+        "source_duration_seconds": 11.8
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_03",
+      "asset_id": "wexler_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
+        "url_hashes": [
+          "c9175f3479e32a2b9a5955c7cbf10b8a916a3897551bdd560fee656dd981e595"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f6865978035f2e98",
+          "a5b3585c074d76b8",
+          "eaac55532c5a7983",
+          "a8ad5f52611e3b45",
+          "87ca78751a9d466c",
+          "ac9f5367741a407c",
+          "ac9f5b75750a2864",
+          "b9944623666b4dda"
+        ],
+        "source_start_seconds": 58.0,
+        "source_duration_seconds": 12.233333
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_04",
+      "asset_id": "busca_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
+        "url_hashes": [
+          "cb3c0339525fe1bff79b601d54163b6ff2ed3108b3b767da44c02dfa46a97a9c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8779d26f9832c718",
+          "823d5fe09b3fc418",
+          "e061066ebd37c738",
+          "e42f0bf0942fc5b8",
+          "c03f0ed2de2dc0da",
+          "c92f26d09c3fc2d8",
+          "c93726c0983fe1d9",
+          "c93662c99c37e199"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 12.066667
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_05",
+      "asset_id": "problema_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
+        "url_hashes": [
+          "cb3c0339525fe1bff79b601d54163b6ff2ed3108b3b767da44c02dfa46a97a9c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "895c6ea1ac623fa6",
+          "89506ea3e4627fa6",
+          "8b506e23cd627fa4",
+          "8b506ea3cd633d26",
+          "c55a67b0c670a637",
+          "c64b70bed368b530",
+          "c24d7897596cb51a",
+          "f26d3893402f979a"
+        ],
+        "source_start_seconds": 42.0,
+        "source_duration_seconds": 9.766667
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_06",
+      "asset_id": "truque_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
+        "url_hashes": [
+          "f9db86876ead3c7d2a8b27120b62072b8ed047c64e3f49c8469a250b0ead2648"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95315c6bcb9a259c",
+          "8b5634629fd43574",
+          "965a6da9d2ac2553",
+          "934a254a9b766db1",
+          "9a4721499ab469bf",
+          "945f696acaa53196",
+          "9d52254b9e4c31f6",
+          "9967641b9b4c3371"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 10.433333
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_07",
+      "asset_id": "resultado_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
+        "url_hashes": [
+          "f9db86876ead3c7d2a8b27120b62072b8ed047c64e3f49c8469a250b0ead2648"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9d63344b9b463176",
+          "9d63344b9b4c31b5",
+          "8f7935c899c6613c",
+          "8f7334c89b4631b9",
+          "dc6234c89bc661f5",
+          "9c7335489b4631bd",
+          "e0672f388d8e7471",
+          "9a4d6572cc8932f9"
+        ],
+        "source_start_seconds": 15.0,
+        "source_duration_seconds": 9.7
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_08",
+      "asset_id": "brasil_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
+        "url_hashes": [
+          "cb3c0339525fe1bff79b601d54163b6ff2ed3108b3b767da44c02dfa46a97a9c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c3647c9a9e632c87",
+          "c36d2dba9c632887",
+          "c36d39b21c6f208f",
+          "c26d79b2186f209f",
+          "c36c79b21c636c87",
+          "c22d79b2186f289f",
+          "c44a7ab5396609be",
+          "8d5a722733587ab1"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 10.5
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_09",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
+        "url_hashes": [
+          "f9db86876ead3c7d2a8b27120b62072b8ed047c64e3f49c8469a250b0ead2648"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c9c863379f736064",
+          "87b43453cce9663a",
+          "c04d3f719f9d6046",
+          "cb2c35e19e0965f8",
+          "cccc70739a71219f",
+          "c3c83c39931f7871",
+          "c9c86464d39b372d",
+          "837c614f98937467"
+        ],
+        "source_start_seconds": 25.0,
+        "source_duration_seconds": 8.0
+      }
+    },
+    {
+      "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
+      "shot_id": "shot_10",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-17T15:47:56Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9b35cfb0650d2d75c79034caee9b1e98942c4ef3291fbdb74d85f7a2ac1f0c58",
+        "url_hashes": [
+          "b5c67ff07e06d43598586049abd154f1b7c8cf7e1cbab2aff808b4fdca511c8d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f19306465ae1eb4b",
+          "c193166653d36b4b",
+          "ccb3827643d3714b",
+          "d9b233466671c966",
+          "cc2f73443338d933",
+          "d93e63cc66319266",
+          "cc2f73cc3330c473",
+          "cc27f2983334c733"
+        ],
+        "source_start_seconds": 125.0,
+        "source_duration_seconds": 4.9
+      }
+    }
+  ]
+}
