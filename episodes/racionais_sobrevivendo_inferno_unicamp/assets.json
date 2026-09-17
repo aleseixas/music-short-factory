@@ -1,12 +1,75 @@
 {
-  "schema_version":1,
-  "assets":[
-    {"id":"racionais_open","file":"racionais_open.mp4","url":"https://www.youtube.com/watch?v=IaQWmNkqkSg","credit":"Mano Brown / Roda Viva / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
-    {"id":"racionais_album","file":"racionais_album.mp4","url":"https://www.youtube.com/watch?v=pCAi6MhVLxA","credit":"Racionais MC's / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"racionais_unicamp","file":"racionais_unicamp.mp4","url":"https://www.youtube.com/watch?v=gMT9cXizDYQ","credit":"Mano Brown / Le Monde Diplomatique Brasil / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
-    {"id":"racionais_primeiro","file":"racionais_primeiro.mp4","url":"https://www.youtube.com/watch?v=RP0VDttGZQQ","credit":"Racionais MC's - Diário de um Detento / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"racionais_livro","file":"racionais_livro.mp4","url":"https://www.youtube.com/watch?v=sMF62jwfNL0","credit":"Sobrevivendo no Inferno - análise / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"racionais_payoff","file":"racionais_payoff.mp4","url":"https://www.youtube.com/watch?v=IaQWmNkqkSg","credit":"Mano Brown / Roda Viva / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
-    {"id":"racionais_cta","file":"racionais_cta.mp4","url":"https://www.youtube.com/watch?v=RP0VDttGZQQ","credit":"Racionais MC's - Diário de um Detento / YouTube","license":"","focus":{"x":0.5,"y":0.45}}
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "racionais_open",
+      "file": "youtube-gMT9cXizDYQ.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "racionais_album",
+      "file": "youtube-RP0VDttGZQQ.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "racionais_unicamp",
+      "file": "youtube-IaQWmNkqkSg.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "racionais_primeiro",
+      "file": "youtube-RP0VDttGZQQ.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "racionais_livro",
+      "file": "youtube-sMF62jwfNL0.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "racionais_payoff",
+      "file": "youtube-M3-yW6G_6AY.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "racionais_cta",
+      "file": "youtube-RP0VDttGZQQ.mp4",
+      "credit": "youtube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
   ]
 }
