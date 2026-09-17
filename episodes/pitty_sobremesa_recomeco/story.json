@@ -1,0 +1,15 @@
+{
+  "schema_version":1,
+  "title":"Pitty transformou dois anos de terapia no disco mais pessoal da nova fase",
+  "slug":"pitty_sobremesa_recomeco",
+  "target_duration_seconds":62,
+  "segments":[
+    {"id":"hook","text":"Pitty resumiu o novo disco de um jeito brutalmente íntimo: foram dois anos de terapia transformados em música.","delivery":"hook"},
+    {"id":"hiato","text":"E isso pesa porque ela não lança um álbum inteiro de inéditas desde Matriz, de 2019. Agora, aos 48, ela decidiu voltar sem fingir que nada mudou.","delivery":"curious"},
+    {"id":"mudancas","text":"Nesse intervalo vieram maternidade, separação e a experiência de envelhecer sendo uma mulher do rock brasileiro.","delivery":"dramatic"},
+    {"id":"producao","text":"O detalhe mais forte é que Pitty assumiu sozinha a produção do álbum. Em vez de terceirizar a direção, ela colocou a própria cabeça no centro do processo.","delivery":"reveal"},
+    {"id":"sobremesa","text":"A primeira amostra é Sobremesa, single marcado para 18 de setembro. A faixa abre uma era que ela própria descreve como recomeço.","delivery":"curious"},
+    {"id":"payoff","text":"Então o retorno não é só nostalgia de Admirável Chip Novo. É Pitty tentando descobrir como soar como ela mesma depois de mudar por dentro.","delivery":"payoff"},
+    {"id":"cta","text":"Qual fase da Pitty é a sua favorita? Comenta.","delivery":"curious"}
+  ]
+}
