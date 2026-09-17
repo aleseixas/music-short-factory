@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "racionais_sobrevivendo_inferno_unicamp",
+  "recorded_at": "2026-09-17T22:19:03Z",
+  "visual_usage": [
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_hook",
+      "asset_id": "racionais_open",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d53c9337c345c343a66f698a3a7eea90d3ddd0c5c8da077343da42a328ed1389",
+        "url_hashes": [
+          "89385b339f95df596a0e30f05902330824e3f5081c9cd2a8a75c74561d14203d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "94a2195cebb37c49",
+          "94a3195ceba3dc49",
+          "94b3194ce9b37c49",
+          "95b30c4cd9bb6c49",
+          "94a2195cfba37c49",
+          "94a2195cfba33c69",
+          "96a3195cfb839c49",
+          "94a2195cfba39d49"
+        ],
+        "source_start_seconds": 6.5065,
+        "source_duration_seconds": 9.0
+      }
+    },
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_disco",
+      "asset_id": "racionais_album",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "34fa5efc4d9a8c2a04db772e355cbf8ba5284c6c3848ee1fd9e42a150cb9fe24",
+        "url_hashes": [
+          "838b325411e686a6c4d62c1ad75b953084ebadb47267205e158f9755ef513dd4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1c3c870bc6f478d",
+          "c1c1b0b6c7b461ed",
+          "c1c1b0b6c3b465ed",
+          "c1c1b0b6c3b06ded",
+          "c1c1b0b6c7b065ed",
+          "85b88787907e6b1b",
+          "84b3a48e4f617a4f",
+          "95334e486b6bbc91"
+        ],
+        "source_start_seconds": 30.0,
+        "source_duration_seconds": 12.633333
+      }
+    },
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_virada",
+      "asset_id": "racionais_unicamp",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "68b0dd80ab64b7db8dd5474113b0d940f0f872164fc53e6d5cf89d7107910727",
+        "url_hashes": [
+          "f9a571dc69f9c06ebe99632fd5b6adf37842fcf203ef0d27220ca84f6660930c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c139e57a846e64a7",
+          "d139e17a846f2ca6",
+          "c039e57e906730e7",
+          "c038e57a9463b4e7",
+          "c138e57a946334f3",
+          "c138e57a9463b467",
+          "94c36f309bcc6666",
+          "94c16f309bcc6676"
+        ],
+        "source_start_seconds": 3250.0,
+        "source_duration_seconds": 11.1
+      }
+    },
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_inedito",
+      "asset_id": "racionais_primeiro",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "34fa5efc4d9a8c2a04db772e355cbf8ba5284c6c3848ee1fd9e42a150cb9fe24",
+        "url_hashes": [
+          "838b325411e686a6c4d62c1ad75b953084ebadb47267205e158f9755ef513dd4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9386da2d3572326d",
+          "c5c4721e0fe2385f",
+          "85c9727a1f876338",
+          "943c6c4bc3726e4b",
+          "94bc6c6bc362586b",
+          "c19ce0e176e01dfc",
+          "c19cc2e12f761e8d",
+          "d095c3e03f630f5c"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 11.4
+      }
+    },
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_livro",
+      "asset_id": "racionais_livro",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "7bb6b768b98bac028e4e5d400a68a0dd139aa99e934131c8470bc795d1f1710c",
+        "url_hashes": [
+          "8dea24211c143c1c7a8374c9d9e8b711f92d8e83be358cb19b1184475cc7a0ed"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dbd2cc696d8d248c",
+          "d6cd4d962c28b663",
+          "c5ca343a36a74bb1",
+          "999cda72127b6919",
+          "9c9e72336925a764",
+          "d3831b5b9bb47049",
+          "d293039b9f3a3c94",
+          "d1d949099efc196c"
+        ],
+        "source_start_seconds": 12.0,
+        "source_duration_seconds": 10.533333
+      }
+    },
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_payoff",
+      "asset_id": "racionais_payoff",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0492ad57cde8b3c2cbdc1fa6fe21968905f3725803f71b05f951848a66ee6f2a",
+        "url_hashes": [
+          "6e4e88e94d936da329c20ad531c95bcc31032a704cfa677111c3b5474cf6dc6b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c6d639296d06b6d2",
+          "c6d739294d06b2d3",
+          "c7d338296506b2f3",
+          "c6d639294d0cb2f3",
+          "f0f30f0e0d35b8e2",
+          "f1f30f0a0d75b0e2",
+          "e1e71e180d3de2e2",
+          "f1e50e0a0cf5f1e2"
+        ],
+        "source_start_seconds": 90.0,
+        "source_duration_seconds": 9.3
+      }
+    },
+    {
+      "episode": "racionais_sobrevivendo_inferno_unicamp",
+      "shot_id": "shot_cta",
+      "asset_id": "racionais_cta",
+      "recorded_at": "2026-09-17T22:19:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "34fa5efc4d9a8c2a04db772e355cbf8ba5284c6c3848ee1fd9e42a150cb9fe24",
+        "url_hashes": [
+          "838b325411e686a6c4d62c1ad75b953084ebadb47267205e158f9755ef513dd4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "84bd8594c6da4e73",
+          "852d8d95a1f15b4e",
+          "9129adb5a1e59369",
+          "9139a5b5a1f1534e",
+          "952da5b5b5a5924c",
+          "943d9595d4da4e4a",
+          "c0c0c99f133fe8ad",
+          "849897b3b44b5ba5"
+        ],
+        "source_start_seconds": 150.0,
+        "source_duration_seconds": 3.766667
+      }
+    }
+  ]
+}
