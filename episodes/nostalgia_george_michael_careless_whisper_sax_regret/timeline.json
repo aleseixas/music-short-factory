@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"external_iris_sincere_love","volume":0.1},
+  "sfx_cues": [
+    {"time_seconds":0.1,"type":"impact","volume":0.14},
+    {"time_seconds":28.0,"type":"record_scratch","volume":0.1},
+    {"time_seconds":45.0,"type":"whoosh_fast","volume":0.1},
+    {"time_seconds":61.0,"type":"ding","volume":0.1}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.68},
+    {"start_seconds":44.5,"end_seconds":45.4,"type":"slow_zoom_in","intensity":0.45}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.1,"text":"O SAX NÃO ESTAVA CERTO","accent_text":"NÃO ESTAVA CERTO","animation":"scale_bounce","position":"center","intensity":0.82},
+    {"segment":"truque","offset_seconds":0.15,"duration_seconds":1.0,"text":"A FITA DESCEU MEIO TOM","accent_text":"MEIO TOM","animation":"pop_in","position":"center","intensity":0.76}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_02","segment":"origem","asset":"origem_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":32.0},
+    {"id":"shot_03","segment":"wexler","asset":"wexler_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":58.0},
+    {"id":"shot_04","segment":"busca","asset":"busca_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":18.0},
+    {"id":"shot_05","segment":"problema","asset":"problema_visual","motion":"push_in","transition_out":"cut","source_start_seconds":42.0},
+    {"id":"shot_06","segment":"truque","asset":"truque_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":92.0},
+    {"id":"shot_07","segment":"resultado","asset":"resultado_visual","motion":"push_in","transition_out":"cut","source_start_seconds":124.0},
+    {"id":"shot_08","segment":"brasil","asset":"brasil_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":70.0},
+    {"id":"shot_09","segment":"payoff","asset":"payoff_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":95.0},
+    {"id":"shot_10","segment":"cta","asset":"cta_visual","motion":"hold","transition_out":"cut","source_start_seconds":125.0}
+  ]
+}
