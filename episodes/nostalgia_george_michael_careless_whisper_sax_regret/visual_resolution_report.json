@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
-  "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+  "recorded_at": "2026-09-17T15:31:08.707882+00:00",
   "visual_usage_stage": "candidate_resolution",
   "visual_usage": [
     {
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_01",
       "asset_id": "hook_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
@@ -34,7 +34,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_02",
       "asset_id": "origem_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
@@ -60,7 +60,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_03",
       "asset_id": "wexler_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "a262e4af51151deefb25c44964ff9537ae94f6c14d95a7a514cbdff090bd8f82",
@@ -86,7 +86,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_04",
       "asset_id": "busca_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
@@ -112,7 +112,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_05",
       "asset_id": "problema_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
@@ -138,7 +138,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_06",
       "asset_id": "truque_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
@@ -164,7 +164,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_07",
       "asset_id": "resultado_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
@@ -190,7 +190,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_08",
       "asset_id": "brasil_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "cdb5dd775f93ebc880b08dfa33055a39f3ac932be9247a4d3625b7fd62975e1d",
@@ -216,7 +216,7 @@
       "episode": "nostalgia_george_michael_careless_whisper_sax_regret",
       "shot_id": "shot_09",
       "asset_id": "payoff_visual",
-      "recorded_at": "2026-09-17T15:13:21.116181+00:00",
+      "recorded_at": "2026-09-17T15:31:08.707882+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "f1992f3541e155588f84a16e69523f955e0eb363cfbcaca084c629f24a7f3bdc",
@@ -877,6 +877,6 @@
     "cta_visual": []
   },
   "inspection_failures": [
-    "cta_visual[1]: video_source_reuse_limit"
+    "cta_visual[1]: yt-dlp falhou ao obter o video id=8HVIJ3bRjO8: ERROR: [youtube] 8HVIJ3bRjO8: This video is unavailable | caused_by: ERROR: [youtube] 8HVIJ3bRjO8: This video is unavailable | caused_by: [youtube] 8HVIJ3bRjO8: This video is unavailable"
   ]
 }
