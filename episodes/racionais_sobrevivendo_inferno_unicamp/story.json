@@ -1,0 +1,15 @@
+{
+  "schema_version":1,
+  "title":"O disco dos Racionais que virou leitura obrigatória da Unicamp",
+  "slug":"racionais_sobrevivendo_inferno_unicamp",
+  "target_duration_seconds":65,
+  "segments":[
+    {"id":"hook","text":"Racionais MC's fizeram um disco de rap que, vinte anos depois, entrou na lista de leitura obrigatória da Unicamp como poesia.","delivery":"hook"},
+    {"id":"disco","text":"Sobrevivendo no Inferno saiu de forma independente em 1997 e transformou violência, racismo, fé e sobrevivência na periferia em uma narrativa que marcou o rap brasileiro.","delivery":"curious"},
+    {"id":"virada","text":"Em 2018 veio a virada improvável: a Unicamp colocou o álbum entre as obras do vestibular 2020, ao lado de autores como Camões e Ana Cristina Cesar.","delivery":"reveal"},
+    {"id":"inedito","text":"Era a primeira vez que um disco de música entrava como leitura recomendada para a prova. Ou seja: as letras passaram a ser estudadas oficialmente como texto literário.","delivery":"dramatic"},
+    {"id":"livro","text":"A decisão teve outra consequência. Ainda em 2018, Sobrevivendo no Inferno ganhou edição em livro, com as letras organizadas como poemas e uma introdução crítica sobre a obra.","delivery":"reveal"},
+    {"id":"payoff","text":"Um álbum criado fora do circuito tradicional acabou atravessando a fronteira entre rap, literatura e universidade sem deixar de falar da realidade que o originou.","delivery":"payoff"},
+    {"id":"cta","text":"Você estudaria Racionais para um vestibular? Comenta.","delivery":"curious"}
+  ]
+}
