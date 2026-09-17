@@ -1,16 +1,117 @@
 {
-  "schema_version":1,
-  "smart_visual_pacing":{"enabled":true},
-  "background_music":{"profile":"fallback_social_urban","volume":0.10},
-  "sfx_cues":[{"time_seconds":0.1,"type":"impact","volume":0.14},{"time_seconds":27.0,"type":"whoosh_fast","volume":0.10},{"time_seconds":42.0,"type":"correct_ding","volume":0.11}],
-  "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"2 ANOS DE TERAPIA","accent_text":"TERAPIA","animation":"scale_bounce","position":"center","intensity":0.58},{"segment":"producao","offset_seconds":0.1,"duration_seconds":1.1,"text":"PRODUÇÃO: PITTY","accent_text":"PITTY","animation":"pop_in","position":"center","intensity":0.52},{"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"QUAL FASE É A MELHOR?","accent_text":"MELHOR","animation":"pop_in","position":"center","intensity":0.46}],
-  "shots":[
-    {"id":"shot_hook","segment":"hook","asset":"pitty_open","motion":"push_in","transition_out":"cut","highlight":"DOIS ANOS DE TERAPIA"},
-    {"id":"shot_hiato","segment":"hiato","asset":"pitty_2007","motion":"push_in","transition_out":"crossfade","highlight":"DESDE MATRIZ, 2019"},
-    {"id":"shot_mudancas","segment":"mudancas","asset":"pitty_4","motion":"pull_out","transition_out":"cut","highlight":"MUDANÇAS REAIS"},
-    {"id":"shot_producao","segment":"producao","asset":"pitty_live","motion":"push_in","transition_out":"cut","highlight":"ELA PRODUZIU O DISCO"},
-    {"id":"shot_sobremesa","segment":"sobremesa","asset":"pitty_3","motion":"hold","transition_out":"crossfade","highlight":"SOBREMESA — 18/09"},
-    {"id":"shot_payoff","segment":"payoff","asset":"pitty_estante","motion":"pull_out","transition_out":"cut","highlight":"NÃO É SÓ NOSTALGIA"},
-    {"id":"shot_cta","segment":"cta","asset":"pitty_2","motion":"push_in","transition_out":"cut","highlight":"QUAL FASE DA PITTY?"}
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_oke_funkhouser",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.1,
+      "type": "impact",
+      "volume": 0.14
+    },
+    {
+      "time_seconds": 27.0,
+      "type": "whoosh_fast",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 42.0,
+      "type": "correct_ding",
+      "volume": 0.11
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "2 ANOS DE TERAPIA",
+      "accent_text": "TERAPIA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.58
+    },
+    {
+      "segment": "producao",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "PRODUÇÃO: PITTY",
+      "accent_text": "PITTY",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.52
+    },
+    {
+      "segment": "cta",
+      "offset_seconds": 0.05,
+      "duration_seconds": 1.1,
+      "text": "QUAL FASE É A MELHOR?",
+      "accent_text": "MELHOR",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.46
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "pitty_open",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "DOIS ANOS DE TERAPIA"
+    },
+    {
+      "id": "shot_hiato",
+      "segment": "hiato",
+      "asset": "pitty_2007",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "DESDE MATRIZ, 2019"
+    },
+    {
+      "id": "shot_mudancas",
+      "segment": "mudancas",
+      "asset": "pitty_4",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "MUDANÇAS REAIS"
+    },
+    {
+      "id": "shot_producao",
+      "segment": "producao",
+      "asset": "pitty_live",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "ELA PRODUZIU O DISCO"
+    },
+    {
+      "id": "shot_sobremesa",
+      "segment": "sobremesa",
+      "asset": "pitty_3",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "highlight": "SOBREMESA — 18/09"
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "pitty_estante",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "NÃO É SÓ NOSTALGIA"
+    },
+    {
+      "id": "shot_cta",
+      "segment": "cta",
+      "asset": "pitty_2",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "QUAL FASE DA PITTY?"
+    }
   ]
 }
