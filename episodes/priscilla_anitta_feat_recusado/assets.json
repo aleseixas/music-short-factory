@@ -1,8 +1,12 @@
 {
-  "schema_version": 1,
-  "assets": [
+  "schema_version":1,
+  "assets":[
+    {"id":"hook_video","file":"music_street_barcelona.webm","url":"https://upload.wikimedia.org/wikipedia/commons/a/ae/Music_in_the_street%2C_Barcelona_01.webm","credit":"Nicolas Vigier / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}},
     {"id":"priscilla_2018","file":"priscilla_asu_2018.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20Alcantara%20-%20ASU%202018.png","credit":"Priscilla Alcantara / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"priscilla_tvz","file":"priscilla_tvz_2024.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20-%20TVZ%202024%20%281%29.png","credit":"Multishow / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.42}},
     {"id":"priscilla_2010","file":"priscilla_alcantara.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20Alc%C3%A2ntara.jpg","credit":"JucaIceland / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.42}},
-    {"id":"priscilla_tvz","file":"priscilla_tvz_2024.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20-%20TVZ%202024%20%281%29.png","credit":"Multishow / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.42}}
+    {"id":"priscilla_festival_77","file":"priscilla_festival_77.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Festival%20Alterna%20Olinda%202018%20-%2077.jpg","credit":"Wikimedia Commons","license":"CC license per Commons","focus":{"x":0.5,"y":0.42}},
+    {"id":"priscilla_festival_78","file":"priscilla_festival_78.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Festival%20Alterna%20Olinda%202018%20-%2078.jpg","credit":"Wikimedia Commons","license":"CC license per Commons","focus":{"x":0.5,"y":0.42}},
+    {"id":"priscilla_festival_82","file":"priscilla_festival_82.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Festival%20Alterna%20Olinda%202018%20-%2082.jpg","credit":"Wikimedia Commons","license":"CC license per Commons","focus":{"x":0.5,"y":0.42}}
   ]
 }
