@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "title": "George Michael rejeitou várias versões do sax de Careless Whisper até um truque de fita criar o som definitivo",
+  "slug": "nostalgia_george_michael_careless_whisper_sax_regret",
+  "target_duration_seconds": 76,
+  "segments": [
+    {"id":"hook","text":"George Michael quase enlouqueceu o estúdio por causa do sax de Careless Whisper: vários músicos tentaram, e ele continuava ouvindo que faltava alguma coisa.","delivery":"hook"},
+    {"id":"origem","text":"O mais doido é que a melodia já existia na cabeça dele desde a adolescência. George contou que a ideia apareceu numa viagem de ônibus e ficou meses sendo lapidada mentalmente.","delivery":"curious"},
+    {"id":"wexler","text":"Em 1983, ele gravou uma versão com o lendário produtor Jerry Wexler e o saxofonista Tom Scott. Tecnicamente estava ótima. George ouviu e decidiu refazer tudo.","delivery":"dramatic"},
+    {"id":"busca","text":"De volta a Londres, começou a busca pelo sax que ele imaginava. Relatos variam na contagem, mas Steve Gregory lembra que, quando chegou ao estúdio, George o chamou de número nove.","delivery":"curious"},
+    {"id":"problema","text":"Só que Gregory encontrou um problema: no sax tenor dele, a nota mais aguda exigia uma digitação alternativa e não saía com a fluidez que a frase precisava.","delivery":"dramatic"},
+    {"id":"truque","text":"A solução foi engenhosa: baixar a fita meio tom, gravar o sax numa tonalidade mais confortável e depois devolver a gravação à velocidade original.","delivery":"reveal"},
+    {"id":"resultado","text":"Quando George entrou e ouviu o playback, finalmente era aquilo. Esse truque ajudou a criar uma das introduções de sax mais reconhecíveis do pop.","delivery":"reveal"},
+    {"id":"brasil","text":"E no Brasil essa música ganhou outra memória gigante: George cantou Careless Whisper no Rock in Rio de 1991, diante de uma geração inteira.","delivery":"emotional"},
+    {"id":"payoff","text":"Pensa nisso: um som que parece inevitável hoje só existe daquele jeito porque George se recusou a aceitar uma versão quase certa.","delivery":"payoff"},
+    {"id":"cta","text":"Manda isso pra quem reconhece esse sax em dois segundos.","delivery":"payoff"}
+  ]
+}
