@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "episode": "priscilla_anitta_feat_recusado",
+  "recorded_at": "2026-09-17T01:28:49Z",
+  "visual_usage": [
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_hook",
+      "asset_id": "hook_video",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "082b402d951d34c93639eeb2082edc3da4aff6059671e97b8b1fd19c1272da3f",
+        "url_hashes": [
+          "4fa36f356e0777cef949f9964672e2d4081000c53b849084c157f5fcc8d5f4e5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dcf621b3b2824b78",
+          "d8f42333b2a66b58",
+          "dce623b3b2a26b48",
+          "d8f42333b2a25b78",
+          "d8fc2133b3826b78",
+          "dcfc2131b3923378",
+          "dcdc2121b5963379",
+          "dcdc0d617096c66e"
+        ],
+        "source_start_seconds": 4.0,
+        "source_duration_seconds": 7.5
+      }
+    },
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_convite",
+      "asset_id": "priscilla_2018",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a8ed6cbee31c0c9c3543edc557141dc31b919af61b16efdc8fe508d7a5419602",
+        "url_hashes": [
+          "f0c2ba84c936ab1abec2c21d3c4aec3e0254da616998fdc5763f1440b043a7be"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "983d4231b6cb3756",
+          "9c3d423196cb3756",
+          "9e3d4239b6c90756",
+          "9e354e39b6c90716",
+          "9e3d423996cb0756",
+          "983d423996cbc71e",
+          "993d4039b6cb075e",
+          "993dc039b6cb0756"
+        ],
+        "source_start_seconds": 65.0,
+        "source_duration_seconds": 8.133333
+      }
+    },
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_envio",
+      "asset_id": "priscilla_tvz",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "a8ed6cbee31c0c9c3543edc557141dc31b919af61b16efdc8fe508d7a5419602",
+        "url_hashes": [
+          "f0c2ba84c936ab1abec2c21d3c4aec3e0254da616998fdc5763f1440b043a7be"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8db18c2b738c72a7",
+          "8db1042b73ac72b7",
+          "8db1042b73ac72b7",
+          "8db1842a73ac72b7",
+          "8db18c2a738c72af",
+          "8db18c2a738c72af",
+          "8db18c2a738c76a7",
+          "8db18c2a738c72af"
+        ],
+        "source_start_seconds": 82.0,
+        "source_duration_seconds": 3.4
+      }
+    },
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_resposta",
+      "asset_id": "priscilla_2010",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "082b402d951d34c93639eeb2082edc3da4aff6059671e97b8b1fd19c1272da3f",
+        "url_hashes": [
+          "4fa36f356e0777cef949f9964672e2d4081000c53b849084c157f5fcc8d5f4e5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d8c0656f66466e6c",
+          "dcdc3097d302ce59",
+          "dcdc3017f352cc58",
+          "dedc2106d6465d59",
+          "dcdc2537d646445c",
+          "dcdc3035d352565c",
+          "d8d82535f203577c",
+          "dcdc3031dd11137e"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 7.1
+      }
+    },
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_reacao",
+      "asset_id": "priscilla_festival_77",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "88d05e6549b032ae835a373bb92258a8e9b392f9d513a0da92870772501f8379",
+        "url_hashes": [
+          "293140903eb7391a3fdb55cca585d4021092cc3264482c33d17e7f4891f01af8"
+        ],
+        "perceptual_hashes": [
+          "cc6b333359a4964d",
+          "cc6a317359a5d649",
+          "cc4a317359b55a2b",
+          "99742656ab9d1aa9",
+          "9b59336c5452ae55",
+          "c32d384cb6c347d3",
+          "c2610fb2596cb2eb"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_payoff",
+      "asset_id": "priscilla_festival_78",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "082b402d951d34c93639eeb2082edc3da4aff6059671e97b8b1fd19c1272da3f",
+        "url_hashes": [
+          "4fa36f356e0777cef949f9964672e2d4081000c53b849084c157f5fcc8d5f4e5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dcfc2591c817da4c",
+          "dedf2192ce565248",
+          "d8fc25937696405b",
+          "dcdc25237096067f",
+          "dcde6115d6e65058",
+          "dede6195d2d61848",
+          "c955c36b0de62e25",
+          "dcde6135d666304a"
+        ],
+        "source_start_seconds": 34.0,
+        "source_duration_seconds": 9.266667
+      }
+    },
+    {
+      "episode": "priscilla_anitta_feat_recusado",
+      "shot_id": "shot_cta",
+      "asset_id": "priscilla_festival_82",
+      "recorded_at": "2026-09-17T01:28:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "71d8323d67da2a541daa66e45ce7e3a1b2ff461a5fae2b7e2d818ca39180dece",
+        "url_hashes": [
+          "dfd0c38c470fa449b8b067ffccca776ecdcf1bb1e3ea1387234eaec3c1357beb"
+        ],
+        "perceptual_hashes": [
+          "c26f715033982c7f",
+          "c26f7964339830db",
+          "c2637964739c319b",
+          "8d6e7365b1335849",
+          "854c72996f7c492d",
+          "d1243f398f1f2163",
+          "d9602cc77250e73b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
