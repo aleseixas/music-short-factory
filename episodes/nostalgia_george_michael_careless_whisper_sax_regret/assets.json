@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"youtube-zwtnCErn0I8-hook.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"origem_visual","file":"youtube-zwtnCErn0I8-origem.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"wexler_visual","file":"youtube-zwtnCErn0I8-wexler.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"busca_visual","file":"youtube-qNzEBprHJAo-busca.mp4","url":"https://www.youtube.com/watch?v=qNzEBprHJAo","credit":"Rock in Rio 1991 archive / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"problema_visual","file":"youtube-PNdVt-3FCKQ-problema.mp4","url":"https://www.youtube.com/watch?v=PNdVt-3FCKQ","credit":"Filtr Music / YouTube","license":"","focus":{"x":0.5,"y":0.44}},
+    {"id":"truque_visual","file":"youtube-zwtnCErn0I8-truque.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.43}},
+    {"id":"resultado_visual","file":"youtube-zwtnCErn0I8-resultado.mp4","url":"https://www.youtube.com/watch?v=zwtnCErn0I8","credit":"George Michael / YouTube","license":"","focus":{"x":0.5,"y":0.4}},
+    {"id":"brasil_visual","file":"youtube-qNzEBprHJAo-brasil.mp4","url":"https://www.youtube.com/watch?v=qNzEBprHJAo","credit":"Rock in Rio 1991 archive / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"payoff_visual","file":"youtube-PNdVt-3FCKQ-payoff.mp4","url":"https://www.youtube.com/watch?v=PNdVt-3FCKQ","credit":"Filtr Music / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"cta_visual","file":"youtube-qNzEBprHJAo-cta.mp4","url":"https://www.youtube.com/watch?v=qNzEBprHJAo","credit":"Rock in Rio 1991 archive / YouTube","license":"","focus":{"x":0.5,"y":0.42}}
+  ]
+}
