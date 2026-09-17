@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"priscilla_2018","file":"priscilla_asu_2018.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20Alcantara%20-%20ASU%202018.png","credit":"Priscilla Alcantara / Wikimedia Commons","license":"CC BY 3.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"priscilla_2010","file":"priscilla_alcantara.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20Alc%C3%A2ntara.jpg","credit":"JucaIceland / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.42}},
+    {"id":"priscilla_tvz","file":"priscilla_tvz_2024.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Priscilla%20-%20TVZ%202024%20%281%29.png","credit":"Multishow / Wikimedia Commons","license":"CC BY 4.0","focus":{"x":0.5,"y":0.42}}
+  ]
+}
