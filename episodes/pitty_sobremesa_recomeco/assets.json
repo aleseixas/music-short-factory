@@ -1,0 +1,12 @@
+{
+  "schema_version":1,
+  "assets":[
+    {"id":"pitty_open","file":"pitty_open.mp4","url":"https://www.youtube.com/watch?v=y0tjdTGhyK4","credit":"Pitty ao vivo / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"pitty_2007","file":"pitty_2007.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pitty.jpg","credit":"tatu43 / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"pitty_4","file":"pitty_4.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pitty%204.jpg","credit":"tatu43 / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"pitty_live","file":"pitty_live.mp4","url":"https://www.youtube.com/watch?v=AM4YziRWw9k","credit":"Deck / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"pitty_3","file":"pitty_3.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pitty%203.jpg","credit":"tatu43 / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.42}},
+    {"id":"pitty_estante","file":"pitty_estante.mp4","url":"https://www.youtube.com/watch?v=KgjTUeinojk","credit":"Deck / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"pitty_2","file":"pitty_2.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Pitty%202.jpg","credit":"tatu43 / Wikimedia Commons","license":"CC BY 2.0","focus":{"x":0.5,"y":0.42}}
+  ]
+}
