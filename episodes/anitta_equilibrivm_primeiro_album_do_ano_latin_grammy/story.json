@@ -1,0 +1,15 @@
+{
+  "schema_version":1,
+  "title":"Anitta conseguiu uma indicação inédita na maior categoria do Grammy Latino",
+  "slug":"anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+  "target_duration_seconds":62,
+  "segments":[
+    {"id":"hook","text":"Anitta acabou de conseguir uma indicação que nunca tinha conquistado: pela primeira vez, ela está concorrendo a Álbum do Ano no Grammy Latino.","delivery":"hook"},
+    {"id":"album","text":"O disco é EQUILIBRIVM, lançado em abril. E o detalhe mais forte é que Anitta é a única brasileira entre os dez nomes da principal categoria de álbum em 2026.","delivery":"reveal"},
+    {"id":"brasil","text":"O projeto levou ritmos e referências brasileiras para o centro do trabalho, e agora vai disputar espaço com discos de Rosalía, Karol G, Milo J e outros gigantes da música latina.","delivery":"curious"},
+    {"id":"segunda","text":"E não para aí: EQUILIBRIVM também foi indicado a Melhor Álbum de Pop Contemporâneo em Língua Portuguesa. Ou seja, o mesmo projeto entrou numa categoria geral e numa categoria em português.","delivery":"reveal"},
+    {"id":"contexto","text":"Até 2025, Anitta já acumulava várias indicações ao Grammy Latino, incluindo Gravação do Ano, mas Álbum do Ano ainda faltava no currículo dela.","delivery":"dramatic"},
+    {"id":"payoff","text":"Agora falta saber se a indicação vira troféu. A cerimônia acontece em 12 de novembro, em Las Vegas, e EQUILIBRIVM está oficialmente na disputa principal.","delivery":"payoff"},
+    {"id":"cta","text":"Pra você, Anitta leva esse Grammy? Comenta.","delivery":"curious"}
+  ]
+}
