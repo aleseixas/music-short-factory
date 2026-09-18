@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "sepultura_roots_xavante",
+  "recorded_at": "2026-09-18T11:21:03Z",
+  "visual_usage": [
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_hook",
+      "asset_id": "sepultura_open",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "100c21b69901c1afd238a2ef45ffda774ab639a1c434cda88a8c227d626b78dc",
+        "url_hashes": [
+          "ab72fc7b817e342ca0cef55abda74235b4a94afefcadcfcaba22297d5d26f8c0"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "89f1e6d47a68516c",
+          "f21dc3788dd03875",
+          "f31dc37cce03284d",
+          "a4b17ccf33486e92",
+          "b0be3fc318662f90",
+          "ee0d993999783a4a",
+          "dfd780407c79b186",
+          "d3d3a04c4c4ea7b3"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 8.6
+      }
+    },
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_origem",
+      "asset_id": "sepultura_viagem",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d80f57db88b4e9c8773e3ffd035f8e041f2164cd89ad68334cecf044718a04e3",
+        "url_hashes": [
+          "8cd44021dbd45f0216d918efc9044103678396856af43bca8971dd58bbcaa32b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "90bf478838c747da",
+          "9859b72518cb5bb8",
+          "f098b8f646452de9",
+          "e39e9dcf4c461231",
+          "91aa7a55c0be43d5",
+          "95a27a55c0ae63d5",
+          "82a97147c97896f9",
+          "9ac2425fe442de6d"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 12.0
+      }
+    },
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_gravacao",
+      "asset_id": "sepultura_itsari",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d80f57db88b4e9c8773e3ffd035f8e041f2164cd89ad68334cecf044718a04e3",
+        "url_hashes": [
+          "8cd44021dbd45f0216d918efc9044103678396856af43bca8971dd58bbcaa32b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1b2ce734b0c6ae5",
+          "969db9890222ecfe",
+          "8691c0fb7ce6a0f4",
+          "c382a3a43dffc189",
+          "ccee68c3d0e18f8c",
+          "9c9895877acc62b9",
+          "c8a81eb780dbb3a9",
+          "e1cb83bdb0949f84"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 10.633333
+      }
+    },
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_tecnica",
+      "asset_id": "sepultura_bateria",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d80f57db88b4e9c8773e3ffd035f8e041f2164cd89ad68334cecf044718a04e3",
+        "url_hashes": [
+          "8cd44021dbd45f0216d918efc9044103678396856af43bca8971dd58bbcaa32b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ac8b2fb4965f1892",
+          "a99b3fa4845f1991",
+          "a99a7ea48d5d1193",
+          "ac8a3fa4975dc0a3",
+          "ad8befa41659d083",
+          "a9896ea4945f7187",
+          "a9897ee4855f1193",
+          "a98b7ee4945f1183"
+        ],
+        "source_start_seconds": 120.0,
+        "source_duration_seconds": 12.033333
+      }
+    },
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_imersao",
+      "asset_id": "sepultura_imersao",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "dfe88053ebb59775b0d439efdb88def40c82ffe75a4deb8a7c33866a002464fb",
+        "url_hashes": [
+          "50343d8ad09f7471f4b857880b796181338654c898dd34724d5637e5b9848c10"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9a44ea9c52a945ef",
+          "e30d3da706f0251f",
+          "cc2f30609fcd1673",
+          "c43b1378f487bc4a",
+          "a61e97dcac24356c",
+          "b0e246ddbe5aaa09",
+          "ea8207173f2f2cc3",
+          "dda6870bf13428d9"
+        ],
+        "source_start_seconds": 25.0,
+        "source_duration_seconds": 11.1
+      }
+    },
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_payoff",
+      "asset_id": "sepultura_payoff",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "100c21b69901c1afd238a2ef45ffda774ab639a1c434cda88a8c227d626b78dc",
+        "url_hashes": [
+          "ab72fc7b817e342ca0cef55abda74235b4a94afefcadcfcaba22297d5d26f8c0"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cb87f3c1105d1e4b",
+          "a7125dabba4f60a4",
+          "a43ff3831ad82527",
+          "c9a714545b9a339b",
+          "b4a4ea9d87e73061",
+          "88c94bb2a42f3bf4",
+          "b3514da3484b9bf4",
+          "d74eb8c0b0781f99"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 9.4
+      }
+    },
+    {
+      "episode": "sepultura_roots_xavante",
+      "shot_id": "shot_cta",
+      "asset_id": "sepultura_cta",
+      "recorded_at": "2026-09-18T11:21:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "100c21b69901c1afd238a2ef45ffda774ab639a1c434cda88a8c227d626b78dc",
+        "url_hashes": [
+          "ab72fc7b817e342ca0cef55abda74235b4a94afefcadcfcaba22297d5d26f8c0"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a04b57971fa6a664",
+          "b0dd4b92a727664c",
+          "90464f9bb47d52cc",
+          "e3f6b21329f88e90",
+          "eee4a1362ae2d195",
+          "d9e1832d3c4c66cb",
+          "d8c9a68a2fba2d29",
+          "d8c9e186ca67d28e"
+        ],
+        "source_start_seconds": 120.0,
+        "source_duration_seconds": 3.533333
+      }
+    }
+  ]
+}
