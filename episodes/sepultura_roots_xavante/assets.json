@@ -1,12 +1,12 @@
 {
   "schema_version":1,
   "assets":[
-    {"id":"sepultura_open","file":"youtube-F_6IjeprfEs.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"sepultura_viagem","file":"youtube-iBF1VmGAvgc.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"sepultura_itsari","file":"youtube-iBF1VmGAvgc.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"sepultura_bateria","file":"youtube-iBF1VmGAvgc.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"sepultura_imersao","file":"youtube-Yq3pd5VMOKs.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"sepultura_payoff","file":"youtube-iQxTxBunHFc.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"sepultura_cta","file":"youtube-yN_kmmA_l8c.mp4","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}}
+    {"id":"sepultura_open","file":"youtube-F_6IjeprfEs.mp4","url":"https://www.youtube.com/watch?v=F_6IjeprfEs","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sepultura_viagem","file":"youtube-iBF1VmGAvgc.mp4","url":"https://www.youtube.com/watch?v=iBF1VmGAvgc","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sepultura_itsari","file":"youtube-iBF1VmGAvgc.mp4","url":"https://www.youtube.com/watch?v=iBF1VmGAvgc","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sepultura_bateria","file":"youtube-iBF1VmGAvgc.mp4","url":"https://www.youtube.com/watch?v=iBF1VmGAvgc","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sepultura_imersao","file":"youtube-Yq3pd5VMOKs.mp4","url":"https://www.youtube.com/watch?v=Yq3pd5VMOKs","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sepultura_payoff","file":"youtube-F_6IjeprfEs.mp4","url":"https://www.youtube.com/watch?v=F_6IjeprfEs","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sepultura_cta","file":"youtube-F_6IjeprfEs.mp4","url":"https://www.youtube.com/watch?v=F_6IjeprfEs","credit":"youtube","license":"","focus":{"x":0.5,"y":0.5}}
   ]
 }
