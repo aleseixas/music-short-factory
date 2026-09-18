@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "title": "Celine Dion não queria gravar My Heart Will Go On — e o teste de uma única tomada virou a voz do clássico",
+  "slug": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"Celine Dion não queria gravar My Heart Will Go On — e a voz que virou símbolo de Titanic nasceu num teste que ela achava que nem seria o disco.","delivery":"hook"},
+    {"id":"cameron","text":"A resistência não era só dela. James Cameron também não queria uma canção pop colada ao final do filme; ele queria preservar o tom do Titanic.","delivery":"curious"},
+    {"id":"horner","text":"Só que o compositor James Horner acreditava tanto na melodia que procurou Celine e René Angélil. Celine ouviu e continuou sem vontade de cantar.","delivery":"dramatic"},
+    {"id":"rene","text":"René então propôs uma saída simples: grava só uma demo, para eles ouvirem como ficaria. Ela topou sem imaginar o tamanho daquela tentativa.","delivery":"curious"},
+    {"id":"take","text":"No estúdio, Celine cantou a música uma vez. Segundo ela própria, nunca voltou para regravar aquela voz como um novo take de estúdio.","delivery":"reveal"},
+    {"id":"orquestra","text":"Aquela performance de teste ficou forte o bastante para virar a base que o mundo conhece, com a produção e a orquestra construídas ao redor da gravação.","delivery":"reveal"},
+    {"id":"impacto","text":"E aí fica absurdo: a música que ela não queria gravar virou sua assinatura, chegou ao número um nos Estados Unidos e levou o Oscar de melhor canção original.","delivery":"dramatic"},
+    {"id":"memoria","text":"Para quem viveu o fim dos anos noventa, basta a flauta começar para Titanic inteiro voltar na cabeça. E tudo nasceu de um: faz só uma demo.","delivery":"emotional"},
+    {"id":"payoff","text":"Pensa nisso: uma das vozes mais reconhecíveis do cinema foi registrada quando a própria cantora ainda não estava convencida de que aquela música precisava existir.","delivery":"payoff"},
+    {"id":"cta","text":"Manda isso pra quem ainda arrepia com Titanic.","delivery":"payoff"}
+  ]
+}
