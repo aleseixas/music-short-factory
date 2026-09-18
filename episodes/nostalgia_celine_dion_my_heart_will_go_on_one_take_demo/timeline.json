@@ -46,7 +46,7 @@
     {
       "segment": "take",
       "offset_seconds": 0.1,
-      "duration_seconds": 1.0,
+      "duration_seconds": 1,
       "text": "UMA ÚNICA TOMADA",
       "accent_text": "UMA",
       "animation": "pop_in",
@@ -109,7 +109,7 @@
       "asset": "impacto_visual",
       "motion": "push_in",
       "transition_out": "cut",
-      "source_start_seconds": 25
+      "source_start_seconds": 20
     },
     {
       "id": "shot_08",
@@ -117,7 +117,7 @@
       "asset": "memoria_visual",
       "motion": "hold",
       "transition_out": "crossfade",
-      "source_start_seconds": 60
+      "source_start_seconds": 75
     },
     {
       "id": "shot_09",
@@ -125,7 +125,7 @@
       "asset": "payoff_visual",
       "motion": "pull_out",
       "transition_out": "crossfade",
-      "source_start_seconds": 105
+      "source_start_seconds": 140
     },
     {
       "id": "shot_10",
