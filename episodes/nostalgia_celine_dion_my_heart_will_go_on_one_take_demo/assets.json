@@ -1,12 +1,115 @@
-{"schema_version":1,"assets":[
-{"id":"hook_visual","file":"youtube-CUmOFqQRkco.mp4","url":"https://www.youtube.com/watch?v=CUmOFqQRkco","credit":"Celine Dion / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"cameron_visual","file":"youtube-LWLxmITO3i4.mp4","url":"https://www.youtube.com/watch?v=LWLxmITO3i4","credit":"Entertainment Tonight archive / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"horner_visual","file":"youtube-LWLxmITO3i4.mp4","url":"https://www.youtube.com/watch?v=LWLxmITO3i4","credit":"Entertainment Tonight archive / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"rene_visual","file":"youtube-LWLxmITO3i4.mp4","url":"https://www.youtube.com/watch?v=LWLxmITO3i4","credit":"Entertainment Tonight archive / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"take_visual","file":"youtube-CUmOFqQRkco.mp4","url":"https://www.youtube.com/watch?v=CUmOFqQRkco","credit":"Celine Dion / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"orquestra_visual","file":"youtube-CUmOFqQRkco.mp4","url":"https://www.youtube.com/watch?v=CUmOFqQRkco","credit":"Celine Dion / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"impacto_visual","file":"youtube-H6tBdFJcbUg.mp4","url":"https://www.youtube.com/watch?v=H6tBdFJcbUg","credit":"Billboard Music Awards performance / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"memoria_visual","file":"youtube-H6tBdFJcbUg.mp4","url":"https://www.youtube.com/watch?v=H6tBdFJcbUg","credit":"Billboard Music Awards performance / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"payoff_visual","file":"youtube-H6tBdFJcbUg.mp4","url":"https://www.youtube.com/watch?v=H6tBdFJcbUg","credit":"Billboard Music Awards performance / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-{"id":"cta_visual","file":"youtube-ZqVEVoguhYg.mp4","url":"https://www.youtube.com/watch?v=ZqVEVoguhYg","credit":"Celine Dion live / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
-]}
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "hook_visual",
+      "file": "youtube-CUmOFqQRkco.mp4",
+      "url": "https://www.youtube.com/watch?v=CUmOFqQRkco",
+      "credit": "Celine Dion / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "cameron_visual",
+      "file": "youtube-LWLxmITO3i4.mp4",
+      "url": "https://www.youtube.com/watch?v=LWLxmITO3i4",
+      "credit": "Entertainment Tonight archive / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "horner_visual",
+      "file": "youtube-LWLxmITO3i4.mp4",
+      "url": "https://www.youtube.com/watch?v=LWLxmITO3i4",
+      "credit": "Entertainment Tonight archive / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "rene_visual",
+      "file": "youtube-LWLxmITO3i4.mp4",
+      "url": "https://www.youtube.com/watch?v=LWLxmITO3i4",
+      "credit": "Entertainment Tonight archive / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "take_visual",
+      "file": "youtube-CUmOFqQRkco.mp4",
+      "url": "https://www.youtube.com/watch?v=CUmOFqQRkco",
+      "credit": "Celine Dion / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "orquestra_visual",
+      "file": "youtube-CUmOFqQRkco.mp4",
+      "url": "https://www.youtube.com/watch?v=CUmOFqQRkco",
+      "credit": "Celine Dion / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "impacto_visual",
+      "file": "youtube-fGU7NMxboNE.mp4",
+      "url": "https://www.youtube.com/watch?v=fGU7NMxboNE",
+      "credit": "Celine Dion Official Artist Channel / Billboard Music Awards 2017 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "memoria_visual",
+      "file": "youtube-fGU7NMxboNE.mp4",
+      "url": "https://www.youtube.com/watch?v=fGU7NMxboNE",
+      "credit": "Celine Dion Official Artist Channel / Billboard Music Awards 2017 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "payoff_visual",
+      "file": "youtube-fGU7NMxboNE.mp4",
+      "url": "https://www.youtube.com/watch?v=fGU7NMxboNE",
+      "credit": "Celine Dion Official Artist Channel / Billboard Music Awards 2017 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "cta_visual",
+      "file": "youtube-ZqVEVoguhYg.mp4",
+      "url": "https://www.youtube.com/watch?v=ZqVEVoguhYg",
+      "credit": "Celine Dion live / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}
