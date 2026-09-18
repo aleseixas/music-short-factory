@@ -17,7 +17,7 @@ on:
           - facebook
           - tiktok
       source_run_id:
-        description: Workflow run ID that contains rendered-<episode>
+        description: Successful Episode media preflight run ID containing publish-ready-<episode>
         required: true
         type: string
   push:
@@ -122,26 +122,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
 
-      - name: Download existing rendered artifact
+      - name: Download validated publish-ready artifact
         uses: actions/download-artifact@v7
         with:
-          name: rendered-${{ needs.resolve.outputs.episode }}
-          path: .rendered-artifact
+          name: publish-ready-${{ needs.resolve.outputs.episode }}
+          path: .publish-ready
           run-id: ${{ needs.resolve.outputs.source_run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Stage rendered MP4
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p output
-          mp4="$(find .rendered-artifact -type f -name '*.mp4' -print -quit)"
-          if [[ -z "$mp4" ]]; then
-            echo "::error::Rendered artifact did not contain an MP4."
-            exit 1
-          fi
-          cp "$mp4" "output/$EPISODE.mp4"
-          ls -lh "output/$EPISODE.mp4"
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -152,59 +139,60 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Ensure cover source is available
+      - name: Verify and stage exact preflight artifact
+        run: python scripts/publish_ready_bundle.py restore "$EPISODE" --bundle-dir .publish-ready --source-run-id "$SOURCE_RUN_ID"
+
+      - name: Preflight Facebook credentials
+        if: ${{ needs.resolve.outputs.platform == 'facebook' }}
+        env:
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          META_GRAPH_API_VERSION: v26.0
         shell: bash
         run: |
           set -euo pipefail
-          python - "$EPISODE" <<'PY'
-          import json
+          python - <<'PY'
+          import os
           import sys
-          from pathlib import Path
+          import requests
 
-          episode = sys.argv[1]
-          episode_dir = Path("episodes") / episode
-          post_path = episode_dir / "post.json"
-          post = json.loads(post_path.read_text(encoding="utf-8"))
-          source = post.get("cover", {}).get("source", {})
+          token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+          page_id = os.getenv("FACEBOOK_PAGE_ID", "").strip()
+          version = os.getenv("META_GRAPH_API_VERSION", "v26.0").strip()
 
-          if source.get("type") == "asset":
-              asset_id = str(source.get("asset_id", "")).strip()
-              assets_path = episode_dir / "assets.json"
-              asset_exists = False
-              if assets_path.is_file():
-                  catalog = json.loads(assets_path.read_text(encoding="utf-8"))
-                  for item in catalog.get("assets", []):
-                      if isinstance(item, dict) and item.get("id") == asset_id:
-                          file_name = str(item.get("file", "")).strip()
-                          if file_name and (episode_dir / "assets" / file_name).is_file():
-                              asset_exists = True
-                          break
+          if not token or not page_id:
+              print("::error::FACEBOOK_AUTH_MISSING: credenciais da Pagina ausentes.")
+              sys.exit(1)
 
-              if not asset_exists:
-                  instagram_ms = post.get("instagram", {}).get("thumb_offset_ms")
-                  tiktok_ms = post.get("tiktok", {}).get("video_cover_timestamp_ms")
-                  raw_ms = instagram_ms if isinstance(instagram_ms, int) else tiktok_ms
-                  timestamp = max(0.0, float(raw_ms) / 1000.0) if isinstance(raw_ms, int) else 0.7
-                  post.setdefault("cover", {})["source"] = {
-                      "type": "video_frame",
-                      "timestamp_seconds": timestamp,
-                  }
-                  post_path.write_text(
-                      json.dumps(post, ensure_ascii=False, indent=2) + "\n",
-                      encoding="utf-8",
-                  )
-                  print(
-                      f"Cover asset {asset_id!r} is unavailable in this publish-only run; "
-                      f"using rendered video frame at {timestamp:.3f}s instead."
-                  )
-              else:
-                  print(f"Cover asset {asset_id!r} is available; keeping original cover source.")
-          else:
-              print("Cover already uses video_frame; no fallback needed.")
+          try:
+              response = requests.get(
+                  f"https://graph.facebook.com/{version}/{page_id}",
+                  params={"fields": "id", "access_token": token},
+                  timeout=30,
+              )
+          except requests.RequestException as exc:
+              print(f"::error::FACEBOOK_AUTH_CHECK_UNAVAILABLE: {type(exc).__name__}")
+              sys.exit(1)
+
+          if response.status_code != 200:
+              message = "credencial rejeitada pela Meta"
+              try:
+                  payload = response.json()
+                  error = payload.get("error") if isinstance(payload, dict) else None
+                  if isinstance(error, dict):
+                      message = str(error.get("message") or message)
+              except ValueError:
+                  pass
+              print(f"::error::FACEBOOK_AUTH_INVALID: HTTP {response.status_code}: {message}")
+              sys.exit(1)
+
+          payload = response.json()
+          if str(payload.get("id", "")).strip() != page_id:
+              print("::error::FACEBOOK_PAGE_MISMATCH: token nao confirmou a pagina configurada.")
+              sys.exit(1)
+
+          print("FACEBOOK_AUTH_PREFLIGHT=PASS")
           PY
-
-      - name: Prepare publishing metadata and cover
-        run: python prepare_post.py "$EPISODE"
 
       - name: Publish only selected platform
         shell: bash
