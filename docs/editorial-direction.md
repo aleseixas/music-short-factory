@@ -190,7 +190,7 @@ A timeline referencia apenas `type`. URLs/cache são responsabilidade do catálo
 
 `sources.txt` é o registro de rastreabilidade do episódio. Guarde ali as fontes factuais e também proveniência de assets: URLs, autor/criador, provider, licença, página-fonte e observações necessárias para auditoria interna.
 
-Os campos públicos de `post.json` — como `youtube.description`, `instagram.caption` e `tiktok.caption` — são copy editorial para o público. Eles não devem carregar blocos técnicos de crédito ou rastreabilidade. Não inclua frases como `Créditos e fontes completos em sources.txt`, `Visuais via Wikimedia Commons`, `Background: ...`, nomes de licenças, URLs ou listas de autores/providers apenas para documentar a origem dos assets.
+Os campos públicos de `post.json` — como `youtube.description`, `instagram.caption`, `facebook.caption` e `tiktok.caption` — são copy editorial para o público. Eles não devem carregar blocos técnicos de crédito ou rastreabilidade. Não inclua frases como `Créditos e fontes completos em sources.txt`, `Visuais via Wikimedia Commons`, `Background: ...`, nomes de licenças, URLs ou listas de autores/providers apenas para documentar a origem dos assets.
 
 Isso não elimina obrigações de licença. Se uma licença exigir atribuição pública vinculada à distribuição e não houver outro mecanismo público realmente suportado pela plataforma/`main`, o asset não é compatível com este fluxo de copy limpa e deve ser substituído. Prefira, quando fizer sentido, material CC0, domínio público ou outra licença que não exija inserir atribuição na legenda/descrição. Um `sources.txt` privado não deve ser tratado como substituto automático de atribuição pública exigida pela licença.
 

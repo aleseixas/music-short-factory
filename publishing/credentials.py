@@ -28,6 +28,11 @@ PLATFORM_KEYS: dict[str, tuple[str, ...]] = {
         "CLOUDINARY_API_KEY",
         "CLOUDINARY_API_SECRET",
     ),
+    "facebook": (
+        "FACEBOOK_PAGE_ACCESS_TOKEN",
+        "FACEBOOK_PAGE_ID",
+        "META_GRAPH_API_VERSION",
+    ),
     "tiktok": (
         "TIKTOK_CLIENT_KEY",
         "TIKTOK_CLIENT_SECRET",

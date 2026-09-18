@@ -15,6 +15,7 @@ import requests
 
 from publishing.base import ApiError, PublishContext, Publisher, PublishingError
 from publishing.credentials import CredentialStore
+from publishing.facebook import FacebookPublisher
 from publishing.instagram import InstagramPublisher
 from publishing.metadata import PLATFORMS, load_post
 from publishing.tiktok import TikTokPublisher
@@ -24,6 +25,7 @@ from publishing.youtube import YouTubePublisher
 PUBLISHER_TYPES: dict[str, type[Publisher]] = {
     "youtube": YouTubePublisher,
     "instagram": InstagramPublisher,
+    "facebook": FacebookPublisher,
     "tiktok": TikTokPublisher,
 }
 

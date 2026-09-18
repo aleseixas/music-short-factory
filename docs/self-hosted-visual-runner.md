@@ -31,5 +31,5 @@ Set `USE_SELF_HOSTED_VISUALS=false` or delete the variable. The workflow immedia
 ## Important behavior
 
 - If the self-hosted runner is offline while `USE_SELF_HOSTED_VISUALS=true`, the visual job waits for that runner and the publish job cannot continue until it becomes available.
-- Publication credentials remain in the GitHub-hosted `publish` job; the self-hosted runner does not receive YouTube upload, Instagram, TikTok, or Cloudinary secrets.
+- Publication credentials remain in the GitHub-hosted `publish` job; the self-hosted runner does not receive YouTube upload, Instagram, Facebook, TikTok, or Cloudinary secrets.
 - The handoff contains the resolved `assets.json`, `timeline.json`, `visual_resolution_report.json`, and only changed/new media files inside the episode assets directory.

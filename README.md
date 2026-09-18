@@ -338,7 +338,7 @@ SFX já curados no catálogo não exigem nova pesquisa externa por episódio.
 
 ## `post.json` e publicação pública
 
-`post.json` contém capa e metadados por plataforma. Episódios produzidos pela automação são destinados ao **público geral**.
+`post.json` contém capa e metadados para YouTube, Instagram, Facebook e TikTok. Episódios produzidos pela automação são destinados ao **público geral**. Arquivos antigos sem o bloco `facebook` continuam compatíveis: título e legenda são derivados de YouTube e Instagram.
 
 Quando o schema/publisher atual permitir, use:
 
@@ -361,6 +361,11 @@ Quando o schema/publisher atual permitir, use:
     "hashtags": ["Musica", "Reels"],
     "share_to_feed": true,
     "thumb_offset_ms": 1000
+  },
+  "facebook": {
+    "title": "Título do Reel",
+    "caption": "Legenda para o Facebook.",
+    "hashtags": ["Musica", "Reels"]
   },
   "tiktok": {
     "caption": "Legenda para TikTok.",

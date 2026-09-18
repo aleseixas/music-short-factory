@@ -238,6 +238,14 @@ jobs:
           INSTAGRAM_VIDEO_HOST: cloudinary
         run: python publish.py "$EPISODE" --platform instagram --live
 
+      - name: Publish to Facebook
+        if: ${{ !cancelled() && steps.bundle.outcome == 'success' }}
+        env:
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          META_GRAPH_API_VERSION: v26.0
+        run: python publish.py "$EPISODE" --platform facebook --live
+
       - name: Upload TikTok draft
         if: ${{ !cancelled() && steps.bundle.outcome == 'success' }}
         env:

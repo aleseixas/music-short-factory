@@ -18,7 +18,7 @@ Depois de o episódio passar pelo media preflight e a queue ser criada, não esc
 
 Acompanhe a execução exata de `.github/workflows/publish-episode.yml` correspondente ao mesmo slug até obter evidência real do estado do job e das etapas por plataforma.
 
-`tema -> duplicate preflight -> autoria -> media preflight PASS -> queue -> Publish episode -> YouTube -> Instagram -> TikTok -> verificar resultados -> STOP`
+`tema -> duplicate preflight -> autoria -> media preflight PASS -> queue -> Publish episode -> YouTube -> Instagram -> Facebook -> TikTok -> verificar resultados -> STOP`
 
 ## 3. Estados separados
 
@@ -27,7 +27,7 @@ Use sempre estados separados:
 - `MEDIA PREFLIGHT`: resultado do gate de mídia;
 - `QUEUE`: criação da publish queue;
 - `PUBLISH ACTION`: resultado do workflow de publicação;
-- `YOUTUBE`, `INSTAGRAM` e `TIKTOK`: resultado real de cada plataforma.
+- `YOUTUBE`, `INSTAGRAM`, `FACEBOOK` e `TIKTOK`: resultado real de cada plataforma.
 
 É proibido emitir `PUBLISH ACTION: SUCESSO` se a única Action verificada foi o media preflight.
 
@@ -47,6 +47,7 @@ Reporte separadamente, usando apenas evidência real:
 
 - YouTube: `PUBLICADO_PUBLICO`, `PUBLICADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou `BLOQUEADO`;
 - Instagram: `PUBLICADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou `BLOQUEADO`;
+- Facebook: `PUBLICADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou `BLOQUEADO`;
 - TikTok: reporte o estado real suportado pela `main`, por exemplo `PUBLICADO`, `DRAFT_ENVIADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou outro estado comprovado pelo publisher atual.
 
 ## 6. Falhas e retries — recuperação automática obrigatória
@@ -147,6 +148,7 @@ QUEUE: <CRIADA | NÃO_CRIADA | BLOQUEADA>
 PUBLISH ACTION: <SUCESSO | FALHA | EM_ANDAMENTO | NÃO_VERIFICADO | BLOQUEADO>
 YOUTUBE: <status real>
 INSTAGRAM: <status real>
+FACEBOOK: <status real>
 TIKTOK: <status real>
 RETRIES: <número de novas validações/publicações; não quantidade de itens corrigidos | N/A>
 ERRO/BLOQUEIO: <causa concreta ou resumo do lote; nunca apenas nome genérico de step/status | NENHUM>

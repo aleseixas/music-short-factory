@@ -19,6 +19,7 @@ from publish import create_publisher, main as publish_main
 from publishing.base import ApiError, PublishContext, PublishingError
 from publishing.cover import generate_cover
 from publishing.credentials import CredentialStore
+from publishing.facebook import FacebookPublisher
 from publishing.instagram import CloudinaryVideoHost, InstagramPublisher
 from publishing.metadata import (
     create_post_template,
@@ -51,6 +52,11 @@ def valid_post() -> dict[str, object]:
             "hashtags": ["Musica", "Reels"],
             "share_to_feed": True,
             "thumb_offset_ms": 1000,
+        },
+        "facebook": {
+            "title": "A COINCIDENCIA por tras da musica",
+            "caption": "Uma historia curta e sustentada pelo video.",
+            "hashtags": ["Musica", "Reels"],
         },
         "tiktok": {
             "caption": "Uma historia curta e sustentada pelo video.",
@@ -365,7 +371,7 @@ class MetadataTests(unittest.TestCase):
                 self.assertIn("cover.headline", stdout.getvalue())
 
     def test_hashtags_above_recommendation_warn_and_continue(self):
-        recommendations = {"youtube": 5, "instagram": 8, "tiktok": 5}
+        recommendations = {"youtube": 5, "instagram": 8, "facebook": 8, "tiktok": 5}
         for platform, recommendation in recommendations.items():
             with self.subTest(platform=platform):
                 data = valid_post()
@@ -454,7 +460,10 @@ class CoverAndPreparationTests(unittest.TestCase):
 
             self.assertEqual(prepared.post_path, episode_dir / "post.json")
             self.assertTrue(prepared.cover_path.is_file())
-            self.assertEqual(set(prepared.previews), {"youtube", "instagram", "tiktok"})
+            self.assertEqual(
+                set(prepared.previews),
+                {"youtube", "instagram", "facebook", "tiktok"},
+            )
             self.assertIn("description", prepared.previews["youtube"])
 
     def test_prepare_long_headline_warns_once_and_still_generates_cover(self):
@@ -608,6 +617,9 @@ class CredentialAndPublisherTests(unittest.TestCase):
         self.assertIsInstance(
             create_publisher("instagram", credentials, session), InstagramPublisher
         )
+        self.assertIsInstance(
+            create_publisher("facebook", credentials, session), FacebookPublisher
+        )
         self.assertIsInstance(create_publisher("tiktok", credentials, session), TikTokPublisher)
         with self.assertRaisesRegex(PublishingError, "Plataforma desconhecida"):
             create_publisher("other", credentials, session)
@@ -634,7 +646,7 @@ class CredentialAndPublisherTests(unittest.TestCase):
 
             self.assertEqual(exit_code, 0, stderr.getvalue())
             self.assertIn("MODO SEGURO: DRY-RUN", stdout.getvalue())
-            for platform in ("youtube", "instagram", "tiktok"):
+            for platform in ("youtube", "instagram", "facebook", "tiktok"):
                 self.assertIn(f'"platform": "{platform}"', stdout.getvalue())
             request.assert_not_called()
 
@@ -738,6 +750,7 @@ class CredentialAndPublisherTests(unittest.TestCase):
         cases = (
             (YouTubePublisher, "youtube", "description", 5000),
             (InstagramPublisher, "instagram", "caption", 2200),
+            (FacebookPublisher, "facebook", "caption", 2200),
             (TikTokPublisher, "tiktok", "caption", 2200),
         )
         with tempfile.TemporaryDirectory() as temp_dir:

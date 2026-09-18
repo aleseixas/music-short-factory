@@ -10,11 +10,22 @@ from typing import Any, Mapping
 
 
 SCHEMA_VERSION = 1
-PLATFORMS = ("youtube", "instagram", "tiktok")
-HASHTAG_RECOMMENDATIONS = {"youtube": 5, "instagram": 8, "tiktok": 5}
-PLATFORM_TEXT_LIMITS = {"youtube": 5000, "instagram": 2200, "tiktok": 2200}
+PLATFORMS = ("youtube", "instagram", "facebook", "tiktok")
+HASHTAG_RECOMMENDATIONS = {
+    "youtube": 5,
+    "instagram": 8,
+    "facebook": 8,
+    "tiktok": 5,
+}
+PLATFORM_TEXT_LIMITS = {
+    "youtube": 5000,
+    "instagram": 2200,
+    "facebook": 2200,
+    "tiktok": 2200,
+}
 YOUTUBE_TITLE_LIMIT = 100
 YOUTUBE_TAGS_LIMIT = 500
+FACEBOOK_TITLE_LIMIT = 255
 PRIVACY_LEVELS = {
     "PUBLIC_TO_EVERYONE",
     "MUTUAL_FOLLOW_FRIENDS",
@@ -57,6 +68,19 @@ def load_post(
 
 def normalize_post(data: Mapping[str, Any]) -> dict[str, Any]:
     normalized = deepcopy(dict(data))
+    if "facebook" not in normalized:
+        instagram = normalized.get("instagram")
+        youtube = normalized.get("youtube")
+        if isinstance(instagram, Mapping):
+            facebook: dict[str, Any] = {
+                "caption": str(instagram.get("caption", "")),
+                "hashtags": deepcopy(instagram.get("hashtags", [])),
+            }
+            if isinstance(youtube, Mapping):
+                title = str(youtube.get("title", "")).strip()
+                if title:
+                    facebook["title"] = title
+            normalized["facebook"] = facebook
     for platform in PLATFORMS:
         raw = normalized.get(platform)
         if not isinstance(raw, dict):
@@ -136,6 +160,22 @@ def validate_post(
     _optional_url(instagram, "video_url", "instagram", label)
     _optional_url(instagram, "cover_url", "instagram", label)
     _optional_nonnegative_int(instagram, "thumb_offset_ms", "instagram", label)
+
+    facebook = _platform_object(data, "facebook", label)
+    _required_text(facebook, "caption", "facebook", label)
+    _optional_text(facebook, "title", "facebook", label)
+    facebook_title = str(facebook.get("title", "")).strip()
+    if "facebook" in warning_scope and len(facebook_title) > FACEBOOK_TITLE_LIMIT:
+        _editorial_warning(
+            f"facebook.title excede {FACEBOOK_TITLE_LIMIT} caracteres em {label}. "
+            "A publicacao no Facebook sera validada separadamente."
+        )
+    _validate_hashtags(
+        facebook,
+        "facebook",
+        label,
+        warn_excess="facebook" in warning_scope,
+    )
 
     tiktok = _platform_object(data, "tiktok", label)
     _required_text(tiktok, "caption", "tiktok", label)
@@ -248,6 +288,11 @@ def build_post_defaults(story: Mapping[str, Any], asset_id: str) -> dict[str, An
             "hashtags": ["Reels"],
             "share_to_feed": True,
             "thumb_offset_ms": 1000,
+        },
+        "facebook": {
+            "title": youtube_title,
+            "caption": instagram_caption,
+            "hashtags": ["Reels"],
         },
         "tiktok": {
             "caption": tiktok_caption,
@@ -509,7 +554,7 @@ def utf16_length(value: str) -> int:
 def platform_text_length(value: str, platform: str) -> int:
     if platform == "youtube":
         return len(value.encode("utf-8"))
-    if platform in {"instagram", "tiktok"}:
+    if platform in {"instagram", "facebook", "tiktok"}:
         return utf16_length(value)
     raise RuntimeError(f"Plataforma desconhecida: {platform!r}.")
 

@@ -14,6 +14,7 @@ on:
         options:
           - youtube
           - instagram
+          - facebook
           - tiktok
       source_run_id:
         description: Workflow run ID that contains rendered-<episode>
@@ -91,8 +92,8 @@ jobs:
             echo "::error::Invalid episode slug: $episode"
             exit 1
           fi
-          if [[ "$platform" != "youtube" && "$platform" != "instagram" && "$platform" != "tiktok" ]]; then
-            echo "::error::Platform must be youtube, instagram, or tiktok."
+          if [[ "$platform" != "youtube" && "$platform" != "instagram" && "$platform" != "facebook" && "$platform" != "tiktok" ]]; then
+            echo "::error::Platform must be youtube, instagram, facebook, or tiktok."
             exit 1
           fi
           if [[ ! "$source_run_id" =~ ^[0-9]+$ ]]; then
@@ -219,6 +220,8 @@ jobs:
           INSTAGRAM_API_HOST: graph.instagram.com
           META_GRAPH_API_VERSION: v26.0
           INSTAGRAM_VIDEO_HOST: cloudinary
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
           TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
