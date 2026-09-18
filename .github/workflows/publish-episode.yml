@@ -209,6 +209,62 @@ jobs:
         id: bundle
         run: python scripts/publish_ready_bundle.py restore "$EPISODE" --bundle-dir .publish-ready --source-run-id "$SOURCE_RUN_ID"
 
+      - name: Preflight Facebook page credentials before any platform
+        env:
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          META_GRAPH_API_VERSION: v26.0
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os
+          import sys
+          import requests
+
+          token = os.getenv("FACEBOOK_PAGE_ACCESS_TOKEN", "").strip()
+          page_id = os.getenv("FACEBOOK_PAGE_ID", "").strip()
+          version = os.getenv("META_GRAPH_API_VERSION", "v26.0").strip()
+
+          if not token or not page_id:
+              print("::error::FACEBOOK_AUTH_MISSING: FACEBOOK_PAGE_ACCESS_TOKEN/FACEBOOK_PAGE_ID ausentes. Nenhuma plataforma sera publicada.")
+              sys.exit(1)
+
+          try:
+              response = requests.get(
+                  f"https://graph.facebook.com/{version}/{page_id}",
+                  params={"fields": "id", "access_token": token},
+                  timeout=30,
+              )
+          except requests.RequestException as exc:
+              print(f"::error::FACEBOOK_AUTH_CHECK_UNAVAILABLE: {type(exc).__name__}. Nenhuma plataforma sera publicada.")
+              sys.exit(1)
+
+          if response.status_code != 200:
+              message = "credencial rejeitada pela Meta"
+              try:
+                  payload = response.json()
+                  error = payload.get("error") if isinstance(payload, dict) else None
+                  if isinstance(error, dict):
+                      message = str(error.get("message") or message)
+              except ValueError:
+                  pass
+              print(f"::error::FACEBOOK_AUTH_INVALID: HTTP {response.status_code}: {message}. Renove o token antes de publicar; nenhuma plataforma foi chamada.")
+              sys.exit(1)
+
+          try:
+              payload = response.json()
+          except ValueError:
+              print("::error::FACEBOOK_AUTH_INVALID: resposta nao-JSON da Meta. Nenhuma plataforma sera publicada.")
+              sys.exit(1)
+
+          if str(payload.get("id", "")).strip() != page_id:
+              print("::error::FACEBOOK_PAGE_MISMATCH: token nao confirmou a pagina configurada. Nenhuma plataforma sera publicada.")
+              sys.exit(1)
+
+          print("FACEBOOK_AUTH_PREFLIGHT=PASS")
+          PY
+
       - name: Upload visual usage history
         continue-on-error: true
         uses: actions/upload-artifact@v7
