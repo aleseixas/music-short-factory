@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+  "recorded_at": "2026-09-18T16:05:35Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "bc9b25d3c1de310c6075a94c9eb39d1ac619503f742d097570e3b2a4414ebdb8",
+        "url_hashes": [
+          "28082cad27ab83c990020da0ec72e99921728f8ce78f86b11cff85ed646153ea"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "de1286d6a472e93c",
+          "de1206d6a572e93c",
+          "de1206da8572ed3c",
+          "de1206db85726d3c",
+          "de1226da85626d3d",
+          "de1306da85666d3c",
+          "c71626d384646d7b",
+          "db062ed984666d3c"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 9.9
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_02",
+      "asset_id": "cameron_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5fa5081b9bade677259872894c6e229a718511c912627c86657c0fc8ef442643",
+        "url_hashes": [
+          "ccc4f4ab55a0dd7f247f25c36ea9862e8850c75acbc3b7ec3f838fc826ec6069"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cfb43b323987328c",
+          "cf3738c4490333cf",
+          "cf3739c85a2321ce",
+          "ef3738c8590331ce",
+          "ef3738c4590b32cc",
+          "ef3738c4490b32cd",
+          "cf3738c4490b33cd",
+          "cf3738c4590333cd"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 9.033333
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_03",
+      "asset_id": "horner_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5fa5081b9bade677259872894c6e229a718511c912627c86657c0fc8ef442643",
+        "url_hashes": [
+          "ccc4f4ab55a0dd7f247f25c36ea9862e8850c75acbc3b7ec3f838fc826ec6069"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c2cd39326ec19de4",
+          "a0875b5c3ca787c3",
+          "813673c92ca69d73",
+          "c0bd73162be19ee0",
+          "c0bc371f20c39fe1",
+          "e09f5f6920139be4",
+          "d01f276c1b939ce1",
+          "d01f266c1b939de1"
+        ],
+        "source_start_seconds": 28.0,
+        "source_duration_seconds": 11.0
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_04",
+      "asset_id": "rene_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5fa5081b9bade677259872894c6e229a718511c912627c86657c0fc8ef442643",
+        "url_hashes": [
+          "ccc4f4ab55a0dd7f247f25c36ea9862e8850c75acbc3b7ec3f838fc826ec6069"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c13ebc437423e53c",
+          "cd1cd427b8237732",
+          "c70cd423bc337936",
+          "cc3f639c68639e60",
+          "cc37738c34e39c62",
+          "cc37738c26e19c63",
+          "991e624d67c29df0",
+          "c11e78ad4b50bde2"
+        ],
+        "source_start_seconds": 50.0,
+        "source_duration_seconds": 10.333333
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_05",
+      "asset_id": "take_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "bc9b25d3c1de310c6075a94c9eb39d1ac619503f742d097570e3b2a4414ebdb8",
+        "url_hashes": [
+          "28082cad27ab83c990020da0ec72e99921728f8ce78f86b11cff85ed646153ea"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "db9134672f36e405",
+          "db9124677b66e403",
+          "db9d64276bc2e421",
+          "b6c95936c0c87f34",
+          "9f847738c0907e7a",
+          "9ec2f000fe8163df",
+          "b7c6196083db64b3",
+          "92669c697b4b6c31"
+        ],
+        "source_start_seconds": 45.0,
+        "source_duration_seconds": 9.3
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_06",
+      "asset_id": "orquestra_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "bc9b25d3c1de310c6075a94c9eb39d1ac619503f742d097570e3b2a4414ebdb8",
+        "url_hashes": [
+          "28082cad27ab83c990020da0ec72e99921728f8ce78f86b11cff85ed646153ea"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9be372bccf44c248",
+          "afd41896a63283bb",
+          "ad8899b556a4b2da",
+          "9e9273fe3061d521",
+          "9fc060dfe120479f",
+          "8bae4caad7b9d030",
+          "96f66a6699298969",
+          "93db23738e948c33"
+        ],
+        "source_start_seconds": 82.0,
+        "source_duration_seconds": 9.433333
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_07",
+      "asset_id": "impacto_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "536726ef9e11a6194c24cb80e67c5c818b23680a14a8a209988328baee1a2ee2",
+        "url_hashes": [
+          "b7c5cab8980a8f3081a95cdc1e510a7c8f3917e0d89ea5cb8503bbdca0a61cab"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cc99c3cf33276223",
+          "cc19d2cf928776a2",
+          "cc19d0cf9283f6a3",
+          "cc19d0cfdc83de82",
+          "cd08d4cddc80dfd4",
+          "cf08f4c8ddc00fdc",
+          "cf0bb4ca9dc01bd4",
+          "cb0bb4cb8cd629d4"
+        ],
+        "source_start_seconds": 35.001633,
+        "source_duration_seconds": 10.0
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_08",
+      "asset_id": "memoria_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "536726ef9e11a6194c24cb80e67c5c818b23680a14a8a209988328baee1a2ee2",
+        "url_hashes": [
+          "b7c5cab8980a8f3081a95cdc1e510a7c8f3917e0d89ea5cb8503bbdca0a61cab"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "93933d3cc1633e32",
+          "93913d3dc1456e39",
+          "9391b93989cd6939",
+          "9795b13989c56939",
+          "9595b33189cc4b3b",
+          "9595b33291c5cb8b",
+          "9595bb32b385c8c9",
+          "95b7b234b0b543ca"
+        ],
+        "source_start_seconds": 75.0,
+        "source_duration_seconds": 10.433333
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_09",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "536726ef9e11a6194c24cb80e67c5c818b23680a14a8a209988328baee1a2ee2",
+        "url_hashes": [
+          "b7c5cab8980a8f3081a95cdc1e510a7c8f3917e0d89ea5cb8503bbdca0a61cab"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cb312ce7d213193e",
+          "c1312ce5d2731b3e",
+          "c1392de5d2c11b3e",
+          "c03d2de1f2c11f36",
+          "c03e2de0b7d11e17",
+          "d03e2de0b5d11765",
+          "d03e6de6a1189765",
+          "aad555aa555257a2"
+        ],
+        "source_start_seconds": 140.0,
+        "source_duration_seconds": 8.933333
+      }
+    },
+    {
+      "episode": "nostalgia_celine_dion_my_heart_will_go_on_one_take_demo",
+      "shot_id": "shot_10",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-18T16:05:35Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "11e24dde3fcf346eff4997b466382769aeca20cbc5a1ae7333b6e7bfef42cc35",
+        "url_hashes": [
+          "e28c49d058512c3079f70e8ae17398650a521c41e81e4e47a9cf22c6e9e23857"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c7275a4b683c343d",
+          "c12e6e9f1de0c299",
+          "c12e6e9f1de0c299",
+          "c12e6e9f1de0c299",
+          "c12e6e9f1de0c299",
+          "c12e6e9f1de0c299",
+          "c12e6e9f1de0c299",
+          "c12e6e9f1de0c299"
+        ],
+        "source_start_seconds": 115.0,
+        "source_duration_seconds": 4.466667
+      }
+    }
+  ]
+}
