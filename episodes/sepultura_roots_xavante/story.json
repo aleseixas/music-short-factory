@@ -1,0 +1,15 @@
+{
+  "schema_version":1,
+  "title":"O dia em que o Sepultura gravou Roots dentro de uma aldeia Xavante",
+  "slug":"sepultura_roots_xavante",
+  "target_duration_seconds":65,
+  "segments":[
+    {"id":"hook","text":"O Sepultura levou a ideia de Roots tão a sério que entrou no Mato Grosso para gravar uma faixa dentro de uma aldeia Xavante.","delivery":"hook"},
+    {"id":"origem","text":"Em 1995, no fim das sessões do disco, a banda viajou até a aldeia Pimentel Barbosa para transformar a busca pelas raízes brasileiras em algo real, não só estético.","delivery":"curious"},
+    {"id":"gravacao","text":"Lá nasceu Itsári. O Sepultura gravou junto com os Xavante um canto ligado a uma cerimônia de cura, cercado pela própria comunidade e longe de um estúdio convencional.","delivery":"reveal"},
+    {"id":"tecnica","text":"E aqui fica absurdo: segundo Max Cavalera, o equipamento funcionava com bateria e não havia energia suficiente nem para ouvir playback. Era gravar e torcer para ter captado.","delivery":"dramatic"},
+    {"id":"imersao","text":"A equipe ficou três dias com os Xavante. Para Max, aquela viagem virou o momento que completou o conceito de Roots depois de um mês gravando o restante do álbum em Malibu.","delivery":"emotional"},
+    {"id":"payoff","text":"Por isso Itsári não é um efeito tribal colocado depois: é um registro de um encontro real que acabou dentro de um dos discos brasileiros mais influentes do metal.","delivery":"payoff"},
+    {"id":"cta","text":"Você já sabia que Roots tinha sido gravado assim? Comenta.","delivery":"curious"}
+  ]
+}
