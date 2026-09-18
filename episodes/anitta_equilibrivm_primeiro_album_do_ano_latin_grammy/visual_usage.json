@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+  "recorded_at": "2026-09-18T19:13:30Z",
+  "visual_usage": [
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_hook",
+      "asset_id": "anitta_open",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "ceaead42016a78c1c9848cf738fc012560237158717d9044f3ee101063daf5bb",
+        "url_hashes": [
+          "111701fdf43e6e4ebce0a5c9dac4eb4fe6879036707c40ee326f04738224d323"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0649c0796a5f2e7",
+          "d0669c0796a5f0e7",
+          "d0649c0796b5f0cf",
+          "d0649c07b6a5f0cf",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f0ef"
+        ],
+        "source_start_seconds": 2.0,
+        "source_duration_seconds": 9.1
+      }
+    },
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_album",
+      "asset_id": "anitta_album",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "839d69f6b19b257cc3c85c34aa5392b51e044512dfc9d492108c79b763fdad86",
+        "url_hashes": [
+          "c58c5ab7532ed4a3cd5c8122614e6cde41c1732fe332090396b45630759bab4c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0649c0796a5f2cf",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f0ef",
+          "d0649c8796a5f0cf",
+          "d0649c07b6a5f0e7",
+          "d1649c0796a5f0cf",
+          "d0649c8796a5f0e7",
+          "d0649c8796a5f0e7"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 13.5
+      }
+    },
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_brasil",
+      "asset_id": "anitta_brasil",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5668c5c11bcc84ea60d1153376404bd96cf6ec612f30cf536e0fb4a29e69b610",
+        "url_hashes": [
+          "e6f1bd55dce232ff86020d42841820ed2c8b5cc75e533786d4a47098f38ac8a3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d1649c8596a9f4cb",
+          "d0649485b6b5f0cf",
+          "d0649487b6b5f0e3",
+          "d064948796b5f0e7",
+          "d0649487b6b5f0cb",
+          "d0649407b6a5f0fb",
+          "d0649c0797a5f0eb",
+          "d0649c0797a5f0e7"
+        ],
+        "source_start_seconds": 12.0,
+        "source_duration_seconds": 12.033333
+      }
+    },
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_segunda",
+      "asset_id": "anitta_segunda",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "017e7b0a6e02d1b0db181c0d12813762e2318b396acd782c664129c641f8d9cb",
+        "url_hashes": [
+          "bd807dea020a15e5dee219c1edbe1a27a2b57716911433ca1eebbe79928a7ca2"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0649c0796a5f2cf",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f2cf",
+          "d0649c0796a5f2cf",
+          "d0649c0796a5f0ef",
+          "d0649c0796a5f2cf"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 12.9
+      }
+    },
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_contexto",
+      "asset_id": "anitta_contexto",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "839d69f6b19b257cc3c85c34aa5392b51e044512dfc9d492108c79b763fdad86",
+        "url_hashes": [
+          "c58c5ab7532ed4a3cd5c8122614e6cde41c1732fe332090396b45630759bab4c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0649c8796a5f0eb",
+          "d0649c8796a5f2cb",
+          "d0649c8796a5f0cf",
+          "d0649c07b6a5f0ed",
+          "d0649c07b6a5f0ed",
+          "d0649c8796a5f0cf",
+          "d0649c0796a5f2cf",
+          "d0649c8796a5f2cb"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 10.233333
+      }
+    },
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_payoff",
+      "asset_id": "anitta_payoff",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "ceaead42016a78c1c9848cf738fc012560237158717d9044f3ee101063daf5bb",
+        "url_hashes": [
+          "111701fdf43e6e4ebce0a5c9dac4eb4fe6879036707c40ee326f04738224d323"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0649c0796a5f2eb",
+          "d0649c0796a5f2eb",
+          "d0649c0796a5f2eb",
+          "d1649c0796a5f2cb",
+          "d0649c0796a5f4db",
+          "d0649c0796a5f0ef",
+          "d0649c0796b1f0ef",
+          "d0649c0796a5f4e7"
+        ],
+        "source_start_seconds": 22.0,
+        "source_duration_seconds": 9.166667
+      }
+    },
+    {
+      "episode": "anitta_equilibrivm_primeiro_album_do_ano_latin_grammy",
+      "shot_id": "shot_cta",
+      "asset_id": "anitta_cta",
+      "recorded_at": "2026-09-18T19:13:30Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "839d69f6b19b257cc3c85c34aa5392b51e044512dfc9d492108c79b763fdad86",
+        "url_hashes": [
+          "c58c5ab7532ed4a3cd5c8122614e6cde41c1732fe332090396b45630759bab4c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0649c8796a5f0ed",
+          "d0649c8796a5f0ed",
+          "d0649c8796a5f0eb",
+          "d0649c8796a5f2cb",
+          "d0649c8796a5f0cf",
+          "d0649c8796a5f2cb",
+          "d0649c0797a5f2cb",
+          "d0649c8796a5f2cb"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 3.633333
+      }
+    }
+  ]
+}
