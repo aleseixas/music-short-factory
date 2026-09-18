@@ -1,0 +1,12 @@
+{
+  "schema_version":1,
+  "assets":[
+    {"id":"anitta_open","file":"youtube-XH3Q4CsxRDc.mp4","url":"https://www.youtube.com/watch?v=XH3Q4CsxRDc","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"anitta_album","file":"youtube-mNB7T5xeZXQ.mp4","url":"https://www.youtube.com/watch?v=mNB7T5xeZXQ","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"anitta_brasil","file":"youtube-toikNIUPW94.mp4","url":"https://www.youtube.com/watch?v=toikNIUPW94","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"anitta_segunda","file":"youtube-cqDua4a0odg.mp4","url":"https://www.youtube.com/watch?v=cqDua4a0odg","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"anitta_contexto","file":"youtube-XH3Q4CsxRDc.mp4","url":"https://www.youtube.com/watch?v=XH3Q4CsxRDc","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"anitta_payoff","file":"youtube-mNB7T5xeZXQ.mp4","url":"https://www.youtube.com/watch?v=mNB7T5xeZXQ","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"anitta_cta","file":"youtube-toikNIUPW94.mp4","url":"https://www.youtube.com/watch?v=toikNIUPW94","credit":"Anitta / YouTube","license":"","focus":{"x":0.5,"y":0.45}}
+  ]
+}
