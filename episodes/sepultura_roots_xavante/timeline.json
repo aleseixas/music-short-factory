@@ -2,23 +2,15 @@
   "schema_version":1,
   "smart_visual_pacing":{"enabled":true},
   "background_music":{"profile":"dark_cinematic","volume":0.1},
-  "sfx_cues":[
-    {"time_seconds":0.12,"type":"impact","volume":0.14},
-    {"time_seconds":26.0,"type":"whoosh_fast","volume":0.1},
-    {"time_seconds":44.0,"type":"correct_ding","volume":0.11}
-  ],
-  "text_fx_cues":[
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"GRAVADO NUMA ALDEIA","accent_text":"ALDEIA","animation":"scale_bounce","position":"center","intensity":0.58},
-    {"segment":"tecnica","offset_seconds":0.1,"duration_seconds":1.1,"text":"SEM PLAYBACK","accent_text":"PLAYBACK","animation":"pop_in","position":"center","intensity":0.52},
-    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"VOCÊ SABIA?","accent_text":"SABIA","animation":"pop_in","position":"center","intensity":0.46}
-  ],
+  "sfx_cues":[{"time_seconds":0.12,"type":"impact","volume":0.14},{"time_seconds":26.0,"type":"whoosh_fast","volume":0.1},{"time_seconds":44.0,"type":"correct_ding","volume":0.11}],
+  "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"GRAVADO NUMA ALDEIA","accent_text":"ALDEIA","animation":"scale_bounce","position":"center","intensity":0.58},{"segment":"tecnica","offset_seconds":0.1,"duration_seconds":1.1,"text":"SEM PLAYBACK","accent_text":"PLAYBACK","animation":"pop_in","position":"center","intensity":0.52},{"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"VOCÊ SABIA?","accent_text":"SABIA","animation":"pop_in","position":"center","intensity":0.46}],
   "shots":[
     {"id":"shot_hook","segment":"hook","asset":"sepultura_open","motion":"push_in","transition_out":"cut","highlight":"ROOTS FOI ATÉ A ALDEIA","source_start_seconds":20.0},
     {"id":"shot_origem","segment":"origem","asset":"sepultura_viagem","motion":"push_in","transition_out":"crossfade","highlight":"MATO GROSSO, 1995","source_start_seconds":8.0},
     {"id":"shot_gravacao","segment":"gravacao","asset":"sepultura_itsari","motion":"pull_out","transition_out":"cut","highlight":"ITSÁRI","source_start_seconds":55.0},
     {"id":"shot_tecnica","segment":"tecnica","asset":"sepultura_bateria","motion":"push_in","transition_out":"cut","highlight":"GRAVAR E TORCER","source_start_seconds":120.0},
     {"id":"shot_imersao","segment":"imersao","asset":"sepultura_imersao","motion":"hold","transition_out":"crossfade","highlight":"3 DIAS COM OS XAVANTE","source_start_seconds":25.0},
-    {"id":"shot_payoff","segment":"payoff","asset":"sepultura_payoff","motion":"pull_out","transition_out":"cut","highlight":"ROOTS DE VERDADE","source_start_seconds":35.0},
-    {"id":"shot_cta","segment":"cta","asset":"sepultura_cta","motion":"push_in","transition_out":"cut","highlight":"VOCÊ JÁ SABIA?","source_start_seconds":20.0}
+    {"id":"shot_payoff","segment":"payoff","asset":"sepultura_payoff","motion":"pull_out","transition_out":"cut","highlight":"ROOTS DE VERDADE","source_start_seconds":70.0},
+    {"id":"shot_cta","segment":"cta","asset":"sepultura_cta","motion":"push_in","transition_out":"cut","highlight":"VOCÊ JÁ SABIA?","source_start_seconds":120.0}
   ]
 }
