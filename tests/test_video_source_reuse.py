@@ -80,16 +80,17 @@ class VideoSourceReuseTests(unittest.TestCase):
             resolver._reuse_rejection_reason(source, 18.0, 22.0),
         )
 
-    def test_source_reuse_is_capped_at_ten_selected_segments(self):
+    def test_source_reuse_is_capped_at_three_selected_segments(self):
         candidate = self._youtube_candidate()
         source = resolver._video_source_identity(candidate)
         resolver.SELECTED_VIDEO_SEGMENTS[source] = [
-            (float(i * 10), float(i * 10 + 4))
-            for i in range(10)
+            (0.0, 4.0),
+            (10.0, 14.0),
+            (20.0, 24.0),
         ]
 
         self.assertEqual(
-            resolver._reuse_rejection_reason(source, 100.0, 104.0),
+            resolver._reuse_rejection_reason(source, 30.0, 34.0),
             "video_source_reuse_limit",
         )
 
