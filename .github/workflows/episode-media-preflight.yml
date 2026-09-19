@@ -96,7 +96,7 @@ jobs:
           # Each pass collects all independent failures it can observe. Repairs are
           # applied as one batch before the next full validation. Extra passes remain
           # only for dependent errors that can become visible after another repair.
-          max_attempts=6
+          max_attempts=10
           diagnostics_dir="ci-diagnostics/media-preflight-${GITHUB_RUN_ID}"
           mkdir -p "$diagnostics_dir"
 
