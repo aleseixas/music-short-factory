@@ -4,12 +4,10 @@
     {
       "id": "revival_visual",
       "file": "youtube-YkADj0TPrJA.mp4",
+      "url": "https://www.youtube.com/watch?v=YkADj0TPrJA",
       "credit": "Phil Collins official / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "hook_visual",
@@ -17,10 +15,7 @@
       "url": "https://www.youtube.com/watch?v=YkADj0TPrJA",
       "credit": "Phil Collins official / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "clima_visual",
@@ -28,10 +23,7 @@
       "url": "https://www.youtube.com/watch?v=YkADj0TPrJA",
       "credit": "Phil Collins official / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "som_visual",
@@ -39,10 +31,7 @@
       "url": "https://www.youtube.com/watch?v=-I-Xq2wO3y8",
       "credit": "Phil Collins live 1981 / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "espera_visual",
@@ -50,10 +39,7 @@
       "url": "https://www.youtube.com/watch?v=YkADj0TPrJA",
       "credit": "Phil Collins official / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "fill_visual",
@@ -61,10 +47,7 @@
       "url": "https://www.youtube.com/watch?v=-I-Xq2wO3y8",
       "credit": "Phil Collins live 1981 / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "take_visual",
@@ -72,10 +55,7 @@
       "url": "https://www.youtube.com/watch?v=lA_gqFach1I",
       "credit": "Phil Collins live 1981 / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "impacto_visual",
@@ -83,10 +63,7 @@
       "url": "https://www.youtube.com/watch?v=lA_gqFach1I",
       "credit": "Phil Collins live 1981 / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "payoff_visual",
@@ -94,10 +71,7 @@
       "url": "https://www.youtube.com/watch?v=-I-Xq2wO3y8",
       "credit": "Phil Collins live 1981 / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     },
     {
       "id": "cta_visual",
@@ -105,10 +79,7 @@
       "url": "https://www.youtube.com/watch?v=lA_gqFach1I",
       "credit": "Phil Collins live 1981 / YouTube",
       "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.5
-      }
+      "focus": {"x": 0.5, "y": 0.5}
     }
   ]
 }
