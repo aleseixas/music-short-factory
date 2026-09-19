@@ -102,6 +102,7 @@ class MusicProfileTests(unittest.TestCase):
         self.assertEqual(result.profile, "latin_pop_uplifting")
         self.assertEqual(result.path, track.resolve())
         self.assertEqual(result.volume, 0.12)
+        self.assertEqual(result.start_seconds, 0.0)
 
     def test_multiple_tracks_are_selected_deterministically(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -109,13 +110,15 @@ class MusicProfileTests(unittest.TestCase):
             music_root = write_catalog(root, {"documentary_warm": ["b.wav", "a.wav"]})
             (music_root / "a.wav").write_bytes(b"a")
             (music_root / "b.wav").write_bytes(b"b")
-            spec = BackgroundMusicSpec("documentary_warm", 0.1)
+            spec = BackgroundMusicSpec("documentary_warm", 0.1, start_seconds=0.375)
 
             first = resolve_background_music(root, spec, "episode_slug")
             write_catalog(root, {"documentary_warm": ["a.wav", "b.wav"]})
             second = resolve_background_music(root, spec, "episode_slug")
 
         self.assertEqual(first.path, second.path)
+        self.assertEqual(first.start_seconds, 0.375)
+        self.assertEqual(second.start_seconds, 0.375)
 
     def test_unknown_profile_has_clear_error(self):
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -219,6 +222,68 @@ class BackgroundMusicMuxTests(unittest.TestCase):
         self.assertIn("afade=t=out:st=1.000000:d=1.000000", filter_graph)
         self.assertIn("[music][duck_control]sidechaincompress=", filter_graph)
         self.assertIn("[voice][ducked_music]amix=", filter_graph)
+
+    def test_default_music_start_keeps_filter_graph_unchanged(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            track = root / "music.wav"
+            track.write_bytes(b"music")
+            omitted = self._capture_mux_arguments(root, ResolvedBackgroundMusic("warm", track, .12))
+            explicit = self._capture_mux_arguments(root, ResolvedBackgroundMusic("warm", track, .12, 0.0))
+        self.assertEqual(omitted, explicit)
+        graph = omitted[omitted.index("-filter_complex") + 1]
+        self.assertNotIn("music_silence", graph)
+
+    def test_music_start_prefixes_silence_before_existing_ducking(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            track = root / "music.wav"
+            track.write_bytes(b"music")
+            arguments = self._capture_mux_arguments(
+                root, ResolvedBackgroundMusic("warm", track, .12, start_seconds=.75)
+            )
+        graph = arguments[arguments.index("-filter_complex") + 1]
+        self.assertIn("atrim=duration=1.250000", graph)
+        self.assertIn("atrim=end_sample=36000", graph)
+        self.assertIn("[music_silence][music_body]concat=n=2:v=0:a=1", graph)
+        self.assertIn("afade=t=out:st=0.625000:d=0.625000", graph)
+        self.assertLess(graph.index("[music_silence][music_body]"), graph.index("sidechaincompress="))
+        self.assertIn("atrim=duration=2.000000", graph)
+
+    def test_music_start_must_precede_video_end(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            track = root / "music.wav"
+            track.write_bytes(b"music")
+            for start in (-.1, 2.0, 3.0, float("inf"), float("nan")):
+                with self.subTest(start=start), self.assertRaisesRegex(RuntimeError, "start_seconds"):
+                    self._capture_mux_arguments(root, ResolvedBackgroundMusic("warm", track, .12, start))
+
+    def test_delayed_music_is_silent_before_entry_and_preserves_final_duration(self):
+        duration = 2.0
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            video, voice, music = (root / name for name in ("video.mp4", "voice.wav", "music.wav"))
+            write_wave(voice, duration, frequency=None)
+            write_wave(music, .25, frequency=220.0)
+            run_ffmpeg(["-y", "-hide_banner", "-loglevel", "error", "-f", "lavfi", "-i",
+                        f"color=c=black:s=90x160:r=30:d={duration}", "-an", "-c:v", "libx264",
+                        "-pix_fmt", "yuv420p", video])
+            output = make_renderer(root).mux_audio(
+                video, AudioResult(voice, duration, (), "synthetic", True), "delayed.mp4",
+                background_music=ResolvedBackgroundMusic("warm", music, .3, start_seconds=.9),
+            )
+            levels = {}
+            for label, start in (("before", .2), ("after", 1.3)):
+                sample = root / f"{label}.wav"
+                run_ffmpeg(["-y", "-hide_banner", "-loglevel", "error", "-i", output,
+                            "-ss", str(start), "-t", "0.15", "-vn", "-ac", "1", "-ar", "8000",
+                            "-c:a", "pcm_s16le", sample])
+                levels[label] = wave_rms(sample)
+            self.assertLess(levels["before"], 2)
+            self.assertGreater(levels["after"], 100)
+            self.assertEqual(probe_video_frame_count(output), 60)
+            self.assertAlmostEqual(probe_duration(output), duration, delta=.06)
 
     def test_mux_without_episode_music_keeps_voice_only_path(self):
         with tempfile.TemporaryDirectory() as temp_dir:

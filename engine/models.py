@@ -59,6 +59,7 @@ class ScriptSegment:
     # None preserves the monolithic legacy TTS path. Its effective editorial
     # meaning is still neutral.
     delivery: str | None = None
+    visual_role: str | None = None
 
     @property
     def effective_delivery(self) -> str:
@@ -71,6 +72,7 @@ class Story:
     slug: str
     segments: tuple[ScriptSegment, ...]
     target_duration_seconds: float = 75.0
+    visual_direction: dict | None = None
 
     @property
     def narration(self) -> str:
@@ -92,6 +94,7 @@ class HighlightSpec:
 class BackgroundMusicSpec:
     profile: str
     volume: float
+    start_seconds: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -99,6 +102,7 @@ class ResolvedBackgroundMusic:
     profile: str
     path: Path
     volume: float
+    start_seconds: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -237,6 +241,7 @@ class TimelineSpec:
     text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
     smart_visual_pacing: SmartVisualPacingSpec | None = None
+    preserve_authored_video_trims: bool = False
 
 
 @dataclass(frozen=True)
@@ -305,6 +310,7 @@ class Episode:
     text_fx_cues: tuple[TextFxCueSpec, ...] = ()
     overlay_cues: tuple[OverlayCue, ...] = ()
     smart_visual_pacing: SmartVisualPacingSpec | None = None
+    preserve_authored_video_trims: bool = False
 
     @property
     def assets_dir(self) -> Path:

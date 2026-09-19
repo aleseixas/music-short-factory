@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "profiles": {
+    "taylor_swift": {
+      "aliases": [
+        "Taylor Swift",
+        "taylor_swift"
+      ],
+      "mood": [
+        "emotional",
+        "intimate",
+        "nostalgic",
+        "cinematic",
+        "romantic",
+        "elegant"
+      ],
+      "pacing": {
+        "hook_seconds": 3.2,
+        "body_seconds": 3.8,
+        "emotional_seconds": 5.2,
+        "payoff_seconds": 5.8,
+        "min_shot_seconds": 2.4,
+        "max_shot_seconds": 8
+      },
+      "visual_motifs": [
+        "diary",
+        "memory",
+        "letter",
+        "warm light",
+        "eras",
+        "fan connection",
+        "singalong"
+      ],
+      "preferred_shot_types": [
+        "close-up",
+        "acoustic performance",
+        "piano",
+        "fan reaction",
+        "crowd singalong",
+        "wide stage"
+      ],
+      "emotional_arc": {
+        "hook": {
+          "mood": [
+            "intimate",
+            "emotional"
+          ],
+          "preferred_shot_types": [
+            "close-up",
+            "fan reaction"
+          ],
+          "search_terms": [
+            "emotional close up"
+          ]
+        },
+        "context": {
+          "mood": [
+            "nostalgic",
+            "cinematic"
+          ],
+          "preferred_shot_types": [
+            "archive",
+            "acoustic performance"
+          ],
+          "search_terms": [
+            "acoustic performance",
+            "memories"
+          ]
+        },
+        "intimacy": {
+          "mood": [
+            "intimate",
+            "romantic"
+          ],
+          "preferred_shot_types": [
+            "piano",
+            "close-up",
+            "acoustic performance"
+          ],
+          "search_terms": [
+            "piano intimate",
+            "acoustic close up"
+          ]
+        },
+        "build": {
+          "mood": [
+            "emotional",
+            "connection"
+          ],
+          "preferred_shot_types": [
+            "fan reaction",
+            "crowd singalong"
+          ],
+          "search_terms": [
+            "fans singing along"
+          ]
+        },
+        "payoff": {
+          "mood": [
+            "epic",
+            "sentimental"
+          ],
+          "preferred_shot_types": [
+            "crowd singalong",
+            "wide stage"
+          ],
+          "search_terms": [
+            "Eras Tour crowd singalong"
+          ]
+        }
+      },
+      "what_to_avoid": [
+        "chaotic",
+        "aggressive",
+        "mosh pit",
+        "strobe",
+        "glitch",
+        "trap",
+        "random stock",
+        "unrelated artist"
+      ],
+      "search_terms": [
+        "acoustic performance",
+        "fans singing along"
+      ],
+      "text_guidance": [
+        "Frases curtas que soem como memoria, carta ou diario.",
+        "Conectar a lembranca pessoal ao coro dos fas; manter fatos no trecho correto.",
+        "Payoff epico e sentimental, sem excesso de chamadas ou letras de musicas."
+      ],
+      "editing": {
+        "motion": "push_in",
+        "transition": "crossfade",
+        "text_animation": "fade_pop",
+        "text_intensity": 0.22,
+        "crossfade_seconds": 0.3
+      },
+      "cover": {
+        "text_color": "#FFF8F0",
+        "accent_color": "#DDB7AB",
+        "background_color": "#261B28",
+        "font_name": "Georgia"
+      }
+    },
+    "elton_john": {
+      "aliases": [
+        "Elton John",
+        "elton_john"
+      ],
+      "mood": [
+        "glam",
+        "grand",
+        "theatrical",
+        "brilliant",
+        "legendary"
+      ],
+      "pacing": {
+        "hook_seconds": 2.6,
+        "body_seconds": 3.2,
+        "emotional_seconds": 4.2,
+        "payoff_seconds": 4.8,
+        "min_shot_seconds": 1.8,
+        "max_shot_seconds": 7
+      },
+      "visual_motifs": [
+        "piano",
+        "sparkle",
+        "costume",
+        "spotlight",
+        "spectacle"
+      ],
+      "preferred_shot_types": [
+        "piano performance",
+        "costume detail",
+        "wide stage",
+        "crowd"
+      ],
+      "emotional_arc": {
+        "hook": {
+          "mood": [
+            "theatrical"
+          ],
+          "preferred_shot_types": [
+            "costume detail",
+            "piano performance"
+          ],
+          "search_terms": [
+            "piano live costume"
+          ]
+        },
+        "intimacy": {
+          "mood": [
+            "emotional"
+          ],
+          "preferred_shot_types": [
+            "close-up",
+            "piano"
+          ],
+          "search_terms": [
+            "piano close up"
+          ]
+        },
+        "payoff": {
+          "mood": [
+            "grand",
+            "legendary"
+          ],
+          "preferred_shot_types": [
+            "wide stage",
+            "crowd"
+          ],
+          "search_terms": [
+            "concert finale crowd"
+          ]
+        }
+      },
+      "what_to_avoid": [
+        "generic stock",
+        "trap",
+        "glitch"
+      ],
+      "search_terms": [
+        "live piano spectacular",
+        "stage costume"
+      ],
+      "text_guidance": [
+        "Escala de lenda e performance, com frases claras e pontuais."
+      ],
+      "editing": {
+        "motion": "pull_out",
+        "transition": "cut",
+        "text_animation": "slide_up",
+        "text_intensity": 0.45,
+        "crossfade_seconds": 0.2
+      },
+      "cover": {
+        "text_color": "#FFF9E8",
+        "accent_color": "#F2CB61",
+        "background_color": "#241238",
+        "font_name": "Georgia"
+      }
+    },
+    "travis_scott": {
+      "aliases": [
+        "Travis Scott",
+        "travis_scott"
+      ],
+      "mood": [
+        "intense",
+        "chaotic",
+        "dark",
+        "psychedelic",
+        "energetic",
+        "explosive"
+      ],
+      "pacing": {
+        "hook_seconds": 1.8,
+        "body_seconds": 2.4,
+        "emotional_seconds": 3.5,
+        "payoff_seconds": 3,
+        "min_shot_seconds": 1.2,
+        "max_shot_seconds": 6
+      },
+      "visual_motifs": [
+        "silhouette",
+        "smoke",
+        "psychedelic lights",
+        "crowd energy",
+        "pyrotechnics"
+      ],
+      "preferred_shot_types": [
+        "wide stage",
+        "crowd",
+        "low angle",
+        "performance"
+      ],
+      "emotional_arc": {
+        "hook": {
+          "mood": [
+            "intense"
+          ],
+          "preferred_shot_types": [
+            "low angle",
+            "performance"
+          ],
+          "search_terms": [
+            "live energetic performance"
+          ]
+        },
+        "intimacy": {
+          "mood": [
+            "dark"
+          ],
+          "preferred_shot_types": [
+            "silhouette",
+            "close-up"
+          ],
+          "search_terms": [
+            "silhouette stage"
+          ]
+        },
+        "payoff": {
+          "mood": [
+            "explosive"
+          ],
+          "preferred_shot_types": [
+            "crowd",
+            "wide stage"
+          ],
+          "search_terms": [
+            "concert crowd energy"
+          ]
+        }
+      },
+      "what_to_avoid": [
+        "romantic diary",
+        "pastel",
+        "wedding",
+        "random stock"
+      ],
+      "search_terms": [
+        "dark psychedelic live",
+        "crowd energy"
+      ],
+      "text_guidance": [
+        "Texto conciso e energico ligado ao evento narrado; evitar efeitos sem motivo."
+      ],
+      "editing": {
+        "motion": "push_in",
+        "transition": "cut",
+        "text_animation": "pop_in",
+        "text_intensity": 0.6,
+        "crossfade_seconds": 0.12
+      },
+      "cover": {
+        "text_color": "#FFF5E8",
+        "accent_color": "#FF813D",
+        "background_color": "#161319",
+        "font_name": "Arial"
+      }
+    },
+    "luan_santana": {
+      "aliases": [
+        "Luan Santana",
+        "luan_santana"
+      ],
+      "mood": [
+        "romantic",
+        "popular",
+        "emotional",
+        "uplifting"
+      ],
+      "pacing": {
+        "hook_seconds": 2.8,
+        "body_seconds": 3.4,
+        "emotional_seconds": 4.6,
+        "payoff_seconds": 5,
+        "min_shot_seconds": 2,
+        "max_shot_seconds": 7.5
+      },
+      "visual_motifs": [
+        "fan connection",
+        "crowd singalong",
+        "ascent",
+        "warm stage",
+        "pop sertanejo"
+      ],
+      "preferred_shot_types": [
+        "close-up",
+        "fan reaction",
+        "acoustic performance",
+        "wide stage"
+      ],
+      "emotional_arc": {
+        "hook": {
+          "mood": [
+            "emotional"
+          ],
+          "preferred_shot_types": [
+            "close-up",
+            "fan reaction"
+          ],
+          "search_terms": [
+            "show emocao fas"
+          ]
+        },
+        "intimacy": {
+          "mood": [
+            "romantic"
+          ],
+          "preferred_shot_types": [
+            "acoustic performance",
+            "close-up"
+          ],
+          "search_terms": [
+            "acustico romantico"
+          ]
+        },
+        "build": {
+          "mood": [
+            "uplifting"
+          ],
+          "preferred_shot_types": [
+            "archive",
+            "crowd"
+          ],
+          "search_terms": [
+            "inicio carreira show"
+          ]
+        },
+        "payoff": {
+          "mood": [
+            "emotional",
+            "popular"
+          ],
+          "preferred_shot_types": [
+            "crowd singalong",
+            "wide stage"
+          ],
+          "search_terms": [
+            "multidao cantando junto"
+          ]
+        }
+      },
+      "what_to_avoid": [
+        "dark psychedelic",
+        "glitch",
+        "trap",
+        "random stock"
+      ],
+      "search_terms": [
+        "show fas cantando",
+        "acustico romantico"
+      ],
+      "text_guidance": [
+        "Romance, ascensao e conexao popular em frases simples."
+      ],
+      "editing": {
+        "motion": "push_in",
+        "transition": "crossfade",
+        "text_animation": "fade_pop",
+        "text_intensity": 0.32,
+        "crossfade_seconds": 0.24
+      },
+      "cover": {
+        "text_color": "#FFF8EF",
+        "accent_color": "#E6B37A",
+        "background_color": "#2B1B22",
+        "font_name": "Georgia"
+      }
+    }
+  }
+}

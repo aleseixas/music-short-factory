@@ -7,6 +7,8 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse
 
+from engine.artist_vibe import profile_catalog_path, resolve_visual_direction, visual_role_for_segment
+from engine.visual_vibe_scoring import SEMANTIC_FIT_RANK, apply_vibe_adjustment, score_visual_candidate, semantic_selection_score
 from engine.youtube import extract_youtube_video_id, is_youtube_video_id
 from engine.visual_search import VisualSearchResult, assess_trim, inspect_visual_result
 from engine.visual_repetition import (
@@ -68,7 +70,7 @@ def _asset_kind(asset: dict | None) -> str | None:
     return None
 
 
-def _metadata_priority(candidate: dict, index: int) -> tuple[float, float, float, float]:
+def _metadata_priority(candidate: dict, index: int) -> tuple[float, ...]:
     """Cheap pre-ranking: decide which candidates deserve download/FFmpeg inspection."""
     width = _number(candidate.get("width"))
     height = _number(candidate.get("height"))
@@ -77,7 +79,16 @@ def _metadata_priority(candidate: dict, index: int) -> tuple[float, float, float
     portrait_fit = max(0.0, 1.0 - abs(ratio - (9 / 16))) if ratio else 0.0
     kind_bonus = 1.0 if str(candidate.get("kind") or "").lower() == "video" else 0.0
     editorial_rank = max(1.0, _number(candidate.get("editorial_rank"), index))
-    return (kind_bonus, portrait_fit, pixels, -editorial_rank)
+    priority = (kind_bonus, portrait_fit, pixels, -editorial_rank)
+    assessment = candidate.get("_artist_vibe_score")
+    if assessment is not None:
+        # Preserve factual authority before the new editorial tie-breaker, and
+        # apply it before inspection limits can discard the stronger narrative take.
+        semantic_rank = SEMANTIC_FIT_RANK.get(
+            str(candidate.get("semantic_fit") or "").strip().casefold(), -1
+        )
+        return (semantic_rank, assessment["adjustment"], *priority)
+    return priority
 
 
 def _candidate_source_key(candidate: dict) -> str:
@@ -283,12 +294,17 @@ def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: i
 
 
 def _score_record(index: int, candidate: dict, result: VisualSearchResult, inspection, reasons: list[str]) -> dict:
+    assessment = candidate.get("_artist_vibe_score")
+    ranked = apply_vibe_adjustment(inspection.selection_score, assessment)
+    if assessment is not None:
+        ranked = semantic_selection_score(ranked, candidate.get("semantic_fit"))
     return {
         "candidate_index": index,
         "name": result.name,
         "kind": result.kind,
         "visual_score": inspection.visual_score,
-        "selection_score": inspection.selection_score,
+        "selection_score": ranked,
+        **({"artist_vibe": candidate["_artist_vibe_score"]} if candidate.get("_artist_vibe_score") is not None else {}),
         "repetition": inspection.repetition.as_dict() if inspection.repetition else None,
         "downgraded_for_repetition": bool(inspection.repetition and inspection.repetition.is_repeated),
         "width": inspection.width,
@@ -362,6 +378,9 @@ def resolve_episode(
         timeline_path = episode_dir / "timeline.json"
         assets = _load_json(assets_path)
         timeline = _load_json(timeline_path)
+        story_path = episode_dir / "story.json"
+        story = _load_json(story_path) if story_path.is_file() else {}
+        visual_direction = resolve_visual_direction(story, profiles_path=profile_catalog_path(project_root))
         original_assets = assets.get("assets")
         shots = timeline.get("shots")
         if not isinstance(original_assets, list) or not isinstance(shots, list):
@@ -411,6 +430,19 @@ def resolve_episode(
         # the authored slot duration provides the candidate-selection estimate.
         slot = dict(slot, _shot=slot_shots[0] if slot_shots else {},
                     _output_fps=output_fps, _repetition_history=history, _episode=slug)
+        if visual_direction:
+            segment_ids = [shot.get("segment") for shot in slot_shots]
+            narration = str(slot.get("narration_text") or " ".join(
+                str(segment.get("text") or "") for segment in story.get("segments", [])
+                if isinstance(segment, dict) and segment.get("id") in segment_ids
+            ))
+            role = str(slot.get("visual_role") or visual_role_for_segment(
+                story, segment_ids[0] if segment_ids else slot_id
+            ))
+            candidates = [dict(candidate, _artist_vibe_score=score_visual_candidate(
+                candidate, visual_direction, role=role, narration=narration
+            )) if isinstance(candidate, dict) else candidate for candidate in candidates]
+            slot["candidates"] = candidates
         target_kind = _asset_kind(current_asset)
         if target_kind not in {"image", "video"}:
             failures.append(f"{slot_id}: tipo do asset atual nao identificado; mantendo asset existente")
@@ -630,6 +662,7 @@ def resolve_episode(
             "name": result.name,
             "visual_score": _record["visual_score"],
             "selection_score": score,
+            **({"artist_vibe": _record["artist_vibe"]} if "artist_vibe" in _record else {}),
             "repetition": _record.get("repetition"),
             "downgraded_for_repetition": _record.get("downgraded_for_repetition", False),
             "width": inspection.width,
@@ -701,6 +734,7 @@ def resolve_episode(
         "repetition_history_warnings": list(history_warnings),
         "selections": selections,
         "candidate_scores": candidate_scores,
+        **({"visual_direction": visual_direction} if visual_direction else {}),
         "inspection_failures": failures,
     }
     _write_json(episode_dir / "visual_resolution_report.json", report)
