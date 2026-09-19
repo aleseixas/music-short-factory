@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+  "recorded_at": "2026-09-19T16:17:25Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
+        "url_hashes": [
+          "4560b2b89bdce6beef83da23d132749d3c332858511446965cf3727a4db1dcfd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "99cd663399cc6632",
+          "99cc669299cd6732",
+          "99c9669299cd6792",
+          "99c9649299cd679a",
+          "9bd9659299c96938",
+          "9b996d929b896938",
+          "9b996d929a8d1978",
+          "9a9d6d92988d1b6c"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 10.266667
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_02",
+      "asset_id": "clima_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
+        "url_hashes": [
+          "4560b2b89bdce6beef83da23d132749d3c332858511446965cf3727a4db1dcfd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "97cd783686859696",
+          "97cd78368685969c",
+          "978978769685969c",
+          "97cd783686959694",
+          "978d78968487969d",
+          "978d7a9684979629",
+          "978d7a948595b619",
+          "978d7a968495969c"
+        ],
+        "source_start_seconds": 38.0,
+        "source_duration_seconds": 12.366667
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_03",
+      "asset_id": "som_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c4dfa6fc12c6e5ed7b465c99242602e769c12fcf4b85a8d8c131d9fc2126dc55",
+        "url_hashes": [
+          "2cfd51e2a8ee187c93ebe93aadfe3bbb2fa0b23d575ad559940375b7cc5507bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c33f1c4463b31dac",
+          "c33e1c4863b399bc",
+          "c62e3c4863f3993c",
+          "c62f3c4863f3193a",
+          "c63e384867f3193a",
+          "c63e384867f3193a",
+          "c23f384827d33e3a",
+          "c23d1c4bb3993ccc"
+        ],
+        "source_start_seconds": 24.0,
+        "source_duration_seconds": 12.2
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_04",
+      "asset_id": "espera_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
+        "url_hashes": [
+          "4560b2b89bdce6beef83da23d132749d3c332858511446965cf3727a4db1dcfd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e3e3181c18c4fcfc",
+          "9596d959c1c1c9d9",
+          "e4c48e1c4ce4ec7d",
+          "c6c49818c9e5fcb9",
+          "93d1c90c0c9cf8ef",
+          "93d1cc4c1c90f2ef",
+          "d3c0981c59d9bcba",
+          "c6c49918d9e4e6ba"
+        ],
+        "source_start_seconds": 160.0,
+        "source_duration_seconds": 12.433333
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_05",
+      "asset_id": "fill_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c4dfa6fc12c6e5ed7b465c99242602e769c12fcf4b85a8d8c131d9fc2126dc55",
+        "url_hashes": [
+          "2cfd51e2a8ee187c93ebe93aadfe3bbb2fa0b23d575ad559940375b7cc5507bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c61c73631f7c700d",
+          "e1071ff810077f3c",
+          "c41d76e21f3c7123",
+          "c51c73e31e3f7009",
+          "e30e3b711e1f78a0",
+          "f0033c3e030f7fa3",
+          "e3063f781c1f782c",
+          "e30e3b71181f7c38"
+        ],
+        "source_start_seconds": 185.0,
+        "source_duration_seconds": 10.7
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_06",
+      "asset_id": "take_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0283221ddec409881f5246e2d9e2d35c501b675e0e786a9a69e0d731ef990d7f",
+        "url_hashes": [
+          "660bb144cb9cc9911339a84540f6b993e1bc05e5cb8260921b5b3a3128470497"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "960c0cd25e6dd3f1",
+          "968c4c925e6d73d1",
+          "968e6f92564d5352",
+          "b199e4d87344695b",
+          "e119e4d83346e91f",
+          "e119ec583256ed17",
+          "e119ec583756a917",
+          "e119ec583756a917"
+        ],
+        "source_start_seconds": 120.0,
+        "source_duration_seconds": 9.433333
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_07",
+      "asset_id": "impacto_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0283221ddec409881f5246e2d9e2d35c501b675e0e786a9a69e0d731ef990d7f",
+        "url_hashes": [
+          "660bb144cb9cc9911339a84540f6b993e1bc05e5cb8260921b5b3a3128470497"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c3e1c5df70c36039",
+          "c3e1c5fe71c36031",
+          "cfe1c4fc73c26211",
+          "c63ad82dc9a47f90",
+          "c634d835e9ca7e50",
+          "c635d82ccb963b98",
+          "c635d82ec9873f12",
+          "c63cd8bdc98e3609"
+        ],
+        "source_start_seconds": 190.0,
+        "source_duration_seconds": 8.3
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_08",
+      "asset_id": "revival_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
+        "url_hashes": [
+          "4560b2b89bdce6beef83da23d132749d3c332858511446965cf3727a4db1dcfd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9bcc6a92979d126c",
+          "99cc6c9a9a9d784c",
+          "9958669bd8b0699e",
+          "955af4b5e8304997",
+          "8c59512678c797b9",
+          "8c59512678c797b9",
+          "8c59512678c797b9",
+          "d916c46d49d3b332"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 12.633333
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_09",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c4dfa6fc12c6e5ed7b465c99242602e769c12fcf4b85a8d8c131d9fc2126dc55",
+        "url_hashes": [
+          "2cfd51e2a8ee187c93ebe93aadfe3bbb2fa0b23d575ad559940375b7cc5507bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "be7c000107ff9cf8",
+          "bc7c000103ffddf8",
+          "fc7c000103dfddf8",
+          "be7c000103dfddf8",
+          "be7e000003d7dfdc",
+          "be7e000001d7dfde",
+          "fe7e000003d7d5fc",
+          "fc7c000103ffdcf8"
+        ],
+        "source_start_seconds": 230.0,
+        "source_duration_seconds": 9.066667
+      }
+    },
+    {
+      "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+      "shot_id": "shot_10",
+      "asset_id": "cta_visual",
+      "recorded_at": "2026-09-19T16:17:25Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0283221ddec409881f5246e2d9e2d35c501b675e0e786a9a69e0d731ef990d7f",
+        "url_hashes": [
+          "660bb144cb9cc9911339a84540f6b993e1bc05e5cb8260921b5b3a3128470497"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d2777e1db9e0c0c0",
+          "94636c8cde96876c",
+          "9f68a5ca293426cf",
+          "ce6136c31df821e3",
+          "946b65941b754c6d",
+          "9898672498d96dfc",
+          "9552699c67649cec",
+          "9359646c9b3669d2"
+        ],
+        "source_start_seconds": 245.0,
+        "source_duration_seconds": 4.366667
+      }
+    }
+  ]
+}
