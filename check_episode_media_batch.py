@@ -17,7 +17,7 @@ from engine.music import resolve_background_music
 from engine.visual_candidates import validate_visual_candidate_pool
 
 
-MAX_VIDEO_SOURCE_USES = 10
+MAX_VIDEO_SOURCE_USES = 3
 DEFAULT_VIDEO_REUSE_WINDOW_SECONDS = 4.0
 
 
@@ -210,7 +210,7 @@ def _shot_source_interval(shot) -> tuple[float, float]:
 def _collect_visual_structure_errors(episode, slug: str) -> list[dict[str, object]]:
     """Validate image uniqueness and bounded, non-overlapping video-source reuse.
 
-    Current editorial policy allows one video source to feed up to ten shots when
+    Current editorial policy allows one video source to feed up to three shots when
     each shot uses a genuinely different, non-overlapping temporal segment. Images
     remain zero-reuse. This check intentionally uses a conservative four-second
     window when source_end_seconds is omitted; render-time validation still verifies
