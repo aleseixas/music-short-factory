@@ -11,7 +11,7 @@
     {"id":"shot_05","segment":"fill","asset":"fill_visual","motion":"push_in","transition_out":"cut","source_start_seconds":185.0},
     {"id":"shot_06","segment":"outra_take","asset":"take_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":120.0},
     {"id":"shot_07","segment":"impacto","asset":"impacto_visual","motion":"push_in","transition_out":"cut","source_start_seconds":190.0},
-    {"id":"shot_08","segment":"revival","asset":"revival_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":25.0},
+    {"id":"shot_08","segment":"revival","asset":"revival_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":70.0},
     {"id":"shot_09","segment":"payoff","asset":"payoff_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":230.0},
     {"id":"shot_10","segment":"cta","asset":"cta_visual","motion":"hold","transition_out":"cut","source_start_seconds":245.0}
   ]
