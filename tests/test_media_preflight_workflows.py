@@ -14,7 +14,7 @@ class MediaPreflightWorkflowTests(unittest.TestCase):
         self.assertIn("AUDIO_PROVIDER_CIRCUIT_STATE:", batch)
         self.assertIn("${{ runner.temp }}", batch)
         self.assertIn("${{ github.run_id }}-${{ github.run_attempt }}", batch)
-        self.assertIn("max_attempts=6", workflow)
+        self.assertIn("max_attempts=10", workflow)
 
     def test_auth_probe_only_does_not_resolve_or_handoff_another_episode(self):
         workflow = (WORKFLOWS / "test-youtube-auth.yml").read_text(encoding="utf-8")
