@@ -1,15 +1,106 @@
 {
   "schema_version": 1,
   "assets": [
-    {"id":"hook_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"clima_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"som_visual","file":"youtube--I-Xq2wO3y8.mp4","url":"https://www.youtube.com/watch?v=-I-Xq2wO3y8","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"espera_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"fill_visual","file":"youtube--I-Xq2wO3y8.mp4","url":"https://www.youtube.com/watch?v=-I-Xq2wO3y8","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"take_visual","file":"youtube-lA_gqFach1I.mp4","url":"https://www.youtube.com/watch?v=lA_gqFach1I","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"impacto_visual","file":"youtube-lA_gqFach1I.mp4","url":"https://www.youtube.com/watch?v=lA_gqFach1I","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"revival_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"payoff_visual","file":"youtube--I-Xq2wO3y8.mp4","url":"https://www.youtube.com/watch?v=-I-Xq2wO3y8","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"cta_visual","file":"youtube-lA_gqFach1I.mp4","url":"https://www.youtube.com/watch?v=lA_gqFach1I","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+    {
+      "id": "revival_visual",
+      "file": "youtube-YkADj0TPrJA.mp4",
+      "url": "https://www.youtube.com/watch?v=YkADj0TPrJA",
+      "credit": "Phil Collins official / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "hook_visual",
+      "file": "youtube-YkADj0TPrJA.mp4",
+      "credit": "Phil Collins official / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "clima_visual",
+      "file": "youtube-YkADj0TPrJA.mp4",
+      "credit": "Phil Collins official / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "som_visual",
+      "file": "youtube--I-Xq2wO3y8.mp4",
+      "credit": "Phil Collins live 1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "espera_visual",
+      "file": "youtube-YkADj0TPrJA.mp4",
+      "credit": "Phil Collins official / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "fill_visual",
+      "file": "youtube--I-Xq2wO3y8.mp4",
+      "credit": "Phil Collins live 1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "take_visual",
+      "file": "youtube-lA_gqFach1I.mp4",
+      "credit": "Phil Collins live 1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "impacto_visual",
+      "file": "youtube-lA_gqFach1I.mp4",
+      "credit": "Phil Collins live 1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "payoff_visual",
+      "file": "youtube--I-Xq2wO3y8.mp4",
+      "credit": "Phil Collins live 1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "cta_visual",
+      "file": "youtube-lA_gqFach1I.mp4",
+      "credit": "Phil Collins live 1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
   ]
 }
