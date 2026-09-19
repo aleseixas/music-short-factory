@@ -496,6 +496,11 @@ def _asset_entry(slot_id: str, candidate: dict, result: VisualSearchResult) -> d
         return {
             "id": slot_id,
             "file": desired,
+            # Keep the retrievable source in persisted metadata. If assets.json is
+            # committed without the staged media file, a later fresh runner can
+            # reacquire the exact same video instead of reporting "file missing
+            # and no URL".
+            "url": result.source_page_url,
             "credit": credit,
             "license": result.license,
             "focus": focus,
