@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "Faroeste Caboclo obrigou rádios a censurar o vinil na mão",
+  "slug": "faroeste_caboclo_radio_censura",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"Faroeste Caboclo, da Legião Urbana, deu tanto trabalho nas rádios que alguns locutores precisavam censurar os palavrões manualmente no próprio vinil.","delivery":"hook"},
+    {"id":"problema","text":"Quando a faixa saiu em 1987, ela tinha mais de nove minutos, não tinha refrão e ainda trazia palavrões e críticas políticas. Para a programação de FM da época, era quase um pesadelo.","delivery":"curious"},
+    {"id":"fitas","text":"Segundo uma reportagem do UOL com radialistas daquele período, grandes emissoras recebiam fitas em que trechos polêmicos já vinham acelerados ou picotados pela gravadora.","delivery":"reveal"},
+    {"id":"vinil","text":"Só que em rádios menores essas fitas nem sempre chegavam. A solução podia ser literalmente pausar ou editar a música no vinil na hora do palavrão.","delivery":"dramatic"},
+    {"id":"globo","text":"E a censura chegou à televisão: numa apresentação de 1988 no Globo de Ouro, a Legião precisou trocar palavras da letra para conseguir cantar a música no programa.","delivery":"reveal"},
+    {"id":"sucesso","text":"O mais absurdo é que nada disso matou a faixa. Mesmo longa e cheia de obstáculos para tocar no ar, Faroeste Caboclo virou um dos maiores clássicos do rock brasileiro.","delivery":"payoff"},
+    {"id":"cta","text":"Você teria paciência pra editar nove minutos de música no vinil? Comenta.","delivery":"curious"}
+  ]
+}
