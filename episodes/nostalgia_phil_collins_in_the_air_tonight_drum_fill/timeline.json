@@ -1,139 +1,18 @@
 {
-  "schema_version": 1,
-  "smart_visual_pacing": {
-    "enabled": true
-  },
-  "background_music": {
-    "profile": "dark_cinematic",
-    "volume": 0.1
-  },
-  "sfx_cues": [
-    {
-      "time_seconds": 0.1,
-      "type": "impact",
-      "volume": 0.14
-    },
-    {
-      "time_seconds": 27,
-      "type": "riser_build_up",
-      "volume": 0.1
-    },
-    {
-      "time_seconds": 34,
-      "type": "bass_drop_cinematic",
-      "volume": 0.14
-    }
-  ],
-  "visual_fx_cues": [
-    {
-      "start_seconds": 0.1,
-      "end_seconds": 0.9,
-      "type": "punch_zoom",
-      "intensity": 0.62
-    }
-  ],
-  "text_fx_cues": [
-    {
-      "segment": "hook",
-      "offset_seconds": 0.1,
-      "duration_seconds": 1.1,
-      "text": "ELE NÃO PLANEJOU",
-      "accent_text": "NÃO PLANEJOU",
-      "animation": "scale_bounce",
-      "position": "center",
-      "intensity": 0.8
-    },
-    {
-      "segment": "fill",
-      "offset_seconds": 0.1,
-      "duration_seconds": 1.0,
-      "text": "SENTOU E TOCOU",
-      "accent_text": "TOCOU",
-      "animation": "pop_in",
-      "position": "center",
-      "intensity": 0.75
-    }
-  ],
-  "shots": [
-    {
-      "id": "shot_01",
-      "segment": "hook",
-      "asset": "hook_visual",
-      "motion": "push_in",
-      "transition_out": "cut",
-      "source_start_seconds": 8.0
-    },
-    {
-      "id": "shot_02",
-      "segment": "clima",
-      "asset": "clima_visual",
-      "motion": "hold",
-      "transition_out": "crossfade",
-      "source_start_seconds": 38.0
-    },
-    {
-      "id": "shot_03",
-      "segment": "som",
-      "asset": "som_visual",
-      "motion": "pull_out",
-      "transition_out": "cut",
-      "source_start_seconds": 24.0
-    },
-    {
-      "id": "shot_04",
-      "segment": "espera",
-      "asset": "espera_visual",
-      "motion": "hold",
-      "transition_out": "crossfade",
-      "source_start_seconds": 160.0
-    },
-    {
-      "id": "shot_05",
-      "segment": "fill",
-      "asset": "fill_visual",
-      "motion": "push_in",
-      "transition_out": "cut",
-      "source_start_seconds": 185.0
-    },
-    {
-      "id": "shot_06",
-      "segment": "outra_take",
-      "asset": "take_visual",
-      "motion": "hold",
-      "transition_out": "crossfade",
-      "source_start_seconds": 120.0
-    },
-    {
-      "id": "shot_07",
-      "segment": "impacto",
-      "asset": "impacto_visual",
-      "motion": "push_in",
-      "transition_out": "cut",
-      "source_start_seconds": 190.0
-    },
-    {
-      "id": "shot_08",
-      "segment": "revival",
-      "asset": "revival_visual",
-      "motion": "hold",
-      "transition_out": "crossfade",
-      "source_start_seconds": 220
-    },
-    {
-      "id": "shot_09",
-      "segment": "payoff",
-      "asset": "payoff_visual",
-      "motion": "pull_out",
-      "transition_out": "crossfade",
-      "source_start_seconds": 230.0
-    },
-    {
-      "id": "shot_10",
-      "segment": "cta",
-      "asset": "cta_visual",
-      "motion": "hold",
-      "transition_out": "cut",
-      "source_start_seconds": 245.0
-    }
+  "schema_version":1,"smart_visual_pacing":{"enabled":true},"background_music":{"profile":"dark_cinematic","volume":0.1},
+  "sfx_cues":[{"time_seconds":0.1,"type":"impact","volume":0.14},{"time_seconds":27,"type":"riser_build_up","volume":0.1},{"time_seconds":34,"type":"bass_drop_cinematic","volume":0.14}],
+  "visual_fx_cues":[{"start_seconds":0.1,"end_seconds":0.9,"type":"punch_zoom","intensity":0.62}],
+  "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.1,"text":"ELE NÃO PLANEJOU","accent_text":"NÃO PLANEJOU","animation":"scale_bounce","position":"center","intensity":0.8},{"segment":"fill","offset_seconds":0.1,"duration_seconds":1.0,"text":"SENTOU E TOCOU","accent_text":"TOCOU","animation":"pop_in","position":"center","intensity":0.75}],
+  "shots":[
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_02","segment":"clima","asset":"clima_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":38.0},
+    {"id":"shot_03","segment":"som","asset":"som_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":24.0},
+    {"id":"shot_04","segment":"espera","asset":"espera_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":160.0},
+    {"id":"shot_05","segment":"fill","asset":"fill_visual","motion":"push_in","transition_out":"cut","source_start_seconds":185.0},
+    {"id":"shot_06","segment":"outra_take","asset":"take_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":120.0},
+    {"id":"shot_07","segment":"impacto","asset":"impacto_visual","motion":"push_in","transition_out":"cut","source_start_seconds":190.0},
+    {"id":"shot_08","segment":"revival","asset":"revival_visual","motion":"hold","transition_out":"crossfade","source_start_seconds":25.0},
+    {"id":"shot_09","segment":"payoff","asset":"payoff_visual","motion":"pull_out","transition_out":"crossfade","source_start_seconds":230.0},
+    {"id":"shot_10","segment":"cta","asset":"cta_visual","motion":"hold","transition_out":"cut","source_start_seconds":245.0}
   ]
 }
