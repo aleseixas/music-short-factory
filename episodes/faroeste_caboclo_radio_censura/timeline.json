@@ -1,0 +1,24 @@
+{
+  "schema_version":1,
+  "smart_visual_pacing":{"enabled":true},
+  "background_music":{"profile":"fallback_social_urban","volume":0.10},
+  "sfx_cues":[
+    {"time_seconds":0.12,"type":"impact","volume":0.14},
+    {"time_seconds":20.0,"type":"whoosh_fast","volume":0.10},
+    {"time_seconds":42.0,"type":"correct_ding","volume":0.11}
+  ],
+  "text_fx_cues":[
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"CENSURA NO VINIL","accent_text":"VINIL","animation":"scale_bounce","position":"center","intensity":0.58},
+    {"segment":"vinil","offset_seconds":0.1,"duration_seconds":1.1,"text":"NA MÃO","accent_text":"MÃO","animation":"pop_in","position":"center","intensity":0.52},
+    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"VOCÊ FARIA ISSO?","accent_text":"FARIA","animation":"pop_in","position":"center","intensity":0.46}
+  ],
+  "shots":[
+    {"id":"shot_hook","segment":"hook","asset":"faroeste_open","motion":"push_in","transition_out":"cut","highlight":"CENSURAR NO VINIL","source_start_seconds":2.0},
+    {"id":"shot_problema","segment":"problema","asset":"faroeste_problema","motion":"pull_out","transition_out":"crossfade","highlight":"MAIS DE 9 MINUTOS","source_start_seconds":8.0},
+    {"id":"shot_fitas","segment":"fitas","asset":"faroeste_fitas","motion":"hold","transition_out":"cut","highlight":"FITAS PICOTADAS","source_start_seconds":12.0},
+    {"id":"shot_vinil","segment":"vinil","asset":"faroeste_vinil","motion":"push_in","transition_out":"cut","highlight":"EDIÇÃO MANUAL","source_start_seconds":32.0},
+    {"id":"shot_globo","segment":"globo","asset":"faroeste_globo","motion":"pull_out","transition_out":"crossfade","highlight":"GLOBO DE OURO 1988","source_start_seconds":48.0},
+    {"id":"shot_sucesso","segment":"sucesso","asset":"faroeste_sucesso","motion":"push_in","transition_out":"cut","highlight":"VIROU CLÁSSICO","source_start_seconds":55.0},
+    {"id":"shot_cta","segment":"cta","asset":"faroeste_cta","motion":"hold","transition_out":"cut","highlight":"VOCÊ EDITARIA?","source_start_seconds":75.0}
+  ]
+}
