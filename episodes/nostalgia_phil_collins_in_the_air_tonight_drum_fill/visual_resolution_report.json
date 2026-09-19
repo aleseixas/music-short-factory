@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
-  "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+  "recorded_at": "2026-09-19T13:25:18.780145+00:00",
   "visual_usage_stage": "candidate_resolution",
   "visual_usage": [
     {
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_01",
       "asset_id": "hook_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
@@ -34,7 +34,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_02",
       "asset_id": "clima_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
@@ -60,7 +60,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_03",
       "asset_id": "som_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "c4dfa6fc12c6e5ed7b465c99242602e769c12fcf4b85a8d8c131d9fc2126dc55",
@@ -86,7 +86,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_04",
       "asset_id": "espera_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "510af14b04f15d99c82fca9988d097f918fc011a4cbb0011e89ad3e4d0474123",
@@ -112,7 +112,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_05",
       "asset_id": "fill_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "c4dfa6fc12c6e5ed7b465c99242602e769c12fcf4b85a8d8c131d9fc2126dc55",
@@ -138,7 +138,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_06",
       "asset_id": "take_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "0283221ddec409881f5246e2d9e2d35c501b675e0e786a9a69e0d731ef990d7f",
@@ -164,7 +164,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_07",
       "asset_id": "impacto_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "0283221ddec409881f5246e2d9e2d35c501b675e0e786a9a69e0d731ef990d7f",
@@ -190,7 +190,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_09",
       "asset_id": "payoff_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "c4dfa6fc12c6e5ed7b465c99242602e769c12fcf4b85a8d8c131d9fc2126dc55",
@@ -216,7 +216,7 @@
       "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
       "shot_id": "shot_10",
       "asset_id": "cta_visual",
-      "recorded_at": "2026-09-19T11:18:35.186166+00:00",
+      "recorded_at": "2026-09-19T13:25:18.780145+00:00",
       "fingerprint": {
         "kind": "video",
         "sha256": "0283221ddec409881f5246e2d9e2d35c501b675e0e786a9a69e0d731ef990d7f",

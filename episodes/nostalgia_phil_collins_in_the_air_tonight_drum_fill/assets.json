@@ -20,8 +20,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=YkADj0TPrJA"
+      }
     },
     {
       "id": "clima_visual",
@@ -31,8 +30,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=YkADj0TPrJA"
+      }
     },
     {
       "id": "som_visual",
@@ -42,8 +40,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=-I-Xq2wO3y8"
+      }
     },
     {
       "id": "espera_visual",
@@ -53,8 +50,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=YkADj0TPrJA"
+      }
     },
     {
       "id": "fill_visual",
@@ -64,8 +60,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=-I-Xq2wO3y8"
+      }
     },
     {
       "id": "take_visual",
@@ -75,8 +70,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=lA_gqFach1I"
+      }
     },
     {
       "id": "impacto_visual",
@@ -86,8 +80,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=lA_gqFach1I"
+      }
     },
     {
       "id": "payoff_visual",
@@ -97,8 +90,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=-I-Xq2wO3y8"
+      }
     },
     {
       "id": "cta_visual",
@@ -108,8 +100,7 @@
       "focus": {
         "x": 0.5,
         "y": 0.5
-      },
-      "url": "https://www.youtube.com/watch?v=lA_gqFach1I"
+      }
     }
   ]
 }
