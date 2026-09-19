@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+  "error_code": "VISUAL_ASSET_INVALID",
+  "error_detail": "Asset de video invalido 'revival_visual': yt-dlp falhou ao obter o video id=04mX46xJ1qM: ERROR: [youtube] 04mX46xJ<redacted>qM: This video is unavailable",
+  "target_slot": "revival_visual",
+  "failing_file": "",
+  "selection_mode": "same_kind_eligible",
+  "selected_kind": "video",
+  "selected_name": "YkADj0TPrJA",
+  "selected_file": "youtube-YkADj0TPrJA.mp4",
+  "selected_url": null,
+  "visual_score": 63.14,
+  "selection_score": 65.78,
+  "inspection_failures": []
+}
