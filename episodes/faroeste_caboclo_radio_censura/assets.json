@@ -1,0 +1,12 @@
+{
+  "schema_version":1,
+  "assets":[
+    {"id":"faroeste_open","file":"youtube-qGkAKq3sLiA.mp4","url":"https://www.youtube.com/watch?v=qGkAKq3sLiA","credit":"Encontro Legionário / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"faroeste_problema","file":"youtube-nhZkdvvs9uE.mp4","url":"https://www.youtube.com/watch?v=nhZkdvvs9uE","credit":"Legião Urbana / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"faroeste_fitas","file":"youtube-bM1W_TjDiaY.mp4","url":"https://www.youtube.com/watch?v=bM1W_TjDiaY","credit":"Legião Urbana / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"faroeste_vinil","file":"youtube-nhZkdvvs9uE.mp4","url":"https://www.youtube.com/watch?v=nhZkdvvs9uE","credit":"Legião Urbana / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"faroeste_globo","file":"youtube-qGkAKq3sLiA.mp4","url":"https://www.youtube.com/watch?v=qGkAKq3sLiA","credit":"Encontro Legionário / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"faroeste_sucesso","file":"youtube-bM1W_TjDiaY.mp4","url":"https://www.youtube.com/watch?v=bM1W_TjDiaY","credit":"Legião Urbana / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"faroeste_cta","file":"youtube-qGkAKq3sLiA.mp4","url":"https://www.youtube.com/watch?v=qGkAKq3sLiA","credit":"Encontro Legionário / YouTube","license":"","focus":{"x":0.5,"y":0.42}}
+  ]
+}
