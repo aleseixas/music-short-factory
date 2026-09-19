@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "assets": [
-    {"id":"revival_visual","file":"youtube-gbFwg1QgDZk.mp4","url":"https://www.youtube.com/watch?v=gbFwg1QgDZk","credit":"Phil Collins Official Artist Channel / Live Aid / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"revival_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
     {"id":"hook_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
     {"id":"clima_visual","file":"youtube-YkADj0TPrJA.mp4","url":"https://www.youtube.com/watch?v=YkADj0TPrJA","credit":"Phil Collins official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
     {"id":"som_visual","file":"youtube--I-Xq2wO3y8.mp4","url":"https://www.youtube.com/watch?v=-I-Xq2wO3y8","credit":"Phil Collins live 1981 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
