@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "faroeste_caboclo_radio_censura",
+  "recorded_at": "2026-09-19T19:22:23Z",
+  "visual_usage": [
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_hook",
+      "asset_id": "faroeste_open",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "74a138837c41123b9479e700bca92a55115677920f1421a22831989ca3ef31bb",
+        "url_hashes": [
+          "e203a0f7507bce675bdc0dc98776ff0db7d3bcb4d679f0b2fcecb694f9ee190f"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c9d821347667578b",
+          "c9d821747667178b",
+          "99dc35716637620d",
+          "91dc3f696d166226",
+          "91dc3d496e976226",
+          "919c39c96e9362a7",
+          "919d99c86f927287",
+          "81959b5b09d63ec3"
+        ],
+        "source_start_seconds": 2.0,
+        "source_duration_seconds": 10.4
+      }
+    },
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_problema",
+      "asset_id": "faroeste_problema",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "74a138837c41123b9479e700bca92a55115677920f1421a22831989ca3ef31bb",
+        "url_hashes": [
+          "e203a0f7507bce675bdc0dc98776ff0db7d3bcb4d679f0b2fcecb694f9ee190f"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f172c4b396c99c89",
+          "f03bc433c3cc9cc9",
+          "f57284f682c998cb",
+          "f17a84f3c28d9c89",
+          "f13bc433c3cc9c89",
+          "f53bc433ce8c9889",
+          "865ccd2b893cda35",
+          "8c14cd6bc87aca3b"
+        ],
+        "source_start_seconds": 30.0,
+        "source_duration_seconds": 13.933333
+      }
+    },
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_fitas",
+      "asset_id": "faroeste_fitas",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "74a138837c41123b9479e700bca92a55115677920f1421a22831989ca3ef31bb",
+        "url_hashes": [
+          "e203a0f7507bce675bdc0dc98776ff0db7d3bcb4d679f0b2fcecb694f9ee190f"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1bcb3da8cb16698",
+          "c1aef0cd8e716698",
+          "d2a4f9cc9823ce93",
+          "d6a8f9ceb1a19a44",
+          "86f8e99e6991e889",
+          "c63bcc8e788dd889",
+          "b17bc487e3cc8cc8",
+          "e5768936d689d889"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 11.1
+      }
+    },
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_vinil",
+      "asset_id": "faroeste_vinil",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "baffc7943e97c947d937d2e87a40ac39afe42e1313c403c7d18baffc5015a9bd",
+        "url_hashes": [
+          "f4756edf2d9ecda5ffab386e4bba1d304aabd21346673b37ca2f1226ed55a711"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b08c63b663b6c38d",
+          "949d726b946623e6",
+          "95d8f1c0c7c0ce9b",
+          "949cf338d8b331e2",
+          "909f70fcf238c3c8",
+          "b0b8d6a1d8b63966",
+          "c0f94aa59b6625da",
+          "948ef338e4326ba6"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 10.5
+      }
+    },
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_globo",
+      "asset_id": "faroeste_globo",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "baffc7943e97c947d937d2e87a40ac39afe42e1313c403c7d18baffc5015a9bd",
+        "url_hashes": [
+          "f4756edf2d9ecda5ffab386e4bba1d304aabd21346673b37ca2f1226ed55a711"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "dbcd6498191cc9c7",
+          "c8c737dd1e06c079",
+          "c4133bcf07f01c1f",
+          "84b4a69b9966399b",
+          "c1b093996cba99e6",
+          "c1b493cd8ee234cb",
+          "c1b793c98ece34c2",
+          "88a27358dc17778d"
+        ],
+        "source_start_seconds": 48.0,
+        "source_duration_seconds": 11.933333
+      }
+    },
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_sucesso",
+      "asset_id": "faroeste_sucesso",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "38c9ef1676718cb8db040572e7223fca9b8903900f7ab42cb76a2f35529c4163",
+        "url_hashes": [
+          "a3e164b4c2286fbcb050598588f06c60eec2642ef9019b6e5b5e88b61ca484a3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "95da6d63a18d52b1",
+          "fd4a05fe02a55aa5",
+          "ccc23718763758b5",
+          "b5d0676a55494ab5",
+          "ad5ab55a90a552b5",
+          "8d5aa458dbad52a5",
+          "8d5aa459caad5aa5",
+          "cd5aa458cb8d5aa5"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 12.666667
+      }
+    },
+    {
+      "episode": "faroeste_caboclo_radio_censura",
+      "shot_id": "shot_cta",
+      "asset_id": "faroeste_cta",
+      "recorded_at": "2026-09-19T19:22:23Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "38c9ef1676718cb8db040572e7223fca9b8903900f7ab42cb76a2f35529c4163",
+        "url_hashes": [
+          "a3e164b4c2286fbcb050598588f06c60eec2642ef9019b6e5b5e88b61ca484a3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "958f502cf7392d92",
+          "959e7328f2732592",
+          "959e71e8f23981d8",
+          "b48d72a0e331e7d2",
+          "958d72b0393267d3",
+          "e1936db5b464cc94",
+          "e189c5a546e696da",
+          "b585d0e1c2879bda"
+        ],
+        "source_start_seconds": 75.0,
+        "source_duration_seconds": 5.333333
+      }
+    }
+  ]
+}
