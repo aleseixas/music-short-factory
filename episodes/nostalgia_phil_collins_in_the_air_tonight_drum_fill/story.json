@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "title": "Phil Collins não planejou a virada mais famosa de In the Air Tonight — ele simplesmente tocou",
+  "slug": "nostalgia_phil_collins_in_the_air_tonight_drum_fill",
+  "target_duration_seconds": 70,
+  "segments": [
+    {"id":"hook","text":"Phil Collins criou uma das viradas de bateria mais famosas da história sem planejar nota por nota — em In the Air Tonight, ele simplesmente sentou e tocou.","delivery":"hook"},
+    {"id":"clima","text":"A música saiu em 1981 e passa boa parte do tempo segurando a tensão com voz, sintetizadores e uma bateria eletrônica Roland CR-78.","delivery":"curious"},
+    {"id":"som","text":"Só que o som explosivo da bateria tinha uma origem ainda mais improvável: Collins e o produtor Hugh Padgham aproveitaram a técnica de gated reverb que nasceu numa sessão de Peter Gabriel.","delivery":"reveal"},
+    {"id":"espera","text":"Por isso a bateria acústica fica guardada. A faixa faz você esperar, esperar… até chegar o momento que praticamente todo mundo reconhece antes mesmo do refrão voltar.","delivery":"dramatic"},
+    {"id":"fill","text":"E aqui fica absurdo: Collins contou que não ficou pensando em qual seria a melhor virada. Ele decidiu onde a bateria entraria, sentou e fez aquele fill.","delivery":"reveal"},
+    {"id":"outra_take","text":"Segundo ele, provavelmente existe até outra tomada em algum lugar com uma virada completamente diferente. Aquilo que virou assinatura podia ter sido outra coisa.","delivery":"curious"},
+    {"id":"impacto","text":"O resultado virou o momento definitivo da música e ajudou a transformar aquele som de bateria enorme numa marca dos anos oitenta.","delivery":"dramatic"},
+    {"id":"revival","text":"Décadas depois, a mesma espera ainda funcionava: em 2020, a reação de dois irmãos ouvindo a virada pela primeira vez viralizou e empurrou a música de volta às paradas digitais.","delivery":"emotional"},
+    {"id":"payoff","text":"Pensa nisso: um dos segundos mais antecipados da música pop não nasceu de uma fórmula perfeita. Nasceu de Phil Collins confiando no instante.","delivery":"payoff"},
+    {"id":"cta","text":"Manda isso pra quem sempre espera essa bateria entrar.","delivery":"payoff"}
+  ]
+}
