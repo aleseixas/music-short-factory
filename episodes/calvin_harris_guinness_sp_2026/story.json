@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "Calvin Harris colocou o Carnaval de São Paulo no Guinness",
+  "slug": "calvin_harris_guinness_sp_2026",
+  "target_duration_seconds": 68,
+  "segments": [
+    {"id":"hook","text":"Calvin Harris acabou de colocar o Carnaval de São Paulo no Guinness: o DJ reuniu cerca de 1,6 milhão de pessoas em um único set nas ruas da cidade.","delivery":"hook"},
+    {"id":"recorde","text":"O recorde foi reconhecido como o maior público já registrado para um DJ set comandado por um único artista. E aconteceu em 8 de fevereiro, na Rua da Consolação.","delivery":"reveal"},
+    {"id":"trio","text":"O mais doido é o formato: não era estádio nem festival fechado. Calvin estreou no Carnaval de rua em cima de um trio elétrico, cercado por uma multidão no centro de São Paulo.","delivery":"curious"},
+    {"id":"caos","text":"Só que o tamanho também trouxe caos. A concentração de gente provocou interrupções no percurso, mudanças no controle dos acessos e atendimentos a foliões que passaram mal.","delivery":"dramatic"},
+    {"id":"categoria","text":"E tem um detalhe importante: o Guinness reconheceu a marca especificamente na categoria de DJ set de um único artista. Não significa que foi o maior show musical de todos os tempos.","delivery":"reveal"},
+    {"id":"payoff","text":"Neste domingo, 20 de setembro, Calvin mostrou o certificado e resumiu a história em uma frase: só no Brasil. Um bloco de Carnaval virou recorde mundial.","delivery":"payoff"},
+    {"id":"cta","text":"Você encararia um bloco com 1,6 milhão? Comenta.","delivery":"curious"}
+  ]
+}
