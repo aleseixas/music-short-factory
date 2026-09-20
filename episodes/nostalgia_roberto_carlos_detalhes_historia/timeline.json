@@ -1,0 +1,16 @@
+{
+  "schema_version":1,
+  "smart_visual_pacing":{"enabled":true},
+  "background_music":{"profile":"emotional_warm","volume":0.06},
+  "sfx_cues":[{"time_seconds":0.1,"type":"impact","volume":0.1},{"time_seconds":24,"type":"whoosh_fast","volume":0.07}],
+  "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"O SEGREDO DE DETALHES","accent_text":"DETALHES","animation":"scale_bounce","position":"center","intensity":0.7}],
+  "shots":[
+    {"id":"shot_01","segment":"hook","asset":"rc_70s_1","motion":"push_in","transition_out":"cut","source_start_seconds":5.0},
+    {"id":"shot_02","segment":"origem","asset":"rc_1971_1","motion":"hold","transition_out":"crossfade","source_start_seconds":15.0},
+    {"id":"shot_03","segment":"virada","asset":"rc_official_1","motion":"push_in","transition_out":"cut","source_start_seconds":25.0},
+    {"id":"shot_04","segment":"detalhes","asset":"rc_70s_2","motion":"hold","transition_out":"crossfade","source_start_seconds":55.0},
+    {"id":"shot_05","segment":"album","asset":"rc_1971_2","motion":"pull_out","transition_out":"cut","source_start_seconds":70.0},
+    {"id":"shot_06","segment":"tempo","asset":"rc_official_2","motion":"push_in","transition_out":"crossfade","source_start_seconds":95.0},
+    {"id":"shot_07","segment":"payoff","asset":"rc_official_3","motion":"hold","transition_out":"cut","source_start_seconds":130.0}
+  ]
+}
