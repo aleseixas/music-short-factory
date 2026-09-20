@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"calvin_open","file":"youtube-sd3xym6X8gA.mp4","url":"https://www.youtube.com/watch?v=sd3xym6X8gA","credit":"Le narrima / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"calvin_recorde","file":"youtube-wsoxUc9vErY.mp4","url":"https://www.youtube.com/watch?v=wsoxUc9vErY","credit":"Revista Oeste / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"calvin_trio","file":"youtube-evgntRb_hC4.mp4","url":"https://www.youtube.com/watch?v=evgntRb_hC4","credit":"CNN Brasil / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"calvin_caos","file":"youtube-wsoxUc9vErY.mp4","url":"https://www.youtube.com/watch?v=wsoxUc9vErY","credit":"Revista Oeste / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"calvin_categoria","file":"youtube-sd3xym6X8gA.mp4","url":"https://www.youtube.com/watch?v=sd3xym6X8gA","credit":"Le narrima / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"calvin_payoff","file":"youtube-evgntRb_hC4.mp4","url":"https://www.youtube.com/watch?v=evgntRb_hC4","credit":"CNN Brasil / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"calvin_cta","file":"youtube-AvHQocL4ouA.mp4","url":"https://www.youtube.com/watch?v=AvHQocL4ouA","credit":"BandNews FM / YouTube","license":"","focus":{"x":0.5,"y":0.45}}
+  ]
+}
