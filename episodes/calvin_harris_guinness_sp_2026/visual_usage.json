@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "calvin_harris_guinness_sp_2026",
+  "recorded_at": "2026-09-20T19:17:43Z",
+  "visual_usage": [
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_hook",
+      "asset_id": "calvin_open",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8ef21414b9190b982b2594d0be51ebeca9425742840ec57050a48eda5ab62665",
+        "url_hashes": [
+          "0b5384602673976c6101dd09c688126d2681bd6760729638eea0e0bf6ca0394a"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cfe5323fe010e526",
+          "96963b27e4cf88a8",
+          "ccccc7e34310bf1a",
+          "afea95946168cae1",
+          "9f9f0761f065d085",
+          "f9b19686c6422d6e",
+          "c2c9ccfcf2193269",
+          "dedbd8e0f4243216"
+        ],
+        "source_start_seconds": 4.0,
+        "source_duration_seconds": 9.9
+      }
+    },
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_recorde",
+      "asset_id": "calvin_recorde",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d0d5ecfd851ae99e5033e88de4dfabbff2e448f8c20cf1e827acbbf71c1fc7d6",
+        "url_hashes": [
+          "3e414590d8a4819912b7991b87c59e03348115e8cf1a8791504406525997de48"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c28b6a2a7ad33535",
+          "c38b2a2a6dc33b95",
+          "cb8b2b2a6c4b3f12",
+          "8a8b5b2b28c27e37",
+          "cb892b2d7f4a3434",
+          "cb892b297b4cb4b4",
+          "cb89292f7acd149c",
+          "cb89292b7fc01d1d"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 9.933333
+      }
+    },
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_trio",
+      "asset_id": "calvin_trio",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6a2bb97e814b27071fbfb810e78eb2ac2927c53f826173eb1ed64f105ba50826",
+        "url_hashes": [
+          "3acf2a049fde3db1ce0441195f2ac5a0aa52c984bb157f01953b1e38e5d90cc1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d872b48b26b11fb4",
+          "d872a51e26b11fb4",
+          "d872a50f26b11fb4",
+          "9872a50f26b15fb4",
+          "9872a50f26b25fb4",
+          "9872a51b26b15fb4",
+          "9872a51a26b35fb4",
+          "9872a50b26b15ff4"
+        ],
+        "source_start_seconds": 6.0,
+        "source_duration_seconds": 12.3
+      }
+    },
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_caos",
+      "asset_id": "calvin_caos",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d0d5ecfd851ae99e5033e88de4dfabbff2e448f8c20cf1e827acbbf71c1fc7d6",
+        "url_hashes": [
+          "3e414590d8a4819912b7991b87c59e03348115e8cf1a8791504406525997de48"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c0aa2f0b3b8d1ab7",
+          "c0b80f2f7a0f3ad4",
+          "80aa2f2f628f3eb4",
+          "c0aa2e2f6a8e3cb5",
+          "80aa2e2e6a8e3ef5",
+          "80ba0f2e2a8f3ef4",
+          "80b81f0f3a0f6ed9",
+          "80b81f0f3a8e7cd5"
+        ],
+        "source_start_seconds": 32.0,
+        "source_duration_seconds": 10.3
+      }
+    },
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_categoria",
+      "asset_id": "calvin_categoria",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8ef21414b9190b982b2594d0be51ebeca9425742840ec57050a48eda5ab62665",
+        "url_hashes": [
+          "0b5384602673976c6101dd09c688126d2681bd6760729638eea0e0bf6ca0394a"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1ce653a2d25f293",
+          "d1ce65222e25f38b",
+          "dcc2fdd1016c2e2d",
+          "dcc2fde0a16e2f04",
+          "dce1f56027372592",
+          "cfe72c14da898e70",
+          "ccc6263f0cd9cd0e",
+          "cfc8253a2df5ca14"
+        ],
+        "source_start_seconds": 28.0,
+        "source_duration_seconds": 11.433333
+      }
+    },
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_payoff",
+      "asset_id": "calvin_payoff",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6a2bb97e814b27071fbfb810e78eb2ac2927c53f826173eb1ed64f105ba50826",
+        "url_hashes": [
+          "3acf2a049fde3db1ce0441195f2ac5a0aa52c984bb157f01953b1e38e5d90cc1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d872a51e26b11fb4",
+          "c87ab49e26b01fb4",
+          "913fbc4346986bc6",
+          "913efc4346986bc6",
+          "913ffc4342d869c6",
+          "913ffc4242d86bc6",
+          "913ffc4242d86bc6",
+          "913ffc4246986bc6"
+        ],
+        "source_start_seconds": 18.3,
+        "source_duration_seconds": 11.8
+      }
+    },
+    {
+      "episode": "calvin_harris_guinness_sp_2026",
+      "shot_id": "shot_cta",
+      "asset_id": "calvin_cta",
+      "recorded_at": "2026-09-20T19:17:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d0d5ecfd851ae99e5033e88de4dfabbff2e448f8c20cf1e827acbbf71c1fc7d6",
+        "url_hashes": [
+          "3e414590d8a4819912b7991b87c59e03348115e8cf1a8791504406525997de48"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "80b81f0f6a4f1ed5",
+          "80b81f0f6a4f1ef4",
+          "80b81f2f2a0f3ef4",
+          "80b81f0f2a4f3fd4",
+          "80b81f0f2a4f5fd4",
+          "80ba1f0f2a4f5ed4",
+          "80b81f8f6a4f1ed4",
+          "80ba1f0f6a4f1ed4"
+        ],
+        "source_start_seconds": 65.0,
+        "source_duration_seconds": 4.866667
+      }
+    }
+  ]
+}
