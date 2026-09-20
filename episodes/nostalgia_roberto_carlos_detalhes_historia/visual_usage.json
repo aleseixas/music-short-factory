@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_roberto_carlos_detalhes_historia",
+  "recorded_at": "2026-09-20T17:21:38Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_01",
+      "asset_id": "rc_70s_1",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "02b5634da5076a3c0c61c3b26eacae0a023d9d42701eccd82590f2fa1733b576",
+        "url_hashes": [
+          "90212ddc8d6b9e5ef3329f58eb850c4f2cb55593837aa9cc72d8d0125db9f530"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "bba24441dbec64b5",
+          "b2ab4d50f2acecb0",
+          "b3ab4c54d3aee490",
+          "b1ab4454d3aee691",
+          "b1ab4454d3aee691",
+          "b1ab4454d3aee691",
+          "b1ab4454d3aee691",
+          "b1ab4454d3aee691"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 14.1
+      }
+    },
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_02",
+      "asset_id": "rc_1971_1",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cbf3cbe891ed610a973435ab122c211f99e51da2bd55c19730da88714ee965f9",
+        "url_hashes": [
+          "c493481636be707d9e71cad1dccc0e185a16b7941fcd91337a6503178de6e595"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b2b649f392685d52",
+          "b2b649f392685d52",
+          "b2a649f7926c5d42",
+          "b2a649f7926c5d42",
+          "b2a249f7926c5d52",
+          "b2b6497f92687942",
+          "8d3db474766292cc",
+          "8d3db456f462b251"
+        ],
+        "source_start_seconds": 15.0,
+        "source_duration_seconds": 11.733333
+      }
+    },
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_03",
+      "asset_id": "rc_official_1",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "44f4e61f81d072d37352017c60717c3b6f4228e215827fd48c788389cbfdeec5",
+        "url_hashes": [
+          "8db6f0b4a906490cd7e6f8e3a2ce58283ab8247058efdb57cfb302fa114b70c1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "96d6e065722b2d0f",
+          "96d4e065726b2d0f",
+          "96d4e065732b2d0f",
+          "96d4e065726b2d0f",
+          "96d4e065726b2d0f",
+          "9a332dc8e3be14ca",
+          "9a332dc0e3ba14de",
+          "9a332dc0e3aa54de"
+        ],
+        "source_start_seconds": 25.0,
+        "source_duration_seconds": 12.566667
+      }
+    },
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_04",
+      "asset_id": "rc_70s_2",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "02b5634da5076a3c0c61c3b26eacae0a023d9d42701eccd82590f2fa1733b576",
+        "url_hashes": [
+          "90212ddc8d6b9e5ef3329f58eb850c4f2cb55593837aa9cc72d8d0125db9f530"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c0190d3b3c67c3f9",
+          "96669d6b8c61b531",
+          "85855e5aa6e67256",
+          "950d1f4ab726307e",
+          "852d97579966343a",
+          "84a5575b33363a5c",
+          "842597449b363e7e",
+          "8909b44d944f3f37"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 13.6
+      }
+    },
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_05",
+      "asset_id": "rc_1971_2",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cbf3cbe891ed610a973435ab122c211f99e51da2bd55c19730da88714ee965f9",
+        "url_hashes": [
+          "c493481636be707d9e71cad1dccc0e185a16b7941fcd91337a6503178de6e595"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8aae2f5189d2cd63",
+          "8aae2bc1c99a993b",
+          "8aac2bd3c39ad932",
+          "8aae21d1c9d99d3a",
+          "9a636eac2a6bac58",
+          "9a636ca86a6bac5a",
+          "9a636ca86a692dda",
+          "9a636ca82a6bacda"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 12.966667
+      }
+    },
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_06",
+      "asset_id": "rc_official_2",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0567ee56d6de82ae2214aa05e699ac821be2ba83a77833a78d3708943939aa97",
+        "url_hashes": [
+          "6257b2d197d599affd3c08c4d15d8310cbe42e25a92848b73c4757b6af578127"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d4da63146a2d366b",
+          "d4da63944e2d326b",
+          "d4da63946a27364b",
+          "d4d863166e2f324b",
+          "d4d863166e2d326b",
+          "c4d863166a6d326f",
+          "d0d86716692f326d",
+          "d0d86716692f326d"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 13.033333
+      }
+    },
+    {
+      "episode": "nostalgia_roberto_carlos_detalhes_historia",
+      "shot_id": "shot_07",
+      "asset_id": "rc_official_3",
+      "recorded_at": "2026-09-20T17:21:38Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "44f4e61f81d072d37352017c60717c3b6f4228e215827fd48c788389cbfdeec5",
+        "url_hashes": [
+          "8db6f0b4a906490cd7e6f8e3a2ce58283ab8247058efdb57cfb302fa114b70c1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ae567029d6c7ad50",
+          "ab567ca9d2c1ac1c",
+          "f3e191648c925c9f",
+          "f3e7807489935c1e",
+          "b3061c7ccd815e1f",
+          "b303187cc5915f1f",
+          "c82d1cf4cb916d1e",
+          "d3352c9360e0d74f"
+        ],
+        "source_start_seconds": 75.0,
+        "source_duration_seconds": 17.0
+      }
+    }
+  ]
+}
