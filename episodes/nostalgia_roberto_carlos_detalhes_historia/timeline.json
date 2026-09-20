@@ -1,7 +1,7 @@
 {
   "schema_version":1,
   "smart_visual_pacing":{"enabled":true},
-  "background_music":{"profile":"emotional_warm","volume":0.06},
+  "background_music":{"profile":"bright_fun","volume":0.06},
   "sfx_cues":[{"time_seconds":0.1,"type":"impact","volume":0.1},{"time_seconds":24,"type":"whoosh_fast","volume":0.07}],
   "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"O SEGREDO DE DETALHES","accent_text":"DETALHES","animation":"scale_bounce","position":"center","intensity":0.7}],
   "shots":[
