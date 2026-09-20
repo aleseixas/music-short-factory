@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"rc_official_1","file":"youtube-TOyKeBoczsI.mp4","url":"https://www.youtube.com/watch?v=TOyKeBoczsI","credit":"Roberto Carlos official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rc_70s_1","file":"youtube-4_JfIjwzndw.mp4","url":"https://www.youtube.com/watch?v=4_JfIjwzndw","credit":"Arquivo anos 70 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rc_1971_1","file":"youtube-fXTyq197Qas.mp4","url":"https://www.youtube.com/watch?v=fXTyq197Qas","credit":"Roberto Carlos 1971 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rc_official_2","file":"youtube-TOyKeBoczsI.mp4","url":"https://www.youtube.com/watch?v=TOyKeBoczsI","credit":"Roberto Carlos official / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rc_70s_2","file":"youtube-4_JfIjwzndw.mp4","url":"https://www.youtube.com/watch?v=4_JfIjwzndw","credit":"Arquivo anos 70 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rc_1971_2","file":"youtube-fXTyq197Qas.mp4","url":"https://www.youtube.com/watch?v=fXTyq197Qas","credit":"Roberto Carlos 1971 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rc_official_3","file":"youtube-TOyKeBoczsI.mp4","url":"https://www.youtube.com/watch?v=TOyKeBoczsI","credit":"Roberto Carlos official / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
