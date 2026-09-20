@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "Detalhes transformou lembranças pequenas em uma ameaça romântica inesquecível",
+  "slug": "nostalgia_roberto_carlos_detalhes_historia",
+  "target_duration_seconds": 68,
+  "segments": [
+    {"id":"hook","text":"Detalhes virou um dos maiores clássicos de Roberto Carlos fazendo algo estranho para uma música de separação: em vez de implorar para a pessoa voltar, ela avisa que esquecer vai ser quase impossível.","delivery":"hook"},
+    {"id":"origem","text":"Roberto Carlos e Erasmo Carlos compuseram a música em 1971, quando Roberto já deixava para trás a imagem da Jovem Guarda e consolidava uma fase muito mais romântica.","delivery":"curious"},
+    {"id":"virada","text":"A grande sacada está no ponto de vista. A canção não fica presa só à dor de quem perdeu alguém. Ela imagina as pequenas lembranças do relacionamento aparecendo no cotidiano da outra pessoa.","delivery":"reveal"},
+    {"id":"detalhes","text":"É daí que vem a força do título: não são grandes acontecimentos que impedem o esquecimento, mas gestos, hábitos e situações aparentemente pequenas que continuam trazendo alguém de volta à memória.","delivery":"emotional"},
+    {"id":"album","text":"Detalhes abriu o álbum Roberto Carlos de 1971, um disco decisivo dessa transformação artística e que também reuniu outras canções que se tornariam clássicos da carreira.","delivery":"curious"},
+    {"id":"tempo","text":"Mais de meio século depois, a música continuou no repertório do cantor e ganhou novas gravações de grandes vozes brasileiras, mostrando como aquela ideia simples atravessou gerações.","delivery":"dramatic"},
+    {"id":"payoff","text":"Talvez esse seja o segredo de Detalhes: ela entendeu que, depois de um amor, o mais difícil de apagar não é necessariamente o grande momento. São as pequenas coisas que aparecem quando você menos espera.","delivery":"payoff"}
+  ]
+}
