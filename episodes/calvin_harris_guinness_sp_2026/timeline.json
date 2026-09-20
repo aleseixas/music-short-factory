@@ -1,24 +1,124 @@
 {
-  "schema_version":1,
-  "smart_visual_pacing":{"enabled":true},
-  "background_music":{"profile":"electronic_pulse","volume":0.10},
-  "sfx_cues":[
-    {"time_seconds":0.12,"type":"impact","volume":0.15},
-    {"time_seconds":18.0,"type":"whoosh_fast","volume":0.10},
-    {"time_seconds":43.0,"type":"correct_ding","volume":0.11}
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_bby_wow_3am_west_end",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "impact",
+      "volume": 0.15
+    },
+    {
+      "time_seconds": 18.0,
+      "type": "whoosh_fast",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 43.0,
+      "type": "correct_ding",
+      "volume": 0.11
+    }
   ],
-  "text_fx_cues":[
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"1,6 MILHÃO","accent_text":"MILHÃO","animation":"scale_bounce","position":"center","intensity":0.58},
-    {"segment":"recorde","offset_seconds":0.1,"duration_seconds":1.1,"text":"GUINNESS","accent_text":"GUINNESS","animation":"pop_in","position":"center","intensity":0.52},
-    {"segment":"cta","offset_seconds":0.05,"duration_seconds":1.1,"text":"VOCÊ IRIA?","accent_text":"IRIA","animation":"pop_in","position":"center","intensity":0.46}
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "1,6 MILHÃO",
+      "accent_text": "MILHÃO",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.58
+    },
+    {
+      "segment": "recorde",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "GUINNESS",
+      "accent_text": "GUINNESS",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.52
+    },
+    {
+      "segment": "cta",
+      "offset_seconds": 0.05,
+      "duration_seconds": 1.1,
+      "text": "VOCÊ IRIA?",
+      "accent_text": "IRIA",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.46
+    }
   ],
-  "shots":[
-    {"id":"shot_hook","segment":"hook","asset":"calvin_open","motion":"push_in","transition_out":"cut","highlight":"1,6 MILHÃO DE PESSOAS","source_start_seconds":4.0},
-    {"id":"shot_recorde","segment":"recorde","asset":"calvin_recorde","motion":"push_in","transition_out":"crossfade","highlight":"RECORDE MUNDIAL","source_start_seconds":8.0},
-    {"id":"shot_trio","segment":"trio","asset":"calvin_trio","motion":"pull_out","transition_out":"cut","highlight":"TRIO ELÉTRICO","source_start_seconds":6.0},
-    {"id":"shot_caos","segment":"caos","asset":"calvin_caos","motion":"hold","transition_out":"cut","highlight":"SUPERLOTAÇÃO","source_start_seconds":32.0},
-    {"id":"shot_categoria","segment":"categoria","asset":"calvin_categoria","motion":"push_in","transition_out":"crossfade","highlight":"DJ SET DE UM ARTISTA","source_start_seconds":28.0},
-    {"id":"shot_payoff","segment":"payoff","asset":"calvin_payoff","motion":"pull_out","transition_out":"cut","highlight":"SÓ NO BRASIL","source_start_seconds":36.0},
-    {"id":"shot_cta","segment":"cta","asset":"calvin_cta","motion":"push_in","transition_out":"cut","highlight":"VOCÊ ENCARARIA?","source_start_seconds":10.0}
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "calvin_open",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "1,6 MILHÃO DE PESSOAS",
+      "source_start_seconds": 4.0
+    },
+    {
+      "id": "shot_recorde",
+      "segment": "recorde",
+      "asset": "calvin_recorde",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "RECORDE MUNDIAL",
+      "source_start_seconds": 8.0
+    },
+    {
+      "id": "shot_trio",
+      "segment": "trio",
+      "asset": "calvin_trio",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "TRIO ELÉTRICO",
+      "source_start_seconds": 6.0
+    },
+    {
+      "id": "shot_caos",
+      "segment": "caos",
+      "asset": "calvin_caos",
+      "motion": "hold",
+      "transition_out": "cut",
+      "highlight": "SUPERLOTAÇÃO",
+      "source_start_seconds": 32.0
+    },
+    {
+      "id": "shot_categoria",
+      "segment": "categoria",
+      "asset": "calvin_categoria",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "DJ SET DE UM ARTISTA",
+      "source_start_seconds": 28.0
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "calvin_payoff",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "SÓ NO BRASIL",
+      "source_start_seconds": 36.0
+    },
+    {
+      "id": "shot_cta",
+      "segment": "cta",
+      "asset": "calvin_cta",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "VOCÊ ENCARARIA?",
+      "source_start_seconds": 10.0
+    }
   ]
 }
