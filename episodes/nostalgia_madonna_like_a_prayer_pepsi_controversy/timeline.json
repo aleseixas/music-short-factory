@@ -1,0 +1,16 @@
+{
+  "schema_version":1,
+  "smart_visual_pacing":{"enabled":true},
+  "background_music":{"profile":"fallback_social_cinematic","volume":0.10},
+  "sfx_cues":[{"time_seconds":0.1,"type":"impact","volume":0.14},{"time_seconds":22,"type":"whoosh_fast","volume":0.09},{"time_seconds":43,"type":"bass_drop_cinematic","volume":0.14}],
+  "text_fx_cues":[{"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"PEPSI CANCELOU MADONNA","accent_text":"CANCELOU","animation":"scale_bounce","position":"center","intensity":0.75},{"segment":"retorno","offset_seconds":0.2,"duration_seconds":1.3,"text":"34 ANOS DEPOIS","accent_text":"34 ANOS","animation":"fade_up","position":"center","intensity":0.65}],
+  "shots":[
+    {"id":"shot_hook","segment":"hook","asset":"madonna_video_1","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_acordo","segment":"acordo","asset":"pepsi_ad_1","motion":"hold","transition_out":"crossfade","source_start_seconds":5.0},
+    {"id":"shot_choque","segment":"choque","asset":"madonna_video_2","motion":"push_in","transition_out":"cut","source_start_seconds":55.0},
+    {"id":"shot_pepsi","segment":"pepsi","asset":"pepsi_ad_2","motion":"hold","transition_out":"crossfade","source_start_seconds":30.0},
+    {"id":"shot_consequencia","segment":"consequencia","asset":"madonna_video_3","motion":"pull_out","transition_out":"cut","source_start_seconds":120.0},
+    {"id":"shot_retorno","segment":"retorno","asset":"pepsi_ad_3","motion":"push_in","transition_out":"crossfade","source_start_seconds":70.0},
+    {"id":"shot_cta","segment":"cta","asset":"pepsi_ad_4","motion":"hold","transition_out":"cut","source_start_seconds":75.0}
+  ]
+}
