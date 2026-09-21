@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"rouge_hook","file":"youtube-oyikMlvYTC8.mp4","url":"https://www.youtube.com/watch?v=oyikMlvYTC8","credit":"Rouge - Ragatanga official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rouge_rejeicao","file":"youtube-oyikMlvYTC8.mp4","url":"https://www.youtube.com/watch?v=oyikMlvYTC8","credit":"Rouge - Ragatanga official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"ketchup_origem","file":"youtube-arZZw8NyPq8.mp4","url":"https://www.youtube.com/watch?v=arZZw8NyPq8","credit":"Las Ketchup - Asereje official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sugarhill_rap","file":"youtube-T2qBSeZmKpQ.mp4","url":"https://www.youtube.com/watch?v=T2qBSeZmKpQ","credit":"Sugarhill Gang - Rapper's Delight / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rouge_brasil","file":"youtube-oyikMlvYTC8.mp4","url":"https://www.youtube.com/watch?v=oyikMlvYTC8","credit":"Rouge - Ragatanga official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"ketchup_retorno","file":"youtube-arZZw8NyPq8.mp4","url":"https://www.youtube.com/watch?v=arZZw8NyPq8","credit":"Las Ketchup - Asereje official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"sugarhill_cta","file":"youtube-T2qBSeZmKpQ.mp4","url":"https://www.youtube.com/watch?v=T2qBSeZmKpQ","credit":"Sugarhill Gang - Rapper's Delight / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
