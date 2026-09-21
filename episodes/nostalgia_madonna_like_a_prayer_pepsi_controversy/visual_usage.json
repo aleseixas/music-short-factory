@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+  "recorded_at": "2026-09-21T11:18:10Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_hook",
+      "asset_id": "madonna_video_1",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "23e964d93d9981e80143c73ceb9c4ba20537e454ff27bf80b4e5c38271663f32",
+        "url_hashes": [
+          "77ea2a41f273ef965f482d45bd8a881434fd46ba0dfe64dfb140e54570afbe3a"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "98989c99b8bcb4bc",
+          "90b093b7cdce4ccc",
+          "8b4f5a92a153c772",
+          "894e5b95a60bc771",
+          "929995e747631999",
+          "9985269798de9999",
+          "89f5278972694eaa",
+          "c8c13ccf668f8336"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 9.0
+      }
+    },
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_acordo",
+      "asset_id": "pepsi_ad_1",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "260e63740ac78a75882752f1c4fd6b1f3b3b84f8f0fac8e022e8c5dcdf893cd9",
+        "url_hashes": [
+          "f544d4f45d5378955a7ab12211aff793394a4ee5a34c41a215ff9f8927ed4b2c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a5435aa7ac31bc5a",
+          "91906f645eb191cf",
+          "b60ec9f2c6cc8971",
+          "95b564495f1f0f44",
+          "c17e0d7086b97c8d",
+          "8cf1b4a16d0fe932",
+          "b5b943b69585c436",
+          "bdbb46b40982a51f"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 14.466667
+      }
+    },
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_choque",
+      "asset_id": "madonna_video_2",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "23e964d93d9981e80143c73ceb9c4ba20537e454ff27bf80b4e5c38271663f32",
+        "url_hashes": [
+          "77ea2a41f273ef965f482d45bd8a881434fd46ba0dfe64dfb140e54570afbe3a"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d19932c6ad338a9b",
+          "d99332ce3c2d8c53",
+          "d19332c63e2ccd72",
+          "d99232cc362dcd72",
+          "d19232cd3e2dcc72",
+          "d99232cf3e2dcc42",
+          "d99272c7366ccc52",
+          "da9272cf344dcc52"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 12.866667
+      }
+    },
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_pepsi",
+      "asset_id": "pepsi_ad_2",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "13b2ca40fd7b0413cab416cf426771f78d0ad6649a6a5513815619a57626824b",
+        "url_hashes": [
+          "f5c86cdf6f6d3cb1239d29361cccb4c84d8498da503ba94cc4b27b5b96792495"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d4966f69d0f46416",
+          "88d6371bb1cb036b",
+          "a55852a739a75a93",
+          "b1906f6c5eb191c9",
+          "a74ec9c7474d8931",
+          "95a564495f1f0b55",
+          "95a524495f5f0b55",
+          "c51b747c83a578c6"
+        ],
+        "source_start_seconds": 30.0,
+        "source_duration_seconds": 12.533333
+      }
+    },
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_consequencia",
+      "asset_id": "madonna_video_3",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "23e964d93d9981e80143c73ceb9c4ba20537e454ff27bf80b4e5c38271663f32",
+        "url_hashes": [
+          "77ea2a41f273ef965f482d45bd8a881434fd46ba0dfe64dfb140e54570afbe3a"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9a4df113c94a0ff2",
+          "af6e7111d4412779",
+          "8a5d6384851b6e77",
+          "8f597205c1076ef3",
+          "8833e407db8c3ece",
+          "8aaa73654d8d92b6",
+          "8c9473e33fcc064e",
+          "a8b53ac43dd825e3"
+        ],
+        "source_start_seconds": 120.0,
+        "source_duration_seconds": 14.466667
+      }
+    },
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_retorno",
+      "asset_id": "pepsi_ad_3",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "260e63740ac78a75882752f1c4fd6b1f3b3b84f8f0fac8e022e8c5dcdf893cd9",
+        "url_hashes": [
+          "f544d4f45d5378955a7ab12211aff793394a4ee5a34c41a215ff9f8927ed4b2c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9192c46d69d63be2",
+          "80dd9d3795829676",
+          "a56b95654ad262da",
+          "b5324dbb62c85363",
+          "f00d17273d496d66",
+          "dda09939485ad65e",
+          "91a4d97958199b1f",
+          "8d8d907232727677"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 12.866667
+      }
+    },
+    {
+      "episode": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+      "shot_id": "shot_cta",
+      "asset_id": "pepsi_ad_4",
+      "recorded_at": "2026-09-21T11:18:10Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "13b2ca40fd7b0413cab416cf426771f78d0ad6649a6a5513815619a57626824b",
+        "url_hashes": [
+          "f5c86cdf6f6d3cb1239d29361cccb4c84d8498da503ba94cc4b27b5b96792495"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9e9f9131416c6c76",
+          "9df9275aa6699105",
+          "9db9339244699b27",
+          "90b6b07245d8ebf8",
+          "91b4f075c5d8cab8",
+          "91a7b225ec5ac8ba",
+          "909f9be4c34c34b5",
+          "d1c44ea7a7b59898"
+        ],
+        "source_start_seconds": 95.0,
+        "source_duration_seconds": 4.2
+      }
+    }
+  ]
+}
