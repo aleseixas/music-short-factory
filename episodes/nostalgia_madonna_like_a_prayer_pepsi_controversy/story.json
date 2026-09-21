@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "A propaganda milionária de Madonna que a Pepsi tirou do ar por causa de outro vídeo",
+  "slug": "nostalgia_madonna_like_a_prayer_pepsi_controversy",
+  "target_duration_seconds": 70,
+  "segments": [
+    {"id":"hook","text":"Madonna ganhou uma campanha milionária da Pepsi com Like a Prayer — e a marca acabou tirando a propaganda do ar por causa de um videoclipe que nem era da Pepsi.","delivery":"hook"},
+    {"id":"acordo","text":"Em 1989, a empresa fechou uma parceria de cinco milhões de dólares com Madonna. O comercial Make a Wish usava Like a Prayer e mostrava uma versão bem familiar da cantora revendo lembranças da infância.","delivery":"curious"},
+    {"id":"choque","text":"Só que, logo depois, estreou o clipe oficial da música. Ali apareceram cruzes em chamas, estigmas e Madonna beijando uma figura de santo negro — imagens que provocaram reação de grupos religiosos.","delivery":"dramatic"},
+    {"id":"pepsi","text":"A confusão caiu no colo da Pepsi porque o anúncio usava a mesma música. Houve ameaça de boicote, e a empresa cancelou a campanha, embora o comercial em si não tivesse aquelas cenas controversas.","delivery":"reveal"},
+    {"id":"consequencia","text":"O mais doido é que a polêmica não enterrou Like a Prayer. A música chegou ao número um da Billboard, e o episódio virou um dos momentos que consolidaram Madonna como uma artista que não recuava diante de controvérsia.","delivery":"payoff"},
+    {"id":"retorno","text":"Trinta e quatro anos depois, em 2023, a própria Pepsi voltou a exibir a propaganda no VMA. Madonna comemorou dizendo que artistas existem para perturbar a paz.","delivery":"reveal"},
+    {"id":"cta","text":"Você lembrava que essa briga começou por causa de um comercial?","delivery":"payoff"}
+  ]
+}
