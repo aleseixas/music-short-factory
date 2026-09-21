@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "O maior hit do Rouge quase foi rejeitado — e o refrão escondia um rap de 1979",
+  "slug": "ragatanga_rouge_rappers_delight",
+  "target_duration_seconds": 68,
+  "segments": [
+    {"id":"hook","text":"Ragatanga virou o maior hit do Rouge, mas as próprias integrantes não gostaram da música quando ouviram pela primeira vez — e aquele refrão impossível ainda escondia outra música famosa.","delivery":"hook"},
+    {"id":"rejeicao","text":"Aline Wirley contou que o primeiro disco já estava praticamente fechado quando a Sony apareceu com a faixa. A reação do grupo foi simples: aquilo não fazia sentido e elas não gostaram.","delivery":"curious"},
+    {"id":"origem","text":"Só que Ragatanga era a versão brasileira de Aserejé, do trio espanhol Las Ketchup. E a história da letra gira em torno de Diego chegando numa balada e pedindo ao DJ sua música favorita.","delivery":"reveal"},
+    {"id":"rap","text":"Essa música é Rapper's Delight, clássico de 1979 do Sugarhill Gang. O refrão de Aserejé imita foneticamente o começo do rap, como alguém tentando cantar inglês sem saber direito as palavras.","delivery":"reveal"},
+    {"id":"brasil","text":"Rick Bonadio adaptou a versão para o português e manteve justamente o trecho embaralhado. O que parecia sem sentido virou a parte que todo mundo no Brasil tentou decorar em 2002.","delivery":"payoff"},
+    {"id":"retorno","text":"E a força disso ainda aparece hoje: em setembro de 2026, Aline voltou a liderar a coreografia de Ragatanga na TV, mais de duas décadas depois do lançamento.","delivery":"payoff"},
+    {"id":"cta","text":"Você já sabia que o aserehe vinha de Rapper's Delight?","delivery":"payoff"}
+  ]
+}
