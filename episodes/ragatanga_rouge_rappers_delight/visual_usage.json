@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "ragatanga_rouge_rappers_delight",
+  "recorded_at": "2026-09-21T19:23:24Z",
+  "visual_usage": [
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_hook",
+      "asset_id": "rouge_hook",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4dbdc4b522f2f3066403c244e88bd6362caec388713652c01f20aaa8780038db",
+        "url_hashes": [
+          "033bd6eb0b16089f723f4636d9a37e13fbe568d8cb203c636d4a876fbf4cef80"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d01f6bc836651ab6",
+          "c8d2d0d0d7477327",
+          "d01e2bc9356d0e75",
+          "d59303579ce83897",
+          "c4d1274e58a12fdb",
+          "c0d03dca71a54ef3",
+          "bcc043c6479f46b9",
+          "c6c6bce4c1c34f1a"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 11.4
+      }
+    },
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_rejeicao",
+      "asset_id": "rouge_rejeicao",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4dbdc4b522f2f3066403c244e88bd6362caec388713652c01f20aaa8780038db",
+        "url_hashes": [
+          "033bd6eb0b16089f723f4636d9a37e13fbe568d8cb203c636d4a876fbf4cef80"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9b19cb24c798ce66",
+          "9eb26330d1ccc769",
+          "c06087b74ee4e3a7",
+          "f4fca7bf16308109",
+          "ae52a8ac73ad542b",
+          "ad532fe4599a42b1",
+          "b637c8a417cc53cc",
+          "9672cd644b679833"
+        ],
+        "source_start_seconds": 38.0,
+        "source_duration_seconds": 12.533333
+      }
+    },
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_origem",
+      "asset_id": "ketchup_origem",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8177443a118d04fe59e2ef662479cc3250409249b9bfbc31838f5dee82cc98c5",
+        "url_hashes": [
+          "522cc09e654d74531a4e4c6a759afcce02271eeceff60ce34976cc2890d18cbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d92626d80cfb259d",
+          "dd3050c32bcf370d",
+          "876d38ba49b45a93",
+          "8cde232152ad73b5",
+          "ff6f000425ff7a01",
+          "dd4d32b36cb43231",
+          "840a3bff7ea15e02",
+          "e6ac79131cf33262"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 10.7
+      }
+    },
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_rap",
+      "asset_id": "sugarhill_rap",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "26cf37ccf9562df3253096d9fdaa533dcae309912ac63b3dde9fc085715cbf24",
+        "url_hashes": [
+          "96fdb53c352b4c05b0806aeae3f45b44cf8dbfddf4c5340a6888eb09ed4e0a40"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9469659ea32f5dc0",
+          "986545de232d5d78",
+          "d262e4c2fc06cf0f",
+          "f87aab85fe9081d0",
+          "967ac3973049c0bf",
+          "966ac39160c5f83f",
+          "c5393c67b87f8910",
+          "c13b0464bfab9a74"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 12.0
+      }
+    },
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_brasil",
+      "asset_id": "rouge_brasil",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4dbdc4b522f2f3066403c244e88bd6362caec388713652c01f20aaa8780038db",
+        "url_hashes": [
+          "033bd6eb0b16089f723f4636d9a37e13fbe568d8cb203c636d4a876fbf4cef80"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0857f1ac07d16f8",
+          "8536a5157aa9768b",
+          "a4df97c5038ac5c9",
+          "a8c0098d5f9fd4d5",
+          "89da527272ad8a8f",
+          "c3f61c83230b1ff8",
+          "e7c410d450b73ab7",
+          "cf9b3c8cb1c41cc5"
+        ],
+        "source_start_seconds": 78.0,
+        "source_duration_seconds": 12.166667
+      }
+    },
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_retorno",
+      "asset_id": "ketchup_retorno",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8177443a118d04fe59e2ef662479cc3250409249b9bfbc31838f5dee82cc98c5",
+        "url_hashes": [
+          "522cc09e654d74531a4e4c6a759afcce02271eeceff60ce34976cc2890d18cbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a2a91d545c2a7577",
+          "d4911c6f23e83379",
+          "90dc6e81670f6ce3",
+          "93d36ca56578586c",
+          "92e029336d1e6d4f",
+          "e55a47b71aad0c58",
+          "cd493e8609be7638",
+          "959f67624fe0180f"
+        ],
+        "source_start_seconds": 68.0,
+        "source_duration_seconds": 10.8
+      }
+    },
+    {
+      "episode": "ragatanga_rouge_rappers_delight",
+      "shot_id": "shot_cta",
+      "asset_id": "sugarhill_cta",
+      "recorded_at": "2026-09-21T19:23:24Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "26cf37ccf9562df3253096d9fdaa533dcae309912ac63b3dde9fc085715cbf24",
+        "url_hashes": [
+          "96fdb53c352b4c05b0806aeae3f45b44cf8dbfddf4c5340a6888eb09ed4e0a40"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d56987e71b06c4e8",
+          "f52d5ece3c0ccc30",
+          "e52542fa3f42eab0",
+          "e5317e688593dab0",
+          "e30a9dc41abfcc31",
+          "f53d1eca9108d933",
+          "dc25fbf104f14d12",
+          "d14a1ae4f20fccd6"
+        ],
+        "source_start_seconds": 52.0,
+        "source_duration_seconds": 5.0
+      }
+    }
+  ]
+}
