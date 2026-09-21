@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"bright_fun","volume":0.1},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"impact","volume":0.14},
+    {"time_seconds":25,"type":"whoosh_fast","volume":0.1},
+    {"time_seconds":46,"type":"correct_ding","volume":0.12}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"ELAS NÃO GOSTARAM","accent_text":"NÃO GOSTARAM","animation":"scale_bounce","position":"center","intensity":0.75},
+    {"segment":"rap","offset_seconds":0.2,"duration_seconds":1.4,"text":"ERA UM RAP DE 1979","accent_text":"1979","animation":"slide_up","position":"center","intensity":0.7},
+    {"segment":"cta","offset_seconds":0.0,"duration_seconds":1.3,"text":"VOCÊ JÁ SABIA?","accent_text":"SABIA?","animation":"scale_bounce","position":"center","intensity":0.65}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"rouge_hook","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_rejeicao","segment":"rejeicao","asset":"rouge_rejeicao","motion":"hold","transition_out":"crossfade","source_start_seconds":38.0},
+    {"id":"shot_origem","segment":"origem","asset":"ketchup_origem","motion":"push_in","transition_out":"cut","source_start_seconds":18.0},
+    {"id":"shot_rap","segment":"rap","asset":"sugarhill_rap","motion":"pull_out","transition_out":"cut","source_start_seconds":10.0},
+    {"id":"shot_brasil","segment":"brasil","asset":"rouge_brasil","motion":"push_in","transition_out":"crossfade","source_start_seconds":78.0},
+    {"id":"shot_retorno","segment":"retorno","asset":"ketchup_retorno","motion":"hold","transition_out":"cut","source_start_seconds":68.0},
+    {"id":"shot_cta","segment":"cta","asset":"sugarhill_cta","motion":"push_in","transition_out":"cut","source_start_seconds":52.0}
+  ]
+}
