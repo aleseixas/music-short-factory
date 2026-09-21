@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"madonna_video_1","file":"youtube-79fzeNUqQbQ.mp4","url":"https://www.youtube.com/watch?v=79fzeNUqQbQ","credit":"Madonna Like a Prayer official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"pepsi_ad_1","file":"youtube-w6TRctPxcpI.mp4","url":"https://www.youtube.com/watch?v=w6TRctPxcpI","credit":"Madonna Pepsi Make a Wish 1989 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"madonna_video_2","file":"youtube-79fzeNUqQbQ.mp4","url":"https://www.youtube.com/watch?v=79fzeNUqQbQ","credit":"Madonna Like a Prayer official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"pepsi_ad_2","file":"youtube-Y3CFM3rSktA.mp4","url":"https://www.youtube.com/watch?v=Y3CFM3rSktA","credit":"Madonna Pepsi commercial 1989 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"madonna_video_3","file":"youtube-79fzeNUqQbQ.mp4","url":"https://www.youtube.com/watch?v=79fzeNUqQbQ","credit":"Madonna Like a Prayer official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"pepsi_ad_3","file":"youtube-w6TRctPxcpI.mp4","url":"https://www.youtube.com/watch?v=w6TRctPxcpI","credit":"Madonna Pepsi Make a Wish 1989 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"pepsi_ad_4","file":"youtube-Y3CFM3rSktA.mp4","url":"https://www.youtube.com/watch?v=Y3CFM3rSktA","credit":"Madonna Pepsi commercial 1989 / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
