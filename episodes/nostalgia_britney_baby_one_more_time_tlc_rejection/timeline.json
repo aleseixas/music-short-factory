@@ -1,0 +1,22 @@
+{
+  "schema_version":1,
+  "smart_visual_pacing":{"enabled":true},
+  "background_music":{"profile":"uplifting_documentary","volume":0.10},
+  "sfx_cues":[
+    {"time_seconds":0.1,"type":"impact","volume":0.14},
+    {"time_seconds":18,"type":"whoosh_fast","volume":0.10},
+    {"time_seconds":48,"type":"bass_drop_cinematic","volume":0.13}
+  ],
+  "text_fx_cues":[
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"TLC RECUSOU ESSE HIT","accent_text":"RECUSOU","animation":"scale_bounce","position":"center","intensity":0.75},
+    {"segment":"sentido","offset_seconds":0.2,"duration_seconds":1.3,"text":"ERA UMA GÍRIA ERRADA","accent_text":"GÍRIA","animation":"slide_up","position":"center","intensity":0.65}
+  ],
+  "shots":[
+    {"id":"shot_hook","segment":"hook","asset":"britney_video_1","motion":"push_in","transition_out":"cut","source_start_seconds":18.0},
+    {"id":"shot_tlc","segment":"tlc","asset":"britney_interview_1","motion":"hold","transition_out":"crossfade","source_start_seconds":8.0},
+    {"id":"shot_sentido","segment":"sentido","asset":"britney_video_2","motion":"push_in","transition_out":"cut","source_start_seconds":48.0},
+    {"id":"shot_britney","segment":"britney","asset":"britney_interview_2","motion":"hold","transition_out":"crossfade","source_start_seconds":35.0},
+    {"id":"shot_virada","segment":"virada","asset":"britney_video_3","motion":"pull_out","transition_out":"cut","source_start_seconds":132.0},
+    {"id":"shot_cta","segment":"cta","asset":"britney_interview_3","motion":"hold","transition_out":"cut","source_start_seconds":70.0}
+  ]
+}
