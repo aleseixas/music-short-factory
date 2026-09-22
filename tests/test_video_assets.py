@@ -143,6 +143,27 @@ class VideoAssetRendererTests(unittest.TestCase):
             ]
         )
 
+        cls.portrait_video = fixture_root / "portrait.mp4"
+        run_ffmpeg(
+            [
+                "-y",
+                "-hide_banner",
+                "-f",
+                "lavfi",
+                "-i",
+                "testsrc2=size=100x180:rate=12:duration=2",
+                "-c:v",
+                "libx264",
+                "-preset",
+                "ultrafast",
+                "-crf",
+                0,
+                "-pix_fmt",
+                "yuv420p",
+                cls.portrait_video,
+            ]
+        )
+
         cls.dark_video = fixture_root / "dark.mp4"
         run_ffmpeg(
             [
@@ -411,7 +432,7 @@ class VideoAssetRendererTests(unittest.TestCase):
         self.assertGreater(red, green + 60)
         self.assertGreater(red, blue + 60)
 
-    def test_landscape_video_is_center_cropped_fps_normalized_and_audio_is_discarded(self):
+    def test_landscape_video_uses_neutral_contain_when_cover_crop_is_too_aggressive(self):
         plan = self.single_plan(self.landscape_audio_video)
         with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
             output = self.renderer.render_scene(
@@ -421,17 +442,35 @@ class VideoAssetRendererTests(unittest.TestCase):
         arguments = ffmpeg_call.call_args.args[0]
         video_filter = arguments[arguments.index("-vf") + 1]
         self.assertIn("fps=12", video_filter)
-        self.assertIn("force_original_aspect_ratio=increase", video_filter)
-        self.assertIn("crop=90:160:(iw-ow)/2:(ih-oh)/2", video_filter)
+        self.assertIn("force_original_aspect_ratio=decrease", video_filter)
+        self.assertIn("pad=90:160:(ow-iw)/2:(oh-ih)/2:color=0x0b0f14", video_filter)
+        self.assertNotIn("crop=90:160", video_filter)
         self.assertEqual(probe_video_frame_count(output), 12)
         self.assertNotIn("Audio:", ffmpeg_output(["-hide_banner", "-i", output]))
 
-        frame = self.extract_frame(output, 0.5, "center-crop.png")
+        frame = self.extract_frame(output, 0.5, "neutral-contain.png")
         with Image.open(frame) as opened:
             self.assertEqual(opened.size, (90, 160))
-            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+            rgb = opened.convert("RGB")
+            red, green, blue = ImageStat.Stat(rgb.crop((35, 65, 55, 95))).mean
+            background = rgb.getpixel((5, 5))
         self.assertGreater(green, red + 45)
         self.assertGreater(green, blue + 45)
+        self.assertLess(sum(background), 70)
+
+    def test_near_vertical_video_keeps_existing_cover_crop_path(self):
+        plan = self.single_plan(self.portrait_video)
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
+            output = self.renderer.render_scene(
+                plan.scenes[0], self.portrait_video, None
+            )
+
+        arguments = ffmpeg_call.call_args.args[0]
+        video_filter = arguments[arguments.index("-vf") + 1]
+        self.assertIn("force_original_aspect_ratio=increase", video_filter)
+        self.assertIn("crop=90:160:(iw-ow)/2:(ih-oh)/2", video_filter)
+        self.assertNotIn("pad=90:160", video_filter)
+        self.assertEqual(probe_video_frame_count(output), 12)
 
     def test_visual_fx_is_rendered_on_video_after_normalization(self):
         plan = self.single_plan(
@@ -447,7 +486,8 @@ class VideoAssetRendererTests(unittest.TestCase):
         arguments = ffmpeg_call.call_args.args[0]
         video_filter = arguments[arguments.index("-vf") + 1]
         self.assertIn("perspective=", video_filter)
-        self.assertIn("force_original_aspect_ratio=increase", video_filter)
+        self.assertIn("force_original_aspect_ratio=decrease", video_filter)
+        self.assertIn("pad=90:160:(ow-iw)/2:(oh-ih)/2:color=0x0b0f14", video_filter)
         self.assertEqual(probe_video_frame_count(output), 12)
 
     def test_text_highlight_subtitles_and_image_overlay_compose_over_video(self):
