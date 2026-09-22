@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass
 from fractions import Fraction
 import json
@@ -19,6 +20,14 @@ class VideoStreamInfo:
     width: int
     height: int
     fps: float
+
+
+@dataclass(frozen=True)
+class VideoActiveCrop:
+    width: int
+    height: int
+    x: int
+    y: int
 
 
 @dataclass(frozen=True)
@@ -208,7 +217,7 @@ def probe_video_stream(path: Path) -> VideoStreamInfo:
             "-select_streams",
             "v:0",
             "-show_entries",
-            "stream=codec_type,width,height,avg_frame_rate,r_frame_rate,duration:format=duration",
+            "stream=codec_type,width,height,avg_frame_rate,r_frame_rate,duration:stream_tags=rotate:stream_side_data=rotation:format=duration",
             "-of",
             "json",
             path,
@@ -233,6 +242,10 @@ def probe_video_stream(path: Path) -> VideoStreamInfo:
     if width <= 0 or height <= 0:
         raise RuntimeError(f"Resolucao de video invalida em {path}: {width}x{height}")
 
+    rotation = _probe_rotation_degrees(stream)
+    if rotation % 180 in (90, -90):
+        width, height = height, width
+
     fps = _parse_probe_frame_rate(stream.get("avg_frame_rate"))
     if fps is None:
         fps = _parse_probe_frame_rate(stream.get("r_frame_rate"))
@@ -247,6 +260,79 @@ def probe_video_stream(path: Path) -> VideoStreamInfo:
     if duration is None:
         raise RuntimeError(f"Duracao de video invalida em {path}")
     return VideoStreamInfo(duration=duration, width=width, height=height, fps=fps)
+
+
+def _probe_rotation_degrees(stream: dict[str, object]) -> int:
+    """Return normalized display rotation from ffprobe metadata."""
+    side_data = stream.get("side_data_list")
+    if isinstance(side_data, list):
+        for item in side_data:
+            if not isinstance(item, dict):
+                continue
+            raw = item.get("rotation")
+            try:
+                value = int(round(float(raw)))
+            except (TypeError, ValueError):
+                continue
+            return value % 360
+
+    tags = stream.get("tags")
+    if isinstance(tags, dict):
+        raw = tags.get("rotate")
+        try:
+            return int(round(float(raw))) % 360
+        except (TypeError, ValueError):
+            pass
+    return 0
+
+
+def detect_video_active_crop(
+    path: Path,
+    info: VideoStreamInfo | None = None,
+) -> VideoActiveCrop | None:
+    """Detect stable dark pillarbox/letterbox borders using FFmpeg cropdetect."""
+    path = path.resolve()
+    if not path.is_file():
+        raise RuntimeError(f"Video ausente: {path}")
+    info = info or probe_video_stream(path)
+    sample_duration = min(2.0, max(0.5, info.duration))
+    output = run_ffmpeg_capture(
+        [
+            "-hide_banner",
+            "-loglevel",
+            "info",
+            "-i",
+            path,
+            "-t",
+            f"{sample_duration:.3f}",
+            "-vf",
+            "cropdetect=limit=24:round=2:reset=0",
+            "-an",
+            "-f",
+            "null",
+            "-",
+        ]
+    )
+    crops = [
+        VideoActiveCrop(*(int(group) for group in match.groups()))
+        for match in re.finditer(
+            r"crop=(\d+):(\d+):(\d+):(\d+)",
+            output,
+        )
+    ]
+    if not crops:
+        return None
+    counts = Counter(crops)
+    crop, occurrences = counts.most_common(1)[0]
+    if occurrences < 3 or occurrences * 2 < len(crops):
+        return None
+    if crop.width <= 0 or crop.height <= 0:
+        return None
+    if crop.x < 0 or crop.y < 0:
+        return None
+    if crop.x + crop.width > info.width or crop.y + crop.height > info.height:
+        return None
+    return crop
 
 
 def _parse_probe_frame_rate(raw: object) -> float | None:
@@ -349,7 +435,7 @@ def preflight(
                 f"{', '.join(missing_sfx_filters)}"
             )
     if require_video_assets:
-        required_video_filters = ("crop", "fps", "pad", "scale", "setpts", "trim")
+        required_video_filters = ("crop", "cropdetect", "fps", "pad", "scale", "setpts", "trim")
         missing_video_filters = [
             name for name in required_video_filters if name not in filters
         ]
