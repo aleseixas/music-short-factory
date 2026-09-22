@@ -3,17 +3,19 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Literal
 
-from PIL import Image, ImageChops, ImageEnhance, ImageFilter, ImageOps
+from PIL import Image, ImageChops, ImageFilter, ImageOps
 
 
-FramingMode = Literal["smart_crop", "contain_blur"]
+FramingMode = Literal["smart_crop", "contain_neutral"]
 
 ANALYSIS_MAX_SIDE = 320
 MAX_DOWNSTREAM_ZOOM = 1.15
 MIN_GENTLE_CROP_FRACTION = 0.84
 MIN_RETAINED_IMPORTANCE = 0.82
 MIN_SAFE_RETAINED_IMPORTANCE = 0.72
-FALLBACK_FOREGROUND_SCALE = 0.84
+CONTAIN_FOREGROUND_SCALE = 0.84
+MIN_CROP_FRACTION_FOR_COVER = 0.58
+NEUTRAL_BACKGROUND_HEX = "0x0b0f14"
 
 
 @dataclass(frozen=True)
@@ -60,19 +62,11 @@ def prepare_vertical_image(
         )
         return framed, decision
 
-    background = ImageOps.fit(
-        normalized,
-        target_size,
-        method=Image.Resampling.LANCZOS,
-        centering=(focus_x, focus_y),
-    )
-    blur_radius = max(3.0, min(target_size) * 0.045)
-    background = background.filter(ImageFilter.GaussianBlur(blur_radius))
-    background = ImageEnhance.Brightness(background).enhance(0.58)
+    background = _neutral_background(target_size)
 
     foreground_bounds = (
-        max(1, round(target_width * FALLBACK_FOREGROUND_SCALE)),
-        max(1, round(target_height * FALLBACK_FOREGROUND_SCALE)),
+        max(1, round(target_width * CONTAIN_FOREGROUND_SCALE)),
+        max(1, round(target_height * CONTAIN_FOREGROUND_SCALE)),
     )
     foreground = ImageOps.contain(
         normalized,
@@ -122,7 +116,10 @@ def _analyze_normalized_vertical_framing(
         target_width,
         target_height,
     )
-    crop_fraction = (crop_width * crop_height) / (source_width * source_height)
+    crop_fraction = crop_fraction_for_target(
+        (source_width, source_height),
+        target_size,
+    )
     importance = _build_importance_map(normalized)
     analysis_width, analysis_height = importance.size
     target_ratio = target_width / target_height
@@ -161,7 +158,7 @@ def _analyze_normalized_vertical_framing(
     )
     if not safe_crop:
         return VerticalFramingDecision(
-            mode="contain_blur",
+            mode="contain_neutral",
             crop_box=None,
             retained_importance=candidate.retained_importance,
             safe_retained_importance=candidate.safe_retained_importance,
@@ -184,6 +181,33 @@ def _analyze_normalized_vertical_framing(
         safe_retained_importance=candidate.safe_retained_importance,
         crop_fraction=crop_fraction,
     )
+
+
+def crop_fraction_for_target(
+    source_size: tuple[int, int],
+    target_size: tuple[int, int],
+) -> float:
+    """Return the fraction of source area retained by a cover crop."""
+    source_width, source_height = source_size
+    target_width, target_height = target_size
+    if min(source_width, source_height, target_width, target_height) < 1:
+        raise RuntimeError("Dimensoes invalidas para calcular enquadramento.")
+    crop_width, crop_height = _largest_crop(
+        source_width,
+        source_height,
+        target_width,
+        target_height,
+    )
+    return (crop_width * crop_height) / (source_width * source_height)
+
+
+def _neutral_background(target_size: tuple[int, int]) -> Image.Image:
+    """Build the shared dark neutral contain background without blur."""
+    # Three neutral stops create a very subtle vertical light falloff while
+    # staying visually stable across unrelated images and videos.
+    strip = Image.new("RGB", (1, 3))
+    strip.putdata(((8, 11, 15), (13, 17, 22), (7, 9, 12)))
+    return strip.resize(target_size, Image.Resampling.BICUBIC)
 
 
 def _validate_inputs(
