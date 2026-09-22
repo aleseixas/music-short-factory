@@ -7,7 +7,11 @@ from PIL import Image, ImageDraw
 
 from engine.assets import AssetManager
 from engine.ffmpeg import VideoStreamInfo
-from engine.image_framing import prepare_vertical_image
+from engine.image_framing import (
+    MIN_CROP_FRACTION_FOR_COVER,
+    crop_fraction_for_target,
+    prepare_vertical_image,
+)
 from engine.models import AssetSpec
 
 
@@ -42,12 +46,18 @@ def _checker(
 
 
 class IntelligentVerticalFramingTests(unittest.TestCase):
+    def test_crop_fraction_threshold_keeps_near_vertical_and_contains_landscape(self):
+        target = (90, 160)
+        self.assertAlmostEqual(crop_fraction_for_target((90, 160), target), 1.0)
+        self.assertGreater(crop_fraction_for_target((80, 100), target), MIN_CROP_FRACTION_FOR_COVER)
+        self.assertLess(crop_fraction_for_target((160, 90), target), MIN_CROP_FRACTION_FOR_COVER)
+
     def test_tiny_valid_image_uses_safe_fallback_without_crashing_analysis(self):
         source = Image.new("RGB", (1, 1), (40, 120, 200))
 
         framed, decision = prepare_vertical_image(source, (90, 160), 0.5, 0.5)
 
-        self.assertEqual(decision.mode, "contain_blur")
+        self.assertEqual(decision.mode, "contain_neutral")
         self.assertEqual(framed.size, (90, 160))
 
     def test_compact_subject_uses_smart_vertical_crop(self):
@@ -74,7 +84,7 @@ class IntelligentVerticalFramingTests(unittest.TestCase):
 
         framed, decision = prepare_vertical_image(source, (90, 160), 0.5, 0.5)
 
-        self.assertEqual(decision.mode, "contain_blur")
+        self.assertEqual(decision.mode, "contain_neutral")
         self.assertIsNone(decision.crop_box)
         self.assertEqual(framed.size, (90, 160))
         # The contained foreground spans x=7..82 and keeps both edge subjects.
@@ -82,7 +92,7 @@ class IntelligentVerticalFramingTests(unittest.TestCase):
         right_region = framed.crop((63, 58, 83, 102))
         self.assertGreater(left_region.getchannel("R").getextrema()[1], 220)
         self.assertGreater(right_region.getchannel("B").getextrema()[1], 220)
-        # The canvas is filled by a blurred/darkened cover, not black bars.
+        # The canvas is filled by the shared dark neutral background, not blur.
         self.assertGreater(sum(framed.getpixel((45, 5))), 20)
 
     def test_explicit_focus_preserves_important_off_center_subject(self):
@@ -110,7 +120,7 @@ class IntelligentVerticalFramingTests(unittest.TestCase):
 
         framed, decision = prepare_vertical_image(source, (90, 160), 0.5, 0.5)
 
-        self.assertEqual(decision.mode, "contain_blur")
+        self.assertEqual(decision.mode, "contain_neutral")
         # Bright headline details from both extremes remain in the foreground.
         band = framed.crop((7, 65, 83, 95))
         self.assertGreater(band.crop((0, 0, 18, 30)).getextrema()[0][1], 220)
