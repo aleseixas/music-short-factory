@@ -46,10 +46,14 @@ def _checker(
 
 
 class IntelligentVerticalFramingTests(unittest.TestCase):
-    def test_crop_fraction_threshold_keeps_near_vertical_and_contains_landscape(self):
+    def test_crop_fraction_threshold_keeps_near_vertical_and_contains_wide_media(self):
         target = (90, 160)
         self.assertAlmostEqual(crop_fraction_for_target((90, 160), target), 1.0)
+        # 4:5 keeps enough source area to preserve the normal cover/crop path.
         self.assertGreater(crop_fraction_for_target((80, 100), target), MIN_CROP_FRACTION_FOR_COVER)
+        # Square and wider media cross the neutral-contain threshold.
+        self.assertLess(crop_fraction_for_target((100, 100), target), MIN_CROP_FRACTION_FOR_COVER)
+        self.assertLess(crop_fraction_for_target((120, 90), target), MIN_CROP_FRACTION_FOR_COVER)
         self.assertLess(crop_fraction_for_target((160, 90), target), MIN_CROP_FRACTION_FOR_COVER)
 
     def test_tiny_valid_image_uses_safe_fallback_without_crashing_analysis(self):
@@ -77,7 +81,7 @@ class IntelligentVerticalFramingTests(unittest.TestCase):
         self.assertGreaterEqual(bottom, subject[3])
         self.assertGreaterEqual(decision.retained_importance, 0.82)
 
-    def test_wide_image_with_distributed_content_uses_full_image_and_blurred_fill(self):
+    def test_wide_image_with_distributed_content_uses_full_image_and_neutral_fill(self):
         source = Image.new("RGB", (320, 180), (72, 72, 72))
         _checker(source, (0, 20, 72, 160), (245, 40, 35), (250, 250, 250))
         _checker(source, (248, 20, 320, 160), (30, 75, 245), (250, 250, 250))
@@ -92,8 +96,8 @@ class IntelligentVerticalFramingTests(unittest.TestCase):
         right_region = framed.crop((63, 58, 83, 102))
         self.assertGreater(left_region.getchannel("R").getextrema()[1], 220)
         self.assertGreater(right_region.getchannel("B").getextrema()[1], 220)
-        # The canvas is filled by the shared dark neutral background, not blur.
-        self.assertGreater(sum(framed.getpixel((45, 5))), 20)
+        # The canvas uses the exact shared dark neutral background, not blur.
+        self.assertEqual(framed.getpixel((45, 5)), (11, 15, 20))
 
     def test_explicit_focus_preserves_important_off_center_subject(self):
         source = Image.new("RGB", (320, 180), (72, 72, 72))
