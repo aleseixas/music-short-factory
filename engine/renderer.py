@@ -8,8 +8,15 @@ from .ffmpeg import (
     parse_loudnorm_measurement,
     probe_duration,
     probe_video_frame_count,
+    probe_video_stream,
     run_ffmpeg,
     run_ffmpeg_capture,
+)
+from .image_framing import (
+    CONTAIN_FOREGROUND_SCALE,
+    MIN_CROP_FRACTION_FOR_COVER,
+    NEUTRAL_BACKGROUND_HEX,
+    crop_fraction_for_target,
 )
 from .models import (
     AudioResult,
@@ -41,6 +48,21 @@ class Renderer:
         self.scene_dir = work_dir / "scenes"
         self.scene_dir.mkdir(parents=True, exist_ok=True)
         self.output_dir.mkdir(parents=True, exist_ok=True)
+        self._video_contain_cache: dict[Path, bool] = {}
+
+    def _video_uses_neutral_contain(self, source: Path) -> bool:
+        resolved = source.resolve()
+        cached = self._video_contain_cache.get(resolved)
+        if cached is not None:
+            return cached
+        info = probe_video_stream(resolved)
+        crop_fraction = crop_fraction_for_target(
+            (info.width, info.height),
+            (self.config.render.width, self.config.render.height),
+        )
+        use_contain = crop_fraction < MIN_CROP_FRACTION_FOR_COVER
+        self._video_contain_cache[resolved] = use_contain
+        return use_contain
 
     def render_scene(self, scene: TimelineScene, prepared_asset: Path, overlay: Path | None) -> Path:
         render = self.config.render
@@ -96,15 +118,34 @@ class Renderer:
                     )
             work_width = render.width * render.working_scale
             work_height = render.height * render.working_scale
+            if self._video_uses_neutral_contain(prepared_asset):
+                contain_width = max(
+                    2,
+                    2 * round(work_width * CONTAIN_FOREGROUND_SCALE / 2),
+                )
+                contain_height = max(
+                    2,
+                    2 * round(work_height * CONTAIN_FOREGROUND_SCALE / 2),
+                )
+                framing_filter = (
+                    f"scale={contain_width}:{contain_height}:"
+                    "force_original_aspect_ratio=decrease:flags=lanczos,"
+                    f"pad={work_width}:{work_height}:(ow-iw)/2:(oh-ih)/2:"
+                    f"color={NEUTRAL_BACKGROUND_HEX},"
+                )
+            else:
+                framing_filter = (
+                    f"scale={work_width}:{work_height}:"
+                    "force_original_aspect_ratio=increase:flags=lanczos,"
+                    f"crop={work_width}:{work_height}:(iw-ow)/2:(ih-oh)/2,"
+                )
             source_filter = (
                 f"trim=start={scene.shot.source_start_seconds:.6f}:"
                 f"duration={source_duration:.6f},"
                 f"{speed_filter}"
                 f"fps={render.fps},settb=AVTB,setpts=N/({render.fps}*TB),"
                 f"{freeze_filter}"
-                f"scale={work_width}:{work_height}:"
-                "force_original_aspect_ratio=increase:flags=lanczos,"
-                f"crop={work_width}:{work_height}:(iw-ow)/2:(ih-oh)/2,"
+                f"{framing_filter}"
                 "setsar=1,"
                 f"{motion_filter}"
             )
