@@ -15,6 +15,7 @@ MIN_RETAINED_IMPORTANCE = 0.82
 MIN_SAFE_RETAINED_IMPORTANCE = 0.72
 CONTAIN_FOREGROUND_SCALE = 0.84
 MIN_CROP_FRACTION_FOR_COVER = 0.58
+NEUTRAL_BACKGROUND_RGB = (11, 15, 20)
 NEUTRAL_BACKGROUND_HEX = "0x0b0f14"
 
 
@@ -203,11 +204,7 @@ def crop_fraction_for_target(
 
 def _neutral_background(target_size: tuple[int, int]) -> Image.Image:
     """Build the shared dark neutral contain background without blur."""
-    # Three neutral stops create a very subtle vertical light falloff while
-    # staying visually stable across unrelated images and videos.
-    strip = Image.new("RGB", (1, 3))
-    strip.putdata(((8, 11, 15), (13, 17, 22), (7, 9, 12)))
-    return strip.resize(target_size, Image.Resampling.BICUBIC)
+    return Image.new("RGB", target_size, NEUTRAL_BACKGROUND_RGB)
 
 
 def _validate_inputs(
