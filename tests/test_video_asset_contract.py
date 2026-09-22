@@ -330,6 +330,23 @@ class VideoProbeParserTests(unittest.TestCase):
         self.assertAlmostEqual(info.fps, 30000 / 1001)
         self.assertEqual(info.duration, 12.345)
 
+    def test_display_rotation_swaps_dimensions_for_vertical_video(self):
+        for rotation_payload in (
+            {"side_data_list": [{"rotation": 90}]},
+            {"tags": {"rotate": "-90"}},
+        ):
+            with self.subTest(rotation_payload=rotation_payload):
+                stream = {
+                    "codec_type": "video",
+                    "width": 1920,
+                    "height": 1080,
+                    "avg_frame_rate": "30/1",
+                    "duration": "2",
+                    **rotation_payload,
+                }
+                info = self.probe({"streams": [stream]})
+                self.assertEqual((info.width, info.height), (1080, 1920))
+
     def test_missing_video_stream_is_rejected(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "audio-only.mp4"
