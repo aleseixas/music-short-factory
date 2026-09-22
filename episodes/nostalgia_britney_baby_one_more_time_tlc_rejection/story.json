@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "title": "O hit que o TLC recusou e transformou Britney Spears numa estrela",
+  "slug": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+  "target_duration_seconds": 70,
+  "segments": [
+    {"id":"hook","text":"...Baby One More Time transformou Britney Spears numa estrela — só que, antes dela, o TLC recebeu a música e recusou justamente por causa da frase mais famosa do refrão.","delivery":"hook"},
+    {"id":"tlc","text":"Max Martin escreveu a faixa ainda como Hit Me Baby One More Time e mandou para o TLC. T-Boz contou depois que gostou da música, mas não se via cantando ‘hit me baby’. Para ela, aquilo simplesmente não era a cara do grupo.","delivery":"curious"},
+    {"id":"sentido","text":"E aqui fica mais curioso: Max não estava tentando escrever sobre violência. Sueco, ele acreditava que ‘hit me’ funcionava como uma gíria americana para algo como ‘me liga’. A frase estranha nasceu de uma tradução torta — e acabou ficando inesquecível.","delivery":"reveal"},
+    {"id":"britney","text":"Depois de outras tentativas, a música chegou a uma Britney de só dezesseis anos. Ela foi para Estocolmo trabalhar com Max e disse que, quando ouviu a demo, sentiu imediatamente que aquela era uma música que você queria ouvir de novo e de novo.","delivery":"emotional"},
+    {"id":"virada","text":"O resultado foi absurdo: lançada em 1998, ...Baby One More Time chegou ao número um nos Estados Unidos e em vários outros países. O que não combinava com o TLC virou exatamente o som que apresentou Britney Spears ao planeta.","delivery":"payoff"},
+    {"id":"cta","text":"Você consegue imaginar esse refrão na voz do TLC?","delivery":"payoff"}
+  ]
+}
