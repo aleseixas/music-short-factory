@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"britney_video_1","file":"youtube-C-u5WLJ9Yk4.mp4","url":"https://www.youtube.com/watch?v=C-u5WLJ9Yk4","credit":"Britney Spears - ...Baby One More Time official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"britney_interview_1","file":"youtube-pSSOqwMoweE.mp4","url":"https://www.youtube.com/watch?v=pSSOqwMoweE","credit":"Britney Spears 1998 interview / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"britney_video_2","file":"youtube-C-u5WLJ9Yk4.mp4","url":"https://www.youtube.com/watch?v=C-u5WLJ9Yk4","credit":"Britney Spears - ...Baby One More Time official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"britney_interview_2","file":"youtube-pSSOqwMoweE.mp4","url":"https://www.youtube.com/watch?v=pSSOqwMoweE","credit":"Britney Spears 1998 interview / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"britney_video_3","file":"youtube-C-u5WLJ9Yk4.mp4","url":"https://www.youtube.com/watch?v=C-u5WLJ9Yk4","credit":"Britney Spears - ...Baby One More Time official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"britney_interview_3","file":"youtube-pSSOqwMoweE.mp4","url":"https://www.youtube.com/watch?v=pSSOqwMoweE","credit":"Britney Spears 1998 interview / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
