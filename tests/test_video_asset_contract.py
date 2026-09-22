@@ -610,7 +610,7 @@ class VideoFFmpegPreflightTests(unittest.TestCase):
             if "-filters" in arguments:
                 return (
                     "perspective xfade subtitles overlay loudnorm "
-                    "crop fps scale setpts trim"
+                    "crop cropdetect fps pad scale setpts trim"
                 )
             return "libx264"
 
