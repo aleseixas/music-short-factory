@@ -359,10 +359,13 @@ importância visual. Quando esse crop perder conteúdo relevante, ele mantém a 
 inteira centralizada sobre um fundo neutro escuro. O fallback não usa blur.
 
 Para vídeos, preserve o comportamento normal de preenchimento/crop quando a
-proporção ainda encaixa razoavelmente no 9:16. Quando um cover crop conservar menos
-de 58% da área original, o renderer troca automaticamente para contain: mantém o
-vídeo inteiro centralizado sobre o mesmo fundo neutro escuro. Essa decisão de vídeo
-é puramente geométrica; não tente inferir ou autorar manualmente qual modo será usado.
+proporção ainda encaixa razoavelmente no 9:16. O renderer respeita metadata de
+rotação e, quando um arquivo horizontal tem pillarbox claro com conteúdo útil mais
+vertical no centro, remove apenas essas laterais antes de decidir o enquadramento.
+Se, depois dessa normalização, um cover crop conservar menos de 58% da área útil,
+o renderer troca automaticamente para contain e mantém o vídeo inteiro centralizado
+sobre o mesmo fundo neutro escuro. Essa decisão é automática; não tente inferir ou
+autorar manualmente qual modo será usado.
 
 Não invente campos novos para controlar o modo e não tente escolher manualmente
 `smart_crop`/`contain_neutral`: a decisão é determinística no renderer.
