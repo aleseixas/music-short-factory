@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "A palavra que não existe em um hit da Banda Calypso",
+  "slug": "joelma_principe_encantado_quija_ouija",
+  "target_duration_seconds": 65,
+  "segments": [
+    {"id":"hook","text":"Joelma cantou por anos uma palavra que simplesmente não existe — e o erro virou parte de um dos sucessos da Banda Calypso.","delivery":"hook"},
+    {"id":"quija","text":"Em Príncipe Encantado, de 2002, aparece a famosa expressão mesa de quijá. Só que quijá não existe no português e nem era o nome do objeto que a letra queria citar.","delivery":"curious"},
+    {"id":"origem","text":"O compositor Beto Caju contou que queria escrever Ouija, o nome do tabuleiro ligado a supostas comunicações com espíritos. Ele tinha visto a palavra em um filme e se confundiu com a grafia.","delivery":"reveal"},
+    {"id":"erro","text":"Segundo Beto, ele achou que o O de Ouija era um Q e entendeu aquilo como quijá. A palavra errada foi para a letra, chegou à gravação e ficou eternizada na música.","delivery":"dramatic"},
+    {"id":"contexto","text":"E a referência fazia sentido na história: a personagem procura respostas sobre um amor usando imagens místicas, como bola de cristal, cartas e o tal tabuleiro.","delivery":"neutral"},
+    {"id":"mudanca","text":"Anos depois, Joelma passou a cantar outro verso no lugar da mesa de quijá. Em 2026, a história voltou a viralizar e o próprio compositor explicou publicamente de onde veio o erro.","delivery":"payoff"},
+    {"id":"cta","text":"Você sempre cantou quijá sem saber o que era? Comenta.","delivery":"curious"}
+  ]
+}
