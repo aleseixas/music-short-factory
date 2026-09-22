@@ -90,10 +90,17 @@ class Renderer:
                     (detected.width, detected.height),
                     target_size,
                 )
-                # Accept only a stable, meaningful border removal that makes
-                # the active picture materially more vertical-friendly.
+                # Accept only clear pillarboxing: remove meaningful side
+                # borders, keep almost the full source height, and materially
+                # improve the fit to the vertical target. This avoids treating
+                # a dark horizontal scene as a fake portrait canvas.
+                pillarbox_like = (
+                    detected.width <= info.width * 0.90
+                    and detected.height >= info.height * 0.92
+                )
                 if (
-                    active_area_ratio <= 0.90
+                    pillarbox_like
+                    and active_area_ratio <= 0.90
                     and detected_fraction >= source_fraction + 0.08
                 ):
                     active_crop = detected
