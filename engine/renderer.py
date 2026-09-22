@@ -1,10 +1,13 @@
 from __future__ import annotations
 
+from dataclasses import dataclass
 from pathlib import Path
 
 from .config import ProjectConfig, StyleConfig
 from .ffmpeg import (
     LoudnormMeasurement,
+    VideoActiveCrop,
+    detect_video_active_crop,
     parse_loudnorm_measurement,
     probe_duration,
     probe_video_frame_count,
@@ -38,6 +41,12 @@ LOUDNESS_FILTER_TRUE_PEAK_DBTP = (
 LOUDNESS_RANGE_LU = 11.0
 
 
+@dataclass(frozen=True)
+class _VideoFramingPlan:
+    active_crop: VideoActiveCrop | None
+    use_contain: bool
+
+
 class Renderer:
     def __init__(self, root: Path, work_dir: Path, output_dir: Path, config: ProjectConfig, style: StyleConfig):
         self.root = root
@@ -48,21 +57,54 @@ class Renderer:
         self.scene_dir = work_dir / "scenes"
         self.scene_dir.mkdir(parents=True, exist_ok=True)
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self._video_contain_cache: dict[Path, bool] = {}
+        self._video_framing_cache: dict[Path, _VideoFramingPlan] = {}
 
-    def _video_uses_neutral_contain(self, source: Path) -> bool:
+    def _video_framing_plan(self, source: Path) -> _VideoFramingPlan:
         resolved = source.resolve()
-        cached = self._video_contain_cache.get(resolved)
+        cached = self._video_framing_cache.get(resolved)
         if cached is not None:
             return cached
-        info = probe_video_stream(resolved)
-        crop_fraction = crop_fraction_for_target(
-            (info.width, info.height),
-            (self.config.render.width, self.config.render.height),
+
+        target_size = (
+            self.config.render.width,
+            self.config.render.height,
         )
-        use_contain = crop_fraction < MIN_CROP_FRACTION_FOR_COVER
-        self._video_contain_cache[resolved] = use_contain
-        return use_contain
+        info = probe_video_stream(resolved)
+        source_fraction = crop_fraction_for_target(
+            (info.width, info.height),
+            target_size,
+        )
+        active_crop: VideoActiveCrop | None = None
+        effective_fraction = source_fraction
+
+        # Only inspect active bounds when the raw frame would otherwise use
+        # contain. This keeps ordinary portrait/near-portrait clips on the
+        # existing fast path and avoids inventing crops for normal footage.
+        if source_fraction < MIN_CROP_FRACTION_FOR_COVER:
+            detected = detect_video_active_crop(resolved, info)
+            if detected is not None:
+                active_area_ratio = (
+                    detected.width * detected.height
+                ) / (info.width * info.height)
+                detected_fraction = crop_fraction_for_target(
+                    (detected.width, detected.height),
+                    target_size,
+                )
+                # Accept only a stable, meaningful border removal that makes
+                # the active picture materially more vertical-friendly.
+                if (
+                    active_area_ratio <= 0.90
+                    and detected_fraction >= source_fraction + 0.08
+                ):
+                    active_crop = detected
+                    effective_fraction = detected_fraction
+
+        plan = _VideoFramingPlan(
+            active_crop=active_crop,
+            use_contain=effective_fraction < MIN_CROP_FRACTION_FOR_COVER,
+        )
+        self._video_framing_cache[resolved] = plan
+        return plan
 
     def render_scene(self, scene: TimelineScene, prepared_asset: Path, overlay: Path | None) -> Path:
         render = self.config.render
@@ -118,7 +160,14 @@ class Renderer:
                     )
             work_width = render.width * render.working_scale
             work_height = render.height * render.working_scale
-            if self._video_uses_neutral_contain(prepared_asset):
+            framing_plan = self._video_framing_plan(prepared_asset)
+            active_crop_filter = ""
+            if framing_plan.active_crop is not None:
+                crop = framing_plan.active_crop
+                active_crop_filter = (
+                    f"crop={crop.width}:{crop.height}:{crop.x}:{crop.y},"
+                )
+            if framing_plan.use_contain:
                 contain_width = max(
                     2,
                     2 * round(work_width * CONTAIN_FOREGROUND_SCALE / 2),
@@ -128,6 +177,7 @@ class Renderer:
                     2 * round(work_height * CONTAIN_FOREGROUND_SCALE / 2),
                 )
                 framing_filter = (
+                    f"{active_crop_filter}"
                     f"scale={contain_width}:{contain_height}:"
                     "force_original_aspect_ratio=decrease:flags=lanczos,"
                     f"pad={work_width}:{work_height}:(ow-iw)/2:(oh-ih)/2:"
@@ -135,6 +185,7 @@ class Renderer:
                 )
             else:
                 framing_filter = (
+                    f"{active_crop_filter}"
                     f"scale={work_width}:{work_height}:"
                     "force_original_aspect_ratio=increase:flags=lanczos,"
                     f"crop={work_width}:{work_height}:(iw-ow)/2:(ih-oh)/2,"
