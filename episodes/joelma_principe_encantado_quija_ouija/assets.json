@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"joelma_open","file":"youtube-YKdgcYZy1rQ.mp4","url":"https://www.youtube.com/watch?v=YKdgcYZy1rQ","credit":"Radar Records Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"joelma_quija","file":"youtube-YKdgcYZy1rQ.mp4","url":"https://www.youtube.com/watch?v=YKdgcYZy1rQ","credit":"Radar Records Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"joelma_origem","file":"youtube-MkjRYAp8Ido.mp4","url":"https://www.youtube.com/watch?v=MkjRYAp8Ido","credit":"Joelma Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"joelma_erro","file":"youtube-YKdgcYZy1rQ.mp4","url":"https://www.youtube.com/watch?v=YKdgcYZy1rQ","credit":"Radar Records Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"joelma_contexto","file":"youtube-ysS179KYL7M.mp4","url":"https://www.youtube.com/watch?v=ysS179KYL7M","credit":"MD Digital Music / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"joelma_mudanca","file":"youtube-36d6gbYI35g.mp4","url":"https://www.youtube.com/watch?v=36d6gbYI35g","credit":"FCO Gritar de Amor / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"joelma_cta","file":"youtube-MkjRYAp8Ido.mp4","url":"https://www.youtube.com/watch?v=MkjRYAp8Ido","credit":"Joelma Oficial / YouTube","license":"","focus":{"x":0.5,"y":0.42}}
+  ]
+}
