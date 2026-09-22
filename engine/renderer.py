@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from pathlib import Path
 
 from .config import ProjectConfig, StyleConfig
@@ -444,20 +445,31 @@ class Renderer:
                 video_duration = video_frames / self.config.render.fps
             else:
                 video_duration = sfx_video_duration
+            music_start = background_music.start_seconds
+            if (not math.isfinite(music_start) or music_start < 0
+                    or music_start >= video_duration):
+                raise RuntimeError(
+                    "background_music.start_seconds precisa ficar entre zero e "
+                    f"o fim do video ({video_duration:.3f}s), sem incluir o fim."
+                )
+            delay_samples = round(music_start * mix.sample_rate)
+            music_duration = video_duration - delay_samples / mix.sample_rate
+            if music_duration <= 0:
+                raise RuntimeError("background_music.start_seconds nao deixa samples audiveis.")
             fade_in = min(
                 mix.background_music_fade_in_seconds,
-                video_duration / 2,
+                music_duration / 2,
             )
             fade_out = min(
                 mix.background_music_fade_out_seconds,
-                video_duration / 2,
+                music_duration / 2,
             )
-            fade_out_start = max(0.0, video_duration - fade_out)
+            fade_out_start = max(0.0, music_duration - fade_out)
             music_filters = [
                 f"[2:a]aresample={mix.sample_rate}",
                 f"aformat=sample_fmts=fltp:sample_rates={mix.sample_rate}:"
                 "channel_layouts=stereo",
-                f"atrim=duration={video_duration:.6f}",
+                f"atrim=duration={music_duration:.6f}",
                 "asetpts=N/SR/TB",
                 f"volume={background_music.volume:.6f}",
             ]
@@ -466,6 +478,20 @@ class Renderer:
             if fade_out > 0:
                 music_filters.append(
                     f"afade=t=out:st={fade_out_start:.6f}:d={fade_out:.6f}"
+                )
+            music_graph = ",".join(music_filters)
+            if delay_samples:
+                # Prefix the same sample-accurate silence used for timed SFX;
+                # ducking still receives both inputs from PTS zero.
+                music_graph += (
+                    "[music_body];"
+                    f"anullsrc=r={mix.sample_rate}:cl=stereo,"
+                    f"atrim=end_sample={delay_samples},asetpts=N/SR/TB,"
+                    f"aformat=sample_fmts=fltp:sample_rates={mix.sample_rate}:"
+                    "channel_layouts=stereo[music_silence];"
+                    "[music_silence][music_body]concat=n=2:v=0:a=1,"
+                    f"apad=whole_dur={video_duration:.6f},"
+                    f"atrim=duration={video_duration:.6f},asetpts=N/SR/TB"
                 )
             base_audio_filter = (
                 f"[1:a]aresample={mix.sample_rate},"
@@ -476,7 +502,7 @@ class Renderer:
                 f"atrim=duration={video_duration:.6f},"
                 f"asetpts=N/SR/TB,volume={mix.voice_volume:.4f},"
                 "asplit=2[voice][duck_control];"
-                + ",".join(music_filters)
+                + music_graph
                 + "[music];"
                 "[music][duck_control]sidechaincompress="
                 f"threshold={mix.background_music_ducking_threshold:.6f}:"

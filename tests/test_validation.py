@@ -8,7 +8,7 @@ from pathlib import Path
 from unittest.mock import AsyncMock, patch
 
 from engine.audio import validate_audio_duration
-from engine.config import load_project_config
+from engine.config import load_project_config, load_style_config
 from engine.models import AssetSpec, AudioResult, ScriptSegment, Story, WordTiming
 from engine.pipeline import build_video
 from engine.timeline import load_shots, load_timeline
@@ -57,6 +57,24 @@ class TimelineValidationTests(unittest.TestCase):
     def test_unknown_segment_is_rejected(self):
         with self.assertRaisesRegex(RuntimeError, "exatamente um plano por segmento"):
             self.load(segment="missing")
+
+    def test_background_music_start_is_optional_and_non_negative(self):
+        default = self.load_with_options(background_music={"profile": "warm", "volume": .1})
+        delayed = self.load_with_options(background_music={"profile": "warm", "volume": .1,
+                                                           "start_seconds": 23.667})
+        self.assertEqual(default.background_music.start_seconds, 0.0)
+        self.assertEqual(delayed.background_music.start_seconds, 23.667)
+        for start in (-1, float("nan"), float("inf"), "bad"):
+            with self.subTest(start=start), self.assertRaisesRegex(RuntimeError, "start_seconds"):
+                self.load_with_options(background_music={"profile": "warm", "volume": .1,
+                                                          "start_seconds": start})
+
+    def test_authored_video_trim_policy_is_opt_in_and_strictly_boolean(self):
+        self.assertFalse(self.load_with_options().preserve_authored_video_trims)
+        self.assertTrue(self.load_with_options(preserve_authored_video_trims=True).preserve_authored_video_trims)
+        for value in (None, "true", 1, {}):
+            with self.subTest(value=value), self.assertRaisesRegex(RuntimeError, "preserve_authored_video_trims"):
+                self.load_with_options(preserve_authored_video_trims=value)
 
     def test_unknown_asset_is_rejected(self):
         with self.assertRaisesRegex(RuntimeError, "Asset desconhecido.*missing"):
@@ -315,6 +333,60 @@ class PipelineDurationPolicyTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(received_duration, [92.0])
         self.assertIn("[voz] aviso: Duracao da narracao fora do alvo", stdout.getvalue())
         self.assertIn("duracao=92.00s", stdout.getvalue())
+
+
+class AuthoredVideoTrimsPipelineTests(unittest.IsolatedAsyncioTestCase):
+    async def test_only_explicit_opt_in_skips_technical_segment_selection(self):
+        class StopAtPreflight(RuntimeError):
+            pass
+
+        project = Path(__file__).resolve().parents[1]
+        config = load_project_config(project / "config/config.json")
+        style = load_style_config(project / "config/style.json")
+        for choice in (None, False, True):
+            with self.subTest(policy=choice), tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                episode_dir = root / "episodes/demo"
+                episode_dir.mkdir(parents=True)
+                asset = SimpleNamespace(id="clip", is_video=True)
+                shot = SimpleNamespace(asset_id="clip", source_start_seconds=17.0)
+                scene = SimpleNamespace(shot=shot)
+                plan = SimpleNamespace(scenes=(scene,))
+                episode = SimpleNamespace(
+                    name="demo", directory=episode_dir, assets_dir=episode_dir / "assets",
+                    story=Story("Demo", "demo", (ScriptSegment("hook", "Texto"),), 2.0),
+                    assets={"clip": asset}, shots=(shot,), background_music=None,
+                    sfx_cues=(), visual_fx_cues=(), text_fx_cues=(), overlay_cues=(),
+                    smart_visual_pacing=None,
+                )
+                if choice is not None:
+                    episode.preserve_authored_video_trims = choice
+                audio = AudioResult(root / "voice.wav", 2.0, (WordTiming("Texto", 0, 2),), "test", True)
+                with (
+                    patch("engine.pipeline.load_project_config", return_value=config),
+                    patch("engine.pipeline.load_style_config", return_value=style),
+                    patch("engine.pipeline.load_episode", return_value=episode),
+                    patch("engine.pipeline.resolve_background_music", return_value=None),
+                    patch("engine.pipeline.resolve_sfx_cues", return_value=()),
+                    patch("engine.pipeline.preflight"),
+                    patch("engine.pipeline.AssetManager") as manager,
+                    patch("engine.pipeline.resolve_audio", new=AsyncMock(return_value=audio)),
+                    patch("engine.pipeline.build_timeline", return_value=plan),
+                    patch("engine.pipeline.resolve_text_fx_cues", return_value=()),
+                    patch("engine.pipeline.load_editorial_catalogs"),
+                    patch("engine.pipeline.validate_editorial_direction", return_value=SimpleNamespace(warnings=())),
+                    patch("engine.pipeline.select_best_segments_safely", return_value=plan) as select,
+                    redirect_stdout(io.StringIO()),
+                ):
+                    manager.return_value.ensure_all.return_value = {"clip": root / "clip.mp4"}
+                    manager.return_value.preflight_video_scene.side_effect = StopAtPreflight
+                    with self.assertRaises(StopAtPreflight):
+                        await build_video(root, "demo")
+                    if choice is True:
+                        select.assert_not_called()
+                    else:
+                        select.assert_called_once()
+                    self.assertEqual(manager.return_value.preflight_video_scene.call_args.args[0].shot.source_start_seconds, 17.0)
 
 
 class ProjectPathValidationTests(unittest.TestCase):

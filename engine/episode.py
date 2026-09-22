@@ -6,6 +6,7 @@ from pathlib import Path
 import re
 
 from .assets import load_asset_catalog
+from .artist_vibe import VISUAL_ROLES, profile_catalog_path, resolve_visual_direction
 from .delivery import DELIVERY_NAMES
 from .models import Episode, ScriptSegment, Story
 from .timeline import load_timeline
@@ -15,7 +16,7 @@ from .utils import load_json, safe_child, validate_schema, validate_slug
 REQUIRED_EPISODE_FILES = ("story.json", "timeline.json", "assets.json", "sources.txt")
 
 
-def load_story(path: Path) -> Story:
+def load_story(path: Path, *, profiles_path: Path | None = None) -> Story:
     data = load_json(path)
     validate_schema(data, path)
     raw_segments = data.get("segments")
@@ -48,7 +49,12 @@ def load_story(path: Path) -> Story:
                     f"Valores suportados: {supported}."
                 )
         seen.add(segment_id)
-        segments.append(ScriptSegment(id=segment_id, text=text, delivery=delivery))
+        visual_role = raw.get("visual_role")
+        if visual_role is not None and (
+            not isinstance(visual_role, str) or visual_role not in VISUAL_ROLES
+        ):
+            raise RuntimeError(f"visual_role invalido no segmento {segment_id!r}: {visual_role!r}.")
+        segments.append(ScriptSegment(id=segment_id, text=text, delivery=delivery, visual_role=visual_role))
 
     title = str(data.get("title", "")).strip()
     slug = validate_slug(str(data.get("slug", "")), "slug")
@@ -68,6 +74,7 @@ def load_story(path: Path) -> Story:
         slug=slug,
         target_duration_seconds=target,
         segments=tuple(segments),
+        visual_direction=resolve_visual_direction(data, profiles_path=profiles_path),
     )
 
 
@@ -95,7 +102,7 @@ def load_episode(project_root: Path, episodes_dir: str, name: str) -> Episode:
             f"Episodio {episode_name!r} incompleto; arquivos ausentes: {', '.join(missing)}."
         )
 
-    story = load_story(directory / "story.json")
+    story = load_story(directory / "story.json", profiles_path=profile_catalog_path(project_root))
     if story.slug != episode_name:
         raise RuntimeError(
             f"O slug de story.json ({story.slug!r}) precisa ser igual a pasta do episodio "
@@ -109,6 +116,7 @@ def load_episode(project_root: Path, episodes_dir: str, name: str) -> Episode:
         story=story,
         assets=assets,
         shots=timeline.shots,
+        preserve_authored_video_trims=timeline.preserve_authored_video_trims,
         smart_visual_pacing=timeline.smart_visual_pacing,
         background_music=timeline.background_music,
         sfx_cues=timeline.sfx_cues,

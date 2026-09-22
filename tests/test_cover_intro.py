@@ -1,10 +1,14 @@
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 from engine.config import load_project_config
-from engine.cover_intro import COVER_INTRO_SECONDS, embed_episode_cover_intro, prepend_cover_intro
+from engine.cover_intro import (
+    COVER_INTRO_SECONDS, embed_episode_cover_intro, prepend_cover_intro,
+    validate_episode_cover_opening,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -97,6 +101,45 @@ class CoverIntroTests(unittest.TestCase):
             self.assertEqual(output, video)
             self.assertEqual(cover, output_dir / "test_episode_cover.jpg")
             self.assertAlmostEqual(duration, expected_frames / self.config.render.fps)
+
+    def test_opt_out_generates_cover_without_changing_first_video_frame(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            episode = root / "demo"
+            episode.mkdir()
+            video = root / "demo.mp4"
+            video.write_bytes(b"original moving opening")
+            (episode / "post.json").write_text(
+                '{"cover":{"intro_enabled":false,"headline":"ELE QUASE DESISTIU",'
+                '"source":{"type":"video_frame","timestamp_seconds":0.7}}}', encoding="utf-8"
+            )
+            with (
+                patch("engine.cover_intro.generate_cover") as generate,
+                patch("engine.cover_intro.prepend_cover_intro") as prepend,
+            ):
+                output, _, duration = embed_episode_cover_intro(root, episode, video, self.config)
+            self.assertEqual(output.read_bytes(), b"original moving opening")
+            self.assertEqual(duration, 0)
+            generate.assert_called_once()
+            prepend.assert_not_called()
+
+    def test_moving_opening_rejects_static_asset_before_render(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            (root / "post.json").write_text(
+                '{"cover":{"intro_enabled":false,"headline":"ELE QUASE DESISTIU",'
+                '"source":{"type":"video_frame","selection":"auto_first_shot"}}}', encoding="utf-8"
+            )
+            shot = SimpleNamespace(asset_id="opening", freeze_frame=None)
+            episode = SimpleNamespace(directory=root, shots=(shot,),
+                                      assets={"opening": SimpleNamespace(is_video=False)})
+            with self.assertRaisesRegex(RuntimeError, "video no primeiro take"):
+                validate_episode_cover_opening(episode)
+            episode.assets["opening"].is_video = True
+            validate_episode_cover_opening(episode)
+            shot.freeze_frame = object()
+            with self.assertRaisesRegex(RuntimeError, "freeze_frame"):
+                validate_episode_cover_opening(episode)
 
 
 if __name__ == "__main__":

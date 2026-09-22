@@ -6,6 +6,7 @@ import json
 import math
 from pathlib import Path
 
+from .artist_vibe import visual_role_for_segment
 from .ffmpeg import VideoStreamInfo
 from .models import (
     ResolvedVisualFxCue,
@@ -190,6 +191,7 @@ def apply_smart_visual_pacing(
         asset_counts: dict[str, int] = {}
         for scene in plan.scenes:
             asset_counts[scene.asset.id] = asset_counts.get(scene.asset.id, 0) + 1
+        direction = getattr(story, "visual_direction", None)
         signals = tuple(
             _scene_signal(
                 scene,
@@ -198,6 +200,8 @@ def apply_smart_visual_pacing(
                 asset_counts[scene.asset.id] > 1,
                 _motion_value(motion, scene),
                 plan.fps,
+                direction,
+                visual_role_for_segment(story, scene.shot.segment_id) if direction else None,
             )
             for index, scene in enumerate(plan.scenes)
         )
@@ -255,6 +259,8 @@ def _scene_signal(
     repeated_asset: bool,
     motion_value: tuple[float | None, bool | None, float | None],
     fps: int,
+    visual_direction: Mapping[str, object] | None = None,
+    visual_role: str | None = None,
 ) -> _SceneSignal:
     score, practically_static, subject_score = motion_value
     labels: list[str] = []
@@ -320,6 +326,24 @@ def _scene_signal(
     ):
         target = min(target, 3.1)
         labels.append("important_phrase")
+    if visual_direction:
+        pacing = visual_direction.get("pacing", {})
+        duration_key = {
+            "hook": "hook_seconds",
+            "intimacy": "emotional_seconds",
+            "payoff": "payoff_seconds",
+        }.get(visual_role, "body_seconds")
+        role_target = pacing.get(duration_key)
+        if role_target is not None:
+            # Narration boundaries remain authoritative: these are relative
+            # editorial targets, still subject to the existing 1s/35% shift,
+            # source-trim, highlight and cue guarantees below.
+            target = 0.25 * target + 0.75 * float(role_target)
+            labels.append(f"artist_vibe_role:{visual_role}")
+        if "min_shot_seconds" in pacing:
+            target = max(target, float(pacing["min_shot_seconds"]))
+        if "max_shot_seconds" in pacing:
+            target = min(target, float(pacing["max_shot_seconds"]))
     if scene.asset.is_video:
         target = max(MIN_TAKE_SECONDS, target)
     else:
