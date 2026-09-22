@@ -164,6 +164,26 @@ class VideoAssetRendererTests(unittest.TestCase):
             ]
         )
 
+        cls.pillarboxed_portrait_video = fixture_root / "pillarboxed-portrait.mp4"
+        run_ffmpeg(
+            [
+                "-y",
+                "-hide_banner",
+                "-f",
+                "lavfi",
+                "-i",
+                "color=c=black:s=180x100:r=12:d=2,"
+                "drawbox=x=62:y=0:w=56:h=100:color=red:t=fill",
+                "-c:v",
+                "libx264",
+                "-preset",
+                "ultrafast",
+                "-pix_fmt",
+                "yuv420p",
+                cls.pillarboxed_portrait_video,
+            ]
+        )
+
         cls.dark_video = fixture_root / "dark.mp4"
         run_ffmpeg(
             [
@@ -457,6 +477,26 @@ class VideoAssetRendererTests(unittest.TestCase):
         self.assertGreater(green, red + 45)
         self.assertGreater(green, blue + 45)
         self.assertLess(sum(background), 70)
+
+    def test_pillarboxed_portrait_video_crops_side_bars_before_framing(self):
+        plan = self.single_plan(self.pillarboxed_portrait_video)
+        with patch("engine.renderer.run_ffmpeg", wraps=run_ffmpeg) as ffmpeg_call:
+            output = self.renderer.render_scene(
+                plan.scenes[0], self.pillarboxed_portrait_video, None
+            )
+
+        arguments = ffmpeg_call.call_args.args[0]
+        video_filter = arguments[arguments.index("-vf") + 1]
+        self.assertIn("crop=56:100:62:0", video_filter)
+        self.assertIn("force_original_aspect_ratio=increase", video_filter)
+        self.assertNotIn("pad=90:160", video_filter)
+        self.assertEqual(probe_video_frame_count(output), 12)
+
+        frame = self.extract_frame(output, 0.5, "pillarboxed-crop.png")
+        with Image.open(frame) as opened:
+            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+        self.assertGreater(red, green + 80)
+        self.assertGreater(red, blue + 80)
 
     def test_near_vertical_video_keeps_existing_cover_crop_path(self):
         plan = self.single_plan(self.portrait_video)
