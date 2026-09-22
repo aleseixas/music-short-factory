@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+  "recorded_at": "2026-09-22T11:15:28Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+      "shot_id": "shot_hook",
+      "asset_id": "britney_video_1",
+      "recorded_at": "2026-09-22T11:15:28Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1cc97e74aa274e3c077839bdd63f30bcdbd893e4e8897b621d95a84c708ec4e6",
+        "url_hashes": [
+          "e238dd1cf53e7f71108bac601b85153def6027d6567a1baa72fc9fe029d42663"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9aecf4cd6d118e05",
+          "eb63259c632cd683",
+          "83fc0dc22738df0d",
+          "85d3d3cc729a2d25",
+          "86997be4629c9b64",
+          "93364933768b35cc",
+          "e887b43de06f48ca",
+          "d4f842a3b34e7332"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 10.1
+      }
+    },
+    {
+      "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+      "shot_id": "shot_tlc",
+      "asset_id": "britney_interview_1",
+      "recorded_at": "2026-09-22T11:15:28Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "894fd1d22243accd2d2f17b29562ab8af39d174bbe79403d41df171970ff5484",
+        "url_hashes": [
+          "c6b1bd090ab4b2d139fedfad2f6f1165eacb0b9e4cd62675eacf4dd1c5841505"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9337682d36348dce",
+          "cb91363d7420cfc9",
+          "c5bec1cf2a84d48e",
+          "908c0d93ef367873",
+          "91c46f394ccbb156",
+          "98ee3fd8e01f00f1",
+          "d0c03f0f2d2f86b6",
+          "c0b63fad2d2d90b2"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 15.733333
+      }
+    },
+    {
+      "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+      "shot_id": "shot_sentido",
+      "asset_id": "britney_video_2",
+      "recorded_at": "2026-09-22T11:15:28Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1cc97e74aa274e3c077839bdd63f30bcdbd893e4e8897b621d95a84c708ec4e6",
+        "url_hashes": [
+          "e238dd1cf53e7f71108bac601b85153def6027d6567a1baa72fc9fe029d42663"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9dc0c2db61172fe8",
+          "d0d00f7d74165bd1",
+          "9b7c4137c5b35c22",
+          "d0d50f3c25075ebc",
+          "b9f900e09f4f2e83",
+          "f0d3838d6ca7c638",
+          "86d869666599dd26",
+          "9f3453f8c9b14d24"
+        ],
+        "source_start_seconds": 48.0,
+        "source_duration_seconds": 14.566667
+      }
+    },
+    {
+      "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+      "shot_id": "shot_britney",
+      "asset_id": "britney_interview_2",
+      "recorded_at": "2026-09-22T11:15:28Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "894fd1d22243accd2d2f17b29562ab8af39d174bbe79403d41df171970ff5484",
+        "url_hashes": [
+          "c6b1bd090ab4b2d139fedfad2f6f1165eacb0b9e4cd62675eacf4dd1c5841505"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9b3c403b6c83db66",
+          "84b733c8f4dd0b86",
+          "d0d00f3c35937ad5",
+          "b9f904e28f4f07a1",
+          "f1d38a8d2db3d20c",
+          "9de8bc26d3b50c45",
+          "94b432726b1d6c2f",
+          "94f065466bcd2c2f"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 13.366667
+      }
+    },
+    {
+      "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+      "shot_id": "shot_virada",
+      "asset_id": "britney_video_3",
+      "recorded_at": "2026-09-22T11:15:28Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1cc97e74aa274e3c077839bdd63f30bcdbd893e4e8897b621d95a84c708ec4e6",
+        "url_hashes": [
+          "e238dd1cf53e7f71108bac601b85153def6027d6567a1baa72fc9fe029d42663"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "deb379c5aa008ccd",
+          "dfb0f893108be664",
+          "fab8b98e83c1a06d",
+          "8ba17cc58f683297",
+          "f9b0f29f9393c028",
+          "cece021999b9b939",
+          "c9993762e48cbcb1",
+          "cccc0f1939337366"
+        ],
+        "source_start_seconds": 132.0,
+        "source_duration_seconds": 16.233333
+      }
+    },
+    {
+      "episode": "nostalgia_britney_baby_one_more_time_tlc_rejection",
+      "shot_id": "shot_cta",
+      "asset_id": "britney_interview_3",
+      "recorded_at": "2026-09-22T11:15:28Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "894fd1d22243accd2d2f17b29562ab8af39d174bbe79403d41df171970ff5484",
+        "url_hashes": [
+          "c6b1bd090ab4b2d139fedfad2f6f1165eacb0b9e4cd62675eacf4dd1c5841505"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d0d0052f2e7a7b2b",
+          "d1c1842e2b717b3e",
+          "91916a362f683a3f",
+          "c4c1153e6e70793e",
+          "c0c01f2fee3a386b",
+          "c0c41f2f637e7868",
+          "c0d01f67682e7a7a",
+          "c01fd4295e673a65"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 4.766667
+      }
+    }
+  ]
+}
