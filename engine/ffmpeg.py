@@ -349,7 +349,7 @@ def preflight(
                 f"{', '.join(missing_sfx_filters)}"
             )
     if require_video_assets:
-        required_video_filters = ("crop", "fps", "scale", "setpts", "trim")
+        required_video_filters = ("crop", "fps", "pad", "scale", "setpts", "trim")
         missing_video_filters = [
             name for name in required_video_filters if name not in filters
         ]
