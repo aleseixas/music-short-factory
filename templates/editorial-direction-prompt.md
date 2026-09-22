@@ -347,22 +347,26 @@ Uma timeline formada somente por imagens não ganha novas trocas: sem criar ou
 repetir assets, o passe consegue apenas redistribuir o tempo entre os shots já
 existentes. Portanto, resolva variedade visual durante a autoria.
 
-### ENQUADRAMENTO VERTICAL INTELIGENTE — IMAGENS
+### ENQUADRAMENTO VERTICAL INTELIGENTE — IMAGENS E VÍDEOS
 
 Para CADA asset principal de IMAGEM, defina `focus.x` e `focus.y` sobre o elemento
 que não pode ser cortado: priorize rosto/pessoa, artista, instrumento, objeto
 principal ou texto/manchete relevante. Não use `0.5, 0.5` por inércia quando o
 assunto estiver fora do centro.
 
-O renderer tenta primeiro um crop 9:16 guiado pelo foco e pela importância visual.
-Quando esse crop perder conteúdo relevante, ele usa automaticamente a imagem
-inteira centralizada sobre fundo preenchido/desfocado. Esse fallback é uma rede de
-segurança, não motivo para aceitar uma imagem horizontal fraca: entre candidatos
-semanticamente equivalentes, ainda prefira o que compõe melhor no formato vertical.
+Para imagens, o renderer tenta primeiro um crop 9:16 guiado pelo foco e pela
+importância visual. Quando esse crop perder conteúdo relevante, ele mantém a imagem
+inteira centralizada sobre um fundo neutro escuro. O fallback não usa blur.
+
+Para vídeos, preserve o comportamento normal de preenchimento/crop quando a
+proporção ainda encaixa razoavelmente no 9:16. Quando um cover crop conservar menos
+de 58% da área original, o renderer troca automaticamente para contain: mantém o
+vídeo inteiro centralizado sobre o mesmo fundo neutro escuro. Essa decisão de vídeo
+é puramente geométrica; não tente inferir ou autorar manualmente qual modo será usado.
 
 Não invente campos novos para controlar o modo e não tente escolher manualmente
-`smart_crop`/`contain_blur`: a decisão é determinística no preparo da imagem.
-Vídeos, overlays e capas não usam essa regra.
+`smart_crop`/`contain_neutral`: a decisão é determinística no renderer.
+Overlays e capas continuam fora dessa regra.
 
 ### SPEED E FREEZE FRAME — USO EDITORIAL
 
