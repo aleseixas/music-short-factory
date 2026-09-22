@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "joelma_principe_encantado_quija_ouija",
+  "recorded_at": "2026-09-22T21:07:41Z",
+  "visual_usage": [
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_hook",
+      "asset_id": "joelma_open",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "16aea07dfe78c86d8620a89d3ee7a29074a84cc49e3834c9d44662bfabeba093",
+        "url_hashes": [
+          "786a3568079b71269c5509cb20cee5f1a76c3bae4345387bd97039b31b086dbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce3e30d9316718b9",
+          "d963678466c8f2a6",
+          "d9e366c066e97226",
+          "c3c37138b8387979",
+          "c3c171383c3e7467",
+          "d9d93834262e7c65",
+          "9d866b4952d3b1b4",
+          "938979a76cf68512"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 6.9
+      }
+    },
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_quija",
+      "asset_id": "joelma_quija",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "16aea07dfe78c86d8620a89d3ee7a29074a84cc49e3834c9d44662bfabeba093",
+        "url_hashes": [
+          "786a3568079b71269c5509cb20cee5f1a76c3bae4345387bd97039b31b086dbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c29e87cd5970c7b0",
+          "f595525a3ae29591",
+          "cecca1a339b3a923",
+          "9adb29b6aa252399",
+          "f3e369fc3c1282a1",
+          "f2e366782582736a",
+          "c7e450eb31adb251",
+          "c58d97c03eb926b4"
+        ],
+        "source_start_seconds": 18.0,
+        "source_duration_seconds": 10.533333
+      }
+    },
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_origem",
+      "asset_id": "joelma_origem",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "16aea07dfe78c86d8620a89d3ee7a29074a84cc49e3834c9d44662bfabeba093",
+        "url_hashes": [
+          "786a3568079b71269c5509cb20cee5f1a76c3bae4345387bd97039b31b086dbb"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "889e57662b62e371",
+          "c816172f36e0f876",
+          "da1c050547de794f",
+          "9ba49926733260df",
+          "c8aadd23312375d5",
+          "a8a8eb4b0f0f5f50",
+          "92939666467a6b6a",
+          "9d9d5878596925e4"
+        ],
+        "source_start_seconds": 30.0,
+        "source_duration_seconds": 10.3
+      }
+    },
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_erro",
+      "asset_id": "joelma_erro",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "06229b5e20127af01b7c50fb2df19bf6ca63376039ba8422975c9fb02e69adc0",
+        "url_hashes": [
+          "afe9200d7bd07af425e9dd083b9b4a575e6f6d9b6660a1f128aec58e3de725bd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f9ae5855194b82ad",
+          "fca75852954dc195",
+          "fda7784a348963c8",
+          "fdb7484a35c94b88",
+          "9d961adab1ad6a48",
+          "d9b612f425897e91",
+          "93bc55e52bc83781",
+          "9bb654b421cb6d29"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 10.1
+      }
+    },
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_contexto",
+      "asset_id": "joelma_contexto",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "77c93c489497fbd90e06c0e88f4937c7888422b40c975814b2058cb76c59437d",
+        "url_hashes": [
+          "db84775000fd35c3dc4e5bc2437ab9eca11cdbde28d69ae84b0b53cf2fee632b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8ed4233c636ec963",
+          "deb4333863c8d196",
+          "d6b4296863cec6b2",
+          "dfbc0b386966c238",
+          "dca132736a4b58e5",
+          "d62d637902635e17",
+          "dead035c636a4c56",
+          "dca5325a6a6658dc"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 10.366667
+      }
+    },
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_mudanca",
+      "asset_id": "joelma_mudanca",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "fb1313d034a87087a56cf33950dbff10f487854f8c8da29b2e468507d51ce193",
+        "url_hashes": [
+          "12655008068416f5a3c2969b005c682547ff4f44dfa20b0a2ddcb33127780301"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8fcb607ca1c3d3b0",
+          "ecb21488d4e5d2dd",
+          "b0ac0c02cdfbf8ec",
+          "dc62221f2a943f75",
+          "de6f21b06e8f9228",
+          "db686cb016ed9a16",
+          "caef2513de24a6d0",
+          "ecf1730e0d30b1cd"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 13.566667
+      }
+    },
+    {
+      "episode": "joelma_principe_encantado_quija_ouija",
+      "shot_id": "shot_cta",
+      "asset_id": "joelma_cta",
+      "recorded_at": "2026-09-22T21:07:41Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "06229b5e20127af01b7c50fb2df19bf6ca63376039ba8422975c9fb02e69adc0",
+        "url_hashes": [
+          "afe9200d7bd07af425e9dd083b9b4a575e6f6d9b6660a1f128aec58e3de725bd"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ce831edc31e6529c",
+          "de831ade30e6439c",
+          "cc931ade31e5439c",
+          "cc831edc30ee1b9c",
+          "ce831efc30ee5314",
+          "cc831ad831e713bd",
+          "dd871ed831ad123a",
+          "dd871edc11c903b9"
+        ],
+        "source_start_seconds": 24.0,
+        "source_duration_seconds": 3.566667
+      }
+    }
+  ]
+}
