@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+  "recorded_at": "2026-09-23T22:34:03Z",
+  "visual_usage": [
+    {
+      "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+      "shot_id": "shot_hook",
+      "asset_id": "proibida_live_1",
+      "recorded_at": "2026-09-23T22:34:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "963a97918619777c0ede291af85fafa651986b34bb07f2778ab42a21a93c74a1",
+        "url_hashes": [
+          "a85a38de8df8332818bd4cf6137f1f6f3a2568a9b57af55566b45030c487d05e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a5a5ca4a5a5af496",
+          "a5a5ca4a5a5af496",
+          "a5a54a4a5a55b5b5",
+          "ada15a5a52f584b5",
+          "cc3b21ce3b31cf18",
+          "c43b348cb636dc96",
+          "95b49e9a5b4c5c49",
+          "9595869a8b839f4e"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 7.866667
+      }
+    },
+    {
+      "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+      "shot_id": "shot_grazon",
+      "asset_id": "proibida_live_2",
+      "recorded_at": "2026-09-23T22:34:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c0c157205102d5dc8772094a6ca95aa3e9693f620021ad8f5cbaa9ff30290acc",
+        "url_hashes": [
+          "23a19bcf76af6860f0f9077ba54321661b346abbfcf67830f91dcaf863ea7c46"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c6669961d0e1c6cf",
+          "c664bb60d2e1c6c7",
+          "844cb360e1d2ebd7",
+          "cd4b366897ce864a",
+          "8c4cba65e1d2e9c3",
+          "c46ab368f1c0e3c7",
+          "86718f49529d8bb6",
+          "c4a37c3e2ea59cd0"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 12.266667
+      }
+    },
+    {
+      "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+      "shot_id": "shot_encontro",
+      "asset_id": "zoio_live",
+      "recorded_at": "2026-09-23T22:34:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "98d403eaab08dddc75bafe9bd6a3cba3429370efc911b344db6da7dbc345a5e6",
+        "url_hashes": [
+          "c8e7e8bf7355202d95d5cfeb866a0673e31ad5e96b6a9d1f35017a6cdb4de914"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d9f3262d6cc89326",
+          "96da692d1b969692",
+          "887477213be6accc",
+          "9d99939b4e644d64",
+          "92933296d4cc537b",
+          "9ab364cc33929973",
+          "84cc79c9c6363967",
+          "a81e6a2f95d6d10d"
+        ],
+        "source_start_seconds": 12.0,
+        "source_duration_seconds": 11.3
+      }
+    },
+    {
+      "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+      "shot_id": "shot_virada",
+      "asset_id": "zoio_archive",
+      "recorded_at": "2026-09-23T22:34:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6b089def4f96b8cf08ace69656eda45ff68da6317827429d80927cc4aa1dde6d",
+        "url_hashes": [
+          "436b47d5aaabda96ba127bde53cebaad496185a04ae25bad75b90f101f59ffee"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c01e307963cf98fc",
+          "dc0c707ac78d9c74",
+          "ad5a55ab52acaa25",
+          "e25ce1c2b04bb74b",
+          "f30ec9e31cc1de88",
+          "fb21cca18cf9a692",
+          "9ba1873885b9af25",
+          "86781c379826fb6c"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 12.333333
+      }
+    },
+    {
+      "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+      "shot_id": "shot_casamento",
+      "asset_id": "dias_live",
+      "recorded_at": "2026-09-23T22:34:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9aa58e4bf061614b2a56f58b1914417e0efa5b248f671229589d3dbe540899d4",
+        "url_hashes": [
+          "d672b97d5cca81ecdb72a15c0f39ace216bdce57e46f69d20753dc0773c6727e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "bdb34fb9c0a452a4",
+          "93acacb55b766442",
+          "93e25ca4accea639",
+          "c8c625ca963bd695",
+          "c6e61bf4b39a6089",
+          "a39078ed42f60fd4",
+          "c61f603c33e189cf",
+          "cc1e233967cb8ac6"
+        ],
+        "source_start_seconds": 15.0,
+        "source_duration_seconds": 11.9
+      }
+    },
+    {
+      "episode": "charlie_brown_jr_proibida_pra_mim_graziela",
+      "shot_id": "shot_cta",
+      "asset_id": "dias_official",
+      "recorded_at": "2026-09-23T22:34:03Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5af9d32a4b6edb1725150475c4ea313d56af9696cfa6ead30a0bf162f0a3905d",
+        "url_hashes": [
+          "ee7556a140b08302de0e2ebd6cbf3f01be19c385806ab574e8777a3d53fdb1f3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d7f16004e1bc1e1f",
+          "cc99336699996666",
+          "c5b86e4398bd075a",
+          "e5b8266bdcb40356",
+          "8bcf94b4e5ed00f0",
+          "8fcb9436a7a528e2",
+          "f6e1c310a5e3f903",
+          "f4e04310a5e7f50f"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 6.033333
+      }
+    }
+  ]
+}
