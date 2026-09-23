@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "title": "A história real por trás de Proibida Pra Mim, do Charlie Brown Jr.",
+  "slug": "charlie_brown_jr_proibida_pra_mim_graziela",
+  "target_duration_seconds": 70,
+  "segments": [
+    {"id":"hook","text":"Chorão transformou o começo do romance com Graziela Gonçalves em um dos maiores clássicos do Charlie Brown Jr.: Proibida Pra Mim.","delivery":"hook"},
+    {"id":"grazon","text":"O subtítulo Grazon não é aleatório. Era o apelido de Graziela, que se tornaria esposa de Chorão e inspiração recorrente para as músicas dele.","delivery":"curious"},
+    {"id":"encontro","text":"A própria história do casal aparece na canção: o cabelo diferente de Chorão, a aproximação e aquela sensação de estar tentando conquistar alguém que parecia fora de alcance.","delivery":"dramatic"},
+    {"id":"virada","text":"A faixa saiu em 1997 no álbum de estreia Transpiração Contínua Prolongada e ajudou a apresentar ao Brasil o lado romântico de uma banda que misturava rock, skate, reggae e linguagem de rua.","delivery":"reveal"},
+    {"id":"casamento","text":"A história ganhou um detalhe ainda mais forte anos depois: Chorão e Graziela se casaram em 2003, e ela entrou na cerimônia ao som da música que ele havia feito inspirado nela.","delivery":"payoff"},
+    {"id":"cta","text":"Você imaginava que Proibida Pra Mim carregava uma história de amor tão literal por trás da letra?","delivery":"payoff"}
+  ]
+}
