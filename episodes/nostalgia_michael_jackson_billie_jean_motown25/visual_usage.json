@@ -1,0 +1,163 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+  "recorded_at": "2026-09-23T14:23:21Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+      "shot_id": "shot_hook",
+      "asset_id": "motown25_main",
+      "recorded_at": "2026-09-23T14:23:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4edba38f5d2e64b692ad0cc6cd03e55010909e6647229eb1cfd05e10145d9420",
+        "url_hashes": [
+          "2e793999ecc7ed9a02bf54992295b4698c59919a746939199efe2e3f877ffc0e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9e69e19673242e99",
+          "a57a39cf60308e67",
+          "f678230f34d8c46b",
+          "992673936cd39964",
+          "9e6493cc36936cb2",
+          "8e39e19679a52ec8",
+          "9e39e19669613ec8",
+          "9e39e19662653fc0"
+        ],
+        "source_start_seconds": 195.0,
+        "source_duration_seconds": 11.2
+      }
+    },
+    {
+      "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+      "shot_id": "shot_motown",
+      "asset_id": "motown25_alt",
+      "recorded_at": "2026-09-23T14:23:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "0add95af5dc089f4261bee8be7631d67578df8923e116494ace2d6272ff6cbc4",
+        "url_hashes": [
+          "b1adc8a1aecc60e5b06c693ee58ffef7811f32149cc6067063aa6c2d52f664f5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "fc0487f00fc3788f",
+          "fc050ff0c30f38e6",
+          "fc041ff0c61f38c6",
+          "d9e2f2993e8a9921",
+          "d966f2893e8e9922",
+          "d966f2c926c69926",
+          "982176d83be6916b",
+          "992566d83be79219"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 11.4
+      }
+    },
+    {
+      "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+      "shot_id": "shot_visual",
+      "asset_id": "billie_jean_official",
+      "recorded_at": "2026-09-23T14:23:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c83763c83ef0318f",
+          "ee21599b276962cc",
+          "b2d6cda45aa5e509",
+          "ec43177e0c2d3696",
+          "86af695959c64f14",
+          "86af6b5919c64f44",
+          "86af6b5959c64f04",
+          "872cf734dd996580"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 13.333333
+      }
+    },
+    {
+      "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+      "shot_id": "shot_moonwalk",
+      "asset_id": "motown25_live",
+      "recorded_at": "2026-09-23T14:23:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "579ef7cae10036a3cea91f5f6bac0e8c8dfe43a2f265ca0ae80c0d5abad8f02b",
+        "url_hashes": [
+          "95e6d97b4ec395d167d82f6ad4711c3db9e62e6b2aa91c086c0b253f6c2803d8"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9c6ba9c62ae11d99",
+          "986b6ba63ae10d99",
+          "987969b62ae44e99",
+          "946949b63ae74699",
+          "907b69b622e64e99",
+          "9c694bb62ae54c99",
+          "8c72e3cc29e34cba",
+          "9479eb86736506d8"
+        ],
+        "source_start_seconds": 185.0,
+        "source_duration_seconds": 12.5
+      }
+    },
+    {
+      "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+      "shot_id": "shot_impacto",
+      "asset_id": "motown25_archive",
+      "recorded_at": "2026-09-23T14:23:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4517bcd6fb0452f9eaad6c4f696201401f5055e443c6ce16b53b833a63cfe1ba",
+        "url_hashes": [
+          "89e938a4e0711bef38284f02c35b7cf7f2799b460ded162bd7c71dfd2942168f"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c13cc3e1398f619e",
+          "c13cc3e73987e09c",
+          "c13cc36318c6f99e",
+          "c13cc3631be7c11e",
+          "956a9437c1b49dd2",
+          "c13b9466f19c4f91",
+          "956bc436cb863dc2",
+          "956bc43ccaa43dd2"
+        ],
+        "source_start_seconds": 150.0,
+        "source_duration_seconds": 18.233333
+      }
+    },
+    {
+      "episode": "nostalgia_michael_jackson_billie_jean_motown25",
+      "shot_id": "shot_cta",
+      "asset_id": "billie_jean_audio_visual",
+      "recorded_at": "2026-09-23T14:23:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9007727132030c974f8a397a378b9bce8e649e56b59f26df00abb1b6687e4bab",
+        "url_hashes": [
+          "45d8d58a4653247ea791506367a8392b23b916383c2415efac6ebd4bc1ecf772"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a919daa6147bcd92",
+          "a91ddaa614794cba",
+          "a45bcda4536c70a7",
+          "9d63e09f413cbd84",
+          "b847c7b04977609b",
+          "bc449ef00ff80799",
+          "a952eda906f10df2",
+          "ae15daa41be41ae5"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 4.6
+      }
+    }
+  ]
+}
