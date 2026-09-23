@@ -241,7 +241,9 @@ def _log_instagram_container_diagnostics(
         )
 
 
-_INSTAGRAM_MAX_ATTEMPTS = 3
+_INSTAGRAM_COVER_ATTEMPTS = 3
+_INSTAGRAM_FALLBACK_ATTEMPTS = 1
+_INSTAGRAM_DEFAULT_ATTEMPTS = 3
 
 
 def _without_instagram_cover(context: PublishContext) -> PublishContext:
@@ -406,12 +408,18 @@ def _publish_instagram_with_retries(
 ):
     _log_instagram_video_preflight(context.video_path)
     attempt_context = context
+    has_custom_cover = bool(str(context.metadata.get("cover_url", "")).strip())
+    max_attempts = (
+        _INSTAGRAM_COVER_ATTEMPTS + _INSTAGRAM_FALLBACK_ATTEMPTS
+        if has_custom_cover
+        else _INSTAGRAM_DEFAULT_ATTEMPTS
+    )
 
-    for attempt in range(1, _INSTAGRAM_MAX_ATTEMPTS + 1):
+    for attempt in range(1, max_attempts + 1):
         using_cover = bool(str(attempt_context.metadata.get("cover_url", "")).strip())
         cover_mode = "cover_url" if using_cover else "thumb_offset"
         print(
-            f"[instagram] attempt {attempt}/{_INSTAGRAM_MAX_ATTEMPTS}: "
+            f"[instagram] attempt {attempt}/{max_attempts}: "
             f"criando novo container ({cover_mode})."
         )
         try:
@@ -421,15 +429,20 @@ def _publish_instagram_with_retries(
             _log_instagram_container_diagnostics(exc, credentials)
             if (
                 not _is_retryable_instagram_processing_error(exc)
-                or attempt >= _INSTAGRAM_MAX_ATTEMPTS
+                or attempt >= max_attempts
             ):
                 raise
 
-            if using_cover:
-                attempt_context = _without_instagram_cover(attempt_context)
+            if using_cover and attempt < _INSTAGRAM_COVER_ATTEMPTS:
                 print(
                     "[instagram] processing ERROR; retrying with a new container "
-                    "without cover_url."
+                    "keeping cover_url."
+                )
+            elif using_cover:
+                attempt_context = _without_instagram_cover(attempt_context)
+                print(
+                    "[instagram] cover_url failed 3 times; final retry with "
+                    "thumb_offset."
                 )
             else:
                 print(
