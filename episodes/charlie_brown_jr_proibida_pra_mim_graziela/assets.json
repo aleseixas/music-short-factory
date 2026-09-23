@@ -1,0 +1,11 @@
+{
+  "schema_version":1,
+  "assets":[
+    {"id":"proibida_live_1","file":"youtube-TQwDZWsDxEw.mp4","url":"https://www.youtube.com/watch?v=TQwDZWsDxEw","credit":"Charlie Brown Jr. - Proibida Pra Mim (Grazon) ao vivo / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"proibida_live_2","file":"youtube-d6EfSjo4RLI.mp4","url":"https://www.youtube.com/watch?v=d6EfSjo4RLI","credit":"Charlie Brown Jr. - Proibida Pra Mim (Grazon) ao vivo / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"zoio_live","file":"youtube-iD8rnTjVniA.mp4","url":"https://www.youtube.com/watch?v=iD8rnTjVniA","credit":"Charlie Brown Jr. - Zóio de Lula ao vivo / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"zoio_archive","file":"youtube-dLRjzX0YDu8.mp4","url":"https://www.youtube.com/watch?v=dLRjzX0YDu8","credit":"Charlie Brown Jr. - Zóio de Lula / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"dias_live","file":"youtube-eZVeoOp7y9w.mp4","url":"https://www.youtube.com/watch?v=eZVeoOp7y9w","credit":"Charlie Brown Jr. - Dias de Luta, Dias de Glória / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"dias_official","file":"youtube-6eEOegzrwJg.mp4","url":"https://www.youtube.com/watch?v=6eEOegzrwJg","credit":"Charlie Brown Jr. - Dias de Luta, Dias de Glória / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
