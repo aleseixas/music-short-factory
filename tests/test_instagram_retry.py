@@ -50,11 +50,14 @@ class InstagramRetryTests(unittest.TestCase):
     def setUp(self) -> None:
         self.credentials = CredentialStore.from_mapping({})
 
-    def test_processing_error_retries_without_cover_and_then_succeeds(self):
+    def test_processing_error_keeps_cover_for_three_attempts(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             context = context_with_cover(Path(temp_dir))
             publisher = RecordingPublisher(
-                [ApiError("InstagramPublisher: container 111 terminou com status ERROR.")]
+                [
+                    ApiError("InstagramPublisher: container 111 terminou com status ERROR."),
+                    ApiError("InstagramPublisher: container 222 terminou com status ERROR."),
+                ]
             )
 
             with (
@@ -68,13 +71,12 @@ class InstagramRetryTests(unittest.TestCase):
                 )
 
         self.assertEqual(result.status, "published")
-        self.assertEqual(len(publisher.upload_contexts), 2)
-        self.assertIn("cover_url", publisher.upload_contexts[0].metadata)
-        self.assertNotIn("cover_url", publisher.upload_contexts[1].metadata)
-        self.assertEqual(publisher.upload_contexts[1].metadata["thumb_offset_ms"], 700)
+        self.assertEqual(len(publisher.upload_contexts), 3)
+        for upload_context in publisher.upload_contexts:
+            self.assertIn("cover_url", upload_context.metadata)
         self.assertEqual(publisher.publish_calls, 1)
 
-    def test_processing_error_never_exceeds_three_attempts(self):
+    def test_processing_error_falls_back_without_cover_after_three_failures(self):
         failures = [
             ApiError(f"InstagramPublisher: container {index} terminou com status ERROR.")
             for index in (111, 222, 333)
@@ -87,18 +89,19 @@ class InstagramRetryTests(unittest.TestCase):
                 patch("publish._log_instagram_video_preflight"),
                 patch("publish._log_instagram_container_diagnostics"),
             ):
-                with self.assertRaisesRegex(ApiError, "container 333"):
-                    _publish_instagram_with_retries(
-                        publisher,
-                        context,
-                        self.credentials,
-                    )
+                result = _publish_instagram_with_retries(
+                    publisher,
+                    context,
+                    self.credentials,
+                )
 
-        self.assertEqual(len(publisher.upload_contexts), 3)
-        self.assertIn("cover_url", publisher.upload_contexts[0].metadata)
-        self.assertNotIn("cover_url", publisher.upload_contexts[1].metadata)
-        self.assertNotIn("cover_url", publisher.upload_contexts[2].metadata)
-        self.assertEqual(publisher.publish_calls, 0)
+        self.assertEqual(result.status, "published")
+        self.assertEqual(len(publisher.upload_contexts), 4)
+        for upload_context in publisher.upload_contexts[:3]:
+            self.assertIn("cover_url", upload_context.metadata)
+        self.assertNotIn("cover_url", publisher.upload_contexts[3].metadata)
+        self.assertEqual(publisher.upload_contexts[3].metadata["thumb_offset_ms"], 700)
+        self.assertEqual(publisher.publish_calls, 1)
 
     def test_non_processing_api_error_is_not_retried(self):
         with tempfile.TemporaryDirectory() as temp_dir:
