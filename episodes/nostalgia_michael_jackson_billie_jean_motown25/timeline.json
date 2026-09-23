@@ -1,0 +1,22 @@
+{
+  "schema_version":1,
+  "smart_visual_pacing":{"enabled":true},
+  "background_music":{"profile":"dark_cinematic","volume":0.10},
+  "sfx_cues":[
+    {"time_seconds":0.1,"type":"impact","volume":0.14},
+    {"time_seconds":22,"type":"whoosh_fast","volume":0.10},
+    {"time_seconds":39,"type":"bass_drop_cinematic","volume":0.14}
+  ],
+  "text_fx_cues":[
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"O MOONWALK QUE PAROU O MUNDO","accent_text":"MOONWALK","animation":"scale_bounce","position":"center","intensity":0.75},
+    {"segment":"moonwalk","offset_seconds":0.2,"duration_seconds":1.3,"text":"1983: NASCIA UM ÍCONE","accent_text":"1983","animation":"slide_up","position":"center","intensity":0.65}
+  ],
+  "shots":[
+    {"id":"shot_hook","segment":"hook","asset":"motown25_main","motion":"push_in","transition_out":"cut","source_start_seconds":195.0},
+    {"id":"shot_motown","segment":"motown","asset":"motown25_alt","motion":"hold","transition_out":"crossfade","source_start_seconds":5.0},
+    {"id":"shot_visual","segment":"visual","asset":"billie_jean_official","motion":"push_in","transition_out":"cut","source_start_seconds":70.0},
+    {"id":"shot_moonwalk","segment":"moonwalk","asset":"motown25_live","motion":"push_in","transition_out":"cut","source_start_seconds":185.0},
+    {"id":"shot_impacto","segment":"impacto","asset":"motown25_archive","motion":"pull_out","transition_out":"crossfade","source_start_seconds":150.0},
+    {"id":"shot_cta","segment":"cta","asset":"billie_jean_audio_visual","motion":"hold","transition_out":"cut","source_start_seconds":10.0}
+  ]
+}
