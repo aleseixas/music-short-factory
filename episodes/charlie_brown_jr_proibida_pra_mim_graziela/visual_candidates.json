@@ -1,59 +1,11 @@
 {
   "schema_version": 1,
   "slots": [
-    {
-      "id": "proibida_live_1",
-      "visual_intent": "Charlie Brown Jr. e Chorão em performance real de Proibida Pra Mim, abertura imediatamente reconhecível da banda.",
-      "required_seconds": 9,
-      "inspect_top": 4,
-      "candidates": [
-        {"kind":"video","url":"https://www.youtube.com/watch?v=TQwDZWsDxEw","source_page_url":"https://www.youtube.com/watch?v=TQwDZWsDxEw","source":"youtube","search_provider":"youtube_web","provider_id":"TQwDZWsDxEw","semantic_fit":"exact","editorial_rank":1,"rights_status":"unknown","source_start_seconds":5}
-      ]
-    },
-    {
-      "id": "proibida_live_2",
-      "visual_intent": "Performance real de Proibida Pra Mim para sustentar a explicação sobre Grazon.",
-      "required_seconds": 10,
-      "inspect_top": 4,
-      "candidates": [
-        {"kind":"video","url":"https://www.youtube.com/watch?v=6ObczHX7ufI","source_page_url":"https://www.youtube.com/watch?v=6ObczHX7ufI","source":"youtube","search_provider":"youtube_web","provider_id":"6ObczHX7ufI","semantic_fit":"exact","editorial_rank":1,"rights_status":"unknown","source_start_seconds":3113}
-      ]
-    },
-    {
-      "id": "zoio_live",
-      "visual_intent": "Chorão e Charlie Brown Jr. em performance ao vivo da mesma era musical, com o vocalista claramente reconhecível.",
-      "required_seconds": 11,
-      "inspect_top": 4,
-      "candidates": [
-        {"kind":"video","url":"https://www.youtube.com/watch?v=iD8rnTjVniA","source_page_url":"https://www.youtube.com/watch?v=iD8rnTjVniA","source":"youtube","search_provider":"youtube_web","provider_id":"iD8rnTjVniA","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":12}
-      ]
-    },
-    {
-      "id": "zoio_archive",
-      "visual_intent": "Charlie Brown Jr. reconhecível para contextualizar a ascensão da banda e seu repertório romântico.",
-      "required_seconds": 12,
-      "inspect_top": 4,
-      "candidates": [
-        {"kind":"video","url":"https://www.youtube.com/watch?v=dLRjzX0YDu8","source_page_url":"https://www.youtube.com/watch?v=dLRjzX0YDu8","source":"youtube","search_provider":"youtube_web","provider_id":"dLRjzX0YDu8","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":5}
-      ]
-    },
-    {
-      "id": "dias_live",
-      "visual_intent": "Chorão em performance real do Charlie Brown Jr., sustentando o payoff sobre a história do casal e legado da banda.",
-      "required_seconds": 11,
-      "inspect_top": 4,
-      "candidates": [
-        {"kind":"video","url":"https://www.youtube.com/watch?v=423K3pipX3c","source_page_url":"https://www.youtube.com/watch?v=423K3pipX3c","source":"youtube","search_provider":"youtube_web","provider_id":"423K3pipX3c","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":15}
-      ]
-    },
-    {
-      "id": "dias_official",
-      "visual_intent": "Charlie Brown Jr. e Chorão reconhecíveis em vídeo oficial para fechar a pergunta ao público.",
-      "required_seconds": 7,
-      "inspect_top": 4,
-      "candidates": [
-        {"kind":"video","url":"https://www.youtube.com/watch?v=6eEOegzrwJg","source_page_url":"https://www.youtube.com/watch?v=6eEOegzrwJg","source":"youtube","search_provider":"youtube_web","provider_id":"6eEOegzrwJg","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":8}
-      ]
-    }
+    {"id":"proibida_live_1","visual_intent":"Charlie Brown Jr. e Chorão em performance real de Proibida Pra Mim, abertura imediatamente reconhecível da banda.","required_seconds":9,"inspect_top":4,"candidates":[{"kind":"video","url":"https://www.youtube.com/watch?v=TQwDZWsDxEw","source_page_url":"https://www.youtube.com/watch?v=TQwDZWsDxEw","source":"youtube","search_provider":"youtube_web","provider_id":"TQwDZWsDxEw","semantic_fit":"exact","editorial_rank":1,"rights_status":"unknown","source_start_seconds":5}]},
+    {"id":"proibida_live_2","visual_intent":"Performance real de Proibida Pra Mim para sustentar a explicação sobre Grazon.","required_seconds":10,"inspect_top":4,"candidates":[{"kind":"video","url":"https://www.youtube.com/watch?v=liUFyz_sXLE","source_page_url":"https://www.youtube.com/watch?v=liUFyz_sXLE","source":"youtube","search_provider":"youtube_web","provider_id":"liUFyz_sXLE","semantic_fit":"exact","editorial_rank":1,"rights_status":"unknown","source_start_seconds":20}]},
+    {"id":"zoio_live","visual_intent":"Chorão e Charlie Brown Jr. em performance ao vivo da mesma era musical, com o vocalista claramente reconhecível.","required_seconds":11,"inspect_top":4,"candidates":[{"kind":"video","url":"https://www.youtube.com/watch?v=iD8rnTjVniA","source_page_url":"https://www.youtube.com/watch?v=iD8rnTjVniA","source":"youtube","search_provider":"youtube_web","provider_id":"iD8rnTjVniA","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":12}]},
+    {"id":"zoio_archive","visual_intent":"Charlie Brown Jr. reconhecível para contextualizar a ascensão da banda e seu repertório romântico.","required_seconds":12,"inspect_top":4,"candidates":[{"kind":"video","url":"https://www.youtube.com/watch?v=dLRjzX0YDu8","source_page_url":"https://www.youtube.com/watch?v=dLRjzX0YDu8","source":"youtube","search_provider":"youtube_web","provider_id":"dLRjzX0YDu8","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":5}]},
+    {"id":"dias_live","visual_intent":"Chorão em performance real do Charlie Brown Jr., sustentando o payoff sobre a história do casal e legado da banda.","required_seconds":11,"inspect_top":4,"candidates":[{"kind":"video","url":"https://www.youtube.com/watch?v=423K3pipX3c","source_page_url":"https://www.youtube.com/watch?v=423K3pipX3c","source":"youtube","search_provider":"youtube_web","provider_id":"423K3pipX3c","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":15}]},
+    {"id":"dias_official","visual_intent":"Charlie Brown Jr. e Chorão reconhecíveis em vídeo oficial para fechar a pergunta ao público.","required_seconds":7,"inspect_top":4,"candidates":[{"kind":"video","url":"https://www.youtube.com/watch?v=6eEOegzrwJg","source_page_url":"https://www.youtube.com/watch?v=6eEOegzrwJg","source":"youtube","search_provider":"youtube_web","provider_id":"6eEOegzrwJg","semantic_fit":"direct","editorial_rank":1,"rights_status":"unknown","source_start_seconds":8}]}
   ]
 }
