@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"motown25_main","file":"youtube-xpN3GRFKb4w.mp4","url":"https://www.youtube.com/watch?v=xpN3GRFKb4w","credit":"Michael Jackson - Billie Jean (Motown 25) remastered performance / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"billie_jean_official","file":"youtube-Zi_XLOBDo_Y.mp4","url":"https://www.youtube.com/watch?v=Zi_XLOBDo_Y","credit":"Michael Jackson - Billie Jean official video / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"motown25_alt","file":"youtube-HnhXbuaUbmY.mp4","url":"https://www.youtube.com/watch?v=HnhXbuaUbmY","credit":"Michael Jackson Billie Jean Motown 25 performance / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"motown25_live","file":"youtube-tSi6Dn1H36Y.mp4","url":"https://www.youtube.com/watch?v=tSi6Dn1H36Y","credit":"Michael Jackson - Billie Jean Live 1983 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"motown25_archive","file":"youtube-HmVXJYfeOdo.mp4","url":"https://www.youtube.com/watch?v=HmVXJYfeOdo","credit":"Michael Jackson Billie Jean Live at Motown 25 1983 / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"billie_jean_audio_visual","file":"youtube-tUFt9r6PmCI.mp4","url":"https://www.youtube.com/watch?v=tUFt9r6PmCI","credit":"Michael Jackson - Billie Jean / official artist channel YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
