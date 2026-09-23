@@ -10,7 +10,7 @@
     {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"A HISTÓRIA REAL DE PROIBIDA PRA MIM","accent_text":"HISTÓRIA REAL","animation":"scale_bounce","position":"center","intensity":0.75}
   ],
   "shots": [
-    {"id":"shot_hook","segment":"hook","asset":"proibida_live_1","motion":"push_in","transition_out":"cut","source_start_seconds":5.0},
+    {"id":"shot_hook","segment":"hook","asset":"proibida_live_1","motion":"push_in","transition_out":"cut","source_start_seconds":10.0},
     {"id":"shot_grazon","segment":"grazon","asset":"proibida_live_2","motion":"hold","transition_out":"crossfade","source_start_seconds":20.0},
     {"id":"shot_encontro","segment":"encontro","asset":"zoio_live","motion":"push_in","transition_out":"cut","source_start_seconds":12.0},
     {"id":"shot_virada","segment":"virada","asset":"zoio_archive","motion":"hold","transition_out":"crossfade","source_start_seconds":5.0},
