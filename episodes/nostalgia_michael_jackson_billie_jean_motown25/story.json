@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "title": "A noite em que Michael Jackson mostrou o moonwalk ao mundo",
+  "slug": "nostalgia_michael_jackson_billie_jean_motown25",
+  "target_duration_seconds": 70,
+  "segments": [
+    {"id":"hook","text":"Em 1983, Michael Jackson subiu ao palco para cantar Billie Jean e, em poucos segundos, mostrou ao mundo um movimento que viraria sua assinatura: o moonwalk.","delivery":"hook"},
+    {"id":"motown","text":"Era o especial Motown 25. Michael tinha acabado de se reunir com os irmãos para um medley dos Jackson 5, mas pediu para também apresentar uma música solo que nem era da Motown: Billie Jean.","delivery":"curious"},
+    {"id":"visual","text":"Sozinho no palco, de chapéu, jaqueta brilhante, meias claras e uma única luva, ele construiu a apresentação em torno da dança. A plateia já gritava antes do momento que entraria para a história.","delivery":"dramatic"},
+    {"id":"moonwalk","text":"No break da música, Michael deslizou para trás enquanto o corpo parecia querer ir para a frente. Era o passo que o mundo passaria a chamar de moonwalk — apresentado por ele naquela transmissão histórica.","delivery":"reveal"},
+    {"id":"impacto","text":"O especial foi gravado em março e exibido na televisão americana em maio de 1983. A performance transformou aquele passo em fenômeno pop e ajudou a fixar a imagem de Michael Jackson como um artista que não era só ouvido: precisava ser visto.","delivery":"payoff"},
+    {"id":"cta","text":"Você lembra da primeira vez que viu Michael Jackson fazendo o moonwalk?","delivery":"payoff"}
+  ]
+}
