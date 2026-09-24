@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "title": "A música de Rita Lee que ficou 43 anos escondida num arquivo da censura",
+  "slug": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+  "target_duration_seconds": 70,
+  "segments": [
+    {"id":"hook","text":"Rita Lee escreveu uma música que ficou mais de quarenta anos sem ser gravada — e ela reapareceu em 2026 dentro dos arquivos da antiga Censura Federal.","delivery":"hook"},
+    {"id":"documento","text":"Anjo Deslumbrado foi composta com Guto Graça Mello e enviada pela CBS para análise em julho de 1983. O documento foi encontrado pelo pesquisador Rodrigo Nogueira no Arquivo Nacional.","delivery":"curious"},
+    {"id":"simone","text":"E aqui fica mais estranho: no processo, a gravação era atribuída à Simone. A letra acabou liberada naquele mesmo mês, mas a música não chegou ao público naquela época.","delivery":"reveal"},
+    {"id":"vampiros","text":"Décadas depois, veio outro detalhe muito Rita Lee: a canção é um tango sobre o amor entre vampiros.","delivery":"reveal"},
+    {"id":"mariana","text":"Guto entregou a composição para Mariana Mug, cantora mineira que ganhou atenção cantando nas ruas de Lisboa, e produziu a nova gravação para o álbum de estreia dela.","delivery":"curious"},
+    {"id":"autorizacao","text":"Roberto de Carvalho autorizou a gravação. E Guto morreu em maio de 2026, fazendo desse disco um de seus últimos trabalhos de produção.","delivery":"emotional"},
+    {"id":"payoff","text":"No dia 24 de setembro de 2026, Anjo Deslumbrado finalmente saiu: uma música de Rita atravessou quatro décadas de arquivo para ganhar voz.","delivery":"payoff"},
+    {"id":"cta","text":"Manda isso pra alguém que ama Rita Lee.","delivery":"payoff"}
+  ]
+}
