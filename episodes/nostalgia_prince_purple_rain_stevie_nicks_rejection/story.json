@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "title": "Purple Rain — Prince: a música que Stevie Nicks recusou escrever",
+  "slug": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+  "target_duration_seconds": 75,
+  "segments": [
+    {"id":"hook","text":"Purple Rain, de Prince, quase teve a letra escrita por Stevie Nicks — mas ela devolveu a música porque achou grande demais.","delivery":"hook"},
+    {"id":"stand_back","text":"A conexão começou em 1983, quando Little Red Corvette inspirou Stevie a escrever Stand Back.","delivery":"curious"},
+    {"id":"studio","text":"Ela chamou Prince para o estúdio, e ele apareceu para tocar sintetizadores na faixa.","delivery":"reveal"},
+    {"id":"cassette","text":"Depois, Prince retribuiu mandando uma fita com uma composição ainda em construção.","delivery":"dramatic"},
+    {"id":"ten_minutes","text":"Era um instrumental de cerca de dez minutos e ele queria que Stevie escrevesse a letra.","delivery":"reveal"},
+    {"id":"fear","text":"Stevie contou que ouviu aquilo e ficou assustada: era épico demais e ela não sabia por onde começar.","delivery":"dramatic"},
+    {"id":"refusal","text":"Então ligou para Prince e recusou o convite, dizendo que gostaria de conseguir, mas aquilo era demais para ela.","delivery":"reveal"},
+    {"id":"glad","text":"Anos depois, ela disse que ficou feliz por não ter escrito, porque Prince precisou criar a própria letra.","delivery":"curious"},
+    {"id":"revolution","text":"Com The Revolution, a música também mudou de forma: saiu de uma sensação mais country para o arranjo monumental conhecido hoje.","delivery":"dramatic"},
+    {"id":"movie","text":"O que parecia grande demais para Stevie acabou virando música, álbum e peça central do filme Purple Rain.","delivery":"reveal"},
+    {"id":"legacy","text":"A faixa se tornou uma das assinaturas definitivas de Prince e atravessou gerações muito além dos anos oitenta.","delivery":"neutral"},
+    {"id":"payoff","text":"A ironia é perfeita: Stevie Nicks recusou Purple Rain justamente porque já conseguia sentir o tamanho que aquela música teria.","delivery":"payoff"}
+  ]
+}
