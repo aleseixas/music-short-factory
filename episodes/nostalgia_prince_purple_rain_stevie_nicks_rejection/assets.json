@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"prince_photo","file":"prince_press_photo_1982.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20press%20photo%201982.png","credit":"Warner Bros. Records / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.42}},
+    {"id":"prince_london","file":"prince_london_2007.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince-London%202007-28082007137.jpg","credit":"Wikimedia Commons contributor","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.45}},
+    {"id":"purple_rain","file":"purple_rain.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Purple%20Rain.png","credit":"Wikimedia Commons","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.5}},
+    {"id":"first_avenue","file":"prince_star_first_avenue.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%27s%20Star%20at%20First%20Avenue%2C%20Minneapolis%20MN%20%2834156091016%29.jpg","credit":"Wikimedia Commons contributor","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.5}},
+    {"id":"video_open","file":"purple_city.webm","url":"https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm","credit":"The White House / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.5,"y":0.5}},
+    {"id":"video_studio","file":"studio_context.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm","credit":"FonzuWiki / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+  ]
+}
