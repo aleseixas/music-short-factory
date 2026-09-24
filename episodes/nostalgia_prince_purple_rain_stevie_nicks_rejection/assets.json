@@ -1,11 +1,17 @@
 {
   "schema_version": 1,
   "assets": [
+    {"id":"purple_rain_live_1","file":"youtube-bm03wqLY3Nc.mp4","url":"https://www.youtube.com/watch?v=bm03wqLY3Nc","credit":"Prince and The Revolution - Purple Rain (Live in Syracuse, 1985) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"stevie_stand_back_1","file":"youtube-gwS9BIqbffU.mp4","url":"https://www.youtube.com/watch?v=gwS9BIqbffU","credit":"Stevie Nicks - Stand Back (Official Music Video) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"little_red_corvette_1","file":"youtube-v0KpfrJE4zw.mp4","url":"https://www.youtube.com/watch?v=v0KpfrJE4zw","credit":"Prince - Little Red Corvette (Official Music Video) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
     {"id":"prince_photo","file":"prince_press_photo_1982.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20press%20photo%201982.png","credit":"Warner Bros. Records / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.42}},
-    {"id":"prince_london","file":"prince_london_2007.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince-London%202007-28082007137.jpg","credit":"Wikimedia Commons contributor","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.45}},
+    {"id":"purple_rain_live_2","file":"youtube-bm03wqLY3Nc.mp4","url":"https://www.youtube.com/watch?v=bm03wqLY3Nc","credit":"Prince and The Revolution - Purple Rain (Live in Syracuse, 1985) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"stevie_stand_back_2","file":"youtube-gwS9BIqbffU.mp4","url":"https://www.youtube.com/watch?v=gwS9BIqbffU","credit":"Stevie Nicks - Stand Back (Official Music Video) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"little_red_corvette_2","file":"youtube-v0KpfrJE4zw.mp4","url":"https://www.youtube.com/watch?v=v0KpfrJE4zw","credit":"Prince - Little Red Corvette (Official Music Video) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"stevie_stand_back_live_1","file":"youtube-sg3SAI8h9p8.mp4","url":"https://www.youtube.com/watch?v=sg3SAI8h9p8","credit":"Stevie Nicks - Stand Back (Live In Chicago) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"purple_rain_live_3","file":"youtube-bm03wqLY3Nc.mp4","url":"https://www.youtube.com/watch?v=bm03wqLY3Nc","credit":"Prince and The Revolution - Purple Rain (Live in Syracuse, 1985) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
     {"id":"purple_rain","file":"purple_rain.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Purple%20Rain.png","credit":"Wikimedia Commons","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.5}},
     {"id":"first_avenue","file":"prince_star_first_avenue.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%27s%20Star%20at%20First%20Avenue%2C%20Minneapolis%20MN%20%2834156091016%29.jpg","credit":"Wikimedia Commons contributor","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.5}},
-    {"id":"video_open","file":"purple_city.webm","url":"https://upload.wikimedia.org/wikipedia/commons/7/7f/John_Mellencamp_Performs_at_the_White_House-_3_of_11.webm","credit":"The White House / Wikimedia Commons","license":"Public domain (US federal government)","focus":{"x":0.5,"y":0.5}},
-    {"id":"video_studio","file":"studio_context.webm","url":"https://upload.wikimedia.org/wikipedia/commons/6/6d/Writing_the_letter_feng.webm","credit":"FonzuWiki / Wikimedia Commons","license":"CC0 1.0","focus":{"x":0.5,"y":0.5}}
+    {"id":"stevie_stand_back_live_2","file":"youtube-sg3SAI8h9p8.mp4","url":"https://www.youtube.com/watch?v=sg3SAI8h9p8","credit":"Stevie Nicks - Stand Back (Live In Chicago) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}}
   ]
 }
