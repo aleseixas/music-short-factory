@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"retro_synth_emotional","volume":0.1},
+  "sfx_cues": [
+    {"time_seconds":0.12,"type":"impact","volume":0.14},
+    {"time_seconds":22,"type":"whoosh_fast","volume":0.1},
+    {"time_seconds":52,"type":"correct_ding","volume":0.12}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"43 ANOS ESCONDIDA","accent_text":"43 ANOS","animation":"scale_bounce","position":"center","intensity":0.75},
+    {"segment":"simone","offset_seconds":0.2,"duration_seconds":1.4,"text":"ERA PARA SIMONE","accent_text":"SIMONE","animation":"slide_up","position":"center","intensity":0.7},
+    {"segment":"payoff","offset_seconds":0.2,"duration_seconds":1.4,"text":"FINALMENTE LANÇADA","accent_text":"LANÇADA","animation":"scale_bounce","position":"center","intensity":0.7}
+  ],
+  "shots": [
+    {"id":"shot_hook","segment":"hook","asset":"rita_hook","motion":"push_in","transition_out":"cut","source_start_seconds":8.0},
+    {"id":"shot_documento","segment":"documento","asset":"rita_documento","motion":"hold","transition_out":"crossfade","source_start_seconds":35.0},
+    {"id":"shot_simone","segment":"simone","asset":"rita_simone","motion":"push_in","transition_out":"cut","source_start_seconds":35.0},
+    {"id":"shot_vampiros","segment":"vampiros","asset":"rita_vampiros","motion":"pull_out","transition_out":"cut","source_start_seconds":95.0},
+    {"id":"shot_mariana","segment":"mariana","asset":"rita_mariana","motion":"hold","transition_out":"crossfade","source_start_seconds":68.0},
+    {"id":"shot_autorizacao","segment":"autorizacao","asset":"rita_autorizacao","motion":"push_in","transition_out":"cut","source_start_seconds":45.0},
+    {"id":"shot_payoff","segment":"payoff","asset":"rita_payoff","motion":"push_in","transition_out":"crossfade","source_start_seconds":102.0},
+    {"id":"shot_cta","segment":"cta","asset":"rita_cta","motion":"hold","transition_out":"cut","source_start_seconds":110.0}
+  ]
+}
