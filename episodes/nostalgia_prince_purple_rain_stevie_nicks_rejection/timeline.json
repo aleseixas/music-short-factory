@@ -1,21 +1,35 @@
 {
   "schema_version": 1,
   "background_music": {"profile":"energetic_hype","volume":0.04},
-  "sfx_cues": [{"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.06},{"time_seconds":12.0,"type":"whoosh_fast","volume":0.04},{"time_seconds":25.0,"type":"impact","volume":0.05},{"time_seconds":38.0,"type":"tape_stop","volume":0.04},{"time_seconds":52.0,"type":"riser_build_up","volume":0.04},{"time_seconds":67.0,"type":"impact","volume":0.05}],
-  "visual_fx_cues": [{"start_seconds":0.08,"end_seconds":0.65,"type":"punch_zoom","intensity":0.5},{"start_seconds":37.0,"end_seconds":37.7,"type":"slow_zoom_in","intensity":0.3}],
-  "text_fx_cues": [{"segment":"hook","offset_seconds":0.12,"duration_seconds":1.2,"text":"STEVIE NICKS\nRECUSOU PURPLE RAIN","accent_text":"RECUSOU PURPLE RAIN","animation":"scale_bounce","position":"center","intensity":0.62},{"segment":"ten_minutes","offset_seconds":0.12,"duration_seconds":1.1,"text":"10 MINUTOS\nSEM LETRA","accent_text":"10 MINUTOS","animation":"pop_in","position":"center","intensity":0.58},{"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.15,"text":"ERA GRANDE DEMAIS","accent_text":"GRANDE DEMAIS","animation":"scale_bounce","position":"center","intensity":0.6}],
+  "sfx_cues": [
+    {"time_seconds":0.08,"type":"bass_drop_cinematic","volume":0.06},
+    {"time_seconds":12.0,"type":"whoosh_fast","volume":0.04},
+    {"time_seconds":25.0,"type":"impact","volume":0.05},
+    {"time_seconds":38.0,"type":"tape_stop","volume":0.04},
+    {"time_seconds":52.0,"type":"riser_build_up","volume":0.04},
+    {"time_seconds":67.0,"type":"impact","volume":0.05}
+  ],
+  "visual_fx_cues": [
+    {"start_seconds":0.08,"end_seconds":0.65,"type":"punch_zoom","intensity":0.5},
+    {"start_seconds":37.0,"end_seconds":37.7,"type":"slow_zoom_in","intensity":0.3}
+  ],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.12,"duration_seconds":1.2,"text":"STEVIE NICKS\nRECUSOU PURPLE RAIN","accent_text":"RECUSOU PURPLE RAIN","animation":"scale_bounce","position":"center","intensity":0.62},
+    {"segment":"ten_minutes","offset_seconds":0.12,"duration_seconds":1.1,"text":"10 MINUTOS\nSEM LETRA","accent_text":"10 MINUTOS","animation":"pop_in","position":"center","intensity":0.58},
+    {"segment":"payoff","offset_seconds":0.12,"duration_seconds":1.15,"text":"ERA GRANDE DEMAIS","accent_text":"GRANDE DEMAIS","animation":"scale_bounce","position":"center","intensity":0.6}
+  ],
   "shots": [
-    {"id":"s1","segment":"hook","asset":"video_open","motion":"hold","transition_out":"cut","highlight":"PURPLE RAIN • PRINCE"},
-    {"id":"s2","segment":"stand_back","asset":"prince_photo","motion":"push_in","transition_out":"cut","highlight":"1983"},
-    {"id":"s3","segment":"studio","asset":"video_studio","motion":"hold","transition_out":"crossfade","highlight":"STAND BACK"},
-    {"id":"s4","segment":"cassette","asset":"prince_london","motion":"push_in","transition_out":"cut","highlight":"UMA FITA DE PRINCE"},
-    {"id":"s5","segment":"ten_minutes","asset":"purple_rain","motion":"push_in","transition_out":"cut","highlight":"CERCA DE 10 MINUTOS"},
-    {"id":"s6","segment":"fear","asset":"prince_photo","motion":"pull_out","transition_out":"crossfade","highlight":"ÉPICO DEMAIS"},
-    {"id":"s7","segment":"refusal","asset":"video_studio","motion":"hold","transition_out":"cut","highlight":"ELA RECUSOU"},
-    {"id":"s8","segment":"glad","asset":"prince_london","motion":"push_in","transition_out":"cut","highlight":"SEM ARREPENDIMENTO"},
-    {"id":"s9","segment":"revolution","asset":"first_avenue","motion":"push_in","transition_out":"crossfade","highlight":"THE REVOLUTION"},
+    {"id":"s1","segment":"hook","asset":"purple_rain_live_1","motion":"hold","transition_out":"cut","highlight":"PURPLE RAIN • PRINCE","source_start_seconds":25.0},
+    {"id":"s2","segment":"stand_back","asset":"stevie_stand_back_1","motion":"push_in","transition_out":"cut","highlight":"1983","source_start_seconds":10.0},
+    {"id":"s3","segment":"studio","asset":"little_red_corvette_1","motion":"hold","transition_out":"crossfade","highlight":"STAND BACK","source_start_seconds":18.0},
+    {"id":"s4","segment":"cassette","asset":"prince_photo","motion":"push_in","transition_out":"cut","highlight":"UMA FITA DE PRINCE"},
+    {"id":"s5","segment":"ten_minutes","asset":"purple_rain_live_2","motion":"push_in","transition_out":"cut","highlight":"CERCA DE 10 MINUTOS","source_start_seconds":300.0},
+    {"id":"s6","segment":"fear","asset":"stevie_stand_back_2","motion":"pull_out","transition_out":"crossfade","highlight":"ÉPICO DEMAIS","source_start_seconds":105.0},
+    {"id":"s7","segment":"refusal","asset":"little_red_corvette_2","motion":"hold","transition_out":"cut","highlight":"ELA RECUSOU","source_start_seconds":125.0},
+    {"id":"s8","segment":"glad","asset":"stevie_stand_back_live_1","motion":"push_in","transition_out":"cut","highlight":"SEM ARREPENDIMENTO","source_start_seconds":35.0},
+    {"id":"s9","segment":"revolution","asset":"purple_rain_live_3","motion":"push_in","transition_out":"crossfade","highlight":"THE REVOLUTION","source_start_seconds":505.0},
     {"id":"s10","segment":"movie","asset":"purple_rain","motion":"pull_out","transition_out":"cut","highlight":"MÚSICA • ÁLBUM • FILME"},
     {"id":"s11","segment":"legacy","asset":"first_avenue","motion":"push_in","transition_out":"crossfade","highlight":"UMA ASSINATURA DE PRINCE"},
-    {"id":"s12","segment":"payoff","asset":"prince_photo","motion":"push_in","transition_out":"cut","highlight":"GRANDE DEMAIS"}
+    {"id":"s12","segment":"payoff","asset":"stevie_stand_back_live_2","motion":"push_in","transition_out":"cut","highlight":"GRANDE DEMAIS","source_start_seconds":155.0}
   ]
 }
