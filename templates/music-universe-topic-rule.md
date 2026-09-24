@@ -389,3 +389,56 @@ Em conflito, aplique esta ordem:
 Qualquer instrução antiga equivalente a `todo episódio deve ser sobre uma música`, `escolha obrigatoriamente uma música` ou `a primeira frase deve identificar música + artista` deve ser considerada substituída por esta regra.
 
 Qualquer instrução antiga equivalente a `queue -> STOP`, `queue encerra a tarefa`, `não acompanhe a Publish Action` ou `pare na primeira falha de workflow` deve ser considerada substituída por `templates/publishing-completion-rule.md`.
+
+## CAMADA DE OPORTUNIDADE ATUAL PARA SHORTS — DEMANDA + CONCORRÊNCIA
+
+Antes de autorizar uma candidata do fluxo NORMAL do Além do Hit, faça uma pesquisa atual de oportunidade. Esta camada melhora a PRIORIZAÇÃO do pool; ela não substitui factualidade, duplicate preflight, qualidade narrativa, relevância no Brasil nem os demais hard gates da main.
+
+### Objetivo
+Encontrar assuntos musicais que combinem:
+- interesse/demanda crescendo AGORA;
+- concorrência/saturação ainda administrável;
+- sinais de que vídeos recentes ainda conseguem performar;
+- artista/assunto relevante para público brasileiro;
+- história específica que funcione em aproximadamente 45–90s e sustente retenção.
+
+### Fontes e sinais
+Use, quando acessíveis nesta execução:
+1. vidIQ público: Rising Keywords, páginas de tendências, crescimento recente, outliers, views/hour e outros sinais públicos;
+2. dados do vidIQ autenticado SOMENTE se estiverem realmente acessíveis — nunca invente Search Volume, Competition ou Overall Score;
+3. YouTube/Shorts: quantidade e idade de vídeos recentes sobre o MESMO assunto/ângulo, tamanho dos canais concorrentes, velocidade de views e presença de canais pequenos/médios obtendo desempenho acima do normal;
+4. Google Trends, YouTube Charts, Billboard/Spotify e notícias recentes quando ajudarem a confirmar que a atenção é real no Brasil;
+5. web/news/social discovery como sinais auxiliares, sempre distinguindo tendência comprovada de simples impressão.
+
+Se Search Volume ou Competition exatos do vidIQ não estiverem disponíveis, NÃO bloqueie a seleção e NÃO fabrique números. Estime demanda e saturação de forma qualitativa com evidência pública.
+
+### Como medir concorrência para Shorts
+Não trate apenas o campo de keyword competition como concorrência real do Short. Avalie principalmente SATURAÇÃO RECENTE:
+- quantos Shorts/vídeos recentes atacam o mesmo tema e principalmente o mesmo ângulo;
+- quantos canais grandes já cobriram aquilo;
+- quão repetitiva está a narrativa;
+- se novos vídeos ainda estão acelerando;
+- se canais pequenos/médios ainda conseguem virar outliers;
+- se existe um ângulo factual forte ainda pouco explorado.
+
+Tema muito popular mas já coberto de forma massiva e repetitiva deve perder prioridade. Tema em aceleração, com poucos vídeos equivalentes e outliers recentes, deve ganhar prioridade.
+
+### Priorização interna sugerida
+Use como guia flexível, não como matemática falsa:
+- 35% tendência/crescimento recente;
+- 25% baixa saturação/concorrência recente;
+- 20% desempenho de vídeos recentes/outliers;
+- 15% força da história para retenção;
+- 5% volume de busca/search intent.
+
+Quando houver números confiáveis, use-os. Quando não houver, classifique os sinais como ALTO/MÉDIO/BAIXO com base nas evidências encontradas.
+
+### Regra de decisão
+Entre candidatas editorialmente válidas, prefira a que apresentar a melhor combinação de:
+`MOMENTUM ALTO + SATURAÇÃO BAIXA/MÉDIA + OUTLIERS RECENTES + RELEVÂNCIA NO BRASIL + HISTÓRIA FORTE`.
+
+Não escolha um tema apenas porque está em alta. Não escolha um tema apenas porque tem baixa concorrência. Demanda sem história forte não passa; história forte completamente fria perde para uma história igualmente boa com oportunidade atual melhor.
+
+### Nostalgia
+Para o slot NOSTALGIA, esta camada é SOMENTE um bônus secundário. Nunca deixe hype, Rising Keyword, charts ou evento recente atropelarem `templates/nostalgia-famous-artists-rule.md`. Nostalgia mainstream + renome consolidado no Brasil + história não óbvia continuam prevalecendo. Tendência atual pode desempatar duas candidatas nostálgicas igualmente fortes, mas não é hard gate.
+
