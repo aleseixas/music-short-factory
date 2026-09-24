@@ -9,15 +9,15 @@
       "candidates": [
         {
           "kind": "video",
-          "url": "https://media1.tenor.com/m/tlBwQI2P6ocAAAAd/prince-purple-rain.gif",
-          "source_page_url": "https://tenor.com/view/prince-purple-rain-gif-13137123535594973831",
-          "source": "tenor",
-          "search_provider": "tenor_web",
-          "provider_id": "tlBwQI2P6oc",
+          "url": "https://media2.giphy.com/media/jt8nIwt0mAnle/giphy.mp4",
+          "source_page_url": "https://giphy.com/gifs/mtv-prince-purple-rain-jt8nIwt0mAnle",
+          "source": "giphy",
+          "search_provider": "giphy_web",
+          "provider_id": "jt8nIwt0mAnle",
           "semantic_fit": "exact",
           "source_start_seconds": 0,
           "rights_status": "unknown",
-          "credit": "Tenor — Prince / Purple Rain"
+          "credit": "MTV / GIPHY"
         }
       ]
     },
