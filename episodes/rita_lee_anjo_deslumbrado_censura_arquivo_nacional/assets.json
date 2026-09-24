@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"rita_hook","file":"youtube-X3qJviN7eZE.mp4","url":"https://www.youtube.com/watch?v=X3qJviN7eZE","credit":"Rita Lee - Arquivo N / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"rita_documento","file":"youtube-X3qJviN7eZE.mp4","url":"https://www.youtube.com/watch?v=X3qJviN7eZE","credit":"Rita Lee - Arquivo N / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"rita_simone","file":"youtube-tgNb8BHThvw.mp4","url":"https://www.youtube.com/watch?v=tgNb8BHThvw","credit":"Rita Lee entrevista histórica / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"rita_vampiros","file":"youtube-X3qJviN7eZE.mp4","url":"https://www.youtube.com/watch?v=X3qJviN7eZE","credit":"Rita Lee - Arquivo N / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"rita_mariana","file":"youtube-tgNb8BHThvw.mp4","url":"https://www.youtube.com/watch?v=tgNb8BHThvw","credit":"Rita Lee entrevista histórica / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"rita_autorizacao","file":"youtube-JJhKbpjfXnQ.mp4","url":"https://www.youtube.com/watch?v=JJhKbpjfXnQ","credit":"Rita Lee Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rita_payoff","file":"youtube-tgNb8BHThvw.mp4","url":"https://www.youtube.com/watch?v=tgNb8BHThvw","credit":"Rita Lee entrevista histórica / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"rita_cta","file":"youtube-JJhKbpjfXnQ.mp4","url":"https://www.youtube.com/watch?v=JJhKbpjfXnQ","credit":"Rita Lee Official Artist Channel / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
