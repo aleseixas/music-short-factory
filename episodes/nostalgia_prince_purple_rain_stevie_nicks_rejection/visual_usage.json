@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+  "recorded_at": "2026-09-24T16:50:49Z",
+  "visual_usage": [
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s1",
+      "asset_id": "purple_rain_live_1",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6a52f3a6c33dfa91e8c3cd9922af86067789d7942b451180577857f8f29ca5b1",
+        "url_hashes": [
+          "fe82dc5d357b155fcf26d47970d6eca6c0f2ccf7196a954218087863bb3bea02"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cc963b69b2162be1",
+          "cc9a3067f31834e7",
+          "cc99333333cc3333",
+          "cccf7130336d7192",
+          "ccc36e3cb3433236",
+          "98c36d3c326366b6",
+          "99cc663336cc6693",
+          "99996666669966cc"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 2.233333
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s2",
+      "asset_id": "stevie_stand_back_1",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f9b7e162075dc25bc2d2fa9cbbb1fb9ecf6f2d7bf34a5462118ff0adea6c772e",
+        "url_hashes": [
+          "5c51874a3febfdd8f496ff03c381ab097f358a84459f508ab3eaf8a85ab13f70"
+        ],
+        "perceptual_hashes": [
+          "c82f7c84c363361f",
+          "cc2f7c9cd3612496",
+          "dd0a1c8dd3793516",
+          "d07f2986462d1d5e",
+          "805f7d399996d2c2",
+          "c62d06f87c33cb64",
+          "c2250b0793cdecfc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s3",
+      "asset_id": "little_red_corvette_1",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "77e98c2693d0a8f2d43abebee112b634102bb671a48a94a7f899c9f366af78a1",
+        "url_hashes": [
+          "667e4ea037ebee00041785ca6f74b3314ef65e87cc22ba26d473ac61129d0122"
+        ],
+        "perceptual_hashes": [
+          "b3c1f0812737e68d",
+          "b7c8f8c02733360f",
+          "b7ccf8f866322603",
+          "b5c3e20f6c9a9ac1",
+          "bc1ff0b3d292c1c1",
+          "99fede703084c4ce",
+          "99e281cec6cc7bc1"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s4",
+      "asset_id": "prince_photo",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "dffd337c231dc83cc036fb864480c10d85ade1efb50fde5eda32df60bdb39cb1",
+        "url_hashes": [
+          "45c45524761b753647cc06d94b6fd4d9fc6a755facbf1c7908b862cbb992ad64"
+        ],
+        "perceptual_hashes": [
+          "9a6c636636b2a663",
+          "9c6d636632b62663",
+          "9c686b675a342967",
+          "9b734c2ca56ec493",
+          "957b534a5c569932",
+          "ce2e7011b1b0f9ce",
+          "cb266c644c4dd34f"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s5",
+      "asset_id": "purple_rain_live_2",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "bb10ede7d30ca1977253e569cc0ea2677b66497207fd73c2dbac16e107a4ba67",
+        "url_hashes": [
+          "3f6bed52a98487bdd2fb1ce87f7a7eec069ef698a51bd846dba5e88ad2b14759"
+        ],
+        "perceptual_hashes": [
+          "9aa766181c9e1f17",
+          "92a762781e9e1f07",
+          "92a162787e1e1f17",
+          "95ec73909c8e8f83",
+          "95866d636343d363",
+          "d9b02f0ec0d0f4f6",
+          "c9903176363dae27"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s6",
+      "asset_id": "stevie_stand_back_2",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "151ea12206b6087abcef2258882cc6dc5fd4215cdd622b3efec03c52939f277a",
+        "url_hashes": [
+          "f08b4bdcc7e2075d728fce694ab3823b996784c8cdbeeb2cdd14a66350145547"
+        ],
+        "perceptual_hashes": [
+          "9d135fe869255863",
+          "9c935ff83a085879",
+          "9c9507dc320e5afa",
+          "911f78710753666e",
+          "91872e98f06e0b3f",
+          "8758422d3d6e3c76",
+          "95d950c2ea3c7257"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s7",
+      "asset_id": "little_red_corvette_2",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "e324223c975b433f3cf7bdfc78dc90ae25017799314c4699dea3a856e4cb525e",
+        "url_hashes": [
+          "31cf73807176490ecc3fe8236ef2700e3ff594c3bc85e73f7d0d9f624e502eb9"
+        ],
+        "perceptual_hashes": [
+          "9c8809560f0f7fda",
+          "9e9809d70f0dd2d3",
+          "9f9808d70701d2ff",
+          "98930e1c1fb5f03b",
+          "9c9113a3e49c3f1d",
+          "818f6e4126db4e37",
+          "81cfafde59c02623"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s8",
+      "asset_id": "stevie_stand_back_live_1",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "d22e9e3a10bcbb88da7294423d455655a27523b8ec8fec74b95fb30f3b773f30",
+        "url_hashes": [
+          "8a0a40baa588a846d38c5132500de9d5451a1bfa617183e019615033558473a3"
+        ],
+        "perceptual_hashes": [
+          "9edf334838314d3c",
+          "95d1334a3a3b4b39",
+          "849037ce3073de3e",
+          "9db65c716658634a",
+          "9d932e8cd9a34e8c",
+          "c29a602f3d6536f4",
+          "c7c714c0c39f68b9"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s9",
+      "asset_id": "purple_rain_live_3",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f23bc994e09abe663b8a2b2e5c5760b9b9de0e9f077cae48a5cc34e8299b60d6",
+        "url_hashes": [
+          "ae529125d9ef2fdd1dd49e164491f0bc8097fc704630273c38a4ee2e9945f690"
+        ],
+        "perceptual_hashes": [
+          "a92ef12487f51c1d",
+          "ab0af125a7b70939",
+          "8b16f92fa6a20b39",
+          "986ae20ca71afb8d",
+          "d81ce37208f1ed8d",
+          "ad3ab6b1d60696c2",
+          "ad087e2e21b7f3c0"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s10",
+      "asset_id": "purple_rain",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "0f433d59e642348b3db6d3032d30630d66ed12f419a59654d06f09cf5cec7b6d",
+        "url_hashes": [
+          "e797db7b60ee5f5b9d52d17ec6ae3898f6c2084b4a18d76eb0883ca7e2a14d57"
+        ],
+        "perceptual_hashes": [
+          "952f1ad13fc03de0",
+          "952f1d7515d83da0",
+          "ab07dd3b141c2db8",
+          "b71f3320933ac4dc",
+          "a75c1fc03cc455ba",
+          "d42a1e168fa4e9e9",
+          "d4210aed28fb6bd2"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s11",
+      "asset_id": "first_avenue",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3f2957e98da0a91b44661c4b08c5960f26519590f3aee90cff0c779b6ac1869d",
+        "url_hashes": [
+          "2b3e580af892b3842ba7575cdffbf9edb63df89efb78b8e3fa28ba9d937e2993"
+        ],
+        "perceptual_hashes": [
+          "9c2fa333a554e685",
+          "9d2fb232a852b68d",
+          "9c0eb132ba56b699",
+          "b92c2625eaecda4a",
+          "b9599a06cf124ee5",
+          "8635383d57b1c475",
+          "8647c55ab58474bb"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "nostalgia_prince_purple_rain_stevie_nicks_rejection",
+      "shot_id": "s12",
+      "asset_id": "stevie_stand_back_live_2",
+      "recorded_at": "2026-09-24T16:50:49Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "50b0389c01e6dab5167ab3c48205a35c140fdfb788f631700f58ce2807c284fd",
+        "url_hashes": [
+          "304228b55ec3aebd6c0b6fccde0e780ecb41eaa17570439f56e7fc11882b8d0d"
+        ],
+        "perceptual_hashes": [
+          "93c769361c197974",
+          "93c36b369e193934",
+          "92c361a7879b39e4",
+          "854e6bb85263697c",
+          "95c4466769ad5c36",
+          "d96c36830f377321",
+          "d9e06c3d33d3498c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
