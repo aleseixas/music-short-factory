@@ -1,17 +1,137 @@
 {
   "schema_version": 1,
   "assets": [
-    {"id":"purple_rain_live_1","file":"youtube-bm03wqLY3Nc.mp4","url":"https://www.youtube.com/watch?v=bm03wqLY3Nc","credit":"Prince and The Revolution - Purple Rain (Live in Syracuse, 1985) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"stevie_stand_back_1","file":"youtube-gwS9BIqbffU.mp4","url":"https://www.youtube.com/watch?v=gwS9BIqbffU","credit":"Stevie Nicks - Stand Back (Official Music Video) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"little_red_corvette_1","file":"youtube-v0KpfrJE4zw.mp4","url":"https://www.youtube.com/watch?v=v0KpfrJE4zw","credit":"Prince - Little Red Corvette (Official Music Video) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"prince_photo","file":"prince_press_photo_1982.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20press%20photo%201982.png","credit":"Warner Bros. Records / Wikimedia Commons","license":"Public domain","focus":{"x":0.5,"y":0.42}},
-    {"id":"purple_rain_live_2","file":"youtube-bm03wqLY3Nc.mp4","url":"https://www.youtube.com/watch?v=bm03wqLY3Nc","credit":"Prince and The Revolution - Purple Rain (Live in Syracuse, 1985) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"stevie_stand_back_2","file":"youtube-gwS9BIqbffU.mp4","url":"https://www.youtube.com/watch?v=gwS9BIqbffU","credit":"Stevie Nicks - Stand Back (Official Music Video) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"little_red_corvette_2","file":"youtube-v0KpfrJE4zw.mp4","url":"https://www.youtube.com/watch?v=v0KpfrJE4zw","credit":"Prince - Little Red Corvette (Official Music Video) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"stevie_stand_back_live_1","file":"youtube-sg3SAI8h9p8.mp4","url":"https://www.youtube.com/watch?v=sg3SAI8h9p8","credit":"Stevie Nicks - Stand Back (Live In Chicago) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"purple_rain_live_3","file":"youtube-bm03wqLY3Nc.mp4","url":"https://www.youtube.com/watch?v=bm03wqLY3Nc","credit":"Prince and The Revolution - Purple Rain (Live in Syracuse, 1985) / Prince Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}},
-    {"id":"purple_rain","file":"purple_rain.png","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Purple%20Rain.png","credit":"Wikimedia Commons","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.5}},
-    {"id":"first_avenue","file":"prince_star_first_avenue.jpg","url":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%27s%20Star%20at%20First%20Avenue%2C%20Minneapolis%20MN%20%2834156091016%29.jpg","credit":"Wikimedia Commons contributor","license":"Wikimedia Commons licensed media","focus":{"x":0.5,"y":0.5}},
-    {"id":"stevie_stand_back_live_2","file":"youtube-sg3SAI8h9p8.mp4","url":"https://www.youtube.com/watch?v=sg3SAI8h9p8","credit":"Stevie Nicks - Stand Back (Live In Chicago) / Stevie Nicks Official Artist Channel","license":"","focus":{"x":0.5,"y":0.45}}
+    {
+      "id": "purple_rain_live_1",
+      "file": "giphy-jt8nIwt0mAnle.mp4",
+      "url": "https://media2.giphy.com/media/jt8nIwt0mAnle/giphy.mp4",
+      "credit": "MTV / GIPHY — Prince, Purple Rain",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "stevie_stand_back_1",
+      "file": "stevie_nicks_1980_warner_publicity.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stevie%20Nicks%20%281980%20Warner%20publicity%20photo%29.jpg",
+      "credit": "Warner Bros. Records / Wikimedia Commons",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "little_red_corvette_1",
+      "file": "prince_1981.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%201981.jpg",
+      "credit": "Allen Beaulieu / Warner Bros. Records / Wikimedia Commons",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "prince_photo",
+      "file": "prince_press_photo_1982.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20press%20photo%201982.png",
+      "credit": "Warner Bros. Records / Wikimedia Commons",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "purple_rain_live_2",
+      "file": "prince_1984_publicity.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%201984%20publicity%20photo.jpg",
+      "credit": "Warner Bros. Records / Wikimedia Commons",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "stevie_stand_back_2",
+      "file": "stevie_nicks_2017.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stevie%20Nicks%202017.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "little_red_corvette_2",
+      "file": "prince_brussels_1986_retouched.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%20Brussels%201986%20%28retouched%29.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "stevie_stand_back_live_1",
+      "file": "stevie_nicks_live.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/StevieNicks2.jpg",
+      "credit": "Matt Becker / Wikimedia Commons",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "purple_rain_live_3",
+      "file": "prince_1980.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%201980.jpg",
+      "credit": "Warner Bros. Records / Wikimedia Commons",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "purple_rain",
+      "file": "purple_rain.png",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Purple%20Rain.png",
+      "credit": "Wikimedia Commons",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "first_avenue",
+      "file": "prince_star_first_avenue.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prince%27s%20Star%20at%20First%20Avenue%2C%20Minneapolis%20MN%20%2834156091016%29.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "stevie_stand_back_live_2",
+      "file": "stevie_nicks_lindsey_buckingham.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Stevie%20Nicks%20and%20Lindsey%20Buckingham.jpg",
+      "credit": "Wikimedia Commons contributor",
+      "license": "Wikimedia Commons licensed media",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    }
   ]
 }
