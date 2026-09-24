@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+  "recorded_at": "2026-09-24T21:12:58Z",
+  "visual_usage": [
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_hook",
+      "asset_id": "rita_hook",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "fb42c5626271b8fcd4e699c9c3c832862489d7d959e9f2036d43f293201b7bd9",
+        "url_hashes": [
+          "be2bb6788c8d0bba7cf1bed8a8c1e9d34f4104ab23e83678f86248e9898478a1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8b77e530d3826599",
+          "8b75e530d7936518",
+          "9f7ee520c3926689",
+          "cf7f6430c383668c",
+          "9b766560d6926599",
+          "9b77257cd3826518",
+          "8b77357cd3826c88",
+          "8a77257cd6c23943"
+        ],
+        "source_start_seconds": 2.0,
+        "source_duration_seconds": 11.1
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_documento",
+      "asset_id": "rita_documento",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d1d6c81e2d0ee62aaafbca0470866037958e8bdaa2e9767f1575eb77cfd0fad7",
+        "url_hashes": [
+          "09adb44466ea14c2c47d7916489a0e30d7f2255d909e3e842101902e89e19af6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a12b3cd44e87719b",
+          "a92e3dd05e875364",
+          "8c2c3fd360851fce",
+          "ad2f15d8629753c8",
+          "aa2b11de2d9352dc",
+          "a12a17dd2e9169ce",
+          "9963668c739b4c36",
+          "dc073bf0876e4a92"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 13.433333
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_simone",
+      "asset_id": "rita_simone",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d1d6c81e2d0ee62aaafbca0470866037958e8bdaa2e9767f1575eb77cfd0fad7",
+        "url_hashes": [
+          "09adb44466ea14c2c47d7916489a0e30d7f2255d909e3e842101902e89e19af6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1e52c10addfdb12",
+          "beff4928018432df",
+          "d1d1672e1e82c3d3",
+          "cfdd3131008a8efe",
+          "999966661bdb0c66",
+          "b5a24c5d4b965666",
+          "92746daa649b6a55",
+          "c7c531313b4e0e3b"
+        ],
+        "source_start_seconds": 65.0,
+        "source_duration_seconds": 12.9
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_vampiros",
+      "asset_id": "rita_vampiros",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "d1d6c81e2d0ee62aaafbca0470866037958e8bdaa2e9767f1575eb77cfd0fad7",
+        "url_hashes": [
+          "09adb44466ea14c2c47d7916489a0e30d7f2255d909e3e842101902e89e19af6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a8a44e7a61416ddf",
+          "a8a45e7a634169dd",
+          "a9a44e7a63416ddc",
+          "f47a63911ce60da3",
+          "f47a63911cee0da2",
+          "f47863911cee0be2",
+          "f570669144ec1be6",
+          "f07467937c4e02ec"
+        ],
+        "source_start_seconds": 95.0,
+        "source_duration_seconds": 7.4
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_mariana",
+      "asset_id": "rita_mariana",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "bc76542479ed1d672440e7ea57928e7b57493f88ee95527b89ef965ef5bbca32",
+        "url_hashes": [
+          "4af4bcb0e609e4ce0478c6c44491af66a93839b8adc417543c10750d2aafbe2b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "91c6c699dc39ce19",
+          "91c6c699cc39ce99",
+          "d1c6c6999c39c399",
+          "c1c6ce999a39c29b",
+          "91c6c798cd38c99d",
+          "90c3cdcc1cf1cd72",
+          "91c6ce99c93cc999",
+          "91c6ce99c93cc999"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 9.733333
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_autorizacao",
+      "asset_id": "rita_autorizacao",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "fb42c5626271b8fcd4e699c9c3c832862489d7d959e9f2036d43f293201b7bd9",
+        "url_hashes": [
+          "be2bb6788c8d0bba7cf1bed8a8c1e9d34f4104ab23e83678f86248e9898478a1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8b77247dd3c61948",
+          "c937347dd3c2584c",
+          "cb77247cc3c64c8c",
+          "8b77247cd3c638c8",
+          "8a77257cd3c638c8",
+          "cf337c34c3c62dc0",
+          "9a77617592c6198b",
+          "de7761658296990b"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 9.2
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_payoff",
+      "asset_id": "rita_payoff",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "bc76542479ed1d672440e7ea57928e7b57493f88ee95527b89ef965ef5bbca32",
+        "url_hashes": [
+          "4af4bcb0e609e4ce0478c6c44491af66a93839b8adc417543c10750d2aafbe2b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "91e6c698c93cc39d",
+          "91e6c699cc3cc399",
+          "91c6c799cc38cb99",
+          "d1c6c799cc30cb99",
+          "d1e6c699ce38c2c9",
+          "c1e4c6399c39b4cb",
+          "d1c6c6999c39c699",
+          "91e6c399ce38c2cd"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 11.1
+      }
+    },
+    {
+      "episode": "rita_lee_anjo_deslumbrado_censura_arquivo_nacional",
+      "shot_id": "shot_cta",
+      "asset_id": "rita_cta",
+      "recorded_at": "2026-09-24T21:12:58Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "bc76542479ed1d672440e7ea57928e7b57493f88ee95527b89ef965ef5bbca32",
+        "url_hashes": [
+          "4af4bcb0e609e4ce0478c6c44491af66a93839b8adc417543c10750d2aafbe2b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1c69e999921b3cb",
+          "c1c69e99993133cb",
+          "c1c69c999b3133ce",
+          "d1c6ce99992833cb",
+          "91c6cf99988c31cf",
+          "90c2cf9ccc3c31cf",
+          "91c6ce9998d831cf",
+          "c1c69c989b9b39c3"
+        ],
+        "source_start_seconds": 50.0,
+        "source_duration_seconds": 3.9
+      }
+    }
+  ]
+}
