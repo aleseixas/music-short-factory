@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "uplifting_documentary",
+    "volume": 0.08
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "impact",
+      "volume": 0.12
+    },
+    {
+      "time_seconds": 24,
+      "type": "whoosh_fast",
+      "volume": 0.09
+    },
+    {
+      "time_seconds": 56,
+      "type": "correct_ding",
+      "volume": 0.1
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.4,
+      "text": "NÃO ERA PRA GRAVAR",
+      "accent_text": "NÃO ERA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.72
+    },
+    {
+      "segment": "four_tracks",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.4,
+      "text": "4 MÚSICAS NOVAS",
+      "accent_text": "4 MÚSICAS",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.7
+    },
+    {
+      "segment": "cinema",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.4,
+      "text": "DAKOTA + COLIN",
+      "accent_text": "DAKOTA + COLIN",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.68
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "taylor_hook",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 20
+    },
+    {
+      "id": "shot_record",
+      "segment": "record",
+      "asset": "taylor_record",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "source_start_seconds": 35
+    },
+    {
+      "id": "shot_sweden",
+      "segment": "sweden",
+      "asset": "taylor_sweden",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 5
+    },
+    {
+      "id": "shot_four_tracks",
+      "segment": "four_tracks",
+      "asset": "taylor_encore",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 5
+    },
+    {
+      "id": "shot_release",
+      "segment": "release",
+      "asset": "taylor_release",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "source_start_seconds": 180
+    },
+    {
+      "id": "shot_cinema",
+      "segment": "cinema",
+      "asset": "taylor_cinema",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 20
+    },
+    {
+      "id": "shot_vma",
+      "segment": "vma",
+      "asset": "taylor_vma",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "source_start_seconds": 180
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "taylor_payoff",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 360
+    }
+  ]
+}
