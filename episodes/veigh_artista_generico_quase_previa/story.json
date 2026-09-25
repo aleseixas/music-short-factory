@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "title": "A música de Veigh que quase ficou só como prévia no Instagram",
+  "slug": "veigh_artista_generico_quase_previa",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"Veigh quase deixou “Artista Genérico” morrer como uma simples prévia no Instagram — e ela acabou virando uma das faixas mais ouvidas de Eu Venci o Mundo.","delivery":"hook"},
+    {"id":"preview","text":"O mais doido é que ele contou que fez a música sem intenção de lançar. A ideia, naquele momento, era só postar um trecho nas redes.","delivery":"curious"},
+    {"id":"miami","text":"Só que uma conversa com um produtor em Miami mudou o caminho: eles validaram o lançamento, e a faixa entrou oficialmente no álbum.","delivery":"reveal"},
+    {"id":"first","text":"E tem outro detalhe: segundo o próprio Veigh, “Artista Genérico” foi a primeira composição entre as músicas que terminaram no projeto.","delivery":"reveal"},
+    {"id":"timbaland","text":"A história ficou ainda mais absurda porque o disco também aproximou Veigh de Timbaland, produtor que ele admirava desde pequeno e conheceu durante uma reunião em Miami.","delivery":"dramatic"},
+    {"id":"sample","text":"No álbum, “Artista Genérico” usa um sample de “Ayo Technology”, clássico de 50 Cent produzido por Timbaland. É quase uma ponte entre a referência que ele ouvia e a fase que passou a viver.","delivery":"curious"},
+    {"id":"numbers","text":"A faixa que quase foi só uma prévia chegou perto de 90 milhões de plays, segundo Veigh. E Eu Venci o Mundo colocou quinze das dezesseis músicas no Hot 100 brasileiro.","delivery":"reveal"},
+    {"id":"payoff","text":"Pensa nisso: uma ideia sem plano de lançamento virou peça central do maior projeto da carreira dele. Qual prévia do Veigh ainda merece virar música completa?","delivery":"payoff"}
+  ]
+}
