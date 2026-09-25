@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "taylor_hook",
+      "file": "youtube-Cqw8fZhggbQ.mp4",
+      "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+      "credit": "BBC Radio 1 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "taylor_record",
+      "file": "youtube-Zan3RKLOa-E.mp4",
+      "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+      "credit": "Cover Nation / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "taylor_sweden",
+      "file": "youtube-ujaXKYkqHYY.mp4",
+      "url": "https://www.youtube.com/watch?v=ujaXKYkqHYY",
+      "credit": "Studio Videos / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "taylor_encore",
+      "file": "youtube-UfeDhJx29Ps.mp4",
+      "url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+      "credit": "CBS New York / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "taylor_release",
+      "file": "youtube-Cqw8fZhggbQ.mp4",
+      "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+      "credit": "BBC Radio 1 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "taylor_cinema",
+      "file": "youtube-26nQZ9pgF9U.mp4",
+      "url": "https://www.youtube.com/watch?v=26nQZ9pgF9U",
+      "credit": "Jimmy Kimmel Live / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.43
+      }
+    },
+    {
+      "id": "taylor_vma",
+      "file": "youtube-Zan3RKLOa-E.mp4",
+      "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+      "credit": "Cover Nation / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    },
+    {
+      "id": "taylor_payoff",
+      "file": "youtube-Cqw8fZhggbQ.mp4",
+      "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+      "credit": "BBC Radio 1 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.42
+      }
+    }
+  ]
+}
