@@ -1,0 +1,29 @@
+FONTES FACTUAIS
+
+1. Rede Globo — Veigh celebra sucesso de 'Eu Venci o Mundo' e comenta faixas do álbum em passagem por Curitiba
+https://redeglobo.globo.com/rpc/noticia/veigh-celebra-sucesso-de-eu-venci-o-mundo-e-comenta-faixas-do-album-em-passagem-por-curitiba.ghtml
+Base factual principal: Veigh diz que “Artista Genérico” foi feita sem intenção de lançamento, seria apenas uma prévia no Instagram; após conversa com produtor em Miami, validaram o lançamento; foi a primeira composição entre as músicas do álbum; a faixa se aproximava de 90 milhões de plays.
+
+2. Billboard Brasil — Veigh reflete sobre espiritualidade e emoções em 'Eu Venci o Mundo'
+https://billboard.com.br/veigh-espiritualidade-emocoes-album-eu-venci-o-mundo/
+Confirma 16 faixas e o sample de “Ayo Technology”, de 50 Cent com produção de Timbaland, em “Artista Genérico”.
+
+3. Billboard Brasil — Veigh emplaca 15 músicas de novo disco entre as mais ouvidas no Brasil
+https://billboard.com.br/veigh-emplaca-musicas-novo-disco-mais-ouvidas-brasil/
+Confirma 15 das 16 faixas de “Eu Venci o Mundo” no Billboard Brasil Hot 100.
+
+4. VEJA São Paulo — “A gente fala com as favelas”, diz Veigh, que traz Timbaland em novo disco
+https://vejasp.abril.com.br/coluna/tudo-de-som/veigh-eu-venci-o-mundo-timbaland-gente-fala-com-as-favelas/
+Confirma que Veigh encontrou Timbaland após mencioná-lo numa reunião em Miami e que o produtor trabalhou em faixa do álbum.
+
+5. Folha de S.Paulo / Folhateen — Veigh se despede da era 'Eu Venci o Mundo' e reflete sobre trajetória no trap
+https://www1.folha.uol.com.br/folhateen/2026/09/veigh-se-despede-da-era-eu-venci-o-mundo-e-reflete-sobre-trajetoria-no-trap.shtml
+Fonte recente (setembro de 2026) para relevância atual da era EVOM e lançamento de “EVOM - A Última Dança”.
+
+VISUAIS
+- VEIGH — Taylor (Clipe Oficial) [Eu Venci o Mundo], YouTube oficial: https://www.youtube.com/watch?v=Oko5GyL7Ba4
+- VEIGH — Belieber (Eu Venci o Mundo), YouTube oficial: https://www.youtube.com/watch?v=oZGKF-1zjf0
+- Veigh — Talvez você precise de mim, YouTube: https://www.youtube.com/watch?v=DfVkFq2w2jw
+
+BACKGROUND MUSIC
+Busca externa específica foi tentada durante autoria, mas não foi encontrada uma candidata nova com URL direta/host/licença suficientemente verificáveis dentro do ambiente disponível. Aplicado fallback curado `fallback_social_urban`, conforme docs/audio-search.md, por combinar com narrativa urbana/trap contemporânea. Volume 0.10.
