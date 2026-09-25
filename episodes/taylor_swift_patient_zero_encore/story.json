@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "title": "A viagem de comemoração de Taylor Swift que virou quatro músicas novas",
+  "slug": "taylor_swift_patient_zero_encore",
+  "target_duration_seconds": 72,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Taylor Swift acabou de lançar “Patient Zero” — mas a parte mais curiosa é que essa música nasceu de uma viagem que nem era para virar sessão de estúdio.",
+      "delivery": "hook"
+    },
+    {
+      "id": "record",
+      "text": "Depois de The Life of a Showgirl ter a maior primeira semana de um álbum na história dos Estados Unidos, Taylor foi à Suécia comemorar com Max Martin e Shellback.",
+      "delivery": "curious"
+    },
+    {
+      "id": "sweden",
+      "text": "Segundo ela, a ideia era só parar, agradecer e absorver o momento. Só que havia um estúdio por perto — e os três fizeram o que sempre fazem: escreveram mais músicas.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "four_tracks",
+      "text": "Dessa viagem saíram quatro faixas novas: “Patient Zero”, “Cleveland!”, “Pink Clouding” e “Babylon”, reunidas em The Life of a Showgirl: The Encore.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "release",
+      "text": "“Patient Zero” chegou em 25 de setembro com Taylor, Max e Shellback creditados na composição e produção.",
+      "delivery": "curious"
+    },
+    {
+      "id": "cinema",
+      "text": "E a divulgação virou quase cinema: Taylor dirigiu o clipe, com Dakota Johnson e Colin Farrell no elenco e Emmanuel Lubezki na fotografia.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "vma",
+      "text": "O vídeo completo estreia no VMA de domingo, onde Taylor também receberá o primeiro prêmio Artist-Director da premiação.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "payoff",
+      "text": "Ou seja: o Encore não é sobra do disco. Ele nasceu depois que o álbum já tinha explodido. Qual das quatro novas você quer ouvir primeiro?",
+      "delivery": "payoff"
+    }
+  ]
+}
