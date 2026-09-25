@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id": "taylor_hook",
+      "visual_intent": "Taylor Swift imediatamente reconhecível em vídeo real para abrir a notícia de Patient Zero.",
+      "required_seconds": 8,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source_page_url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Cqw8fZhggbQ",
+          "video_id": "Cqw8fZhggbQ",
+          "semantic_fit": "direct",
+          "source_start_seconds": 20,
+          "rights_status": "unknown",
+          "credit": "BBC Radio 1 / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source_page_url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Zan3RKLOa-E",
+          "video_id": "Zan3RKLOa-E",
+          "semantic_fit": "direct",
+          "source_start_seconds": 10,
+          "rights_status": "unknown",
+          "credit": "Cover Nation / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_record",
+      "visual_intent": "Taylor Swift em registro real durante o contexto sobre o enorme resultado de The Life of a Showgirl.",
+      "required_seconds": 10,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source_page_url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Zan3RKLOa-E",
+          "video_id": "Zan3RKLOa-E",
+          "semantic_fit": "direct",
+          "source_start_seconds": 35,
+          "rights_status": "unknown",
+          "credit": "Cover Nation / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source_page_url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Cqw8fZhggbQ",
+          "video_id": "Cqw8fZhggbQ",
+          "semantic_fit": "direct",
+          "source_start_seconds": 60,
+          "rights_status": "unknown",
+          "credit": "BBC Radio 1 / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_sweden",
+      "visual_intent": "Max Martin e Shellback trabalhando em estúdio ou Taylor falando diretamente sobre a colaboração com os dois.",
+      "required_seconds": 11,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=ujaXKYkqHYY",
+          "source_page_url": "https://www.youtube.com/watch?v=ujaXKYkqHYY",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "ujaXKYkqHYY",
+          "video_id": "ujaXKYkqHYY",
+          "semantic_fit": "direct",
+          "source_start_seconds": 5,
+          "rights_status": "unknown",
+          "credit": "Studio Videos / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source_page_url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Cqw8fZhggbQ",
+          "video_id": "Cqw8fZhggbQ",
+          "semantic_fit": "direct",
+          "source_start_seconds": 293,
+          "rights_status": "unknown",
+          "credit": "BBC Radio 1 / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_encore",
+      "visual_intent": "Taylor Swift em material real para a revelação das quatro músicas novas do Encore.",
+      "required_seconds": 10,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+          "source_page_url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "UfeDhJx29Ps",
+          "video_id": "UfeDhJx29Ps",
+          "semantic_fit": "direct",
+          "source_start_seconds": 5,
+          "rights_status": "unknown",
+          "credit": "CBS New York / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source_page_url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Zan3RKLOa-E",
+          "video_id": "Zan3RKLOa-E",
+          "semantic_fit": "direct",
+          "source_start_seconds": 90,
+          "rights_status": "unknown",
+          "credit": "Cover Nation / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_release",
+      "visual_intent": "Taylor Swift em vídeo real enquanto a narração confirma o lançamento de Patient Zero.",
+      "required_seconds": 8,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source_page_url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Cqw8fZhggbQ",
+          "video_id": "Cqw8fZhggbQ",
+          "semantic_fit": "direct",
+          "source_start_seconds": 180,
+          "rights_status": "unknown",
+          "credit": "BBC Radio 1 / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+          "source_page_url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "UfeDhJx29Ps",
+          "video_id": "UfeDhJx29Ps",
+          "semantic_fit": "direct",
+          "source_start_seconds": 20,
+          "rights_status": "unknown",
+          "credit": "CBS New York / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_cinema",
+      "visual_intent": "Colin Farrell em vídeo real para o trecho sobre o elenco do clipe de Patient Zero.",
+      "required_seconds": 10,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=26nQZ9pgF9U",
+          "source_page_url": "https://www.youtube.com/watch?v=26nQZ9pgF9U",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "26nQZ9pgF9U",
+          "video_id": "26nQZ9pgF9U",
+          "semantic_fit": "direct",
+          "source_start_seconds": 20,
+          "rights_status": "unknown",
+          "credit": "Jimmy Kimmel Live / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source_page_url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Zan3RKLOa-E",
+          "video_id": "Zan3RKLOa-E",
+          "semantic_fit": "direct",
+          "source_start_seconds": 210,
+          "rights_status": "unknown",
+          "credit": "Cover Nation / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_vma",
+      "visual_intent": "Taylor Swift em registro real para o trecho sobre a estreia no VMA e o Artist-Director Honors.",
+      "required_seconds": 9,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source_page_url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Zan3RKLOa-E",
+          "video_id": "Zan3RKLOa-E",
+          "semantic_fit": "direct",
+          "source_start_seconds": 180,
+          "rights_status": "unknown",
+          "credit": "Cover Nation / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+          "source_page_url": "https://www.youtube.com/watch?v=UfeDhJx29Ps",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "UfeDhJx29Ps",
+          "video_id": "UfeDhJx29Ps",
+          "semantic_fit": "direct",
+          "source_start_seconds": 30,
+          "rights_status": "unknown",
+          "credit": "CBS New York / YouTube"
+        }
+      ]
+    },
+    {
+      "id": "taylor_payoff",
+      "visual_intent": "Taylor Swift reconhecível em vídeo real no payoff sobre as músicas terem sido escritas depois do sucesso do álbum.",
+      "required_seconds": 10,
+      "inspect_top": 2,
+      "candidates": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source_page_url": "https://www.youtube.com/watch?v=Cqw8fZhggbQ",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Cqw8fZhggbQ",
+          "video_id": "Cqw8fZhggbQ",
+          "semantic_fit": "direct",
+          "source_start_seconds": 360,
+          "rights_status": "unknown",
+          "credit": "BBC Radio 1 / YouTube"
+        },
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source_page_url": "https://www.youtube.com/watch?v=Zan3RKLOa-E",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "Zan3RKLOa-E",
+          "video_id": "Zan3RKLOa-E",
+          "semantic_fit": "direct",
+          "source_start_seconds": 330,
+          "rights_status": "unknown",
+          "credit": "Cover Nation / YouTube"
+        }
+      ]
+    }
+  ]
+}
