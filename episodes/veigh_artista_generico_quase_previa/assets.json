@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"veigh_hook","file":"youtube-Oko5GyL7Ba4.mp4","url":"https://www.youtube.com/watch?v=Oko5GyL7Ba4","credit":"VEIGH / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"veigh_preview","file":"youtube-Oko5GyL7Ba4.mp4","url":"https://www.youtube.com/watch?v=Oko5GyL7Ba4","credit":"VEIGH / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"veigh_miami","file":"youtube-oZGKF-1zjf0.mp4","url":"https://www.youtube.com/watch?v=oZGKF-1zjf0","credit":"VEIGH / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"veigh_first","file":"youtube-Oko5GyL7Ba4.mp4","url":"https://www.youtube.com/watch?v=Oko5GyL7Ba4","credit":"VEIGH / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"veigh_timbaland","file":"youtube-oZGKF-1zjf0.mp4","url":"https://www.youtube.com/watch?v=oZGKF-1zjf0","credit":"VEIGH / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"veigh_sample","file":"youtube-DfVkFq2w2jw.mp4","url":"https://www.youtube.com/watch?v=DfVkFq2w2jw","credit":"João TR / YouTube","license":"","focus":{"x":0.5,"y":0.45}},
+    {"id":"veigh_numbers","file":"youtube-oZGKF-1zjf0.mp4","url":"https://www.youtube.com/watch?v=oZGKF-1zjf0","credit":"VEIGH / YouTube","license":"","focus":{"x":0.5,"y":0.42}},
+    {"id":"veigh_payoff","file":"youtube-DfVkFq2w2jw.mp4","url":"https://www.youtube.com/watch?v=DfVkFq2w2jw","credit":"João TR / YouTube","license":"","focus":{"x":0.5,"y":0.45}}
+  ]
+}
