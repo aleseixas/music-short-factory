@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "episode": "taylor_swift_patient_zero_encore",
+  "recorded_at": "2026-09-25T12:30:47Z",
+  "visual_usage": [
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_hook",
+      "asset_id": "taylor_hook",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1a76047fc510821df64474060c494fe7f51f13b877b323e48f4e91433313e7bc",
+        "url_hashes": [
+          "96630c8a2908ee6f0a23036b66a4e25a6752d87a4a524d15f1e31814a1c6ec57"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8fa7748c2b9039cd",
+          "8fa7708c2bd229cd",
+          "8fa7748c2ed229c9",
+          "8fa7748c2bd229c9",
+          "8fa7748c2fd229c8",
+          "8ea775982ed329c8",
+          "8ca577992dc2392d",
+          "8ca676992dc75a29"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 10.1
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_record",
+      "asset_id": "taylor_record",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "27ece262de3eca78b6d6db7d7fad173df8457aa2c666765a3dbee67ba46cf7eb",
+        "url_hashes": [
+          "ebdb08dce0be117483474d861a339d0ba57c07790f4199a51a0bdf7f0c37d1f4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "99d8673664692e66",
+          "84967a33b54e4ae5",
+          "84c67a31b54e4acf",
+          "94845ab3b5da4c8f",
+          "99d8673666692c66",
+          "99d8673666692c66",
+          "99d8673666492d66",
+          "99d8673666692c66"
+        ],
+        "source_start_seconds": 60.0,
+        "source_duration_seconds": 10.333333
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_sweden",
+      "asset_id": "taylor_sweden",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "27ece262de3eca78b6d6db7d7fad173df8457aa2c666765a3dbee67ba46cf7eb",
+        "url_hashes": [
+          "ebdb08dce0be117483474d861a339d0ba57c07790f4199a51a0bdf7f0c37d1f4"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9dde213372652273",
+          "9dde213372652273",
+          "9dde31336e642662",
+          "9dde613372642273",
+          "99de213372652673",
+          "9dde613332612673",
+          "99de613372612673",
+          "99de21327e652663"
+        ],
+        "source_start_seconds": 275.16,
+        "source_duration_seconds": 11.9
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_four_tracks",
+      "asset_id": "taylor_encore",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c1dd46bfe944b00e46939377ab2f924d48a1c4f2088fe0d24224b83013e25161",
+        "url_hashes": [
+          "1a20e883212d3b4b3266e979831d0ee347da74c8ba2ebd907ca2ff4d1f006516"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "991fe60ca66227f8",
+          "991fe20da66227f8",
+          "991fe60ea66207f8",
+          "cc3cb34333cb30d3",
+          "cc3cb34333cb30d3",
+          "cc3c334333cb31d3",
+          "916c6e97c8d00f9e",
+          "cfe1c8c80dd930cf"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 9.4
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_release",
+      "asset_id": "taylor_release",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "c1dd46bfe944b00e46939377ab2f924d48a1c4f2088fe0d24224b83013e25161",
+        "url_hashes": [
+          "1a20e883212d3b4b3266e979831d0ee347da74c8ba2ebd907ca2ff4d1f006516"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9633e1e2c9e607ca",
+          "83333cdce13e0ce3",
+          "9c36e0b337e033ca",
+          "9c34e03337e333ca",
+          "b733019e60d819fe",
+          "b633019e649839fe",
+          "f09cc9e11cefc078",
+          "c1873cc037dc63d9"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 8.133333
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_cinema",
+      "asset_id": "taylor_cinema",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "3f704fa4cc74508cb04583279c071370c6709ab0698f4cbe479a03c8f892fe40",
+        "url_hashes": [
+          "bcf1fcfe71e51e13a4b331c86bb802181ec903fd5108ef53e89382e33ff701ff"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "abab0010dc8adddf",
+          "b9bf2740c8d8d256",
+          "c68c3973b2a18b4f",
+          "c0d43e1fb9e1874c",
+          "c0d52b1eb6a1c56b",
+          "936f6c2199046e6f",
+          "98a92d75e5a9293a",
+          "91b1565678b5a636"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 9.7
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_vma",
+      "asset_id": "taylor_vma",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1a76047fc510821df64474060c494fe7f51f13b877b323e48f4e91433313e7bc",
+        "url_hashes": [
+          "96630c8a2908ee6f0a23036b66a4e25a6752d87a4a524d15f1e31814a1c6ec57"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8da6729c3dd3582c",
+          "8da676982dd3192d",
+          "89ac67992cc61b6d",
+          "89ac659b28c63b6d",
+          "89ac659b2bc6332d",
+          "89ac659b29c6333d",
+          "89ac659b2bc43739",
+          "9ba964933bc43729"
+        ],
+        "source_start_seconds": 180.0,
+        "source_duration_seconds": 7.233333
+      }
+    },
+    {
+      "episode": "taylor_swift_patient_zero_encore",
+      "shot_id": "shot_payoff",
+      "asset_id": "taylor_payoff",
+      "recorded_at": "2026-09-25T12:30:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1a76047fc510821df64474060c494fe7f51f13b877b323e48f4e91433313e7bc",
+        "url_hashes": [
+          "96630c8a2908ee6f0a23036b66a4e25a6752d87a4a524d15f1e31814a1c6ec57"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9ba964932bc53738",
+          "9bac64933bc43339",
+          "9bac64933bc43339",
+          "89ac669939c67339",
+          "8da466993c877b29",
+          "8da466992cc77b29",
+          "8da672d82c937b29",
+          "8ca773dc2c937829"
+        ],
+        "source_start_seconds": 330.0,
+        "source_duration_seconds": 9.666667
+      }
+    }
+  ]
+}
