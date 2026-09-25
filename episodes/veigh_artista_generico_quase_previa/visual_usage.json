@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "episode": "veigh_artista_generico_quase_previa",
+  "recorded_at": "2026-09-25T21:12:37Z",
+  "visual_usage": [
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_hook",
+      "asset_id": "veigh_hook",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f3b1eb86f2b84967797c08f3b621fdefc6944502340177fada8c4ee637a5f476",
+        "url_hashes": [
+          "86b87f9af7e8299d2db585284910351cfe4464149ed5f418564115ee46795437"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8d32e39dd24ba472",
+          "8d32a2aed28bf662",
+          "9a916e6dc4c99a95",
+          "ca32dec3ccc1336c",
+          "ccb3cbcfe6242324",
+          "c82739cc3bd96619",
+          "a658d639c338a36b",
+          "8cccd84d6de6b4a2"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 9.2
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_preview",
+      "asset_id": "veigh_preview",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "f3b1eb86f2b84967797c08f3b621fdefc6944502340177fada8c4ee637a5f476",
+        "url_hashes": [
+          "86b87f9af7e8299d2db585284910351cfe4464149ed5f418564115ee46795437"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c9d2d1394d939996",
+          "9269a55bad925a2d",
+          "b4422fb44995b6a7",
+          "aaaa1555d5a9aaaa",
+          "9966649937996467",
+          "94c7a39c4ad2d176",
+          "d4a1e9045f56cc79",
+          "d32d342992cedc6c"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 10.966667
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_miami",
+      "asset_id": "veigh_miami",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "81413abea72e5efe87d5e31bb41b45d4b012f552ac632e81655b6eb9faba4908",
+        "url_hashes": [
+          "bec3be5d8cec0d7a0712b54f77f73f0ef41dfc80c2f77a4523b1fb2e0034890e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9b92646d9b92646d",
+          "9b92646cd99b9266",
+          "9b9366644d9b9392",
+          "d393939e3e383898",
+          "c3e33c1c1836c7b9",
+          "c1e13c1e1ec71f31",
+          "c7c339381a1e4f3c",
+          "da26397334f04d8b"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 9.666667
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_first",
+      "asset_id": "veigh_first",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "81413abea72e5efe87d5e31bb41b45d4b012f552ac632e81655b6eb9faba4908",
+        "url_hashes": [
+          "bec3be5d8cec0d7a0712b54f77f73f0ef41dfc80c2f77a4523b1fb2e0034890e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cd8d8cc83a72f722",
+          "cd8d8cc83a723277",
+          "cdcd0ccc3c32f233",
+          "d09fc00948cbdede",
+          "90876c2bea6a6bd8",
+          "9429b52d4ea55b5a",
+          "863933ccb933ce29",
+          "93366cd993266cc9"
+        ],
+        "source_start_seconds": 55.0,
+        "source_duration_seconds": 9.7
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_timbaland",
+      "asset_id": "veigh_timbaland",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5c1931a5a97bb26b130fe08728b90e8ba3ba90913deee7824c5f4b7f00cdaac1",
+        "url_hashes": [
+          "3e6f71cef1e6bc32eae69c8181dfe4ca77dfe86db4e23e802089f35baea55fc6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ec8c0e54d05f5aea",
+          "c99d90de8aa13736",
+          "d99666a0857d6399",
+          "cd866929e68977e0",
+          "c6e768daa81f5a50",
+          "98991b5b9b91925b",
+          "9e9b3979c9868626",
+          "d0c060e2dcdc5f1f"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 11.433333
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_sample",
+      "asset_id": "veigh_sample",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5c1931a5a97bb26b130fe08728b90e8ba3ba90913deee7824c5f4b7f00cdaac1",
+        "url_hashes": [
+          "3e6f71cef1e6bc32eae69c8181dfe4ca77dfe86db4e23e802089f35baea55fc6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e7e3e4c6c3860e1c",
+          "c038cf261fc7f00f",
+          "c13ecf07f845e00f",
+          "878983b0e678cb79",
+          "d1d1d59595a52d29",
+          "9e988e34c731cb39",
+          "cf30cf3cc12cc966",
+          "c8dcc4c6d6d3d0d4"
+        ],
+        "source_start_seconds": 70.0,
+        "source_duration_seconds": 11.8
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_numbers",
+      "asset_id": "veigh_numbers",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5c1931a5a97bb26b130fe08728b90e8ba3ba90913deee7824c5f4b7f00cdaac1",
+        "url_hashes": [
+          "3e6f71cef1e6bc32eae69c8181dfe4ca77dfe86db4e23e802089f35baea55fc6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c2c68f8ecccc1f8c",
+          "928d839fc1d2cfc8",
+          "8d67cc936c9b6498",
+          "d294cdadb2b22b68",
+          "d4f4309a4ae9e595",
+          "dde770909062e793",
+          "dde56180c6e6ef08",
+          "c9329bc619c639c7"
+        ],
+        "source_start_seconds": 120.0,
+        "source_duration_seconds": 10.4
+      }
+    },
+    {
+      "episode": "veigh_artista_generico_quase_previa",
+      "shot_id": "shot_payoff",
+      "asset_id": "veigh_payoff",
+      "recorded_at": "2026-09-25T21:12:37Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "01ef45651ded1c89bdf6c98c75564d88fa0b00f5e5dbae30b315864cd14baf34",
+        "url_hashes": [
+          "85f38e8b9f1fb82164bdd413ca228e1558a411f66669149ecd4aef7ceb5b2a41"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8c8ea773593052d7",
+          "cc86e079593057cf",
+          "8c8ea1797b3c4627",
+          "9c8ea3717a344f07",
+          "8c8ea3f15b30564f",
+          "8d8ca17179395f07",
+          "9d8aa2f134344f4f",
+          "8d8ea37270364f4d"
+        ],
+        "source_start_seconds": 35.0,
+        "source_duration_seconds": 10.2
+      }
+    }
+  ]
+}
