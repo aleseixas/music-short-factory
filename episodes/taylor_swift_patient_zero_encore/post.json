@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "NÃO ERA PRA GRAVAR",
+    "source": {
+      "type": "video_frame",
+      "timestamp_seconds": 0.7
+    }
+  },
+  "youtube": {
+    "title": "A viagem de Taylor Swift que virou 4 músicas novas",
+    "description": "Patient Zero e as outras faixas do Encore nasceram depois que Taylor Swift viajou à Suécia para comemorar o sucesso de The Life of a Showgirl com Max Martin e Shellback.",
+    "hashtags": [
+      "taylorswift",
+      "patientzero",
+      "thelifeofashowgirl",
+      "musicnews",
+      "alemdohit"
+    ]
+  },
+  "instagram": {
+    "caption": "Taylor Swift foi à Suécia para comemorar com Max Martin e Shellback. Tinha um estúdio por perto — e a viagem acabou virando quatro músicas novas para The Life of a Showgirl: The Encore.",
+    "hashtags": [
+      "taylorswift",
+      "patientzero",
+      "maxmartin",
+      "shellback",
+      "musicnews",
+      "curiosidade",
+      "alemdohit"
+    ]
+  },
+  "facebook": {
+    "title": "A viagem de Taylor Swift que virou quatro músicas novas",
+    "caption": "Patient Zero nasceu depois que Taylor Swift, Max Martin e Shellback foram à Suécia celebrar o sucesso de The Life of a Showgirl e acabaram voltando ao estúdio.",
+    "hashtags": [
+      "taylorswift",
+      "patientzero",
+      "thelifeofashowgirl",
+      "musicnews",
+      "alemdohit"
+    ]
+  },
+  "tiktok": {
+    "caption": "Taylor Swift foi comemorar na Suécia e voltou com quatro músicas novas.",
+    "hashtags": [
+      "taylorswift",
+      "patientzero",
+      "thelifeofashowgirl",
+      "curiosidade",
+      "alemdohit"
+    ]
+  }
+}
