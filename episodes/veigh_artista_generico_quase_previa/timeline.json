@@ -1,26 +1,130 @@
 {
   "schema_version": 1,
-  "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile":"fallback_social_urban","volume":0.10},
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_drop_dead_synth_pop",
+    "volume": 0.1
+  },
   "sfx_cues": [
-    {"time_seconds":0.12,"type":"bass_drop_cinematic","volume":0.15},
-    {"time_seconds":18,"type":"whoosh_fast","volume":0.10},
-    {"time_seconds":40,"type":"record_scratch","volume":0.10},
-    {"time_seconds":58,"type":"correct_ding","volume":0.11}
+    {
+      "time_seconds": 0.12,
+      "type": "bass_drop_cinematic",
+      "volume": 0.15
+    },
+    {
+      "time_seconds": 18,
+      "type": "whoosh_fast",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 40,
+      "type": "record_scratch",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 58,
+      "type": "correct_ding",
+      "volume": 0.11
+    }
   ],
   "text_fx_cues": [
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.4,"text":"QUASE NÃO SAIU","accent_text":"QUASE","animation":"scale_bounce","position":"center","intensity":0.74},
-    {"segment":"first","offset_seconds":0.2,"duration_seconds":1.4,"text":"FOI A PRIMEIRA","accent_text":"PRIMEIRA","animation":"slide_up","position":"center","intensity":0.68},
-    {"segment":"numbers","offset_seconds":0.2,"duration_seconds":1.4,"text":"QUASE 90 MILHÕES","accent_text":"90 MILHÕES","animation":"scale_bounce","position":"center","intensity":0.72}
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.4,
+      "text": "QUASE NÃO SAIU",
+      "accent_text": "QUASE",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.74
+    },
+    {
+      "segment": "first",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.4,
+      "text": "FOI A PRIMEIRA",
+      "accent_text": "PRIMEIRA",
+      "animation": "slide_up",
+      "position": "center",
+      "intensity": 0.68
+    },
+    {
+      "segment": "numbers",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.4,
+      "text": "QUASE 90 MILHÕES",
+      "accent_text": "90 MILHÕES",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.72
+    }
   ],
   "shots": [
-    {"id":"shot_hook","segment":"hook","asset":"veigh_hook","motion":"push_in","transition_out":"cut","source_start_seconds":10},
-    {"id":"shot_preview","segment":"preview","asset":"veigh_preview","motion":"hold","transition_out":"crossfade","source_start_seconds":55},
-    {"id":"shot_miami","segment":"miami","asset":"veigh_miami","motion":"push_in","transition_out":"cut","source_start_seconds":10},
-    {"id":"shot_first","segment":"first","asset":"veigh_first","motion":"pull_out","transition_out":"cut","source_start_seconds":105},
-    {"id":"shot_timbaland","segment":"timbaland","asset":"veigh_timbaland","motion":"hold","transition_out":"crossfade","source_start_seconds":55},
-    {"id":"shot_sample","segment":"sample","asset":"veigh_sample","motion":"push_in","transition_out":"cut","source_start_seconds":10},
-    {"id":"shot_numbers","segment":"numbers","asset":"veigh_numbers","motion":"pull_out","transition_out":"crossfade","source_start_seconds":105},
-    {"id":"shot_payoff","segment":"payoff","asset":"veigh_payoff","motion":"hold","transition_out":"cut","source_start_seconds":55}
+    {
+      "id": "shot_hook",
+      "segment": "hook",
+      "asset": "veigh_hook",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 10
+    },
+    {
+      "id": "shot_preview",
+      "segment": "preview",
+      "asset": "veigh_preview",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "source_start_seconds": 55
+    },
+    {
+      "id": "shot_miami",
+      "segment": "miami",
+      "asset": "veigh_miami",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 10
+    },
+    {
+      "id": "shot_first",
+      "segment": "first",
+      "asset": "veigh_first",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 105
+    },
+    {
+      "id": "shot_timbaland",
+      "segment": "timbaland",
+      "asset": "veigh_timbaland",
+      "motion": "hold",
+      "transition_out": "crossfade",
+      "source_start_seconds": 55
+    },
+    {
+      "id": "shot_sample",
+      "segment": "sample",
+      "asset": "veigh_sample",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 10
+    },
+    {
+      "id": "shot_numbers",
+      "segment": "numbers",
+      "asset": "veigh_numbers",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "source_start_seconds": 105
+    },
+    {
+      "id": "shot_payoff",
+      "segment": "payoff",
+      "asset": "veigh_payoff",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 55
+    }
   ]
 }
