@@ -1,109 +1,83 @@
-# Regra autoritativa — exatamente um episódio por execução
+# Regra autoritativa — um episódio válido por execução
 
-Esta regra define a identidade de uma **execução** do agente e o limite absoluto de episódios do Além do Hit / Music Short Factory.
+Esta regra define o contrato de uma execução do Além do Hit / Music Short Factory. Em conflitos sobre identidade da execução, troca de candidato, continuidade e critério de saída, esta regra prevalece sobre instruções editoriais antigas. A `main` continua sendo a fonte da verdade para contratos técnicos.
 
-Ela existe para impedir que a mesma chamada do agendamento crie um episódio, chegue à queue/publicação e depois interprete esse estado como se uma nova execução tivesse começado.
+## 1. Contrato da execução
 
-Em qualquer conflito sobre identidade da execução, troca de slug, continuidade após queue ou possibilidade de iniciar outro tema, **esta regra prevalece** sobre `templates/music-universe-topic-rule.md`, `templates/publishing-completion-rule.md` e instruções editoriais antigas. A `main` continua sendo a fonte da verdade para contratos técnicos.
+**Uma execução = uma invocação do agendamento cujo objetivo é entregar EXATAMENTE 1 episódio NOVO, válido e publicável para o slot atual, sempre que tecnicamente possível.**
 
-## 1. Definição absoluta de execução
+A execução NÃO é considerada concluída só porque um candidato foi escolhido, autorado, bloqueado ou reprovado. Falha de candidato não é automaticamente falha do job.
 
-**Uma execução = uma única invocação/chamada do agente disparada pelo agendamento.**
+No início registre `EXECUTION_START_HEAD`, `QUEUES_AT_START`, `EXECUTION_SLUG=UNSET` e `DELIVERED_EPISODE=NO`.
 
-A execução começa quando o agente recebe a tarefa e termina somente quando ele devolve a resposta final daquela chamada.
+## 2. Anti-duplicação absoluta
 
-NÃO começa uma nova execução quando:
+Nunca publique novamente episódio/slug que já tenha qualquer evidência de publisher iniciado, concluído, parcial, falho após início ou incerto. Esse slug é `CLOSED_HISTORY`.
 
-- um commit é criado;
-- o media preflight passa;
-- uma publish queue é criada;
-- uma GitHub Action começa ou termina;
-- uma publicação termina;
-- uma plataforma publica com sucesso;
-- muda a hora do relógio;
-- aparece uma nova queue no repositório;
-- o agente conclui uma etapa do pipeline.
+Duplicate de candidata descarta somente a candidata e obriga a continuar o pool. Episódio já publicado nunca satisfaz uma nova execução.
 
-Somente um **novo disparo real do agendamento** pode iniciar outra execução.
+## 3. Candidato ativo e substituição segura
 
-## 2. Snapshot obrigatório no início
+`EXECUTION_SLUG` identifica o candidato ativo, não uma prisão irreversível da chamada.
 
-Antes de pesquisar temas ou criar qualquer arquivo, registre como baseline da chamada atual:
+Depois de iniciar autoria, tente reparar o MESMO slug enquanto houver correção materialmente segura e razoável. Porém, se esse candidato se tornar **PRE_PUBLISH_UNRECOVERABLE** e houver evidência positiva de `EVER_PUBLISHED_OR_ATTEMPTED=NO`, ele pode ser abandonado sem publicação e a execução DEVE voltar à seleção editorial para criar um NOVO candidato.
 
-- `EXECUTION_START_HEAD`: SHA atual de `main`;
-- `QUEUES_AT_START`: conjunto de arquivos que já existiam em `.publish-queue/` no início da chamada;
-- `EXECUTION_SLUG = UNSET`.
+Considere `PRE_PUBLISH_UNRECOVERABLE` quando, antes de qualquer publisher de plataforma iniciar, o candidato falhar definitivamente em gate editorial/técnico, media preflight, assets, render/schema ou outra validação e as tentativas/correções seguras previstas tiverem sido esgotadas ou a causa tornar aquele candidato inviável.
 
-Esse snapshot serve para distinguir trabalho herdado de trabalho criado nesta mesma invocação.
+Ao abandonar candidato pré-publicação:
+- marque-o `ABANDONED_PRE_PUBLISH`;
+- nunca crie queue para ele depois;
+- limpe somente a identidade operacional do candidato: `EXECUTION_SLUG=UNSET`;
+- volte ao pool e escolha tema realmente novo;
+- refaça duplicate/history checks completos;
+- continue a MESMA execução.
 
-Uma queue que já estava em `QUEUES_AT_START` pode pertencer a uma execução anterior.
+Isso NÃO é permitido se qualquer publisher já iniciou ou puder ter iniciado.
 
-Uma queue que **não** estava em `QUEUES_AT_START` e foi criada depois do início desta chamada pertence à **execução atual** e jamais pode ser usada como evidência de que uma nova execução começou.
+## 4. Limites
 
-## 3. Travamento imutável do slug
+A execução pode avaliar até 15 candidatas e pode autorar candidatos substitutos quando necessário, mas deve publicar **no máximo 1 episódio**. O objetivo não é gerar vários episódios; é obter um único episódio válido para o slot.
 
-Enquanto `EXECUTION_SLUG = UNSET`, é permitido avaliar várias candidatas e executar duplicate preflights conforme as regras editoriais.
+Use no máximo 5 candidatos autorados/substitutos por execução, salvo regra mais restritiva da main. Para cada candidato, respeite os limites técnicos de reparo/preflight da main.
 
-Assim que ocorrer o PRIMEIRO destes eventos, defina `EXECUTION_SLUG=<slug>`:
+## 5. Publicação fecha a possibilidade de substituição
 
-1. a execução decide retomar um episódio incompleto existente;
-2. uma candidata recebe autorização `UNIQUE_CANDIDATE` e a autoria é iniciada;
-3. qualquer arquivo é criado/modificado em `episodes/<slug>/` como parte da autoria desta chamada.
+Imediatamente antes da queue, reconstrua novamente todo o histórico do slug. Só publique se `EVER_PUBLISHED_OR_ATTEMPTED=NO`.
 
-Depois disso, `EXECUTION_SLUG` é **IMUTÁVEL até a resposta final**.
+No instante em que qualquer publisher de plataforma iniciar ou puder ter iniciado:
+- `EVER_PUBLISHED_OR_ATTEMPTED=YES`;
+- `REPUBLICATION_ALLOWED=NO`;
+- o slug fica fechado para retry/republicação automática conforme as regras conservadoras vigentes;
+- **não crie episódio substituto para o mesmo slot**, pois o slot já teve tentativa real de publicação e criar outro pode gerar duplicação editorial.
 
-É proibido:
+## 6. Critério de saída
 
-- trocar `EXECUTION_SLUG`;
-- voltar ao pool para escolher outro tema;
-- criar novo duplicate-check para outra candidata;
-- criar ou modificar `episodes/<outro_slug>/` como novo episódio;
-- criar media preflight para outro slug;
-- criar queue para outro slug;
-- usar falha, PASS, queue ou publicação do primeiro slug como autorização para começar outro.
+A execução só pode terminar normalmente quando ocorrer um destes estados:
 
-Toda correção, retry, media preflight, queue e acompanhamento de publicação deve permanecer no MESMO `EXECUTION_SLUG`.
+1. `SUCCESS/PUBLICADO`: um episódio novo desta execução passou pelos gates e chegou ao estado terminal exigido pela main;
+2. `PARTIAL_NO_TOUCH`: publisher iniciou e o resultado ficou parcial/misto/incerto; não tocar novamente;
+3. `HARD_FAILURE/BLOCKED`: bloqueio externo/técnico real impede continuar, ou todos os limites globais de candidatas/substitutos foram realmente esgotados.
 
-## 4. Queue não libera um segundo episódio
+**É proibido usar `MEDIA PREFLIGHT: FAIL/BLOQUEADO`, gate semântico reprovado, asset ruim ou candidato inviável como resultado final do job enquanto ainda for pré-publicação e houver capacidade de selecionar outro candidato.**
 
-A criação de `.publish-queue/<EXECUTION_SLUG>.txt` significa apenas que a publicação daquele episódio foi solicitada.
+## 7. Fluxo obrigatório
 
-Ela **NÃO**:
+`início -> selecionar -> duplicate check -> autorar -> validar ->`
 
-- encerra a identidade da execução;
-- limpa `EXECUTION_SLUG`;
-- transforma o trabalho anterior em “execução anterior”;
-- autoriza nova seleção editorial;
-- autoriza outro slug.
+- `PASS -> queue -> publicação -> terminal -> fim`
+- `FAIL recuperável -> reparar mesmo candidato -> revalidar`
+- `FAIL pré-publicação irrecuperável -> abandonar candidato -> novo tema -> duplicate check -> autorar -> validar`
 
-Depois da queue, siga somente o fluxo de publicação/recuperação do mesmo `EXECUTION_SLUG`.
+## 8. Regra de ouro
 
-## 5. Estado terminal = responder e encerrar a chamada
+**O JOB ENTREGA UM EPISÓDIO; ELE NÃO ENTREGA UMA TENTATIVA.**
 
-Quando o `EXECUTION_SLUG` chegar a um estado terminal permitido pelas regras de publicação — sucesso, falha terminal real, bloqueio operacional ou publicação não verificável quando for o estado final suportado — faça imediatamente a resposta final desta execução.
+**FALHA DE CANDIDATO != FALHA DA EXECUÇÃO.**
 
-**Depois do estado terminal do primeiro slug, não execute nenhuma nova pesquisa editorial, duplicate-check, autoria ou criação de episódio.**
+**DUPLICATE = DESCARTAR E CONTINUAR.**
 
-Fluxo correto:
+**PRE_PUBLISH_UNRECOVERABLE + NENHUM PUBLISHER INICIADO = SUBSTITUIR POR NOVO CANDIDATO.**
 
-`início da chamada -> snapshot -> pool/candidatas -> primeiro UNIQUE ou retomada -> EXECUTION_SLUG travado -> autoria -> media preflight -> queue -> publicação/recovery -> estado terminal -> RESPOSTA FINAL -> fim da chamada`
+**QUALQUER PUBLISHER INICIADO = ZERO REPUBLICAÇÃO E ZERO SUBSTITUTO AUTOMÁTICO PARA O MESMO SLOT.**
 
-Fluxo proibido:
-
-`... -> queue/publicação do slug A -> interpretar como nova execução -> escolher slug B -> criar segundo episódio`
-
-## 6. Detecção de violação
-
-Se a execução já tiver `EXECUTION_SLUG` definido e detectar que está prestes a iniciar autoria de outro slug, **não faça a escrita**. Volte imediatamente ao `EXECUTION_SLUG` original ou, se ele já estiver terminal, devolva a resposta final e encerre.
-
-Se por erro desta mesma chamada já tiver sido iniciado um segundo slug, não crie um terceiro. Reporte a violação operacional claramente e preserve a regra de não expandir o dano.
-
-## 7. Regra de ouro
-
-**UMA CHAMADA DO AGENDAMENTO = NO MÁXIMO UM EPISÓDIO AUTORADO.**
-
-**PRIMEIRO SLUG AUTORIZADO/RETOMADO = ÚNICO SLUG DA CHAMADA.**
-
-**QUEUE/PASS/PUBLICAÇÃO NÃO REINICIAM A EXECUÇÃO.**
-
-**ESTADO TERMINAL DO PRIMEIRO SLUG = RESPOSTA FINAL IMEDIATA.**
+**NO MÁXIMO 1 EPISÓDIO PUBLICADO POR EXECUÇÃO.**
