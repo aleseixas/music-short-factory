@@ -6,6 +6,23 @@ Ela é autoritativa para **queue, acompanhamento da Publish Action, status final
 
 A `main` continua sendo a fonte da verdade para capacidades técnicas, workflows, publishers, schemas e estados realmente disponíveis.
 
+## 0. Gatilhos automáticos por push — ausência de workflow dispatch NÃO é bloqueio
+
+Antes de declarar `BLOQUEADO` por não existir uma operação/ferramenta explícita de `workflow_dispatch`, leia o `on:` do workflow atual na `main`.
+
+Quando `.github/workflows/episode-media-preflight.yml` estiver configurado com `on: push` para `.episode-check/*.json`, **NÃO existe necessidade de disparar o workflow manualmente**. O contrato correto é:
+
+`criar novo .episode-check/<slug>-<nonce>.json -> commit/push na main -> GitHub Actions dispara Episode media preflight automaticamente -> localizar o run associado ao commit/request -> acompanhar até estado terminal`.
+
+Portanto:
+
+- falta de ferramenta `workflow_dispatch` NÃO é `BLOQUEADO` quando o workflow é acionado por `push`;
+- não procure nem exija uma operação manual de dispatch nesse caso;
+- se a escrita do request na `main` retornar sucesso, considere o gatilho solicitado e passe a localizar/acompanhar o run;
+- se o run ainda não apareceu, trate como estado transitório e consulte novamente enquanto houver capacidade de leitura; não converta simples atraso de criação da Action em bloqueio;
+- só reporte bloqueio operacional se a própria escrita/push exigida pelo gatilho falhar, se GitHub Actions estiver efetivamente indisponível/inacessível, ou se a `main` atual tiver mudado para um gatilho que realmente exija uma ação não disponível;
+- aplique a mesma regra aos demais gates/workflows cujo `on:` atual demonstre disparo automático por escrita/push.
+
 ## 1. Queue não é conclusão
 
 A criação de `.publish-queue/<slug>.txt` significa apenas que o episódio foi entregue ao pipeline de publicação.
@@ -88,7 +105,7 @@ Se `Episode media preflight` falhar:
 3. identifique todos os itens recuperáveis, preservando o mesmo slug;
 4. corrija em lote assets inválidos, referências visuais, trims, background e demais constraints recuperáveis antes de uma nova passada completa;
 5. grave as correções na `main` quando necessário;
-6. crie novo `.episode-check/<slug>-<nonce>.json` somente quando nova Action externa for realmente necessária;
+6. crie novo `.episode-check/<slug>-<nonce>.json` somente quando nova Action externa for realmente necessária; a criação/push desse arquivo **é o disparo** quando o workflow atual usa `on: push`; não exija `workflow_dispatch`;
 7. acompanhe a nova Action exata;
 8. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, continue automaticamente para queue/publicação.
 
@@ -163,6 +180,8 @@ ERRO/BLOQUEIO: <causa concreta ou resumo do lote; nunca apenas nome genérico de
 **Falha elegível = investigar por metadados/outputs/artefato ou reprodução do validator, identificar causa concreta, corrigir e tentar novamente.**
 
 **Ausência do antigo log bruto != diagnóstico inacessível.**
+
+**Ausência de workflow_dispatch != bloqueio quando o workflow atual é acionado por push.**
 
 **Erro genérico de Action = continuar diagnóstico; não encerrar.**
 
