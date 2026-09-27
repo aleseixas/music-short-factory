@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "Aos 80, João Bosco transformou o próprio repertório num encontro de gerações",
+  "slug": "joao_bosco_amigos_80_geracoes",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"João Bosco chegou aos 80 anos fazendo o contrário de um disco de despedida: chamou artistas de várias gerações para reconstruir as próprias músicas.","delivery":"hook"},
+    {"id":"album","text":"Amigos Novos e Antigos chegou completo em 25 de setembro e usa justamente os encontros como conceito: memória e presente dividindo o mesmo repertório.","delivery":"curious"},
+    {"id":"chico","text":"Em Incompatibilidade de Gênios, João canta com Chico Buarque, enquanto o pianista cubano Gonzalo Rubalcaba entra no novo arranjo.","delivery":"reveal"},
+    {"id":"caetano","text":"Em Sinhá, a surpresa é Caetano Veloso. E o disco ainda aproxima João de nomes como Jota.Pê e Tiago Iorc, sem apagar os parceiros históricos.","delivery":"curious"},
+    {"id":"ivete","text":"Até Corsário muda de escala: Ivete Sangalo participa de uma releitura que mostra que a ideia não era simplesmente repetir gravações clássicas.","delivery":"dramatic"},
+    {"id":"aldir","text":"E tem uma presença atravessando tudo mesmo sem estar no estúdio: Aldir Blanc, parceiro de mais de uma centena de canções de João Bosco, segue no coração do repertório.","delivery":"emotional"},
+    {"id":"payoff","text":"O mais bonito é isso: aos 80, João Bosco não montou um museu da própria carreira. Ele entregou as canções para outras gerações continuarem mexendo nelas. Qual parceria desse disco você ouviria primeiro?","delivery":"payoff"}
+  ]
+}
