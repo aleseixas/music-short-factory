@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "emicida_rpb_para_tio_retorno",
+  "recorded_at": "2026-09-27T17:14:21Z",
+  "visual_usage": [
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1c34faa42079b4c0469dae18f1ee06802eb69195aee1740b243e2f69c86d38a5",
+        "url_hashes": [
+          "4642c89905a9e668a4c947b2502f07e18cea5a0e78d747d56561eea6f54c0e27"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c4ec4ec07bc57856",
+          "95cc6e1b81743a37",
+          "95cc6a1b85743a37",
+          "9694696b95843a3f",
+          "94966b6b9194366e",
+          "cded3212efe90846",
+          "aa556a952b549367",
+          "9c63279e23638c9e"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 8.6
+      }
+    },
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_02",
+      "asset_id": "context_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1c34faa42079b4c0469dae18f1ee06802eb69195aee1740b243e2f69c86d38a5",
+        "url_hashes": [
+          "4642c89905a9e668a4c947b2502f07e18cea5a0e78d747d56561eea6f54c0e27"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9ecd61f0c1b41ec5",
+          "9c9820f7d14f1ce3",
+          "c4ccc6f5eb521923",
+          "82c921bf9c9673c3",
+          "ee518a79c628d5aa",
+          "9629e65bc9b4807b",
+          "9f8e5887d84ef015",
+          "f00a0fe4cff01e66"
+        ],
+        "source_start_seconds": 12.0,
+        "source_duration_seconds": 12.533333
+      }
+    },
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_03",
+      "asset_id": "rpb_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b7dfd5a589cca74e72b8733dddd880067f1d68d1a23d1cec5e788df0f9bdede0",
+        "url_hashes": [
+          "8a08f8ca0971577efe59c305e98998e5e75a5a5001293c0d78553310166c49e6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "f34c3295a552ab56",
+          "f34c32956c758ad4",
+          "b04d4ff21b1a5a55",
+          "c51b62ec19c82ff1",
+          "b199545649cafa5a",
+          "b497979730383c39",
+          "b59f361730b0dc8c",
+          "b49f149de424cc8f"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 10.366667
+      }
+    },
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_04",
+      "asset_id": "para_tio_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "208a97b895cf116051e83432f7af00a5f6eeb45be83455265b376112722e79ef",
+        "url_hashes": [
+          "ed52aa80f9819805d8562fc130df9254a4095d959d7e66aec6eb83889c1c0e2c"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cdd3122e32ec274d",
+          "ad9c53231e4c5c73",
+          "a6c759b25b3c510d",
+          "958a68554f744f63",
+          "adda11354e6e5235",
+          "d989266622fd04fe",
+          "ce31234433ce3ccf",
+          "fd4203ff030505fe"
+        ],
+        "source_start_seconds": 30.0,
+        "source_duration_seconds": 11.8
+      }
+    },
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_05",
+      "asset_id": "roots_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "b7dfd5a589cca74e72b8733dddd880067f1d68d1a23d1cec5e788df0f9bdede0",
+        "url_hashes": [
+          "8a08f8ca0971577efe59c305e98998e5e75a5a5001293c0d78553310166c49e6"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c78f793831311c37",
+          "c7b3385c33c786a1",
+          "e9696c992593b592",
+          "efe1c33e39c03087",
+          "cfe0c11f3ae8c10f",
+          "c1e7934cb89d6299",
+          "ad8532b7f891037c",
+          "ccc96660e4b66b72"
+        ],
+        "source_start_seconds": 25.0,
+        "source_duration_seconds": 11.4
+      }
+    },
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_06",
+      "asset_id": "career_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "cfba4aa7ce91c99c44397f8a73257da76175b8c798d23c82c4d42fccbbc5860b",
+        "url_hashes": [
+          "bcdd2511fc30d4c0c47a7e82e89d0c556978d5dc2a1edd198e56d333661ead29"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b3823c4a697dc387",
+          "b3023c4aecedc23e",
+          "fa0f42fc6f8a8158",
+          "9669a4c869b2d937",
+          "919a3a61e965277c",
+          "919a3e61c931377a",
+          "919a3ae1c931377a",
+          "db39c66eb8cb2411"
+        ],
+        "source_start_seconds": 25.0,
+        "source_duration_seconds": 10.233333
+      }
+    },
+    {
+      "episode": "emicida_rpb_para_tio_retorno",
+      "shot_id": "shot_07",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-27T17:14:21Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6ef70594c87e33bc8c0cafe9e5cf25aa0d0432026b6964bc9aa61bcc2cb5ccab",
+        "url_hashes": [
+          "28b6a8f7156fbe647a0c22903d713fe2bcc8f9fa23b41f47b642a1c2514b28d5"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cdcc2631329d5367",
+          "d9e8273f2781da06",
+          "f1c92df0210f9a7c",
+          "c3833cf2239c1b1f",
+          "c3ef3cf027189833",
+          "d68021f0279bf976",
+          "d28d2cb32b3c9347",
+          "fe93b1f00ecc121e"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 15.633333
+      }
+    }
+  ]
+}
