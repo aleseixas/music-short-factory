@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"emicida-hook-0Ku4GHImSHo.mp4","url":"https://www.youtube.com/watch?v=0Ku4GHImSHo","credit":"Emicida / YouTube Official Artist Channel","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"context_visual","file":"emicida-context-3NuVBNeQw0I.mp4","url":"https://www.youtube.com/watch?v=3NuVBNeQw0I","credit":"Emicida / YouTube Official Artist Channel","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"rpb_visual","file":"emicida-rpb-PwjuVJcayQ8.mp4","url":"https://www.youtube.com/watch?v=PwjuVJcayQ8","credit":"Emicida / YouTube Official Artist Channel","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"para_tio_visual","file":"emicida-para-tio-mC_vrzqYfQc.mp4","url":"https://www.youtube.com/watch?v=mC_vrzqYfQc","credit":"Emicida / YouTube Official Artist Channel","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"roots_visual","file":"emicida-roots-UPmKghHymeA.mp4","url":"https://www.youtube.com/watch?v=UPmKghHymeA","credit":"Emicida / YouTube Official Artist Channel","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"career_visual","file":"emicida-career-ZZc3xpNFuH8.mp4","url":"https://www.youtube.com/watch?v=ZZc3xpNFuH8","credit":"Filtr Brasil / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff_visual","file":"emicida-payoff-umjYAo0Ej-Q.mp4","url":"https://www.youtube.com/watch?v=umjYAo0Ej-Q","credit":"MTV Brasil / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
