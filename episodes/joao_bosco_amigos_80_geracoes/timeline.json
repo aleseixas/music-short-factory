@@ -1,0 +1,20 @@
+{
+  "schema_version":1,
+  "smart_visual_pacing":{"enabled":true},
+  "background_music":{"profile":"driving-ambition-01","volume":0.1},
+  "sfx_cues":[],
+  "text_fx_cues":[
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"80 ANOS, SEM VIRAR MUSEU","accent_text":"80 ANOS","animation":"scale_bounce","position":"center","intensity":0.9},
+    {"segment":"chico","offset_seconds":0.1,"duration_seconds":1.1,"text":"CHICO + JOÃO BOSCO","accent_text":"CHICO","animation":"pop_in","position":"center","intensity":0.85},
+    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.1,"text":"CANÇÕES ATRAVESSAM GERAÇÕES","accent_text":"GERAÇÕES","animation":"fade_pop","position":"center","intensity":0.9}
+  ],
+  "shots":[
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0,"highlight":"80 ANOS"},
+    {"id":"shot_02","segment":"album","asset":"album_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":8},
+    {"id":"shot_03","segment":"chico","asset":"chico_visual","motion":"push_in","transition_out":"cut","source_start_seconds":10,"highlight":"CHICO BUARQUE"},
+    {"id":"shot_04","segment":"caetano","asset":"caetano_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":4},
+    {"id":"shot_05","segment":"ivete","asset":"ivete_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":15,"highlight":"CORSÁRIO"},
+    {"id":"shot_06","segment":"aldir","asset":"aldir_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":5,"highlight":"ALDIR BLANC"},
+    {"id":"shot_07","segment":"payoff","asset":"payoff_visual","motion":"push_in","transition_out":"cut","source_start_seconds":5,"highlight":"OUTRAS GERAÇÕES"}
+  ]
+}
