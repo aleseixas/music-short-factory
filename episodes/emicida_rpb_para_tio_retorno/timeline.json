@@ -1,20 +1,105 @@
 {
   "schema_version": 1,
-  "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile": "uplifting_documentary", "volume": 0.1},
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_i_knew_it_taylor_warm_sunset",
+    "volume": 0.1
+  },
   "sfx_cues": [],
   "text_fx_cues": [
-    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"EMICIDA VOLTOU ÀS RAÍZES?","accent_text":"RAÍZES","animation":"scale_bounce","position":"center","intensity":0.9},
-    {"segment":"rpb","offset_seconds":0.1,"duration_seconds":1.1,"text":"RAP BRASILEIRO","accent_text":"BRASILEIRO","animation":"pop_in","position":"center","intensity":0.85},
-    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.1,"text":"CRESCER SEM ABANDONAR A RAIZ","accent_text":"RAIZ","animation":"fade_pop","position":"center","intensity":0.9}
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "EMICIDA VOLTOU ÀS RAÍZES?",
+      "accent_text": "RAÍZES",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "rpb",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "RAP BRASILEIRO",
+      "accent_text": "BRASILEIRO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.85
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "CRESCER SEM ABANDONAR A RAIZ",
+      "accent_text": "RAIZ",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.9
+    }
   ],
   "shots": [
-    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0,"highlight":"DE VOLTA ÀS RAÍZES"},
-    {"id":"shot_02","segment":"context","asset":"context_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":0},
-    {"id":"shot_03","segment":"rpb","asset":"rpb_visual","motion":"push_in","transition_out":"cut","source_start_seconds":10,"highlight":"RAP BRASILEIRO"},
-    {"id":"shot_04","segment":"para_tio","asset":"para_tio_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":30},
-    {"id":"shot_05","segment":"roots","asset":"roots_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":10,"highlight":"RAÍZES"},
-    {"id":"shot_06","segment":"career","asset":"career_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":25},
-    {"id":"shot_07","segment":"payoff","asset":"payoff_visual","motion":"push_in","transition_out":"cut","source_start_seconds":20,"highlight":"CRESCER SEM ABANDONAR A RAIZ"}
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "hook_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 0,
+      "highlight": "DE VOLTA ÀS RAÍZES"
+    },
+    {
+      "id": "shot_02",
+      "segment": "context",
+      "asset": "context_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 12.0
+    },
+    {
+      "id": "shot_03",
+      "segment": "rpb",
+      "asset": "rpb_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 10,
+      "highlight": "RAP BRASILEIRO"
+    },
+    {
+      "id": "shot_04",
+      "segment": "para_tio",
+      "asset": "para_tio_visual",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 30
+    },
+    {
+      "id": "shot_05",
+      "segment": "roots",
+      "asset": "roots_visual",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 25.0,
+      "highlight": "RAÍZES"
+    },
+    {
+      "id": "shot_06",
+      "segment": "career",
+      "asset": "career_visual",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 25
+    },
+    {
+      "id": "shot_07",
+      "segment": "payoff",
+      "asset": "payoff_visual",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "source_start_seconds": 20,
+      "highlight": "CRESCER SEM ABANDONAR A RAIZ"
+    }
   ]
 }

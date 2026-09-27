@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "episode": "emicida_rpb_para_tio_retorno",
+  "error_code": "VISUAL_ASSET_INVALID",
+  "error_detail": "Asset de video invalido 'roots_visual': yt-dlp falhou ao obter o video id=UPmKghHymeA: ERROR: [youtube] UPmKghHymeA: Video unavailable",
+  "target_slot": "roots_visual",
+  "failing_file": "",
+  "selection_mode": "same_kind_eligible",
+  "selected_kind": "video",
+  "selected_name": "Emicida - Rua Augusta",
+  "selected_file": "youtube-PwjuVJcayQ8.mp4",
+  "selected_url": "https://www.youtube.com/watch?v=PwjuVJcayQ8",
+  "visual_score": 80.86,
+  "selection_score": 70.21,
+  "inspection_failures": [
+    "roots_visual[1]: candidato atual quebrado ignorado",
+    "roots_visual[3]: yt-dlp falhou ao obter o video id=3NuVBNeQw0I: tentativa primaria bloqueada: ERROR: [youtube] 3NuVBNeQw0I: Sign in to confirm you’re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  <url>  for how to manually pass cookies. Also see  <url>  for tips on effectively exporting YouTube cookies; fallback com cookies falhou: ERROR:  [download] Got error: 7929455 bytes read, 2549558 more expected"
+  ]
+}
