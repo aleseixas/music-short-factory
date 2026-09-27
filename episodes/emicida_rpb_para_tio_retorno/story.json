@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "O retorno de Emicida às raízes do rap em RPB e Para Tio",
+  "slug": "emicida_rpb_para_tio_retorno",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"Emicida voltou a olhar para as raízes do rap brasileiro — e colocou essa ideia no centro de RPB e Para Tio.","delivery":"hook"},
+    {"id":"context","text":"Depois de anos atravessando rap, MPB e projetos cada vez maiores, o retorno chama atenção justamente porque recoloca a cultura hip-hop e a própria trajetória dele no primeiro plano.","delivery":"curious"},
+    {"id":"rpb","text":"Em RPB, a sigla já funciona como manifesto: rap brasileiro tratado como identidade, memória e linguagem própria, não como cópia de uma cena de fora.","delivery":"reveal"},
+    {"id":"para_tio","text":"E Para Tio leva essa volta para um lugar mais pessoal. O título aproxima a música de memória, família e das pessoas que ajudaram a formar o Emicida antes da fama.","delivery":"emotional"},
+    {"id":"roots","text":"É por isso que esse momento pesa: não parece uma tentativa de apagar tudo o que veio depois. Parece um artista grande usando o tamanho que conquistou para revisitar de onde saiu.","delivery":"dramatic"},
+    {"id":"career","text":"Para quem acompanha desde as batalhas e das primeiras mixtapes, a conexão é imediata. Para quem conheceu Emicida nos discos mais recentes, é quase uma porta de entrada para entender a base da carreira.","delivery":"curious"},
+    {"id":"payoff","text":"No fim, RPB e Para Tio fazem o retorno funcionar menos como nostalgia e mais como declaração: crescer não precisa significar abandonar a raiz. Você prefere esse Emicida mais próximo do rap de origem?","delivery":"payoff"}
+  ]
+}
