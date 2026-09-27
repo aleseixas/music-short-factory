@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "episode": "joao_bosco_amigos_80_geracoes",
+  "recorded_at": "2026-09-27T19:11:18Z",
+  "visual_usage": [
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_01",
+      "asset_id": "hook_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "128c6c05290c86a58c0395120261e1f6e2808e7ff50cc03b3ffa823abb51db5a",
+        "url_hashes": [
+          "5869572291853883a5d6da8b3ab6a59c5378033e82abc4823980432e2cb4d69d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c8d9374e2a732c27",
+          "c81d66720fe932ce",
+          "c01b66730eeb398e",
+          "c01b65650ff32c9e",
+          "c4316c8b19e237fc",
+          "c01b67e41eee3307",
+          "e00f70f20fe63cd1",
+          "c11e67e00eef3893"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 10.133333
+      }
+    },
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_02",
+      "asset_id": "album_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "25baec319c37cd7acfec92a40f9888e42b97b5c4fc593adf4ac7ac4d76fa62c4",
+        "url_hashes": [
+          "4092e0cca10f9be51b59f891d82db9df318abbce4d098f46b195b8de128f3aa3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "eeba968d1d8454e4",
+          "eeba928d1dc454e1",
+          "eebb908d1d8454e6",
+          "eebb9e8d1cc054e0",
+          "ef9b9c8c1c8056e3",
+          "ef9bdc8c1cc054e1",
+          "ef9bd88c54c054e3",
+          "ef9bcacc7cc054a0"
+        ],
+        "source_start_seconds": 8.0,
+        "source_duration_seconds": 9.733333
+      }
+    },
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_03",
+      "asset_id": "chico_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "128c6c05290c86a58c0395120261e1f6e2808e7ff50cc03b3ffa823abb51db5a",
+        "url_hashes": [
+          "5869572291853883a5d6da8b3ab6a59c5378033e82abc4823980432e2cb4d69d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c11e66f00eef3893",
+          "c31c67e01ee7308f",
+          "c31c67c11ce7328f",
+          "c0d53d1a0f03727f",
+          "c0d53d1a0f03727f",
+          "d0d53d1a0f03727d",
+          "c0d53d1a0f03737d",
+          "c0d53d1a0f03727f"
+        ],
+        "source_start_seconds": 10.0,
+        "source_duration_seconds": 7.433333
+      }
+    },
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_04",
+      "asset_id": "caetano_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "128c6c05290c86a58c0395120261e1f6e2808e7ff50cc03b3ffa823abb51db5a",
+        "url_hashes": [
+          "5869572291853883a5d6da8b3ab6a59c5378033e82abc4823980432e2cb4d69d"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c0d13d1a0f03737f",
+          "d2d11d0e6f21326f",
+          "85923a6d6db23b4c",
+          "84923b7c79732a47",
+          "84937b5c69e46347",
+          "85b85b463e1b6ac3",
+          "81a829433e1f5e77",
+          "c6c6262b3d7c19d8"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 11.4
+      }
+    },
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_05",
+      "asset_id": "ivete_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "96b4b7c010ea8f40fc47c6a72b78f4ceaa7ed914242e4d79f1349d807fa012e7",
+        "url_hashes": [
+          "a419e6bf64e3bd715106b139ddefef2dbd9c61574561cce02d316467cb60b662"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "96c2692d92d3674e",
+          "96c26d2d92d3272e",
+          "93c36c3cc3d3262e",
+          "93c36c3c93d3264e",
+          "9b59a445aab74aa9",
+          "a35caf5152871d5a",
+          "a15ea754aa955aa9",
+          "b04fa05e6bb44aad"
+        ],
+        "source_start_seconds": 15.0,
+        "source_duration_seconds": 8.5
+      }
+    },
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_06",
+      "asset_id": "aldir_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2897af7547161e88d355cca72762a10ef8e1c97126efe1977e58cc257e7e24bc",
+        "url_hashes": [
+          "ae7e73dae8f1d3da7a88e026c086e7ed451ec6347d92a30c44de75cb9b78ae0e"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "88fed3908d6fbe00",
+          "df1139c3ccac7330",
+          "db113d81db8c695c",
+          "cd4939a7d38c2674",
+          "8dce780dc4b684ed",
+          "8dca780dd4b684ed",
+          "a4a12f6bd04717e9",
+          "8dce780dc6b6846d"
+        ],
+        "source_start_seconds": 5.0,
+        "source_duration_seconds": 10.9
+      }
+    },
+    {
+      "episode": "joao_bosco_amigos_80_geracoes",
+      "shot_id": "shot_07",
+      "asset_id": "payoff_visual",
+      "recorded_at": "2026-09-27T19:11:18Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "894cfc9a32f97d43358746cf9929c58351f685a9da4c8e3301cf4c6d57f1065e",
+        "url_hashes": [
+          "575e9af67cd7ec94b817233a3614609b6c79416a62ea2e2a8999f9d12d1c7030"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c9d136cc64376267",
+          "e22f22ff10d2dc31",
+          "c9f872c73c3132cc",
+          "c9f874c72c3136c6",
+          "9796b5257227564c",
+          "e1a1bd3c3c2b434e",
+          "89db7216554c7a99",
+          "89da731b740d6a9a"
+        ],
+        "source_start_seconds": 20.0,
+        "source_duration_seconds": 12.566667
+      }
+    }
+  ]
+}
