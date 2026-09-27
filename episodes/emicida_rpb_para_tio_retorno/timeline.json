@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile": "uplifting_documentary", "volume": 0.1},
+  "sfx_cues": [],
+  "text_fx_cues": [],
+  "shots": []
+}
