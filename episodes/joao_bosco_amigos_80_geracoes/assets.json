@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"joao-bosco-hook-j9zai1YAcz8.mp4","url":"https://www.youtube.com/watch?v=j9zai1YAcz8","credit":"Paulo Sergio Mariani / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"album_visual","file":"joao-bosco-album-n0bKAQhGoDI.mp4","url":"https://www.youtube.com/watch?v=n0bKAQhGoDI","credit":"Camille Bertault Officielle / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"chico_visual","file":"joao-bosco-kid-NMmp2SKtjlM.mp4","url":"https://www.youtube.com/watch?v=NMmp2SKtjlM","credit":"CasaDeSambaVEVO / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"caetano_visual","file":"joao-bosco-papel-cQ0v4NO-3cI.mp4","url":"https://www.youtube.com/watch?v=cQ0v4NO-3cI","credit":"Monstros da Música Brasileira Shorts / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"ivete_visual","file":"joao-bosco-corsario-s9Ye-i8fIWk.mp4","url":"https://www.youtube.com/watch?v=s9Ye-i8fIWk","credit":"jhom guaceroni / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"aldir_visual","file":"joao-bosco-mestre-ONXPKs-xRGQ.mp4","url":"https://www.youtube.com/watch?v=ONXPKs-xRGQ","credit":"Bossa Nova Clube / YouTube","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff_visual","file":"joao-bosco-mestre-ajjAV1bHHX4.mp4","url":"https://www.youtube.com/watch?v=ajjAV1bHHX4","credit":"JoaoBoscoVEVO / YouTube","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
