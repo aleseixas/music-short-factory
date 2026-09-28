@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {"id":"hook_visual","file":"pedro-ricky-nfl-halftime.mp4","url":"https://www.youtube.com/results?search_query=Pedro+Sampaio+Ricky+Martin+Pikito+Pikito+NFL+Rio","credit":"YouTube search / NFL Rio coverage","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"premiere_visual","file":"pedro-ricky-pikito-premiere.mp4","url":"https://www.youtube.com/results?search_query=Pikito+Pikito+Pedro+Sampaio+Ricky+Martin+Maracana","credit":"YouTube search / performance coverage","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"mix_visual","file":"pedro-sampaio-performance.mp4","url":"https://www.youtube.com/results?search_query=Pedro+Sampaio+performance+2026","credit":"YouTube search","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"ricky_visual","file":"ricky-martin-performance.mp4","url":"https://www.youtube.com/results?search_query=Ricky+Martin+performance+2026","credit":"YouTube search","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"show_visual","file":"nfl-rio-halftime.mp4","url":"https://www.youtube.com/results?search_query=NFL+Rio+halftime+Pedro+Sampaio+Ricky+Martin+2026","credit":"YouTube search / NFL Rio coverage","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"dance_visual","file":"pikito-dancers.mp4","url":"https://www.youtube.com/results?search_query=Pikito+Pikito+dancers+Parris+Goebel","credit":"YouTube search / performance coverage","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff_visual","file":"pedro-ricky-maracana.mp4","url":"https://www.youtube.com/results?search_query=Pedro+Sampaio+Ricky+Martin+Maracana+NFL","credit":"YouTube search / performance coverage","license":"","focus":{"x":0.5,"y":0.5}}
+  ]
+}
