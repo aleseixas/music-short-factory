@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "title": "Pedro Sampaio levou o funk ao halftime da NFL com Ricky Martin",
+  "slug": "pedro_sampaio_ricky_martin_pikito_pikito_nfl",
+  "target_duration_seconds": 72,
+  "segments": [
+    {"id":"hook","text":"Pedro Sampaio estreou uma música com Ricky Martin no gramado do Maracanã — em pleno show do intervalo da NFL.","delivery":"hook"},
+    {"id":"premiere","text":"Pikito Pikito nasceu para esse encontro: a faixa foi apresentada ao vivo no domingo, 27 de setembro, durante Ravens contra Cowboys, no Rio.","delivery":"curious"},
+    {"id":"mix","text":"E olha a mistura: pop, funk, samba, reggaeton, mambo e salsa na mesma faixa. Pedro chamou a parceria de um encontro de ritmos, culturas e gerações.","delivery":"reveal"},
+    {"id":"ricky","text":"O mais doido é que Ricky Martin queria trabalhar com Pedro havia algum tempo e preferiu criar uma música inédita, em vez de só dividir um hit antigo no palco.","delivery":"dramatic"},
+    {"id":"show","text":"No halftime, Ricky abriu com Livin' la Vida Loca, Pedro passou por faixas próprias e os dois se encontraram justamente em Pikito Pikito.","delivery":"curious"},
+    {"id":"dance","text":"A estreia ainda ganhou dezenas de bailarinos e coreografia de Parris Goebel, conectando o funk brasileiro a uma produção pensada para uma vitrine internacional.","delivery":"dramatic"},
+    {"id":"payoff","text":"E aí está a virada: Pedro não levou só uma participação brasileira para a NFL. Ele usou o Maracanã para lançar uma faixa nova com um dos maiores nomes do pop latino. Você esperava essa dupla?","delivery":"payoff"}
+  ]
+}
