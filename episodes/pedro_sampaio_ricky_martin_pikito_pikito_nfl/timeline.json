@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {"enabled": true},
+  "background_music": {"profile":"external_iris_sincere_love","volume":0.1},
+  "sfx_cues": [],
+  "text_fx_cues": [
+    {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"FUNK NO HALFTIME DA NFL","accent_text":"NFL","animation":"scale_bounce","position":"center","intensity":0.9},
+    {"segment":"mix","offset_seconds":0.1,"duration_seconds":1.1,"text":"FUNK + SAMBA + LATINO","accent_text":"FUNK","animation":"pop_in","position":"center","intensity":0.85},
+    {"segment":"payoff","offset_seconds":0.1,"duration_seconds":1.1,"text":"DO MARACANÃ PRO MUNDO","accent_text":"MUNDO","animation":"fade_pop","position":"center","intensity":0.9}
+  ],
+  "shots": [
+    {"id":"shot_01","segment":"hook","asset":"hook_visual","motion":"push_in","transition_out":"cut","source_start_seconds":0,"highlight":"NFL NO MARACANÃ"},
+    {"id":"shot_02","segment":"premiere","asset":"premiere_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":5},
+    {"id":"shot_03","segment":"mix","asset":"mix_visual","motion":"push_in","transition_out":"cut","source_start_seconds":8,"highlight":"FUNK + RITMOS LATINOS"},
+    {"id":"shot_04","segment":"ricky","asset":"ricky_visual","motion":"pan_right","transition_out":"cut","source_start_seconds":5},
+    {"id":"shot_05","segment":"show","asset":"show_visual","motion":"pull_out","transition_out":"cut","source_start_seconds":10,"highlight":"PIKITO PIKITO"},
+    {"id":"shot_06","segment":"dance","asset":"dance_visual","motion":"pan_left","transition_out":"cut","source_start_seconds":5,"highlight":"PARRIS GOEBEL"},
+    {"id":"shot_07","segment":"payoff","asset":"payoff_visual","motion":"push_in","transition_out":"cut","source_start_seconds":5,"highlight":"FUNK BRASILEIRO"}
+  ]
+}
