@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "smart_visual_pacing": {"enabled": true},
-  "background_music": {"profile":"external_iris_sincere_love","volume":0.1},
+  "background_music": {"profile":"external_oke_funkhouser","volume":0.1},
   "sfx_cues": [],
   "text_fx_cues": [
     {"segment":"hook","offset_seconds":0.1,"duration_seconds":1.2,"text":"FUNK NO HALFTIME DA NFL","accent_text":"NFL","animation":"scale_bounce","position":"center","intensity":0.9},
