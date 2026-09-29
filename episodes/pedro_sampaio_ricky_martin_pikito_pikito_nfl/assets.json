@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "assets": [
-    {"id":"hook_visual","file":"pedro-ricky-nfl-halftime.mp4","url":"https://www.youtube.com/results?search_query=Pedro+Sampaio+Ricky+Martin+Pikito+Pikito+NFL+Rio","credit":"YouTube search / NFL Rio coverage","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"premiere_visual","file":"pedro-ricky-pikito-premiere.mp4","url":"https://www.youtube.com/results?search_query=Pikito+Pikito+Pedro+Sampaio+Ricky+Martin+Maracana","credit":"YouTube search / performance coverage","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"mix_visual","file":"pedro-sampaio-performance.mp4","url":"https://www.youtube.com/results?search_query=Pedro+Sampaio+performance+2026","credit":"YouTube search","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"ricky_visual","file":"ricky-martin-performance.mp4","url":"https://www.youtube.com/results?search_query=Ricky+Martin+performance+2026","credit":"YouTube search","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"show_visual","file":"nfl-rio-halftime.mp4","url":"https://www.youtube.com/results?search_query=NFL+Rio+halftime+Pedro+Sampaio+Ricky+Martin+2026","credit":"YouTube search / NFL Rio coverage","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"dance_visual","file":"pikito-dancers.mp4","url":"https://www.youtube.com/results?search_query=Pikito+Pikito+dancers+Parris+Goebel","credit":"YouTube search / performance coverage","license":"","focus":{"x":0.5,"y":0.5}},
-    {"id":"payoff_visual","file":"pedro-ricky-maracana.mp4","url":"https://www.youtube.com/results?search_query=Pedro+Sampaio+Ricky+Martin+Maracana+NFL","credit":"YouTube search / performance coverage","license":"","focus":{"x":0.5,"y":0.5}}
+    {"id":"hook_visual","file":"pedro-ricky-nfl-halftime.mp4","url":"https://www.instagram.com/reel/DdzqE6nh-Cn/","credit":"Billboard Brasil / Instagram — NFL Rio performance","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"premiere_visual","file":"pedro-ricky-pikito-premiere.mp4","url":"https://www.instagram.com/reel/DdzrIxlP5JW/","credit":"Billboard Brasil / Instagram — Pikito Pikito live debut","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"mix_visual","file":"pedro-sampaio-performance.mp4","url":"https://www.instagram.com/reel/DdzqsxJshaz/","credit":"Billboard Brasil / Instagram — NFL Rio performance","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"ricky_visual","file":"ricky-martin-performance.mp4","url":"https://t.co/033EL1JXrV","credit":"NFL on DAZN / X — Ricky Martin Rio performance","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"show_visual","file":"nfl-rio-halftime.mp4","url":"https://t.co/wO4MhmHRpJ","credit":"NFL on DAZN / X — Pedro Sampaio & Ricky Martin halftime","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"dance_visual","file":"pikito-dancers.mp4","url":"https://t.co/RZbiqon7Qn","credit":"Central Reality / X — NFL Rio performance","license":"","focus":{"x":0.5,"y":0.5}},
+    {"id":"payoff_visual","file":"pedro-ricky-maracana.mp4","url":"https://t.co/GHpFYPyrLT","credit":"Ricky Martin / X — Maracana backstage/performance context","license":"","focus":{"x":0.5,"y":0.5}}
   ]
 }
