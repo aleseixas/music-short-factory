@@ -8,7 +8,7 @@ Esta regra define o contrato de uma execução do Além do Hit / Music Short Fac
 
 A execução NÃO é considerada concluída só porque um candidato foi escolhido, autorado, bloqueado ou reprovado. Falha de candidato não é automaticamente falha do job.
 
-No início registre `EXECUTION_START_HEAD`, `QUEUES_AT_START`, `EXECUTION_SLUG=UNSET` e `DELIVERED_EPISODE=NO`.
+No inicio registre `EXECUTION_START_HEAD`, `request_id`, `EXECUTION_SLUG` e `DELIVERED_EPISODE=NO` conforme a autoridade compartilhada.
 
 ## 2. Anti-duplicação absoluta
 
@@ -16,23 +16,15 @@ Nunca publique novamente episódio/slug que já tenha qualquer evidência de pub
 
 Duplicate de candidata descarta somente a candidata e obriga a continuar o pool. Episódio já publicado nunca satisfaz uma nova execução.
 
-## 3. Candidato ativo e substituição segura
+## 3. Candidato ativo, estado compartilhado e substituicao segura
 
-`EXECUTION_SLUG` identifica o candidato ativo, não uma prisão irreversível da chamada.
+<!-- pipeline-contract: config/pipeline-contract.json -->
 
-Depois de iniciar autoria, tente reparar o MESMO slug enquanto houver correção materialmente segura e razoável. Porém, se esse candidato se tornar **PRE_PUBLISH_UNRECOVERABLE** e houver evidência positiva de `EVER_PUBLISHED_OR_ATTEMPTED=NO`, ele pode ser abandonado sem publicação e a execução DEVE voltar à seleção editorial para criar um NOVO candidato.
+Contrato tecnico obrigatorio: [`docs/pipeline-contract.md`](../docs/pipeline-contract.md), baseado em [`config/pipeline-contract.json`](../config/pipeline-contract.json). Use o estado persistido e os triggers reais antes de decidir continuidade.
 
-Considere `PRE_PUBLISH_UNRECOVERABLE` quando, antes de qualquer publisher de plataforma iniciar, o candidato falhar definitivamente em gate editorial/técnico, media preflight, assets, render/schema ou outra validação e as tentativas/correções seguras previstas tiverem sido esgotadas ou a causa tornar aquele candidato inviável.
+Consulte `python scripts/pipeline_control.py status` e a autoridade compartilhada para obter `request_id`, `EXECUTION_SLUG` e `can_create_new_episode`. Retome o slug ativo do canal. A listagem de queues pode ser truncada e nunca prova ausencia de trabalho ou autorizacao para outro episodio.
 
-Ao abandonar candidato pré-publicação:
-- marque-o `ABANDONED_PRE_PUBLISH`;
-- nunca crie queue para ele depois;
-- limpe somente a identidade operacional do candidato: `EXECUTION_SLUG=UNSET`;
-- volte ao pool e escolha tema realmente novo;
-- refaça duplicate/history checks completos;
-- continue a MESMA execução.
-
-Isso NÃO é permitido se qualquer publisher já iniciou ou puder ter iniciado.
+Depois de iniciar autoria, repare o mesmo slug enquanto houver correcao segura. Se ele se tornar inviavel antes da publicacao, so abandone e substitua quando a autoridade compartilhada confirmar por CAS o encerramento da reserva, nenhum publisher tiver iniciado ou puder ter iniciado e `can_create_new_episode` for verdadeiro. Sem essa confirmacao, preserve o slug e reporte o bloqueio concreto; nao crie outro candidato para o mesmo slot. Um candidato abandonado nunca deve receber queue posteriormente.
 
 ## 4. Limites
 
@@ -42,7 +34,7 @@ Use no máximo 5 candidatos autorados/substitutos por execução, salvo regra ma
 
 ## 5. Publicação fecha a possibilidade de substituição
 
-Imediatamente antes da queue, reconstrua novamente todo o histórico do slug. Só publique se `EVER_PUBLISHED_OR_ATTEMPTED=NO`.
+Imediatamente antes da queue, valide generation, request e reserva na autoridade compartilhada. So publique se `EVER_PUBLISHED_OR_ATTEMPTED=NO` e o CAS permitir.
 
 No instante em que qualquer publisher de plataforma iniciar ou puder ter iniciado:
 - `EVER_PUBLISHED_OR_ATTEMPTED=YES`;
@@ -66,7 +58,7 @@ A execução só pode terminar normalmente quando ocorrer um destes estados:
 
 - `PASS -> queue -> publicação -> terminal -> fim`
 - `FAIL recuperável -> reparar mesmo candidato -> revalidar`
-- `FAIL pré-publicação irrecuperável -> abandonar candidato -> novo tema -> duplicate check -> autorar -> validar`
+- `FAIL pre-publicacao irrecuperavel -> reconciliar e encerrar reserva por CAS -> novo tema somente se autorizado -> duplicate check -> autorar -> validar`
 
 ## 8. Regra de ouro
 
@@ -76,7 +68,7 @@ A execução só pode terminar normalmente quando ocorrer um destes estados:
 
 **DUPLICATE = DESCARTAR E CONTINUAR.**
 
-**PRE_PUBLISH_UNRECOVERABLE + NENHUM PUBLISHER INICIADO = SUBSTITUIR POR NOVO CANDIDATO.**
+**PRE_PUBLISH_UNRECOVERABLE + NENHUM PUBLISHER INICIADO + CAS DE LIBERACAO CONFIRMADO = PODE SUBSTITUIR.**
 
 **QUALQUER PUBLISHER INICIADO = ZERO REPUBLICAÇÃO E ZERO SUBSTITUTO AUTOMÁTICO PARA O MESMO SLOT.**
 

@@ -55,8 +55,11 @@ def load_timeline(
     path: Path,
     story: Story,
     assets: dict[str, AssetSpec],
+    *,
+    data: dict | None = None,
+    diagnostic_partial: bool = False,
 ) -> TimelineSpec:
-    data = load_json(path)
+    data = load_json(path) if data is None else data
     validate_schema(data, path)
     raw_shots = data.get("shots")
     if not isinstance(raw_shots, list) or not raw_shots:
@@ -159,12 +162,12 @@ def load_timeline(
 
     expected_segments = [segment.id for segment in story.segments]
     actual_segments = [shot.segment_id for shot in shots]
-    if actual_segments != expected_segments:
+    if not diagnostic_partial and actual_segments != expected_segments:
         raise RuntimeError(
             "A timeline precisa ter exatamente um plano por segmento e na mesma ordem. "
             f"Esperado: {expected_segments}; recebido: {actual_segments}"
         )
-    if shots[-1].transition_out != "cut":
+    if not diagnostic_partial and shots[-1].transition_out != "cut":
         raise RuntimeError("O ultimo plano precisa terminar com transition_out='cut'.")
     return TimelineSpec(
         shots=tuple(shots),

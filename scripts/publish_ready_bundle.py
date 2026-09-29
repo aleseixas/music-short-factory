@@ -18,6 +18,13 @@ from typing import Any, Mapping, Sequence
 
 from PIL import Image, UnidentifiedImageError
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from publishing.attempts import AttemptStore
+from scripts.workflow_diagnostic import write_report
+
 
 SCHEMA_VERSION = 1
 MAX_VIDEO_BYTES = 4_000_000_000
@@ -457,6 +464,10 @@ def _file_manifest(path: Path, relative: PurePosixPath, role: str) -> dict[str, 
     }
 
 
+from engine.mutation_transaction import fenced_mutation
+
+
+@fenced_mutation(slug_arg="episode", approve_bundle=True)
 def create_bundle(
     project_root: Path,
     episode: str,
@@ -477,6 +488,7 @@ def create_bundle(
         or os.environ.get("PREFLIGHT_SOURCE_SHA")
         or os.environ.get("GITHUB_SHA")
     )
+    AttemptStore(project_root).assert_unstarted(episode)
     settings = _load_settings(project_root)
     target = bundle_dir if bundle_dir.is_absolute() else project_root / bundle_dir
     target = target.resolve()
@@ -532,7 +544,8 @@ def create_bundle(
         manifest = {
             "schema_version": SCHEMA_VERSION,
             "episode": episode,
-            "source": {"run_id": run_id, "sha": sha},
+            "source": {"run_id": run_id, "sha": sha,
+                       **({"request_id": os.environ["PIPELINE_REQUEST_ID"]} if os.environ.get("PIPELINE_REQUEST_ID") else {})},
             "created_at": datetime.now(timezone.utc).isoformat(timespec="seconds").replace(
                 "+00:00", "Z"
             ),
@@ -648,6 +661,9 @@ def _validate_manifest_header(
             f"Bundle pertence ao source run {manifest_run_id}, nao ao run solicitado {source_run_id}."
         )
     _validate_source_sha(str(source.get("sha") or ""))
+    expected_request = os.environ.get("PIPELINE_REQUEST_ID", "")
+    if expected_request and source.get("request_id") != expected_request:
+        raise BundleError("Bundle request_id differs from the exact queued request.")
     media = manifest.get("media")
     if not isinstance(media, Mapping):
         raise BundleError("manifest.json nao contem metadados media validos.")
@@ -722,6 +738,7 @@ def _assert_safe_destination(project_root: Path, destination: Path) -> None:
         raise BundleError(f"Destino existente nao pode ser link simbolico: {destination}")
 
 
+@fenced_mutation(slug_arg="episode")
 def restore_bundle(
     project_root: Path,
     episode: str,
@@ -732,6 +749,7 @@ def restore_bundle(
     project_root = project_root.resolve()
     episode = _validate_slug(episode)
     requested_run_id = _validate_run_id(source_run_id)
+    AttemptStore(project_root).assert_unstarted(episode)
     settings = _load_settings(project_root)
     bundle = bundle_dir if bundle_dir.is_absolute() else project_root / bundle_dir
     bundle = bundle.absolute()
@@ -788,6 +806,25 @@ def restore_bundle(
     return restored
 
 
+def verify_staged_bundle(project_root: Path, episode: str, source_run_id: str, request_id: str) -> None:
+    """A live publisher must send the exact approved bytes, including a local CLI."""
+    project_root = project_root.resolve()
+    episode = _validate_slug(episode)
+    bundle = project_root / ".publish-ready"
+    manifest = _json_object(bundle / "manifest.json", "manifest.json")
+    _validate_manifest_header(manifest, episode, _validate_run_id(source_run_id))
+    if manifest.get("source", {}).get("request_id") != request_id:
+        raise BundleError("Live bundle belongs to another request_id.")
+    files = _manifest_file_map(manifest, episode)
+    _verify_bundle_files(bundle, episode, files)
+    settings = _load_settings(project_root)
+    for role, entry in files.items():
+        destination = _destination_for_role(project_root, settings, episode, role)
+        _require_regular_file(destination, role)
+        if destination.stat().st_size != int(entry["size_bytes"]) or _sha256(destination) != entry["sha256"]:
+            raise BundleError(f"Live staged bytes differ from the approved bundle: {role}")
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Cria ou restaura um bundle de episodio validado para publicacao."
@@ -831,8 +868,12 @@ def main(argv: Sequence[str] | None = None) -> int:
                 args.bundle_dir,
                 source_run_id=args.source_run_id,
             )
-    except (BundleError, OSError) as exc:
-        print(f"PUBLISH_READY_BUNDLE_ERROR: {exc}", file=sys.stderr)
+    except Exception as exc:
+        detail = str(exc) if isinstance(exc, (BundleError, OSError, RuntimeError)) else exc.__class__.__name__
+        print(f"PUBLISH_READY_BUNDLE_ERROR: {detail}", file=sys.stderr)
+        write_report(args.project_root, stage="BUNDLE_" + args.command.upper(), slug=args.episode,
+                     error_code="PUBLISH_READY_BUNDLE_INVALID", error_class="local_preflight",
+                     recoverable=False, target=str(args.bundle_dir), detail=detail)
         return 1
     return 0
 

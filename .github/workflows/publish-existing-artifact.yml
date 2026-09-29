@@ -17,7 +17,7 @@ on:
           - facebook
           - tiktok
       source_run_id:
-        description: Successful Episode media preflight run ID containing publish-ready-<episode>
+        description: Successful Episode media preflight run with publish-ready-<episode>
         required: true
         type: string
   push:
@@ -110,17 +110,74 @@ jobs:
           echo "source_run_id=$source_run_id" >> "$GITHUB_OUTPUT"
           echo "Publish-only request: episode=$episode platform=$platform source_run_id=$source_run_id"
 
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: RESOLVE
+          PIPELINE_SLUG: ${{ steps.resolve.outputs.episode }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
+
   publish-only:
+    permissions:
+      contents: write
+      actions: read
+    concurrency:
+      group: publish-episode-${{ needs.resolve.outputs.episode }}
+      cancel-in-progress: false
     needs: resolve
     runs-on: ubuntu-latest
     env:
       EPISODE: ${{ needs.resolve.outputs.episode }}
       PLATFORM: ${{ needs.resolve.outputs.platform }}
       SOURCE_RUN_ID: ${{ needs.resolve.outputs.source_run_id }}
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+
+      - name: Verify media preflight artifact provenance
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          # The queue job dispatches this workflow before its own source run completes.
+          # Only this exact run may authorize publication; pending is not failure.
+          deadline=$((SECONDS + 900))
+          while true; do
+            run_info="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" \
+              --jq '[.name, .event, .head_branch, .status, (.conclusion // "")] | @tsv')"
+            IFS=$'\t' read -r source_name source_event source_branch source_status source_conclusion <<< "$run_info"
+            if [[ "$source_name" != "Episode media preflight" || "$source_event" != "push" || "$source_branch" != "main" ]]; then
+              echo "::error::PREFLIGHT_ARTIFACT_ORIGIN_INVALID: source must be Episode media preflight push on main."
+              exit 1
+            fi
+            if [[ "$source_status" == "completed" ]]; then
+              if [[ "$source_conclusion" != "success" ]]; then
+                echo "::error::PREFLIGHT_ARTIFACT_RUN_FAILED: source run concluded $source_conclusion."
+                exit 1
+              fi
+              break
+            fi
+            if (( SECONDS >= deadline )); then
+              echo "::error::PREFLIGHT_SOURCE_TIMEOUT: source run is still $source_status; no publisher started."
+              exit 1
+            fi
+            echo "Waiting for source run $SOURCE_RUN_ID ($source_status)."
+            sleep 15
+          done
 
       - name: Download validated publish-ready artifact
         uses: actions/download-artifact@v7
@@ -139,8 +196,8 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Verify and stage exact preflight artifact
-        run: python scripts/publish_ready_bundle.py restore "$EPISODE" --bundle-dir .publish-ready --source-run-id "$SOURCE_RUN_ID"
+      - name: Verify immutable preflight snapshot
+        run: python publish.py "$EPISODE" --platform "$PLATFORM" --dry-run
 
       - name: Preflight Facebook credentials
         if: ${{ needs.resolve.outputs.platform == 'facebook' }}
@@ -216,3 +273,27 @@ jobs:
         run: |
           set -euo pipefail
           python publish.py "$EPISODE" --platform "$PLATFORM" --live
+
+      - name: Persist final publication outcome
+        if: always()
+        env:
+          PUBLICATION_JOB_RESULT: ${{ job.status }}
+        run: python scripts/pipeline_workflow.py publisher-result "$EPISODE" --result "$PUBLICATION_JOB_RESULT"
+
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: PUBLISH_ONLY
+          PIPELINE_SLUG: ${{ env.EPISODE }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7

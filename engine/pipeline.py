@@ -29,8 +29,14 @@ from .utils import safe_child
 from .visual_usage import record_visual_usage_safely
 
 
+from .mutation_transaction import fenced_mutation
+
+
+@fenced_mutation(slug_arg="episode_name")
 async def build_video(project_root: Path, episode_name: str) -> Path:
     project_root = project_root.resolve()
+    from .pipeline_state import PipelineStore
+    PipelineStore(project_root).assert_mutation_allowed(episode_name)
     config = load_project_config(project_root / "config" / "config.json")
     style = load_style_config(project_root / "config" / "style.json")
     episode = load_episode(project_root, config.paths.episodes_dir, episode_name)

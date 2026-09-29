@@ -3,12 +3,22 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 import sys
+import uuid
 from collections.abc import Sequence
 
 from engine.config import load_project_config
 from engine.duplicates import find_duplicate_candidate, format_duplicate
 from engine.episode import create_episode
+from engine.pipeline_state import PipelineStore
 from publishing.metadata import create_post_template
+from engine.mutation_transaction import fenced_mutation
+
+
+@fenced_mutation(slug_arg="episode_slug")
+def _create_authored_episode(project_root, episodes_dir, episode_slug, content):
+    destination = create_episode(project_root, episodes_dir, episode_slug, content=content)
+    create_post_template(destination)
+    return destination
 
 
 def main(
@@ -43,12 +53,19 @@ def main(
             return 2
 
         config = load_project_config(project_root / "config" / "config.json")
-        destination = create_episode(
+        state = PipelineStore(project_root)
+        existing = state.status(args.episode)
+        identity = existing["request_id"] if state.episode_path(args.episode).exists() else uuid.uuid4().hex
+        current = state.start(args.episode, identity)
+        if current["stage"] == "CANDIDATE":
+            state.transition(args.episode, "UNIQUE")
+        if state.status(args.episode)["stage"] == "UNIQUE":
+            state.transition(args.episode, "AUTHORING")
+        destination = _create_authored_episode(
             project_root,
             config.paths.episodes_dir,
             args.episode,
         )
-        create_post_template(destination)
     except RuntimeError as exc:
         print(f"ERRO: {exc}", file=sys.stderr)
         return 1

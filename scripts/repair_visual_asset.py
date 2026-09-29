@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
+from copy import deepcopy
 import json
 import re
 import sys
@@ -11,8 +13,10 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from engine.visual_repetition import load_visual_history
+from engine.visual_candidates import normalize_visual_candidate
+from engine.models import AssetSpec
+from check_episode_media import _visual_aliases
 import resolve_visual_candidates as legacy
-import resolve_visual_candidates_web_auth as web_auth
 
 
 VISUAL_ERROR_CODES = {
@@ -20,12 +24,60 @@ VISUAL_ERROR_CODES = {
     "VISUAL_ASSET_HTTP_404",
     "VISUAL_ASSET_INVALID",
     "MEDIA_PROBE_OR_CODEC_ERROR",
+    "VIDEO_SOURCE_WINDOW_INVALID",
+    "INTRA_EPISODE_VISUAL_REUSE",
+    "SHOT_REFERENCES_MISSING_ASSET",
+    "FIRST_EDITORIAL_VISUAL_NOT_VIDEO",
 }
 QUOTED_FILE_PATTERNS = (
     re.compile(r"asset de (?:imagem|video) ['\"]([^'\"]+)['\"]", re.IGNORECASE),
     re.compile(r"asset ['\"]([^'\"]+)['\"]", re.IGNORECASE),
     re.compile(r"arquivo ['\"]([^'\"]+)['\"]", re.IGNORECASE),
 )
+
+
+@contextmanager
+def _web_resolver_context(slug: str):
+    """Install authenticated strict inspection only for this repair operation.
+
+    The legacy CLI extension mutates module hooks on import. Library callers and
+    subsequent episodes must see their previous resolver after success or error.
+    """
+    import resolve_visual_candidates_web as resolver
+    import engine.visual_search_web as web_engine
+
+    missing = object()
+    names = (
+        (legacy, ("_candidate_result", "_candidate_source_key", "_inspect_candidate", "_score_record",
+                  "_asset_entry", "_metadata_priority", "_metadata_priority_original")),
+        (resolver, ("_install_youtube_po_patch", "_inspect_candidate", "_score_record", "CURRENT_EPISODE")),
+        (web_engine, ("_yt_dlp_api", "_yt_dlp_api_original", "_youtube_auth_configured")),
+    )
+    previous = [(module, name, getattr(module, name, missing)) for module, attributes in names for name in attributes]
+    caches = [(getattr(resolver, name), deepcopy(getattr(resolver, name)))
+              for name in ("WEB_DOWNLOADED_PATHS", "SELECTED_VIDEO_SEGMENTS", "INSPECTED_VIDEO_SEGMENTS")]
+    try:
+        import resolve_visual_candidates_web_auth as web_auth
+        # Reapply explicitly: this module may already be cached after an earlier
+        # scoped repair restored its side effects.
+        resolver._install_youtube_po_patch = web_auth._install_po_then_cookie
+        resolver._inspect_candidate = web_auth._inspect_candidate_with_safe_video_fallback
+        resolver._score_record = web_auth._score_record_with_episode_reuse_penalty
+        resolver.CURRENT_EPISODE = slug
+        for cache, _value in caches:
+            cache.clear()
+        resolver._install_patches()
+        yield
+    finally:
+        for module, name, value in previous:
+            if value is missing:
+                if hasattr(module, name):
+                    delattr(module, name)
+            else:
+                setattr(module, name, value)
+        for cache, value in caches:
+            cache.clear()
+            cache.update(value)
 
 
 def _load_json(path: Path) -> dict:
@@ -113,7 +165,7 @@ def _candidate_identity(candidate: dict) -> tuple[str, str]:
     )
 
 
-def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset: dict, timeline: dict):
+def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset: dict, timeline: dict, *, used_aliases=frozenset()):
     candidates = slot.get("candidates")
     shots = timeline.get("shots")
     if not isinstance(candidates, list) or not candidates:
@@ -143,6 +195,7 @@ def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset
         shot for shot in shots
         if isinstance(shot, dict) and str(shot.get("asset") or "") == slot_id
     ]
+    opening = bool(shots and str(shots[0].get("asset") or "") == slot_id)
     prepared_slot = dict(
         slot,
         _shot=slot_shots[0] if slot_shots else {},
@@ -156,6 +209,13 @@ def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset
     for index, candidate in enumerate(candidates, start=1):
         if not isinstance(candidate, dict):
             continue
+        try:
+            candidate = normalize_visual_candidate(candidate)
+        except ValueError as exc:
+            failures.append(f"{slot_id}[{index}]: {exc}")
+            continue
+        if opening and candidate["kind"] != "video":
+            continue
         identity_url, identity_file = _candidate_identity(candidate)
         if current_url and identity_url and identity_url == current_url:
             failures.append(f"{slot_id}[{index}]: candidato atual quebrado ignorado")
@@ -167,6 +227,10 @@ def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset
             result, inspection, reasons = legacy._inspect_candidate(
                 project_root, prepared_slot, candidate, index
             )
+            entry = legacy._asset_entry(slot_id, candidate, result)
+            aliases = set(_visual_aliases(AssetSpec(slot_id, str(entry["file"]), entry.get("url"), "", "", 0.5, 0.5)))
+            if not aliases.isdisjoint(used_aliases):
+                reasons = [*reasons, "intra_episode_visual_reuse"]
             record = legacy._score_record(index, candidate, result, inspection, reasons)
             inspected.append(
                 {
@@ -204,11 +268,6 @@ def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset
 
     same_kind_eligible = ranked([item for item in inspected if item["same_kind"] and not item["reasons"]])
     any_eligible = ranked([item for item in inspected if not item["reasons"]])
-    same_kind_safe = ranked([
-        item for item in inspected
-        if item["same_kind"] and "unsafe_trim" not in item["reasons"]
-    ])
-    any_safe = ranked([item for item in inspected if "unsafe_trim" not in item["reasons"]])
 
     if same_kind_eligible:
         chosen = same_kind_eligible[0]
@@ -216,19 +275,19 @@ def _select_replacement(project_root: Path, slug: str, slot: dict, current_asset
     elif any_eligible:
         chosen = any_eligible[0]
         mode = "cross_kind_eligible"
-    elif same_kind_safe:
-        chosen = same_kind_safe[0]
-        mode = "same_kind_safe_fallback"
-    elif any_safe:
-        chosen = any_safe[0]
-        mode = "cross_kind_safe_fallback"
     else:
-        raise RuntimeError(f"Nenhum candidato com trim seguro para {slot_id}.")
+        raise RuntimeError(f"Nenhum candidato elegivel, unico e com trim seguro para {slot_id}.")
 
     return chosen, mode, failures, slot_shots
 
 
+from engine.mutation_transaction import fenced_mutation
+
+
+@fenced_mutation()
 def repair(project_root: Path, slug: str, diagnostic_log: Path) -> int:
+    from engine.pipeline_state import PipelineStore
+    PipelineStore(project_root).assert_mutation_allowed(slug)
     diagnostics = _diagnostic_values(diagnostic_log)
     error_code = diagnostics.get("MEDIA_PREFLIGHT_ERROR_CODE", "")
     detail = diagnostics.get("MEDIA_PREFLIGHT_ERROR_DETAIL", "")
@@ -249,26 +308,67 @@ def repair(project_root: Path, slug: str, diagnostic_log: Path) -> int:
         raise RuntimeError("assets.json ou visual_candidates.json invalido.")
 
     failing_file = _extract_failing_file(detail)
-    target_slot = _resolve_target_slot(assets, slots, failing_file, detail)
-    slot = next((entry for entry in slots if isinstance(entry, dict) and entry.get("id") == target_slot), None)
+    scope = diagnostics.get("MEDIA_PREFLIGHT_SCOPE", "")
+    target_shot = None
+    target_slot = scope.split(":", 1)[1] if scope.startswith("asset:") else ""
+    if scope.startswith("shot:"):
+        shot_id = scope.split(":", 1)[1]
+        target_shot = next((shot for shot in timeline.get("shots", []) if shot.get("id") == shot_id), None)
+        if target_shot is not None:
+            target_slot = str(target_shot.get("asset") or "")
+    if not target_slot:
+        target_slot = _resolve_target_slot(assets, slots, failing_file, detail)
+    slot_ids = {target_slot}
+    if target_shot is not None:
+        slot_ids.add(str(target_shot.get("id") or ""))
+    else:
+        # Pools may be keyed by shot ID while download errors are keyed by asset
+        # ID. Follow the authored references instead of parsing exception prose.
+        slot_ids.update(str(shot.get("id") or "") for shot in timeline.get("shots", [])
+                        if isinstance(shot, dict) and shot.get("asset") == target_slot)
+    matching_slots = [entry for entry in slots if isinstance(entry, dict) and entry.get("id") in slot_ids]
+    slot = next((entry for entry in matching_slots if entry.get("id") == target_slot), None)
+    if slot is None:
+        if len(matching_slots) > 1:
+            raise RuntimeError(f"Asset {target_slot!r} pertence a varios slots; reparo exige scope de shot especifico.")
+        slot = matching_slots[0] if matching_slots else None
     current_asset = next((entry for entry in assets if isinstance(entry, dict) and entry.get("id") == target_slot), None)
-    if slot is None or current_asset is None:
-        raise RuntimeError(f"Slot/asset alvo {target_slot} nao encontrado.")
+    if slot is None:
+        raise RuntimeError(f"Slot alvo {target_slot} sem candidatos reais; pesquisa editorial necessaria.")
+    if current_asset is None:
+        if error_code != "SHOT_REFERENCES_MISSING_ASSET":
+            raise RuntimeError(f"Asset alvo {target_slot} nao encontrado.")
+        current_asset = {"id": target_slot}
+    pool_changed = False
+    if target_shot is not None and sum(shot.get("asset") == target_slot for shot in timeline.get("shots", [])) > 1:
+        # Replacing a shared catalog entry would leave every shot duplicated.
+        # Split only the failing shot and retain the existing source elsewhere.
+        new_id = str(target_shot["id"]) + "_visual"
+        if any(entry.get("id") == new_id for entry in assets):
+            raise RuntimeError(f"Novo ID visual ja existe: {new_id}")
+        target_slot = new_id
+        target_shot["asset"] = new_id
+        slot = deepcopy(slot)
+        slot["id"] = new_id
+        slots.append(slot)
+        pool_changed = True
+    slot = dict(slot, id=target_slot)
 
     print(f"VISUAL_REPAIR_TARGET_SLOT={target_slot}")
     print(f"VISUAL_REPAIR_FAILING_FILE={failing_file or '<desconhecido>'}")
 
-    # Install the web resolver plus YouTube PO-token/cookie fallback, but repair only
-    # the failing slot instead of rewriting unrelated visuals.
-    web_auth.resolver.CURRENT_EPISODE = slug
-    web_auth.resolver._install_patches()
-
-    chosen, mode, failures, slot_shots = _select_replacement(
-        project_root, slug, slot, current_asset, timeline
-    )
-    candidate = chosen["candidate"]
-    result = chosen["result"]
-    new_asset = legacy._asset_entry(target_slot, candidate, result)
+    used_aliases = set()
+    used_ids = {shot.get("asset") for shot in timeline.get("shots", [])}
+    for entry in assets:
+        if entry.get("id") != target_slot and entry.get("id") in used_ids:
+            used_aliases.update(_visual_aliases(AssetSpec(str(entry["id"]), str(entry["file"]), entry.get("url"), "", "", 0.5, 0.5)))
+    with _web_resolver_context(slug):
+        chosen, mode, failures, slot_shots = _select_replacement(
+            project_root, slug, slot, current_asset, timeline, used_aliases=used_aliases
+        )
+        candidate = chosen["candidate"]
+        result = chosen["result"]
+        new_asset = legacy._asset_entry(target_slot, candidate, result)
 
     if _same_asset(current_asset, new_asset):
         raise RuntimeError(f"Reparo de {target_slot} selecionou o mesmo asset que falhou.")
@@ -277,6 +377,8 @@ def repair(project_root: Path, slug: str, diagnostic_log: Path) -> int:
         new_asset if isinstance(entry, dict) and entry.get("id") == target_slot else entry
         for entry in assets
     ]
+    if not any(entry.get("id") == target_slot for entry in assets):
+        assets_doc["assets"].append(new_asset)
 
     for shot in slot_shots:
         if result.kind == "video":
@@ -295,6 +397,8 @@ def repair(project_root: Path, slug: str, diagnostic_log: Path) -> int:
 
     _write_json(assets_path, assets_doc)
     _write_json(timeline_path, timeline)
+    if pool_changed:
+        _write_json(pool_path, pool)
     report = {
         "schema_version": 1,
         "episode": slug,

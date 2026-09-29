@@ -1,4 +1,5 @@
 name: Publish episode
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('publish/{0}/{1}/{2}', inputs.episode, inputs.request_id, inputs.source_run_id) || github.event.head_commit.message }}
 
 on:
   workflow_dispatch:
@@ -6,6 +7,10 @@ on:
       episode:
         description: Episode slug (for example, duckworth)
         required: true
+        type: string
+      request_id:
+        description: Pipeline request correlation ID
+        required: false
         type: string
       source_run_id:
         description: Successful Episode media preflight run containing publish-ready-<episode>
@@ -29,6 +34,7 @@ jobs:
       episode: ${{ steps.episode.outputs.slug }}
       trigger_kind: ${{ steps.episode.outputs.trigger_kind }}
       source_run_id: ${{ steps.episode.outputs.source_run_id }}
+      request_id: ${{ steps.episode.outputs.request_id }}
 
     steps:
       - name: Check out repository
@@ -42,6 +48,7 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           MANUAL_EPISODE: ${{ inputs.episode }}
+          MANUAL_REQUEST_ID: ${{ inputs.request_id }}
           MANUAL_SOURCE_RUN_ID: ${{ inputs.source_run_id }}
           BEFORE_SHA: ${{ github.event.before }}
           AFTER_SHA: ${{ github.sha }}
@@ -54,6 +61,7 @@ jobs:
 
           trigger_kind="manual"
           source_run_id=""
+          request_id="$MANUAL_REQUEST_ID"
 
           if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
             episode="$(trim "$MANUAL_EPISODE")"
@@ -80,6 +88,7 @@ jobs:
             mapfile -t trigger_values < <(sed 's/\r$//' "$trigger_file")
             first_value="$(trim "${trigger_values[0]:-}")"
             second_value="$(trim "${trigger_values[1]:-}")"
+            request_id="$(trim "${trigger_values[2]:-}")"
 
             case "$trigger_file" in
               .publish-queue/*.txt)
@@ -145,12 +154,38 @@ jobs:
             exit 1
           fi
 
+          if [[ -n "$request_id" && ! "$request_id" =~ ^[a-zA-Z0-9_.-]+$ ]]; then
+            echo "::error::Invalid request_id."
+            exit 1
+          fi
+          echo "request_id=$request_id" >> "$GITHUB_OUTPUT"
           echo "slug=$episode" >> "$GITHUB_OUTPUT"
           echo "trigger_kind=$trigger_kind" >> "$GITHUB_OUTPUT"
           echo "source_run_id=$source_run_id" >> "$GITHUB_OUTPUT"
           echo "Publishing validated artifact: episode=$episode trigger=$trigger_kind source_run=$source_run_id"
 
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: PREPARE
+          PIPELINE_SLUG: ${{ steps.episode.outputs.slug }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
+
   publish:
+    permissions:
+      contents: write
+      actions: read
     needs: prepare
     runs-on: ubuntu-latest
     concurrency:
@@ -159,6 +194,8 @@ jobs:
     env:
       EPISODE: ${{ needs.prepare.outputs.episode }}
       SOURCE_RUN_ID: ${{ needs.prepare.outputs.source_run_id }}
+      PIPELINE_REQUEST_ID: ${{ needs.prepare.outputs.request_id }}
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Check out repository
@@ -172,21 +209,31 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          run_info="$(
-            gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" \
-              --jq '[.name, .event, .head_branch, .status, (.conclusion // "")] | @tsv'
-          )"
-          IFS=$'\t' read -r source_name source_event source_branch source_status source_conclusion <<< "$run_info"
-
-          if [[ "$source_name" != "Episode media preflight" || "$source_event" != "push" || "$source_branch" != "main" ]]; then
-            echo "::error::PREFLIGHT_ARTIFACT_ORIGIN_INVALID: run $SOURCE_RUN_ID is not an Episode media preflight push on main."
-            exit 1
-          fi
-          if [[ "$source_status" == "completed" && "$source_conclusion" != "success" ]]; then
-            echo "::error::PREFLIGHT_ARTIFACT_RUN_FAILED: source run $SOURCE_RUN_ID concluded as $source_conclusion."
-            exit 1
-          fi
-          echo "Validated artifact provenance: workflow=$source_name branch=$source_branch status=$source_status."
+          # The queue job dispatches this workflow before its own source run completes.
+          # Only this exact run may authorize publication; pending is not failure.
+          deadline=$((SECONDS + 900))
+          while true; do
+            run_info="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" \
+              --jq '[.name, .event, .head_branch, .status, (.conclusion // "")] | @tsv')"
+            IFS=$'\t' read -r source_name source_event source_branch source_status source_conclusion <<< "$run_info"
+            if [[ "$source_name" != "Episode media preflight" || "$source_event" != "push" || "$source_branch" != "main" ]]; then
+              echo "::error::PREFLIGHT_ARTIFACT_ORIGIN_INVALID: source must be Episode media preflight push on main."
+              exit 1
+            fi
+            if [[ "$source_status" == "completed" ]]; then
+              if [[ "$source_conclusion" != "success" ]]; then
+                echo "::error::PREFLIGHT_ARTIFACT_RUN_FAILED: source run concluded $source_conclusion."
+                exit 1
+              fi
+              break
+            fi
+            if (( SECONDS >= deadline )); then
+              echo "::error::PREFLIGHT_SOURCE_TIMEOUT: source run is still $source_status; no publisher started."
+              exit 1
+            fi
+            echo "Waiting for source run $SOURCE_RUN_ID ($source_status)."
+            sleep 15
+          done
 
       - name: Download publish-ready artifact from media preflight
         uses: actions/download-artifact@v7
@@ -205,9 +252,9 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Verify and stage exact preflight artifact
+      - name: Verify immutable preflight snapshot
         id: bundle
-        run: python scripts/publish_ready_bundle.py restore "$EPISODE" --bundle-dir .publish-ready --source-run-id "$SOURCE_RUN_ID"
+        run: python publish.py "$EPISODE" --platform all --dry-run
 
       - name: Preflight Facebook page credentials before any platform
         env:
@@ -310,6 +357,30 @@ jobs:
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
         run: python publish.py "$EPISODE" --platform tiktok --live
 
+      - name: Persist final publication outcome
+        if: always()
+        env:
+          PUBLICATION_JOB_RESULT: ${{ job.status }}
+        run: python scripts/pipeline_workflow.py publisher-result "$EPISODE" --result "$PUBLICATION_JOB_RESULT"
+
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: PUBLISH
+          PIPELINE_SLUG: ${{ env.EPISODE }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
+
   persist-visual-usage:
     needs:
       - prepare
@@ -342,9 +413,29 @@ jobs:
 
       - name: Install visual history dependency
         if: ${{ steps.visual_usage.outcome == 'success' }}
-        run: python -m pip install Pillow==12.1.1
+        run: python -m pip install Pillow==12.1.1 requests
 
       - name: Persist visual usage history
         if: ${{ steps.visual_usage.outcome == 'success' }}
         continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: python scripts/persist_visual_usage.py "${{ needs.prepare.outputs.episode }}"
+
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: PERSIST_VISUAL_USAGE
+          PIPELINE_SLUG: ${{ needs.prepare.outputs.episode }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7

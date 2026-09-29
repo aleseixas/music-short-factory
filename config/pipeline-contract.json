@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "state_file": ".pipeline/state.json",
+  "episode_state": ".pipeline/episodes/{slug}.json",
+  "attempt_marker": ".publication-attempts/{slug}.json",
+  "channels": [
+    "default",
+    "nostalgia"
+  ],
+  "workflows": {
+    "duplicate_nostalgia": {
+      "file": "duplicate-preflight-nostalgia.yml",
+      "trigger": "push",
+      "request_glob": ".duplicate-check-nostalgia/*.json",
+      "dispatch_supported": false
+    },
+    "duplicate": {
+      "file": "duplicate-preflight.yml",
+      "trigger": "push",
+      "request_glob": ".duplicate-check/*.json",
+      "dispatch_supported": false
+    },
+    "media": {
+      "file": "episode-media-preflight.yml",
+      "trigger": "push",
+      "request_glob": ".episode-check/*.json",
+      "dispatch_supported": false
+    },
+    "publish": {
+      "file": "publish-episode.yml",
+      "trigger": "push",
+      "request_glob": ".publish-queue/*.txt",
+      "dispatch_supported": true
+    }
+  },
+  "transient_run_statuses": [
+    "queued",
+    "pending",
+    "waiting",
+    "requested",
+    "in_progress"
+  ],
+  "stages": [
+    "CANDIDATE",
+    "UNIQUE",
+    "AUTHORING",
+    "LOCAL_VALIDATION",
+    "LOCAL_REPAIR",
+    "MEDIA_PREFLIGHT",
+    "READY_TO_QUEUE",
+    "QUEUED",
+    "PUBLISHING",
+    "PUBLISHED",
+    "PUBLISH_UNCERTAIN",
+    "VALIDATION_FAILED",
+    "REJECTED",
+    "DISPATCH_UNCERTAIN",
+    "CANCELLED"
+  ],
+  "transitions": {
+    "CANDIDATE": [
+      "UNIQUE",
+      "REJECTED"
+    ],
+    "UNIQUE": [
+      "AUTHORING"
+    ],
+    "AUTHORING": [
+      "LOCAL_VALIDATION"
+    ],
+    "LOCAL_VALIDATION": [
+      "LOCAL_REPAIR",
+      "MEDIA_PREFLIGHT",
+      "VALIDATION_FAILED"
+    ],
+    "LOCAL_REPAIR": [
+      "LOCAL_VALIDATION",
+      "VALIDATION_FAILED"
+    ],
+    "VALIDATION_FAILED": [
+      "LOCAL_VALIDATION"
+    ],
+    "MEDIA_PREFLIGHT": [
+      "READY_TO_QUEUE",
+      "VALIDATION_FAILED"
+    ],
+    "READY_TO_QUEUE": [
+      "QUEUED"
+    ],
+    "QUEUED": [
+      "PUBLISHING"
+    ],
+    "PUBLISHING": [
+      "PUBLISHED",
+      "PUBLISH_UNCERTAIN"
+    ],
+    "PUBLISHED": [],
+    "PUBLISH_UNCERTAIN": [],
+    "REJECTED": [],
+    "DISPATCH_UNCERTAIN": [],
+    "CANCELLED": []
+  },
+  "terminal_stages": [
+    "PUBLISHED",
+    "PUBLISH_UNCERTAIN",
+    "REJECTED",
+    "DISPATCH_UNCERTAIN",
+    "CANCELLED"
+  ],
+  "publication_policy": "Persist attempt before external side effects; never retry an attempted platform or allow recovery mutation after any publisher starts.",
+  "request_policy": "Create and commit a new request only after local PASS; correlate request_id, slug, workflow and exact triggering commit. Push does not require workflow_dispatch.",
+  "workflow_inventory": {
+    "cleanup-actions-storage.yml": [
+      "push",
+      "schedule",
+      "workflow_dispatch",
+      "workflow_run"
+    ],
+    "duplicate-preflight-nostalgia.yml": [
+      "push"
+    ],
+    "duplicate-preflight.yml": [
+      "push"
+    ],
+    "episode-media-preflight.yml": [
+      "push"
+    ],
+    "publish-episode.yml": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "publish-existing-artifact.yml": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "render-test.yml": [
+      "push"
+    ],
+    "test-background-music-freshness.yml": [
+      "push"
+    ],
+    "test-instagram-retry.yml": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "test-visual-pipeline.yml": [
+      "push",
+      "workflow_dispatch"
+    ],
+    "test-youtube-auth.yml": [
+      "push",
+      "workflow_dispatch"
+    ]
+  },
+  "coordination": {
+    "authority": ".pipeline/coordination/{channel}.json",
+    "closed_slug": ".pipeline/closed/{slug}.json",
+    "transport": "git-ref-fast-forward-cas",
+    "lease_seconds": 120,
+    "state_is_cache": true
+  }
+}

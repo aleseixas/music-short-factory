@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
@@ -14,6 +16,9 @@ from cloudinary import uploader as cloudinary_uploader
 import requests
 
 from publishing.base import ApiError, PublishContext, Publisher, PublishingError
+from publishing.attempts import AttemptStore, PublicationLocked, session_id
+from publishing.snapshot import approved_snapshot
+from scripts.workflow_diagnostic import write_report
 from publishing.credentials import CredentialStore
 from publishing.facebook import FacebookPublisher
 from publishing.instagram import InstagramPublisher
@@ -241,9 +246,7 @@ def _log_instagram_container_diagnostics(
         )
 
 
-_INSTAGRAM_COVER_ATTEMPTS = 3
-_INSTAGRAM_FALLBACK_ATTEMPTS = 1
-_INSTAGRAM_DEFAULT_ATTEMPTS = 3
+_INSTAGRAM_MAX_ATTEMPTS = 1
 
 
 def _without_instagram_cover(context: PublishContext) -> PublishContext:
@@ -406,51 +409,14 @@ def _publish_instagram_with_retries(
     context: PublishContext,
     credentials: CredentialStore,
 ):
+    # Kept as a compatibility entry point; an upload call is an irreversible attempt.
     _log_instagram_video_preflight(context.video_path)
-    attempt_context = context
-    has_custom_cover = bool(str(context.metadata.get("cover_url", "")).strip())
-    max_attempts = (
-        _INSTAGRAM_COVER_ATTEMPTS + _INSTAGRAM_FALLBACK_ATTEMPTS
-        if has_custom_cover
-        else _INSTAGRAM_DEFAULT_ATTEMPTS
-    )
-
-    for attempt in range(1, max_attempts + 1):
-        using_cover = bool(str(attempt_context.metadata.get("cover_url", "")).strip())
-        cover_mode = "cover_url" if using_cover else "thumb_offset"
-        print(
-            f"[instagram] attempt {attempt}/{max_attempts}: "
-            f"criando novo container ({cover_mode})."
-        )
-        try:
-            uploaded = publisher.upload(attempt_context)
-            return publisher.publish(attempt_context, uploaded)
-        except ApiError as exc:
-            _log_instagram_container_diagnostics(exc, credentials)
-            if (
-                not _is_retryable_instagram_processing_error(exc)
-                or attempt >= max_attempts
-            ):
-                raise
-
-            if using_cover and attempt < _INSTAGRAM_COVER_ATTEMPTS:
-                print(
-                    "[instagram] processing ERROR; retrying with a new container "
-                    "keeping cover_url."
-                )
-            elif using_cover:
-                attempt_context = _without_instagram_cover(attempt_context)
-                print(
-                    "[instagram] cover_url failed 3 times; final retry with "
-                    "thumb_offset."
-                )
-            else:
-                print(
-                    "[instagram] processing ERROR; retrying with a new container "
-                    "using thumb_offset."
-                )
-
-    raise ApiError("InstagramPublisher: retries esgotados sem resultado.")
+    try:
+        uploaded = publisher.upload(context)
+        return publisher.publish(context, uploaded)
+    except ApiError as exc:
+        _log_instagram_container_diagnostics(exc, credentials)
+        raise
 
 
 def main(
@@ -478,6 +444,7 @@ def main(
         action="store_true",
         help="Autoriza explicitamente upload/publicacao real pelas APIs oficiais.",
     )
+    parser.add_argument("--reconcile", action="store_true", help="Consulta uma tentativa interrompida sem reenviar arquivos.")
     parser.add_argument(
         "--project-root",
         type=Path,
@@ -486,25 +453,64 @@ def main(
     )
     args = parser.parse_args(argv)
     project_root = args.project_root.resolve()
+    if args.reconcile:
+        try:
+            outcome = AttemptStore(project_root).reconcile(args.episode)
+            print(json.dumps(outcome, ensure_ascii=False, indent=2))
+            return 0
+        except Exception as exc:
+            print(f"PUBLICATION_RECOVERY_FAILED: {exc.__class__.__name__}", file=sys.stderr)
+            return 1
     dry_run = not args.live
     platforms = list(PLATFORMS) if args.platform == "all" else [args.platform]
     try:
         credentials = CredentialStore.load(project_root)
-    except RuntimeError as exc:
-        print(f"ERRO: {exc}", file=sys.stderr)
+    except Exception as exc:
+        write_report(project_root, stage="PUBLISHING", slug=args.episode,
+                     error_code="PUBLISHER_CREDENTIALS_INVALID", error_class="local_preflight",
+                     detail=exc.__class__.__name__, target=args.platform)
         return 1
 
     if dry_run:
-        print("MODO SEGURO: DRY-RUN — nenhuma chamada de API sera feita.")
+        print("MODO SEGURO: DRY-RUN â€” nenhuma chamada de API sera feita.")
     else:
         print("MODO LIVE: upload/publicacao real autorizados por --live.")
 
     failed = False
+    attempt_store = AttemptStore(project_root)
+    try:
+        publication_session = session_id() if not dry_run else ""
+    except PublicationLocked as exc:
+        write_report(project_root, stage="PUBLISHING", slug=args.episode,
+                     error_code="PUBLICATION_LOCKED", error_class="non_recoverable",
+                     detail=str(exc), target=args.platform)
+        return 1
+    snapshots = ExitStack()
+    snapshot = None
+    if not dry_run or (project_root / ".publish-ready" / "manifest.json").exists():
+        try:
+            from engine.pipeline_state import PipelineStore
+            queued = PipelineStore(project_root).status(args.episode)
+            # Actions dry-run validates the downloaded immutable artifact as well.
+            # It performs no shared writes and does not require restored outputs.
+            manifest = json.loads((project_root / ".publish-ready" / "manifest.json").read_text(encoding="utf-8-sig"))
+            source = manifest.get("source", {})
+            source_run = os.environ.get("SOURCE_RUN_ID") or str(queued.get("run_id") or source.get("run_id", ""))
+            request_id = os.environ.get("PIPELINE_REQUEST_ID") or queued.get("request_id") or source.get("request_id", "")
+            snapshot = snapshots.enter_context(approved_snapshot(
+                project_root, args.episode, source_run, request_id,
+            ))
+        except Exception as exc:
+            snapshots.close()
+            write_report(project_root, stage="PUBLISHING", slug=args.episode,
+                         error_code="PUBLICATION_SNAPSHOT_INVALID", error_class="local_preflight",
+                         detail=exc.__class__.__name__, target=args.platform)
+            return 1
     for platform in platforms:
-        publisher = create_publisher(platform, credentials)
         hosted_cover_public_id: str | None = None
         try:
-            context = build_context(project_root, args.episode, platform)
+            publisher = create_publisher(platform, credentials)
+            context = snapshot.context(platform) if snapshot is not None else build_context(project_root, args.episode, platform)
             if dry_run:
                 result = publisher.dry_run(context)
                 credential_warning = _credential_warning(publisher, context)
@@ -512,21 +518,22 @@ def main(
                     print(credential_warning)
             else:
                 publisher.validate(context, require_credentials=True)
-                if platform == "instagram":
-                    context, hosted_cover_public_id = _prepare_instagram_cover(
-                        context,
-                        credentials,
-                    )
-                    result = _publish_instagram_with_retries(
-                        publisher,
-                        context,
-                        credentials,
-                    )
-                else:
+                # Persist before even temporary hosting: timeouts must never permit a resend.
+                attempt_store.claim(args.episode, platform, publication_session, payload_fingerprint=snapshot.fingerprint)
+                with attempt_store.keepalive(args.episode):
+                    attempt_store.mark_sending(args.episode, platform, publication_session)
+                    if platform == "instagram":
+                        context, hosted_cover_public_id = _prepare_instagram_cover(
+                            context,
+                            credentials,
+                        )
+                        _log_instagram_video_preflight(context.video_path)
                     uploaded = publisher.upload(context)
+                    attempt_store.record_uploaded(args.episode, platform, publication_session, dict(uploaded))
                     result = publisher.publish(context, uploaded)
+                    attempt_store.record_receipt(args.episode, platform, publication_session, result)
             print(json.dumps(result.to_dict(), ensure_ascii=False, indent=2, default=str))
-        except (PublishingError, RuntimeError, ApiError) as exc:
+        except Exception as exc:
             failed = True
             if (
                 platform == "instagram"
@@ -534,10 +541,24 @@ def main(
                 and not _is_retryable_instagram_processing_error(exc)
             ):
                 _log_instagram_container_diagnostics(exc, credentials)
-            print(f"ERRO: {exc}", file=sys.stderr)
+            detail = str(exc) if isinstance(exc, (PublishingError, RuntimeError)) else exc.__class__.__name__
+            print(f"ERRO: {detail}", file=sys.stderr)
+            write_report(project_root, stage="PUBLISHING", slug=args.episode,
+                         error_code="PUBLICATION_LOCKED" if isinstance(exc, PublicationLocked) else "PUBLISHER_FAILED",
+                         error_class="non_recoverable" if not dry_run else "local_preflight",
+                         detail=detail, target=platform, recoverable=dry_run)
         finally:
             if hosted_cover_public_id:
                 _cleanup_instagram_cover(hosted_cover_public_id, credentials)
+    if not dry_run and os.environ.get("GITHUB_ACTIONS") != "true":
+        try:
+            attempt_store.complete(args.episode, publication_session, success=not failed)
+        except Exception as exc:
+            failed = True
+            write_report(project_root, stage="PUBLISHING", slug=args.episode,
+                         error_code="PUBLICATION_OUTCOME_UNCERTAIN", error_class="non_recoverable",
+                         detail=exc.__class__.__name__, target=args.platform)
+    snapshots.close()
     return 1 if failed else 0
 
 

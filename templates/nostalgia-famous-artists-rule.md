@@ -1,5 +1,9 @@
 # Regra editorial — slot de nostalgia com artistas famosos
 
+<!-- pipeline-contract: config/pipeline-contract.json -->
+
+Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-contract.md), baseado em [`config/pipeline-contract.json`](../config/pipeline-contract.json). Use o estado persistido e os triggers reais antes de decidir continuidade.
+
 Esta regra existe para o **agendamento diário de nostalgia das 12h** do Além do Hit / Music Short Factory.
 
 Ela especializa o agendamento principal para um fluxo editorial próprio de nostalgia. A `main` continua sendo a fonte da verdade técnica para schemas, renderer, media preflight, publishing, áudio e demais capacidades.
@@ -29,8 +33,8 @@ Portanto:
 - retry normal existente NÃO bloqueia o slot das 12h;
 - Publish Action normal falhando, rodando ou aguardando NÃO bloqueia o slot das 12h;
 - episódio normal incompleto NÃO deve ser retomado pelo agendamento de nostalgia;
-- o agendamento das 12h só retoma um episódio anterior se ele próprio tiver slug `nostalgia_*` e estiver realmente inacabado antes de queue;
-- uma queue `nostalgia_*` que já existia no início desta nova chamada pertence a execução anterior e, assim como no scheduled principal, NÃO autoriza nem impede a identidade da nova execução.
+- consulte o estado do canal `nostalgia`; retome o slug ativo `nostalgia_*` conforme `next_action`, inclusive depois da queue;
+- uma queue `nostalgia_*` não prova conclusão; só `can_create_new_episode` no estado do canal permite iniciar outro episódio.
 
 Esta seção é um **override deliberado de escopo de continuidade** para o agendamento das 12h. Ela prevalece, somente neste slot, sobre qualquer instrução genérica em `templates/music-universe-topic-rule.md` ou outro template que mande retomar qualquer episódio ativo independentemente de origem.
 
@@ -46,7 +50,7 @@ Use exclusivamente:
 .duplicate-check-nostalgia/<nonce>.json
 ```
 
-com o mesmo contrato de `song`, `artist` e `slug`, sendo obrigatório que `slug` comece com `nostalgia_`.
+com `request_id` e o mesmo contrato de `song`, `artist` e `slug`, sendo obrigatório que `slug` comece com `nostalgia_`. O commit/push é o trigger; ausência de `workflow_dispatch` não bloqueia. Correlacione request_id, slug, commit SHA e workflow.
 
 O workflow correspondente é:
 

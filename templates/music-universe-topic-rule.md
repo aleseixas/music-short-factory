@@ -4,52 +4,32 @@ Esta regra define a direção editorial atual do **Além do Hit / Music Short Fa
 
 Ela não altera schemas nem capacidades técnicas da `main`. Quando houver conflito técnico, a `main` continua sendo a fonte da verdade.
 
-## 0. Continuidade operacional obrigatória — termine o episódio ativo antes de escolher outro
 
-Esta checagem acontece **ANTES de pesquisar temas, montar pool, aprofundar candidata ou criar um novo `.duplicate-check`**.
+<!-- pipeline-contract: config/pipeline-contract.json -->
 
-A execução deve primeiro verificar se existe um **EPISÓDIO ATIVO SEM QUEUE**. Para esta regra, considere ativo um slug novo que começou a ser autorado depois da publish queue mais recente e que já possui `episodes/<slug>/story.json` (ou outros arquivos do episódio), mas ainda não possui `.publish-queue/<slug>.txt`.
+Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-contract.md), baseado em [`config/pipeline-contract.json`](../config/pipeline-contract.json). Use o estado persistido e os triggers reais antes de decidir continuidade.
 
-**Uma publish queue criada por uma execução anterior NÃO bloqueia uma nova execução.** Não use hora do relógio, bloco 08h/11h/19h, dia ou outra janela temporal como identidade da execução. A queue mais recente serve apenas como fronteira de continuidade para descobrir se algum episódio começou depois dela e ficou incompleto.
+## 0. Continuidade operacional obrigatória
 
-Se existir exatamente um episódio ativo sem queue:
+Antes de pesquisar temas, montar pool ou criar duplicate-check, consulte
+`.pipeline/state.json` e o registro específico do slug, conforme o contrato
+operacional. O canal normal usa `default`; o slot próprio usa `nostalgia`.
+Não liste diretórios inteiros, não use a queue mais recente como fronteira e
+não reconstrua autoria por timestamps. Listagem truncada não é bloqueio.
 
-- NÃO pesquise um novo tema;
-- NÃO monte novo pool de candidatas;
-- NÃO crie outro slug;
-- NÃO crie outro duplicate-check;
-- NÃO reavalie se o tema antigo ainda seria o vencedor;
-- retome exclusivamente o mesmo slug e leve-o até o próximo estado válido do pipeline.
+Se o estado indicar episódio ativo, retome o mesmo slug e respeite `next_action`.
+Complete autoria, valide/repare localmente e só depois entregue `.episode-check`.
+Acompanhe a Action por request_id, slug, commit SHA e workflow. O preflight cria
+a queue com slug e source_run_id apenas após aprovar o bundle final.
 
-Use esta ordem de retomada:
+Queue existente não é autorização para novo episódio nem publicação concluída.
+Respeite `can_create_new_episode`, `mutation_allowed` e `republication_allowed`.
+Estado ausente/inconsistente exige reconciliação indexada pelo controlador;
+conflito real exige diagnóstico, não escolha arbitrária de slug.
 
-1. se os arquivos do episódio estiverem incompletos, complete/corrija somente o mesmo slug;
-2. se ainda não houver media preflight, crie `.episode-check/<slug>-<nonce>.json` e acompanhe a Action exata;
-3. se o último media preflight falhou, corrija somente o mesmo episódio e rode novo media preflight conforme `templates/publishing-completion-rule.md` e `docs/publishing-retry.md`;
-4. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, confirme que `assets.json`, `timeline.json`, background e demais arquivos relevantes NÃO foram alterados depois desse PASS;
-5. se nada relevante mudou após o PASS, leia a política de publicação atual, confirme que a queue ainda não existe e crie `.publish-queue/<slug>.txt` com conteúdo exatamente `<slug>`;
-6. depois da criação bem-sucedida da queue, **NÃO encerre a execução por causa da queue**: siga `templates/publishing-completion-rule.md`, acompanhe a Publish Action correspondente ao mesmo slug e só conclua em um estado terminal real de publicação ou bloqueio permitido.
-
-Se qualquer asset, timeline ou background tiver sido alterado depois do último PASS, o media preflight deve ser executado novamente antes da queue.
-
-Se `.publish-queue/<slug>.txt` já existir para o MESMO slug que estava sendo retomado, não recrie a queue. A partir daí, trate o slug conforme `templates/publishing-completion-rule.md`: localize e acompanhe a Publish Action correspondente em vez de interpretar a existência da queue como conclusão.
-
-Se forem encontrados **dois ou mais episódios ativos sem queue** no mesmo estado de continuidade, não escolha arbitrariamente entre eles. Trate como conflito operacional e reporte `BLOQUEADO` para evitar criar/publicar um terceiro episódio.
-
-O workflow `Duplicate candidate preflight` também possui uma segunda camada de proteção. Se, apesar desta checagem inicial, um novo duplicate-check for criado enquanto existe um episódio ativo, a Action pode retornar:
-
-- `PREFLIGHT_RESULT=RESUME_EXISTING_EPISODE` — pare de trabalhar na nova candidata e retome imediatamente o slug informado por `RESUME_SLUG`;
-- `PREFLIGHT_RESULT=CONTINUITY_CONFLICT` — não autorize nenhuma nova candidata e reporte bloqueio.
-
-`RESUME_EXISTING_EPISODE` não significa candidata duplicada e não autoriza um novo episódio. Ele significa: **há trabalho anterior já iniciado que deve ser concluído antes de qualquer nova seleção editorial**.
-
-Uma queue anterior à execução atual nunca deve ser reinterpretada como `EXECUTION_ALREADY_COMPLETED`. **Queue não é estado terminal**: conclusão de publicação é regida por `templates/publishing-completion-rule.md` e exige acompanhar o estado real da Publish Action/plataformas quando acessível.
-
-Fluxo de continuidade obrigatório:
-
-`episódio iniciado -> concluir arquivos -> media preflight PASS -> queue -> Publish episode -> verificar plataformas -> estado terminal`
-
-Somente quando NÃO existir episódio ativo sem queue a execução pode seguir para a seleção normal de tema descrita abaixo.
+O Duplicate preflight também pode devolver `RESUME_EXISTING_EPISODE` ou
+`CONTINUITY_CONFLICT`: siga o slug e diagnóstico devolvidos. Ausência de
+workflow_dispatch e run ainda não visível não são conflitos de continuidade.
 
 ## 1. Escopo editorial
 

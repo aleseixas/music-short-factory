@@ -8,7 +8,7 @@ on:
       - ".episode-check/*.json"
 
 permissions:
-  contents: read
+  contents: write
   actions: read
 
 concurrency:
@@ -22,6 +22,7 @@ jobs:
       contents: write
     outputs:
       episode: ${{ steps.request.outputs.slug }}
+      request_id: ${{ steps.request.outputs.request_id }}
       source_sha: ${{ steps.source.outputs.source_sha }}
 
     steps:
@@ -60,6 +61,18 @@ jobs:
             echo "::error::PREFLIGHT_SLUG_INVALID: invalid episode slug in request. TARGET: $file. ACTION: fix only the slug format; do not create a new topic."
             exit 1
           fi
+          request_id="$(python - "$file" <<'PY'
+          import json, sys
+          from pathlib import Path
+          path = Path(sys.argv[1])
+          print(json.loads(path.read_text(encoding="utf-8")).get("request_id") or path.stem)
+          PY
+          )"
+          if [[ ! "$request_id" =~ ^[a-zA-Z0-9][a-zA-Z0-9_-]{0,159}$ ]]; then
+            echo "::error::PREFLIGHT_REQUEST_ID_INVALID"
+            exit 1
+          fi
+          echo "request_id=$request_id" >> "$GITHUB_OUTPUT"
           echo "slug=$slug" >> "$GITHUB_OUTPUT"
           echo "Media preflight episode: $slug"
 
@@ -82,17 +95,26 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Reconcile authoritative reservation
+        env:
+          EPISODE: ${{ steps.request.outputs.slug }}
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/pipeline_workflow.py reconcile "$EPISODE"
+
       - name: Episode media preflight — batch diagnostics and auto-repair
         id: repair
         shell: bash
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
+          PIPELINE_REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          GH_TOKEN: ${{ github.token }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
           # runner context is available at step scope, not at job.env scope.
           # Share failures across batch/repair subprocesses, never across runs.
           AUDIO_PROVIDER_CIRCUIT_STATE: ${{ runner.temp }}/music-provider-circuit-${{ github.run_id }}-${{ github.run_attempt }}.json
         run: |
           set -uo pipefail
+          python scripts/pipeline_workflow.py assert-unstarted "$EPISODE" || exit 1
           # Each pass collects all independent failures it can observe. Repairs are
           # applied as one batch before the next full validation. Extra passes remain
           # only for dependent errors that can become visible after another repair.
@@ -192,13 +214,14 @@ jobs:
             : > "$log_file"
 
             set +e
-            python check_episode_media_batch.py "$EPISODE" > "$log_file" 2>&1
+            python check_episode_media_batch.py "$EPISODE" --json-report "$diagnostics_dir/latest.json" > "$log_file" 2>&1
             status=$?
             set -e
 
             cat "$log_file"
 
             if [[ $status -eq 0 ]] && grep -q '^MEDIA_PREFLIGHT_RESULT=PASS$' "$log_file"; then
+              python scripts/pipeline_workflow.py media-pass "$EPISODE" --request-id "$PIPELINE_REQUEST_ID" || exit 1
               echo "MEDIA_AUTO_RECOVERY=PASS attempt=$attempt"
               {
                 echo "MEDIA_PREFLIGHT_STATUS=PASS"
@@ -224,44 +247,16 @@ jobs:
             fi
 
             repaired=0
-
+            # Revalidate after all safe changes even if another error remains
+            # unrecoverable. Report files alone never count as a repair.
+            before_fingerprint="$(python -c 'from engine.pipeline_runtime import episode_fingerprint; from pathlib import Path; import sys; print(episode_fingerprint(Path.cwd(), sys.argv[1]))' "$EPISODE")"
             if [[ -n "$errors_json" ]]; then
               echo "AUTO_REPAIR_STRATEGY=BATCH error_count=${error_count:-unknown}"
-              if python scripts/repair_media_preflight_batch.py "$EPISODE" --diagnostic-log "$log_file"; then
-                repaired=1
-              fi
-            else
-              # Backward-compatible single-error fallback for unexpected legacy output.
-              case "$error_code" in
-                BACKGROUND_MUSIC_REUSE|BACKGROUND_MUSIC_INVALID)
-                  echo "AUTO_REPAIR_STRATEGY=BACKGROUND_MUSIC_RESELECT_LEGACY error_code=$error_code"
-                  if python scripts/repair_background_music.py "$EPISODE"; then
-                    repaired=1
-                  fi
-                  ;;
-                VISUAL_ASSET_HTTP_403|VISUAL_ASSET_HTTP_404|VISUAL_ASSET_INVALID|MEDIA_PROBE_OR_CODEC_ERROR)
-                  echo "AUTO_REPAIR_STRATEGY=VISUAL_TARGETED_RESELECT_LEGACY error_code=$error_code"
-                  if python scripts/repair_visual_asset.py "$EPISODE" --diagnostic-log "$log_file"; then
-                    repaired=1
-                  fi
-                  ;;
-                INTRA_EPISODE_VISUAL_REUSE|SHOT_REFERENCES_MISSING_ASSET)
-                  echo "AUTO_REPAIR_STRATEGY=VISUAL_RESELECT_LEGACY error_code=$error_code"
-                  before_diff="$(git diff -- "episodes/$EPISODE" || true)"
-                  python resolve_visual_candidates.py "$EPISODE" || true
-                  python resolve_visual_candidates_web_auth.py "$EPISODE" || true
-                  after_diff="$(git diff -- "episodes/$EPISODE" || true)"
-                  if [[ "$after_diff" != "$before_diff" ]]; then
-                    repaired=1
-                  fi
-                  ;;
-                *)
-                  ;;
-              esac
-
-              if [[ "$recoverable" == "false" ]]; then
-                repaired=0
-              fi
+              python scripts/repair_media_preflight_batch.py "$EPISODE" --diagnostic-log "$log_file" || true
+            fi
+            after_fingerprint="$(python -c 'from engine.pipeline_runtime import episode_fingerprint; from pathlib import Path; import sys; print(episode_fingerprint(Path.cwd(), sys.argv[1]))' "$EPISODE")"
+            if [[ "$before_fingerprint" != "$after_fingerprint" ]]; then
+              repaired=1
             fi
 
             if [[ $repaired -ne 1 ]]; then
@@ -290,39 +285,36 @@ jobs:
         shell: bash
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Persist only authored/repaired metadata. Downloaded media belongs to
-          # the validated artifact and must never be committed by this workflow.
-          shopt -s nullglob
-          metadata_files=("episodes/$EPISODE"/*.json "episodes/$EPISODE"/*.txt)
-          if [[ ${#metadata_files[@]} -eq 0 ]]; then
-            echo "::error::No episode metadata files found for $EPISODE."
-            exit 1
-          fi
-          git add -- "${metadata_files[@]}"
+          python scripts/pipeline_workflow.py persist "$EPISODE"
 
-          if git diff --cached --quiet; then
-            echo "No media repairs to persist."
-          else
-            git commit -m "Auto-repair media for $EPISODE"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: MEDIA_PREFLIGHT
+          PIPELINE_SLUG: ${{ steps.request.outputs.slug }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
 
-          # Freeze the exact online-main revision used by every downstream gate.
-          git fetch origin main
-          source_sha="$(git rev-parse origin/main)"
-          echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
-          echo "Pinned media preflight source: $source_sha"
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
 
   resolve-visuals:
     needs: media-preflight
     runs-on: ${{ vars.USE_SELF_HOSTED_VISUALS == 'true' && 'self-hosted' || 'ubuntu-latest' }}
     env:
       EPISODE: ${{ needs.media-preflight.outputs.episode }}
+      PIPELINE_REQUEST_ID: ${{ needs.media-preflight.outputs.request_id }}
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Check out repaired episode
@@ -371,6 +363,12 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Reconcile authoritative reservation
+        env:
+          EPISODE: ${{ env.EPISODE }}
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/pipeline_workflow.py reconcile "$EPISODE"
+
       - name: Verify visual download stack
         shell: bash
         run: |
@@ -389,7 +387,6 @@ jobs:
 
       - name: Score and resolve final visual candidates
         id: visuals
-        continue-on-error: true
         env:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         shell: bash
@@ -400,7 +397,6 @@ jobs:
           python resolve_visual_candidates_web_auth.py "$EPISODE"
 
       - name: Enforce final visual semantics and stage handoff
-        if: always()
         run: python scripts/stage_visual_handoff.py
 
       - name: Upload resolved visual handoff
@@ -413,6 +409,24 @@ jobs:
           retention-days: 1
           compression-level: 0
 
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: RESOLVE_VISUALS
+          PIPELINE_SLUG: ${{ env.EPISODE }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
+
   render-preflight:
     needs:
       - media-preflight
@@ -420,6 +434,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       EPISODE: ${{ needs.media-preflight.outputs.episode }}
+      PIPELINE_REQUEST_ID: ${{ needs.media-preflight.outputs.request_id }}
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Check out repaired episode
@@ -433,18 +449,6 @@ jobs:
         with:
           name: visual-handoff-${{ needs.media-preflight.outputs.episode }}
           path: .visual-handoff
-
-      - name: Apply resolved visual handoff
-        shell: bash
-        run: |
-          set -euo pipefail
-          payload=".visual-handoff/episodes/$EPISODE"
-          if [[ ! -d "$payload" ]]; then
-            echo "::error::VISUAL_HANDOFF_MISSING: artifact has no payload for $EPISODE."
-            exit 1
-          fi
-          cp -R "$payload/." "episodes/$EPISODE/"
-          echo "Applied final visual handoff for $EPISODE."
 
       - name: Set up Python
         uses: actions/setup-python@v7
@@ -483,6 +487,24 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
+      - name: Reconcile authoritative reservation
+        env:
+          EPISODE: ${{ env.EPISODE }}
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/pipeline_workflow.py reconcile "$EPISODE"
+
+      - name: Apply resolved visual handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          payload=".visual-handoff/episodes/$EPISODE"
+          if [[ ! -d "$payload" ]]; then
+            echo "::error::VISUAL_HANDOFF_MISSING: artifact has no payload for $EPISODE."
+            exit 1
+          fi
+          cp -R "$payload/." "episodes/$EPISODE/"
+          echo "Applied final visual handoff for $EPISODE."
+
       - name: Revalidate final media after visual resolution
         env:
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
@@ -517,6 +539,24 @@ jobs:
           retention-days: 3
           compression-level: 0
 
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: RENDER_PREFLIGHT
+          PIPELINE_SLUG: ${{ env.EPISODE }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
+
   queue-publication:
     needs:
       - media-preflight
@@ -527,6 +567,8 @@ jobs:
       actions: write
     env:
       EPISODE: ${{ needs.media-preflight.outputs.episode }}
+      PIPELINE_REQUEST_ID: ${{ needs.media-preflight.outputs.request_id }}
+      GH_TOKEN: ${{ github.token }}
 
     steps:
       - name: Check out latest main
@@ -535,47 +577,75 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Set up queue coordination dependencies
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: python -m pip install requests
+
       - name: Create publish queue only after render preflight passes
         id: queue
-        shell: bash
-        run: |
-          set -euo pipefail
+        run: python scripts/pipeline_workflow.py queue "$EPISODE" --request-id "$PIPELINE_REQUEST_ID"
 
-          queue_file=".publish-queue/$EPISODE.txt"
-          mkdir -p .publish-queue
-          should_dispatch=false
+      - name: Dispatch publication of validated artifact or observe its existing request
+        run: python scripts/dispatch_publication.py
 
-          if [[ ! -f "$queue_file" ]]; then
-            printf '%s\n%s\n' "$EPISODE" "$GITHUB_RUN_ID" > "$queue_file"
-            should_dispatch=true
-            echo "Created validated publish queue: $queue_file (source run $GITHUB_RUN_ID)."
-          else
-            echo "Publish queue already exists: $queue_file; publication will not be dispatched again."
-          fi
-          echo "should_dispatch=$should_dispatch" >> "$GITHUB_OUTPUT"
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: QUEUE_PUBLICATION
+          PIPELINE_SLUG: ${{ env.EPISODE }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
 
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "$queue_file"
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7
 
-          if git diff --cached --quiet; then
-            echo "No publish queue change to commit."
-            exit 0
-          fi
-
-          git commit -m "Queue validated artifact for $EPISODE"
-          git pull --rebase origin main
-          git push origin HEAD:main
-
-      - name: Dispatch publication of validated artifact
-        if: ${{ steps.queue.outputs.should_dispatch == 'true' }}
-        shell: bash
+  record-preflight-failure:
+    needs: [media-preflight, resolve-visuals, render-preflight]
+    if: ${{ always() && needs.media-preflight.outputs.episode != '' && (needs.media-preflight.result == 'failure' || needs.resolve-visuals.result == 'failure' || needs.render-preflight.result == 'failure') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      EPISODE: ${{ needs.media-preflight.outputs.episode }}
+      PIPELINE_REQUEST_ID: ${{ needs.media-preflight.outputs.request_id }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: python -m pip install requests
+      - name: Persist failure for the same request
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          set -euo pipefail
-          echo "Dispatching Publish episode for $EPISODE from validated run $GITHUB_RUN_ID."
-          gh workflow run publish-episode.yml \
-            --ref main \
-            -f episode="$EPISODE" \
-            -f source_run_id="$GITHUB_RUN_ID"
+          python scripts/pipeline_workflow.py reconcile "$EPISODE"
+          python scripts/pipeline_workflow.py media-failed "$EPISODE"
+          python scripts/pipeline_workflow.py release "$EPISODE"
+      - name: Write structured workflow diagnostic
+        if: always()
+        env:
+          PIPELINE_STAGE: RECORD_PREFLIGHT_FAILURE
+          PIPELINE_SLUG: ${{ env.EPISODE }}
+          PIPELINE_JOB_STATUS: ${{ job.status }}
+          PIPELINE_STEPS: ${{ toJSON(steps) }}
+        run: python scripts/workflow_diagnostic.py
+      - name: Upload structured workflow diagnostic
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-diagnostic-${{ github.job }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ci-diagnostics/
+          if-no-files-found: warn
+          retention-days: 7

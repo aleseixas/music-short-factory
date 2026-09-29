@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-"""Focused regression tests for bounded Instagram container retries."""
+"""An uncertain Instagram upload must never create another container."""
 
 from pathlib import Path
 import tempfile
@@ -50,7 +50,7 @@ class InstagramRetryTests(unittest.TestCase):
     def setUp(self) -> None:
         self.credentials = CredentialStore.from_mapping({})
 
-    def test_processing_error_keeps_cover_for_three_attempts(self):
+    def test_processing_error_preserves_cover_and_never_resends(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             context = context_with_cover(Path(temp_dir))
             publisher = RecordingPublisher(
@@ -64,19 +64,14 @@ class InstagramRetryTests(unittest.TestCase):
                 patch("publish._log_instagram_video_preflight"),
                 patch("publish._log_instagram_container_diagnostics"),
             ):
-                result = _publish_instagram_with_retries(
-                    publisher,
-                    context,
-                    self.credentials,
-                )
+                with self.assertRaisesRegex(ApiError, "container 111"):
+                    _publish_instagram_with_retries(publisher, context, self.credentials)
 
-        self.assertEqual(result.status, "published")
-        self.assertEqual(len(publisher.upload_contexts), 3)
-        for upload_context in publisher.upload_contexts:
-            self.assertIn("cover_url", upload_context.metadata)
-        self.assertEqual(publisher.publish_calls, 1)
+        self.assertEqual(len(publisher.upload_contexts), 1)
+        self.assertIn("cover_url", publisher.upload_contexts[0].metadata)
+        self.assertEqual(publisher.publish_calls, 0)
 
-    def test_processing_error_falls_back_without_cover_after_three_failures(self):
+    def test_processing_error_never_exceeds_one_attempt(self):
         failures = [
             ApiError(f"InstagramPublisher: container {index} terminou com status ERROR.")
             for index in (111, 222, 333)
@@ -89,19 +84,16 @@ class InstagramRetryTests(unittest.TestCase):
                 patch("publish._log_instagram_video_preflight"),
                 patch("publish._log_instagram_container_diagnostics"),
             ):
-                result = _publish_instagram_with_retries(
-                    publisher,
-                    context,
-                    self.credentials,
-                )
+                with self.assertRaisesRegex(ApiError, "container 111"):
+                    _publish_instagram_with_retries(
+                        publisher,
+                        context,
+                        self.credentials,
+                    )
 
-        self.assertEqual(result.status, "published")
-        self.assertEqual(len(publisher.upload_contexts), 4)
-        for upload_context in publisher.upload_contexts[:3]:
-            self.assertIn("cover_url", upload_context.metadata)
-        self.assertNotIn("cover_url", publisher.upload_contexts[3].metadata)
-        self.assertEqual(publisher.upload_contexts[3].metadata["thumb_offset_ms"], 700)
-        self.assertEqual(publisher.publish_calls, 1)
+        self.assertEqual(len(publisher.upload_contexts), 1)
+        self.assertIn("cover_url", publisher.upload_contexts[0].metadata)
+        self.assertEqual(publisher.publish_calls, 0)
 
     def test_non_processing_api_error_is_not_retried(self):
         with tempfile.TemporaryDirectory() as temp_dir:

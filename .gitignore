@@ -43,9 +43,18 @@ Thumbs.db
 Desktop.ini
 
 *.zip
+.pipeline/.lock
+.pipeline/diagnostics/
 # Episode images are downloaded from assets.json URLs at render time
 episodes/*/assets/*.jpg
 episodes/*/assets/*.JPG
 episodes/*/assets/*.jpeg
 episodes/*/assets/*.JPEG
 tests/reference/*.mp4
+
+.publication-attempts/*.lock
+.pipeline/operations/*.lock
+.pipeline/owner.json
+.pipeline/leases/
+.pipeline/cache-applied/
+.pipeline/conflicts/

@@ -121,6 +121,16 @@ class PublishReadyBundleTestCase(unittest.TestCase):
 
 
 class CreateBundleTests(PublishReadyBundleTestCase):
+    def test_live_bytes_must_match_approved_request_bundle(self):
+        with mock.patch.dict(os.environ, {"PIPELINE_REQUEST_ID": "req"}):
+            self.create()
+            bundle.verify_staged_bundle(self.root, EPISODE, RUN_ID, "req")
+            with self.assertRaisesRegex(bundle.BundleError, "another request"):
+                bundle.verify_staged_bundle(self.root, EPISODE, RUN_ID, "other")
+            (self.root / "output" / f"{EPISODE}.mp4").write_bytes(b"different unvalidated bytes")
+            with self.assertRaisesRegex(bundle.BundleError, "staged bytes differ"):
+                bundle.verify_staged_bundle(self.root, EPISODE, RUN_ID, "req")
+
     def test_create_rejects_slug_outside_episode_contract(self):
         for invalid in ("Episode", "episode-", "episode__name", "-episode"):
             with self.subTest(invalid=invalid), self.assertRaises(bundle.BundleError):

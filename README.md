@@ -1,5 +1,7 @@
 # Music Short Factory
 
+O fluxo de continuidade, validação local, triggers e publicação está no [contrato operacional](docs/pipeline-contract.md), com [taxonomia dos erros](docs/media-preflight-errors.md). A fonte machine-readable é [`config/pipeline-contract.json`](config/pipeline-contract.json).
+
 Base modular para produzir vídeos curtos verticais sobre músicas para TikTok, Instagram Reels e YouTube Shorts. O conteúdo editorial fica em `episodes/`; Python/FFmpeg executam de forma determinística as decisões registradas nos arquivos do episódio.
 
 A regra principal do projeto é simples:
@@ -455,7 +457,8 @@ Warnings de densidade/repetição devem provocar revisão editorial, mas não de
 Execute a suíte:
 
 ```bash
-python -m unittest discover -s tests -v
+python -m pip install -r requirements-dev.txt
+python -m pytest tests -q
 ```
 
 ## Documentação especializada

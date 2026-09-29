@@ -905,6 +905,9 @@ class CredentialAndPublisherTests(unittest.TestCase):
         self.assertEqual(session.calls, 1)
 
     def test_instagram_token_never_appears_in_cli_output(self):
+        from publishing.attempts import AttemptStore
+        from contextlib import nullcontext
+        from types import SimpleNamespace
         token = "ig-live-secret.abc_123"
         public_url = (
             "https://cdn.example.test/existing.mp4?signature=public-url-secret"
@@ -912,9 +915,21 @@ class CredentialAndPublisherTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             write_publishable_files(root)
+            from engine.pipeline_state import PipelineStore
+            pipeline = PipelineStore(root)
+            pipeline.start("demo", "test_request")
+            for stage in ("UNIQUE", "AUTHORING", "LOCAL_VALIDATION"):
+                pipeline.transition("demo", stage)
+            pipeline.transition("demo", "MEDIA_PREFLIGHT", local_preflight_passed=True)
+            pipeline.transition("demo", "READY_TO_QUEUE")
+            pipeline.transition("demo", "QUEUED")
             post = valid_post()
             post["instagram"]["video_url"] = public_url
             write_json(root / "episodes" / "demo" / "post.json", post)
+            # Redaction is tested past the independently tested snapshot gate.
+            write_json(root / ".publish-ready/manifest.json", {"source": {"run_id": "123", "request_id": "test_request"}})
+            snapshot = SimpleNamespace(fingerprint="a" * 64, context=lambda platform: PublishContext(
+                "demo", root / "output/demo.mp4", root / "output/demo_cover.jpg", post[platform]))
             stdout = io.StringIO()
             stderr = io.StringIO()
             error_response = JsonResponse(
@@ -937,6 +952,8 @@ class CredentialAndPublisherTests(unittest.TestCase):
                     "requests.sessions.Session.request",
                     return_value=error_response,
                 ) as request,
+                patch("publish.approved_snapshot", return_value=nullcontext(snapshot)),
+                patch("publish.AttemptStore", side_effect=lambda root: AttemptStore(root, allow_local=True)),
                 redirect_stdout(stdout),
                 redirect_stderr(stderr),
             ):

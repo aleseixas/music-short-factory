@@ -309,6 +309,10 @@ def build_post_defaults(story: Mapping[str, Any], asset_id: str) -> dict[str, An
     }
 
 
+from engine.mutation_transaction import fenced_mutation
+
+
+@fenced_mutation(slug_arg="episode")
 def prepare_episode_post(project_root: Path, episode: str) -> PreparedPost:
     project_root = project_root.resolve()
     if not SLUG_PATTERN.fullmatch(episode):

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -48,6 +49,16 @@ def normalize_visual_candidate(candidate: dict) -> dict:
         for field in ("width", "height", "duration_seconds", "file_format", "mime_type"):
             if technical.get(field) is not None:
                 normalized.setdefault(field, technical[field])
+    for field in ("width", "height", "duration_seconds"):
+        if field not in normalized:
+            continue
+        value = normalized[field]
+        try:
+            valid = not isinstance(value, bool) and math.isfinite(float(value)) and float(value) > 0
+        except (ValueError, TypeError):
+            valid = False
+        if not valid:
+            raise ValueError(f"metadata {field} deve ser numero positivo finito")
     asset_entry = candidate.get("candidate_asset_entry")
     if isinstance(asset_entry, dict):
         for field in ("url", "file", "credit", "license", "focus"):
@@ -115,6 +126,46 @@ def validate_visual_candidate_pool(pool: dict) -> dict:
                 raise ValueError(f"slot {slot_id}, candidato {index}: {exc}") from exc
         normalized_slots.append(dict(slot, candidates=normalized_candidates))
     return dict(pool, slots=normalized_slots)
+
+
+def validate_visual_candidate_coverage(pool: dict, shot_slots: list[tuple[str, str]]) -> None:
+    """Require a distinct real source for every shot, with a video opening.
+
+    Matching considers alternatives jointly, so repeating a promising candidate
+    across discovery slots is allowed only when the complete pool is sufficient.
+    """
+    choices = []
+    for index, (shot_id, asset_id) in enumerate(shot_slots):
+        slot = next((item for item in pool["slots"] if item["id"] in {shot_id, asset_id}), None)
+        if slot is None:
+            raise ValueError(f"slot ausente para shot={shot_id!r}, asset={asset_id!r}")
+        sources = set()
+        for candidate in slot["candidates"]:
+            if index == 0 and candidate["kind"] != "video":
+                continue
+            url = candidate["url"]
+            video_id = extract_youtube_video_id(url)
+            parsed = urlsplit(url)
+            identity = ("youtube", video_id) if video_id else ("url", f"{parsed.netloc}{parsed.path}".casefold())
+            sources.add(identity)
+        if not sources:
+            raise ValueError(f"slot {slot['id']!r} sem fonte utilizavel" + (" de video para o primeiro take" if index == 0 else ""))
+        choices.append(sorted(sources))
+
+    assigned = {}
+    def match(index, seen):
+        for source in choices[index]:
+            if source in seen:
+                continue
+            seen.add(source)
+            previous = assigned.get(source)
+            if previous is None or match(previous, seen):
+                assigned[source] = index
+                return True
+        return False
+    for index in range(len(choices)):
+        if not match(index, set()):
+            raise ValueError("pool insuficiente: nao existe uma fonte visual unica por shot")
 
 
 def main() -> int:

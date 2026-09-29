@@ -75,6 +75,62 @@ class VisualCandidateResolutionTests(unittest.TestCase):
             self._write_episode(root, "demo", None)
             self.assertEqual(resolver.resolve_episode(root, "demo"), 0)
 
+    def test_pipeline_selection_rejects_missing_pool_before_changing_assets(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            episode = self._write_episode(root, "demo", None)
+            before = (episode / "assets.json").read_bytes()
+            self.assertEqual(resolver.resolve_episode(root, "demo", validate_for_pipeline=True), 1)
+            self.assertEqual((episode / "assets.json").read_bytes(), before)
+
+    def test_pipeline_selection_does_not_replace_failed_opening_video_with_image(self):
+        pool = {"schema_version": 1, "slots": [{"id": "slot_a", "candidates": [
+            {"name": "blocked", "kind": "video", "url": "https://example.test/a.mp4", "file": "a.mp4"},
+            {"name": "image", "kind": "image", "url": "https://example.test/b.jpg", "file": "b.jpg"},
+        ]}]}
+        def inspect(root, slot, candidate, index):
+            if candidate["kind"] == "video":
+                raise RuntimeError("HTTP 403")
+            return self._successful_candidate(candidate, index)
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            episode = self._write_episode(root, "demo", pool)
+            with patch.object(resolver, "_inspect_candidate", side_effect=inspect):
+                result = resolver.resolve_episode(root, "demo", prefer_video_candidates=True, validate_for_pipeline=True)
+            self.assertEqual(result, 1)
+            assets = json.loads((episode / "assets.json").read_text())
+            self.assertEqual(assets["assets"][0]["file"], "old.webm")
+
+    def test_pipeline_replaces_image_opening_and_missing_catalog_with_video(self):
+        pool = {"schema_version": 1, "slots": [{"id": "shot_a", "candidates": [
+            {"name": "video", "kind": "video", "url": "https://example.test/a.mp4", "file": "a.mp4"}]}]}
+        for missing in (False, True):
+            with self.subTest(missing=missing), TemporaryDirectory() as tmp:
+                root = Path(tmp)
+                episode = self._write_episode(root, "demo", pool, asset_file="old.jpg")
+                if missing:
+                    (episode / "assets.json").write_text(json.dumps({"schema_version": 1, "assets": []}))
+                with patch.object(resolver, "_inspect_candidate", side_effect=lambda root, slot, candidate, index: self._successful_candidate(candidate, index)):
+                    self.assertEqual(resolver.resolve_episode(root, "demo", validate_for_pipeline=True), 0)
+                self.assertEqual(json.loads((episode / "assets.json").read_text())["assets"][0]["file"], "a.mp4")
+
+    def test_pipeline_preserves_only_source_available_to_later_slot(self):
+        x = {"name": "preferred", "kind": "video", "url": "https://example.test/x.mp4", "file": "x.mp4", "editorial_rank": 1}
+        y = {"name": "alternative", "kind": "video", "url": "https://example.test/y.mp4", "file": "y.mp4", "editorial_rank": 2}
+        pool = {"schema_version": 1, "slots": [
+            {"id": "slot_a", "inspect_top": 1, "candidates": [x, y]},
+            {"id": "slot_b", "inspect_top": 1, "candidates": [x]}]}
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            episode = self._write_episode(root, "demo", pool)
+            timeline = json.loads((episode / "timeline.json").read_text())
+            timeline["shots"].append({"id": "shot_b", "asset": "slot_b", "segment": "b", "motion": "hold", "transition_out": "cut"})
+            (episode / "timeline.json").write_text(json.dumps(timeline))
+            with patch.object(resolver, "_inspect_candidate", side_effect=lambda root, slot, candidate, index: self._successful_candidate(candidate, index)):
+                self.assertEqual(resolver.resolve_episode(root, "demo", validate_for_pipeline=True), 0)
+            assets = {asset["id"]: asset["file"] for asset in json.loads((episode / "assets.json").read_text())["assets"]}
+            self.assertEqual(assets, {"slot_a": "y.mp4", "slot_b": "x.mp4"})
+
     def test_prefilters_pool_and_selects_best_inspected_candidate(self):
         pool = {
             "schema_version": 1,

@@ -1,145 +1,82 @@
 # Regra obrigatória — conclusão real da publicação
 
-Esta regra define quando uma execução do **Além do Hit / Music Short Factory** pode ser considerada concluída.
+<!-- pipeline-contract: config/pipeline-contract.json -->
 
-Ela é autoritativa para **queue, acompanhamento da Publish Action, status final, recuperação de falhas e verificação por plataforma**. Em qualquer conflito com instruções antigas equivalentes a `queue -> STOP`, `a criação da queue encerra a tarefa`, `não acompanhe a Action`, `pare na primeira falha de workflow` ou `ACTION: SUCESSO` baseado apenas no media preflight, **esta regra prevalece**.
+Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-contract.md), baseado em [`config/pipeline-contract.json`](../config/pipeline-contract.json). Use o estado persistido e os triggers reais antes de decidir continuidade.
 
-A `main` continua sendo a fonte da verdade para capacidades técnicas, workflows, publishers, schemas e estados realmente disponíveis.
+## 1. Continuidade e identidade
 
-## 0. Gatilhos automáticos por push — ausência de workflow dispatch NÃO é bloqueio
+Execute `python scripts/pipeline_control.py status` para consultar a autoridade
+compartilhada; o índice local é cache. Respeite `next_action`,
+`mutation_allowed`, `republication_allowed` e `can_create_new_episode`.
+Retome trabalho ativo no mesmo slug; uma chamada editorial não cria outro
+episódio. Listagem truncada, sozinha, nunca autoriza `BLOQUEADO`.
 
-Antes de declarar `BLOQUEADO` por não existir uma operação/ferramenta explícita de `workflow_dispatch`, leia o `on:` do workflow atual na `main`.
+## 2. Validar antes de solicitar a Action
 
-Quando `.github/workflows/episode-media-preflight.yml` estiver configurado com `on: push` para `.episode-check/*.json`, **NÃO existe necessidade de disparar o workflow manualmente**. O contrato correto é:
+Execute `python scripts/pipeline_control.py prepare <slug> --request-id <id>`.
+Esse caminho compartilha o validator batch com o Media Preflight, corrige em lote
+antes do request e só produz `.episode-check` após PASS local. Antes de aceitar
+cada asset/slot, valide acesso, mídia, metadata, referências, duração, trims,
+fontes e a regra de primeiro take do projeto. Complete o pool se faltarem opções.
 
-`criar novo .episode-check/<slug>-<nonce>.json -> commit/push na main -> GitHub Actions dispara Episode media preflight automaticamente -> localizar o run associado ao commit/request -> acompanhar até estado terminal`.
+Erro determinístico exige reparo real antes de nova validação. Nenhum retry cego,
+nenhum relaxamento de validator. Use a [taxonomia](../docs/media-preflight-errors.md)
+e o [protocolo de recuperação](../docs/publishing-retry.md).
 
-Portanto:
+## 3. Trigger e acompanhamento
 
-- falta de ferramenta `workflow_dispatch` NÃO é `BLOQUEADO` quando o workflow é acionado por `push`;
-- não procure nem exija uma operação manual de dispatch nesse caso;
-- se a escrita do request na `main` retornar sucesso, considere o gatilho solicitado e passe a localizar/acompanhar o run;
-- se o run ainda não apareceu, trate como estado transitório e consulte novamente enquanto houver capacidade de leitura; não converta simples atraso de criação da Action em bloqueio;
-- só reporte bloqueio operacional se a própria escrita/push exigida pelo gatilho falhar, se GitHub Actions estiver efetivamente indisponível/inacessível, ou se a `main` atual tiver mudado para um gatilho que realmente exija uma ação não disponível;
-- aplique a mesma regra aos demais gates/workflows cujo `on:` atual demonstre disparo automático por escrita/push.
+O CAS remoto do prepare confirma o request e devolve o SHA que aciona push.
+Não crie um segundo commit/push do mesmo request; acompanhe o SHA devolvido.
+Não exija `workflow_dispatch` de Duplicate/Media Preflight. Acompanhe a combinação
+`request_id + slug + commit SHA + workflow`; nunca o último workflow run.
 
-## 1. Queue não é conclusão
+A Action pode demorar a aparecer. `queued`, `pending`, `waiting`, `requested` e
+`in_progress` são transitórios: use polling/backoff com timeout. Ao expirar,
+preserve o request e reporte o estado real não verificado/em andamento.
 
-A criação de `.publish-queue/<slug>.txt` significa apenas que o episódio foi entregue ao pipeline de publicação.
+A queue registra slug, `source_run_id` e `request_id` do bundle aprovado. Ela é criada pelo
+preflight depois do render/dry-run, e não encerra a execução. O preflight faz
+dispatch explícito do publisher para o caso de push com `GITHUB_TOKEN`.
 
-Nunca considere a execução concluída apenas porque o media preflight passou, a queue foi criada ou o workflow de publicação foi disparado.
+## 4. Diagnóstico em lote
 
-## 2. Fluxo obrigatório até publicação
+Leia o resultado estruturado da execução exata e artefatos disponíveis.
+`failure`, `exit code 1` e nome de step isolados nunca são causa raiz. Preserve
+`error_code`, `error_class`, `recoverable`, `stage`, `slug`, `request_id`, `target`,
+`detail`, `errors[]` e `commit_sha`. Se necessário, reproduza os validators do
+mesmo commit; ausência do log bruto não impede diagnóstico.
 
-Depois de o episódio passar pelo media preflight e a queue ser criada, não escolha outro tema e não crie outro episódio.
+Repare todos os itens independentes recuperáveis e revalide o lote inteiro. Um
+item externo ou que exige autoria não deve impedir reparos locais possíveis.
+Pool sem candidatos adequados exige novas fontes, não uma seleção inventada.
 
-Acompanhe a execução exata de `.github/workflows/publish-episode.yml` correspondente ao mesmo slug até obter evidência real do estado do job e das etapas por plataforma.
+## 5. Publicação e proteção contra duplicação
 
-`tema -> duplicate preflight -> autoria -> media preflight PASS -> queue -> Publish episode -> YouTube -> Instagram -> Facebook -> TikTok -> verificar resultados -> STOP`
+Antes da primeira chamada de publisher existe uma reserva persistida em
+`.publication-attempts/<slug>.json`. Se algum publisher iniciou ou pode ter
+atingido uma plataforma, mantenha obrigatoriamente:
 
-## 3. Estados separados
+```text
+EVER_PUBLISHED_OR_ATTEMPTED=YES
+REPUBLICATION_ALLOWED=NO
+recovery_mutation_allowed=NO
+```
 
-Use sempre estados separados:
+Não remova a reserva nem republique ou altere o episódio após esse ponto. Consulte
+o resultado real nas plataformas. Os retries legados são permitidos somente
+antes dessa reserva e depois de correção comprovada, conforme o controlador.
 
-- `MEDIA PREFLIGHT`: resultado do gate de mídia;
-- `QUEUE`: criação da publish queue;
-- `PUBLISH ACTION`: resultado do workflow de publicação;
-- `YOUTUBE`, `INSTAGRAM`, `FACEBOOK` e `TIKTOK`: resultado real de cada plataforma.
+## 6. Estado final verificável
 
-É proibido emitir `PUBLISH ACTION: SUCESSO` se a única Action verificada foi o media preflight.
+Separe `MEDIA PREFLIGHT`, `QUEUE`, `PUBLISH ACTION`, `YOUTUBE`, `INSTAGRAM`,
+`FACEBOOK` e `TIKTOK`. Só reporte `STATUS: PUBLICADO` quando a Action terminou e
+as plataformas realmente executadas têm sucesso comprovado. Queue/PASS local
+não provam publicação. Use `PUBLICAÇÃO_EM_ANDAMENTO` para trabalho transitório
+e `PUBLICAÇÃO_NÃO_VERIFICADA` se faltar evidência para determinar o resultado.
 
-## 4. Critério para STATUS: PUBLICADO
-
-Só use `STATUS: PUBLICADO` quando houver evidência real acessível de que a Publish Action chegou a estado terminal e todas as etapas de plataforma que a `main` realmente executa terminaram com sucesso.
-
-Se a Publish Action ainda estiver rodando e não houver estado terminal acessível, use `STATUS: PUBLICAÇÃO_EM_ANDAMENTO` e `PUBLISH ACTION: EM_ANDAMENTO`.
-
-Se não houver acesso suficiente para verificar a Publish Action, use `STATUS: PUBLICAÇÃO_NÃO_VERIFICADA`.
-
-Uma primeira falha de Media Preflight ou Publish Action **não é automaticamente terminal**. Status genérico como `failure`, `exit code 1`, nome da etapa que ficou vermelha ou `MEDIA_PREFLIGHT_RESULT=FAIL` nunca é causa raiz suficiente.
-
-## 5. Status por plataforma
-
-Reporte separadamente, usando apenas evidência real:
-
-- YouTube: `PUBLICADO_PUBLICO`, `PUBLICADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou `BLOQUEADO`;
-- Instagram: `PUBLICADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou `BLOQUEADO`;
-- Facebook: `PUBLICADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou `BLOQUEADO`;
-- TikTok: reporte o estado real suportado pela `main`, por exemplo `PUBLICADO`, `DRAFT_ENVIADO`, `FALHOU`, `EM_ANDAMENTO`, `NÃO_VERIFICADO` ou outro estado comprovado pelo publisher atual.
-
-## 6. Falhas e retries — recuperação automática obrigatória
-
-Uma GitHub Action com `failure` é um estado intermediário enquanto existir diagnóstico ou recuperação segura e autorizada.
-
-### 6.0 Escada obrigatória de diagnóstico — sem depender do antigo log bruto
-
-O antigo log bruto/completo do job **não é mais uma fonte obrigatória**. A automação não pode bloquear, encerrar ou declarar `DIAGNÓSTICO_INACESSÍVEL` apenas porque esse log não está disponível.
-
-Antes de considerar uma falha terminal, faça tudo que for aplicável abaixo na **execução exata** que falhou:
-
-1. identifique `run_id`, `job_id`, workflow, commit/branch, conclusão do job e a etapa exata usando metadados estruturados da Action;
-2. procure outputs, summaries, annotations, mensagens estruturadas do step e campos emitidos pelo workflow, principalmente `MEDIA_PREFLIGHT_ERROR_COUNT`, `MEDIA_PREFLIGHT_ERRORS_JSON`, `MEDIA_PREFLIGHT_ERROR_ITEM`, `MEDIA_PREFLIGHT_ERROR_CODE`, `MEDIA_PREFLIGHT_ERROR_CLASS`, `MEDIA_PREFLIGHT_ERROR_DETAIL`, `MEDIA_PREFLIGHT_TARGET`, `MEDIA_PREFLIGHT_RECOVERABLE` e equivalentes atuais;
-3. consulte o artefato `media-preflight-diagnostics-<run_id>` quando estiver acessível; leia `final-result.txt` e, se necessário, os `attempt-*.log`;
-4. se o artefato não puder ser lido pela ferramenta disponível, **reproduza o diagnóstico pelo código**: leia a versão exata de `.github/workflows/episode-media-preflight.yml`, os scripts/validators chamados por ele e os arquivos do mesmo `episodes/<slug>/`; aplique as mesmas validações determinísticas para localizar o arquivo, asset, URL, enum, cue, duração, background ou constraint incompatível;
-5. quando a validação envolver URL/asset remoto e a ferramenta permitir, confira a disponibilidade/metadado real exigido pelo validator; não afirme inspeção não realizada;
-6. cruze a causa com o mesmo slug e com o SHA/versão da `main` usada naquele run;
-7. se ainda não houver causa concreta e a falha for de Media Preflight antes da queue, faça **uma única rechecagem diagnóstica adicional do mesmo slug com nonce novo**, sem alteração artificial do episódio e sem criação de queue, para gerar nova evidência;
-8. somente depois classifique a falha como corrigível, não recuperável ou `DIAGNÓSTICO_INACESSÍVEL`.
-
-Se algum log textual do job ainda estiver acessível pela ferramenta atual, use-o como evidência complementar. Ele não é pré-requisito.
-
-Mensagens genéricas como `Process completed with exit code 1`, `Validate and auto-repair episode media failed`, `MEDIA_PREFLIGHT_RESULT=FAIL`, `job failed` ou apenas o nome de uma etapa nunca são suficientes para `ERRO/BLOQUEIO` final.
-
-Enquanto houver uma fonte diagnóstica ainda não consultada ou uma correção segura restante, continue trabalhando no mesmo slug.
-
-### 6.1 Falha no Media Preflight antes da queue — diagnóstico e correção em lote
-
-O Media Preflight deve tentar coletar todos os erros independentes observáveis na mesma passada:
-
-`validar tudo possível -> coletar lote de erros -> corrigir lote inteiro -> revalidar uma vez -> corrigir somente erros novos/dependentes`
-
-Se `Episode media preflight` falhar:
-
-1. aplique primeiro a escada da seção 6.0;
-2. trate a lista completa de erros estruturados como diagnóstico autoritativo quando existir;
-3. identifique todos os itens recuperáveis, preservando o mesmo slug;
-4. corrija em lote assets inválidos, referências visuais, trims, background e demais constraints recuperáveis antes de uma nova passada completa;
-5. grave as correções na `main` quando necessário;
-6. crie novo `.episode-check/<slug>-<nonce>.json` somente quando nova Action externa for realmente necessária; a criação/push desse arquivo **é o disparo** quando o workflow atual usa `on: push`; não exija `workflow_dispatch`;
-7. acompanhe a nova Action exata;
-8. se houver `MEDIA_PREFLIGHT_RESULT=PASS`, continue automaticamente para queue/publicação.
-
-Faça no máximo **3 ciclos externos normais totais de Media Preflight** por episódio: tentativa inicial + até 2 novas Actions após correções reais.
-
-A rechecagem diagnóstica adicional da seção 6.0 é separada e pode ocorrer uma única vez quando não houver causa concreta acessível.
-
-### 6.2 Falha na Publish Action
-
-Se a Publish Action falhar, aplique a seção 6.0 e identifique a causa concreta por metadados/outputs/artefato ou reprodução do código atual.
-
-Se a falha ocorreu comprovadamente antes de qualquer plataforma poder ter recebido o vídeo e a correção puder ser feita somente nos arquivos do episódio, a recuperação automática é obrigatória enquanto houver tentativa segura disponível.
-
-Siga `docs/publishing-retry.md`: no máximo **3 tentativas totais de publicação** — tentativa inicial pela queue + `retry-1` + `retry-2`.
-
-Antes de cada retry:
-
-1. corrija primeiro o episódio;
-2. grave a correção na `main`;
-3. crie o próximo arquivo de retry permitido;
-4. acompanhe a nova Publish Action;
-5. continue até sucesso ou até não existir mais retry seguro.
-
-### 6.3 Segurança contra duplicação
-
-Não republique cegamente uma plataforma que já possa ter concluído. Depois que alguma etapa de publicação começou, concluiu ou pode ter concluído, preserve a política conservadora de `docs/publishing-retry.md`.
-
-Uma falha de Media Preflight ou publicação não autoriza escolher outro tema dentro da mesma execução.
-
-## 7. Limite de episódio continua valendo
-
-A regra de no máximo 1 episódio por execução continua absoluta.
-
-Depois que um slug recebe autorização e a autoria começa, toda a execução permanece dedicada a esse slug até chegar a um estado final verificável, falha real após recuperação permitida ou bloqueio operacional.
+YouTube pode informar `PUBLICADO_PUBLICO`/`PUBLICADO`; TikTok pode informar
+`DRAFT_ENVIADO` quando esse é o resultado real. Não invente sucesso por plataforma.
 
 ## 8. Formato final obrigatório
 

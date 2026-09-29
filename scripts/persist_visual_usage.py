@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime
+import hashlib
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
@@ -51,6 +53,55 @@ def persist_visual_usage(
     payload = load_and_validate_visual_usage(source, slug)
     serialized = json.dumps(payload, ensure_ascii=False, indent=2) + "\n"
     relative = Path("episodes") / slug / VISUAL_USAGE_FILE
+    from engine.coordination_runtime import (
+        coordinator_for, acquire_token, authoritative_mutation_base,
+        mark_cache_applied, save_token, release_episode,
+    )
+    coordinator = coordinator_for(root)
+    if coordinator is not None:
+        authority = coordinator.status(slug)
+        remote = coordinator.backend.read_files([relative.as_posix()], authority["revision"])
+        if remote.get(relative.as_posix()) == serialized.encode():
+            return True  # Render already committed this exact history before publishing.
+        coordinator, token = acquire_token(root, slug)
+        _, artifact_raw = authoritative_mutation_base(root, slug, coordinator, token)
+        current = coordinator.read_files([relative.as_posix()], token["revision"])[relative.as_posix()]
+        if current is not None:
+            try:
+                recorded = json.loads(current)
+                if not isinstance(recorded, dict):
+                    raise ValueError("invalid remote visual usage")
+                if _recorded_at(recorded) >= _recorded_at(payload):
+                    release_episode(root, slug)
+                    return True
+            except (KeyError, TypeError, ValueError) as exc:
+                raise VisualUsagePersistenceError("Historico visual remoto exige reconciliacao.") from exc
+        artifact = json.loads(artifact_raw) if artifact_raw is not None else {
+            "slug": slug, "generation": token["generation"], "files": {}, "bundle_approved": False,
+        }
+        if not isinstance(artifact, dict) or not isinstance(artifact.get("files"), dict):
+            raise VisualUsagePersistenceError("Manifest de artefatos remoto invalido.")
+        artifact["files"][relative.as_posix()] = hashlib.sha256(serialized.encode()).hexdigest()
+        artifact["generation"] = token["generation"]
+        artifact["bundle_approved"] = False
+        artifact_bytes = json.dumps(artifact, sort_keys=True).encode()
+        token = coordinator.commit_mutation(token, {
+            relative.as_posix(): serialized.encode(),
+            f".pipeline/artifacts/{slug}.json": artifact_bytes,
+        })
+        save_token(root, token)
+        descriptor, temporary = tempfile.mkstemp(prefix=".visual-usage-", suffix=".tmp", dir=source.parent)
+        try:
+            with os.fdopen(descriptor, "wb") as stream:
+                stream.write(serialized.encode())
+                stream.flush()
+                os.fsync(stream.fileno())
+            Path(temporary).replace(source)
+        finally:
+            Path(temporary).unlink(missing_ok=True)
+        mark_cache_applied(root, slug, artifact_bytes)
+        release_episode(root, slug)
+        return True
 
     for attempt in range(1, attempts + 1):
         _git(root, "fetch", "--quiet", "origin", "main")

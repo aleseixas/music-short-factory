@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 
 from check_episode_media import (
@@ -14,11 +15,11 @@ from engine.assets import AssetManager
 from engine.config import load_project_config
 from engine.episode import load_episode
 from engine.music import resolve_background_music
-from engine.visual_candidates import validate_visual_candidate_pool
-
-
-MAX_VIDEO_SOURCE_USES = 3
-DEFAULT_VIDEO_REUSE_WINDOW_SECONDS = 4.0
+from engine.visual_candidates import validate_visual_candidate_pool, validate_visual_candidate_coverage
+from engine.media_validation import collect_partial_episode
+from engine.models import TimelineScene
+from engine.visual_search import assess_trim
+from engine.utils import validate_slug
 
 
 def _error_record(exc: Exception, slug: str, *, scope: str = "") -> dict[str, object]:
@@ -96,6 +97,16 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
     episode_root = f"episodes/{slug}"
     pool_path = episode.directory / "visual_candidates.json"
 
+    # A diagnostic-only partial episode may omit a broken first shot. Preserve
+    # the authored order so it never turns the second shot into the opening.
+    shot_slots = [(shot.id, shot.asset_id) for shot in episode.shots]
+    try:
+        authored = json.loads((episode.directory / "timeline.json").read_text(encoding="utf-8"))["shots"]
+        if isinstance(authored, list) and authored and all(isinstance(shot, dict) and shot.get("id") and shot.get("asset") for shot in authored):
+            shot_slots = [(str(shot["id"]), str(shot["asset"])) for shot in authored]
+    except (OSError, ValueError, KeyError, TypeError):
+        pass  # The original parser failure stays in the diagnostic batch.
+
     pool_slots: list[dict] = []
     if not pool_path.exists():
         errors.append(
@@ -116,8 +127,9 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
         )
     else:
         try:
-            pool = json.loads(pool_path.read_text(encoding="utf-8"))
-            pool_slots = validate_visual_candidate_pool(pool)["slots"]
+            pool = validate_visual_candidate_pool(json.loads(pool_path.read_text(encoding="utf-8-sig")))
+            pool_slots = pool["slots"]
+            validate_visual_candidate_coverage(pool, shot_slots)
             print(f"[preflight] visual candidate pool OK: {len(pool_slots)} slot(s)")
         except Exception as exc:
             errors.append(
@@ -137,7 +149,9 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
     if not episode.shots:
         return errors
 
-    first_shot = episode.shots[0]
+    first_shot = next((shot for shot in episode.shots if shot_slots and shot.id == shot_slots[0][0]), None)
+    if first_shot is None:
+        return errors  # The actual opening's parser/reference error is already reported.
     first_asset = episode.assets.get(first_shot.asset_id)
     if first_asset is None or first_asset.is_video:
         if first_asset is not None:
@@ -189,37 +203,9 @@ def _collect_visual_authoring_errors(episode, slug: str) -> list[dict[str, objec
     return errors
 
 
-def _video_source_identity(asset) -> tuple[str, str]:
-    aliases = _visual_aliases(asset)
-    for preferred_kind in ("youtube", "url", "file"):
-        for identity in aliases:
-            if identity[0] == preferred_kind:
-                return identity
-    return ("asset_id", asset.id.casefold())
-
-
-def _shot_source_interval(shot) -> tuple[float, float]:
-    start = float(shot.source_start_seconds or 0.0)
-    if shot.source_end_seconds is not None:
-        end = float(shot.source_end_seconds)
-    else:
-        end = start + DEFAULT_VIDEO_REUSE_WINDOW_SECONDS
-    return start, end
-
-
 def _collect_visual_structure_errors(episode, slug: str) -> list[dict[str, object]]:
-    """Validate image uniqueness and bounded, non-overlapping video-source reuse.
-
-    Current editorial policy allows one video source to feed up to three shots when
-    each shot uses a genuinely different, non-overlapping temporal segment. Images
-    remain zero-reuse. This check intentionally uses a conservative four-second
-    window when source_end_seconds is omitted; render-time validation still verifies
-    the real source duration needed by each resolved shot.
-    """
-
     errors: list[dict[str, object]] = []
-    seen_images: dict[tuple[str, str], tuple[str, str]] = {}
-    video_usages: dict[tuple[str, str], list[tuple[str, str, float, float]]] = {}
+    seen: dict[tuple[str, str], tuple[str, str]] = {}
 
     for shot in episode.shots:
         asset = episode.assets.get(shot.asset_id)
@@ -230,104 +216,70 @@ def _collect_visual_structure_errors(episode, slug: str) -> list[dict[str, objec
             errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
             continue
 
-        if not asset.is_video:
-            aliases = _visual_aliases(asset)
-            duplicate_found = False
+        aliases = _visual_aliases(asset)
+        duplicate_found = False
+        for identity in aliases:
+            previous = seen.get(identity)
+            if previous is None:
+                continue
+            previous_shot, previous_asset = previous
+            identity_kind, identity_value = identity
+            exc = RuntimeError(
+                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: o mesmo visual foi usado "
+                "mais de uma vez dentro do episodio. "
+                f"Shot {shot.id!r} (asset={asset.id!r}) repete o visual de "
+                f"{previous_shot!r} (asset={previous_asset!r}); "
+                f"identidade={identity_kind}:{identity_value}. "
+                "Cada shot principal deve usar uma imagem ou video diferente."
+            )
+            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
+            duplicate_found = True
+            break
+
+        if not duplicate_found:
             for identity in aliases:
-                previous = seen_images.get(identity)
-                if previous is None:
-                    continue
-                previous_shot, previous_asset = previous
-                identity_kind, identity_value = identity
-                exc = RuntimeError(
-                    "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: a mesma imagem foi usada "
-                    "mais de uma vez dentro do episodio. "
-                    f"Shot {shot.id!r} (asset={asset.id!r}) repete a imagem de "
-                    f"{previous_shot!r} (asset={previous_asset!r}); "
-                    f"identidade={identity_kind}:{identity_value}."
-                )
-                errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
-                duplicate_found = True
-                break
-            if not duplicate_found:
-                for identity in aliases:
-                    seen_images[identity] = (shot.id, asset.id)
-            continue
-
-        identity = _video_source_identity(asset)
-        usages = video_usages.setdefault(identity, [])
-        start, end = _shot_source_interval(shot)
-
-        if end <= start:
-            exc = RuntimeError(
-                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: intervalo de video invalido para "
-                f"shot={shot.id!r} asset={asset.id!r}; start={start:.3f} end={end:.3f}."
-            )
-            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
-            continue
-
-        if len(usages) >= MAX_VIDEO_SOURCE_USES:
-            identity_kind, identity_value = identity
-            exc = RuntimeError(
-                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: a mesma fonte de video excedeu "
-                f"o limite de {MAX_VIDEO_SOURCE_USES} shots; shot={shot.id!r} "
-                f"asset={asset.id!r} identidade={identity_kind}:{identity_value}."
-            )
-            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
-            continue
-
-        overlap = next(
-            (
-                previous
-                for previous in usages
-                if start < previous[3] and previous[2] < end
-            ),
-            None,
-        )
-        if overlap is not None:
-            previous_shot, previous_asset, previous_start, previous_end = overlap
-            identity_kind, identity_value = identity
-            exc = RuntimeError(
-                "INTRA_EPISODE_VISUAL_REUSE_BLOCKED: a mesma fonte de video usa "
-                "intervalos sobrepostos. "
-                f"Shot {shot.id!r} (asset={asset.id!r}, {start:.3f}-{end:.3f}s) "
-                f"sobrepoe {previous_shot!r} (asset={previous_asset!r}, "
-                f"{previous_start:.3f}-{previous_end:.3f}s); "
-                f"identidade={identity_kind}:{identity_value}."
-            )
-            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
-            continue
-
-        usages.append((shot.id, asset.id, start, end))
+                seen[identity] = (shot.id, asset.id)
 
     if not errors:
         print(
             "[preflight] intra-episode visual uniqueness OK: "
-            f"{len(episode.shots)} shot(s); imagens unicas e videos com segmentos nao sobrepostos"
+            f"{len(episode.shots)} shot(s) sem reutilizacao"
         )
     return errors
 
 
-def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Validate all independent episode media checks and report failures as one batch."
-    )
-    parser.add_argument("episode", help="Episode slug")
-    args = parser.parse_args()
-    slug = args.episode.strip()
+def validate_episode_media(
+    root: Path, slug: str, *, request_id: str = "", stage: str = "LOCAL_VALIDATION",
+    commit_sha: str = "",
+) -> list[dict[str, object]]:
+    """The single acceptance gate for authoring, local preflight and CI.
 
-    root = Path(__file__).resolve().parent
+    A load failure remains a failure, but valid independent entries are checked
+    too so all usable repair targets are returned in the same pass.
+    """
+    root = root.resolve()
     errors: list[dict[str, object]] = []
-
+    def finish(items):
+        return [_with_context(item, slug, request_id, stage, commit_sha) for item in items]
     try:
+        slug = validate_slug(slug)
         config = load_project_config(root / "config" / "config.json")
         episodes_dir = Path(config.paths.episodes_dir)
         cache_dir = Path(config.paths.cache_dir)
         if not cache_dir.is_absolute():
             cache_dir = root / cache_dir
+    except Exception as exc:
+        return finish([_error_record(exc, slug, scope="configuration")])
+    try:
         episode = load_episode(root, config.paths.episodes_dir, slug)
     except Exception as exc:
-        return _emit_batch([_error_record(exc, slug, scope="episode-load")], slug)
+        errors.append(_error_record(exc, slug, scope="episode-load"))
+        try:
+            episode, independent = collect_partial_episode(root, config.paths.episodes_dir, slug)
+            errors.extend(_error_record(error, slug, scope=scope) for scope, error in independent)
+        except Exception as partial_exc:
+            errors.append(_error_record(partial_exc, slug, scope="episode-inputs"))
+            return finish(errors)
 
     work_dir = root / config.paths.work_dir / ".media-preflight" / episode.name
     video_cache = cache_dir / "video"
@@ -342,7 +294,7 @@ def main() -> int:
             video_cache_dir=video_cache,
         )
     except Exception as exc:
-        return _emit_batch([_error_record(exc, slug, scope="asset-manager")], slug)
+        return finish(errors + [_error_record(exc, slug, scope="asset-manager")])
 
     print("[preflight] validating visual authoring contract...")
     errors.extend(_collect_visual_authoring_errors(episode, slug))
@@ -352,16 +304,48 @@ def main() -> int:
 
     print(f"[preflight] validating {len(episode.assets)} episode assets independently...")
     asset_failures = 0
+    failed_assets = set()
     for asset in episode.assets.values():
         try:
             manager.ensure(asset)
         except Exception as exc:
             asset_failures += 1
+            failed_assets.add(asset.id)
             errors.append(_error_record(exc, slug, scope=f"asset:{asset.id}"))
     if asset_failures:
         print(f"[preflight] asset failures collected: {asset_failures}")
     else:
         print("[preflight] assets OK")
+
+    # Reuse the renderer's exact source bounds checks before a render is queued.
+    # Bounds and authored duration are known locally; final TTS timing remains
+    # checked by this renderer method after synthesis.
+    try:
+        pool_slots = json.loads((episode.directory / "visual_candidates.json").read_text(encoding="utf-8")).get("slots", [])
+    except (OSError, ValueError, AttributeError):
+        pool_slots = []  # The independent authoring gate retains the original failure.
+    for index, shot in enumerate(episode.shots):
+        asset = episode.assets.get(shot.asset_id)
+        if asset is None or not asset.is_video or asset.id in failed_assets:
+            continue
+        try:
+            scene = TimelineScene(index, shot, asset, 0, 0, 0, 0)
+            info = manager.preflight_video_scene(scene, config.render.fps)
+            slot = next((item for item in pool_slots if isinstance(item, dict) and item.get("id") in {shot.id, shot.asset_id}), {})
+            freeze = shot.freeze_frame
+            trim = assess_trim(info.duration,
+                               shot_duration_seconds=slot.get("required_seconds", 8.0),
+                               source_start_seconds=shot.source_start_seconds,
+                               source_end_seconds=shot.source_end_seconds,
+                               crossfade_seconds=slot.get("crossfade_seconds", 0.35),
+                               speed=shot.speed, output_fps=config.render.fps,
+                               freeze_start_seconds=freeze.start_seconds if freeze else None,
+                               freeze_duration_seconds=freeze.duration_seconds if freeze else None)
+            if not trim.safe_for_shot:
+                raise RuntimeError(f"unsafe_trim shot {shot.id!r}: {trim.reason}; disponivel={trim.available_seconds}s; necessario={trim.required_seconds}s")
+            manager.preflight_video_decode(asset, shot.source_start_seconds, trim.required_seconds)
+        except Exception as exc:
+            errors.append(_error_record(exc, slug, scope=f"shot:{shot.id}"))
 
     resolved_music = None
     try:
@@ -408,7 +392,49 @@ def main() -> int:
         seen_keys.add(key)
         unique.append(error)
 
-    return _emit_batch(unique, slug)
+    return finish(unique)
+
+
+
+def _with_context(error, slug, request_id, stage, commit_sha):
+    code = str(error.get("code") or "UNCLASSIFIED_ENGINE_ERROR")
+    if code in {"REMOTE_MEDIA_RATE_LIMITED", "REMOTE_MEDIA_PROVIDER_ERROR", "REMOTE_MEDIA_TEMPORARY_FAILURE"}:
+        error_class = "transient_external"
+        prevention = "external"
+    elif code in {"MEDIA_TOOLCHAIN_UNAVAILABLE", "UNCLASSIFIED_ENGINE_ERROR"}:
+        error_class = "non_recoverable"
+        prevention = "local_preflight"
+    elif code in {"SHOT_REFERENCES_MISSING_ASSET", "VIDEO_SOURCE_WINDOW_INVALID", "INTRA_EPISODE_VISUAL_REUSE", "EPISODE_SCHEMA_OR_TIMELINE_INVALID"}:
+        error_class = "preventable_during_timeline_construction"
+        prevention = "timeline_construction"
+    else:
+        error_class = "preventable_during_asset_selection"
+        prevention = "asset_selection"
+    return {**error, "error_code": code, "error_class": error_class,
+            "prevention_stage": prevention, "stage": stage, "slug": slug,
+            "request_id": request_id, "commit_sha": commit_sha}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Validate every independent media invariant before publication.")
+    parser.add_argument("episode", help="Episode slug")
+    parser.add_argument("--request-id", default=os.environ.get("PIPELINE_REQUEST_ID", ""))
+    parser.add_argument("--commit-sha", default=os.environ.get("GITHUB_SHA", ""))
+    parser.add_argument("--stage", default="MEDIA_PREFLIGHT")
+    parser.add_argument("--json-report", type=Path)
+    args = parser.parse_args()
+    slug = args.episode.strip()
+    errors = validate_episode_media(Path(__file__).resolve().parent, slug,
+                                    request_id=args.request_id, stage=args.stage,
+                                    commit_sha=args.commit_sha)
+    report = {"schema_version": 1, "result": "FAIL" if errors else "PASS", "errors": errors,
+              "slug": slug, "request_id": args.request_id, "stage": args.stage,
+              "commit_sha": args.commit_sha}
+    if args.json_report:
+        args.json_report.parent.mkdir(parents=True, exist_ok=True)
+        args.json_report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print("MEDIA_PREFLIGHT_DIAGNOSTIC_JSON=" + json.dumps(report, ensure_ascii=False, separators=(",", ":")))
+    return _emit_batch(errors, slug)
 
 
 if __name__ == "__main__":

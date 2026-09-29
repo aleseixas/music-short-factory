@@ -99,6 +99,27 @@ def _candidate_source_key(candidate: dict) -> str:
     return f"{kind}:url:{canonical}" if kind and canonical else ""
 
 
+def _remaining_sources_available(slots, blocked, opening_asset):
+    """Keep a feasible distinct-source assignment for unprocessed authored slots."""
+    assigned = {}
+    choices = []
+    for slot in slots:
+        choices.append({_candidate_source_key(candidate) for candidate in slot['candidates']
+                        if (slot['id'] != opening_asset or candidate['kind'] == 'video')
+                        and _candidate_source_key(candidate) not in blocked})
+    def match(index, seen):
+        for source in sorted(choices[index]):
+            if not source or source in seen:
+                continue
+            seen.add(source)
+            previous = assigned.get(source)
+            if previous is None or match(previous, seen):
+                assigned[source] = index
+                return True
+        return False
+    return all(match(index, set()) for index in range(len(choices)))
+
+
 def _safe_log_text(value: object, fallback: str = "unknown") -> str:
     parts: list[str] = []
     current = value if isinstance(value, BaseException) else None
@@ -340,17 +361,31 @@ def _url_repetition(candidate: dict, slot: dict, history):
     return assess_repetition(fingerprint, history)
 
 
+from engine.mutation_transaction import fenced_mutation
+
+
+@fenced_mutation()
 def resolve_episode(
     project_root: Path,
     slug: str,
     *,
     prefer_video_candidates: bool = False,
+    validate_for_pipeline: bool = False,
 ) -> int:
+    from engine.pipeline_state import PipelineStore
+    from engine.visual_candidates import validate_visual_candidate_pool, validate_visual_candidate_coverage
+    from check_episode_media import _visual_aliases
+    from engine.models import AssetSpec
+    PipelineStore(project_root).assert_mutation_allowed(slug)
+
+    def aliases(entry):
+        return set(_visual_aliases(AssetSpec(str(entry['id']), str(entry['file']), entry.get('url'), '', '', 0.5, 0.5)))
+
     episode_dir = project_root / "episodes" / slug
     pool_path = episode_dir / "visual_candidates.json"
     if not pool_path.exists():
         print(f"Visual candidates: {slug} sem pool; mantendo assets existentes.")
-        return 0
+        return 1 if validate_for_pipeline else 0
 
     try:
         pool = _load_json(pool_path)
@@ -366,9 +401,18 @@ def resolve_episode(
         shots = timeline.get("shots")
         if not isinstance(original_assets, list) or not isinstance(shots, list):
             raise RuntimeError("assets.json ou timeline.json invalido")
+        if validate_for_pipeline:
+            pool = validate_visual_candidate_pool(pool)
+            validate_visual_candidate_coverage(pool, [(str(shot['id']), str(shot['asset'])) for shot in shots])
+            slots = pool['slots']
+            for slot in slots:
+                matching = next((shot for shot in shots if slot['id'] in {shot['id'], shot['asset']}), None)
+                if matching:
+                    slot['id'] = matching['asset']
+
     except Exception as exc:
-        print(f"::warning::Visual candidate resolver ignorado: {exc}. Render continuara com assets existentes.")
-        return 0
+        print(f"::warning::Visual candidate resolver: {exc}. " + ("Pipeline interrompido antes do render." if validate_for_pipeline else "Render continuara com assets existentes."))
+        return 1 if validate_for_pipeline else 0
 
     original_assets_by_id = {
         str(entry.get("id")): entry
@@ -383,6 +427,12 @@ def resolve_episode(
     recorded_at = datetime.now(timezone.utc).isoformat()
     visual_usage: list[dict] = []
     reserved_candidate_sources: set[str] = set()
+    reserved_aliases = set()
+    if validate_for_pipeline:
+        replaced_slots = {str(slot['id']) for slot in slots}
+        for entry in original_assets:
+            if entry.get('id') not in replaced_slots:
+                reserved_aliases.update(aliases(entry))
     try:
         history, history_warnings = load_visual_history(project_root, exclude_episode=slug)
     except Exception:
@@ -395,7 +445,7 @@ def resolve_episode(
     except (OSError, ValueError, TypeError, RuntimeError):
         output_fps = 30
 
-    for slot in slots:
+    for slot_position, slot in enumerate(slots):
         if not isinstance(slot, dict):
             failures.append("slot invalido ignorado")
             continue
@@ -412,7 +462,7 @@ def resolve_episode(
         slot = dict(slot, _shot=slot_shots[0] if slot_shots else {},
                     _output_fps=output_fps, _repetition_history=history, _episode=slug)
         target_kind = _asset_kind(current_asset)
-        if target_kind not in {"image", "video"}:
+        if target_kind not in {"image", "video"} and not validate_for_pipeline:
             failures.append(f"{slot_id}: tipo do asset atual nao identificado; mantendo asset existente")
             selections[slot_id] = {
                 "status": "kept_existing_asset",
@@ -422,13 +472,22 @@ def resolve_episode(
             continue
 
         inspect_top = int(max(1, min(MAX_INSPECT_TOP, _number(slot.get("inspect_top"), DEFAULT_INSPECT_TOP))))
-        allowed_kinds = {"video", "image"} if prefer_video_candidates else {target_kind}
+        allowed_kinds = {"video", "image"} if (prefer_video_candidates or validate_for_pipeline) else {target_kind}
+        opening_asset = shots[0].get('asset') if shots else None
+        if validate_for_pipeline and slot_id == opening_asset:
+            allowed_kinds = {'video'}
         indexed = [
             (index, candidate)
             for index, candidate in enumerate(candidates, start=1)
             if isinstance(candidate, dict)
             and str(candidate.get("kind") or "").strip().lower() in allowed_kinds
         ]
+
+        if validate_for_pipeline:
+            indexed = [(index, candidate) for index, candidate in indexed
+                       if _candidate_source_key(candidate) not in reserved_candidate_sources
+                       and _remaining_sources_available(slots[slot_position + 1:],
+                           reserved_candidate_sources | {_candidate_source_key(candidate)}, opening_asset)]
 
         if not indexed:
             candidate_scores[slot_id] = []
@@ -531,6 +590,13 @@ def resolve_episode(
                 )
             try:
                 result, inspection, reasons = _inspect_candidate(project_root, slot, candidate, index)
+                if validate_for_pipeline:
+                    reasons = list(reasons)
+                    candidate_entry = {'id': slot_id, 'file': str(candidate.get('file') or result.suggested_file or slot_id + '.' + result.file_format), 'url': result.download_url}
+                    if aliases(candidate_entry) & reserved_aliases:
+                        reasons.append('duplicate_source_in_episode')
+                    if shots and shots[0].get('asset') == slot_id and result.kind != 'video':
+                        reasons.append('first_editorial_visual_not_video')
                 record = _score_record(index, candidate, result, inspection, reasons)
                 inspected.append((record["selection_score"], -record["editorial_rank"], candidate, result, inspection, reasons, record))
                 status = "ELIGIBLE" if not reasons else "SCORED_ONLY"
@@ -589,7 +655,7 @@ def resolve_episode(
         else:
             # Score baixo ou video praticamente estatico nao devem zerar o slot.
             # Mantemos apenas a trava tecnica de trim inseguro para evitar quebra no render.
-            safe_fallback = [item for item in inspected if "unsafe_trim" not in item[5]]
+            safe_fallback = [] if validate_for_pipeline else [item for item in inspected if "unsafe_trim" not in item[5]]
             if not safe_fallback:
                 best_score = inspected[0][0] if inspected else None
                 selections[slot_id] = {
@@ -620,6 +686,8 @@ def resolve_episode(
 
         score, _rank, candidate, result, inspection, reasons, _record = chosen
         resolved_entries[slot_id] = _asset_entry(slot_id, candidate, result)
+        if validate_for_pipeline:
+            reserved_aliases.update(aliases(resolved_entries[slot_id]))
         source_key = _candidate_source_key(candidate)
         if source_key:
             reserved_candidate_sources.add(source_key)
@@ -721,18 +789,22 @@ def resolve_episode(
         else:
             suffix = "apenas informativo"
         print(f"{slot_id}: melhor={best['visual_score']:.1f} ({best['name']}, {suffix})")
-    print(f"Visual resolution concluida: {len(resolved_entries)} slots substituidos; demais mantidos sem bloquear render.")
+    print(f"Visual resolution concluida: {len(resolved_entries)} slots substituidos." + (" Todos os shots precisam passar pelo gate." if validate_for_pipeline else " Demais mantidos sem bloquear render."))
+    if validate_for_pipeline and any(str(shot.get('asset')) not in resolved_entries for shot in shots):
+        print('VISUAL_SELECTION_INCOMPLETE: finish or repair the same episode before media preflight.')
+        return 1
     return 0
 
 
 def main(*, prefer_video_candidates: bool = False) -> int:
-    parser = argparse.ArgumentParser(description="Inspeciona pools visuais, informa scores e resolve candidatos sem bloquear o render.")
+    parser = argparse.ArgumentParser(description="Inspeciona e resolve candidatos respeitando todos os gates antes do render.")
     parser.add_argument("episode", help="Slug do episodio")
     args = parser.parse_args()
     return resolve_episode(
         Path(__file__).resolve().parent,
         args.episode,
         prefer_video_candidates=prefer_video_candidates,
+        validate_for_pipeline=True,
     )
 
 

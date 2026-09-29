@@ -108,7 +108,18 @@ def main() -> int:
     parser.add_argument("episode", help="Episode slug")
     args = parser.parse_args()
 
-    root = PROJECT_ROOT
+    return repair_background(PROJECT_ROOT, args.episode)
+
+
+from engine.mutation_transaction import fenced_mutation
+
+
+@fenced_mutation(root_arg="root", slug_arg="episode")
+def repair_background(root: Path, episode: str) -> int:
+    from types import SimpleNamespace
+    args = SimpleNamespace(episode=episode)
+    from engine.pipeline_state import PipelineStore
+    PipelineStore(root).assert_mutation_allowed(args.episode)
     config = load_project_config(root / "config" / "config.json")
     episodes_dir = Path(config.paths.episodes_dir)
     timeline_path = root / episodes_dir / args.episode / "timeline.json"
@@ -127,6 +138,8 @@ def main() -> int:
     try:
         volume = float(background.get("volume", 0.1))
     except (TypeError, ValueError):
+        volume = 0.1
+    if not 0 <= volume <= 1:
         volume = 0.1
 
     recent_aliases = _used_recent_aliases(root, episodes_dir, args.episode)
@@ -182,6 +195,7 @@ def main() -> int:
         )
 
     background["profile"] = replacement
+    background["volume"] = volume
     timeline["background_music"] = background
     timeline_path.write_text(
         json.dumps(timeline, ensure_ascii=False, indent=2) + "\n",

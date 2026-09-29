@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 
 from PIL import Image, ImageOps, UnidentifiedImageError
 
-from .ffmpeg import VideoStreamInfo, probe_video_stream
+from .ffmpeg import VideoStreamInfo, probe_video_stream, run_ffmpeg_capture
 from .image_framing import prepare_vertical_image
 from .media_cache import download_to_cache
 from .models import AssetSpec, TimelineScene
@@ -17,8 +17,8 @@ from .youtube import canonical_youtube_url
 OVERLAY_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp"}
 
 
-def load_asset_catalog(path: Path) -> dict[str, AssetSpec]:
-    data = load_json(path)
+def load_asset_catalog(path: Path, *, data: dict | None = None) -> dict[str, AssetSpec]:
+    data = load_json(path) if data is None else data
     validate_schema(data, path)
     raw_assets = data.get("assets")
     if not isinstance(raw_assets, list) or not raw_assets:
@@ -253,6 +253,17 @@ class AssetManager:
                 "Loop nao e permitido."
             )
         return info
+
+    def preflight_video_decode(self, asset: AssetSpec, start: float, duration: float) -> None:
+        """Decode the authored source window before accepting metadata-only success."""
+        source = self.ensure(asset)
+        try:
+            output = run_ffmpeg_capture(["-v", "error", "-xerror", "-ss", start, "-i", source,
+                                         "-t", duration, "-map", "0:v:0", "-an", "-progress", "pipe:1", "-f", "null", "-"])
+            if not any(int(count) > 0 for count in re.findall(r"(?m)^frame=(\d+)", output)):
+                raise RuntimeError("nenhum frame de video decodificado")
+        except RuntimeError as exc:
+            raise RuntimeError(f"Asset de video invalido {asset.id!r}: decodificacao falhou: {exc}") from exc
 
     def prepare_overlay(self, asset: AssetSpec, scale: float) -> Path:
         """Create a contained PNG overlay without fetching or cropping the source."""

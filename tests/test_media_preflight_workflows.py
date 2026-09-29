@@ -1,5 +1,9 @@
+import json
 from pathlib import Path
+import subprocess
+import tempfile
 import unittest
+from unittest.mock import patch
 
 
 WORKFLOWS = Path(__file__).resolve().parents[1] / ".github" / "workflows"
@@ -67,6 +71,58 @@ class MediaPreflightWorkflowTests(unittest.TestCase):
             workflow,
         )
 
+    def test_render_reconciles_before_applying_visual_handoff(self):
+        workflow = (WORKFLOWS / "episode-media-preflight.yml").read_text(encoding="utf-8")
+        render = workflow.split("  render-preflight:", 1)[1].split("  queue-publication:", 1)[0]
+        reconcile = render.index("- name: Reconcile authoritative reservation")
+        apply = render.index("- name: Apply resolved visual handoff")
+        validate = render.index("- name: Revalidate final media after visual resolution")
+        self.assertLess(reconcile, apply)
+        self.assertLess(apply, validate)
+        # The handoff may rewrite assets.json to reference a single copied media
+        # file. A later authoritative download would restore the old references.
+        self.assertNotIn("pipeline_workflow.py reconcile", render[apply:validate])
+
+    def test_deduplicated_handoff_references_only_copied_media(self):
+        from scripts import stage_visual_handoff
+
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            episode = root / "episodes" / "demo"
+            media = episode / "assets"
+            media.mkdir(parents=True)
+            original_assets = {"assets": [
+                {"id": "opening", "file": "opening.mp4", "kind": "video"},
+                {"id": "second", "file": "second.mp4", "kind": "video"},
+            ]}
+            (episode / "assets.json").write_text(json.dumps(original_assets), encoding="utf-8")
+            (episode / "timeline.json").write_text(json.dumps({"shots": [
+                {"id": "one", "asset": "opening"},
+                {"id": "two", "asset": "second"},
+            ]}), encoding="utf-8")
+            (episode / "visual_resolution_report.json").write_text(json.dumps({
+                "selections": {
+                    "opening": {"status": "selected", "kind": "video"},
+                    "second": {"status": "selected", "kind": "video"},
+                },
+            }), encoding="utf-8")
+            for name in ("opening.mp4", "second.mp4"):
+                (media / name).write_bytes(b"same resolved video")
+            changed = b"episodes/demo/assets/opening.mp4\0episodes/demo/assets/second.mp4\0"
+            with patch.object(Path, "cwd", return_value=root), \
+                    patch.dict("os.environ", {"EPISODE": "demo"}), \
+                    patch.object(stage_visual_handoff.subprocess, "run",
+                                 return_value=subprocess.CompletedProcess([], 0, stdout=changed)):
+                self.assertEqual(stage_visual_handoff.main(), 0)
+
+            handoff = root / ".visual-handoff" / "episodes" / "demo"
+            staged = json.loads((handoff / "assets.json").read_text(encoding="utf-8"))
+            self.assertNotEqual(staged, original_assets)
+            self.assertEqual([asset["file"] for asset in staged["assets"]],
+                             ["opening.mp4", "opening.mp4"])
+            self.assertEqual({path.name for path in (handoff / "assets").iterdir()},
+                             {"opening.mp4"})
+
     def test_publish_consumes_exact_preflight_bundle_without_rendering(self):
         workflow = (WORKFLOWS / "publish-episode.yml").read_text(encoding="utf-8")
         self.assertIn("source_run_id:", workflow)
@@ -78,7 +134,9 @@ class MediaPreflightWorkflowTests(unittest.TestCase):
         self.assertIn('source_branch" != "main', provenance)
         self.assertIn("run-id: ${{ needs.prepare.outputs.source_run_id }}", workflow)
         self.assertIn("name: publish-ready-${{ needs.prepare.outputs.episode }}", workflow)
-        self.assertIn("publish_ready_bundle.py restore", workflow)
+        self.assertNotIn("publish_ready_bundle.py restore", workflow)
+        self.assertIn('python publish.py "$EPISODE" --platform all --dry-run', workflow)
+        self.assertIn("Verify immutable preflight snapshot", workflow)
         self.assertNotIn("generate.py", workflow)
         self.assertNotIn("prepare_post.py", workflow)
         self.assertNotIn("resolve_visual_candidates", workflow)
