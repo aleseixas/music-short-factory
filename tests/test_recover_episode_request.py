@@ -59,7 +59,7 @@ def test_recovery_request_replaces_only_authored_metadata_and_calls_prepare(tmp_
                 "scripts.recover_episode_request.prepare_request",
                 return_value={"next_action": "wait_for_correlated_run", "commit_sha": "a" * 40},
             ) as prepare:
-        result = recover_and_prepare.__wrapped__(
+        result = recover_and_prepare(
             tmp_path,
             "demo",
             "old_request",
@@ -93,7 +93,7 @@ def test_recovery_request_rejects_unsafe_authority_states(tmp_path, change, code
     store = FakeStore(state)
     with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
             pytest.raises(PipelineError, match=code):
-        recover_and_prepare.__wrapped__(
+        recover_and_prepare(
             tmp_path,
             "demo",
             "old_request",
@@ -106,7 +106,7 @@ def test_recovery_request_requires_fresh_request_and_three_cycle_limit(tmp_path)
     store = FakeStore(base_state())
     with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
             pytest.raises(PipelineError, match="RECOVERY_REQUEST_ID_REUSED"):
-        recover_and_prepare.__wrapped__(
+        recover_and_prepare(
             tmp_path,
             "demo",
             "old_request",
@@ -118,7 +118,7 @@ def test_recovery_request_requires_fresh_request_and_three_cycle_limit(tmp_path)
     invalid["repair_cycle"] = 4
     with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
             pytest.raises(PipelineError, match="RECOVERY_REQUEST_INVALID"):
-        recover_and_prepare.__wrapped__(
+        recover_and_prepare(
             tmp_path,
             "demo",
             "old_request",
@@ -137,7 +137,7 @@ def test_recovery_request_blocks_queue_or_publication_attempt_markers(tmp_path):
         store = FakeStore(base_state())
         with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
                 pytest.raises(PipelineError, match=code):
-            recover_and_prepare.__wrapped__(
+            recover_and_prepare(
                 tmp_path,
                 "demo",
                 "old_request",
