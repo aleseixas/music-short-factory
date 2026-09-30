@@ -1,0 +1,2333 @@
+{
+  "slug": "rick_renner_ela_e_demais_virada_1998",
+  "previous_request_id": "rick_renner_ela_e_demais_virada_1998_rer0930b",
+  "request_id": "rick_renner_ela_e_demais_virada_1998_recovery_native_20260930_2035",
+  "repair_cycle": 1,
+  "files": {
+    "story.json": {
+      "schema_version": 1,
+      "title": "O hit de Rick & Renner que muita gente atribui ao Rick",
+      "slug": "rick_renner_ela_e_demais_virada_1998",
+      "target_duration_seconds": 72,
+      "segments": [
+        {
+          "id": "hook",
+          "text": "“Ela É Demais”, de Rick & Renner, tem um detalhe que muita gente erra: o hit que ajudou a consagrar a dupla não foi escrito pelo Rick.",
+          "delivery": "hook"
+        },
+        {
+          "id": "agora",
+          "text": "E a música voltou ao centro das homenagens depois da morte de Rick, em setembro de 2026.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "volta",
+          "text": "Mas pra entender por que ela pesa tanto, volta comigo pra 1998.",
+          "delivery": "curious"
+        },
+        {
+          "id": "disco",
+          "text": "A faixa saiu no álbum Mil Vezes Cantarei, numa fase decisiva da carreira da dupla.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "autor",
+          "text": "O crédito de composição é de Elias Muniz.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "explosao",
+          "text": "Só que na voz de Rick & Renner a canção virou uma explosão nacional.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "paradas",
+          "text": "Segundo registros da época relembrados em 2026, ela ficou cerca de cinco meses seguidos nas paradas de sucesso.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "tv",
+          "text": "E levou a dupla para programas de enorme audiência na televisão brasileira.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "identidade",
+          "text": "Aquele sertanejo romântico direto, com duas vozes muito reconhecíveis, virou uma assinatura deles.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "catalogo",
+          "text": "Depois vieram outros gigantes do repertório, como Filha, Nos Bares da Cidade e Sem Direção.",
+          "delivery": "curious"
+        },
+        {
+          "id": "quarenta",
+          "text": "Em 2026, Rick e Renner estavam justamente celebrando quarenta anos de parceria.",
+          "delivery": "emotional"
+        },
+        {
+          "id": "perda",
+          "text": "Rick morreu em 21 de setembro, em um acidente de helicóptero em Santa Catarina.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "homenagens",
+          "text": "Nos dias seguintes, artistas sertanejos voltaram a cantar “Ela É Demais” em homenagem a ele.",
+          "delivery": "emotional"
+        },
+        {
+          "id": "renner",
+          "text": "Renner resumiu o momento dizendo que, mesmo com a dor, o show não pode parar.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "legado",
+          "text": "E aí o hit de 1998 ganhou outro peso: deixou de ser só memória de rádio e virou lembrança de uma parceria de quatro décadas.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "cta",
+          "text": "Qual música de Rick & Renner mais marcou você? Comenta.",
+          "delivery": "payoff"
+        }
+      ]
+    },
+    "timeline.json": {
+      "schema_version": 1,
+      "smart_visual_pacing": {
+        "enabled": true
+      },
+      "sfx_cues": [
+        {
+          "time_seconds": 0.12,
+          "type": "impact",
+          "volume": 0.14
+        },
+        {
+          "time_seconds": 17,
+          "type": "whoosh_fast",
+          "volume": 0.1
+        },
+        {
+          "time_seconds": 42,
+          "type": "dramatic_dun_dun",
+          "volume": 0.1
+        },
+        {
+          "time_seconds": 61,
+          "type": "chime_sparkles",
+          "volume": 0.09
+        }
+      ],
+      "text_fx_cues": [
+        {
+          "segment": "hook",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.15,
+          "text": "NÃO FOI O RICK",
+          "accent_text": "NÃO",
+          "animation": "scale_bounce",
+          "position": "center",
+          "intensity": 0.9
+        },
+        {
+          "segment": "autor",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.05,
+          "text": "COMPOSIÇÃO: ELIAS MUNIZ",
+          "accent_text": "ELIAS MUNIZ",
+          "animation": "pop_in",
+          "position": "center",
+          "intensity": 0.82
+        },
+        {
+          "segment": "quarenta",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.05,
+          "text": "40 ANOS",
+          "accent_text": "40 ANOS",
+          "animation": "fade_pop",
+          "position": "center",
+          "intensity": 0.82
+        },
+        {
+          "segment": "legado",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.1,
+          "text": "UM HIT, QUATRO DÉCADAS",
+          "accent_text": "QUATRO DÉCADAS",
+          "animation": "scale_bounce",
+          "position": "center",
+          "intensity": 0.86
+        }
+      ],
+      "shots": [
+        {
+          "id": "shot_01",
+          "segment": "hook",
+          "asset": "visual_01",
+          "motion": "push_in",
+          "transition_out": "crossfade",
+          "highlight": "O HIT NÃO FOI ESCRITO PELO RICK"
+        },
+        {
+          "id": "shot_02",
+          "segment": "agora",
+          "asset": "visual_02",
+          "motion": "pan_left",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_03",
+          "segment": "volta",
+          "asset": "visual_03",
+          "motion": "pull_out",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_04",
+          "segment": "disco",
+          "asset": "visual_04",
+          "motion": "pan_right",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_05",
+          "segment": "autor",
+          "asset": "visual_05",
+          "motion": "push_in",
+          "transition_out": "cut",
+          "highlight": "ELIAS MUNIZ"
+        },
+        {
+          "id": "shot_06",
+          "segment": "explosao",
+          "asset": "visual_06",
+          "motion": "pan_left",
+          "transition_out": "crossfade"
+        },
+        {
+          "id": "shot_07",
+          "segment": "paradas",
+          "asset": "visual_07",
+          "motion": "pull_out",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_08",
+          "segment": "tv",
+          "asset": "visual_08",
+          "motion": "pan_right",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_09",
+          "segment": "identidade",
+          "asset": "visual_09",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_10",
+          "segment": "catalogo",
+          "asset": "visual_10",
+          "motion": "pan_left",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_11",
+          "segment": "quarenta",
+          "asset": "visual_11",
+          "motion": "pull_out",
+          "transition_out": "crossfade",
+          "highlight": "40 ANOS DE PARCERIA"
+        },
+        {
+          "id": "shot_12",
+          "segment": "perda",
+          "asset": "visual_12",
+          "motion": "pan_right",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_13",
+          "segment": "homenagens",
+          "asset": "visual_13",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_14",
+          "segment": "renner",
+          "asset": "visual_14",
+          "motion": "pan_left",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_15",
+          "segment": "legado",
+          "asset": "visual_15",
+          "motion": "pull_out",
+          "transition_out": "cut",
+          "highlight": "UM HIT, QUATRO DÉCADAS"
+        },
+        {
+          "id": "shot_16",
+          "segment": "cta",
+          "asset": "visual_16",
+          "motion": "pan_right",
+          "transition_out": "cut"
+        }
+      ]
+    },
+    "assets.json": {
+      "schema_version": 1,
+      "assets": [
+        {
+          "id": "visual_01",
+          "file": "visual_01.mp4",
+          "url": "https://www.youtube.com/watch?v=9MKDPcv5sVU",
+          "credit": "YouTube / Piunti Sessions",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_02",
+          "file": "visual_02.mp4",
+          "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_03",
+          "file": "visual_03.jpg",
+          "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+          "credit": "YouTube thumbnail / referenced Rick & Renner video",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_04",
+          "file": "visual_04.jpg",
+          "url": "https://i.ytimg.com/vi/ECaTMvoastA/hqdefault.jpg",
+          "credit": "YouTube thumbnail / Rick & Renner Oficial",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_05",
+          "file": "visual_05.jpg",
+          "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+          "credit": "YouTube thumbnail / referenced Rick & Renner video",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_06",
+          "file": "visual_06.mp4",
+          "url": "https://www.youtube.com/watch?v=AO8Ka0ZyKy4",
+          "credit": "YouTube / Rick & Renner performance",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_07",
+          "file": "visual_07.mp4",
+          "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_08",
+          "file": "visual_08.jpg",
+          "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+          "credit": "YouTube thumbnail / referenced Rick & Renner video",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_09",
+          "file": "visual_09.mp4",
+          "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_10",
+          "file": "visual_10.mp4",
+          "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_11",
+          "file": "visual_11.jpg",
+          "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+          "credit": "YouTube thumbnail / referenced Rick & Renner video",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_12",
+          "file": "visual_12.mp4",
+          "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_13",
+          "file": "visual_13.mp4",
+          "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_14",
+          "file": "visual_14.jpg",
+          "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+          "credit": "YouTube thumbnail / referenced Rick & Renner video",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_15",
+          "file": "visual_15.mp4",
+          "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+          "credit": "YouTube / Rick & Renner catalog",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        },
+        {
+          "id": "visual_16",
+          "file": "visual_16.jpg",
+          "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+          "credit": "YouTube thumbnail / referenced Rick & Renner video",
+          "license": "Source page credited; editorial reference",
+          "focus": {
+            "x": 0.5,
+            "y": 0.42
+          }
+        }
+      ]
+    },
+    "visual_candidates.json": {
+      "schema_version": 1,
+      "slots": [
+        {
+          "id": "shot_01",
+          "visual_intent": "Vídeo real reconhecível de Rick & Renner em performance, abrindo o hook",
+          "required_seconds": 4.2,
+          "inspect_top": 6,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video 9MKDPcv5sVU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "9MKDPcv5sVU",
+              "video_id": "9MKDPcv5sVU",
+              "url": "https://www.youtube.com/watch?v=9MKDPcv5sVU",
+              "source_page_url": "https://www.youtube.com/watch?v=9MKDPcv5sVU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick e Renner em performance no Piunti Sessions"
+            },
+            {
+              "name": "Rick & Renner video mIMW1K_37I0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "mIMW1K_37I0",
+              "video_id": "mIMW1K_37I0",
+              "url": "https://www.youtube.com/watch?v=mIMW1K_37I0",
+              "source_page_url": "https://www.youtube.com/watch?v=mIMW1K_37I0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 2,
+              "description": "Rick e Renner em performance no Piunti Sessions"
+            },
+            {
+              "name": "Rick & Renner video pX3MgIWRcUk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "pX3MgIWRcUk",
+              "video_id": "pX3MgIWRcUk",
+              "url": "https://www.youtube.com/watch?v=pX3MgIWRcUk",
+              "source_page_url": "https://www.youtube.com/watch?v=pX3MgIWRcUk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 3,
+              "description": "Rick e Renner cantando em registro vertical"
+            },
+            {
+              "name": "Rick & Renner video qFtBxr00bqU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "qFtBxr00bqU",
+              "video_id": "qFtBxr00bqU",
+              "url": "https://www.youtube.com/watch?v=qFtBxr00bqU",
+              "source_page_url": "https://www.youtube.com/watch?v=qFtBxr00bqU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 4,
+              "description": "Rick e Renner juntos em entrevista de setembro de 2026"
+            },
+            {
+              "name": "Rick & Renner video EJyk0J2pPUw",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "EJyk0J2pPUw",
+              "video_id": "EJyk0J2pPUw",
+              "url": "https://www.youtube.com/watch?v=EJyk0J2pPUw",
+              "source_page_url": "https://www.youtube.com/watch?v=EJyk0J2pPUw",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick e Renner em registro audiovisual reconhecível"
+            },
+            {
+              "name": "Rick & Renner video 5nHXoLsqWl4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "5nHXoLsqWl4",
+              "video_id": "5nHXoLsqWl4",
+              "url": "https://www.youtube.com/watch?v=5nHXoLsqWl4",
+              "source_page_url": "https://www.youtube.com/watch?v=5nHXoLsqWl4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick e Renner em registro audiovisual vertical"
+            }
+          ]
+        },
+        {
+          "id": "shot_02",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho agora",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video aqxe6jL7p4Q",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "aqxe6jL7p4Q",
+              "video_id": "aqxe6jL7p4Q",
+              "url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video QtmeJj56Y5I",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "QtmeJj56Y5I",
+              "video_id": "QtmeJj56Y5I",
+              "url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "source_page_url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video yFStYiP-x8s",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "yFStYiP-x8s",
+              "video_id": "yFStYiP-x8s",
+              "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "source_page_url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nq0iYIHuWxg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nq0iYIHuWxg",
+              "video_id": "nq0iYIHuWxg",
+              "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "source_page_url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video Xl7AB8lu0C4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Xl7AB8lu0C4",
+              "video_id": "Xl7AB8lu0C4",
+              "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "source_page_url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video UcpeQkz_FrY",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "UcpeQkz_FrY",
+              "video_id": "UcpeQkz_FrY",
+              "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "source_page_url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video wwLqZ2EwBiU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wwLqZ2EwBiU",
+              "video_id": "wwLqZ2EwBiU",
+              "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "source_page_url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_03",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho volta",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still VExMSo7sMtQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VExMSo7sMtQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still iSkYL9FbgiQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=iSkYL9FbgiQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still 4IvazXNJ_oU",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=4IvazXNJ_oU",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still WMmWZS8bx3Y",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=WMmWZS8bx3Y",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still BTM4o1VHQ4g",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=BTM4o1VHQ4g",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still cc3RsrxvlH8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=cc3RsrxvlH8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Still from distinct Rick & Renner related video"
+            }
+          ]
+        },
+        {
+          "id": "shot_04",
+          "visual_intent": "Imagem diretamente ligada ao álbum Mil Vezes Cantarei e ao lançamento de 1998",
+          "required_seconds": 3.4,
+          "inspect_top": 6,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still ECaTMvoastA",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/ECaTMvoastA/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=ECaTMvoastA",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Arte oficial da faixa no álbum Mil Vezes Cantarei, de 1998"
+            },
+            {
+              "name": "Rick & Renner still aqxe6jL7p4Q",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/aqxe6jL7p4Q/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 2,
+              "description": "Thumbnail da gravação oficial de Ela É Demais"
+            },
+            {
+              "name": "Rick & Renner still nLoTi-E442M",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/nLoTi-E442M/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Imagem de catálogo de Rick & Renner"
+            },
+            {
+              "name": "Rick & Renner still QtmeJj56Y5I",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/QtmeJj56Y5I/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Imagem de catálogo de Rick & Renner"
+            },
+            {
+              "name": "Rick & Renner still VAbD2lbtIFg",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VAbD2lbtIFg/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VAbD2lbtIFg",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Imagem de homenagem com Rick & Renner reconhecíveis"
+            },
+            {
+              "name": "Rick & Renner still llD34-k11B8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/llD34-k11B8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=llD34-k11B8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Imagem de reportagem sobre a trajetória de Rick"
+            }
+          ]
+        },
+        {
+          "id": "shot_05",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho autor",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still iSkYL9FbgiQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=iSkYL9FbgiQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still 4IvazXNJ_oU",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=4IvazXNJ_oU",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still WMmWZS8bx3Y",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=WMmWZS8bx3Y",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still BTM4o1VHQ4g",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=BTM4o1VHQ4g",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still cc3RsrxvlH8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=cc3RsrxvlH8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still VExMSo7sMtQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VExMSo7sMtQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Still from distinct Rick & Renner related video"
+            }
+          ]
+        },
+        {
+          "id": "shot_06",
+          "visual_intent": "Vídeo de performance de Rick & Renner que sustente a explosão nacional da dupla",
+          "required_seconds": 3.4,
+          "inspect_top": 6,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video AO8Ka0ZyKy4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "AO8Ka0ZyKy4",
+              "video_id": "AO8Ka0ZyKy4",
+              "url": "https://www.youtube.com/watch?v=AO8Ka0ZyKy4",
+              "source_page_url": "https://www.youtube.com/watch?v=AO8Ka0ZyKy4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick e Renner em performance de Sem Direção"
+            },
+            {
+              "name": "Rick & Renner video kYGqmRiYLwI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "kYGqmRiYLwI",
+              "video_id": "kYGqmRiYLwI",
+              "url": "https://www.youtube.com/watch?v=kYGqmRiYLwI",
+              "source_page_url": "https://www.youtube.com/watch?v=kYGqmRiYLwI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 2,
+              "description": "Registro audiovisual ligado a Renner e ao legado da dupla"
+            },
+            {
+              "name": "Rick & Renner video IE58X0rgdYQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "IE58X0rgdYQ",
+              "video_id": "IE58X0rgdYQ",
+              "url": "https://www.youtube.com/watch?v=IE58X0rgdYQ",
+              "source_page_url": "https://www.youtube.com/watch?v=IE58X0rgdYQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Reportagem audiovisual com música de Rick & Renner"
+            },
+            {
+              "name": "Rick & Renner video tFlN6J0ZgOw",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "tFlN6J0ZgOw",
+              "video_id": "tFlN6J0ZgOw",
+              "url": "https://www.youtube.com/watch?v=tFlN6J0ZgOw",
+              "source_page_url": "https://www.youtube.com/watch?v=tFlN6J0ZgOw",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Registro recente sobre a discografia de Rick & Renner"
+            },
+            {
+              "name": "Rick & Renner video VAbD2lbtIFg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "VAbD2lbtIFg",
+              "video_id": "VAbD2lbtIFg",
+              "url": "https://www.youtube.com/watch?v=VAbD2lbtIFg",
+              "source_page_url": "https://www.youtube.com/watch?v=VAbD2lbtIFg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Homenagem audiovisual a Rick & Renner"
+            },
+            {
+              "name": "Rick & Renner video uU8PUTPHd-g",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "uU8PUTPHd-g",
+              "video_id": "uU8PUTPHd-g",
+              "url": "https://www.youtube.com/watch?v=uU8PUTPHd-g",
+              "source_page_url": "https://www.youtube.com/watch?v=uU8PUTPHd-g",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Registro vertical com Rick & Renner"
+            }
+          ]
+        },
+        {
+          "id": "shot_07",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho paradas",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video yFStYiP-x8s",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "yFStYiP-x8s",
+              "video_id": "yFStYiP-x8s",
+              "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "source_page_url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nq0iYIHuWxg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nq0iYIHuWxg",
+              "video_id": "nq0iYIHuWxg",
+              "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "source_page_url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video Xl7AB8lu0C4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Xl7AB8lu0C4",
+              "video_id": "Xl7AB8lu0C4",
+              "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "source_page_url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video UcpeQkz_FrY",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "UcpeQkz_FrY",
+              "video_id": "UcpeQkz_FrY",
+              "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "source_page_url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video wwLqZ2EwBiU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wwLqZ2EwBiU",
+              "video_id": "wwLqZ2EwBiU",
+              "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "source_page_url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video T4TOeMyfBMk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "T4TOeMyfBMk",
+              "video_id": "T4TOeMyfBMk",
+              "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "source_page_url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nLoTi-E442M",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nLoTi-E442M",
+              "video_id": "nLoTi-E442M",
+              "url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_08",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho tv",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still 4IvazXNJ_oU",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=4IvazXNJ_oU",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still WMmWZS8bx3Y",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=WMmWZS8bx3Y",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still BTM4o1VHQ4g",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=BTM4o1VHQ4g",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still cc3RsrxvlH8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=cc3RsrxvlH8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still VExMSo7sMtQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VExMSo7sMtQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still iSkYL9FbgiQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=iSkYL9FbgiQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Still from distinct Rick & Renner related video"
+            }
+          ]
+        },
+        {
+          "id": "shot_09",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho identidade",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video nq0iYIHuWxg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nq0iYIHuWxg",
+              "video_id": "nq0iYIHuWxg",
+              "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "source_page_url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video Xl7AB8lu0C4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Xl7AB8lu0C4",
+              "video_id": "Xl7AB8lu0C4",
+              "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "source_page_url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video UcpeQkz_FrY",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "UcpeQkz_FrY",
+              "video_id": "UcpeQkz_FrY",
+              "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "source_page_url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video wwLqZ2EwBiU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wwLqZ2EwBiU",
+              "video_id": "wwLqZ2EwBiU",
+              "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "source_page_url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video T4TOeMyfBMk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "T4TOeMyfBMk",
+              "video_id": "T4TOeMyfBMk",
+              "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "source_page_url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nLoTi-E442M",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nLoTi-E442M",
+              "video_id": "nLoTi-E442M",
+              "url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video aqxe6jL7p4Q",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "aqxe6jL7p4Q",
+              "video_id": "aqxe6jL7p4Q",
+              "url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_10",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho catalogo",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video Xl7AB8lu0C4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Xl7AB8lu0C4",
+              "video_id": "Xl7AB8lu0C4",
+              "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "source_page_url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video UcpeQkz_FrY",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "UcpeQkz_FrY",
+              "video_id": "UcpeQkz_FrY",
+              "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "source_page_url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video wwLqZ2EwBiU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wwLqZ2EwBiU",
+              "video_id": "wwLqZ2EwBiU",
+              "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "source_page_url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video T4TOeMyfBMk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "T4TOeMyfBMk",
+              "video_id": "T4TOeMyfBMk",
+              "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "source_page_url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nLoTi-E442M",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nLoTi-E442M",
+              "video_id": "nLoTi-E442M",
+              "url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video aqxe6jL7p4Q",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "aqxe6jL7p4Q",
+              "video_id": "aqxe6jL7p4Q",
+              "url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video QtmeJj56Y5I",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "QtmeJj56Y5I",
+              "video_id": "QtmeJj56Y5I",
+              "url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "source_page_url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_11",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho quarenta",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still WMmWZS8bx3Y",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=WMmWZS8bx3Y",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still BTM4o1VHQ4g",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=BTM4o1VHQ4g",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still cc3RsrxvlH8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=cc3RsrxvlH8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still VExMSo7sMtQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VExMSo7sMtQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still iSkYL9FbgiQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=iSkYL9FbgiQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still 4IvazXNJ_oU",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=4IvazXNJ_oU",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Still from distinct Rick & Renner related video"
+            }
+          ]
+        },
+        {
+          "id": "shot_12",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho perda",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video UcpeQkz_FrY",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "UcpeQkz_FrY",
+              "video_id": "UcpeQkz_FrY",
+              "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "source_page_url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video wwLqZ2EwBiU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wwLqZ2EwBiU",
+              "video_id": "wwLqZ2EwBiU",
+              "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "source_page_url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video T4TOeMyfBMk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "T4TOeMyfBMk",
+              "video_id": "T4TOeMyfBMk",
+              "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "source_page_url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nLoTi-E442M",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nLoTi-E442M",
+              "video_id": "nLoTi-E442M",
+              "url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video aqxe6jL7p4Q",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "aqxe6jL7p4Q",
+              "video_id": "aqxe6jL7p4Q",
+              "url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video QtmeJj56Y5I",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "QtmeJj56Y5I",
+              "video_id": "QtmeJj56Y5I",
+              "url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "source_page_url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video yFStYiP-x8s",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "yFStYiP-x8s",
+              "video_id": "yFStYiP-x8s",
+              "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "source_page_url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_13",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho homenagens",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video wwLqZ2EwBiU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wwLqZ2EwBiU",
+              "video_id": "wwLqZ2EwBiU",
+              "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "source_page_url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video T4TOeMyfBMk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "T4TOeMyfBMk",
+              "video_id": "T4TOeMyfBMk",
+              "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "source_page_url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nLoTi-E442M",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nLoTi-E442M",
+              "video_id": "nLoTi-E442M",
+              "url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video aqxe6jL7p4Q",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "aqxe6jL7p4Q",
+              "video_id": "aqxe6jL7p4Q",
+              "url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video QtmeJj56Y5I",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "QtmeJj56Y5I",
+              "video_id": "QtmeJj56Y5I",
+              "url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "source_page_url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video yFStYiP-x8s",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "yFStYiP-x8s",
+              "video_id": "yFStYiP-x8s",
+              "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "source_page_url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nq0iYIHuWxg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nq0iYIHuWxg",
+              "video_id": "nq0iYIHuWxg",
+              "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "source_page_url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_14",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho renner",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still BTM4o1VHQ4g",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=BTM4o1VHQ4g",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still cc3RsrxvlH8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=cc3RsrxvlH8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still VExMSo7sMtQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VExMSo7sMtQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still iSkYL9FbgiQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=iSkYL9FbgiQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still 4IvazXNJ_oU",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=4IvazXNJ_oU",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still WMmWZS8bx3Y",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=WMmWZS8bx3Y",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Still from distinct Rick & Renner related video"
+            }
+          ]
+        },
+        {
+          "id": "shot_15",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho legado",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner video T4TOeMyfBMk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "T4TOeMyfBMk",
+              "video_id": "T4TOeMyfBMk",
+              "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "source_page_url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nLoTi-E442M",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nLoTi-E442M",
+              "video_id": "nLoTi-E442M",
+              "url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "source_page_url": "https://www.youtube.com/watch?v=nLoTi-E442M",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video zqq4limSkJA",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "zqq4limSkJA",
+              "video_id": "zqq4limSkJA",
+              "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "source_page_url": "https://www.youtube.com/watch?v=zqq4limSkJA",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video aqxe6jL7p4Q",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "aqxe6jL7p4Q",
+              "video_id": "aqxe6jL7p4Q",
+              "url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "source_page_url": "https://www.youtube.com/watch?v=aqxe6jL7p4Q",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video QtmeJj56Y5I",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "QtmeJj56Y5I",
+              "video_id": "QtmeJj56Y5I",
+              "url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "source_page_url": "https://www.youtube.com/watch?v=QtmeJj56Y5I",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video yFStYiP-x8s",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "yFStYiP-x8s",
+              "video_id": "yFStYiP-x8s",
+              "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "source_page_url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video nq0iYIHuWxg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "nq0iYIHuWxg",
+              "video_id": "nq0iYIHuWxg",
+              "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "source_page_url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Rick & Renner performance, clip or catalog material"
+            },
+            {
+              "name": "Rick & Renner video Xl7AB8lu0C4",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Xl7AB8lu0C4",
+              "video_id": "Xl7AB8lu0C4",
+              "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "source_page_url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 8,
+              "description": "Rick & Renner performance, clip or catalog material"
+            }
+          ]
+        },
+        {
+          "id": "shot_16",
+          "visual_intent": "Visual de Rick & Renner alinhado ao trecho cta",
+          "required_seconds": 3.4,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Rick & Renner still cc3RsrxvlH8",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=cc3RsrxvlH8",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still VExMSo7sMtQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=VExMSo7sMtQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still iSkYL9FbgiQ",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=iSkYL9FbgiQ",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still 4IvazXNJ_oU",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=4IvazXNJ_oU",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still WMmWZS8bx3Y",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=WMmWZS8bx3Y",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Still from distinct Rick & Renner related video"
+            },
+            {
+              "name": "Rick & Renner still BTM4o1VHQ4g",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
+              "source_page_url": "https://www.youtube.com/watch?v=BTM4o1VHQ4g",
+              "credit": "YouTube thumbnail",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Still from distinct Rick & Renner related video"
+            }
+          ]
+        }
+      ]
+    },
+    "sources.txt": "FACTUAL SOURCES\n- Billboard Brasil, setembro de 2026 — “Ela É Demais” foi lançada em 1998, marcou a escalada nacional da dupla, tem composição de Elias Muniz e permaneceu cerca de cinco meses consecutivos nas paradas de sucesso.\nhttps://billboard.com.br/\n- O Liberal, 22/09/2026 — “Ela É Demais” é destacada como um dos principais sucessos da dupla e como faixa que ajudou a consolidá-los no sertanejo.\nhttps://www.oliberal.com/variedades/sucessos-de-rick-e-renner-veja-lista-com-ela-e-demais-nos-bares-da-cidade-e-mais-1.1171773\n- F5/Folha, 24/09/2026 — Renner falou após a morte de Rick sobre os 40 anos de parceria e disse que “o show não pode parar”.\nhttps://f5.folha.uol.com.br/celebridades/2026/09/renner-fala-pela-primeira-vez-apos-morte-de-rick-o-show-nao-pode-parar.shtml\n- UOL, setembro de 2026 — homenagens sertanejas após a morte de Rick incluíram “Ela É Demais”.\nhttps://www.uol.com.br/splash/\n- YouTube / Rick & Renner Oficial — gravação oficial de “Ela É Demais”; metadata credita a composição a Elias Muniz.\nhttps://www.youtube.com/watch?v=aqxe6jL7p4Q\n\nVISUAL SOURCES\n- https://www.youtube.com/watch?v=nLoTi-E442M\n- https://www.youtube.com/watch?v=zqq4limSkJA\n- https://www.youtube.com/watch?v=aqxe6jL7p4Q\n- https://www.youtube.com/watch?v=QtmeJj56Y5I\n- https://www.youtube.com/watch?v=yFStYiP-x8s\n- https://www.youtube.com/watch?v=nq0iYIHuWxg\n- https://www.youtube.com/watch?v=Xl7AB8lu0C4\n- https://www.youtube.com/watch?v=UcpeQkz_FrY\n- https://www.youtube.com/watch?v=wwLqZ2EwBiU\n- https://www.youtube.com/watch?v=T4TOeMyfBMk\n- https://www.youtube.com/watch?v=VExMSo7sMtQ (distinct source video used only for still thumbnail)\n- https://www.youtube.com/watch?v=iSkYL9FbgiQ (distinct source video used only for still thumbnail)\n- https://www.youtube.com/watch?v=4IvazXNJ_oU (distinct source video used only for still thumbnail)\n- https://www.youtube.com/watch?v=WMmWZS8bx3Y (distinct source video used only for still thumbnail)\n- https://www.youtube.com/watch?v=BTM4o1VHQ4g (distinct source video used only for still thumbnail)\n- https://www.youtube.com/watch?v=cc3RsrxvlH8 (distinct source video used only for still thumbnail)\n- https://www.youtube.com/watch?v=9MKDPcv5sVU\n- https://www.youtube.com/watch?v=mIMW1K_37I0\n- https://www.youtube.com/watch?v=pX3MgIWRcUk\n- https://www.youtube.com/watch?v=qFtBxr00bqU\n- https://www.youtube.com/watch?v=EJyk0J2pPUw\n- https://www.youtube.com/watch?v=5nHXoLsqWl4\n- https://www.youtube.com/watch?v=ECaTMvoastA\n- https://www.youtube.com/watch?v=llD34-k11B8\n- https://www.youtube.com/watch?v=AO8Ka0ZyKy4\n- https://www.youtube.com/watch?v=kYGqmRiYLwI\n- https://www.youtube.com/watch?v=IE58X0rgdYQ\n- https://www.youtube.com/watch?v=tFlN6J0ZgOw\n- https://www.youtube.com/watch?v=VAbD2lbtIFg\n- https://www.youtube.com/watch?v=uU8PUTPHd-g\n\nEDITORIAL NOTE\n- Recovery cycle 1 replaces the three unresolved visual slots with concrete, type-separated candidates.\n- Opening remains a real recognizable Rick & Renner video.\n- visual_04 is now an image tied directly to the 1998 album, avoiding a practically static file treated as video.\n- No search-result URLs or HTML locators are used.\n",
+    "post.json": {
+      "schema_version": 1,
+      "cover": {
+        "headline": "O HIT NÃO FOI ESCRITO PELO RICK",
+        "source": {
+          "type": "video_frame",
+          "timestamp_seconds": 0.7
+        }
+      },
+      "youtube": {
+        "title": "O detalhe de “Ela É Demais” que muita gente não sabe",
+        "description": "“Ela É Demais” ajudou a consolidar Rick & Renner no sertanejo nacional. O hit de 1998 tem composição creditada a Elias Muniz e voltou a aparecer em homenagens após a morte de Rick em setembro de 2026.",
+        "hashtags": [
+          "rickerenner",
+          "elaedemais",
+          "sertanejo",
+          "ricksollo",
+          "alemdohit"
+        ]
+      },
+      "instagram": {
+        "caption": "“Ela É Demais” virou um dos maiores cartões de visita de Rick & Renner — mas o crédito de composição é de Elias Muniz. Em 2026, a música voltou a ganhar força nas homenagens a Rick.",
+        "hashtags": [
+          "rickerenner",
+          "elaedemais",
+          "sertanejo",
+          "ricksollo",
+          "musica",
+          "curiosidades",
+          "alemdohit"
+        ]
+      },
+      "tiktok": {
+        "caption": "O maior detalhe de “Ela É Demais” que muita gente atribui errado ao Rick.",
+        "hashtags": [
+          "rickerenner",
+          "elaedemais",
+          "sertanejo",
+          "alemdohit"
+        ]
+      }
+    }
+  }
+}
