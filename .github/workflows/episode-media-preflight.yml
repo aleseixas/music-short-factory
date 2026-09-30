@@ -6,6 +6,20 @@ on:
       - main
     paths:
       - ".episode-check/*.json"
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: Reserved episode slug
+        required: true
+        type: string
+      request_id:
+        description: Exact reserved request id
+        required: true
+        type: string
+      source_sha:
+        description: Exact CAS commit containing the prepared episode request
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -29,52 +43,75 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v7
         with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.source_sha || github.sha }}
           fetch-depth: 0
 
       - name: Resolve preflight request
         id: request
         shell: bash
         env:
+          EVENT_NAME: ${{ github.event_name }}
           BEFORE_SHA: ${{ github.event.before }}
           AFTER_SHA: ${{ github.sha }}
+          MANUAL_EPISODE: ${{ inputs.episode }}
+          MANUAL_REQUEST_ID: ${{ inputs.request_id }}
+          MANUAL_SOURCE_SHA: ${{ inputs.source_sha }}
         run: |
           set -euo pipefail
-          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
-            mapfile -t files < <(git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.episode-check/*.json')
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            if [[ ! "$MANUAL_SOURCE_SHA" =~ ^[0-9a-fA-F]{40}$ ]]; then
+              echo "::error::PREFLIGHT_SOURCE_SHA_INVALID"
+              exit 1
+            fi
+            if [[ ! "$MANUAL_EPISODE" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
+              echo "::error::PREFLIGHT_SLUG_INVALID"
+              exit 1
+            fi
+            if [[ ! "$MANUAL_REQUEST_ID" =~ ^[a-zA-Z0-9][a-zA-Z0-9_-]{0,159}$ ]]; then
+              echo "::error::PREFLIGHT_REQUEST_ID_INVALID"
+              exit 1
+            fi
+            file=".episode-check/${MANUAL_EPISODE}--${MANUAL_REQUEST_ID}.json"
+            if [[ ! -f "$file" ]]; then
+              echo "::error::PREFLIGHT_REQUEST_MISSING: $file not present at source_sha=$MANUAL_SOURCE_SHA"
+              exit 1
+            fi
           else
-            mapfile -t files < <(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.episode-check/*.json')
+            if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+              mapfile -t files < <(git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.episode-check/*.json')
+            else
+              mapfile -t files < <(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.episode-check/*.json')
+            fi
+            if [[ ${#files[@]} -ne 1 ]]; then
+              echo "::error::PREFLIGHT_REQUEST_INVALID: expected exactly one new .episode-check request; found ${#files[@]}."
+              exit 1
+            fi
+            file="${files[0]}"
           fi
-          if [[ ${#files[@]} -ne 1 ]]; then
-            echo "::error::PREFLIGHT_REQUEST_INVALID: expected exactly one new .episode-check request; found ${#files[@]}. ACTION: create exactly one new request file and keep the same episode slug."
-            exit 1
-          fi
-          file="${files[0]}"
-          slug="$(python - "$file" <<'PY'
-          import json, sys
+
+          python - "$file" "$GITHUB_OUTPUT" "$EVENT_NAME" "$MANUAL_EPISODE" "$MANUAL_REQUEST_ID" <<'PY'
+          import json, re, sys
           from pathlib import Path
-          data=json.loads(Path(sys.argv[1]).read_text(encoding='utf-8'))
-          slug=str(data.get('slug','')).strip()
-          print(slug)
+          path=Path(sys.argv[1])
+          out=Path(sys.argv[2])
+          event=sys.argv[3]
+          expected_slug=sys.argv[4]
+          expected_request=sys.argv[5]
+          data=json.loads(path.read_text(encoding="utf-8"))
+          slug=str(data.get("slug","")).strip()
+          request_id=str(data.get("request_id") or path.stem).strip()
+          if not re.fullmatch(r"[a-z0-9]+([_-][a-z0-9]+)*", slug):
+              raise SystemExit("PREFLIGHT_SLUG_INVALID")
+          if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,159}", request_id):
+              raise SystemExit("PREFLIGHT_REQUEST_ID_INVALID")
+          if event == "workflow_dispatch" and (slug != expected_slug or request_id != expected_request):
+              raise SystemExit("PREFLIGHT_REQUEST_IDENTITY_MISMATCH")
+          with out.open("a", encoding="utf-8") as handle:
+              handle.write(f"request_id={request_id}\n")
+              handle.write(f"slug={slug}\n")
+              handle.write(f"request_file={path.as_posix()}\n")
+          print(f"Media preflight episode: {slug}")
           PY
-          )"
-          if [[ ! "$slug" =~ ^[a-z0-9]+([_-][a-z0-9]+)*$ ]]; then
-            echo "::error::PREFLIGHT_SLUG_INVALID: invalid episode slug in request. TARGET: $file. ACTION: fix only the slug format; do not create a new topic."
-            exit 1
-          fi
-          request_id="$(python - "$file" <<'PY'
-          import json, sys
-          from pathlib import Path
-          path = Path(sys.argv[1])
-          print(json.loads(path.read_text(encoding="utf-8")).get("request_id") or path.stem)
-          PY
-          )"
-          if [[ ! "$request_id" =~ ^[a-zA-Z0-9][a-zA-Z0-9_-]{0,159}$ ]]; then
-            echo "::error::PREFLIGHT_REQUEST_ID_INVALID"
-            exit 1
-          fi
-          echo "request_id=$request_id" >> "$GITHUB_OUTPUT"
-          echo "slug=$slug" >> "$GITHUB_OUTPUT"
-          echo "Media preflight episode: $slug"
 
       - name: Set up Python
         uses: actions/setup-python@v7
