@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from engine.coordination_runtime import sync_authority
+from engine.coordination_runtime import acquire_token, release_token, sync_authority
 from engine.pipeline_runtime import prepare_request
 from engine.pipeline_state import PipelineError, PipelineStore, safe_request, safe_slug
 
@@ -87,44 +87,59 @@ def recover_and_prepare(
             "Authoritative state forbids pre-publication recovery mutation.",
         )
 
-    store.assert_mutation_allowed(slug)
-
-    if (root / ".publish-queue" / f"{slug}.txt").exists():
-        raise PipelineError("RECOVERY_QUEUE_EXISTS", "A queued slug cannot be repaired.")
-    if (root / ".publication-attempts" / f"{slug}.json").exists():
-        raise PipelineError(
-            "RECOVERY_PUBLICATION_ATTEMPT_EXISTS",
-            "A slug with a publication-attempt marker cannot be repaired.",
+    coordinator = token = None
+    try:
+        # Recovery resumes the existing authoritative request first. The fresh
+        # request_id becomes authoritative only in prepare's fenced CAS.
+        coordinator, token = acquire_token(
+            root, slug, previous_request_id, initial_phase="AUTHORING"
         )
+        store.assert_mutation_allowed(slug)
 
-    episode_dir = root / "episodes" / slug
-    episode_dir.mkdir(parents=True, exist_ok=True)
-    for name in sorted(REQUIRED_FILES):
-        value = files[name]
-        target = episode_dir / name
-        if name.endswith(".json"):
-            if not isinstance(value, (dict, list)):
-                raise PipelineError(
-                    "RECOVERY_REQUEST_INVALID",
-                    f"{name} must contain JSON object/array content.",
-                )
-            target.write_text(
-                json.dumps(value, ensure_ascii=False, indent=2) + "\n",
-                encoding="utf-8",
+        if (root / ".publish-queue" / f"{slug}.txt").exists():
+            raise PipelineError("RECOVERY_QUEUE_EXISTS", "A queued slug cannot be repaired.")
+        if (root / ".publication-attempts" / f"{slug}.json").exists():
+            raise PipelineError(
+                "RECOVERY_PUBLICATION_ATTEMPT_EXISTS",
+                "A slug with a publication-attempt marker cannot be repaired.",
             )
-        else:
-            if not isinstance(value, str):
-                raise PipelineError(
-                    "RECOVERY_REQUEST_INVALID",
-                    f"{name} must be text.",
-                )
-            target.write_text(value.rstrip() + "\n", encoding="utf-8")
 
-    result = prepare_request(root, slug, request_id)
-    if isinstance(result, dict):
-        result["repair_cycle"] = cycle
-        result["previous_request_id"] = previous_request_id
-    return result
+        episode_dir = root / "episodes" / slug
+        episode_dir.mkdir(parents=True, exist_ok=True)
+        for name in sorted(REQUIRED_FILES):
+            value = files[name]
+            target = episode_dir / name
+            if name.endswith(".json"):
+                if not isinstance(value, (dict, list)):
+                    raise PipelineError(
+                        "RECOVERY_REQUEST_INVALID",
+                        f"{name} must contain JSON object/array content.",
+                    )
+                target.write_text(
+                    json.dumps(value, ensure_ascii=False, indent=2) + "\n",
+                    encoding="utf-8",
+                )
+            else:
+                if not isinstance(value, str):
+                    raise PipelineError(
+                        "RECOVERY_REQUEST_INVALID",
+                        f"{name} must be text.",
+                    )
+                target.write_text(value.rstrip() + "\n", encoding="utf-8")
+
+        result = prepare_request(root, slug, request_id)
+        if isinstance(result, dict):
+            result["repair_cycle"] = cycle
+            result["previous_request_id"] = previous_request_id
+        return result
+    finally:
+        # prepare's fenced transaction normally releases its current token.
+        # This fallback releases a lease acquired before an early validation failure.
+        if coordinator is not None and token is not None:
+            try:
+                release_token(root, coordinator, token)
+            except Exception:
+                pass
 
 
 def main(argv=None) -> int:
