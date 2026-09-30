@@ -28,6 +28,8 @@ def queue_episode(root: Path, slug: str, request_id: str) -> None:
     run_id = str(state.get("run_id") or os.environ.get("GITHUB_RUN_ID", ""))
     if not run_id.isdigit():
         raise PipelineError("QUEUE_SOURCE_REQUIRED", "Exact preflight run required.")
+    if os.environ.get("GITHUB_ACTIONS") == "true" and run_id != os.environ.get("GITHUB_RUN_ID"):
+        raise PipelineError("QUEUE_SOURCE_MISMATCH", "Only the admitted media run may queue this request.")
     value = dict(state, stage="QUEUED", media_preflight_passed=True, queue_created=True, run_id=run_id)
     queue_path = root / ".publish-queue" / f"{slug}.txt"
     queue_bytes = f"{slug}\n{run_id}\n{request_id}\n".encode()
@@ -212,6 +214,11 @@ def media_pass(root: Path, slug: str, request_id: str) -> None:
         raise PipelineError("WORKFLOW_REQUEST_STALE", "Preflight cannot replace another request's generation.")
     store.assert_mutation_allowed(slug)
     state = store.status(slug)
+    if os.environ.get("GITHUB_ACTIONS") == "true" and not str(state.get("run_id", "")).isdigit():
+        raise PipelineError("PREFLIGHT_ADMISSION_REQUIRED", "CAS-admitted media run required before PASS.")
+    if (state.get("request_id") != request_id or str(state.get("run_id", "")) != os.environ.get("GITHUB_RUN_ID", "")
+            or state.get("commit_sha") != os.environ.get("PIPELINE_SOURCE_SHA", os.environ.get("GITHUB_SHA", ""))):
+        raise PipelineError("PREFLIGHT_ADMISSION_REQUIRED", "This run did not claim the exact prepared request and SHA.")
     stage = state["stage"]
     if stage == "CANDIDATE":
         raise PipelineError("DUPLICATE_PASS_REQUIRED", "Candidate has not passed duplicate validation")
@@ -221,7 +228,7 @@ def media_pass(root: Path, slug: str, request_id: str) -> None:
     if stage in {"AUTHORING", "LOCAL_REPAIR", "VALIDATION_FAILED"}:
         store.transition(slug, "LOCAL_VALIDATION", request_id=request_id)
     store.transition(slug, "MEDIA_PREFLIGHT", request_id=request_id,
-                     local_preflight_passed=True, commit_sha=os.environ.get("GITHUB_SHA", ""),
+                     local_preflight_passed=True, commit_sha=os.environ.get("PIPELINE_SOURCE_SHA", os.environ.get("GITHUB_SHA", "")),
                      run_id=os.environ.get("GITHUB_RUN_ID", ""))
 
 
@@ -234,13 +241,13 @@ def media_failed(root: Path, slug: str, request_id: str, run_id: str) -> None:
         return
     if state["request_id"] != request_id or state["stage"] != "MEDIA_PREFLIGHT":
         return  # A newer request or an earlier authoring stage owns this record.
-    if state.get("run_id") and str(state["run_id"]) != run_id:
+    if not state.get("run_id") or str(state["run_id"]) != run_id:
         return
     store.transition(slug, "VALIDATION_FAILED", request_id=request_id,
                      run_id=run_id, media_preflight_passed=False,
                      errors=[{"error_code": "EXTERNAL_PREFLIGHT_FAILED", "error_class": "local_preflight",
                               "recoverable": True, "stage": "MEDIA_PREFLIGHT", "slug": slug,
-                              "request_id": request_id, "commit_sha": os.environ.get("GITHUB_SHA", ""),
+                              "request_id": request_id, "commit_sha": os.environ.get("PIPELINE_SOURCE_SHA", os.environ.get("GITHUB_SHA", "")),
                               "target": f"actions/runs/{run_id}",
                               "detail": "Inspect this run's structured diagnostics and repair before another request."}])
 

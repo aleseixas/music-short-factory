@@ -163,12 +163,9 @@ def dispatch(root, repository, slug, request_id, source_run_id, *, api=github_ap
         code, source = call("GET", f"{prefix}/actions/runs/{source_run_id}")
         # Queueing occurs in this media workflow, so its run may still be in
         # progress. Publisher admission independently requires completed/success.
+        from engine.media_provenance import matches_media_run, matches_prepared_request
         if (code != 200 or str(source.get("id", "")) != source_run_id
-                or source.get("head_sha") != source_sha or source.get("event") != "push"
-                or source.get("head_branch") != "main"
-                or str(source.get("path", "")).split("@", 1)[0] != ".github/workflows/episode-media-preflight.yml"
-                or source.get("status") not in {"in_progress", "completed"}
-                or (source.get("status") == "completed" and source.get("conclusion") != "success")):
+                or not matches_media_run(source, slug, request_id, source_sha)):
             raise PipelineError("DISPATCH_SOURCE_UNVERIFIED", "The exact media workflow and triggering commit must match before dispatch")
         request_path = state.get("request_path") or f".episode-check/{slug}--{request_id}.json"
         if not re.fullmatch(r"\.episode-check/[A-Za-z0-9_-]+\.json", request_path):
@@ -176,8 +173,7 @@ def dispatch(root, repository, slug, request_id, source_run_id, *, api=github_ap
         code, envelope = call("GET", f"{prefix}/contents/{request_path}?ref={source_sha}")
         try:
             receipt = json.loads(base64.b64decode(envelope["content"])) if code == 200 else {}
-            if (receipt.get("slug") != slug or receipt.get("request_id") != request_id
-                    or receipt.get("local_preflight_passed") is not True):
+            if not matches_prepared_request(receipt, slug, request_id, state.get("fingerprint", "")):
                 raise ValueError("source request mismatch")
         except (KeyError, ValueError, TypeError) as exc:
             raise PipelineError("DISPATCH_SOURCE_UNVERIFIED", "The source commit does not prove the exact validated request") from exc

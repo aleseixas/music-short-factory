@@ -66,18 +66,18 @@ Nenhum .episode-check é criado com erro determinístico conhecido.
 
 ## Triggers e identidade
 
-Duplicate e Media Preflight continuam acionados por push. Não exigem dispatch.
-Prepare exige clone autenticado. O token padrão `GITHUB_TOKEN` continua proibido
-para prepare, pois seu push não encadeia outro workflow. A exceção suportada é o
-workflow dedicado `recovery-prepare.yml` (e o fluxo de autoria quando migrado),
-com `PIPELINE_ACTIONS_PREPARE_AUTH=external-token`, `GH_TOKEN` vindo do secret
-`PIPELINE_GITHUB_TOKEN` e verificação de que ele difere de `${{ github.token }}`.
-Nesse caminho o próprio CAS cria um push real que aciona Media Preflight; o recovery
-não envia `workflow_dispatch`, queue, retry ou publisher manualmente.
-Publish aceita push e dispatch; seu dispatch explícito conserva esse encadeamento.
+Duplicate continua acionado por push. Media Preflight aceita push legado e o
+`workflow_dispatch` correlacionado usado por autoria e recovery. Esses workflows
+usam `GITHUB_TOKEN` nativo com `contents: write` para o prepare/CAS e
+`actions: write` para o handoff explícito. Push feito pelo token nativo não
+encadeia outro workflow. O dispatch envia `episode`, `request_id` e `source_sha`
+do commit CAS que adicionou o request. O preflight confere o request, a metadata,
+o fingerprint e a reserva autoritativa nesse SHA; um CAS reivindica um único run
+antes dos gates. Dispatch manual com identidade divergente falha fechado.
+Recovery não envia queue, retry nem publisher manualmente. Nenhum PAT é necessário.
 
 ```powershell
-python scripts/pipeline_control.py wait meu_slug --request-id pedido_unico --commit-sha SHA_DO_REQUEST --workflow media --repository dono/repositorio
+python scripts/pipeline_control.py wait meu_slug --request-id pedido_unico --commit-sha SHA_DO_REQUEST --workflow media --event workflow_dispatch --repository dono/repositorio
 ```
 
 Associe sempre slug, request, SHA e workflow; nunca o último run. Para push com

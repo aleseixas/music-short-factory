@@ -3,7 +3,6 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
-import hmac
 import json
 import os
 import tempfile
@@ -34,14 +33,16 @@ def trigger_plan(root: Path, workflow: str) -> dict:
     if rule["trigger"] not in events or rule["request_glob"] not in block:
         raise PipelineError("WORKFLOW_CONTRACT_DRIFT", f"{rule['file']} does not implement the declared request trigger.")
     return {**rule, "events": sorted(events), "action": "commit_and_push_request" if rule["trigger"] == "push" else "dispatch",
-            "dispatch_required": rule["trigger"] != "push"}
+            "dispatch_required": rule["trigger"] != "push",
+            "actions_handoff": "workflow_dispatch" if workflow == "media" else None,
+            "actions_dispatch_required": workflow == "media"}
 
 
-def _actions_prepare_has_external_token() -> bool:
-    """Allow Actions prepare only from the dedicated recovery/author workflows with a distinct token."""
+def _actions_prepare_has_native_dispatch() -> bool:
+    """Only dedicated Actions jobs may prepare with the native token and explicit handoff."""
     if os.environ.get("GITHUB_ACTIONS") != "true":
         return True
-    if os.environ.get("PIPELINE_ACTIONS_PREPARE_AUTH") != "external-token":
+    if os.environ.get("PIPELINE_ACTIONS_PREPARE_AUTH") != "workflow-dispatch":
         return False
     workflow_ref = os.environ.get("GITHUB_WORKFLOW_REF", "")
     allowed = (
@@ -51,10 +52,7 @@ def _actions_prepare_has_external_token() -> bool:
     if not any(marker in workflow_ref for marker in allowed):
         return False
     token = os.environ.get("GH_TOKEN", "").strip()
-    default_token = os.environ.get("PIPELINE_DEFAULT_GITHUB_TOKEN", "").strip()
-    if not token or not default_token:
-        return False
-    return not hmac.compare_digest(token, default_token)
+    return bool(token and os.environ.get("PIPELINE_DEFAULT_GITHUB_TOKEN", "").strip() == token)
 
 
 def episode_fingerprint(root: Path, slug: str) -> str:
@@ -75,11 +73,11 @@ def prepare_request(root: Path, slug: str, request_id: str, **kwargs) -> dict:
     from engine.coordination_runtime import coordinator_for
     if (os.environ.get("GITHUB_ACTIONS") == "true"
             and coordinator_for(root) is not None
-            and not _actions_prepare_has_external_token()):
+            and not _actions_prepare_has_native_dispatch()):
         raise PipelineError(
-            "PUSH_REQUEST_REQUIRES_EXTERNAL_TOKEN",
-            "Actions prepare requires the dedicated recovery/author workflow with "
-            "PIPELINE_GITHUB_TOKEN; the default Actions token cannot chain push workflows.",
+            "ACTIONS_PREPARE_DISPATCH_REQUIRED",
+            "Actions prepare requires a dedicated recovery/author job using GITHUB_TOKEN "
+            "and an explicit correlated workflow_dispatch handoff.",
         )
     try:
         with process_lock(root / ".pipeline" / "operations" / f"{slug}.lock"):
@@ -127,7 +125,8 @@ def _prepare_request(root: Path, slug: str, request_id: str, *,
             store.assert_mutation_allowed(slug)
             state = store.transition(slug, "MEDIA_PREFLIGHT", request_id=request_id,
                                      local_preflight_passed=True, fingerprint=fingerprint,
-                                     request_path=request_path.as_posix(), workflow=plan["file"], errors=[])
+                                     request_path=request_path.as_posix(), workflow=plan["file"],
+                                     commit_sha="", run_id="", errors=[])
             payload = dict(slug=slug, request_id=request_id, local_preflight_passed=True,
                            episode_fingerprint=fingerprint, workflow=plan["file"])
             try:
@@ -175,6 +174,7 @@ class RunIdentity:
     workflow: str
     event: str = "push"
     before_sha: str = ""
+    run_id: str = ""
 
 
 def verify_request_commit(root: Path, identity: RunIdentity, request_path: str = "") -> str:
@@ -250,10 +250,15 @@ def wait_for_run(identity: RunIdentity, fetch_page: Callable, *, timeout: float 
                 payload = {"workflow_runs": []}
             for run in payload.get("workflow_runs", []):
                 path = str(run.get("path", "")).split("@", 1)[0].rsplit("/", 1)[-1]
-                if (run.get("head_sha") == identity.commit_sha and path == identity.workflow
-                        and run.get("event") == identity.event):
+                correlated = (run.get("display_title") ==
+                              f"media/{identity.slug}/{identity.request_id}/{identity.commit_sha}"
+                              if identity.event == "workflow_dispatch" else run.get("head_sha") == identity.commit_sha)
+                if (correlated and path == identity.workflow and run.get("event") == identity.event
+                        and run.get("head_branch") == "main"):
                     # Optional server-side identity fields must never contradict the request.
                     if run.get("request_id", identity.request_id) != identity.request_id or run.get("slug", identity.slug) != identity.slug:
+                        continue
+                    if identity.run_id and str(run.get("id", "")) != identity.run_id:
                         continue
                     matches.append(run)
             rows = payload.get("workflow_runs", [])
@@ -283,8 +288,9 @@ def github_fetcher(root: Path, repository: str) -> Callable:
         raise PipelineError("REPOSITORY_REQUIRED", "Use owner/repository for --repository.")
 
     def fetch(identity: RunIdentity, page: int) -> dict:
+        sha_filter = f"head_sha={identity.commit_sha}&" if identity.event == "push" else ""
         endpoint = (f"repos/{repository}/actions/workflows/{identity.workflow}/runs"
-                    f"?head_sha={identity.commit_sha}&event={identity.event}&per_page=100&page={page}")
+                    f"?{sha_filter}event={identity.event}&per_page=100&page={page}")
         result = subprocess.run(["gh", "api", endpoint], cwd=root, capture_output=True,
                                 text=True, encoding="utf-8", check=False, timeout=60)
         if result.returncode:

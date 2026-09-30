@@ -268,14 +268,18 @@ def test_dry_run_uses_bundle_without_restored_outputs(tmp_path):
     publisher.upload.assert_not_called()
 
 
-def test_preflight_waits_only_for_exact_source_run_and_never_dispatches(tmp_path):
+@pytest.mark.parametrize("event", ["push", "workflow_dispatch"])
+def test_preflight_waits_only_for_exact_source_run_and_never_dispatches(tmp_path, event):
     queued(tmp_path)
     queue = tmp_path / ".publish-queue/demo.txt"
     queue.parent.mkdir(parents=True)
     queue.write_text("demo\n123\nrequest_1\n", encoding="utf-8")
-    run = {"id": 123, "status": "completed", "conclusion": "success", "event": "push", "head_branch": "main",
-           "path": ".github/workflows/episode-media-preflight.yml", "head_sha": "a" * 40}
-    receipt = {"slug": "demo", "request_id": "request_1", "local_preflight_passed": True}
+    run = {"id": 123, "name": "Episode media preflight", "status": "completed", "conclusion": "success", "event": event, "head_branch": "main",
+           "path": ".github/workflows/episode-media-preflight.yml",
+           "head_sha": "a" * 40 if event == "push" else "b" * 40,
+           "display_title": "media/demo/request_1/" + "a" * 40}
+    receipt = {"slug": "demo", "request_id": "request_1", "local_preflight_passed": True,
+               "workflow": "episode-media-preflight.yml"}
     http = Mock()
     http.request.side_effect = [Mock(status_code=200, json=lambda: {**run, "status": "in_progress"}),
                                Mock(status_code=200, json=lambda: run),

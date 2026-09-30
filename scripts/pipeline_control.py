@@ -124,7 +124,8 @@ def main(argv=None) -> int:
                 event = args.event or plan["trigger"]
                 if event not in plan["events"]:
                     raise PipelineError("WORKFLOW_TRIGGER_UNSUPPORTED", event)
-                identity = RunIdentity(args.request_id, args.slug, args.commit_sha, plan["file"], event, args.before_sha)
+                identity = RunIdentity(args.request_id, args.slug, args.commit_sha, plan["file"], event,
+                                       args.before_sha, str(state.get("run_id") or ""))
                 if re.fullmatch(r"[a-fA-F0-9]{40}", args.commit_sha):
                     known = subprocess.run(["git", "cat-file", "-e", args.commit_sha + "^{commit}"], cwd=root, capture_output=True)
                     if known.returncode:
@@ -134,9 +135,11 @@ def main(argv=None) -> int:
                 verify_request_commit(root, identity, state.get("request_path", ""))
                 result = wait_for_run(identity, github_fetcher(root, args.repository), timeout=args.timeout)
                 current = store.status(args.slug)
-                if args.workflow == "media" and current["stage"] == "MEDIA_PREFLIGHT" and current["request_id"] == args.request_id:
-                    store.transition(args.slug, "READY_TO_QUEUE" if result.get("conclusion") == "success" else "VALIDATION_FAILED",
-                                     request_id=args.request_id, run_id=str(result["id"]), commit_sha=args.commit_sha)
+                if (args.workflow == "media" and
+                        (current.get("request_id") != args.request_id or
+                         str(current.get("run_id", "")) != str(result["id"]) or
+                         current.get("commit_sha") != args.commit_sha)):
+                    raise PipelineError("RUN_AUTHORITY_MISMATCH", "Observed run is not the CAS-admitted media request.")
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))
         return 1 if result.get("result") == "FAIL" or (result.get("status") == "completed" and result.get("conclusion") != "success") else 0
     except (PipelineError, OSError, ValueError) as exc:

@@ -1,4 +1,5 @@
 name: Episode media preflight
+run-name: ${{ github.event_name == 'workflow_dispatch' && format('media/{0}/{1}/{2}', inputs.episode, inputs.request_id, inputs.source_sha) || github.event.head_commit.message }}
 
 on:
   push:
@@ -89,7 +90,7 @@ jobs:
             file="${files[0]}"
           fi
 
-          python - "$file" "$GITHUB_OUTPUT" "$EVENT_NAME" "$MANUAL_EPISODE" "$MANUAL_REQUEST_ID" <<'PY'
+          python - "$file" "$GITHUB_OUTPUT" "$EVENT_NAME" "$MANUAL_EPISODE" "$MANUAL_REQUEST_ID" "$MANUAL_SOURCE_SHA" "$AFTER_SHA" <<'PY'
           import json, re, sys
           from pathlib import Path
           path=Path(sys.argv[1])
@@ -97,6 +98,7 @@ jobs:
           event=sys.argv[3]
           expected_slug=sys.argv[4]
           expected_request=sys.argv[5]
+          source_sha=sys.argv[6] if event == "workflow_dispatch" else sys.argv[7]
           data=json.loads(path.read_text(encoding="utf-8"))
           slug=str(data.get("slug","")).strip()
           request_id=str(data.get("request_id") or path.stem).strip()
@@ -106,10 +108,15 @@ jobs:
               raise SystemExit("PREFLIGHT_REQUEST_ID_INVALID")
           if event == "workflow_dispatch" and (slug != expected_slug or request_id != expected_request):
               raise SystemExit("PREFLIGHT_REQUEST_IDENTITY_MISMATCH")
+          if path.as_posix() != f".episode-check/{slug}--{request_id}.json":
+              raise SystemExit("PREFLIGHT_REQUEST_PATH_MISMATCH")
+          if data.get("workflow") != "episode-media-preflight.yml" or data.get("local_preflight_passed") is not True:
+              raise SystemExit("PREFLIGHT_REQUEST_NOT_PREPARED")
           with out.open("a", encoding="utf-8") as handle:
               handle.write(f"request_id={request_id}\n")
               handle.write(f"slug={slug}\n")
               handle.write(f"request_file={path.as_posix()}\n")
+              handle.write(f"source_sha={source_sha}\n")
           print(f"Media preflight episode: {slug}")
           PY
 
@@ -132,11 +139,17 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements.txt
 
-      - name: Reconcile authoritative reservation
+      - name: Admit exact prepared request and claim this run by CAS
+        shell: bash
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
+          PIPELINE_REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          PIPELINE_SOURCE_SHA: ${{ steps.request.outputs.source_sha }}
           GH_TOKEN: ${{ github.token }}
-        run: python scripts/pipeline_workflow.py reconcile "$EPISODE"
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin '+refs/heads/main:refs/remotes/origin/main'
+          python scripts/admit_media_preflight.py
 
       - name: Episode media preflight — batch diagnostics and auto-repair
         id: repair
@@ -144,6 +157,7 @@ jobs:
         env:
           EPISODE: ${{ steps.request.outputs.slug }}
           PIPELINE_REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          PIPELINE_SOURCE_SHA: ${{ steps.request.outputs.source_sha }}
           GH_TOKEN: ${{ github.token }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
           # runner context is available at step scope, not at job.env scope.
@@ -654,6 +668,7 @@ jobs:
     env:
       EPISODE: ${{ needs.media-preflight.outputs.episode }}
       PIPELINE_REQUEST_ID: ${{ needs.media-preflight.outputs.request_id }}
+      PIPELINE_SOURCE_SHA: ${{ github.event_name == 'workflow_dispatch' && inputs.source_sha || github.sha }}
     steps:
       - uses: actions/checkout@v7
         with:

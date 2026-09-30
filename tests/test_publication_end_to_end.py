@@ -41,6 +41,7 @@ class FakeGitHubPreflight:
         if url.endswith("/actions/runs/123"):
             payload = {
                 "id": 123,
+                "name": "Episode media preflight",
                 "status": "completed",
                 "conclusion": "success",
                 "event": "push",
@@ -54,6 +55,7 @@ class FakeGitHubPreflight:
                 "slug": "demo",
                 "request_id": "request_1",
                 "local_preflight_passed": True,
+                "workflow": "episode-media-preflight.yml",
             }
             payload = {"content": base64.b64encode(json.dumps(receipt).encode()).decode()}
         else:

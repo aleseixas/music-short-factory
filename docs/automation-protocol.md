@@ -88,11 +88,11 @@ Para recovery pré-publicação existe também o caminho dedicado
 slug, o request anterior, um request de mídia novo, repair_cycle 1..3 e os seis
 arquivos editoriais completos. O workflow reconcilia a autoridade, rejeita
 publisher/queue/attempt, aplica os bytes somente no clone e chama o mesmo
-`prepare` fenced/CAS. Ele só é autorizado com o secret
-`PIPELINE_GITHUB_TOKEN`, distinto do token padrão do Actions. O commit do CAS
-feito com esse token deve gerar o push real de Media Preflight; o workflow não
-faz dispatch/rerun manual. Sem esse secret/runtime, registre blocker concreto e
-não faça bypass pelo MCP.
+`prepare` fenced/CAS. Ele usa `GITHUB_TOKEN` nativo (`contents: write` e
+`actions: write`) e envia `workflow_dispatch` explícito ao Media Preflight com
+slug, request_id e o SHA exato do CAS. O preflight só admite o request preparado
+e ainda autoritativo, reivindicando um run por CAS. Não há secret manual de
+GitHub; sem runtime ou permissões, registre o blocker e não faça bypass pelo MCP.
 
 ## Candidata e autoria
 
@@ -158,7 +158,7 @@ Não crie `.episode-check` manual nem marque PASS.
 Acompanhe o SHA retornado, não o HEAD posterior das transições:
 
 ```bash
-python scripts/pipeline_control.py wait <slug> --request-id <request_id> --commit-sha <request_sha> --workflow media --repository aleseixas/music-short-factory --timeout 45
+python scripts/pipeline_control.py wait <slug> --request-id <request_id> --commit-sha <request_sha> --workflow media --event workflow_dispatch --repository aleseixas/music-short-factory --timeout 45
 ```
 
 Para push com vários commits, use também `--before-sha` do push real.

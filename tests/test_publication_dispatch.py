@@ -103,9 +103,10 @@ class PublicationDispatchTests(unittest.TestCase):
         self.exact_queries = []
         self.now = 1000
         self.authority = DispatchAuthority()
-        self.source_run = {"id": 123, "event": "push", "head_branch": "main", "head_sha": "b" * 40,
+        self.source_run = {"id": 123, "name": "Episode media preflight", "event": "push", "head_branch": "main", "head_sha": "b" * 40,
                            "path": ".github/workflows/episode-media-preflight.yml", "status": "in_progress"}
-        self.source_receipt = {"slug": "demo", "request_id": "request", "local_preflight_passed": True}
+        self.source_receipt = {"slug": "demo", "request_id": "request", "local_preflight_passed": True,
+                               "workflow": "episode-media-preflight.yml"}
 
     def api(self, method, path, body=None):
         if path == "authority":
@@ -306,7 +307,7 @@ class PublicationDispatchTests(unittest.TestCase):
         self.assertEqual(self.record["expected_source_sha"], "b" * 40)
 
     def test_source_workflow_commit_and_receipt_must_be_verified_before_intent(self):
-        for field, wrong in (("head_sha", "c" * 40), ("event", "workflow_dispatch"),
+        for field, wrong in (("head_sha", "c" * 40), ("event", "schedule"),
                              ("path", ".github/workflows/publish-episode.yml"),
                              ("head_branch", "other"), ("id", 999)):
             with self.subTest(field=field):
@@ -321,6 +322,24 @@ class PublicationDispatchTests(unittest.TestCase):
         with self.assertRaisesRegex(PipelineError, "DISPATCH_SOURCE_UNVERIFIED"):
             self.dispatch()
         self.assertEqual(self.posts, [])
+
+    def test_correlated_dispatch_source_is_accepted_even_when_head_sha_is_later(self):
+        self.source_run.update(event="workflow_dispatch", head_sha="c" * 40,
+                               display_title="media/demo/request/" + "b" * 40)
+        self.assertEqual(self.dispatch()["result"], "DISPATCHED")
+        self.assertEqual(len(self.posts), 1)
+
+    def test_dispatch_source_with_other_slug_request_or_sha_cannot_publish(self):
+        self.source_run.update(event="workflow_dispatch", head_sha="c" * 40)
+        for title in ("media/other/request/" + "b" * 40,
+                      "media/demo/other/" + "b" * 40,
+                      "media/demo/request/" + "d" * 40):
+            with self.subTest(title=title):
+                self.source_run["display_title"] = title
+                with self.assertRaisesRegex(PipelineError, "DISPATCH_SOURCE_UNVERIFIED"):
+                    self.dispatch()
+                self.assertIsNone(self.record)
+                self.assertEqual(self.posts, [])
 
     def test_failed_source_run_cannot_authorize_a_new_dispatch(self):
         self.source_run.update(status="completed", conclusion="failure")

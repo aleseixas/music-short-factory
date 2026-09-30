@@ -22,7 +22,8 @@ Ausência de runtime/autenticação é blocker explícito, não permissão para 
 
 ## Acompanhamento
 
-Duplicate/Media Preflight usam push; ausência de workflow_dispatch não bloqueia.
+Duplicate usa push. Media Preflight aceita push legado ou o dispatch explícito
+de autoria/recovery, desde que slug, request_id e SHA preparado coincidam.
 Acompanhe request_id + slug + SHA do request + workflow, nunca último run ou
 HEAD posterior da coordenação. Para push de vários commits use before-sha real.
 Poll/backoff observa queued/pending/waiting/requested/in_progress; timeout preserva

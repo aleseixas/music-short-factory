@@ -221,6 +221,7 @@ class CrashRaceTests(unittest.TestCase):
         from contextlib import redirect_stdout
         from scripts.pipeline_control import main
         before, _, after, _ = self.request_push()
+        PipelineStore(self.root).transition("demo", "MEDIA_PREFLIGHT", run_id="7", commit_sha=after)
         output = io.StringIO()
         with patch("scripts.pipeline_control.github_fetcher"), patch("scripts.pipeline_control.wait_for_run", return_value={"id": 7, "conclusion": "success"}) as wait, redirect_stdout(output):
             status = main(["--root", str(self.root), "wait", "demo", "--request-id", "req", "--commit-sha", after,
@@ -276,7 +277,7 @@ class CrashRaceTests(unittest.TestCase):
         store = self.queued()
         with patch.dict(os.environ, {"GITHUB_REPOSITORY": "owner/repo", "GH_TOKEN": "test"}):
             http = Mock()
-            run = {"id": 123, "status": "completed", "conclusion": "success", "event": "push", "head_branch": "main",
+            run = {"id": 123, "name": "Episode media preflight", "status": "completed", "conclusion": "success", "event": "push", "head_branch": "main",
                    "path": ".github/workflows/episode-media-preflight.yml", "head_sha": "a" * 40}
             receipt = {"slug": "other", "request_id": "req", "local_preflight_passed": True}
             http.request.side_effect = [Mock(status_code=200, json=lambda: run),
@@ -289,9 +290,10 @@ class CrashRaceTests(unittest.TestCase):
         store = self.queued()
         with patch.dict(os.environ, {"GITHUB_REPOSITORY": "owner/repo", "GH_TOKEN": "test"}):
             http = Mock()
-            run = {"id": 123, "status": "completed", "conclusion": "success", "event": "push", "head_branch": "main",
+            run = {"id": 123, "name": "Episode media preflight", "status": "completed", "conclusion": "success", "event": "push", "head_branch": "main",
                    "path": ".github/workflows/episode-media-preflight.yml", "head_sha": "a" * 40}
-            receipt = {"slug": "demo", "request_id": "req", "local_preflight_passed": True}
+            receipt = {"slug": "demo", "request_id": "req", "local_preflight_passed": True,
+                       "workflow": "episode-media-preflight.yml"}
             http.request.side_effect = [Mock(status_code=200, json=lambda: run),
                                         Mock(status_code=200, json=lambda: {"content": base64.b64encode(json.dumps(receipt).encode()).decode()})]
             with patch("publishing.snapshot.approved_manifest", return_value=({}, "")) as verify:

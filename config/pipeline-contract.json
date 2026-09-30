@@ -108,7 +108,7 @@
     "CANCELLED"
   ],
   "publication_policy": "Persist attempt before external side effects; never retry an attempted platform or allow recovery mutation after any publisher starts.",
-  "request_policy": "Create and commit a new request only after local PASS; correlate request_id, slug, workflow and exact triggering commit. Push does not require workflow_dispatch.",
+  "request_policy": "Create and commit a new request only after local PASS; correlate request_id, slug, workflow and exact triggering commit. Native-token Actions prepare requires a correlated workflow_dispatch; legacy external pushes remain supported.",
   "workflow_inventory": {
     "cleanup-actions-storage.yml": [
       "push",
@@ -120,6 +120,9 @@
       "push"
     ],
     "duplicate-preflight.yml": [
+      "push"
+    ],
+    "dispatch-prepared-media.yml": [
       "push"
     ],
     "episode-media-preflight.yml": [
@@ -135,6 +138,9 @@
       "workflow_dispatch"
     ],
     "render-test.yml": [
+      "push"
+    ],
+    "recovery-prepare.yml": [
       "push"
     ],
     "test-background-music-freshness.yml": [

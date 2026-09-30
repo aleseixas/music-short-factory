@@ -210,21 +210,21 @@ class AttemptStore:
                         or time.monotonic() >= deadline):
                     break
                 time.sleep(5)
-            if (str(run.get("id")) != source_run or run.get("status") != "completed" or run.get("conclusion") != "success"
-                    or run.get("event") != "push" or run.get("head_branch") != "main"
-                    or str(run.get("path", "")).split("@", 1)[0] != ".github/workflows/episode-media-preflight.yml"
-                    or not re.fullmatch(r"[a-fA-F0-9]{40}", str(run.get("head_sha", "")))
-                    or run.get("head_sha") != state.get("commit_sha")):
+            from engine.media_provenance import matches_media_run, matches_prepared_request
+            source_sha = state.get("commit_sha", "")
+            if (str(run.get("id")) != source_run or
+                    not matches_media_run(run, slug, state["request_id"], source_sha, require_success=True)):
                 raise ValueError("external preflight has not succeeded")
-            # Check the exact receipt at the source run's triggering commit.
+            # Check the exact receipt at the prepared source commit, not the
+            # dispatch run's head SHA (which can be a later main CAS revision).
             request_path = state.get("request_path") or f".episode-check/{slug}--{state['request_id']}.json"
             if not re.fullmatch(r"\.episode-check/[A-Za-z0-9_-]+\.json", request_path):
                 raise ValueError("request path")
             response = self.http.request("GET", f"https://api.github.com/repos/{self.repository}/contents/{request_path}",
-                                         params={"ref": run["head_sha"]},
+                                         params={"ref": source_sha},
                                          headers={"Authorization": f"Bearer {self._credential()}", "Accept": "application/vnd.github+json"}, timeout=30)
             request = json.loads(base64.b64decode(response.json()["content"])) if response.status_code == 200 else {}
-            if request.get("slug") != slug or request.get("request_id") != state["request_id"] or request.get("local_preflight_passed") is not True:
+            if not matches_prepared_request(request, slug, state["request_id"], state.get("fingerprint", "")):
                 raise ValueError("request does not match the successful run")
         except Exception as exc:
             raise PublicationLocked("PUBLICATION_PREFLIGHT_UNVERIFIED: exact successful external run and approved staged bytes are required") from exc

@@ -148,36 +148,9 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Verify media preflight artifact provenance
-        shell: bash
         env:
           GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          # The queue job dispatches this workflow before its own source run completes.
-          # Only this exact run may authorize publication; pending is not failure.
-          deadline=$((SECONDS + 900))
-          while true; do
-            run_info="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" \
-              --jq '[.name, .event, .head_branch, .status, (.conclusion // "")] | @tsv')"
-            IFS=$'\t' read -r source_name source_event source_branch source_status source_conclusion <<< "$run_info"
-            if [[ "$source_name" != "Episode media preflight" || "$source_event" != "push" || "$source_branch" != "main" ]]; then
-              echo "::error::PREFLIGHT_ARTIFACT_ORIGIN_INVALID: source must be Episode media preflight push on main."
-              exit 1
-            fi
-            if [[ "$source_status" == "completed" ]]; then
-              if [[ "$source_conclusion" != "success" ]]; then
-                echo "::error::PREFLIGHT_ARTIFACT_RUN_FAILED: source run concluded $source_conclusion."
-                exit 1
-              fi
-              break
-            fi
-            if (( SECONDS >= deadline )); then
-              echo "::error::PREFLIGHT_SOURCE_TIMEOUT: source run is still $source_status; no publisher started."
-              exit 1
-            fi
-            echo "Waiting for source run $SOURCE_RUN_ID ($source_status)."
-            sleep 15
-          done
+        run: python scripts/verify_media_run.py
 
       - name: Download validated publish-ready artifact
         uses: actions/download-artifact@v7

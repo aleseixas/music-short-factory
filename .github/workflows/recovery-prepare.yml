@@ -1,4 +1,4 @@
-name: Recovery prepare with external token
+name: Recovery prepare
 
 on:
   push:
@@ -8,7 +8,8 @@ on:
       - ".recovery-request/*.json"
 
 permissions:
-  contents: read
+  contents: write
+  actions: write
 
 concurrency:
   group: recovery-prepare-main
@@ -76,22 +77,6 @@ jobs:
               handle.write(f"repair_cycle={cycle}\n")
           PY
 
-      - name: Verify external pipeline credential
-        shell: bash
-        env:
-          PIPELINE_GITHUB_TOKEN: ${{ secrets.PIPELINE_GITHUB_TOKEN }}
-          DEFAULT_GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          if [[ -z "$PIPELINE_GITHUB_TOKEN" ]]; then
-            echo "::error::PIPELINE_GITHUB_TOKEN_MISSING: add the repository Actions secret before submitting recovery requests."
-            exit 1
-          fi
-          if [[ "$PIPELINE_GITHUB_TOKEN" == "$DEFAULT_GITHUB_TOKEN" ]]; then
-            echo "::error::PIPELINE_GITHUB_TOKEN_INVALID: the recovery credential must be distinct from github.token."
-            exit 1
-          fi
-
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
@@ -115,34 +100,29 @@ jobs:
         id: recover
         shell: bash
         env:
-          GH_TOKEN: ${{ secrets.PIPELINE_GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           PIPELINE_DEFAULT_GITHUB_TOKEN: ${{ github.token }}
-          PIPELINE_ACTIONS_PREPARE_AUTH: external-token
+          PIPELINE_ACTIONS_PREPARE_AUTH: workflow-dispatch
           PIPELINE_REQUEST_ID: ${{ steps.request.outputs.request_id }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         run: |
           set -euo pipefail
-          output="$(python scripts/recover_episode_request.py "${{ steps.request.outputs.file }}")"
-          printf '%s\n' "$output"
-          source_sha="$(python -c 'import json,sys; print(json.loads(sys.stdin.read()).get("commit_sha",""))' <<<"$output")"
-          next_action="$(python -c 'import json,sys; print(json.loads(sys.stdin.read()).get("next_action",""))' <<<"$output")"
-          if [[ ! "$source_sha" =~ ^[0-9a-fA-F]{40}$ ]]; then
-            echo "::error::RECOVERY_COMMIT_SHA_MISSING"
-            exit 1
-          fi
-          if [[ "$next_action" != "wait_for_correlated_run" ]]; then
-            echo "::error::RECOVERY_PREPARE_NOT_READY: next_action=$next_action"
-            exit 1
-          fi
-          echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
+          output_file="$(mktemp)"
+          python scripts/recover_episode_request.py "${{ steps.request.outputs.file }}" | tee "$output_file"
+          python scripts/parse_prepare_output.py "$output_file" \
+            "${{ steps.request.outputs.slug }}" "${{ steps.request.outputs.request_id }}" "$GITHUB_OUTPUT"
 
-      - name: Confirm push-trigger handoff
+      - name: Dispatch correlated media preflight
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.request.outputs.slug }}
+          REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          SOURCE_SHA: ${{ steps.recover.outputs.source_sha }}
         run: |
           set -euo pipefail
-          echo "Prepared recovery request by fenced CAS."
-          echo "The CAS commit uses PIPELINE_GITHUB_TOKEN so Episode media preflight is expected to start from its push event."
-          echo "No workflow_dispatch, queue, retry or publisher rerun is sent by this workflow."
+          gh workflow run episode-media-preflight.yml --ref main \
+            -f episode="$SLUG" -f request_id="$REQUEST_ID" -f source_sha="$SOURCE_SHA"
 
       - name: Summary
         if: always()
@@ -153,4 +133,4 @@ jobs:
           echo "- request_id: ${{ steps.request.outputs.request_id }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- repair_cycle: ${{ steps.request.outputs.repair_cycle }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- source_sha: ${{ steps.recover.outputs.source_sha }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- dispatch: none; media preflight must originate from the external-token CAS push" >> "$GITHUB_STEP_SUMMARY"
+          echo "- handoff: correlated workflow_dispatch with native GITHUB_TOKEN" >> "$GITHUB_STEP_SUMMARY"

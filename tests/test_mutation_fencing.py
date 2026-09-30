@@ -279,24 +279,24 @@ def test_actions_prepare_rejects_a_push_request_before_creating_receipt(tmp_path
         coordinator = SharedCoordinator(tmp_path, ServerBackend(url), owner_id='first')
         with using_coordinator(tmp_path, coordinator):
             monkeypatch.setenv('GITHUB_ACTIONS', 'true')
-            with pytest.raises(PipelineError, match='PUSH_REQUEST_REQUIRES_EXTERNAL_TOKEN'):
+            with pytest.raises(PipelineError, match='ACTIONS_PREPARE_DISPATCH_REQUIRED'):
                 prepare_request(tmp_path, 'demo', 'req', validator=lambda *a, **kw: [])
             assert not data['files']
 
 
-def test_actions_prepare_accepts_external_token_in_dedicated_recovery_workflow(tmp_path, monkeypatch):
+def test_actions_prepare_accepts_native_token_in_dedicated_recovery_workflow(tmp_path, monkeypatch):
     with authority() as (url, data, _):
         coordinator = SharedCoordinator(tmp_path, ServerBackend(url), owner_id='recovery-actions')
         with using_coordinator(tmp_path, coordinator):
             seed(tmp_path, coordinator)
             monkeypatch.setenv('GITHUB_ACTIONS', 'true')
-            monkeypatch.setenv('PIPELINE_ACTIONS_PREPARE_AUTH', 'external-token')
+            monkeypatch.setenv('PIPELINE_ACTIONS_PREPARE_AUTH', 'workflow-dispatch')
             monkeypatch.setenv(
                 'GITHUB_WORKFLOW_REF',
                 'aleseixas/music-short-factory/.github/workflows/recovery-prepare.yml@refs/heads/main',
             )
-            monkeypatch.setenv('GH_TOKEN', 'external-token-value')
-            monkeypatch.setenv('PIPELINE_DEFAULT_GITHUB_TOKEN', 'default-actions-token')
+            monkeypatch.setenv('GH_TOKEN', 'native-actions-token')
+            monkeypatch.setenv('PIPELINE_DEFAULT_GITHUB_TOKEN', 'native-actions-token')
             result = prepare_request(
                 tmp_path,
                 'demo',

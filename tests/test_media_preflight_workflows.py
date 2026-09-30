@@ -129,9 +129,7 @@ class MediaPreflightWorkflowTests(unittest.TestCase):
         provenance = workflow.split(
             "- name: Verify media preflight artifact provenance", 1
         )[1].split("      - name:", 1)[0]
-        self.assertIn('source_name" != "Episode media preflight', provenance)
-        self.assertIn('source_event" != "push', provenance)
-        self.assertIn('source_branch" != "main', provenance)
+        self.assertIn('scripts/verify_media_run.py', provenance)
         self.assertIn("run-id: ${{ needs.prepare.outputs.source_run_id }}", workflow)
         self.assertIn("name: publish-ready-${{ needs.prepare.outputs.episode }}", workflow)
         self.assertNotIn("publish_ready_bundle.py restore", workflow)
@@ -145,14 +143,14 @@ class MediaPreflightWorkflowTests(unittest.TestCase):
         self.assertIn('--platform instagram --live', workflow)
         self.assertIn('--platform tiktok --live', workflow)
 
-    def test_recovery_prepare_uses_external_token_and_never_dispatches(self):
+    def test_recovery_prepare_uses_native_token_and_correlated_dispatch(self):
         workflow = (WORKFLOWS / "recovery-prepare.yml").read_text(encoding="utf-8")
         self.assertIn('".recovery-request/*.json"', workflow)
-        self.assertIn("PIPELINE_GITHUB_TOKEN", workflow)
+        self.assertNotIn("PIPELINE_GITHUB_TOKEN", workflow)
         self.assertIn("PIPELINE_DEFAULT_GITHUB_TOKEN: ${{ github.token }}", workflow)
-        self.assertIn("PIPELINE_ACTIONS_PREPARE_AUTH: external-token", workflow)
+        self.assertIn("PIPELINE_ACTIONS_PREPARE_AUTH: workflow-dispatch", workflow)
         self.assertIn("scripts/recover_episode_request.py", workflow)
-        self.assertNotIn("gh workflow run", workflow)
+        self.assertIn("gh workflow run episode-media-preflight.yml", workflow)
         self.assertNotIn(".publish-queue/", workflow)
         self.assertNotIn("--live", workflow)
 

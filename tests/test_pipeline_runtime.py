@@ -33,14 +33,13 @@ class PipelineRuntimeTests(unittest.TestCase):
         directory.mkdir(parents=True, exist_ok=True)
         atomic_json(directory / "assets.json", {"broken": True})
 
-    def test_media_pass_rotates_duplicate_request_after_unique(self):
+    def test_media_pass_cannot_rotate_duplicate_request_without_admission(self):
         from scripts.pipeline_workflow import media_pass
         self.store.start("episode", "duplicate_1")
         self.store.transition("episode", "UNIQUE")
-        media_pass(self.root, "episode", "media_2")
-        state = self.store.status("episode")
-        self.assertEqual(state["stage"], "MEDIA_PREFLIGHT")
-        self.assertEqual(state["request_id"], "media_2")
+        with self.assertRaisesRegex(PipelineError, "PREFLIGHT_ADMISSION_REQUIRED"):
+            media_pass(self.root, "episode", "media_2")
+        self.assertEqual(self.store.status("episode")["request_id"], "duplicate_1")
 
     def test_external_failure_updates_own_state_without_rolling_back_queue(self):
         from scripts.pipeline_workflow import media_failed
@@ -64,7 +63,9 @@ class PipelineRuntimeTests(unittest.TestCase):
         plan = trigger_plan(self.root, "media")
         self.assertEqual(plan["action"], "commit_and_push_request")
         self.assertFalse(plan["dispatch_required"])
-        self.assertNotIn("workflow_dispatch", plan["events"])
+        self.assertIn("workflow_dispatch", plan["events"])
+        self.assertTrue(plan["actions_dispatch_required"])
+        self.assertEqual(plan["actions_handoff"], "workflow_dispatch")
 
     def test_contract_drift_stops_before_trigger(self):
         (self.root / ".github/workflows/episode-media-preflight.yml").write_text("on:\n  workflow_dispatch:\n", encoding="utf-8")
@@ -237,7 +238,7 @@ class PipelineRuntimeTests(unittest.TestCase):
         now = [0.0]
         def fetch(identity, page):
             status = next(statuses)
-            return {"workflow_runs": [] if status is None else [dict(id=7, head_sha=identity.commit_sha, path=".github/workflows/" + identity.workflow, event="push", status=status, conclusion="success")]}
+            return {"workflow_runs": [] if status is None else [dict(id=7, head_sha=identity.commit_sha, head_branch="main", path=".github/workflows/" + identity.workflow, event="push", status=status, conclusion="success")]}
         def sleep(seconds):
             now[0] += seconds
         result = wait_for_run(identity, fetch, monotonic=lambda: now[0], sleep=sleep)
@@ -247,16 +248,25 @@ class PipelineRuntimeTests(unittest.TestCase):
     def test_two_requests_track_own_runs_even_when_latest_differs(self):
         first = RunIdentity("one", "first", "a" * 40, "episode-media-preflight.yml")
         second = RunIdentity("two", "second", "b" * 40, first.workflow)
-        runs = [dict(id=n, head_sha=identity.commit_sha, path=".github/workflows/" + identity.workflow,
+        runs = [dict(id=n, head_sha=identity.commit_sha, head_branch="main", path=".github/workflows/" + identity.workflow,
                      event="push", status="completed", conclusion="success", request_id=identity.request_id, slug=identity.slug)
                 for n, identity in [(11, first), (22, second)]]
         fetch = lambda identity, page: {"workflow_runs": list(reversed(runs))}
         self.assertEqual(wait_for_run(first, fetch)["id"], 11)
         self.assertEqual(wait_for_run(second, fetch)["id"], 22)
 
+    def test_dispatch_wait_uses_prepared_sha_in_title_not_later_head_sha(self):
+        identity = RunIdentity("req", "episode", "a" * 40, "episode-media-preflight.yml",
+                               "workflow_dispatch", run_id="7")
+        run = dict(id=7, head_sha="b" * 40, head_branch="main",
+                   display_title="media/episode/req/" + "a" * 40,
+                   path=".github/workflows/episode-media-preflight.yml",
+                   event="workflow_dispatch", status="completed", conclusion="success")
+        assert wait_for_run(identity, lambda *_: {"workflow_runs": [run]})["id"] == 7
+
     def test_paginated_runs_not_truncated(self):
         identity = RunIdentity("req", "episode", "a" * 40, "episode-media-preflight.yml")
-        run = dict(id=9, head_sha=identity.commit_sha, path=".github/workflows/" + identity.workflow, event="push", status="completed", conclusion="success")
+        run = dict(id=9, head_sha=identity.commit_sha, head_branch="main", path=".github/workflows/" + identity.workflow, event="push", status="completed", conclusion="success")
         result = wait_for_run(identity, lambda identity, page: {"workflow_runs": [] if page == 1 else [run], "has_next": page == 1})
         self.assertEqual(result["id"], 9)
 
