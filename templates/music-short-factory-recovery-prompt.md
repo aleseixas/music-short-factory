@@ -49,9 +49,15 @@ Sem mudança, não repita erro determinístico; transitório admite backoff.
 Run em andamento permanece em observação.
 
 Reparo/autoria/prepare exige clone autenticado e runtime da repo; GitHub MCP
-não prova credencial no terminal. Sem esses recursos reporte blocker exato,
-sem criar .episode-check manual. PASS do prepare retorna commit_sha confirmado
-por CAS; não faça outro commit/push do request. Espere slug+request+SHA+workflow,
+sozinho não prova credencial de terminal. Quando o secret
+`PIPELINE_GITHUB_TOKEN` estiver configurado, recovery pré-publicação pode usar o
+caminho oficial `.recovery-request/*.json` -> `recovery-prepare.yml`: envie
+somente o mesmo slug ativo, previous_request_id autoritativo, request_id de mídia
+novo, repair_cycle 1..3 e os seis arquivos editoriais completos. O workflow deve
+reconciliar e executar o mesmo prepare fenced/CAS; nunca use esse request para
+queue/dispatch/publisher. Sem runtime/secret reporte blocker exato, sem criar
+.episode-check manual. PASS do prepare retorna commit_sha confirmado por CAS;
+não faça outro commit/push do request. Espere slug+request+SHA+workflow,
 sem usar o último run. Timeout preserva pedido para nova observação.
 
 Até 15 candidatas na candidate_window desde a última queue, controladas por CAS;

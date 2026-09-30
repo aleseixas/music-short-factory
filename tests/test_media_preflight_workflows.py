@@ -145,6 +145,17 @@ class MediaPreflightWorkflowTests(unittest.TestCase):
         self.assertIn('--platform instagram --live', workflow)
         self.assertIn('--platform tiktok --live', workflow)
 
+    def test_recovery_prepare_uses_external_token_and_never_dispatches(self):
+        workflow = (WORKFLOWS / "recovery-prepare.yml").read_text(encoding="utf-8")
+        self.assertIn('".recovery-request/*.json"', workflow)
+        self.assertIn("PIPELINE_GITHUB_TOKEN", workflow)
+        self.assertIn("PIPELINE_DEFAULT_GITHUB_TOKEN: ${{ github.token }}", workflow)
+        self.assertIn("PIPELINE_ACTIONS_PREPARE_AUTH: external-token", workflow)
+        self.assertIn("scripts/recover_episode_request.py", workflow)
+        self.assertNotIn("gh workflow run", workflow)
+        self.assertNotIn(".publish-queue/", workflow)
+        self.assertNotIn("--live", workflow)
+
     def test_publish_ready_bundle_survives_cleanup_long_enough_for_retries(self):
         workflow = (WORKFLOWS / "cleanup-actions-storage.yml").read_text(
             encoding="utf-8"

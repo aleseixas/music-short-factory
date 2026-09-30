@@ -77,13 +77,22 @@ rascunho; nunca recoloque um cache antigo por cima de uma revisão nova.
 Lease ocupada exige esperar/observar; expiração não libera outro slug.
 Falha CAS/fence/cache exige releitura/reconcile antes da próxima escrita.
 
-GitHub conectado permite leitura e o request inicial de duplicate. O fluxo
-completo atual exige executar a repo em clone autenticado, com dependências,
+GitHub conectado permite leitura e os requests de entrada documentados. Autoria,
+reparo e `prepare` continuam exigindo um clone autenticado, com dependências,
 FFmpeg/ffprobe e credencial aceita pelos comandos coordenados. A conexão MCP não
-prova que o terminal tem essa credencial. Não extraia tokens de outro app nem
-invente acesso. Sem runtime/autenticação, registre o blocker concreto e o próximo
-passo suportado; não contorne `prepare` criando `.episode-check` pelo MCP.
-`prepare` dentro de Actions é rejeitado: `GITHUB_TOKEN` não encadeia push.
+prova que um terminal tenha essa credencial e nunca autoriza criar
+`.episode-check`, queue ou authority manualmente.
+
+Para recovery pré-publicação existe também o caminho dedicado
+`.recovery-request/*.json` -> `recovery-prepare.yml`: o request carrega o mesmo
+slug, o request anterior, um request de mídia novo, repair_cycle 1..3 e os seis
+arquivos editoriais completos. O workflow reconcilia a autoridade, rejeita
+publisher/queue/attempt, aplica os bytes somente no clone e chama o mesmo
+`prepare` fenced/CAS. Ele só é autorizado com o secret
+`PIPELINE_GITHUB_TOKEN`, distinto do token padrão do Actions. O commit do CAS
+feito com esse token deve gerar o push real de Media Preflight; o workflow não
+faz dispatch/rerun manual. Sem esse secret/runtime, registre blocker concreto e
+não faça bypass pelo MCP.
 
 ## Candidata e autoria
 

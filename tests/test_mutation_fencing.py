@@ -284,6 +284,31 @@ def test_actions_prepare_rejects_a_push_request_before_creating_receipt(tmp_path
             assert not data['files']
 
 
+def test_actions_prepare_accepts_external_token_in_dedicated_recovery_workflow(tmp_path, monkeypatch):
+    with authority() as (url, data, _):
+        coordinator = SharedCoordinator(tmp_path, ServerBackend(url), owner_id='recovery-actions')
+        with using_coordinator(tmp_path, coordinator):
+            seed(tmp_path, coordinator)
+            monkeypatch.setenv('GITHUB_ACTIONS', 'true')
+            monkeypatch.setenv('PIPELINE_ACTIONS_PREPARE_AUTH', 'external-token')
+            monkeypatch.setenv(
+                'GITHUB_WORKFLOW_REF',
+                'aleseixas/music-short-factory/.github/workflows/recovery-prepare.yml@refs/heads/main',
+            )
+            monkeypatch.setenv('GH_TOKEN', 'external-token-value')
+            monkeypatch.setenv('PIPELINE_DEFAULT_GITHUB_TOKEN', 'default-actions-token')
+            result = prepare_request(
+                tmp_path,
+                'demo',
+                'media_2',
+                validator=lambda *a, **kw: [],
+            )
+            assert result['next_action'] == 'wait_for_correlated_run'
+            assert result['commit_sha']
+            assert data['states']['default']['request_id'] == 'media_2'
+            assert '.episode-check/demo--media_2.json' in data['files']
+
+
 def test_reconcile_does_not_replay_crashed_stale_local_journal(tmp_path):
     with authority() as (url, data, _):
         coordinator = SharedCoordinator(tmp_path, ServerBackend(url), owner_id='first')

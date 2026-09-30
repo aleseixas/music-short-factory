@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
+import hmac
 import json
 import os
 import tempfile
@@ -36,6 +37,26 @@ def trigger_plan(root: Path, workflow: str) -> dict:
             "dispatch_required": rule["trigger"] != "push"}
 
 
+def _actions_prepare_has_external_token() -> bool:
+    """Allow Actions prepare only from the dedicated recovery/author workflows with a distinct token."""
+    if os.environ.get("GITHUB_ACTIONS") != "true":
+        return True
+    if os.environ.get("PIPELINE_ACTIONS_PREPARE_AUTH") != "external-token":
+        return False
+    workflow_ref = os.environ.get("GITHUB_WORKFLOW_REF", "")
+    allowed = (
+        "/.github/workflows/recovery-prepare.yml@",
+        "/.github/workflows/author-episode.yml@",
+    )
+    if not any(marker in workflow_ref for marker in allowed):
+        return False
+    token = os.environ.get("GH_TOKEN", "").strip()
+    default_token = os.environ.get("PIPELINE_DEFAULT_GITHUB_TOKEN", "").strip()
+    if not token or not default_token:
+        return False
+    return not hmac.compare_digest(token, default_token)
+
+
 def episode_fingerprint(root: Path, slug: str) -> str:
     digest = hashlib.sha256()
     directory = root / "episodes" / safe_slug(slug)
@@ -52,8 +73,14 @@ def prepare_request(root: Path, slug: str, request_id: str, **kwargs) -> dict:
     from engine.process_lock import process_lock
     safe_slug(slug)
     from engine.coordination_runtime import coordinator_for
-    if os.environ.get("GITHUB_ACTIONS") == "true" and coordinator_for(root) is not None:
-        raise PipelineError("PUSH_REQUEST_REQUIRES_EXTERNAL_TOKEN", "Prepare push requests from an authenticated local clone; Actions tokens cannot chain push workflows.")
+    if (os.environ.get("GITHUB_ACTIONS") == "true"
+            and coordinator_for(root) is not None
+            and not _actions_prepare_has_external_token()):
+        raise PipelineError(
+            "PUSH_REQUEST_REQUIRES_EXTERNAL_TOKEN",
+            "Actions prepare requires the dedicated recovery/author workflow with "
+            "PIPELINE_GITHUB_TOKEN; the default Actions token cannot chain push workflows.",
+        )
     try:
         with process_lock(root / ".pipeline" / "operations" / f"{slug}.lock"):
             return _prepare_request(root, slug, request_id, **kwargs)

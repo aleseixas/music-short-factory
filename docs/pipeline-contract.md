@@ -67,8 +67,13 @@ Nenhum .episode-check é criado com erro determinístico conhecido.
 ## Triggers e identidade
 
 Duplicate e Media Preflight continuam acionados por push. Não exigem dispatch.
-Prepare deve usar um clone local autenticado; dentro de Actions é rejeitado antes
-de criar request, pois GITHUB_TOKEN não encadeia novos workflows por push.
+Prepare exige clone autenticado. O token padrão `GITHUB_TOKEN` continua proibido
+para prepare, pois seu push não encadeia outro workflow. A exceção suportada é o
+workflow dedicado `recovery-prepare.yml` (e o fluxo de autoria quando migrado),
+com `PIPELINE_ACTIONS_PREPARE_AUTH=external-token`, `GH_TOKEN` vindo do secret
+`PIPELINE_GITHUB_TOKEN` e verificação de que ele difere de `${{ github.token }}`.
+Nesse caminho o próprio CAS cria um push real que aciona Media Preflight; o recovery
+não envia `workflow_dispatch`, queue, retry ou publisher manualmente.
 Publish aceita push e dispatch; seu dispatch explícito conserva esse encadeamento.
 
 ```powershell
