@@ -342,6 +342,11 @@ def _candidate_result(candidate: dict, slot_id: str, index: int) -> VisualSearch
 
 
 def _inspect_candidate(project_root: Path, slot: dict, candidate: dict, index: int):
+    global PROJECT_ROOT
+    # The resolver is executed inside fenced_mutation's private workspace.
+    # Keep the web adapter's materialization root aligned with that workspace
+    # so selected YouTube bytes never mutate the live checkout mid-transaction.
+    PROJECT_ROOT = Path(project_root).resolve()
     slot_id = str(slot.get("id") or "").strip()
     result = _candidate_result(candidate, slot_id, index)
     required = legacy._number(slot.get("required_seconds"), legacy.DEFAULT_REQUIRED_SECONDS)
