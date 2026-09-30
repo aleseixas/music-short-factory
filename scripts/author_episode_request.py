@@ -11,6 +11,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from engine.mutation_transaction import fenced_mutation
+from engine.coordination_runtime import sync_authority
 from engine.pipeline_runtime import prepare_request
 from engine.pipeline_state import PipelineError, PipelineStore, safe_request, safe_slug
 
@@ -70,7 +71,9 @@ def main(argv=None) -> int:
     payload = json.loads(args.request_file.read_text(encoding="utf-8"))
     slug = safe_slug(str(payload.get("slug", "")).strip())
     request_id = safe_request(str(payload.get("request_id", "")).strip())
-    result = author_and_prepare(args.root.resolve(), slug, request_id, payload)
+    root = args.root.resolve()
+    sync_authority(root, slug, download=True)
+    result = author_and_prepare(root, slug, request_id, payload)
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))
     return 2 if result.get("result") == "FAIL" else 0
 
