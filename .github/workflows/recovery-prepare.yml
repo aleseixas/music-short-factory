@@ -103,7 +103,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PIPELINE_DEFAULT_GITHUB_TOKEN: ${{ github.token }}
           PIPELINE_ACTIONS_PREPARE_AUTH: workflow-dispatch
-          PIPELINE_REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          PIPELINE_REQUEST_ID: ${{ steps.request.outputs.previous_request_id }}
           YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
         run: |
           set -euo pipefail
