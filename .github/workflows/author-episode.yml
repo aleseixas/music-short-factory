@@ -1,0 +1,128 @@
+name: Author reserved episode
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".author-request/*.json"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: author-reserved-episode-main
+  cancel-in-progress: false
+
+jobs:
+  author:
+    runs-on: ubuntu-latest
+    outputs:
+      slug: ${{ steps.request.outputs.slug }}
+      request_id: ${{ steps.request.outputs.request_id }}
+      source_sha: ${{ steps.author.outputs.source_sha }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Resolve author request
+        id: request
+        shell: bash
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]]; then
+            mapfile -t files < <(git show --pretty='' --name-only --diff-filter=A "$AFTER_SHA" -- '.author-request/*.json')
+          else
+            mapfile -t files < <(git diff --name-only --diff-filter=A "$BEFORE_SHA" "$AFTER_SHA" -- '.author-request/*.json')
+          fi
+          if [[ ${#files[@]} -ne 1 ]]; then
+            echo "::error::AUTHOR_REQUEST_INVALID: expected exactly one new .author-request file; found ${#files[@]}"
+            exit 1
+          fi
+          file="${files[0]}"
+          python - "$file" "$GITHUB_OUTPUT" <<'PY'
+          import json, re, sys
+          from pathlib import Path
+          path=Path(sys.argv[1])
+          data=json.loads(path.read_text(encoding="utf-8"))
+          slug=str(data.get("slug","")).strip()
+          request_id=str(data.get("request_id","")).strip()
+          if not re.fullmatch(r"[a-z0-9]+([_-][a-z0-9]+)*", slug):
+              raise SystemExit("invalid slug")
+          if not re.fullmatch(r"[a-zA-Z0-9][a-zA-Z0-9_-]{0,159}", request_id):
+              raise SystemExit("invalid request_id")
+          with open(sys.argv[2],"a",encoding="utf-8") as h:
+              h.write(f"file={path.as_posix()}\nslug={slug}\nrequest_id={request_id}\n")
+          PY
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Author through fenced CAS and prepare
+        id: author
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PIPELINE_REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          YOUTUBE_COOKIES: ${{ secrets.YOUTUBE_COOKIES }}
+        run: |
+          set -euo pipefail
+          output="$(python scripts/author_episode_request.py "${{ steps.request.outputs.file }}")"
+          printf '%s\n' "$output"
+          source_sha="$(python -c 'import json,sys; print(json.loads(sys.stdin.read()).get("commit_sha",""))' <<<"$output")"
+          next_action="$(python -c 'import json,sys; print(json.loads(sys.stdin.read()).get("next_action",""))' <<<"$output")"
+          if [[ ! "$source_sha" =~ ^[0-9a-fA-F]{40}$ ]]; then
+            echo "::error::AUTHOR_COMMIT_SHA_MISSING"
+            exit 1
+          fi
+          if [[ "$next_action" != "wait_for_correlated_run" ]]; then
+            echo "::error::AUTHOR_PREPARE_NOT_READY: next_action=$next_action"
+            exit 1
+          fi
+          echo "source_sha=$source_sha" >> "$GITHUB_OUTPUT"
+
+      - name: Dispatch correlated media preflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.request.outputs.slug }}
+          REQUEST_ID: ${{ steps.request.outputs.request_id }}
+          SOURCE_SHA: ${{ steps.author.outputs.source_sha }}
+        run: |
+          set -euo pipefail
+          gh workflow run episode-media-preflight.yml \
+            --ref main \
+            -f episode="$SLUG" \
+            -f request_id="$REQUEST_ID" \
+            -f source_sha="$SOURCE_SHA"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Author reserved episode" >> "$GITHUB_STEP_SUMMARY"
+          echo "- slug: ${{ steps.request.outputs.slug }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- request_id: ${{ steps.request.outputs.request_id }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "- source_sha: ${{ steps.author.outputs.source_sha }}" >> "$GITHUB_STEP_SUMMARY"
