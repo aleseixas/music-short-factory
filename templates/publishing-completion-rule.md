@@ -2,126 +2,79 @@
 
 <!-- pipeline-contract: config/pipeline-contract.json -->
 
-Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-contract.md), baseado em [`config/pipeline-contract.json`](../config/pipeline-contract.json). Use o estado persistido e os triggers reais antes de decidir continuidade.
+Siga o [protocolo dos agendamentos](../docs/automation-protocol.md), o
+[contrato operacional](../docs/pipeline-contract.md) e
+[config/pipeline-contract.json](../config/pipeline-contract.json).
 
-## 1. Continuidade e identidade
+## Autoridade e validação
 
-Execute `python scripts/pipeline_control.py status` para consultar a autoridade
-compartilhada; o índice local é cache. Respeite `next_action`,
-`mutation_allowed`, `republication_allowed` e `can_create_new_episode`.
-Retome trabalho ativo no mesmo slug; uma chamada editorial não cria outro
-episódio. Listagem truncada, sozinha, nunca autoriza `BLOQUEADO`.
+Consulte `pipeline_control.py status --channel default` e `status --slug <slug>`.
+Leia autoridade remota, request/generation/version, next_action, mutation_allowed,
+recovery_mutation_allowed, republication_allowed e can_create_new_episode.
+Índice/Sheet/local tokens são caches. Retome o slug ativo e respeite o slot.
 
-## 2. Validar antes de solicitar a Action
+Autoria coordenada e prepare exigem clone autenticado. Execute:
+`python scripts/pipeline_control.py prepare <slug> --request-id <id>`.
+O validator batch coleta/repara/revalida. Só PASS confirma request/metadata/bytes
+por CAS e retorna commit_sha/next_action=wait_for_correlated_run.
+Não crie .episode-check manual nem faça segundo commit/push do request.
+Ausência de runtime/autenticação é blocker explícito, não permissão para bypass.
 
-Execute `python scripts/pipeline_control.py prepare <slug> --request-id <id>`.
-Esse caminho compartilha o validator batch com o Media Preflight, corrige em lote
-antes do request e só produz `.episode-check` após PASS local. Antes de aceitar
-cada asset/slot, valide acesso, mídia, metadata, referências, duração, trims,
-fontes e a regra de primeiro take do projeto. Complete o pool se faltarem opções.
+## Acompanhamento
 
-Erro determinístico exige reparo real antes de nova validação. Nenhum retry cego,
-nenhum relaxamento de validator. Use a [taxonomia](../docs/media-preflight-errors.md)
-e o [protocolo de recuperação](../docs/publishing-retry.md).
+Duplicate/Media Preflight usam push; ausência de workflow_dispatch não bloqueia.
+Acompanhe request_id + slug + SHA do request + workflow, nunca último run ou
+HEAD posterior da coordenação. Para push de vários commits use before-sha real.
+Poll/backoff observa queued/pending/waiting/requested/in_progress; timeout preserva
+request/run e permite retomar a consulta, sem nova tentativa.
 
-## 3. Trigger e acompanhamento
+Media Preflight resolve visuais, revalida, renderiza, prepara capa/metadata,
+faz dry-run e aprova bundle publish-ready. Queue selada por CAS tem três linhas:
+slug, source_run_id, request_id. O job usa dispatch persistente e publisher
+consome os mesmos bytes. Queue não é sucesso final e não é escrita pelo agente.
 
-O CAS remoto do prepare confirma o request e devolve o SHA que aciona push.
-Não crie um segundo commit/push do mesmo request; acompanhe o SHA devolvido.
-Não exija `workflow_dispatch` de Duplicate/Media Preflight. Acompanhe a combinação
-`request_id + slug + commit SHA + workflow`; nunca o último workflow run.
+## Diagnóstico e recovery
 
-A Action pode demorar a aparecer. `queued`, `pending`, `waiting`, `requested` e
-`in_progress` são transitórios: use polling/backoff com timeout. Ao expirar,
-preserve o request e reporte o estado real não verificado/em andamento.
+Leia errors[], error_code, error_class, recoverable, stage, slug, request_id,
+target, detail, commit_sha e diagnósticos/artefatos do run exato.
+Erro genérico/exit code/falta de log não é causa raiz.
+Repare todos os erros independentes elegíveis e revalide após mudança material.
+Não reduza gates. Consulte [publishing-retry.md](../docs/publishing-retry.md).
+Prepare: até 2 reparos internos. CI: até 10 passes internos. Recovery: até 3
+ciclos reais por rodada, sem contar observação, respeitando limites acumulados.
 
-A queue registra slug, `source_run_id` e `request_id` do bundle aprovado. Ela é criada pelo
-preflight depois do render/dry-run, e não encerra a execução. O preflight faz
-dispatch explícito do publisher para o caso de push com `GITHUB_TOKEN`.
+READY_TO_QUEUE pertence ao workflow. QUEUED já proíbe mutar/reautorizar mídia;
+observe/reconcilie receipt existente. PREPARED pode retomar só pelo protocolo;
+SENDING/ambíguo exige observar mesmo run, nunca outro POST/rerun.
 
-## 4. Diagnóstico em lote
+## Publisher iniciado
 
-Leia o resultado estruturado da execução exata e artefatos disponíveis.
-`failure`, `exit code 1` e nome de step isolados nunca são causa raiz. Preserve
-`error_code`, `error_class`, `recoverable`, `stage`, `slug`, `request_id`, `target`,
-`detail`, `errors[]` e `commit_sha`. Se necessário, reproduza os validators do
-mesmo commit; ausência do log bruto não impede diagnóstico.
-
-Repare todos os itens independentes recuperáveis e revalide o lote inteiro. Um
-item externo ou que exige autoria não deve impedir reparos locais possíveis.
-Pool sem candidatos adequados exige novas fontes, não uma seleção inventada.
-
-## 5. Publicação e proteção contra duplicação
-
-Antes da primeira chamada de publisher existe uma reserva persistida em
-`.publication-attempts/<slug>.json`. Se algum publisher iniciou ou pode ter
-atingido uma plataforma, mantenha obrigatoriamente:
+Tentativa é persistida antes de efeitos externos. Publisher iniciado ou possível,
+parcial ou falho após início, implica:
 
 ```text
 EVER_PUBLISHED_OR_ATTEMPTED=YES
 REPUBLICATION_ALLOWED=NO
-recovery_mutation_allowed=NO
+RECOVERY_MUTATION_ALLOWED=NO
 ```
 
-Não remova a reserva nem republique ou altere o episódio após esse ponto. Consulte
-o resultado real nas plataformas. Os retries legados são permitidos somente
-antes dessa reserva e depois de correção comprovada, conforme o controlador.
+Não remova reserva/tombstone, altere episódio, crie queue/retry, rerode publisher
+ou complete plataforma faltante. Não crie substituto do mesmo slot.
+O run original continua suas plataformas na mesma sessão; apenas observe.
+Reconcile classifica confirmação/incerteza e fecha estado sem autorizar reenvio.
 
-## 6. Estado final verificável
+## Resultado obrigatório
 
-Separe `MEDIA PREFLIGHT`, `QUEUE`, `PUBLISH ACTION`, `YOUTUBE`, `INSTAGRAM`,
-`FACEBOOK` e `TIKTOK`. Só reporte `STATUS: PUBLICADO` quando a Action terminou e
-as plataformas realmente executadas têm sucesso comprovado. Queue/PASS local
-não provam publicação. Use `PUBLICAÇÃO_EM_ANDAMENTO` para trabalho transitório
-e `PUBLICAÇÃO_NÃO_VERIFICADA` se faltar evidência para determinar o resultado.
+Separe DUPLICATE, AUTHORSHIP, LOCAL PASS, MEDIA PREFLIGHT, RENDER, BUNDLE,
+QUEUE, DISPATCH, PUBLISH ACTION, YOUTUBE, INSTAGRAM, FACEBOOK e TIKTOK.
+PUBLICADO exige run terminal e evidências reais das plataformas configuradas.
+EM_ANDAMENTO/NÃO_VERIFICADO preservam observação; parcial/incerto após tentativa
+é PARTIAL_NO_TOUCH. DRAFT_ENVIADO não equivale a TikTok público confirmado.
 
-YouTube pode informar `PUBLICADO_PUBLICO`/`PUBLICADO`; TikTok pode informar
-`DRAFT_ENVIADO` quando esse é o resultado real. Não invente sucesso por plataforma.
-
-## 8. Formato final obrigatório
-
-```text
-STATUS: <PUBLICADO | PUBLICAÇÃO_EM_ANDAMENTO | PUBLICAÇÃO_NÃO_VERIFICADA | FALHA_PUBLICAÇÃO | SEM_CANDIDATO | BLOQUEADO | FALHA>
-TEMA: <assunto central | N/A>
-ARTISTA/BANDA: <nome | N/A>
-MÚSICA RELACIONADA: <música principal se houver | N/A>
-SLUG: <slug | N/A>
-PALAVRAS: <número | N/A>
-DURAÇÃO ALVO: <segundos/faixa | N/A>
-TAKES: <quantidade final | N/A>
-POOL VISUAL: <resumo | N/A>
-VÍDEOS BASE: <resumo | N/A>
-IMAGENS BASE: <resumo | N/A>
-VISUAL SCORES: <resumo | N/A>
-BACKGROUND: <resumo | N/A>
-SFX CATÁLOGO: <resumo | N/A>
-EDIÇÃO: <resumo | N/A>
-COMMIT: <hash/identificador ou N/A>
-MEDIA PREFLIGHT: <SUCESSO | FALHA | EM_ANDAMENTO | NÃO_VERIFICADO | BLOQUEADO>
-QUEUE: <CRIADA | NÃO_CRIADA | BLOQUEADA>
-PUBLISH ACTION: <SUCESSO | FALHA | EM_ANDAMENTO | NÃO_VERIFICADO | BLOQUEADO>
-YOUTUBE: <status real>
-INSTAGRAM: <status real>
-FACEBOOK: <status real>
-TIKTOK: <status real>
-RETRIES: <número de novas validações/publicações; não quantidade de itens corrigidos | N/A>
-ERRO/BLOQUEIO: <causa concreta ou resumo do lote; nunca apenas nome genérico de step/status | NENHUM>
-```
-
-## 9. Regra de ouro
-
-**Uma passada de preflight = descobrir o máximo de erros independentes possível.**
-
-**Lote recuperável = corrigir todos os itens conhecidos antes da próxima validação.**
-
-**Falha elegível = investigar por metadados/outputs/artefato ou reprodução do validator, identificar causa concreta, corrigir e tentar novamente.**
-
-**Ausência do antigo log bruto != diagnóstico inacessível.**
-
-**Ausência de workflow_dispatch != bloqueio quando o workflow atual é acionado por push.**
-
-**Erro genérico de Action = continuar diagnóstico; não encerrar.**
-
-**Queue criada = publicação solicitada.**
-
-**Publish Action terminal + plataformas verificadas = publicação concluída.**
+Após TODA rodada entregue log conciso com data/hora local, repo/HEAD, slot,
+candidatos/slug, coordinator/reconcile, request/generation/version, ações reais,
+gates e plataformas, contadores compartilhados/autorados/ciclos/passes,
+run/job/SHA, Sheet confirmado, flags irreversíveis, final_status,
+erro concreto e next_action. Use N/A/NÃO_VERIFICADO onde faltar evidência.
+Nunca declare escrita do Sheet ou sucesso sem confirmação.
+Nunca pause/desative/delete/reagende automações durante a execução.

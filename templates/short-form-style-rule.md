@@ -4,7 +4,10 @@
 
 Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-contract.md), baseado em [`config/pipeline-contract.json`](../config/pipeline-contract.json). Use o estado persistido e os triggers reais antes de decidir continuidade.
 
-Esta regra complementa `templates/editorial-direction-prompt.md` e deve ser aplicada na autoria de novos episódios enquanto a `main` continuar compatível com os contratos abaixo.
+Esta regra complementa `templates/editorial-direction-prompt.md`. Continuidade,
+limites e execução seguem [docs/automation-protocol.md](../docs/automation-protocol.md)
+e os prompts canônicos de creator/recovery. Código e schemas atuais da main
+definem os contratos técnicos; não confunda orientação editorial com autoridade.
 
 ## 1) Objetivo editorial
 
@@ -215,9 +218,9 @@ Vídeo compete com vídeo e imagem compete com imagem. Reserve o vencedor de cad
 
 ## 6) Proporção de vídeo e imagem
 
-Como referência editorial, tente fechar aproximadamente **60–80% dos takes finais com vídeo** e **20–40% com imagem**, mas somente quando os vídeos realmente agregarem contexto.
-
-Em ~24 takes, algo como **15–19 vídeos e 5–9 imagens** é uma referência, não hard gate.
+Como referência editorial, mire aproximadamente **60% dos takes finais com vídeo**
+e **40% com imagem**, com seleção separada por tipo e coerência semântica.
+Em ~24 takes, cerca de 14–15 vídeos e 9–10 imagens são referência, não hard gate.
 
 Não escolha vídeo inferior apenas para cumprir proporção. Se imagens mais contextuais contarem melhor determinado trecho, use imagens.
 
@@ -280,10 +283,13 @@ Antes de finalizar, confirme obrigatoriamente:
 
 Antes da PRIMEIRA escrita em `episodes/<slug>/`, a candidata deve passar também pelo preflight técnico de duplicidade da `main`.
 
-Fluxo obrigatório para o agente que opera via GitHub, sem terminal local:
+Entrada do duplicate via GitHub; a continuação em autoria/prepare exige clone
+autenticado e mecanismos coordenados, conforme o protocolo comum:
 
-1. depois de consultar o estado persistido e confirmar `can_create_new_episode`, escolha uma candidata real e defina `song`, `artist` e `slug`;
-2. crie exatamente UM arquivo novo `.duplicate-check/<slug>-<nonce>.json` com este formato:
+1. consulte `pipeline_control.py status --channel default`, authority/CAS e slot;
+   só com canal livre/slot elegível escolha candidata inédita e defina song/artist/slug;
+2. envie exatamente UM request novo `.duplicate-check/<slug>--<request_id>.json`
+   em commit próprio. O guard reserva/conta por CAS antes de decidir duplicidade:
 
 ```json
 {
@@ -296,32 +302,37 @@ Fluxo obrigatório para o agente que opera via GitHub, sem terminal local:
 
 3. o commit/push desse request dispara `.github/workflows/duplicate-preflight.yml`; `workflow_dispatch` não é necessário;
 4. localize `Duplicate candidate preflight` pelo request_id, slug, commit SHA e workflow; leia o resultado estruturado da Action;
-5. só existem dois resultados editoriais válidos:
+5. resultados editoriais e decisões de coordenação são distintos:
    - `PREFLIGHT_RESULT=UNIQUE_CANDIDATE`: a candidata passou; somente então a autoria em `episodes/<slug>/` pode começar;
-   - `PREFLIGHT_RESULT=DUPLICATE_CANDIDATE`: descarte SOMENTE essa candidata e avance para a próxima música do pool, sem criar `episodes/<slug>/` nem `.publish-queue/<slug>.txt`;
+   - `PREFLIGHT_RESULT=DUPLICATE_CANDIDATE`: descarte só essa candidata e avance após fechamento CAS/canal livre, sem autoria/queue;
+   - `RESUME_EXISTING_EPISODE`: siga o slug ativo;
+   - `CONTINUITY_CONFLICT`: reconcilie identidades, sem forçar reserva;
+   - `CANDIDATE_LIMIT_REACHED`: respeite a janela compartilhada, sem reset manual;
 6. corrija requests malformados e investigue falhas concretas; ausência temporária de run/marker exige polling com backoff. Não autorize autoria por suposição nem bloqueie por status transitório;
 7. um `GitHub.search` vazio, uma listagem aparentemente vazia ou ausência do slug exato NÃO substituem o preflight técnico;
 8. o arquivo `.duplicate-check/*.json` é apenas um registro de consulta e NÃO conta como episódio criado nem como `.publish-queue`;
-9. não reutilize o mesmo nome de request; use um `<nonce>` curto e único para cada candidata consultada;
+9. não reutilize request de candidata diferente; use identidade única e preserve a da reserva em andamento;
 10. HARD GATE: sem evidência real de `PREFLIGHT_RESULT=UNIQUE_CANDIDATE`, é proibido escrever qualquer arquivo em `episodes/<slug>/`.
 
 Se o resultado for `DUPLICATE_CANDIDATE`, isso NÃO encerra a execução: continue para a próxima candidata do pool até encontrar uma inédita que passe pelos demais gates ou até esgotar o pool real.
 
 ## 11) HARD GATE técnico — validação local antes do request externo
 
-Siga o [contrato operacional](../docs/pipeline-contract.md). Depois de concluir a
-autoria, use `python scripts/pipeline_control.py prepare <slug> --request-id <id>`:
-validação local com as mesmas regras batch da Action, reparo de todos os erros
-recuperáveis e nova validação antes de criar `.episode-check`.
+Siga o [protocolo comum](../docs/automation-protocol.md). Autoria coordenada e
+prepare exigem clone autenticado. Depois da autoria, execute
+`python scripts/pipeline_control.py prepare <slug> --request-id <id>`.
+Somente PASS confirma request/metadata/bytes pelo CAS e retorna commit_sha;
+não crie .episode-check manual nem faça segundo commit/push do request.
+Acompanhe request_id + slug + SHA devolvido + workflow com polling/backoff.
+Run transitório/timeout preserva identidade e não autoriza rerun.
 
-Somente PASS local permite entregar o request via commit/push. O request conserva
-`slug` e `request_id`; acompanhe `request_id + slug + commit SHA + workflow` com
-polling/backoff. Não exija `workflow_dispatch`, não use o último run e não considere
-demora para aparecer como bloqueio.
+Preflight faz validação batch, resolução, render, capa, dry-run e bundle.
+O job sela queue por CAS com slug/source_run_id/request_id. QUEUED já bloqueia
+mutação; observe/reconcilie o receipt de dispatch existente, sem novo POST.
+Após publisher iniciado/possível: nenhuma nova sessão, retry/rerun, plataforma
+faltante ou substituto do slot. O run original pode concluir suas plataformas.
 
-A Action valida novamente, resolve/renderiza e aprova o bundle final antes de
-criar `.publish-queue/<slug>.txt` com slug e `source_run_id`. Um erro determinístico
-exige reparo antes de retry; todos os reparos permanecem no mesmo episódio.
-Nenhuma URL aparentemente válida, aprovação editorial ou listagem vazia substitui
-esses gates. Não altere bytes após PASS sem gerar um novo bundle validado, e
-respeite a reserva que proíbe mutação/republicação depois do início do publisher.
+Prepare tem até 2 reparos internos; CI até 10 passes internos atualmente.
+Recovery até 3 ciclos reais por rodada; 15 candidatas na janela CAS desde a
+última queue e até 5 autorados por slot, somando creator/recovery.
+Esses contadores são distintos; não resete nem reduza gates.

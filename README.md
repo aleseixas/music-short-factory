@@ -10,6 +10,11 @@ A regra principal do projeto é simples:
 
 Schemas, enums, renderer, publishing, catálogos e validações atuais sempre prevalecem sobre documentação ou prompts antigos.
 
+Os agendamentos leem o [protocolo comum](docs/automation-protocol.md) e os prompts
+canônicos de [criação](templates/music-short-factory-automation-prompt.md) e
+[recovery](templates/music-short-factory-recovery-prompt.md). Authority/CAS,
+prepare autenticado, Sheet e proteção por slot estão alinhados nesses arquivos.
+
 ## Filosofia: Editor Mode
 
 O GPT/agente externo não deve tratar `timeline.json` como um formulário. Ele atua como **diretor + editor criativo**, usando o código como uma suíte de edição disponível para produzir o melhor short possível.
@@ -393,18 +398,20 @@ Salve hashtags sem `#`; o payload final acrescenta o caractere quando necessári
 ## Queue e automação
 
 O workflow `Episode media preflight` resolve os visuais finais, renderiza o episódio,
-gera a capa, executa o dry-run das três plataformas e valida integralmente o MP4.
+gera a capa, executa o dry-run das plataformas configuradas e valida integralmente o MP4.
 Somente depois desse gate ele cria:
 
 ```text
 .publish-queue/<slug>.txt
 ```
 
-A primeira linha contém o slug e a segunda contém o `run_id` do preflight que gerou
-o bundle `publish-ready-<slug>`. O workflow `Publish episode` baixa e publica esses
+A queue é selada por CAS: primeira linha slug, segunda source_run_id do
+preflight que gerou o bundle `publish-ready-<slug>`, terceira request_id. O workflow `Publish episode` baixa e publica esses
 mesmos bytes; ele não resolve visuais, não prepara capa e não renderiza novamente.
-A queue é criada por último. A automação não deve executar `publish.py` diretamente
-nem recriar queue automaticamente quando houver risco de publicação duplicada.
+O job cria a queue por último e usa o receipt persistente de dispatch; o agente
+não cria queue/retry nem chama publisher live. QUEUED já impede mutação.
+Após publisher iniciado/possível, observe o run original: nunca republicar nem
+completar plataformas em outra sessão. Queue não encerra a execução.
 
 Durante criação normal de episódio, o agente não deve alterar `engine/`, `publishing/`, `config/`, `style.json`, `.github/`, episódios anteriores, queues existentes ou `assets/audio/sfx/catalog.json`.
 
@@ -469,3 +476,4 @@ python -m pytest tests -q
 - [`docs/visual-search.md`](docs/visual-search.md): busca, inspeção e seleção técnica de imagens/vídeos durante a autoria.
 
 Quando qualquer texto acima divergir do código atual, **a `main` continua sendo a fonte da verdade**.
+

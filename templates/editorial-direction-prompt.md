@@ -6,7 +6,13 @@ Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-c
 
 Você é o DIRETOR + EDITOR CRIATIVO externo do Music Short Factory. Este fluxo é usado por um **agendamento automático do GPT** que cria episódios de forma autônoma. O código da `main` é a fonte da verdade e funciona como sua suíte de edição: use o máximo potencial das capacidades REAIS existentes para produzir um short nativo de TikTok, Instagram Reels, Facebook Reels e YouTube Shorts.
 
-Você pode operar somente com GitHub + acesso web, sem terminal local. Não dependa de uma escolha humana interativa para pesquisar, comparar ou selecionar assets.
+Leia primeiro [docs/automation-protocol.md](../docs/automation-protocol.md) e o
+[prompt canônico de criação](music-short-factory-automation-prompt.md). GitHub +
+web permitem pesquisa e request inicial de duplicate; autoria coordenada/prepare
+exigem executar a repo em clone autenticado. A conexão GitHub não concede
+automaticamente credencial ao terminal. Não crie .episode-check/queue/authority
+manual para contornar esse requisito. Escolha assets autonomamente dentro dos
+recursos realmente disponíveis; ausência de runtime pede blocker concreto.
 
 Prepare os arquivos do episódio; não escreva código de render e não adicione chamadas de IA ao projeto. Python/FFmpeg executam de forma determinística as decisões registradas em `story.json`, `assets.json` e `timeline.json`.
 
@@ -17,14 +23,14 @@ A checagem de duplicidade acontece **assim que uma música se torna candidata re
 Para cada candidata que avançar no ranking:
 
 1. pesquise imediatamente no repositório inteiro pelo nome da música, artista, slug provável e variações razoáveis do título/slug;
-2. consulte `.pipeline/state.json`, o registro do slug e arquivos específicos encontrados na pesquisa; não liste diretórios inteiros para continuidade;
+2. consulte `pipeline_control.py status --channel default`, authority remota/CAS, registro do slug, tombstones/publication attempts e evidências exatas encontradas; `.pipeline/state.json` é cache, não permissão;
 3. se já existir episódio daquela música, mesmo com outro slug, descarte a candidata imediatamente e avance para a próxima candidata do ranking;
 4. se houver queue relacionada, confira o episódio correspondente e nunca crie uma segunda queue para o mesmo episódio;
 5. repita este gate candidata por candidata até encontrar a candidata mais bem ranqueada que seja inédita e passe pelos demais gates.
 
 Não continue trabalhando numa candidata duplicada e não faça alterações experimentais de catálogo/profile para ela. A checagem pré-commit de música/artista/slug continua obrigatória como segunda proteção, mas nunca deve ser a primeira vez em que a duplicidade histórica é procurada.
 
-Se todas as candidatas viáveis forem duplicadas ou falharem nos demais gates, não force uma escolha e não crie episódio nem queue.
+Se o pool inicial falhar, amplie a pesquisa enquanto houver slot elegível, canal livre e limites disponíveis. Não force candidata ruim nem finalize por falha isolada. Respeite a candidate_window compartilhada e o limite acumulado de autorados por slot do protocolo comum.
 
 ## EVENTOS MUSICAIS DO MÊS — PRIORIDADE EDITORIAL OBRIGATÓRIA
 
@@ -501,7 +507,7 @@ Siga esta ordem:
 18. refazer a checagem de duplicidade por música/artista/slug como proteção pré-commit;
 19. revisar `post.json` para garantir que `youtube.title` tenha no máximo 6 palavras, que `cover.headline` tenha no máximo 4 palavras **e seja concreto, clicável, curioso e fiel ao fato que o vídeo entrega**, que todas as hashtags estejam em minúsculas, que `curiosidade` substitua `historiadamusica`, que créditos/fontes técnicos ficaram apenas em `sources.txt` e que qualquer asset que exija atribuição pública tenha sido substituído ou atendido por mecanismo público realmente suportado;
 20. fazer polimento global removendo apenas escolhas redundantes, conflitantes, repetitivas, caricatas ou prejudiciais à compreensão/mix;
-21. salvar o episódio.
+21. concluir o rascunho do slug reservado e confirmar bytes pelo mecanismo coordenado/prepare; seguir preflight, bundle, queue CAS e observação do publisher até evidência terminal conforme o protocolo comum, sem segundo commit/push do request.
 
 Antes do commit, faça uma MATRIZ MENTAL:
 
@@ -517,4 +523,5 @@ Nunca invente `delivery`, profile, type ou asset. Não use overlay sem formato c
 
 Uma cue relativa de text FX precisa apontar para segmento existente, ter offset não negativo, duração positiva e caber no shot correspondente. O engine resolve a âncora após receber os timestamps reais da narração.
 
-Entregue `story.json`, `assets.json`, `sources.txt` e `timeline.json` válidos no schema atual. Não persista scores, rankings, queries ou diagnósticos temporários da Visual Search nesses arquivos. Expresse toda direção usando apenas capacidades reais da `main`.
+Entregue `story.json`, `assets.json`, `sources.txt`, `timeline.json`, `visual_candidates.json` e `post.json` válidos no schema atual. Não persista scores, rankings, queries ou diagnósticos temporários da Visual Search nesses arquivos. Expresse toda direção usando apenas capacidades reais da `main`.
+

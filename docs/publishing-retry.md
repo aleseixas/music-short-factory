@@ -2,114 +2,95 @@
 
 <!-- pipeline-contract: config/pipeline-contract.json -->
 
-O [contrato operacional](pipeline-contract.md) e
-[`config/pipeline-contract.json`](../config/pipeline-contract.json) definem triggers,
-estados e próximos passos. Consulte `python scripts/pipeline_control.py status
---slug <slug>` antes de recuperar. Não reconstrua continuidade por listagens
-completas ou pelo último run disponível.
+Siga [automation-protocol.md](automation-protocol.md),
+[pipeline-contract.md](pipeline-contract.md) e
+[config/pipeline-contract.json](../config/pipeline-contract.json).
+O [prompt canônico de recovery](../templates/music-short-factory-recovery-prompt.md)
+usa os mecanismos reais da main; não existe daemon de recovery no clone desligado.
 
-## Antes da publicação
+## Entrada e fases
 
-`prepare` valida localmente, coleta erros independentes e aplica reparos em lote
-antes de confirmar `.episode-check` pelo CAS remoto. Acompanhe o SHA devolvido:
-`request_id + slug + commit SHA + workflow`. Ausência de `workflow_dispatch`,
-Action ainda não visível e status transitório não significam bloqueio.
+Consulte status do canal/slug e reconcilie identidades exatas. Sheet é checkpoint,
+não authority. Ausência inicial de coordination pode ser inicializada pelo
+duplicate guard/CAS, incluindo migração de candidate_window; não crie JSON manual.
+Lease ocupada não pode ser roubada e expiração não libera outro slug.
 
-A Action de Media Preflight resolve visuais, renderiza, prepara metadata/capa,
-faz dry-run e aprova o bundle `publish-ready-<slug>`. Só então cria
-`.publish-queue/<slug>.txt`, com estas três linhas:
+Antes de autoria: request único de duplicate, reserva CAS e UNIQUE_CANDIDATE.
+Depois de autoria: prepare em clone autenticado valida/repara em lote e confirma
+request por CAS após PASS; retorna SHA. Não crie .episode-check manual nem faça
+segundo commit/push. Prepare em Actions é rejeitado por não encadear push.
 
-```text
-<slug>
-<source_run_id>
-<request_id>
-```
+Preflight resolve visuais, valida, renderiza, prepara capa, faz dry-run e bundle.
+Queue CAS só após os gates e contém slug/source_run_id/request_id.
+A queue não é um comando para o agente disparar genericamente outro workflow.
 
-O preflight também faz dispatch explícito do publisher porque o push da queue
-feito com `GITHUB_TOKEN` não dispara outro workflow. Isso não torna dispatch
-obrigatório nos workflows Duplicate e Media Preflight, cujo trigger é push.
+## Diagnóstico e limites
 
-## Diagnosticar e reparar
+Observe request+slug+SHA+workflow. Leia errors[], error_code/error_class,
+recoverable/stage/target/detail/commit_sha, media-preflight-diagnostics-<run_id>,
+final-result.txt e pipeline-diagnostic quando existirem.
+Logs brutos/step/exit code não são pré-requisito nem causa raiz.
+Repare todos os itens independentes elegíveis; erro de autoria pede novas fontes.
+Não repita erro determinístico sem mudança, não relaxe validators.
 
-1. Consulte estado, diagnóstico e metadados do run exato.
-2. Leia `errors[]`, `error_code`, `error_class`, `recoverable`, `stage`, `slug`,
-   `request_id`, `target`, `detail` e `commit_sha`. Markers legados como
-   `MEDIA_PREFLIGHT_ERRORS_JSON` e `MEDIA_PREFLIGHT_ERROR_ITEM` continuam úteis.
-3. Use o artefato `media-preflight-diagnostics-<run_id>` e `final-result.txt` quando
-   disponíveis. Logs brutos não são pré-requisito. Reproduza o validator no mesmo
-   slug/SHA quando necessário.
-4. Repare todos os itens independentes recuperáveis. Um item externo não deve
-   ocultar reparos locais possíveis.
-5. Revalide o lote inteiro. Sem mudança concreta, erro determinístico não recebe
-   retry. Falhas externas transitórias admitem espera/backoff conforme diagnóstico.
-   Erro desconhecido exige causa concreta.
+Limites atuais distintos: 15 candidatas compartilhadas desde última queue;
+até 5 autorados/substitutos por slot entre creator/recovery; até 3 ciclos
+materiais por rodada de recovery; prepare até 2 reparos internos (3 validações);
+Media Preflight até 10 passes batch internos por run.
+Polling não conta como tentativa. Não resete contadores nem gere 3 reruns cegos.
+A janela de 15 é autoritativa no CAS; reset pertence ao fluxo da queue.
 
-A [taxonomia dos validators](media-preflight-errors.md) distingue seleção,
-timeline, mídia local, reparáveis, externos e não recuperáveis. Um pool sem
-alternativa válida exige completar a autoria; nunca baixar um gate.
+## Pré-publicação inviável
 
-## Retentativa antes do publisher
+Substituição só antes de queue/dispatch, com zero publisher/possibilidade de envio,
+cancelamento seguro pelo coordinator/CAS e tombstone, seguido de reconcile e
+canal livre. Não use transition CANCELLED onde o grafo não oferece transição.
+finish(token, CANCELLED) e abandon_expired são APIs existentes com precondições,
+não licença para fechar request alheio ou uma queue já entregue.
 
-O workflow reconhece `.publish-retry/<slug>-retry-1.txt`,
-`.publish-retry/<slug>-retry-2.txt` e `.publish-retry/<slug>-retry-3.txt` por
-compatibilidade. Esses nomes não autorizam uma segunda chamada à API depois que
-um publisher iniciou; a reserva central prevalece sobre todos os triggers.
+O slug pedro_sampaio_ricky_martin_pikito_pikito_nfl está abandonado pelo usuário.
+Nunca reparar/renderizar para publicação/queue/publicar; finalize somente
+quando seguro, preserve tombstone e não ressuscite o histórico.
 
-Um retry só é elegível se estado e evidência provarem que nenhuma plataforma
-pôde receber o vídeo, não existir reserva de tentativa e a causa tiver sido
-corrigida. Reutilize o bundle aprovado com o mesmo `source_run_id` e `request_id`.
-Não altere mídia/metadata de uma queue já entregue: isso exigiria cancelar e
-reconciliar primeiro todas as execuções que ainda podem consumi-la. Não existe
-reset automático de `QUEUED`. Nunca sobrescreva queue ou request já entregue.
+## Queue selada e dispatch
 
-O job de queue usa `scripts/dispatch_publication.py`. Uma intenção durável em
-`.pipeline/dispatch/<slug>--<request_id>.json` precede o dispatch. Se a fila foi
-gravada mas o dispatch ainda não começou, o mesmo job pode retomá-lo. Resposta
-aceita ou ambígua só permite observar o mesmo pedido, identificado também no
-`run-name`; não permite outro POST. Rejeição explícita da API permite retomar
-somente após corrigir a causa. O polling geral continua no controlador.
+QUEUED proíbe mutação mesmo sem publisher. Não altere bundle/request/metadata.
+Receipts .pipeline/dispatch/<slug>--<request_id>.json preservam owner, lease,
+generation, source/run/workflow/SHA. PREPARED expirado permite takeover por CAS.
+SENDING/aceito/ambíguo exige procurar/adotar o run exato, nunca repetir POST porque
+o run não apareceu. Rejeição explícita só pode retomar após correção pelo protocolo.
 
-Depois de falha do preflight externo, o workflow registra `VALIDATION_FAILED`
-somente para o request/run correspondente. Uma queue ou tentativa de publicação
-nunca é revertida por esse finalizador.
+`pipeline_control.py reconcile --slug <slug> --repository aleseixas/music-short-factory`
+usa o dispatch existente para retomar intenção elegível/observar a enviada.
+Respeite settle_seconds=900 e max_run_seconds=86400 atuais.
+DISPATCH_UNCERTAIN fecha slug e libera canal; não prova entrega nem permite
+substituto do mesmo slot quando existe ambiguidade de envio.
 
-## Reserva após início do publisher
+Os workflows ainda reconhecem markers legados .publish-retry/<slug>-retry-1.txt
+até retry-3 por compatibilidade. Isso não é recomendação para o agente criá-los.
+Creator/recovery não criam markers, não enviam dispatch por ferramenta genérica
+e não rerodam publisher. O controlador e o receipt existente são o caminho.
 
-Antes da primeira chamada de publicação, inclusive pelo CLI local, o fluxo exige
-autenticação GitHub e persiste uma reserva central em
-`.publication-attempts/<slug>.json`. O estado passa a informar:
+## Tentativa irreversível
 
-```text
-EVER_PUBLISHED_OR_ATTEMPTED=YES
-REPUBLICATION_ALLOWED=NO
-recovery_mutation_allowed=NO
-```
+A reserva .publication-attempts/<slug>.json precede efeitos externos, inclusive
+hosting/upload. Publisher iniciado ou possível implica EVER_PUBLISHED_OR_ATTEMPTED=YES,
+REPUBLICATION_ALLOWED=NO e RECOVERY_MUTATION_ALLOWED=NO.
+Nunca apague reserva/queue/tombstone, republique ou altere episódio.
+Sem segunda sessão, preenchimento de plataforma faltante ou substituto do slot.
+O run original conclui suas plataformas sob a mesma sessão; recovery observa.
 
-A existência de `.publish-retry/` não torna uma API idempotente. Reserva e estado
-impedem automaticamente outra tentativa. Não apague o marker, não force rerun nem
-altere o episódio para contornar esse bloqueio. Resposta de rede ambígua pode
-esconder upload concluído: consulte a plataforma e preserve a proibição de
-republicar e de mutar.
+Após crash a repo consulta a plataforma quando existe identificador e classifica
+confirmed_sent/confirmed_not_sent/uncertain. confirmed_not_sent depende de CAS
+sobre versão ainda prepared; ausência de recurso depois de sending não prova
+não envio. Nenhuma classificação é permissão para o agente criar outra tentativa.
+API indisponível/CAS perdido exige observação adicional, sem substituir authority.
 
-## Conclusão verificável
+## Fechamento verificável
 
-Queue significa publicação solicitada. Registre separadamente Media Preflight,
-queue, Publish Action e resultado de cada plataforma. `queued`, `pending`,
-`waiting`, `requested` e `in_progress` pedem polling com backoff. Timeout é estado
-não verificado/em andamento, preservando o request para retomar a consulta.
-
-Falha genérica ou ausência de log não é causa raiz; upload iniciado não prova
-sucesso. Só reporte publicação concluída com evidência real terminal.
-
-
-
-## Recovery distribuído após crash
-
-Execute `pipeline_control.py reconcile --slug <slug> --repository <owner/repo>`.
-PREPARED admite takeover após expiração e CAS; SENDING exige observar o mesmo
-run. Encerramento conservador DISPATCH_UNCERTAIN libera o canal e impede o mesmo
-slug de publicar. Listagem vazia/incompleta não autoriza repetir POST.
-
-No publisher local, confirmed_not_sent exige versão ainda prepared. Depois de
-sending, só prova positiva permite confirmed_sent; casos sem prova são uncertain,
-sem republicação. Tombstones antigos valem mesmo com outro episódio no canal.
+Timeout/run transitório preserva request e EM_ANDAMENTO/NÃO_VERIFICADO.
+Queue/PASS não provam publicação. Registre resultado real por plataforma;
+parcial/incerto é PARTIAL_NO_TOUCH permanente. TikTok draft não é publicação pública.
+Sheet no início e em cada transição, confirmando escrita; contadores/vínculo
+persistem entre rodadas. Sempre entregue log conciso com erro e next_action.
+Nunca altere schedule/enabled state sem pedido explícito do usuário.

@@ -3,7 +3,18 @@
 <!-- pipeline-contract: config/pipeline-contract.json -->
 
 Contrato executável: [`config/pipeline-contract.json`](../config/pipeline-contract.json).
-Resultados e limites: [revisão final](pipeline-final-review.md).
+Resultados e limites da revisão de implementação: [revisão final](pipeline-final-review.md).
+Agendamentos atuais: [protocolo comum](automation-protocol.md),
+[creator](../templates/music-short-factory-automation-prompt.md) e
+[recovery](../templates/music-short-factory-recovery-prompt.md).
+
+Ausência inicial de coordination é representada como IDLE pelo coordinator;
+a reserva do duplicate guard inicializa por CAS/migra candidate_window quando
+necessário. Não crie authority manual nem declare blocker pela ausência isolada.
+A janela compartilhada tem até 15 candidatas desde a última queue; cinco autorados
+por slot e três ciclos por rodada de recovery são limites operacionais adicionais.
+Prepare tem até dois reparos internos; CI Media Preflight até dez passes internos
+atualmente. Esses contadores não são reruns de publisher e não admitem reset manual.
 
 ## Autoridade, posse e continuidade
 
@@ -108,3 +119,4 @@ pede nova observação, sem substituir a autoridade por lock local.
 Diagnósticos preservam erro, classe, recuperabilidade, etapa, slug, request,
 alvo, detalhe, lote e SHA. Consulte [erros de mídia](media-preflight-errors.md)
 e [recuperação de publicação](publishing-retry.md).
+

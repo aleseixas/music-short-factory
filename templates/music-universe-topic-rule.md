@@ -11,21 +11,24 @@ Contrato técnico obrigatório: [`docs/pipeline-contract.md`](../docs/pipeline-c
 
 ## 0. Continuidade operacional obrigatória
 
-Antes de pesquisar temas, montar pool ou criar duplicate-check, consulte
-`.pipeline/state.json` e o registro específico do slug, conforme o contrato
-operacional. O canal normal usa `default`; o slot próprio usa `nostalgia`.
+Antes de pesquisar temas, consulte `pipeline_control.py status --channel default`
+e authority remota/CAS conforme [docs/automation-protocol.md](../docs/automation-protocol.md).
+`.pipeline/state.json` é cache. Creator/recovery do Além do Hit usam apenas
+`default`; nostalgia e Além do Óbvio estão fora destes agendamentos.
 Não liste diretórios inteiros, não use a queue mais recente como fronteira e
 não reconstrua autoria por timestamps. Listagem truncada não é bloqueio.
 
 Se o estado indicar episódio ativo, retome o mesmo slug e respeite `next_action`.
-Complete autoria, valide/repare localmente e só depois entregue `.episode-check`.
-Acompanhe a Action por request_id, slug, commit SHA e workflow. O preflight cria
-a queue com slug e source_run_id apenas após aprovar o bundle final.
+Autoria/prepare usam clone autenticado e mecanismos fenced; PASS confirma
+request por CAS e devolve SHA. Não crie .episode-check manual nem faça outro
+commit/push. Acompanhe request_id/slug/SHA/workflow; o job sela queue CAS com
+slug/source_run_id/request_id após render/dry-run/bundle. QUEUED proíbe mutação.
 
 Queue existente não é autorização para novo episódio nem publicação concluída.
 Respeite `can_create_new_episode`, `mutation_allowed` e `republication_allowed`.
-Estado ausente/inconsistente exige reconciliação indexada pelo controlador;
-conflito real exige diagnóstico, não escolha arbitrária de slug.
+Estado inconsistente exige reconcile. Ausência inicial de authority pode ser
+inicializada pelo duplicate guard/CAS existente, nunca por JSON manual.
+Conflito real exige diagnóstico, não escolha arbitrária de slug.
 
 O Duplicate preflight também pode devolver `RESUME_EXISTING_EPISODE` ou
 `CONTINUITY_CONFLICT`: siga o slug e diagnóstico devolvidos. Ausência de
@@ -189,18 +192,18 @@ Depois de ranquear o pool, processe as candidatas em ordem de qualidade:
 
 1. faça a checagem editorial de história e o duplicate preflight técnico da melhor candidata ainda não testada;
 2. se retornar `PREFLIGHT_RESULT=DUPLICATE_CANDIDATE`, descarte **SOMENTE aquela candidata**;
-3. avance imediatamente para a próxima candidata melhor ranqueada, sem encerrar a execução e sem retornar `BLOQUEADO`;
+3. avance à próxima candidata só após fechamento confirmado/canal livre, respeitando limites compartilhados; duplicata isolada não encerra o slot;
 4. se uma candidata falhar em score, fontes, factualidade, potencial visual ou outro gate editorial, descarte apenas ela e avance;
 5. se o pool inicial for consumido principalmente por duplicatas ou reprovações, **pesquise e acrescente novas candidatas** em vez de encerrar automaticamente;
 6. continue esse ciclo até encontrar uma candidata inédita que passe pelos gates e possa seguir para autoria;
-7. depois que uma candidata receber `UNIQUE_CANDIDATE`, pare de avaliar outras, autorize somente esse slug e conduza-o até `MEDIA_PREFLIGHT_RESULT=PASS` e criação da queue;
+7. após UNIQUE_CANDIDATE, retome a reserva/slug autorizado até os gates e a queue; reparo seguro conserva slug. Substituição pré-publicação exige cancelamento/tombstone/CAS e canal livre pelo protocolo comum;
 8. depois da criação bem-sucedida da nova queue desta execução, **continue com o mesmo slug pela regra de conclusão/publicação; não use `STOP` na queue**.
 
-`DUPLICATE_CANDIDATE` é um resultado normal de filtragem, não um erro de execução. Uma queue de execução anterior também não é um erro nem motivo de bloqueio.
+`DUPLICATE_CANDIDATE` filtra a candidata. Queue histórica fechada não bloqueia slot futuro; queue ativa ainda ocupa o canal e exige observação/reconcile. Nunca inferir canal livre pela idade da queue.
 
 `BLOQUEADO` deve ficar reservado a impedimentos operacionais reais, como `CONTINUITY_CONFLICT`, falha de infraestrutura sem resultado confiável ou outra condição técnica que torne inseguro continuar.
 
-`SEM_CANDIDATO` só deve ser usado depois de pesquisa realmente ampla e expansão razoável além do pool inicial quando necessário. **Não use `SEM_CANDIDATO` ou `BLOQUEADO` só porque a primeira, segunda ou várias candidatas eram duplicadas.**
+`SEM_CANDIDATO` só deve ser usado após pesquisa ampla/expansão elegível ou limite compartilhado realmente esgotado (até 15 na janela CAS desde última queue e até 5 autorados por slot entre creator/recovery). **Não use `SEM_CANDIDATO` ou `BLOQUEADO` só porque a primeira, segunda ou várias candidatas eram duplicadas.**
 
 Objetivo operacional normal:
 
@@ -335,8 +338,8 @@ Se uma música tiver a melhor história do pool, produza sobre ela normalmente. 
 Confirme:
 
 - a checagem de continuidade foi feita antes de qualquer novo tema/duplicate-check;
-- não existe episódio ativo sem queue; se existir, ele está sendo retomado em vez de criar outro;
-- uma queue de execução anterior NÃO foi usada para bloquear indevidamente a execução atual;
+- qualquer slug ativo, inclusive QUEUED/PUBLISHING, está sendo acompanhado em vez de criar outro;
+- queue histórica fechada não bloqueia slot futuro; queue ativa não foi ignorada;
 - candidatas duplicadas foram descartadas individualmente e a seleção continuou;
 - se o pool inicial foi consumido por duplicatas/reprovações, novas candidatas foram pesquisadas antes de considerar `SEM_CANDIDATO`;
 - o tema é realmente interessante e não apenas famoso;
@@ -421,4 +424,5 @@ Não escolha um tema apenas porque está em alta. Não escolha um tema apenas po
 
 ### Nostalgia
 Para o slot NOSTALGIA, esta camada é SOMENTE um bônus secundário. Nunca deixe hype, Rising Keyword, charts ou evento recente atropelarem `templates/nostalgia-famous-artists-rule.md`. Nostalgia mainstream + renome consolidado no Brasil + história não óbvia continuam prevalecendo. Tendência atual pode desempatar duas candidatas nostálgicas igualmente fortes, mas não é hard gate.
+
 
