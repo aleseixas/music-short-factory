@@ -24,7 +24,7 @@
       "file": "episode-media-preflight.yml",
       "trigger": "push",
       "request_glob": ".episode-check/*.json",
-      "dispatch_supported": false
+      "dispatch_supported": true
     },
     "publish": {
       "file": "publish-episode.yml",
@@ -123,7 +123,8 @@
       "push"
     ],
     "episode-media-preflight.yml": [
-      "push"
+      "push",
+      "workflow_dispatch"
     ],
     "publish-episode.yml": [
       "push",
@@ -150,6 +151,9 @@
     "test-youtube-auth.yml": [
       "push",
       "workflow_dispatch"
+    ],
+    "author-episode.yml": [
+      "push"
     ]
   },
   "coordination": {
