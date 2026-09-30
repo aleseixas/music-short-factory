@@ -11,7 +11,6 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from engine.coordination_runtime import sync_authority
-from engine.mutation_transaction import fenced_mutation
 from engine.pipeline_runtime import prepare_request
 from engine.pipeline_state import PipelineError, PipelineStore, safe_request, safe_slug
 
@@ -39,7 +38,6 @@ def _validated_files(payload: dict) -> dict:
     return files
 
 
-@fenced_mutation(root_arg="root", slug_arg="slug")
 def recover_and_prepare(
     root: Path,
     slug: str,
