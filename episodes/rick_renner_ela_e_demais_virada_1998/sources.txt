@@ -27,9 +27,23 @@ VISUAL SOURCES
 - https://www.youtube.com/watch?v=WMmWZS8bx3Y (distinct source video used only for still thumbnail)
 - https://www.youtube.com/watch?v=BTM4o1VHQ4g (distinct source video used only for still thumbnail)
 - https://www.youtube.com/watch?v=cc3RsrxvlH8 (distinct source video used only for still thumbnail)
+- https://www.youtube.com/watch?v=9MKDPcv5sVU
+- https://www.youtube.com/watch?v=mIMW1K_37I0
+- https://www.youtube.com/watch?v=pX3MgIWRcUk
+- https://www.youtube.com/watch?v=qFtBxr00bqU
+- https://www.youtube.com/watch?v=EJyk0J2pPUw
+- https://www.youtube.com/watch?v=5nHXoLsqWl4
+- https://www.youtube.com/watch?v=ECaTMvoastA
+- https://www.youtube.com/watch?v=llD34-k11B8
+- https://www.youtube.com/watch?v=AO8Ka0ZyKy4
+- https://www.youtube.com/watch?v=kYGqmRiYLwI
+- https://www.youtube.com/watch?v=IE58X0rgdYQ
+- https://www.youtube.com/watch?v=tFlN6J0ZgOw
+- https://www.youtube.com/watch?v=VAbD2lbtIFg
+- https://www.youtube.com/watch?v=uU8PUTPHd-g
 
 EDITORIAL NOTE
-- All 16 timeline visuals use distinct source identities.
-- Opening is a real Rick & Renner video.
-- Final mix: 10 video takes and 6 static-image takes (62.5% / 37.5%).
-- Candidate pool contains 116 real resolvable candidates across the 16 slots, with type-separated alternatives.
+- Recovery cycle 1 replaces the three unresolved visual slots with concrete, type-separated candidates.
+- Opening remains a real recognizable Rick & Renner video.
+- visual_04 is now an image tied directly to the 1998 album, avoiding a practically static file treated as video.
+- No search-result URLs or HTML locators are used.
