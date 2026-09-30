@@ -403,7 +403,10 @@ class PipelineStore:
     def start(self, slug: str, request_id: str) -> dict:
         safe_slug(slug)
         safe_request(request_id)
-        from engine.coordination_runtime import acquire_token, sync_channel
+        from engine.coordination_runtime import acquire_token, coordinator_for, sync_channel
+        coordinator = coordinator_for(self.root)
+        if coordinator is not None:
+            coordinator.recover_orphan_candidate(channel_for(slug))
         sync_channel(self.root, channel_for(slug))
         acquire_token(self.root, slug, request_id, initial_phase="CANDIDATE")
         with self.lock():
@@ -417,6 +420,15 @@ class PipelineStore:
             if self._valid(previous, slug):
                 if previous["request_id"] != request_id:
                     raise PipelineError("REQUEST_CONFLICT", "Resume the existing request_id for this episode.")
+                if coordinator is not None:
+                    authority = coordinator.status(slug)
+                    if (authority.get("slug") == slug and authority.get("request_id") == request_id
+                            and authority.get("candidate_claim_pending") is True):
+                        # sync_channel materializes a local placeholder even
+                        # before the first durable episode CAS. Completing
+                        # start must commit the ledger and clear that flag.
+                        return self._save(dict(schema_version=1, slug=slug, request_id=request_id,
+                                               channel=channel_for(slug), stage="CANDIDATE", queue_created=False))
                 return self._load_episode(slug)
             return self._save(dict(schema_version=1, slug=slug, request_id=request_id,
                                    channel=channel_for(slug), stage="CANDIDATE", queue_created=False))

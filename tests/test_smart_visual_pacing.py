@@ -167,7 +167,7 @@ class SmartVisualPacingTests(unittest.TestCase):
         self.assertEqual(adjusted, plan)
 
     def test_slow_static_sequence_gives_time_to_moving_video(self):
-        plan = _plan((70, 65, 20), ("image", "image", "video"))
+        plan = _plan((40, 40, 20), ("image", "image", "video"))
 
         adjusted, _report = _apply(plan, motion={"asset_2": 92.0})
 
@@ -177,8 +177,17 @@ class SmartVisualPacingTests(unittest.TestCase):
         )
         self.assertGreater(adjusted.scenes[2].frame_count, plan.scenes[2].frame_count)
 
+    def test_unreachable_image_limit_preserves_authored_timeline(self):
+        plan = _plan((60, 30), ("image", "video"))
+
+        adjusted, report = _apply(plan, motion={"asset_1": 95.0})
+
+        self.assertEqual(adjusted, plan)
+        self.assertFalse(report.applied)
+        self.assertEqual(report.reason, "no_clear_improvement")
+
     def test_long_run_of_static_images_is_reduced_conservatively(self):
-        plan = _plan((50, 50, 50, 20), ("image", "image", "image", "video"))
+        plan = _plan((36, 36, 36, 35), ("image", "image", "image", "video"))
 
         adjusted, _report = _apply(plan, motion={"asset_3": 88.0})
 
@@ -232,13 +241,13 @@ class SmartVisualPacingTests(unittest.TestCase):
         )
 
     def test_visual_fx_stays_on_the_same_scenes_after_boundary_shift(self):
-        plan = _plan((60, 30), ("image", "video"))
+        plan = _plan((40, 30), ("image", "video"))
         cue = ResolvedVisualFxCue(
             index=1,
-            start_frame=55,
-            end_frame=65,
-            local_start_frame=55,
-            local_end_frame=60,
+            start_frame=35,
+            end_frame=45,
+            local_start_frame=35,
+            local_end_frame=40,
             type="punch_zoom",
             intensity=0.5,
         )
@@ -253,15 +262,15 @@ class SmartVisualPacingTests(unittest.TestCase):
 
         adjusted, _report = _apply(plan, motion={"asset_1": 95.0})
 
-        self.assertNotEqual(adjusted.scenes[0].end_frame, 60)
+        self.assertNotEqual(adjusted.scenes[0].end_frame, 40)
         for scene in adjusted.scenes:
             self.assertEqual(len(scene.visual_fx_cues), 1)
             attached = scene.visual_fx_cues[0]
-            self.assertEqual((attached.start_frame, attached.end_frame), (55, 65))
+            self.assertEqual((attached.start_frame, attached.end_frame), (35, 45))
             self.assertGreater(attached.local_end_frame, attached.local_start_frame)
 
     def test_video_with_real_motion_can_sustain_more_time_than_static_video(self):
-        plan = _plan((45, 45), ("image", "video"))
+        plan = _plan((35, 45), ("image", "video"))
         moving, _ = _apply(
             plan,
             motion={
@@ -328,7 +337,7 @@ class SmartVisualPacingPipelineTests(unittest.IsolatedAsyncioTestCase):
             story = Story(
                 title="Demo",
                 slug="demo",
-                target_duration_seconds=9.0,
+                target_duration_seconds=7.0,
                 segments=(
                     ScriptSegment("hook", "Hook!", "hook"),
                     ScriptSegment("context", "Contexto."),
@@ -368,10 +377,10 @@ class SmartVisualPacingPipelineTests(unittest.IsolatedAsyncioTestCase):
             )
             audio = AudioResult(
                 path=root / "voice.wav",
-                duration=9.0,
+                duration=7.0,
                 words=(
-                    WordTiming("Hook", 0.0, 6.0),
-                    WordTiming("Contexto", 6.2, 9.0),
+                    WordTiming("Hook", 0.0, 4.2),
+                    WordTiming("Contexto", 4.2, 7.0),
                 ),
                 source="test",
                 exact_timings=True,
@@ -413,8 +422,8 @@ class SmartVisualPacingPipelineTests(unittest.IsolatedAsyncioTestCase):
 
         self.assertEqual(len(captured), 1)
         adjusted = captured[0]
-        self.assertEqual(adjusted.total_frames, 90)
-        self.assertLess(adjusted.scenes[0].frame_count, 61)
+        self.assertEqual(adjusted.total_frames, 70)
+        self.assertLess(adjusted.scenes[0].frame_count, 43)
         writer.assert_called_once()
 
     def test_motion_analysis_uses_only_the_effective_video_trim(self):

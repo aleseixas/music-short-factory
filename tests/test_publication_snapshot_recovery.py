@@ -22,7 +22,7 @@ from publishing.base import PublishResult, PublishingError
 from publishing.recovery import classify_observation
 from publishing.snapshot import approved_snapshot
 from tests.test_publishing import valid_post
-from tests.test_shared_coordination import ServerBackend, authority
+from tests.test_shared_coordination import ServerBackend, _queue, authority
 
 pytestmark = pytest.mark.distributed_coordination
 FINGERPRINT = "f" * 64
@@ -75,7 +75,7 @@ def crash_worker(root_name, url, stage, ready=None, resume=None, result_queue=No
     coordinator = SharedCoordinator(root, ServerBackend(url), owner_id="worker", lease_seconds=10)
     with using_coordinator(root, coordinator):
         token = coordinator.acquire("demo", "request_1")
-        token = coordinator.set_phase(token, "QUEUED")
+        token = _queue(coordinator, token)
         save_token(root, token)
         store = ServerAttempts(root, url)
         store.claim("demo", "youtube", "local:crashed", payload_fingerprint=FINGERPRINT)
@@ -242,7 +242,7 @@ def test_manifest_must_match_exact_shared_approval(tmp_path):
         token = coordinator.acquire("demo", "request_1")
         token = coordinator.commit_mutation(token, {".pipeline/artifacts/demo.json": json.dumps({
             "slug": "demo", "bundle_approved": True, "files": {".publish-ready/manifest.json": approved}}).encode()})
-        token = coordinator.set_phase(token, "QUEUED")
+        token = _queue(coordinator, token)
         with using_coordinator(tmp_path, coordinator):
             with approved_snapshot(tmp_path, "demo", "123", "request_1") as snapshot:
                 assert approved_manifest(tmp_path, "demo", "123", "request_1")[1] == snapshot.fingerprint

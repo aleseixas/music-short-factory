@@ -19,6 +19,13 @@ from engine.shared_coordination import CASConflict, CoordinationError, GitHubRef
 pytestmark = pytest.mark.distributed_coordination
 
 
+def _queue(coordinator, token, run_id="123"):
+    slug, request_id = token["slug"], token["request_id"]
+    return coordinator.set_phase(token, "QUEUED", files={
+        f".publish-queue/{slug}.txt": f"{slug}\n{run_id}\n{request_id}\n".encode(),
+    })
+
+
 class ServerBackend:
     def __init__(self, url):
         self.url = url
@@ -221,7 +228,7 @@ def test_old_process_cannot_complete_after_new_generation_started_publication(tm
             data["now"] = old["lease_expires_at"] + 3
         publisher = _coordinator(tmp_path / "publisher", url, "publisher")
         token = publisher.acquire("episode_a", "request_1")
-        token = publisher.set_phase(token, "QUEUED")
+        token = _queue(publisher, token)
         closed = publisher.close_for_publication(token, "a" * 64,
             files={".publication-attempts/episode_a.json": b'{"publisher_started": true}'})
         resume.set()
@@ -245,7 +252,7 @@ def test_remote_cas_rejects_process_paused_after_final_fence_check(tmp_path):
         with lock:
             data["now"] = old["lease_expires_at"] + 3
         publisher = _coordinator(tmp_path / "publisher", url, "publisher")
-        token = publisher.set_phase(publisher.acquire("episode_a", "request_1"), "QUEUED")
+        token = _queue(publisher, publisher.acquire("episode_a", "request_1"))
         publisher.close_for_publication(token, "a" * 64)
         resume.set()
         assert results.get(timeout=15) == "SHARED_CAS_CONFLICT"
@@ -261,7 +268,7 @@ def test_stale_same_generation_version_is_rejected_and_queue_is_sealed(tmp_path)
         current = client.commit_mutation(old, {"episodes/episode_a/episode.json": b"approved"})
         with pytest.raises(CoordinationError, match="SHARED_STALE_FENCE"):
             client.commit_mutation(old, {"episodes/episode_a/episode.json": b"stale"})
-        current = client.set_phase(current, "QUEUED")
+        current = _queue(client, current)
         with pytest.raises(CoordinationError, match="SHARED_MUTATION_CLOSED"):
             client.commit_mutation(current, {"episodes/episode_a/episode.json": b"late"})
         assert data["files"]["episodes/episode_a/episode.json"] == b"approved"
@@ -301,7 +308,7 @@ def test_release_handoff_and_request_change_invalidate_old_tokens(tmp_path):
 def test_expired_uncertain_dispatch_is_terminal_and_late_publisher_fenced(tmp_path):
     with authority() as (url, data, lock):
         first = _coordinator(tmp_path / "one", url)
-        queued = first.set_phase(first.acquire("episode_a", "request_1"), "QUEUED")
+        queued = _queue(first, first.acquire("episode_a", "request_1"))
         second = _coordinator(tmp_path / "two", url, "second")
         with pytest.raises(CoordinationError, match="SHARED_LEASE_BUSY"):
             second.abandon_expired("episode_a", "request_1")
@@ -319,7 +326,7 @@ def test_expired_uncertain_dispatch_is_terminal_and_late_publisher_fenced(tmp_pa
 def test_dead_publisher_recovery_never_reopens_slug_or_overwrites_new_episode(tmp_path):
     with authority() as (url, data, lock):
         first = _coordinator(tmp_path / "one", url)
-        queued = first.set_phase(first.acquire("episode_a", "request_1"), "QUEUED")
+        queued = _queue(first, first.acquire("episode_a", "request_1"))
         publishing = first.close_for_publication(queued, "c" * 64)
         recovery = _coordinator(tmp_path / "two", url, "recovery")
         with pytest.raises(CoordinationError, match="SHARED_LEASE_BUSY"):
@@ -396,7 +403,7 @@ def test_terminal_phase_persists_files_and_queued_recheck_is_read_only(tmp_path)
     with authority() as (url, data, _):
         client = _coordinator(tmp_path, url)
         token = client.acquire("episode_a", "request_1")
-        token = client.set_phase(token, "QUEUED")
+        token = _queue(client, token)
         assert client.set_phase(token, "QUEUED") == token
         assert data["revision"] == 2
         done = client.set_phase(token, "REJECTED", {".pipeline/episodes/episode_a.json": b"rejected"})
@@ -407,7 +414,7 @@ def test_terminal_phase_persists_files_and_queued_recheck_is_read_only(tmp_path)
 def test_dispatch_uses_authoritative_generation_and_owner(tmp_path):
     with authority() as (url, _, _):
         client = _coordinator(tmp_path, url)
-        queued = client.set_phase(client.acquire("episode_a", "request_1"), "QUEUED")
+        queued = _queue(client, client.acquire("episode_a", "request_1"))
         state = {"shared_generation": queued["generation"]}
         assert client.validate_dispatch("episode_a", "request_1", state) == queued
         with pytest.raises(CoordinationError, match="SHARED_STALE_FENCE"):
@@ -419,7 +426,7 @@ def test_dispatch_uses_authoritative_generation_and_owner(tmp_path):
 def test_publication_stage_is_atomic_and_late_sender_is_fenced(tmp_path):
     with authority() as (url, data, lock):
         client = _coordinator(tmp_path, url)
-        queued = client.set_phase(client.acquire("episode_a", "request_1"), "QUEUED")
+        queued = _queue(client, client.acquire("episode_a", "request_1"))
         publishing = client.close_for_publication(queued, "a" * 64)
         path = ".publication-attempts/episode_a.json"
         active = client.update_publication(publishing, {path: b"sending"})
@@ -438,7 +445,7 @@ def test_publication_stage_is_atomic_and_late_sender_is_fenced(tmp_path):
 def test_abandoned_dispatch_response_loss_cannot_close_next_episode(tmp_path):
     with authority() as (url, data, lock):
         client = _coordinator(tmp_path, url)
-        queued = client.set_phase(client.acquire("episode_a", "request_1"), "QUEUED")
+        queued = _queue(client, client.acquire("episode_a", "request_1"))
         with lock:
             data["now"] = queued["lease_expires_at"] + 3
         client.abandon_expired("episode_a", "request_1", expected_generation=queued["generation"])
@@ -521,7 +528,7 @@ def test_git_backend_exact_content_snapshot_and_successful_cas(tmp_path):
 def test_recovery_cannot_overwrite_a_newer_send_stage(tmp_path):
     with authority() as (url, data, lock):
         sender = _coordinator(tmp_path, url)
-        queued = sender.set_phase(sender.acquire("episode_a", "request_1"), "QUEUED")
+        queued = _queue(sender, sender.acquire("episode_a", "request_1"))
         prepared = sender.close_for_publication(queued, "a" * 64)
         marker = ".publication-attempts/episode_a.json"
         sending = sender.update_publication(prepared, {marker: b"sending"})
@@ -539,7 +546,7 @@ def test_recovery_cannot_overwrite_a_newer_send_stage(tmp_path):
 def test_historical_receipt_cas_preserves_current_episode_fence(tmp_path):
     with authority() as (url, data, _):
         client = _coordinator(tmp_path, url)
-        token = client.set_phase(client.acquire("episode_a", "request_1"), "QUEUED")
+        token = _queue(client, client.acquire("episode_a", "request_1"))
         publishing = client.close_for_publication(token, "a" * 64)
         client.finish(publishing, "PUBLISH_UNCERTAIN")
         next_episode = client.acquire("episode_b", "request_2")
@@ -556,7 +563,7 @@ def test_historical_receipt_cas_preserves_current_episode_fence(tmp_path):
 def test_only_same_publisher_owner_and_fence_can_resume_expired_session(tmp_path):
     with authority() as (url, data, lock):
         publisher = _coordinator(tmp_path, url)
-        token = publisher.set_phase(publisher.acquire("episode_a", "request_1"), "QUEUED")
+        token = _queue(publisher, publisher.acquire("episode_a", "request_1"))
         publishing = publisher.close_for_publication(token, "a" * 64)
         with lock:
             data["now"] = publishing["lease_expires_at"] + 3
@@ -586,7 +593,7 @@ def test_slug_scope_and_unknown_phases_cannot_bypass_fence(tmp_path):
                 client.commit_mutation(token, {path: b"unrelated"})
         with pytest.raises(CoordinationError, match="SHARED_PHASE_INVALID"):
             client.set_phase(token, "typo")
-        queued = client.set_phase(token, "QUEUED")
+        queued = _queue(client, token)
         with pytest.raises(CoordinationError, match="SHARED_CONTROL_PATH_FORBIDDEN"):
             client.close_for_publication(queued, "a" * 64, {"episodes/episode_a/story.txt": b"late edit"})
         assert data["states"]["default"]["phase"] == "QUEUED"

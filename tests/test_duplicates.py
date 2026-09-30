@@ -132,10 +132,10 @@ class DuplicateEpisodeTests(unittest.TestCase):
                 slug="current_slug",
                 exclude_slug="current_slug",
             )
+            self.assertTrue(older.is_file())
 
         self.assertIsNotNone(match)
         self.assertEqual(match.path, "episodes/older_slug")
-        self.assertTrue(older.is_file())
 
 
 if __name__ == "__main__":

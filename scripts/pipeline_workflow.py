@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from engine.pipeline_state import PipelineError, PipelineStore, atomic_json, channel_for, read_json
+from engine.pipeline_state import PipelineError, PipelineStore, atomic_json, channel_for, read_json, safe_request
 from scripts.workflow_diagnostic import write_report
 from engine.coordination_runtime import (
     acquire_token, coordinator_for, release_episode, save_token, sync_authority, sync_channel,
@@ -69,8 +69,65 @@ def outputs(**values) -> None:
             handle.write(text)
 
 
+def _legacy_candidate_ids(root: Path, channel: str, revision: str) -> list[str]:
+    """Migrate a pre-counter channel from complete Git history at one exact SHA."""
+    def git(*args: str) -> str:
+        result = subprocess.run(["git", *args], cwd=root, capture_output=True, text=True,
+                                encoding="utf-8", errors="replace", check=False,
+                                env={**os.environ, "GIT_TERMINAL_PROMPT": "0"})
+        if result.returncode:
+            raise PipelineError("CANDIDATE_HISTORY_UNAVAILABLE",
+                                "Fetch the exact shared revision before migrating the candidate window.",
+                                recoverable=True)
+        return result.stdout.strip()
+
+    try:
+        git("cat-file", "-e", revision + "^{commit}")
+    except PipelineError:
+        git("fetch", "--quiet", "origin", "main")
+        git("cat-file", "-e", revision + "^{commit}")
+    queue_paths = ([".publish-queue/nostalgia_*.txt"] if channel == "nostalgia" else
+                   [".publish-queue/*.txt", ":(exclude).publish-queue/nostalgia_*.txt"])
+    request_glob = ".duplicate-check-nostalgia/*.json" if channel == "nostalgia" else ".duplicate-check/*.json"
+    boundary = git("log", "-1", "--format=%H", "--diff-filter=A", revision,
+                   "--", *queue_paths)
+    history = git("log", "--reverse", f"{boundary}..{revision}" if boundary else revision,
+                  "--diff-filter=A", "--format=commit:%H", "--name-only", "--", request_glob)
+    identities: list[str] = []
+    seen: set[str] = set()
+    commit_sha = ""
+    for name in history.splitlines():
+        if name.startswith("commit:"):
+            commit_sha = name.partition(":")[2]
+            continue
+        if not name or name.endswith("-guardfix-test.json"):
+            continue
+        if not commit_sha:
+            raise PipelineError("CANDIDATE_HISTORY_INVALID", "Historical request has no creation commit.",
+                                recoverable=True)
+        try:
+            payload = json.loads(git("show", f"{commit_sha}:{name}"))
+            if not isinstance(payload, dict):
+                raise ValueError("request must be an object")
+            identity = safe_request(str(payload.get("request_id") or Path(name).stem))
+            if identity not in seen:
+                seen.add(identity)
+                identities.append(identity)
+        except (TypeError, ValueError, PipelineError) as exc:
+            raise PipelineError("CANDIDATE_HISTORY_INVALID", "A historical request has no valid identity.",
+                                recoverable=True) from exc
+    return identities[:15]
+
+
 def duplicate_guard(root: Path, slug: str, request_id: str, channel: str) -> str:
+    if channel != channel_for(slug):
+        raise PipelineError("CHANNEL_MISMATCH", "Candidate slug and channel must match.")
     store = PipelineStore(root)
+    coordinator = coordinator_for(root)
+    if coordinator is not None:
+        # A crash between the candidate CAS and store.start leaves no remote
+        # episode ledger. Reclaim only that expired, provably orphaned claim.
+        coordinator.recover_orphan_candidate(channel)
     sync_channel(root, channel)
     index = read_json(store.index_path)
     if not (index and index.get("schema_version") == 1 and isinstance(index.get("active"), dict)
@@ -85,7 +142,38 @@ def duplicate_guard(root: Path, slug: str, request_id: str, channel: str) -> str
     if state["active"] and (state["slug"] != slug or state["stage"] not in {"CANDIDATE", "UNIQUE"}):
         outputs(result="RESUME_EXISTING_EPISODE", resume_slug=state["slug"], continuity_slugs=state["slug"])
         return "RESUME_EXISTING_EPISODE"
-    # The bounded counter is normal state. Git history is only its one-time migration source.
+    if coordinator is not None:
+        from engine.shared_coordination import CASConflict
+        for _ in range(4):
+            authority = coordinator.status(slug)
+            migration = (_legacy_candidate_ids(root, channel, authority["revision"])
+                         if "candidate_window" not in authority else None)
+            try:
+                decision = coordinator.reserve_candidate(
+                    slug, request_id, migration_ids=migration,
+                    migration_revision=authority["revision"] if migration is not None else None,
+                )
+                break
+            except CASConflict:
+                continue
+        else:
+            raise PipelineError("CANDIDATE_CAS_BUSY", "Candidate authority changed repeatedly; retry the exact request.",
+                                recoverable=True)
+        attempts = decision["attempts"]
+        outputs(candidate_attempts=attempts, candidate_limit=15)
+        if decision["result"] == "RESUME_EXISTING_EPISODE":
+            resume = decision["resume_slug"]
+            outputs(result="RESUME_EXISTING_EPISODE", resume_slug=resume, continuity_slugs=resume)
+            return "RESUME_EXISTING_EPISODE"
+        if decision["result"] == "CANDIDATE_LIMIT_REACHED":
+            outputs(result="CANDIDATE_LIMIT_REACHED")
+            return "CANDIDATE_LIMIT_REACHED"
+        save_token(root, decision["token"])
+        store.start(slug, request_id)
+        outputs(result="OPEN")
+        return "OPEN"
+    # Only trusted offline fixtures use this local counter. Production uses the
+    # bounded candidate_window in the canonical shared coordination commit.
     counter_path = root / ".pipeline" / f"candidates-{channel}.json"
     with store.lock():
         counter = read_json(counter_path)

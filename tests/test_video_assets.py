@@ -326,7 +326,11 @@ class VideoAssetRendererTests(unittest.TestCase):
         frame = self.extract_frame(output, 0.45, "trimmed.png")
         with Image.open(frame) as opened:
             self.assertEqual(opened.size, (90, 160))
-            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+            # Landscape video is deliberately contained on the portrait canvas.
+            # Check the source image, not the surrounding dark letterbox.
+            red, green, blue = ImageStat.Stat(
+                opened.convert("RGB").crop((35, 65, 55, 95))
+            ).mean
         self.assertGreater(green, red + 60)
         self.assertGreater(green, blue + 60)
 
@@ -428,7 +432,9 @@ class VideoAssetRendererTests(unittest.TestCase):
 
         frame = self.extract_frame(output, 0.75, "accelerated.png")
         with Image.open(frame) as opened:
-            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+            red, green, blue = ImageStat.Stat(
+                opened.convert("RGB").crop((35, 65, 55, 95))
+            ).mean
         self.assertGreater(green, red + 60)
         self.assertGreater(green, blue + 60)
 
@@ -448,7 +454,9 @@ class VideoAssetRendererTests(unittest.TestCase):
 
         frame = self.extract_frame(output, 0.75, "slowed.png")
         with Image.open(frame) as opened:
-            red, green, blue = ImageStat.Stat(opened.convert("RGB")).mean
+            red, green, blue = ImageStat.Stat(
+                opened.convert("RGB").crop((35, 65, 55, 95))
+            ).mean
         self.assertGreater(red, green + 60)
         self.assertGreater(red, blue + 60)
 

@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from engine.pipeline_state import PipelineError, PipelineStore, read_json
+from engine.pipeline_state import PipelineError, PipelineStore, channel_for, read_json
 from engine.pipeline_runtime import RunIdentity, github_fetcher, prepare_request, trigger_plan, verify_request_commit, wait_for_run
 
 
@@ -61,6 +61,10 @@ def main(argv=None) -> int:
                     store.reconcile()
                 result = store.status(args.slug, channel=args.channel)
             elif args.command == "reconcile":
+                from engine.coordination_runtime import coordinator_for
+                coordinator = coordinator_for(root)
+                if coordinator is not None:
+                    coordinator.recover_orphan_candidate(channel_for(args.slug) if args.slug else args.channel)
                 observer = None
                 if args.repository:
                     if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", args.repository):

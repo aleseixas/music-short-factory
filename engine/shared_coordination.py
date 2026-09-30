@@ -232,7 +232,8 @@ class SharedCoordinator:
         return {"schema_version": 1, "channel": channel, "generation": 0, "version": 0,
                 "owner_id": "", "slug": "", "request_id": "", "phase": "IDLE", "closed_slugs": {},
                 "lease_expires_at": 0, "heartbeat_at": 0, "mutation_allowed": False,
-                "publisher_started": False, "released": True}
+                "publisher_started": False, "released": True,
+                "candidate_claim_pending": False, "candidate_claimed_at": 0}
 
     def _read(self, channel):
         state, revision, now = self.backend.read(channel)
@@ -247,6 +248,10 @@ class SharedCoordinator:
                 or type(state.get("lease_expires_at")) not in (int, float)
                 or not math.isfinite(state["lease_expires_at"]) or not math.isfinite(now)
                 or type(state.get("heartbeat_at")) not in (int, float) or not math.isfinite(state["heartbeat_at"])
+                or ("candidate_claim_pending" in state and type(state["candidate_claim_pending"]) is not bool)
+                or ("candidate_claimed_at" in state and
+                    (type(state["candidate_claimed_at"]) not in (int, float)
+                     or not math.isfinite(state["candidate_claimed_at"])))
                 or any(not isinstance(record, dict) for record in state["closed_slugs"].values())):
             raise CoordinationError("SHARED_STATE_INVALID")
         if state["phase"] != "IDLE":
@@ -260,6 +265,18 @@ class SharedCoordinator:
         if ((state["phase"] in SEALED and state["mutation_allowed"])
                 or (state["publisher_started"] and state["mutation_allowed"])):
             raise CoordinationError("SHARED_STATE_INVALID")
+        window = state.get("candidate_window")
+        if window is not None:
+            if (not isinstance(window, dict) or window.get("schema_version") != 1
+                    or not isinstance(window.get("request_ids"), list)
+                    or len(window["request_ids"]) > 15):
+                raise CoordinationError("SHARED_STATE_INVALID")
+            try:
+                identities = [safe_request(identity) for identity in window["request_ids"]]
+                if len(set(identities)) != len(identities):
+                    raise ValueError("duplicate candidate request")
+            except (PipelineError, TypeError, ValueError) as exc:
+                raise CoordinationError("SHARED_STATE_INVALID") from exc
         return state, revision, now
 
     @staticmethod
@@ -354,11 +371,128 @@ class SharedCoordinator:
             raise CoordinationError("SHARED_LEASE_BUSY")
         if state.get("publisher_started") and active:
             raise CoordinationError("SHARED_SLUG_CLOSED")
+        if not active:
+            state["candidate_claim_pending"] = initial_phase == "CANDIDATE"
+            state["candidate_claimed_at"] = now if initial_phase == "CANDIDATE" else 0
         state.update(owner_id=self.owner_id, slug=slug, request_id=request_id,
                      generation=state["generation"] + 1, lease_expires_at=now + self.lease_seconds,
                      released=False, mutation_allowed=state["phase"] not in SEALED if active else True,
                      publisher_started=False, phase=state["phase"] if active else initial_phase)
         return self._write(state, revision, now)
+
+    def reserve_candidate(self, slug: str, request_id: str, *,
+                          migration_ids: list[str] | None = None,
+                          migration_revision: str | None = None) -> dict:
+        """Count and claim a candidate in one shared CAS, never from a local cache.
+
+        A legacy channel without candidate_window needs a history snapshot at
+        the exact revision supplied by the caller. Once written, the bounded
+        window is normal authoritative state and history is no longer read.
+        """
+        safe_slug(slug)
+        safe_request(request_id)
+        channel = channel_for(slug)
+        if migration_ids is not None:
+            if migration_revision is None:
+                raise CoordinationError("SHARED_CANDIDATE_MIGRATION_REQUIRED")
+            migration_ids = list(dict.fromkeys(safe_request(item) for item in migration_ids))[:15]
+        for _ in range(8):
+            state, revision, now = self._read(channel)
+            if self._closed(slug, state, revision):
+                raise CoordinationError("SHARED_SLUG_CLOSED")
+            window = state.get("candidate_window")
+            migrating = window is None
+            if migrating:
+                if migration_ids is None:
+                    raise CoordinationError("SHARED_CANDIDATE_MIGRATION_REQUIRED")
+                if revision != migration_revision:
+                    raise CASConflict()
+                window = {"schema_version": 1, "request_ids": migration_ids}
+            attempts = list(window["request_ids"])
+            active = state["phase"] not in {"IDLE", *TERMINAL}
+            if active and (state["slug"] != slug or state["request_id"] != request_id
+                           or state["phase"] not in {"CANDIDATE", "UNIQUE"}):
+                return {"result": "RESUME_EXISTING_EPISODE", "resume_slug": state["slug"],
+                        "attempts": len(attempts), "token": None}
+            if active and not self._expired(state, now) and state["owner_id"] != self.owner_id:
+                return {"result": "RESUME_EXISTING_EPISODE", "resume_slug": state["slug"],
+                        "attempts": len(attempts), "token": None}
+            if active and state.get("publisher_started"):
+                raise CoordinationError("SHARED_SLUG_CLOSED")
+            if request_id not in attempts and len(attempts) >= 15:
+                # This read is the linearization point for a refusal. A queue
+                # completed before it would already have cleared the window.
+                return {"result": "CANDIDATE_LIMIT_REACHED", "attempts": len(attempts) + 1,
+                        "token": None}
+            changed = request_id not in attempts
+            if changed:
+                attempts.append(request_id)
+            if active and not self._expired(state, now) and not changed and not migrating:
+                return {"result": "OPEN", "attempts": len(attempts),
+                        "token": self._token(state, revision)}
+            state["candidate_window"] = {"schema_version": 1, "request_ids": attempts}
+            if not active or self._expired(state, now):
+                if not active:
+                    # The durable episode ledger is written by store.start in
+                    # a second CAS. Until then this is a recoverable claim.
+                    state["candidate_claim_pending"] = True
+                    state["candidate_claimed_at"] = now
+                state.update(owner_id=self.owner_id, slug=slug, request_id=request_id,
+                             generation=state["generation"] + 1,
+                             lease_expires_at=now + self.lease_seconds,
+                             released=False, mutation_allowed=True,
+                             publisher_started=False,
+                             phase=state["phase"] if active else "CANDIDATE")
+            else:
+                state["lease_expires_at"] = now + self.lease_seconds
+            try:
+                token = self._write(state, revision, now)
+            except CASConflict:
+                if migrating:
+                    # Re-read the migration boundary rather than attaching an
+                    # old history snapshot to a newer queue generation.
+                    raise
+                continue
+            return {"result": "OPEN", "attempts": len(attempts), "token": token}
+        raise CASConflict()
+
+    def recover_orphan_candidate(self, channel: str) -> bool:
+        """Release an expired claim that never wrote any authoritative episode.
+
+        Evidence is read at the exact CAS revision. A queued/published request,
+        an authored ledger, or a live owner cannot be abandoned here. The old
+        slug is tombstoned so a delayed writer cannot resurrect that request.
+        """
+        if channel not in {"default", "nostalgia"}:
+            raise CoordinationError("SHARED_CHANNEL_INVALID")
+        for _ in range(4):
+            state, revision, now = self._read(channel)
+            if (state["phase"] != "CANDIDATE" or state.get("candidate_claim_pending") is not True
+                    or state["publisher_started"] or not state["mutation_allowed"]
+                    or not self._expired(state, now)):
+                return False
+            slug, request_id = state["slug"], state["request_id"]
+            if self._closed(slug, state, revision):
+                return False
+            paths = [f".pipeline/episodes/{slug}.json", f".pipeline/artifacts/{slug}.json",
+                     f".publish-queue/{slug}.txt", f".publication-attempts/{slug}.json"]
+            files = self.backend.read_files(paths, revision)
+            if any(files[path] is not None for path in paths):
+                return False
+            generation = state["generation"] + 1
+            state["closed_slugs"][slug] = {
+                "request_id": request_id, "generation": generation, "closed_at": now,
+                "reason": "CANCELLED", "outcome": "CANCELLED",
+            }
+            state.update(generation=generation, owner_id="", slug="", request_id="",
+                         phase="IDLE", mutation_allowed=False, released=True,
+                         lease_expires_at=now, candidate_claim_pending=False)
+            try:
+                self._write(state, revision, now)
+            except CASConflict:
+                continue
+            return True
+        raise CASConflict()
 
     def assert_current(self, token: dict, *, mutation: bool = False) -> dict:
         state, revision, _ = self._checked(token, mutation=mutation)
@@ -389,9 +523,28 @@ class SharedCoordinator:
         if phase:
             if phase not in PHASES or phase in {"IDLE", "PUBLISHING", *TERMINAL}:
                 raise CoordinationError("SHARED_PHASE_INVALID")
+            if phase == "QUEUED":
+                queue_path = f".publish-queue/{state['slug']}.txt"
+                queue_bytes = files.get(queue_path)
+                prefix = f"{state['slug']}\n".encode("ascii")
+                suffix = f"\n{state['request_id']}\n".encode("ascii")
+                if (not isinstance(queue_bytes, bytes)
+                        or not queue_bytes.startswith(prefix)
+                        or not queue_bytes.endswith(suffix)
+                        or not queue_bytes[len(prefix):-len(suffix)].isdigit()):
+                    raise CoordinationError("SHARED_QUEUE_EVIDENCE_REQUIRED",
+                                            "Queue transition must commit the exact slug, run id and request in the same CAS.")
             state["phase"] = phase
+            if phase != "CANDIDATE":
+                state["candidate_claim_pending"] = False
             if phase == "QUEUED":
                 state["mutation_allowed"] = False
+                # The queue and candidate-window reset are one Git CAS.
+                # A crash after the queue cannot leave another clone blocked
+                # by a previous local count.
+                state["candidate_window"] = {"schema_version": 1, "request_ids": []}
+        if f".pipeline/episodes/{state['slug']}.json" in files:
+            state["candidate_claim_pending"] = False
         if request_id is not None and request_id != state["request_id"]:
             state.update(request_id=safe_request(request_id), generation=state["generation"] + 1)
         state["lease_expires_at"] = now + self.lease_seconds
@@ -480,7 +633,8 @@ class SharedCoordinator:
         if outcome in {"PUBLISHED", "PUBLISH_UNCERTAIN"} and not state.get("publisher_started"):
             raise CoordinationError("SHARED_PUBLICATION_NOT_STARTED")
         state.update(generation=state["generation"] + 1, mutation_allowed=False,
-                     phase=outcome, released=True, lease_expires_at=now)
+                     phase=outcome, released=True, lease_expires_at=now,
+                     candidate_claim_pending=False)
         state["closed_slugs"].setdefault(state["slug"], {
             "request_id": state["request_id"], "generation": state["generation"], "closed_at": now,
             "reason": outcome})

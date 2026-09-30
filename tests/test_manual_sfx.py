@@ -111,6 +111,7 @@ class ManualSfxTests(unittest.TestCase):
             "SFX 'external/manual/impacts/demo.mp3'",
             require_https=True,
             max_bytes=MAX_EXTERNAL_SFX_BYTES,
+            allowed_hosts=frozenset({"myinstants.com", "www.myinstants.com"}),
         )
 
     def test_brazilian_meme_must_play_in_full(self):

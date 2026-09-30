@@ -102,17 +102,17 @@ class AudioSearchTests(unittest.TestCase):
             encoding="utf-8"
         )
 
-        self.assertIn("tarefa agendada do ChatGPT", prompt)
+        self.assertIn("agendamento automático do GPT", prompt)
         self.assertIn("sem terminal local", prompt)
         self.assertIn("api.openverse.org/v1/audio/", guide)
-        self.assertIn("acesso à rede/web", guide)
-        self.assertIn("GitHub, sozinha, não concede HTTP genérico", guide)
-        self.assertIn("assets/audio/music/catalog.json", guide)
+        self.assertIn("Quando houver acesso web", guide)
+        self.assertIn("external-first", guide)
+        self.assertIn("assets/audio/music/catalog.json", prompt)
         self.assertIn("assets/audio/sfx/catalog.json", guide)
         self.assertIn("fallback local", guide)
+        self.assertIn("fallback_social_*", guide)
         self.assertIn("{file, url}", guide)
-        self.assertIn("chave dedicada ao episódio", guide)
-        self.assertIn("não garante sua seleção", guide)
+        self.assertIn("Openverse/MyInstants", guide)
 
     def test_openverse_search_normalizes_results_as_data(self):
         response = FakeResponse(openverse_payload())

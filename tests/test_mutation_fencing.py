@@ -17,7 +17,7 @@ from engine.pipeline_state import PipelineError, PipelineStore, atomic_json
 from engine.shared_coordination import CoordinationError, SharedCoordinator, using_coordinator
 from scripts.pipeline_workflow import queue_episode
 from scripts import persist_visual_usage as visual_usage_persistence
-from tests.test_shared_coordination import ServerBackend, authority
+from tests.test_shared_coordination import ServerBackend, _queue, authority
 
 pytestmark = pytest.mark.distributed_coordination
 PROJECT = Path(__file__).resolve().parents[1]
@@ -159,7 +159,7 @@ def test_real_prepare_cannot_finish_after_new_publisher_generation(tmp_path):
             with lock:
                 data['now'] = data['states']['default']['lease_expires_at'] + 3
             publisher = SharedCoordinator(tmp_path / 'new', ServerBackend(url), owner_id='new')
-            token = publisher.set_phase(publisher.acquire('demo', 'req'), 'QUEUED')
+            token = _queue(publisher, publisher.acquire('demo', 'req'))
             publisher.close_for_publication(token, 'a' * 64)
             resume.set()
             assert result.get(timeout=15) == 'SHARED_STALE_FENCE'
@@ -309,7 +309,7 @@ def crash_after_initial_claim(root, url):
         PipelineStore(root).start('demo', 'req')
 
 
-def test_crash_after_initial_claim_never_skips_duplicate_gate(tmp_path):
+def test_crash_after_initial_claim_fences_old_and_unblocks_new_candidate(tmp_path):
     context = multiprocessing.get_context('spawn')
     with authority() as (url, data, lock):
         worker = context.Process(target=crash_after_initial_claim, args=(str(tmp_path / 'crashed'), url))
@@ -323,7 +323,8 @@ def test_crash_after_initial_claim_never_skips_duplicate_gate(tmp_path):
         coordinator = SharedCoordinator(clone, ServerBackend(url), owner_id='recovered')
         with using_coordinator(clone, coordinator):
             sync_authority(clone, 'demo', download=True)
-            assert PipelineStore(clone).start('demo', 'req')['stage'] == 'CANDIDATE'
+            assert PipelineStore(clone).start('fresh', 'new_request')['stage'] == 'CANDIDATE'
+            assert coordinator.status('demo')['requested_slug_closed']['reason'] == 'CANCELLED'
 
 
 def test_reconcile_removes_authoritatively_deleted_metadata_before_next_commit(tmp_path):
@@ -384,7 +385,7 @@ def test_generic_metadata_checkpoint_cannot_approve_an_unvalidated_bundle(tmp_pa
             assert artifact['bundle_approved'] is False
             _, token = acquire_token(tmp_path, 'demo')
             token = coordinator.change_request(token, 'request_1')
-            coordinator.set_phase(token, 'QUEUED')
+            _queue(coordinator, token)
             with pytest.raises(PublishingError, match='SNAPSHOT_NOT_APPROVED'):
                 approved_manifest(tmp_path, 'demo', '123', 'request_1')
 
@@ -403,7 +404,7 @@ def test_bundle_gate_commits_its_validated_manifest_with_the_fence():
                 artifact = json.loads(data['files'][f'.pipeline/artifacts/{EPISODE}.json'])
                 assert artifact['bundle_approved'] is True
                 _, token = acquire_token(fixture.root, EPISODE)
-                coordinator.set_phase(token, 'QUEUED')
+                _queue(coordinator, token, RUN_ID)
                 approved_manifest(fixture.root, EPISODE, RUN_ID, 'req')
     finally:
         fixture.tearDown()

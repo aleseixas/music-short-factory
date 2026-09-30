@@ -165,20 +165,29 @@ class RemoteMediaCacheTests(unittest.TestCase):
                 self.assertFalse((cache / "track.mp3").exists())
                 self.assertFalse((cache / "track.mp3.part").exists())
 
-    def test_url_must_point_directly_to_the_expected_file_type(self):
+    def test_opaque_media_url_is_accepted_after_payload_validation(self):
         with tempfile.TemporaryDirectory() as directory:
-            with (
-                patch("engine.media_cache.requests.get") as get,
-                self.assertRaisesRegex(RuntimeError, "URL invalida"),
-            ):
-                download_to_cache(
+            cache = Path(directory) / "cache" / "video"
+            response = FakeResponse((b"webm-payload",), headers={"Content-Type": "video/webm"})
+            validated = []
+
+            def validate(path):
+                self.assertEqual(path.read_bytes(), b"webm-payload")
+                validated.append(path.name)
+
+            with patch("engine.media_cache.requests.get", return_value=response) as get:
+                result = download_to_cache(
                     "https://cdn.example.test/download?id=42",
-                    Path(directory) / "cache" / "video",
+                    cache,
                     "scene.webm",
                     "video remoto",
                     attempts=1,
+                    validator=validate,
                 )
-            get.assert_not_called()
+            self.assertEqual(result.read_bytes(), b"webm-payload")
+            self.assertEqual(validated, ["scene.webm.part"])
+            get.assert_called_once()
+            self.assertTrue(response.closed)
 
     def test_external_download_rejects_redirect_outside_allowlist(self):
         response = FakeResponse(
@@ -445,7 +454,7 @@ class RemoteAudioCatalogTests(unittest.TestCase):
                 ),
                 self.assertRaisesRegex(
                     RuntimeError,
-                    "Background music remota invalida.*duracao invalida",
+                    "audio remoto invalido: duracao invalida",
                 ),
             ):
                 resolve_background_music(

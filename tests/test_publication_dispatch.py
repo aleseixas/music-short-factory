@@ -496,7 +496,7 @@ class PublicationDispatchTests(unittest.TestCase):
             token = coordinator.acquire("demo", "request")
             token = coordinator.set_phase(token, "QUEUED", files={
                 ".pipeline/episodes/demo.json": self.store.episode_path("demo").read_bytes(),
-                ".publish-queue/demo.txt": (self.root / ".publish-queue/demo.txt").read_bytes(),
+                ".publish-queue/demo.txt": b"demo\n123\nrequest\n",
             })
             token = coordinator.release(token)
             with using_coordinator(self.root, coordinator):

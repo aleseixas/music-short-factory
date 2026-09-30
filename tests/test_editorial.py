@@ -108,7 +108,7 @@ def _codes(episode: Episode, plan: TimelinePlan | None = None) -> frozenset[str]
 
 
 class EditorialDirectionTests(unittest.TestCase):
-    def test_agent_guidance_matches_high_energy_sfx_budget(self):
+    def test_agent_guidance_uses_curated_sfx_without_fixed_quota(self):
         guide = (PROJECT_ROOT / "docs" / "editorial-direction.md").read_text(
             encoding="utf-8"
         )
@@ -116,20 +116,14 @@ class EditorialDirectionTests(unittest.TestCase):
             PROJECT_ROOT / "templates" / "editorial-direction-prompt.md"
         ).read_text(encoding="utf-8")
 
-        for content, count_phrase in (
-            (guide, "mais de 25"),
-            (prompt, "acima de 25"),
-        ):
-            self.assertIn("aproximadamente 15", content)
-            self.assertIn(count_phrase, content)
-            self.assertNotIn("6–12 SFX", content)
-
-        self.assertIn("pesquisar primeiro\nopções externas", guide)
-        self.assertIn("busca externa é a primeira\netapa", prompt)
-        example_sfx = guide.split('"sfx_cues": [', 1)[1].split(
-            '"visual_fx_cues": [', 1
-        )[0]
-        self.assertEqual(example_sfx.count('"time_seconds"'), 15)
+        self.assertIn("não pesquise novos SFX na web", guide)
+        self.assertIn("NÃO pesquise novos SFX na web", prompt)
+        self.assertIn("Não existe obrigação de `1 SFX por shot`", guide)
+        self.assertIn("Não existe obrigação de `1 SFX por shot`", prompt)
+        self.assertIn("warning acima de 25", guide)
+        self.assertIn("acima de 25", prompt)
+        self.assertIn("assets/audio/sfx/catalog.json", guide)
+        self.assertIn("assets/audio/sfx/catalog.json", prompt)
 
     def test_catalog_discovery_reads_only_real_music_and_sfx_names(self):
         catalogs = load_editorial_catalogs(PROJECT_ROOT)

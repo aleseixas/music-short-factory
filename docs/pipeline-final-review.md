@@ -109,10 +109,11 @@ A recuperação terminal libera o canal; ausência/listagem truncada não autori
 novo POST. Recovery exige executar reconcile; não existe daemon em clone desligado.
 Lease expirada permite recuperar o mesmo episódio, não abandonar arbitrariamente
 uma pauta. Diretórios coordenados suportados: episodes, work, output e .publish-ready.
-O contador editorial de 15 candidatos ainda é um cache local: um clone que não
-observou o reset feito após a queue em outro clone pode responder
-`CANDIDATE_LIMIT_REACHED` indevidamente. Isso não concede posse nem publicação;
-exige reconstruir esse contador local a partir da última queue autoritativa.
+O contador editorial de 15 candidatos agora pertence ao estado CAS compartilhado.
+A reserva de um candidato e seu incremento são atômicos; a queue zera a janela no
+mesmo CAS. Clones não usam o contador local para decidir enquanto há autoridade
+compartilhada. O histórico Git serve apenas para migrar uma janela antiga na
+revisão exata da autoridade; falha de leitura interrompe a migração com segurança.
 
 Não foi testada publicação nem escrita GitHub real, conforme solicitado. Adapters
 atuais não oferecem chave de idempotência utilizável; envio incerto nunca recebe
@@ -165,3 +166,38 @@ causada pela integracao do pipeline.
 `actionlint -shellcheck= -pyflakes=` e `git diff --check` passaram.
 Logs: `output/pipeline-validation/post-rebase-focused.txt` e
 `output/pipeline-validation/post-rebase-full.txt`.
+
+## Correções e revalidação posteriores (2026-09-29)
+
+Quinze falhas da suíte completa acima foram corrigidas nas fixtures/assertivas,
+após comparação com o comportamento vigente e reprodução na base remota sem o
+pipeline. A falha de cookies vinha de `yt-dlp` ausente no ambiente anterior;
+o ambiente isolado instala o pin já declarado. Nenhum teste foi removido ou
+marcado como xfail. O contador de candidatos agora é
+autoritativo e usa CAS na mesma referência Git que reserva o canal; a queue limpa
+a janela no mesmo commit. A migração do contador anterior lê o histórico Git da
+revisão exata da autoridade, e uma migração stale não é aplicada.
+Uma reserva CANDIDATE ainda sem ledger remoto tem marcador pendente. Após lease
+expirado, a próxima criação ou reconciliação confere caminhos exatos na mesma
+revisão, cancela por CAS apenas o órfão e fecha seu slug; o token antigo perde o
+fence. Uma transição para QUEUED exige que o marcador de fila com slug, run ID
+numérico e request_id entre no mesmo CAS que limpa a janela de candidatos.
+
+O teste integrado controlado executa o CLI `publish --live`, a autoridade CAS e o
+adaptador YouTube com transporte HTTP simulado. Verifica snapshot imutável mesmo
+após alterar o arquivo de trabalho, recibo publicado, reconciliação por clone
+novo e bloqueio de segundo envio. Nenhuma entrega externa real foi realizada.
+
+Pins de Pillow, requests e pytest foram atualizados para 12.3.0, 2.33.0 e
+9.0.3, respectivamente, após triagem dos alertas de dependências. Resultado final em
+ambiente isolado com esses pins: **787 passaram, 1 ignorado, 488 subtests passaram**.
+Os testes focados das fixtures modificadas passaram (150); a rodada final do
+contador e recovery passou (19). `pip check`,
+`actionlint -shellcheck= -pyflakes=` e `git diff --check`: exit 0.
+Log: `output/pipeline-validation/security-full.txt`.
+
+Permanece sem validação uma entrega real nas plataformas: os adapters não têm
+chave de idempotência disponível para garantir exactly-once em resposta incerta.
+Nessa situação, o estado fica fechado e requer reconciliação/manual, sem retry
+automático. Erros de autenticação/permissão da autoridade podem causar bloqueio
+conservador até intervenção, sem conceder publicação duplicada.
