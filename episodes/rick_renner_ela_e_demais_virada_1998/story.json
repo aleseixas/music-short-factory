@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "title": "O hit de Rick & Renner que muita gente atribui ao Rick",
+  "slug": "rick_renner_ela_e_demais_virada_1998",
+  "target_duration_seconds": 72,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "“Ela É Demais”, de Rick & Renner, tem um detalhe que muita gente erra: o hit que ajudou a consagrar a dupla não foi escrito pelo Rick.",
+      "delivery": "hook"
+    },
+    {
+      "id": "agora",
+      "text": "E a música voltou ao centro das homenagens depois da morte de Rick, em setembro de 2026.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "volta",
+      "text": "Mas pra entender por que ela pesa tanto, volta comigo pra 1998.",
+      "delivery": "curious"
+    },
+    {
+      "id": "disco",
+      "text": "A faixa saiu no álbum Mil Vezes Cantarei, numa fase decisiva da carreira da dupla.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "autor",
+      "text": "O crédito de composição é de Elias Muniz.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "explosao",
+      "text": "Só que na voz de Rick & Renner a canção virou uma explosão nacional.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "paradas",
+      "text": "Segundo registros da época relembrados em 2026, ela ficou cerca de cinco meses seguidos nas paradas de sucesso.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "tv",
+      "text": "E levou a dupla para programas de enorme audiência na televisão brasileira.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "identidade",
+      "text": "Aquele sertanejo romântico direto, com duas vozes muito reconhecíveis, virou uma assinatura deles.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "catalogo",
+      "text": "Depois vieram outros gigantes do repertório, como Filha, Nos Bares da Cidade e Sem Direção.",
+      "delivery": "curious"
+    },
+    {
+      "id": "quarenta",
+      "text": "Em 2026, Rick e Renner estavam justamente celebrando quarenta anos de parceria.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "perda",
+      "text": "Rick morreu em 21 de setembro, em um acidente de helicóptero em Santa Catarina.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "homenagens",
+      "text": "Nos dias seguintes, artistas sertanejos voltaram a cantar “Ela É Demais” em homenagem a ele.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "renner",
+      "text": "Renner resumiu o momento dizendo que, mesmo com a dor, o show não pode parar.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "legado",
+      "text": "E aí o hit de 1998 ganhou outro peso: deixou de ser só memória de rádio e virou lembrança de uma parceria de quatro décadas.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "cta",
+      "text": "Qual música de Rick & Renner mais marcou você? Comenta.",
+      "delivery": "payoff"
+    }
+  ]
+}

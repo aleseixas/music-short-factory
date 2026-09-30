@@ -1,0 +1,188 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "impact",
+      "volume": 0.14
+    },
+    {
+      "time_seconds": 17,
+      "type": "whoosh_fast",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 42,
+      "type": "dramatic_dun_dun",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 61,
+      "type": "chime_sparkles",
+      "volume": 0.09
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.15,
+      "text": "NÃO FOI O RICK",
+      "accent_text": "NÃO",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.9
+    },
+    {
+      "segment": "autor",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.05,
+      "text": "COMPOSIÇÃO: ELIAS MUNIZ",
+      "accent_text": "ELIAS MUNIZ",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.82
+    },
+    {
+      "segment": "quarenta",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.05,
+      "text": "40 ANOS",
+      "accent_text": "40 ANOS",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.82
+    },
+    {
+      "segment": "legado",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "UM HIT, QUATRO DÉCADAS",
+      "accent_text": "QUATRO DÉCADAS",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.86
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "visual_01",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "O HIT NÃO FOI ESCRITO PELO RICK"
+    },
+    {
+      "id": "shot_02",
+      "segment": "agora",
+      "asset": "visual_02",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "volta",
+      "asset": "visual_03",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_04",
+      "segment": "disco",
+      "asset": "visual_04",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_05",
+      "segment": "autor",
+      "asset": "visual_05",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "ELIAS MUNIZ"
+    },
+    {
+      "id": "shot_06",
+      "segment": "explosao",
+      "asset": "visual_06",
+      "motion": "pan_left",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_07",
+      "segment": "paradas",
+      "asset": "visual_07",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "tv",
+      "asset": "visual_08",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_09",
+      "segment": "identidade",
+      "asset": "visual_09",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_10",
+      "segment": "catalogo",
+      "asset": "visual_10",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_11",
+      "segment": "quarenta",
+      "asset": "visual_11",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "40 ANOS DE PARCERIA"
+    },
+    {
+      "id": "shot_12",
+      "segment": "perda",
+      "asset": "visual_12",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_13",
+      "segment": "homenagens",
+      "asset": "visual_13",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_14",
+      "segment": "renner",
+      "asset": "visual_14",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_15",
+      "segment": "legado",
+      "asset": "visual_15",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "UM HIT, QUATRO DÉCADAS"
+    },
+    {
+      "id": "shot_16",
+      "segment": "cta",
+      "asset": "visual_16",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    }
+  ]
+}
