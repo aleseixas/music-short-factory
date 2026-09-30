@@ -18,7 +18,9 @@ Lease ocupada não pode ser roubada e expiração não libera outro slug.
 Antes de autoria: request único de duplicate, reserva CAS e UNIQUE_CANDIDATE.
 Depois de autoria: prepare em clone autenticado valida/repara em lote e confirma
 request por CAS após PASS; retorna SHA. Não crie .episode-check manual nem faça
-segundo commit/push. Prepare em Actions é rejeitado por não encadear push.
+segundo commit/push. O token padrão do Actions continua rejeitado; recovery pode
+usar `recovery-prepare.yml` somente com `PIPELINE_GITHUB_TOKEN` externo e
+distinto do `${{ github.token }}`, preservando o mesmo prepare/CAS e um push real.
 
 Preflight resolve visuais, valida, renderiza, prepara capa, faz dry-run e bundle.
 Queue CAS só após os gates e contém slug/source_run_id/request_id.
