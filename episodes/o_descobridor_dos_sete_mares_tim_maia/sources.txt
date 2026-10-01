@@ -32,11 +32,14 @@ https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983
 https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg
 https://cultura.uol.com.br/
 https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png
-https://www.enjoei.com.br/
-https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc
+https://www.parachoquedecaminhao.com.br/Tim%20Maia/
+https://www.parachoquedecaminhao.com.br/Tim%20Maia/tim-vitc3b3ria-rc3a9gia.jpg
 
 BACKGROUND MUSIC — DECISÃO EDITORIAL
 Busca internet-first comparou instrumentais soul, funk, disco e documentais leves. As opções externas encontradas não podiam ser incorporadas com segurança ao catálogo global dentro desta transação de autoria restrita ao episódio. Foi escolhido o profile local bright_fun, semanticamente compatível com a descoberta leve e a energia soul/funk da história. O profile existe no catálogo atual e usa arquivos locais versionados; há evidência recente de Media Preflight decodificando assets/audio/music/bright_fun/summer-fun-01.mp3. Volume configurado em 0.055. A escolha fica sujeita aos hard gates atuais de disponibilidade e freshness antes de qualquer render ou queue.
 
 DIREITOS
 Todos os visuais são referências com página-fonte e crédito registrados em assets.json e visual_candidates.json. Direitos não foram presumidos quando a fonte não expôs licença explícita. Nenhum URL de busca ou página HTML foi usado como locator de mídia final.
+
+REPARO LOCAL 1
+O último shot foi corrigido para transition_out=cut. A alternativa de imagem sem extensão reconhecível foi substituída por URL direta .jpg concreta. Nenhuma mudança editorial de tema, identidade ou background_music.

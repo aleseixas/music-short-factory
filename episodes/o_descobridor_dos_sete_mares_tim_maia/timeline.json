@@ -200,7 +200,7 @@
       "segment": "cta",
       "asset": "visual_16",
       "motion": "pan_right",
-      "transition_out": "crossfade"
+      "transition_out": "cut"
     }
   ]
 }
