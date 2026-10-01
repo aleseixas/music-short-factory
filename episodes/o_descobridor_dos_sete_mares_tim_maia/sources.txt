@@ -43,3 +43,13 @@ Todos os visuais são referências com página-fonte e crédito registrados em a
 
 REPARO LOCAL 1
 O último shot foi corrigido para transition_out=cut. A alternativa de imagem sem extensão reconhecível foi substituída por URL direta .jpg concreta. Nenhuma mudança editorial de tema, identidade ou background_music.
+
+REPARO VISUAL 2 — PERFORMANCES REAIS
+O gate semântico identificou seis uploads anteriores como praticamente estáticos. Eles foram substituídos, em slots distintos e sem repetição, por performances reais do especial Tim Maia In Concert:
+https://www.youtube.com/watch?v=6fTbzPUD1Y8 — O Descobridor dos Sete Mares — Tim Maia In Concert
+https://www.youtube.com/watch?v=qOIJ0fGnb0A — Sossego — Tim Maia In Concert
+https://www.youtube.com/watch?v=TExnyWVjRIQ — Me Dê Motivo — Tim Maia In Concert
+https://www.youtube.com/watch?v=A92agWW65N0 — Do Leme ao Pontal — Tim Maia In Concert
+https://www.youtube.com/watch?v=A3NBhxY2c9o — A Festa do Santo Reis — Tim Maia In Concert
+https://www.youtube.com/watch?v=gx5gvlS13Ao — Você e Eu, Eu e Você — Tim Maia In Concert
+Cada slot mantém seis imagens documentais concretas apenas como fallback. Background_music bright_fun permaneceu inalterado e já havia sido resolvido/decodificado.
