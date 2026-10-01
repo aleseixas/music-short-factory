@@ -1,0 +1,2404 @@
+{
+  "slug": "o_descobridor_dos_sete_mares_tim_maia",
+  "request_id": "o_descobridor_dos_sete_mares_tim_maia_20261001_0700",
+  "files": {
+    "story.json": {
+      "schema_version": 1,
+      "title": "O mapa que virou um dos maiores hits de Tim Maia",
+      "slug": "o_descobridor_dos_sete_mares_tim_maia",
+      "target_duration_seconds": 72,
+      "segments": [
+        {
+          "id": "hook",
+          "text": "Dois publicitários fãs de Tim Maia escreveram um dos maiores hits dele — e tudo começou com um mapa de praias.",
+          "delivery": "hook"
+        },
+        {
+          "id": "fas",
+          "text": "Michel e Gilson Mendonça estudaram o repertório de Tim para entender a linguagem musical que ele gostava.",
+          "delivery": "curious"
+        },
+        {
+          "id": "sete",
+          "text": "Quando conseguiram apresentar o material, chegaram com sete músicas prontas.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "escolha",
+          "text": "Tim escolheu três e brincou que, daquele jeito, ainda acabaria gravando um disco inteiro da dupla.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "mapa",
+          "text": "Para criar O Descobridor dos Sete Mares, Gilson pediu à mãe que marcasse num mapa as principais praias do Brasil.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "nomes",
+          "text": "Depois, ele e Michel escolheram os nomes que soavam melhor dentro da viagem que queriam contar.",
+          "delivery": "curious"
+        },
+        {
+          "id": "viagem",
+          "text": "Assim nasceu um roteiro musical pelo litoral, com cara de verão e refrão impossível de esquecer.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "credito",
+          "text": "A grande virada é esta: a faixa-título não foi composta por Tim Maia. O crédito é de Michel e Gilson Mendonça.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "album",
+          "text": "A gravação saiu em 1983, no álbum que também recebeu o nome O Descobridor dos Sete Mares.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "producao",
+          "text": "Tim produziu o disco e dividiu os arranjos da faixa com Tinho e Adonhyran Peçanha.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "banda",
+          "text": "Metais, baixo, bateria, guitarra e coro deram à canção aquela potência soul e funk que virou assinatura.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "tres",
+          "text": "As outras duas músicas escolhidas da dupla foram Pecado Capital e Neves e Parques.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "neves",
+          "text": "Segundo o relato dos compositores, Neves e Parques tocou Tim por lembrar o período em que ele viveu nos Estados Unidos.",
+          "delivery": "emotional"
+        },
+        {
+          "id": "metodo",
+          "text": "O que parecia método de publicitário virou composição: estudar o artista, achar uma imagem forte e construir uma viagem sonora.",
+          "delivery": "curious"
+        },
+        {
+          "id": "payoff",
+          "text": "Por isso o hit soa tão Tim Maia mesmo sem ter sido escrito por ele: dois fãs decifraram sua linguagem e ele transformou tudo em performance.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "cta",
+          "text": "Qual praia brasileira você colocaria nessa viagem musical? Comenta.",
+          "delivery": "payoff"
+        }
+      ]
+    },
+    "timeline.json": {
+      "schema_version": 1,
+      "smart_visual_pacing": {
+        "enabled": true
+      },
+      "background_music": {
+        "profile": "bright_fun",
+        "volume": 0.055
+      },
+      "sfx_cues": [
+        {
+          "time_seconds": 0.12,
+          "type": "impact",
+          "volume": 0.12
+        },
+        {
+          "time_seconds": 18,
+          "type": "whoosh_fast",
+          "volume": 0.08
+        },
+        {
+          "time_seconds": 36,
+          "type": "chime_sparkles",
+          "volume": 0.07
+        },
+        {
+          "time_seconds": 55,
+          "type": "whoosh_fast",
+          "volume": 0.07
+        }
+      ],
+      "text_fx_cues": [
+        {
+          "segment": "hook",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.2,
+          "text": "UM MAPA VIROU HIT",
+          "accent_text": "MAPA",
+          "animation": "scale_bounce",
+          "position": "center",
+          "intensity": 0.82
+        },
+        {
+          "segment": "sete",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1,
+          "text": "7 MÚSICAS",
+          "accent_text": "7",
+          "animation": "pop_in",
+          "position": "center",
+          "intensity": 0.72
+        },
+        {
+          "segment": "credito",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.1,
+          "text": "TIM NÃO COMPÔS",
+          "accent_text": "NÃO",
+          "animation": "fade_pop",
+          "position": "center",
+          "intensity": 0.78
+        },
+        {
+          "segment": "payoff",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.1,
+          "text": "DOIS FÃS DECIFRARAM TIM",
+          "accent_text": "FÃS",
+          "animation": "scale_bounce",
+          "position": "center",
+          "intensity": 0.8
+        }
+      ],
+      "shots": [
+        {
+          "id": "shot_01",
+          "segment": "hook",
+          "asset": "visual_01",
+          "motion": "push_in",
+          "transition_out": "crossfade",
+          "highlight": "UM MAPA VIROU HIT",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_02",
+          "segment": "fas",
+          "asset": "visual_02",
+          "motion": "pan_left",
+          "transition_out": "cut",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_03",
+          "segment": "sete",
+          "asset": "visual_03",
+          "motion": "pull_out",
+          "transition_out": "cut",
+          "highlight": "7 MÚSICAS",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_04",
+          "segment": "escolha",
+          "asset": "visual_04",
+          "motion": "pan_right",
+          "transition_out": "cut",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_05",
+          "segment": "mapa",
+          "asset": "visual_05",
+          "motion": "push_in",
+          "transition_out": "cut",
+          "highlight": "MAPA DAS PRAIAS"
+        },
+        {
+          "id": "shot_06",
+          "segment": "nomes",
+          "asset": "visual_06",
+          "motion": "pan_left",
+          "transition_out": "crossfade",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_07",
+          "segment": "viagem",
+          "asset": "visual_07",
+          "motion": "pull_out",
+          "transition_out": "cut",
+          "highlight": "VIAGEM PELO LITORAL"
+        },
+        {
+          "id": "shot_08",
+          "segment": "credito",
+          "asset": "visual_08",
+          "motion": "pan_right",
+          "transition_out": "cut",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_09",
+          "segment": "album",
+          "asset": "visual_09",
+          "motion": "push_in",
+          "transition_out": "cut",
+          "highlight": "1983"
+        },
+        {
+          "id": "shot_10",
+          "segment": "producao",
+          "asset": "visual_10",
+          "motion": "pan_left",
+          "transition_out": "cut",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_11",
+          "segment": "banda",
+          "asset": "visual_11",
+          "motion": "pull_out",
+          "transition_out": "crossfade",
+          "highlight": "SOUL + FUNK"
+        },
+        {
+          "id": "shot_12",
+          "segment": "tres",
+          "asset": "visual_12",
+          "motion": "pan_right",
+          "transition_out": "cut",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_13",
+          "segment": "neves",
+          "asset": "visual_13",
+          "motion": "push_in",
+          "transition_out": "cut",
+          "highlight": "MEMÓRIAS DOS EUA"
+        },
+        {
+          "id": "shot_14",
+          "segment": "metodo",
+          "asset": "visual_14",
+          "motion": "pan_left",
+          "transition_out": "cut",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_15",
+          "segment": "payoff",
+          "asset": "visual_15",
+          "motion": "pull_out",
+          "transition_out": "cut",
+          "highlight": "DOIS FÃS DECIFRARAM TIM",
+          "source_start_seconds": 0
+        },
+        {
+          "id": "shot_16",
+          "segment": "cta",
+          "asset": "visual_16",
+          "motion": "pan_right",
+          "transition_out": "crossfade"
+        }
+      ]
+    },
+    "assets.json": {
+      "schema_version": 1,
+      "assets": [
+        {
+          "id": "visual_01",
+          "file": "youtube-roFHTZqp-VQ.mp4",
+          "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_02",
+          "file": "youtube-Nsl96ot3AGU.mp4",
+          "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_03",
+          "file": "youtube-KLWpoREpK3U.mp4",
+          "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_04",
+          "file": "youtube-H9cNXv0f6EI.mp4",
+          "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_05",
+          "file": "tim-album-cover.jpg",
+          "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+          "credit": "Discografia Brasileira / IMMuB",
+          "license": "Source page credited; rights not independently verified",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_06",
+          "file": "youtube-PDQrcz4KUKs.mp4",
+          "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_07",
+          "file": "tim-bravo-story.jpg",
+          "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+          "credit": "Bravo!",
+          "license": "Source page credited; rights not independently verified",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_08",
+          "file": "youtube-lG-eNorxpO0.mp4",
+          "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_09",
+          "file": "tim-maia-1987.jpg",
+          "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+          "credit": "Afropop Worldwide / Sonia D'Almeida",
+          "license": "Source page credited; rights not independently verified",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_10",
+          "file": "youtube-A9kTV-wpiWk.mp4",
+          "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_11",
+          "file": "tim-vinyl.jpeg",
+          "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+          "credit": "Acervo de marketplace musical",
+          "license": "Source page credited; rights not independently verified",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_12",
+          "file": "youtube-crrqRBnxP2k.mp4",
+          "url": "https://www.youtube.com/watch?v=crrqRBnxP2k",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_13",
+          "file": "tim-discography.jpg",
+          "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+          "credit": "Letras.mus.br",
+          "license": "Source page credited; rights not independently verified",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_14",
+          "file": "youtube-COmxt5GmfNU.mp4",
+          "url": "https://www.youtube.com/watch?v=COmxt5GmfNU",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_15",
+          "file": "youtube-wyaCWQvOLYg.mp4",
+          "url": "https://www.youtube.com/watch?v=wyaCWQvOLYg",
+          "credit": "YouTube — canal/fonte identificada na página",
+          "license": "Source page credited",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_16",
+          "file": "tim-cultural-portrait.png",
+          "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+          "credit": "Cultura UOL",
+          "license": "Source page credited; rights not independently verified",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        }
+      ]
+    },
+    "visual_candidates.json": {
+      "schema_version": 1,
+      "slots": [
+        {
+          "id": "shot_01",
+          "visual_intent": "Vídeo real de Tim Maia cantando, reconhecível já no primeiro take",
+          "required_seconds": 4.2,
+          "inspect_top": 6,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_02",
+          "visual_intent": "Tim Maia em performance para apresentar a relação dos compositores com seu repertório",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_03",
+          "visual_intent": "Registro audiovisual de Tim Maia para sustentar a apresentação das sete músicas",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_04",
+          "visual_intent": "Performance de Tim Maia para a reação e escolha das composições",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_05",
+          "visual_intent": "Capa do álbum e contexto documental para introduzir o mapa das praias",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia image 1 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+              "source_page_url": "https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares",
+              "credit": "Discografia Brasileira / IMMuB",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Capa do álbum O Descobridor dos Sete Mares"
+            },
+            {
+              "name": "Tim Maia image 2 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+              "source_page_url": "https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/",
+              "credit": "Bravo!",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Imagem editorial de Tim Maia associada à história da canção"
+            },
+            {
+              "name": "Tim Maia image 3 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+              "source_page_url": "https://www.afropop.org/",
+              "credit": "Afropop Worldwide / Sonia D'Almeida",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Fotografia de Tim Maia em 1987"
+            },
+            {
+              "name": "Tim Maia image 4 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+              "source_page_url": "https://cdn.awsli.com.br/",
+              "credit": "Acervo de marketplace musical",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Registro fotográfico do vinil de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 5 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+              "source_page_url": "https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/",
+              "credit": "Letras.mus.br",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Arte de capa do álbum de 1983"
+            },
+            {
+              "name": "Tim Maia image 6 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+              "source_page_url": "https://cultura.uol.com.br/",
+              "credit": "Cultura UOL",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Retrato editorial de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 7 for shot 5",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc",
+              "source_page_url": "https://www.enjoei.com.br/",
+              "credit": "Enjoei / vendedor do acervo",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Fotografia de exemplar do LP O Descobridor dos Sete Mares"
+            }
+          ]
+        },
+        {
+          "id": "shot_06",
+          "visual_intent": "Tim Maia em show, conectando nomes de praias à musicalidade",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_07",
+          "visual_intent": "Imagem editorial de Tim Maia para ilustrar a viagem litorânea",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia image 1 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+              "source_page_url": "https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/",
+              "credit": "Bravo!",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Imagem editorial de Tim Maia associada à história da canção"
+            },
+            {
+              "name": "Tim Maia image 2 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+              "source_page_url": "https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares",
+              "credit": "Discografia Brasileira / IMMuB",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Capa do álbum O Descobridor dos Sete Mares"
+            },
+            {
+              "name": "Tim Maia image 3 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+              "source_page_url": "https://www.afropop.org/",
+              "credit": "Afropop Worldwide / Sonia D'Almeida",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Fotografia de Tim Maia em 1987"
+            },
+            {
+              "name": "Tim Maia image 4 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+              "source_page_url": "https://cdn.awsli.com.br/",
+              "credit": "Acervo de marketplace musical",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Registro fotográfico do vinil de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 5 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+              "source_page_url": "https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/",
+              "credit": "Letras.mus.br",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Arte de capa do álbum de 1983"
+            },
+            {
+              "name": "Tim Maia image 6 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+              "source_page_url": "https://cultura.uol.com.br/",
+              "credit": "Cultura UOL",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Retrato editorial de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 7 for shot 7",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc",
+              "source_page_url": "https://www.enjoei.com.br/",
+              "credit": "Enjoei / vendedor do acervo",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Fotografia de exemplar do LP O Descobridor dos Sete Mares"
+            }
+          ]
+        },
+        {
+          "id": "shot_08",
+          "visual_intent": "Vídeo de Tim Maia para a revelação dos créditos de composição",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_09",
+          "visual_intent": "Fotografia histórica de Tim Maia no contexto do lançamento",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia image 1 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+              "source_page_url": "https://www.afropop.org/",
+              "credit": "Afropop Worldwide / Sonia D'Almeida",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Fotografia de Tim Maia em 1987"
+            },
+            {
+              "name": "Tim Maia image 2 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+              "source_page_url": "https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares",
+              "credit": "Discografia Brasileira / IMMuB",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Capa do álbum O Descobridor dos Sete Mares"
+            },
+            {
+              "name": "Tim Maia image 3 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+              "source_page_url": "https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/",
+              "credit": "Bravo!",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Imagem editorial de Tim Maia associada à história da canção"
+            },
+            {
+              "name": "Tim Maia image 4 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+              "source_page_url": "https://cdn.awsli.com.br/",
+              "credit": "Acervo de marketplace musical",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Registro fotográfico do vinil de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 5 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+              "source_page_url": "https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/",
+              "credit": "Letras.mus.br",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Arte de capa do álbum de 1983"
+            },
+            {
+              "name": "Tim Maia image 6 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+              "source_page_url": "https://cultura.uol.com.br/",
+              "credit": "Cultura UOL",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Retrato editorial de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 7 for shot 9",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc",
+              "source_page_url": "https://www.enjoei.com.br/",
+              "credit": "Enjoei / vendedor do acervo",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Fotografia de exemplar do LP O Descobridor dos Sete Mares"
+            }
+          ]
+        },
+        {
+          "id": "shot_10",
+          "visual_intent": "Performance com banda para falar de produção e arranjo",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video A9kTV-wpiWk",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "A9kTV-wpiWk",
+              "video_id": "A9kTV-wpiWk",
+              "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "source_page_url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_11",
+          "visual_intent": "Imagem de LP para sustentar a descrição instrumental",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia image 1 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+              "source_page_url": "https://cdn.awsli.com.br/",
+              "credit": "Acervo de marketplace musical",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro fotográfico do vinil de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 2 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+              "source_page_url": "https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares",
+              "credit": "Discografia Brasileira / IMMuB",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Capa do álbum O Descobridor dos Sete Mares"
+            },
+            {
+              "name": "Tim Maia image 3 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+              "source_page_url": "https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/",
+              "credit": "Bravo!",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Imagem editorial de Tim Maia associada à história da canção"
+            },
+            {
+              "name": "Tim Maia image 4 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+              "source_page_url": "https://www.afropop.org/",
+              "credit": "Afropop Worldwide / Sonia D'Almeida",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Fotografia de Tim Maia em 1987"
+            },
+            {
+              "name": "Tim Maia image 5 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+              "source_page_url": "https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/",
+              "credit": "Letras.mus.br",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Arte de capa do álbum de 1983"
+            },
+            {
+              "name": "Tim Maia image 6 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+              "source_page_url": "https://cultura.uol.com.br/",
+              "credit": "Cultura UOL",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Retrato editorial de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 7 for shot 11",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc",
+              "source_page_url": "https://www.enjoei.com.br/",
+              "credit": "Enjoei / vendedor do acervo",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Fotografia de exemplar do LP O Descobridor dos Sete Mares"
+            }
+          ]
+        },
+        {
+          "id": "shot_12",
+          "visual_intent": "Tim Maia ao vivo para apresentar as outras músicas escolhidas",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video crrqRBnxP2k",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "crrqRBnxP2k",
+              "video_id": "crrqRBnxP2k",
+              "url": "https://www.youtube.com/watch?v=crrqRBnxP2k",
+              "source_page_url": "https://www.youtube.com/watch?v=crrqRBnxP2k",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_13",
+          "visual_intent": "Arte de discografia para o trecho emocional sobre Neves e Parques",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia image 1 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+              "source_page_url": "https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/",
+              "credit": "Letras.mus.br",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Arte de capa do álbum de 1983"
+            },
+            {
+              "name": "Tim Maia image 2 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+              "source_page_url": "https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares",
+              "credit": "Discografia Brasileira / IMMuB",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Capa do álbum O Descobridor dos Sete Mares"
+            },
+            {
+              "name": "Tim Maia image 3 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+              "source_page_url": "https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/",
+              "credit": "Bravo!",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Imagem editorial de Tim Maia associada à história da canção"
+            },
+            {
+              "name": "Tim Maia image 4 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+              "source_page_url": "https://www.afropop.org/",
+              "credit": "Afropop Worldwide / Sonia D'Almeida",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Fotografia de Tim Maia em 1987"
+            },
+            {
+              "name": "Tim Maia image 5 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+              "source_page_url": "https://cdn.awsli.com.br/",
+              "credit": "Acervo de marketplace musical",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Registro fotográfico do vinil de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 6 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+              "source_page_url": "https://cultura.uol.com.br/",
+              "credit": "Cultura UOL",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Retrato editorial de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 7 for shot 13",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc",
+              "source_page_url": "https://www.enjoei.com.br/",
+              "credit": "Enjoei / vendedor do acervo",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Fotografia de exemplar do LP O Descobridor dos Sete Mares"
+            }
+          ]
+        },
+        {
+          "id": "shot_14",
+          "visual_intent": "Tim Maia em performance para explicar o método criativo dos compositores",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video COmxt5GmfNU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "COmxt5GmfNU",
+              "video_id": "COmxt5GmfNU",
+              "url": "https://www.youtube.com/watch?v=COmxt5GmfNU",
+              "source_page_url": "https://www.youtube.com/watch?v=COmxt5GmfNU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_15",
+          "visual_intent": "Vídeo forte e reconhecível de Tim Maia para o payoff",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia video wyaCWQvOLYg",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wyaCWQvOLYg",
+              "video_id": "wyaCWQvOLYg",
+              "url": "https://www.youtube.com/watch?v=wyaCWQvOLYg",
+              "source_page_url": "https://www.youtube.com/watch?v=wyaCWQvOLYg",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Registro audiovisual selecionado de Tim Maia, coerente com a frase"
+            },
+            {
+              "name": "Tim Maia video roFHTZqp-VQ",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "roFHTZqp-VQ",
+              "video_id": "roFHTZqp-VQ",
+              "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "source_page_url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video Nsl96ot3AGU",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "Nsl96ot3AGU",
+              "video_id": "Nsl96ot3AGU",
+              "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "source_page_url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video KLWpoREpK3U",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "KLWpoREpK3U",
+              "video_id": "KLWpoREpK3U",
+              "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "source_page_url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video H9cNXv0f6EI",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "H9cNXv0f6EI",
+              "video_id": "H9cNXv0f6EI",
+              "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "source_page_url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video PDQrcz4KUKs",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "PDQrcz4KUKs",
+              "video_id": "PDQrcz4KUKs",
+              "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "source_page_url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            },
+            {
+              "name": "Tim Maia video lG-eNorxpO0",
+              "kind": "video",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "lG-eNorxpO0",
+              "video_id": "lG-eNorxpO0",
+              "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "source_page_url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+              "credit": "YouTube",
+              "license": "Source page credited",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Alternativa audiovisual concreta de Tim Maia ou de seu repertório"
+            }
+          ]
+        },
+        {
+          "id": "shot_16",
+          "visual_intent": "Retrato de Tim Maia para encerrar com a pergunta sobre praias brasileiras",
+          "required_seconds": 3.7,
+          "inspect_top": 4,
+          "min_visual_score": 0.52,
+          "candidates": [
+            {
+              "name": "Tim Maia image 1 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+              "source_page_url": "https://cultura.uol.com.br/",
+              "credit": "Cultura UOL",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "direct",
+              "editorial_rank": 1,
+              "description": "Retrato editorial de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 2 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+              "source_page_url": "https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares",
+              "credit": "Discografia Brasileira / IMMuB",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 2,
+              "description": "Capa do álbum O Descobridor dos Sete Mares"
+            },
+            {
+              "name": "Tim Maia image 3 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+              "source_page_url": "https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/",
+              "credit": "Bravo!",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 3,
+              "description": "Imagem editorial de Tim Maia associada à história da canção"
+            },
+            {
+              "name": "Tim Maia image 4 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+              "source_page_url": "https://www.afropop.org/",
+              "credit": "Afropop Worldwide / Sonia D'Almeida",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 4,
+              "description": "Fotografia de Tim Maia em 1987"
+            },
+            {
+              "name": "Tim Maia image 5 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+              "source_page_url": "https://cdn.awsli.com.br/",
+              "credit": "Acervo de marketplace musical",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 5,
+              "description": "Registro fotográfico do vinil de Tim Maia"
+            },
+            {
+              "name": "Tim Maia image 6 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+              "source_page_url": "https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/",
+              "credit": "Letras.mus.br",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 6,
+              "description": "Arte de capa do álbum de 1983"
+            },
+            {
+              "name": "Tim Maia image 7 for shot 16",
+              "kind": "image",
+              "source": "web",
+              "search_provider": "authoring-pool",
+              "url": "https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc",
+              "source_page_url": "https://www.enjoei.com.br/",
+              "credit": "Enjoei / vendedor do acervo",
+              "license": "Source page credited; rights not independently verified",
+              "rights_status": "reference_only",
+              "semantic_fit": "contextual",
+              "editorial_rank": 7,
+              "description": "Fotografia de exemplar do LP O Descobridor dos Sete Mares"
+            }
+          ]
+        }
+      ]
+    },
+    "sources.txt": "PESQUISA EDITORIAL E HISTÓRICA\nBravo! — A história inusitada de “O Descobridor dos Sete Mares”, hit atemporal de Tim Maia:\nhttps://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/\n\nDiscografia Brasileira / IMMuB — álbum O Descobridor dos Sete Mares (1983), créditos de composição, produção, músicos e arranjadores:\nhttps://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares\nhttps://discografia.discosdobrasil.com.br/compositor/michel\nhttps://discografia.discosdobrasil.com.br/compositor/gilson-mendonca\n\nVÍDEOS CONCRETOS\nhttps://www.youtube.com/watch?v=roFHTZqp-VQ\nhttps://www.youtube.com/watch?v=Nsl96ot3AGU\nhttps://www.youtube.com/watch?v=KLWpoREpK3U\nhttps://www.youtube.com/watch?v=H9cNXv0f6EI\nhttps://www.youtube.com/watch?v=PDQrcz4KUKs\nhttps://www.youtube.com/watch?v=lG-eNorxpO0\nhttps://www.youtube.com/watch?v=A9kTV-wpiWk\nhttps://www.youtube.com/watch?v=crrqRBnxP2k\nhttps://www.youtube.com/watch?v=COmxt5GmfNU\nhttps://www.youtube.com/watch?v=wyaCWQvOLYg\n\nIMAGENS E PÁGINAS-FONTE\nhttps://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares\nhttps://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg\nhttps://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/\nhttps://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920\nhttps://www.afropop.org/\nhttps://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg\nhttps://cdn.awsli.com.br/\nhttps://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg\nhttps://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/\nhttps://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg\nhttps://cultura.uol.com.br/\nhttps://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png\nhttps://www.enjoei.com.br/\nhttps://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc\n\nBACKGROUND MUSIC — DECISÃO EDITORIAL\nBusca internet-first comparou instrumentais soul, funk, disco e documentais leves. As opções externas encontradas não podiam ser incorporadas com segurança ao catálogo global dentro desta transação de autoria restrita ao episódio. Foi escolhido o profile local bright_fun, semanticamente compatível com a descoberta leve e a energia soul/funk da história. O profile existe no catálogo atual e usa arquivos locais versionados; há evidência recente de Media Preflight decodificando assets/audio/music/bright_fun/summer-fun-01.mp3. Volume configurado em 0.055. A escolha fica sujeita aos hard gates atuais de disponibilidade e freshness antes de qualquer render ou queue.\n\nDIREITOS\nTodos os visuais são referências com página-fonte e crédito registrados em assets.json e visual_candidates.json. Direitos não foram presumidos quando a fonte não expôs licença explícita. Nenhum URL de busca ou página HTML foi usado como locator de mídia final.",
+    "post.json": {
+      "schema_version": 1,
+      "cover": {
+        "headline": "UM MAPA VIROU HIT",
+        "source": {
+          "type": "video_frame",
+          "timestamp_seconds": 0.7,
+          "asset_id": "visual_01"
+        }
+      },
+      "youtube": {
+        "title": "O mapa que virou um dos maiores hits de Tim Maia",
+        "description": "O Descobridor dos Sete Mares nasceu de um método improvável: dois publicitários fãs de Tim Maia estudaram seu repertório, levaram sete músicas e transformaram um mapa de praias em um clássico de 1983.",
+        "hashtags": [
+          "timmaia",
+          "odescobridordossetemares",
+          "mpb",
+          "musicasbrasileiras",
+          "alemdohit"
+        ],
+        "privacy_status": "public",
+        "category_id": "10"
+      },
+      "instagram": {
+        "caption": "Dois fãs estudaram a linguagem de Tim Maia, levaram sete composições e usaram um mapa de praias para criar O Descobridor dos Sete Mares. O crédito é de Michel e Gilson Mendonça — e a interpretação de Tim transformou a ideia em clássico.",
+        "hashtags": [
+          "timmaia",
+          "odescobridordossetemares",
+          "mpb",
+          "soulbrasileiro",
+          "musica",
+          "curiosidades",
+          "alemdohit"
+        ],
+        "share_to_feed": true,
+        "thumb_offset_ms": 1000
+      },
+      "facebook": {
+        "title": "O mapa que virou um dos maiores hits de Tim Maia",
+        "caption": "Dois publicitários fãs de Tim Maia estudaram seu repertório, apresentaram sete músicas e transformaram um mapa de praias em O Descobridor dos Sete Mares. A história por trás do clássico de 1983.",
+        "hashtags": [
+          "timmaia",
+          "mpb",
+          "reels",
+          "alemdohit"
+        ]
+      },
+      "tiktok": {
+        "caption": "O mapa de praias que virou um clássico de Tim Maia.",
+        "hashtags": [
+          "timmaia",
+          "mpb",
+          "musica",
+          "alemdohit"
+        ],
+        "privacy_level": "SELF_ONLY",
+        "video_cover_timestamp_ms": 1000,
+        "disable_comment": false,
+        "disable_duet": false,
+        "disable_stitch": false,
+        "brand_content_toggle": false,
+        "brand_organic_toggle": false,
+        "is_aigc": false
+      }
+    }
+  }
+}
