@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "episode": "o_descobridor_dos_sete_mares_tim_maia",
+  "recorded_at": "2026-10-01T10:45:53Z",
+  "visual_usage": [
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_01",
+      "asset_id": "visual_01",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8b5ccc0d7a76592bbfe29a1b68bf96f4ac24a703d22b88b45c99d947a92fd419",
+        "url_hashes": [
+          "1b5baecf4418079b97638171de5ef8d50c3255fd3a33130dda6ff83c973ec180"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9c33668893ce9b33",
+          "8c3165396c9997e6",
+          "9a4b63b3d950b389",
+          "a59d0e6ce4c00fdd",
+          "997267bd1602697c",
+          "e18a1f70e03f1ee1",
+          "8b73649a33ee1952",
+          "9a73699ab12d98d2"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 7.633333
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_02",
+      "asset_id": "visual_02",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "90671b4ccf94b41724e4337617a1ef39596e1a346dfba8ab1cfbae7a763657a0",
+        "url_hashes": [
+          "ad1a471b203af94d814cc6472bb8d03ba7f646ee7f8984cd98ab1beaf3457dc1"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "906a6b1fb6314b69",
+          "946a6b37b6314b25",
+          "916eb1669965366a",
+          "9768974ec99262ad",
+          "8768964f3c9a6593",
+          "d06f945a6790cb35",
+          "856e63c78c626397",
+          "847a69c9968e6b71"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.2
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_03",
+      "asset_id": "visual_03",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "13f0aba28f11e226b1bad22150c1e2112cb3460eb903901d42db0802dac3ea61",
+        "url_hashes": [
+          "89c8a98fe799e5d19d836e1d751944cd41103b91c7248a7f53c2df8691941f83"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "956ab530933473c7",
+          "956ab5305bb431cb",
+          "976ab5345b9430cb",
+          "956bb5709ba438c3",
+          "9768a47ab54b38c3",
+          "944ba56a3aa77871",
+          "956abd6c32873872",
+          "966ba57093b470c7"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.8
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_04",
+      "asset_id": "visual_04",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1c2e7f177bd4a6180bdadf1b6cce198fc2d325850bf9b575dbe70361c240c304",
+        "url_hashes": [
+          "8f3b3f1be1511b42bd08be56a078c44729284f0351f61b21f3261263151abf11"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "982772d29964d39d",
+          "9c2772990f7493cc",
+          "cc2972db4e3093cd",
+          "9c6733934c31c7cc",
+          "8c69b1c74c31c7cd",
+          "c639b1c66e30cc67",
+          "c638b1c66d90cd67"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.9
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_05",
+      "asset_id": "visual_05",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8929ef1f3ba1f995f4ef3fe7d805a415548172c07836d2bf95d4dd68101e9ea8",
+        "url_hashes": [
+          "c0875ee18496736d7f479ed97d76e3dbfce1d12a26ea867ef4b51064feda9615"
+        ],
+        "perceptual_hashes": [
+          "b88987a6c4fa7325",
+          "bac981a6c4faf321",
+          "bad981a484f6917b",
+          "f0828f89f4764a5d",
+          "f07096660b0b5d9f",
+          "add4f2f3d93c2401",
+          "ad0dd438f6e263c2"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_06",
+      "asset_id": "visual_06",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "ebcd5a6d72df642baa637aaf7eb1a0e1db7f7eaa943355600cd3ed7082abc274",
+        "url_hashes": [
+          "8190dd1ca4b7484601167e8a5bbf7065c3a784a5f7b5e7fff30318afef4c0336"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8d8d69723292cdcd",
+          "9d8d69723292c9cd",
+          "948d69723296cdcd",
+          "9c8d69723296c9cd",
+          "8c8d69723296cdcd",
+          "958d69723292cdcd",
+          "948d69723296cdcd",
+          "958d6972b686cd86"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.733333
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_07",
+      "asset_id": "visual_07",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "84f3cc8b4f94b1b5dd0ff93951ba233f6b2ce7f8d375cae298b3e9b135967398",
+        "url_hashes": [
+          "471151c4ed1f13add8f1ea7cf46de0586267d0c6504189ecab072005f952ff47"
+        ],
+        "perceptual_hashes": [
+          "e2b8139c2df2644f",
+          "f0ba12bd0bb224fa",
+          "d49b92ad0ab624f6",
+          "f394a55a654b54d2",
+          "c3fa05b94a95f60a",
+          "eb8999a519a649ec",
+          "fb8e599a24c98ca6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_08",
+      "asset_id": "visual_08",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "74ded67a0480f9e207e9fa975cf187a33109b080ae0af7333a77765f813d8a68",
+        "url_hashes": [
+          "a0fa807c16c5ba0170aea3e975a69d9ba4cafcb6f0729acd7dd4426fd15f591b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9c7a68954d68a39d",
+          "9c7868956d2b955c",
+          "9c786c8d69aa855e",
+          "9c78648d69aa975c",
+          "9c78649d69a6855e",
+          "9c68649d69a4975e",
+          "9533ad72ac5aca62",
+          "9535c57ac24ad86e"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.6
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_09",
+      "asset_id": "visual_09",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "9913b857e1324b2c65af17f067918692361ba611f49a649c755878914077542e",
+        "url_hashes": [
+          "9bf91f3527dd62095251d4e50bdaa55e50191eb764a76c9e7d238a4073b25eb5"
+        ],
+        "perceptual_hashes": [
+          "bbb6cc589f047093",
+          "b3b7c4588f4568b2",
+          "b3a7cc588f4d0cf0",
+          "b688833d8a67a56e",
+          "b6e48863f594ca1e",
+          "98a1c78dd23fb930",
+          "98b8c07f2f89f2a4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_10",
+      "asset_id": "visual_10",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "5f98fb679f8d94931864e3fe2e7ec2845b91105dd243cf78f60a586d1dcde246",
+        "url_hashes": [
+          "fbdc821b96304ef4436bd4754deb23e821fb47719f28dd584135f6429c4d101a"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a45bb865d324db52",
+          "a75aa82154aef35c",
+          "865ba86552accb7a",
+          "a553a82f54adcb54",
+          "c62e1ff0e10b3e0d",
+          "c61e30f13be2d80f",
+          "a45baa6552a7595a",
+          "976aac655aa7191a"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.2
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_11",
+      "asset_id": "visual_11",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "cbfc3e6094da98083a51b89e781408b81eb407637746769b9e451a2958bb60bd",
+        "url_hashes": [
+          "06551cc0434046f5ce3375d98fd1dca14db09904a89f735442da2bfeb0a9e784"
+        ],
+        "perceptual_hashes": [
+          "d4b12a2d8c8b99ed",
+          "d4b12c29ce1b8bab",
+          "d7bb6d29451b0a2a",
+          "84263b9f949fc0cd",
+          "84a671679b43a13f",
+          "d52c2e8588adeed2",
+          "d1dd4a2cc772da50"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_12",
+      "asset_id": "visual_12",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9485a8547097f54f16c4eef95786e262dfa8e4fc14212b8d7873ff85d85bf18c",
+        "url_hashes": [
+          "52315a3ec1272c5407421406ed063f9a39780510926b759ebcc6301398e1a7bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "916ee9d2267119c7",
+          "916ec8f1ae6538c3",
+          "916e6bb524b478c3",
+          "916a6bb534e638c9",
+          "916a69353ce63cc9",
+          "916e6b3534e61cc9",
+          "957a6b3d35649449"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.0
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_13",
+      "asset_id": "visual_13",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b7fb1480f6b57a92ec688deb8321ba497876cbbff8e01c5e42256c05b38ae664",
+        "url_hashes": [
+          "57f3dbe28e82a58c31271eeb4822f5137c6f348ff882dcd644a276353495623f"
+        ],
+        "perceptual_hashes": [
+          "f8c98726c47b710d",
+          "fac981a6c4fad129",
+          "fad981a484f6b169",
+          "f08a8f89f4764a1d",
+          "f07086268b1bddb5",
+          "add6f2a3d93c2601",
+          "ad0dde28e2e241db"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_14",
+      "asset_id": "visual_14",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9a8d7b453911a82f9098708807abc98676ff7a6643a6aa0ab511e5e4c7b63561",
+        "url_hashes": [
+          "2bf2c49f43273f2991c64dd487aa412ccc31e4fcad064ed44bdf93107a46a555"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "71ca46478c86b212",
+          "8d7073cc6c3333cc",
+          "8d30d3cc3433cfcc",
+          "8d70e3cc6c339b8c",
+          "8d30e3cd7433c98e",
+          "8d30e3cc3c33c9ce",
+          "cd36d3cf363081c6",
+          "cd36d1c73630c5c6"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 8.466667
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_15",
+      "asset_id": "visual_15",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "752c04f7fe3a9e31af878ba077d6cb28efff0f55d546aa035badb084fb7b520c",
+        "url_hashes": [
+          "f8eb0499054866acc00231104dc5aa5b369d511fd1633b94d2337727f383ce0f"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cccc3333cccc3333",
+          "cccc3333cccc3333",
+          "cdc93236cc8d3372",
+          "c9cd6632999966a6",
+          "c9c9663699996666",
+          "c9c9663699996666",
+          "c5cd7e32b1994a62",
+          "cdcd7232b58d4a62"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 8.0
+      }
+    },
+    {
+      "episode": "o_descobridor_dos_sete_mares_tim_maia",
+      "shot_id": "shot_16",
+      "asset_id": "visual_16",
+      "recorded_at": "2026-10-01T10:45:53Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "9415714a1c3d08a556a9ed549ffb1e373be0aa1dbd723944b40897e4952ff469",
+        "url_hashes": [
+          "43165576760bcfff226a1b9bb6c7edd4f97f64dbc962409abdb28e24e2f64ac5"
+        ],
+        "perceptual_hashes": [
+          "947aadc46b99f043",
+          "867aa9e46b9ce443",
+          "867ba96543bcc50b",
+          "85768b6f11eb14a9",
+          "8c7714ab6e0e31ab",
+          "d12cb66a8df22897",
+          "d16a8dd6722807f3"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
