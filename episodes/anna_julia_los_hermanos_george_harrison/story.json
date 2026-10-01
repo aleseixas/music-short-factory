@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "title": "Como Anna Júlia chegou à guitarra de George Harrison",
+  "slug": "anna_julia_los_hermanos_george_harrison",
+  "target_duration_seconds": 72,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "O maior sucesso do Los Hermanos nasceu de uma paixão não correspondida — e acabou chegando à guitarra de George Harrison.",
+      "delivery": "hook"
+    },
+    {
+      "id": "amigo",
+      "text": "Marcelo Camelo escreveu Anna Júlia para ajudar o amigo Alex Werner, apaixonado por Anna Júlia Werneck.",
+      "delivery": "curious"
+    },
+    {
+      "id": "fora",
+      "text": "Ela não correspondia ao sentimento. Camelo transformou a história do amigo em uma canção direta e dolorida.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "explosao",
+      "text": "Lançada em 1999, a faixa explodiu e colocou uma banda estreante no centro do rock brasileiro.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "peso",
+      "text": "O sucesso foi tão grande que, por anos, parecia maior do que o próprio Los Hermanos.",
+      "delivery": "curious"
+    },
+    {
+      "id": "virada",
+      "text": "Mas a história atravessou o Atlântico quando Jim Capaldi conheceu Camelo no Prêmio Multishow de 2001.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "pedido",
+      "text": "O ex-integrante do Traffic pediu autorização para gravar uma versão em inglês.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "titulo",
+      "text": "Na adaptação, Anna Júlia virou simplesmente Anna Julia — agora cantada por Capaldi.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "harrison",
+      "text": "E a guitarra ficou com George Harrison, o ex-Beatle que era amigo de Jim Capaldi.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "ultimas",
+      "text": "A gravação é citada como um dos últimos registros de Harrison na guitarra antes de sua morte, em 2001.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "time",
+      "text": "A sessão ainda reuniu Paul Weller e Ian Paice, do Deep Purple: um time improvável para um hit brasileiro.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "disco",
+      "text": "A versão entrou no álbum Living on the Outside, lançado por Capaldi em 2001.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "contraste",
+      "text": "De um amor adolescente no Rio a músicos que ajudaram a escrever a história do rock britânico.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "forca",
+      "text": "Tudo porque uma melodia simples carregava uma emoção que não precisava de tradução.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "payoff",
+      "text": "Anna Júlia virou mais do que o hit que marcou o Los Hermanos: virou uma ponte entre duas cenas musicais.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "cta",
+      "text": "Você já conhecia essa conexão com George Harrison? Comenta e segue o Além do Hit.",
+      "delivery": "payoff"
+    }
+  ]
+}

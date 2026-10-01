@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "ANNA JÚLIA E UM BEATLE",
+    "source": {
+      "type": "video_frame",
+      "timestamp_seconds": 0.7,
+      "asset_id": "visual_01"
+    }
+  },
+  "youtube": {
+    "title": "Como Anna Júlia chegou à guitarra de George Harrison",
+    "description": "O hit que revelou Los Hermanos nasceu de uma paixão não correspondida e ganhou, em 2001, uma versão inglesa de Jim Capaldi com George Harrison na guitarra.",
+    "hashtags": [
+      "annajulia",
+      "loshermanos",
+      "georgeharrison",
+      "rockbrasileiro",
+      "alemdohit"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Anna Júlia nasceu de uma paixão não correspondida no Rio. Dois anos depois, Jim Capaldi gravou uma versão inglesa com George Harrison na guitarra — uma conexão improvável entre Los Hermanos e a história do rock britânico.",
+    "hashtags": [
+      "annajulia",
+      "loshermanos",
+      "georgeharrison",
+      "rockbrasileiro",
+      "musica",
+      "curiosidades",
+      "alemdohit"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "facebook": {
+    "title": "Como Anna Júlia chegou a George Harrison",
+    "caption": "A história do hit de Los Hermanos começou com uma paixão não correspondida e atravessou o Atlântico até uma gravação de Jim Capaldi com George Harrison.",
+    "hashtags": [
+      "annajulia",
+      "loshermanos",
+      "georgeharrison",
+      "alemdohit"
+    ]
+  },
+  "tiktok": {
+    "caption": "O hit do Los Hermanos que chegou à guitarra de George Harrison.",
+    "hashtags": [
+      "annajulia",
+      "loshermanos",
+      "georgeharrison",
+      "rockbrasileiro",
+      "alemdohit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

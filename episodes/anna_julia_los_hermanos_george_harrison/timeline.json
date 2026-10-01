@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "uplifting_documentary",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "impact",
+      "volume": 0.15
+    },
+    {
+      "time_seconds": 22,
+      "type": "whoosh_fast",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 38,
+      "type": "chime_sparkles",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 56,
+      "type": "whoosh_fast",
+      "volume": 0.1
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.3,
+      "text": "DO RIO A GEORGE HARRISON",
+      "accent_text": "GEORGE HARRISON",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.84
+    },
+    {
+      "segment": "virada",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "A HISTÓRIA CRUZOU O ATLÂNTICO",
+      "accent_text": "ATLÂNTICO",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.76
+    },
+    {
+      "segment": "harrison",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "GUITARRA: GEORGE HARRISON",
+      "accent_text": "GEORGE HARRISON",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.82
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "UMA PONTE ENTRE CENAS",
+      "accent_text": "PONTE",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.78
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "visual_01",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "DO RIO A GEORGE HARRISON",
+      "source_start_seconds": 8
+    },
+    {
+      "id": "shot_02",
+      "segment": "amigo",
+      "asset": "visual_02",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "fora",
+      "asset": "visual_03",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 12
+    },
+    {
+      "id": "shot_04",
+      "segment": "explosao",
+      "asset": "visual_04",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 15
+    },
+    {
+      "id": "shot_05",
+      "segment": "peso",
+      "asset": "visual_05",
+      "motion": "push_in",
+      "transition_out": "crossfade"
+    },
+    {
+      "id": "shot_06",
+      "segment": "virada",
+      "asset": "visual_06",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "A HISTÓRIA CRUZOU O ATLÂNTICO",
+      "source_start_seconds": 20
+    },
+    {
+      "id": "shot_07",
+      "segment": "pedido",
+      "asset": "visual_07",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "titulo",
+      "asset": "visual_08",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 10
+    },
+    {
+      "id": "shot_09",
+      "segment": "harrison",
+      "asset": "visual_09",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "GUITARRA: GEORGE HARRISON"
+    },
+    {
+      "id": "shot_10",
+      "segment": "ultimas",
+      "asset": "visual_10",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "highlight": "UM DOS ÚLTIMOS REGISTROS",
+      "source_start_seconds": 12
+    },
+    {
+      "id": "shot_11",
+      "segment": "time",
+      "asset": "visual_11",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "source_start_seconds": 18
+    },
+    {
+      "id": "shot_12",
+      "segment": "disco",
+      "asset": "visual_12",
+      "motion": "pan_right",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_13",
+      "segment": "contraste",
+      "asset": "visual_13",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "source_start_seconds": 20
+    },
+    {
+      "id": "shot_14",
+      "segment": "forca",
+      "asset": "visual_14",
+      "motion": "pan_left",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_15",
+      "segment": "payoff",
+      "asset": "visual_15",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "UMA PONTE ENTRE CENAS",
+      "source_start_seconds": 14
+    },
+    {
+      "id": "shot_16",
+      "segment": "cta",
+      "asset": "visual_16",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 16
+    }
+  ]
+}
