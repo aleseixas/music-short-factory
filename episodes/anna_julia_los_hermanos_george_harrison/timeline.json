@@ -79,7 +79,7 @@
       "motion": "push_in",
       "transition_out": "crossfade",
       "highlight": "DO RIO A GEORGE HARRISON",
-      "source_start_seconds": 8
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_02",
@@ -94,7 +94,7 @@
       "asset": "visual_03",
       "motion": "pull_out",
       "transition_out": "cut",
-      "source_start_seconds": 12
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_04",
@@ -102,7 +102,7 @@
       "asset": "visual_04",
       "motion": "pan_right",
       "transition_out": "cut",
-      "source_start_seconds": 15
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_05",
@@ -118,7 +118,7 @@
       "motion": "pan_left",
       "transition_out": "cut",
       "highlight": "A HISTÓRIA CRUZOU O ATLÂNTICO",
-      "source_start_seconds": 20
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_07",
@@ -133,7 +133,7 @@
       "asset": "visual_08",
       "motion": "pan_right",
       "transition_out": "cut",
-      "source_start_seconds": 10
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_09",
@@ -150,7 +150,7 @@
       "motion": "pan_left",
       "transition_out": "cut",
       "highlight": "UM DOS ÚLTIMOS REGISTROS",
-      "source_start_seconds": 12
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_11",
@@ -158,7 +158,7 @@
       "asset": "visual_11",
       "motion": "pull_out",
       "transition_out": "cut",
-      "source_start_seconds": 18
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_12",
@@ -173,7 +173,7 @@
       "asset": "visual_13",
       "motion": "push_in",
       "transition_out": "crossfade",
-      "source_start_seconds": 20
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_14",
@@ -189,7 +189,7 @@
       "motion": "pull_out",
       "transition_out": "cut",
       "highlight": "UMA PONTE ENTRE CENAS",
-      "source_start_seconds": 14
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_16",
@@ -197,7 +197,7 @@
       "asset": "visual_16",
       "motion": "pan_right",
       "transition_out": "cut",
-      "source_start_seconds": 16
+      "source_start_seconds": 6.225
     }
   ]
 }
