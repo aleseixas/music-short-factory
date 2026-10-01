@@ -1,0 +1,416 @@
+{
+  "schema_version": 1,
+  "episode": "rick_renner_ela_e_demais_virada_1998",
+  "recorded_at": "2026-10-01T00:12:43Z",
+  "visual_usage": [
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_01",
+      "asset_id": "visual_01",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "66d817ac2c5e5cda6dec6fa63948850a78dab22534a3219a75d0728ae6e22eb6",
+        "url_hashes": [
+          "7899f5bd6ddd12a73e2e183954c2d05234d7aa2b6eebbff7ae2b17d76b8ea7b2"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ab2a41ffaa02d555",
+          "a43b44ca3fa5585b",
+          "95f26b6594326e4c",
+          "8a4532cdc8a53efc",
+          "bd52887e7aa502e5",
+          "a6b4b2325773c2ca",
+          "a9a927645455d9da",
+          "eaaa2c4b15969755"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 9.433333
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_02",
+      "asset_id": "visual_02",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "9c90ea72d9cb891c3784a87a7a5d3a1a75224db6e873809c7d9a73e3ff4ca1d0",
+        "url_hashes": [
+          "ac195b97105bde88b0ac22d31a7f607d2d6a1d38125a186196254da143e524c3"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "6b5cec7e545b79e5",
+          "c63429cbf08e3e63",
+          "c6342bcbf08e3563",
+          "c63429cbf08e3763",
+          "c630394ff08e3f62",
+          "86b039cff28e1b23",
+          "bc92bdb796170981",
+          "b493bd9c9e1f0b01"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.3
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_03",
+      "asset_id": "visual_03",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "21995302cf11da9b259ca6b6bb6f9b471bcb3e2ba6ae41a3a7a03efd481f097e",
+        "url_hashes": [
+          "6b1b4b60022f6edd0a0224cda0318e1bca9b6452956accd24d22e7d74bc40e63"
+        ],
+        "perceptual_hashes": [
+          "c09d0b327ce37c72",
+          "c48d83305da0fff2",
+          "fc8c833b51807ff0",
+          "819f24717b78661e",
+          "c09b9ea634861f9e",
+          "c7c4387e7f353840",
+          "f7c7c0b900f89fc0"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_04",
+      "asset_id": "visual_04",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "4190daffbb773f83ca67f6b90a7ccff4fb2eb5a1aec12972d31d85a5192d0335",
+        "url_hashes": [
+          "879ad2357c15c8c40394b1a691cef0225ed73bd01c15b4344148df8803f97ad0"
+        ],
+        "perceptual_hashes": [
+          "c3966c693c653393",
+          "c3966c383c6d38d3",
+          "c3966e182c6f6cc3",
+          "87787873682796a9",
+          "8787789c319b3969",
+          "d827253f2478dc93",
+          "d8da25c81fc70727"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_05",
+      "asset_id": "visual_05",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b637343b0d3135d9035e8b26388bd988ffa40c639b1f4742de865c7d1d2c6e7d",
+        "url_hashes": [
+          "c9f1a44d87e053daa9f70fcea8f9aabb72a18c666d03a99f2b48e0c7d8170ef7"
+        ],
+        "perceptual_hashes": [
+          "91d07a6eadb93c24",
+          "91d2726ee9b928e4",
+          "91d25664eb5b68e1",
+          "82f47d4a363ba938",
+          "8290b57d69ccb4bc",
+          "dcd96b248c37b702",
+          "d4dc9b5b73f28808"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_06",
+      "asset_id": "visual_06",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "6650e8f8a75beb6c74c51fb1f246b11aca9d4e82df03c83fd23edea41935be3e",
+        "url_hashes": [
+          "7a032addf63e724abe24e9eb54892c6d38f3d504276bdf3140c47b93de298a9f"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "ec91523be8d73289",
+          "ef90531ae8d63385",
+          "ef90553aecc63984",
+          "ef905638e9d63885",
+          "ef885610edc63aa5",
+          "eb845319e6c33c99",
+          "eb945239e4c63993",
+          "ae91523be4d63986"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.266667
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_07",
+      "asset_id": "visual_07",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4d986765a66229032f32e009547de1e383ff7ce9246ec0d9fe9277799e6f1828",
+        "url_hashes": [
+          "33815c6b8a8ae45996b83394efe8bbde61be00494381cb74aebb5f1d54725cd7"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d5d936321a8d65e4",
+          "d5d936361a8d45e4",
+          "d79936761a8b09c5",
+          "d7a034773ea80bc5",
+          "d7a0303f3e0d0bc7",
+          "d7a030353c8f4bcb",
+          "c6a031353c8f4bcf",
+          "c680313d3d8f4bd3"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.9
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_08",
+      "asset_id": "visual_08",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "460785e36ac55f7338eaba3258282060815247377b358abf84cb8f2f30532353",
+        "url_hashes": [
+          "129103d29bcfe8ebfe549c82aba7360386b6eecb2fb0f10b67175ae34d93017e"
+        ],
+        "perceptual_hashes": [
+          "82e07d1d6e9f68e0",
+          "82e2391d6f1f78e0",
+          "96e7291c471d7c83",
+          "84423b7f3e61c4f1",
+          "84c4429349cebf7b",
+          "997c166a006bf1af",
+          "99e974956bf0840f"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_09",
+      "asset_id": "visual_09",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "e56d10de112e007bdef9bb70a16ce0fcce6c8958279746a8acb2678b3f00c41c",
+        "url_hashes": [
+          "7d3c6ff2af7addecb56fbd0215cb210245daaca84b4d56cc0c8ff185068ca451"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c3392c4e73c1b9cc",
+          "c3392c4e73c1b9cc",
+          "c339244e73c5b9cc",
+          "c3392c4e73c1b9cc",
+          "c339244e73c5b9cc",
+          "c339241e73c5b9cc",
+          "916099cfe3994ed4",
+          "88741f67341ef199"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.8
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_10",
+      "asset_id": "visual_10",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "4f29332cf4be3f7ebbb59b5123b1da4bb76a918cfb4b7e381854e0f3f0ec34f9",
+        "url_hashes": [
+          "3bfa05f875f5eacdf44a7bb17e6e8fbeae1dc97d4d65a4076cfd5a9b6e08036b"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "6b5cec7e545b79e5",
+          "c4321fc5f08e1f66",
+          "c4321dc5f09e1f66",
+          "c4321dc5709e9f66",
+          "c4321dc5709e9f66",
+          "c4361fc5701e8f66",
+          "b6129df54b0d80d7",
+          "a93196f30c631a6f"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 5.5
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_11",
+      "asset_id": "visual_11",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "15a5ed028b1846f8a600c582578a16630ec58e7031fcabfee0ac12b8c77ab1a9",
+        "url_hashes": [
+          "9e4369c937f4953cffb1ff318dcebb5d686974d518487153e66e4777c53b4498"
+        ],
+        "perceptual_hashes": [
+          "c9df3620e12917f1",
+          "c8df3720e82b0fe1",
+          "d8db2774f80a06e9",
+          "d2dc2cc3162ee23d",
+          "d3d23c2ce1c3711d",
+          "cdc033ef0c987e13",
+          "cfcc1010fb7f4703"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_12",
+      "asset_id": "visual_12",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "115603a5cb59a1eb9c11aec132f946e7f0423e31c363c5675e3260e41ad45d60",
+        "url_hashes": [
+          "e5fbe9cd78aeac5d6ea3cd75571d50b40085030f2f3c78bda9bd5ddbb777fd29"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "6b5cec7e545b79e5",
+          "863feeb49946344a",
+          "843feeb49946b44a",
+          "8633eeb4994b34c6",
+          "8633e6a5994ab4d6",
+          "8633e6a598cbb496",
+          "8733eab4984b34b6",
+          "8711eaa498dbb6b4"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 4.8
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_13",
+      "asset_id": "visual_13",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "8a135f6083cce3ebbf4f830680ba1b2e0d6eb11f8e30a9082654aebb68d61ff3",
+        "url_hashes": [
+          "0fab3ac00bdf162c0a07d547a01200264380c0681bd435be0a86feddbb028620"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d65aa11d636638cd",
+          "d67aa11d6b6618c9",
+          "d65ae11d6b6638c8",
+          "d65ae11d2b672ec0",
+          "d65ae11d6b670ec0",
+          "fbfbe00169630c47",
+          "aae2cd6007a33d8f",
+          "aa431de81f8378ce"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 6.4
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_14",
+      "asset_id": "visual_14",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1eeee78f78b104f3b44950081611fb0fe55c571d13073e5a575fe4fa355f229c",
+        "url_hashes": [
+          "ef4661f0aa9e899dd3e563807d51d92ee4ac76414b280102611f455204e05bf9"
+        ],
+        "perceptual_hashes": [
+          "850e7e316de4236e",
+          "838e34316ff4686e",
+          "80c715306ff07a6f",
+          "857c6378e0769c87",
+          "858c7c873fb88363",
+          "d12a3e2df52ac0d6",
+          "d1c14ada2ac1d67e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_15",
+      "asset_id": "visual_15",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2273503322a4434064e25f04ab9b300cdb1924ca1c4088e25fed094ffe894d94",
+        "url_hashes": [
+          "3bc891dc80bd8813d3f4e9b3e45d6b80a9ce8a3914688c1de2742ed991c38c84"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "931c38c736646d3d",
+          "893c614bbad7ac68",
+          "99662d1a5367d127",
+          "99662d1a5367d127",
+          "9d983aa46665d55a",
+          "959a3aa4664dd55a",
+          "95993aa66c65d15a",
+          "9c3b63cc5856669c"
+        ],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": 9.2
+      }
+    },
+    {
+      "episode": "rick_renner_ela_e_demais_virada_1998",
+      "shot_id": "shot_16",
+      "asset_id": "visual_16",
+      "recorded_at": "2026-10-01T00:12:43Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8679f5bde269b63c23e9ff795c7120910b57e0983a0f50878750e7f894a143f2",
+        "url_hashes": [
+          "d53a23c3f53d4d510ea7f184f218e79bf61f2d832834bfabe89f5b5aa8788134"
+        ],
+        "perceptual_hashes": [
+          "85c66b38342d79da",
+          "87c76318342d79dc",
+          "87e7619634293d9c",
+          "8c6e3b317a70d564",
+          "98c44e4ea5ad666e",
+          "c17a2f1f2c0d4b39",
+          "c5d07ae85bd33838"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}
