@@ -4,7 +4,8 @@
     "headline": "O HIT NÃO FOI ESCRITO PELO RICK",
     "source": {
       "type": "video_frame",
-      "timestamp_seconds": 0.7
+      "timestamp_seconds": 0.7,
+      "asset_id": "visual_01"
     }
   },
   "youtube": {
@@ -16,7 +17,9 @@
       "sertanejo",
       "ricksollo",
       "alemdohit"
-    ]
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
   },
   "instagram": {
     "caption": "“Ela É Demais” virou um dos maiores cartões de visita de Rick & Renner — mas o crédito de composição é de Elias Muniz. Em 2026, a música voltou a ganhar força nas homenagens a Rick.",
@@ -28,7 +31,9 @@
       "musica",
       "curiosidades",
       "alemdohit"
-    ]
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
   },
   "tiktok": {
     "caption": "O maior detalhe de “Ela É Demais” que muita gente atribui errado ao Rick.",
@@ -37,6 +42,21 @@
       "elaedemais",
       "sertanejo",
       "alemdohit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  },
+  "facebook": {
+    "title": "O hit de Rick & Renner que muita gente atribui ao Rick",
+    "caption": "“Ela É Demais”, de Rick & Renner, tem um detalhe que muita gente erra: o hit que ajudou a consagrar a dupla não foi escrito pelo Rick.\n\nA história por trás de O hit de Rick & Renner que muita gente atribui ao Rick.",
+    "hashtags": [
+      "Reels"
     ]
   }
 }
