@@ -15,7 +15,11 @@ def media_run_title(slug: str, request_id: str, source_sha: str) -> str:
 
 def matches_media_run(run: dict, slug: str, request_id: str, source_sha: str,
                       *, require_success: bool = False) -> bool:
-    if (not SHA.fullmatch(str(source_sha)) or run.get("name") != "Episode media preflight"
+    # GitHub's workflow-run API exposes the configured `run-name` in
+    # run["name"] when present, so it is not a stable workflow identity.
+    # The workflow path + event + exact correlated display_title/source SHA are
+    # the durable provenance signals.
+    if (not SHA.fullmatch(str(source_sha))
             or str(run.get("path", "")).split("@", 1)[0] != WORKFLOW
             or run.get("head_branch") != "main"):
         return False
