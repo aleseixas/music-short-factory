@@ -69,10 +69,10 @@
     },
     {
       "id": "visual_07",
-      "file": "jim-capaldi.jpg",
-      "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-      "credit": "iHeart — Jim Capaldi",
-      "license": "Source page credited; rights not independently verified",
+      "file": "jim-capaldi-gold-record.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+      "credit": "Wikimedia Commons — Jim Capaldi",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
         "y": 0.45
@@ -102,8 +102,8 @@
     },
     {
       "id": "visual_10",
-      "file": "youtube-qcbSdfOaspo.mp4",
-      "url": "https://www.youtube.com/watch?v=qcbSdfOaspo",
+      "file": "youtube-0Cxo0sqNTWs.mp4",
+      "url": "https://www.youtube.com/watch?v=0Cxo0sqNTWs",
       "credit": "YouTube — canal/fonte identificada na página",
       "license": "Source page credited",
       "focus": {

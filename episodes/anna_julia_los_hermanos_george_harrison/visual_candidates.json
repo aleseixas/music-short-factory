@@ -36,7 +36,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -52,7 +52,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -68,7 +68,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -84,7 +84,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -100,7 +100,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -116,7 +116,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -132,7 +132,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -148,7 +148,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -164,7 +164,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Los Hermanos em performance ao vivo"
         }
@@ -206,18 +206,18 @@
           "description": "Imagem editorial: Rodrigo Senna / Wikimedia Commons"
         },
         {
-          "name": "iHeart — Jim Capaldi",
+          "name": "Jim Capaldi — Wikimedia Commons",
           "kind": "image",
           "source": "web",
           "search_provider": "authoring-pool",
-          "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-          "source_page_url": "https://www.iheart.com/artist/jim-capaldi-617543/",
-          "credit": "iHeart — Jim Capaldi",
-          "license": "Source page credited; rights not independently verified",
+          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "credit": "Wikimedia Commons — Jim Capaldi",
+          "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "contextual",
           "editorial_rank": 3,
-          "description": "Imagem editorial: iHeart — Jim Capaldi"
+          "description": "Imagem editorial de Jim Capaldi"
         },
         {
           "name": "Wikimedia Commons — George Harrison",
@@ -298,7 +298,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -314,7 +314,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -330,7 +330,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -346,7 +346,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -362,7 +362,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -378,7 +378,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -394,7 +394,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -410,7 +410,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -426,7 +426,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Clipe oficial de Anna Júlia"
         }
@@ -467,7 +467,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -483,7 +483,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -499,7 +499,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -515,7 +515,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -531,7 +531,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -547,7 +547,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -563,7 +563,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -579,7 +579,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -595,7 +595,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         }
@@ -623,18 +623,18 @@
           "description": "Imagem editorial: Rodrigo Senna / Wikimedia Commons"
         },
         {
-          "name": "iHeart — Jim Capaldi",
+          "name": "Jim Capaldi — Wikimedia Commons",
           "kind": "image",
           "source": "web",
           "search_provider": "authoring-pool",
-          "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-          "source_page_url": "https://www.iheart.com/artist/jim-capaldi-617543/",
-          "credit": "iHeart — Jim Capaldi",
-          "license": "Source page credited; rights not independently verified",
+          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "credit": "Wikimedia Commons — Jim Capaldi",
+          "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "contextual",
           "editorial_rank": 2,
-          "description": "Imagem editorial: iHeart — Jim Capaldi"
+          "description": "Imagem editorial de Jim Capaldi"
         },
         {
           "name": "Wikimedia Commons — George Harrison",
@@ -729,7 +729,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -745,7 +745,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -761,7 +761,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -777,7 +777,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -793,7 +793,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -809,7 +809,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -825,7 +825,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -841,7 +841,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -857,7 +857,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Los Hermanos no Rock in Rio 2001"
         }
@@ -871,18 +871,18 @@
       "min_visual_score": 0.52,
       "candidates": [
         {
-          "name": "iHeart — Jim Capaldi",
+          "name": "Jim Capaldi — Wikimedia Commons",
           "kind": "image",
           "source": "web",
           "search_provider": "authoring-pool",
-          "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-          "source_page_url": "https://www.iheart.com/artist/jim-capaldi-617543/",
-          "credit": "iHeart — Jim Capaldi",
-          "license": "Source page credited; rights not independently verified",
+          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "credit": "Wikimedia Commons — Jim Capaldi",
+          "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "direct",
           "editorial_rank": 1,
-          "description": "Imagem editorial: iHeart — Jim Capaldi"
+          "description": "Imagem editorial de Jim Capaldi"
         },
         {
           "name": "Wikimedia Commons — George Harrison",
@@ -991,7 +991,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -1007,7 +1007,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -1023,7 +1023,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -1039,7 +1039,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -1055,7 +1055,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -1071,7 +1071,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -1087,7 +1087,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -1103,7 +1103,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -1119,7 +1119,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Anna Júlia ao vivo em 2019"
         }
@@ -1203,18 +1203,18 @@
           "description": "Imagem editorial: Rodrigo Senna / Wikimedia Commons"
         },
         {
-          "name": "iHeart — Jim Capaldi",
+          "name": "Jim Capaldi — Wikimedia Commons",
           "kind": "image",
           "source": "web",
           "search_provider": "authoring-pool",
-          "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-          "source_page_url": "https://www.iheart.com/artist/jim-capaldi-617543/",
-          "credit": "iHeart — Jim Capaldi",
-          "license": "Source page credited; rights not independently verified",
+          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "credit": "Wikimedia Commons — Jim Capaldi",
+          "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "contextual",
           "editorial_rank": 6,
-          "description": "Imagem editorial: iHeart — Jim Capaldi"
+          "description": "Imagem editorial de Jim Capaldi"
         }
       ]
     },
@@ -1226,20 +1226,20 @@
       "min_visual_score": 0.52,
       "candidates": [
         {
-          "name": "Registro de uma das últimas apresentações de George Harrison",
+          "name": "George Harrison com Ravi Shankar em registro da VH1",
           "kind": "video",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "qcbSdfOaspo",
-          "video_id": "qcbSdfOaspo",
-          "url": "https://www.youtube.com/watch?v=qcbSdfOaspo",
-          "source_page_url": "https://www.youtube.com/watch?v=qcbSdfOaspo",
+          "provider_id": "0Cxo0sqNTWs",
+          "video_id": "0Cxo0sqNTWs",
+          "url": "https://www.youtube.com/watch?v=0Cxo0sqNTWs",
+          "source_page_url": "https://www.youtube.com/watch?v=0Cxo0sqNTWs",
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "direct",
           "editorial_rank": 1,
-          "description": "Registro de uma das últimas apresentações de George Harrison"
+          "description": "Registro dinâmico de George Harrison em apresentação e conversa com Ravi Shankar"
         },
         {
           "name": "George Harrison em apresentação com Ringo Starr",
@@ -1253,7 +1253,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -1269,7 +1269,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -1285,7 +1285,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -1301,7 +1301,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -1317,7 +1317,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -1333,7 +1333,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -1349,7 +1349,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -1365,7 +1365,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -1381,7 +1381,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Entrevista em vídeo de George Harrison"
         }
@@ -1422,7 +1422,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -1438,7 +1438,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -1454,7 +1454,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -1470,7 +1470,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -1486,7 +1486,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -1502,7 +1502,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -1518,7 +1518,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -1534,7 +1534,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -1550,7 +1550,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         }
@@ -1620,18 +1620,18 @@
           "description": "Imagem editorial: Rodrigo Senna / Wikimedia Commons"
         },
         {
-          "name": "iHeart — Jim Capaldi",
+          "name": "Jim Capaldi — Wikimedia Commons",
           "kind": "image",
           "source": "web",
           "search_provider": "authoring-pool",
-          "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-          "source_page_url": "https://www.iheart.com/artist/jim-capaldi-617543/",
-          "credit": "iHeart — Jim Capaldi",
-          "license": "Source page credited; rights not independently verified",
+          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "credit": "Wikimedia Commons — Jim Capaldi",
+          "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "contextual",
           "editorial_rank": 5,
-          "description": "Imagem editorial: iHeart — Jim Capaldi"
+          "description": "Imagem editorial de Jim Capaldi"
         },
         {
           "name": "Wikimedia Commons — George Harrison",
@@ -1684,7 +1684,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Los Hermanos no Bem Brasil em 2001"
         },
@@ -1700,7 +1700,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -1716,7 +1716,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -1732,7 +1732,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -1748,7 +1748,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -1764,7 +1764,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -1780,7 +1780,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -1796,7 +1796,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -1812,7 +1812,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "George Harrison em apresentação com Ringo Starr"
         }
@@ -1868,18 +1868,18 @@
           "description": "Imagem editorial: Rodrigo Senna / Wikimedia Commons"
         },
         {
-          "name": "iHeart — Jim Capaldi",
+          "name": "Jim Capaldi — Wikimedia Commons",
           "kind": "image",
           "source": "web",
           "search_provider": "authoring-pool",
-          "url": "https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29",
-          "source_page_url": "https://www.iheart.com/artist/jim-capaldi-617543/",
-          "credit": "iHeart — Jim Capaldi",
-          "license": "Source page credited; rights not independently verified",
+          "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "source_page_url": "https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
+          "credit": "Wikimedia Commons — Jim Capaldi",
+          "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "contextual",
           "editorial_rank": 4,
-          "description": "Imagem editorial: iHeart — Jim Capaldi"
+          "description": "Imagem editorial de Jim Capaldi"
         },
         {
           "name": "Wikimedia Commons — George Harrison",
@@ -1946,7 +1946,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Los Hermanos em performance ao vivo"
         },
@@ -1962,7 +1962,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -1978,7 +1978,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -1994,7 +1994,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -2010,7 +2010,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -2026,7 +2026,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -2042,7 +2042,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -2058,7 +2058,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -2074,7 +2074,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Los Hermanos ao vivo no Maracanã"
         }
@@ -2115,7 +2115,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 2,
           "description": "Clipe oficial de Anna Júlia"
         },
@@ -2131,7 +2131,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 3,
           "description": "Los Hermanos no Planeta Xuxa em 1999"
         },
@@ -2147,7 +2147,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 4,
           "description": "Los Hermanos no Rock in Rio 2001"
         },
@@ -2163,7 +2163,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 5,
           "description": "Anna Júlia ao vivo em 2019"
         },
@@ -2179,7 +2179,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 6,
           "description": "Entrevista em vídeo de George Harrison"
         },
@@ -2195,7 +2195,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 7,
           "description": "Registro de uma das últimas apresentações de George Harrison"
         },
@@ -2211,7 +2211,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 8,
           "description": "George Harrison em apresentação com Ringo Starr"
         },
@@ -2227,7 +2227,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 9,
           "description": "Los Hermanos ao vivo no Maracanã"
         },
@@ -2243,7 +2243,7 @@
           "credit": "YouTube",
           "license": "Source page credited",
           "rights_status": "reference_only",
-          "semantic_fit": "contextual",
+          "semantic_fit": "direct",
           "editorial_rank": 10,
           "description": "Los Hermanos no Bem Brasil em 2001"
         }

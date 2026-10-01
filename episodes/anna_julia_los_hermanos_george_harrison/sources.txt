@@ -14,7 +14,7 @@ https://www.youtube.com/watch?v=UmaQiHbunmc
 https://www.youtube.com/watch?v=CxurJJK5_HM
 https://www.youtube.com/watch?v=uTfRaS6i4Gs
 https://www.youtube.com/watch?v=oKSD-gbvggs
-https://www.youtube.com/watch?v=qcbSdfOaspo
+https://www.youtube.com/watch?v=0Cxo0sqNTWs
 https://www.youtube.com/watch?v=XzSrShbqlz8
 https://www.youtube.com/watch?v=B4_O4VNMuso
 https://www.youtube.com/watch?v=uLMsRqN_ydk
@@ -25,8 +25,8 @@ https://commons.wikimedia.org/wiki/File:Marcelo_Camelo.jpg
 https://commons.wikimedia.org/wiki/Special:Redirect/file/Marcelo_Camelo.jpg
 https://commons.wikimedia.org/wiki/File:Los_Hermanos.jpg
 https://commons.wikimedia.org/wiki/Special:Redirect/file/Los_Hermanos.jpg
-https://www.iheart.com/artist/jim-capaldi-617543/
-https://i.iheart.com/v3/catalog/artist/617543?ops=fit%28720%2C720%29
+https://commons.wikimedia.org/wiki/File:Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg
+https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg
 https://commons.wikimedia.org/wiki/File:George_Harrison.jpg
 https://commons.wikimedia.org/wiki/Special:Redirect/file/George_Harrison.jpg
 https://commons.wikimedia.org/wiki/File:Los_Hermanos_(7197739364).jpg
@@ -39,3 +39,6 @@ A pesquisa internet-first considerou instrumentais de rock leve, pop documental 
 
 DIREITOS
 Todos os visuais têm página-fonte e crédito. Direitos não foram presumidos quando a fonte não expôs licença explícita. Os locators finais apontam para mídia concreta, nunca para busca.
+
+REPARO MATERIAL 1
+Substituído locator sem extensão suportada de Jim Capaldi por mídia .jpg concreta do Wikimedia Commons. Substituído vídeo indisponível qcbSdfOaspo por 0Cxo0sqNTWs. Alternativas de vídeo foram marcadas direct somente após revisão semântica: todas mostram Los Hermanos/Anna Júlia ou George Harrison em movimento e são compatíveis com os respectivos slots.
