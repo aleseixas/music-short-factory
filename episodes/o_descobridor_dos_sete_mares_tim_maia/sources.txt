@@ -1,0 +1,42 @@
+PESQUISA EDITORIAL E HISTÓRICA
+Bravo! — A história inusitada de “O Descobridor dos Sete Mares”, hit atemporal de Tim Maia:
+https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/
+
+Discografia Brasileira / IMMuB — álbum O Descobridor dos Sete Mares (1983), créditos de composição, produção, músicos e arranjadores:
+https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares
+https://discografia.discosdobrasil.com.br/compositor/michel
+https://discografia.discosdobrasil.com.br/compositor/gilson-mendonca
+
+VÍDEOS CONCRETOS
+https://www.youtube.com/watch?v=roFHTZqp-VQ
+https://www.youtube.com/watch?v=Nsl96ot3AGU
+https://www.youtube.com/watch?v=KLWpoREpK3U
+https://www.youtube.com/watch?v=H9cNXv0f6EI
+https://www.youtube.com/watch?v=PDQrcz4KUKs
+https://www.youtube.com/watch?v=lG-eNorxpO0
+https://www.youtube.com/watch?v=A9kTV-wpiWk
+https://www.youtube.com/watch?v=crrqRBnxP2k
+https://www.youtube.com/watch?v=COmxt5GmfNU
+https://www.youtube.com/watch?v=wyaCWQvOLYg
+
+IMAGENS E PÁGINAS-FONTE
+https://discografia.discosdobrasil.com.br/discos/o-descobridor-dos-sete-mares
+https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg
+https://bravo.abril.com.br/musica/historia-inusitada-descobridor-dos-sete-mares-tim-maia/
+https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920
+https://www.afropop.org/
+https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg
+https://cdn.awsli.com.br/
+https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg
+https://www.letras.mus.br/tim-maia/discografia/o-descobridor-dos-sete-mares-1983/
+https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg
+https://cultura.uol.com.br/
+https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png
+https://www.enjoei.com.br/
+https://photos.enjoei.com.br/o-descobridor-dos-sete-mares-lp-tim-maia/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8xNTM3NzIxMi9kOTI5MDY0ZGIzMmE3ZmRhMDg1MGJjYzNhZDMwMGM4My5qcGc
+
+BACKGROUND MUSIC — DECISÃO EDITORIAL
+Busca internet-first comparou instrumentais soul, funk, disco e documentais leves. As opções externas encontradas não podiam ser incorporadas com segurança ao catálogo global dentro desta transação de autoria restrita ao episódio. Foi escolhido o profile local bright_fun, semanticamente compatível com a descoberta leve e a energia soul/funk da história. O profile existe no catálogo atual e usa arquivos locais versionados; há evidência recente de Media Preflight decodificando assets/audio/music/bright_fun/summer-fun-01.mp3. Volume configurado em 0.055. A escolha fica sujeita aos hard gates atuais de disponibilidade e freshness antes de qualquer render ou queue.
+
+DIREITOS
+Todos os visuais são referências com página-fonte e crédito registrados em assets.json e visual_candidates.json. Direitos não foram presumidos quando a fonte não expôs licença explícita. Nenhum URL de busca ou página HTML foi usado como locator de mídia final.

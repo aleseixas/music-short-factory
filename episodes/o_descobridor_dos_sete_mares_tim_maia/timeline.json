@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "bright_fun",
+    "volume": 0.055
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.12,
+      "type": "impact",
+      "volume": 0.12
+    },
+    {
+      "time_seconds": 18,
+      "type": "whoosh_fast",
+      "volume": 0.08
+    },
+    {
+      "time_seconds": 36,
+      "type": "chime_sparkles",
+      "volume": 0.07
+    },
+    {
+      "time_seconds": 55,
+      "type": "whoosh_fast",
+      "volume": 0.07
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "UM MAPA VIROU HIT",
+      "accent_text": "MAPA",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.82
+    },
+    {
+      "segment": "sete",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1,
+      "text": "7 MÚSICAS",
+      "accent_text": "7",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.72
+    },
+    {
+      "segment": "credito",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "TIM NÃO COMPÔS",
+      "accent_text": "NÃO",
+      "animation": "fade_pop",
+      "position": "center",
+      "intensity": 0.78
+    },
+    {
+      "segment": "payoff",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.1,
+      "text": "DOIS FÃS DECIFRARAM TIM",
+      "accent_text": "FÃS",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.8
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "visual_01",
+      "motion": "push_in",
+      "transition_out": "crossfade",
+      "highlight": "UM MAPA VIROU HIT",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_02",
+      "segment": "fas",
+      "asset": "visual_02",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_03",
+      "segment": "sete",
+      "asset": "visual_03",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "7 MÚSICAS",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_04",
+      "segment": "escolha",
+      "asset": "visual_04",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_05",
+      "segment": "mapa",
+      "asset": "visual_05",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "MAPA DAS PRAIAS"
+    },
+    {
+      "id": "shot_06",
+      "segment": "nomes",
+      "asset": "visual_06",
+      "motion": "pan_left",
+      "transition_out": "crossfade",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_07",
+      "segment": "viagem",
+      "asset": "visual_07",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "VIAGEM PELO LITORAL"
+    },
+    {
+      "id": "shot_08",
+      "segment": "credito",
+      "asset": "visual_08",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_09",
+      "segment": "album",
+      "asset": "visual_09",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "1983"
+    },
+    {
+      "id": "shot_10",
+      "segment": "producao",
+      "asset": "visual_10",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_11",
+      "segment": "banda",
+      "asset": "visual_11",
+      "motion": "pull_out",
+      "transition_out": "crossfade",
+      "highlight": "SOUL + FUNK"
+    },
+    {
+      "id": "shot_12",
+      "segment": "tres",
+      "asset": "visual_12",
+      "motion": "pan_right",
+      "transition_out": "cut",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_13",
+      "segment": "neves",
+      "asset": "visual_13",
+      "motion": "push_in",
+      "transition_out": "cut",
+      "highlight": "MEMÓRIAS DOS EUA"
+    },
+    {
+      "id": "shot_14",
+      "segment": "metodo",
+      "asset": "visual_14",
+      "motion": "pan_left",
+      "transition_out": "cut",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_15",
+      "segment": "payoff",
+      "asset": "visual_15",
+      "motion": "pull_out",
+      "transition_out": "cut",
+      "highlight": "DOIS FÃS DECIFRARAM TIM",
+      "source_start_seconds": 0
+    },
+    {
+      "id": "shot_16",
+      "segment": "cta",
+      "asset": "visual_16",
+      "motion": "pan_right",
+      "transition_out": "crossfade"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "UM MAPA VIROU HIT",
+    "source": {
+      "type": "video_frame",
+      "timestamp_seconds": 0.7,
+      "asset_id": "visual_01"
+    }
+  },
+  "youtube": {
+    "title": "O mapa que virou um dos maiores hits de Tim Maia",
+    "description": "O Descobridor dos Sete Mares nasceu de um método improvável: dois publicitários fãs de Tim Maia estudaram seu repertório, levaram sete músicas e transformaram um mapa de praias em um clássico de 1983.",
+    "hashtags": [
+      "timmaia",
+      "odescobridordossetemares",
+      "mpb",
+      "musicasbrasileiras",
+      "alemdohit"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Dois fãs estudaram a linguagem de Tim Maia, levaram sete composições e usaram um mapa de praias para criar O Descobridor dos Sete Mares. O crédito é de Michel e Gilson Mendonça — e a interpretação de Tim transformou a ideia em clássico.",
+    "hashtags": [
+      "timmaia",
+      "odescobridordossetemares",
+      "mpb",
+      "soulbrasileiro",
+      "musica",
+      "curiosidades",
+      "alemdohit"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "facebook": {
+    "title": "O mapa que virou um dos maiores hits de Tim Maia",
+    "caption": "Dois publicitários fãs de Tim Maia estudaram seu repertório, apresentaram sete músicas e transformaram um mapa de praias em O Descobridor dos Sete Mares. A história por trás do clássico de 1983.",
+    "hashtags": [
+      "timmaia",
+      "mpb",
+      "reels",
+      "alemdohit"
+    ]
+  },
+  "tiktok": {
+    "caption": "O mapa de praias que virou um clássico de Tim Maia.",
+    "hashtags": [
+      "timmaia",
+      "mpb",
+      "musica",
+      "alemdohit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

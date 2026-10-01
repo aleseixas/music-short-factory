@@ -1,0 +1,181 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "visual_01",
+      "file": "youtube-roFHTZqp-VQ.mp4",
+      "url": "https://www.youtube.com/watch?v=roFHTZqp-VQ",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_02",
+      "file": "youtube-Nsl96ot3AGU.mp4",
+      "url": "https://www.youtube.com/watch?v=Nsl96ot3AGU",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_03",
+      "file": "youtube-KLWpoREpK3U.mp4",
+      "url": "https://www.youtube.com/watch?v=KLWpoREpK3U",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_04",
+      "file": "youtube-H9cNXv0f6EI.mp4",
+      "url": "https://www.youtube.com/watch?v=H9cNXv0f6EI",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_05",
+      "file": "tim-album-cover.jpg",
+      "url": "https://cdn.immub.org/capas/6551/thumbnails/m_6551ca.jpg",
+      "credit": "Discografia Brasileira / IMMuB",
+      "license": "Source page credited; rights not independently verified",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_06",
+      "file": "youtube-PDQrcz4KUKs.mp4",
+      "url": "https://www.youtube.com/watch?v=PDQrcz4KUKs",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_07",
+      "file": "tim-bravo-story.jpg",
+      "url": "https://bravo.abril.com.br/wp-content/uploads/2025/01/100cancoes-essenciais_Pagina_076_Imagem_0001.jpg?crop=1&h=1080&quality=70&w=1920",
+      "credit": "Bravo!",
+      "license": "Source page credited; rights not independently verified",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_08",
+      "file": "youtube-lG-eNorxpO0.mp4",
+      "url": "https://www.youtube.com/watch?v=lG-eNorxpO0",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_09",
+      "file": "tim-maia-1987.jpg",
+      "url": "https://www.afropop.org/client-uploads/img/_slideshow/TIM_MAIA_SONIA_DALMEIDA_1987.jpg",
+      "credit": "Afropop Worldwide / Sonia D'Almeida",
+      "license": "Source page credited; rights not independently verified",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_10",
+      "file": "youtube-A9kTV-wpiWk.mp4",
+      "url": "https://www.youtube.com/watch?v=A9kTV-wpiWk",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_11",
+      "file": "tim-vinyl.jpeg",
+      "url": "https://cdn.awsli.com.br/2500x2500/2717/2717006/produto/398929366/whatsapp-image-2026-02-23-at-10-10-42-1-n5ng4icdzm.jpeg",
+      "credit": "Acervo de marketplace musical",
+      "license": "Source page credited; rights not independently verified",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_12",
+      "file": "youtube-crrqRBnxP2k.mp4",
+      "url": "https://www.youtube.com/watch?v=crrqRBnxP2k",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_13",
+      "file": "tim-discography.jpg",
+      "url": "https://akamai.sscdn.co/uploadfile/letras/albuns_high/17569_20161030080022.jpg",
+      "credit": "Letras.mus.br",
+      "license": "Source page credited; rights not independently verified",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_14",
+      "file": "youtube-COmxt5GmfNU.mp4",
+      "url": "https://www.youtube.com/watch?v=COmxt5GmfNU",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_15",
+      "file": "youtube-wyaCWQvOLYg.mp4",
+      "url": "https://www.youtube.com/watch?v=wyaCWQvOLYg",
+      "credit": "YouTube — canal/fonte identificada na página",
+      "license": "Source page credited",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_16",
+      "file": "tim-cultural-portrait.png",
+      "url": "https://cultura.uol.com.br/upload/radio/dissonantes/happens_big/20250618151027_tim-maia-post-1-.png",
+      "credit": "Cultura UOL",
+      "license": "Source page credited; rights not independently verified",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    }
+  ]
+}

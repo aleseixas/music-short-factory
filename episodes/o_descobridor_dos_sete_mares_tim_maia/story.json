@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "title": "O mapa que virou um dos maiores hits de Tim Maia",
+  "slug": "o_descobridor_dos_sete_mares_tim_maia",
+  "target_duration_seconds": 72,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Dois publicitários fãs de Tim Maia escreveram um dos maiores hits dele — e tudo começou com um mapa de praias.",
+      "delivery": "hook"
+    },
+    {
+      "id": "fas",
+      "text": "Michel e Gilson Mendonça estudaram o repertório de Tim para entender a linguagem musical que ele gostava.",
+      "delivery": "curious"
+    },
+    {
+      "id": "sete",
+      "text": "Quando conseguiram apresentar o material, chegaram com sete músicas prontas.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "escolha",
+      "text": "Tim escolheu três e brincou que, daquele jeito, ainda acabaria gravando um disco inteiro da dupla.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "mapa",
+      "text": "Para criar O Descobridor dos Sete Mares, Gilson pediu à mãe que marcasse num mapa as principais praias do Brasil.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "nomes",
+      "text": "Depois, ele e Michel escolheram os nomes que soavam melhor dentro da viagem que queriam contar.",
+      "delivery": "curious"
+    },
+    {
+      "id": "viagem",
+      "text": "Assim nasceu um roteiro musical pelo litoral, com cara de verão e refrão impossível de esquecer.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "credito",
+      "text": "A grande virada é esta: a faixa-título não foi composta por Tim Maia. O crédito é de Michel e Gilson Mendonça.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "album",
+      "text": "A gravação saiu em 1983, no álbum que também recebeu o nome O Descobridor dos Sete Mares.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "producao",
+      "text": "Tim produziu o disco e dividiu os arranjos da faixa com Tinho e Adonhyran Peçanha.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "banda",
+      "text": "Metais, baixo, bateria, guitarra e coro deram à canção aquela potência soul e funk que virou assinatura.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "tres",
+      "text": "As outras duas músicas escolhidas da dupla foram Pecado Capital e Neves e Parques.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "neves",
+      "text": "Segundo o relato dos compositores, Neves e Parques tocou Tim por lembrar o período em que ele viveu nos Estados Unidos.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "metodo",
+      "text": "O que parecia método de publicitário virou composição: estudar o artista, achar uma imagem forte e construir uma viagem sonora.",
+      "delivery": "curious"
+    },
+    {
+      "id": "payoff",
+      "text": "Por isso o hit soa tão Tim Maia mesmo sem ter sido escrito por ele: dois fãs decifraram sua linguagem e ele transformou tudo em performance.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "cta",
+      "text": "Qual praia brasileira você colocaria nessa viagem musical? Comenta.",
+      "delivery": "payoff"
+    }
+  ]
+}
