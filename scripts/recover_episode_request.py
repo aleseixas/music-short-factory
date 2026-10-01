@@ -56,10 +56,10 @@ def recover_and_prepare(
         )
 
     cycle = payload.get("repair_cycle")
-    if not isinstance(cycle, int) or isinstance(cycle, bool) or cycle not in {1, 2, 3}:
+    if not isinstance(cycle, int) or isinstance(cycle, bool) or not 1 <= cycle <= 5:
         raise PipelineError(
             "RECOVERY_REQUEST_INVALID",
-            "repair_cycle must be an integer from 1 to 3.",
+            "repair_cycle must be an integer from 1 to 5.",
         )
 
     files = _validated_files(payload)

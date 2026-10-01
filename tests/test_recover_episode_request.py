@@ -51,9 +51,11 @@ def base_state():
     }
 
 
-def test_recovery_request_replaces_only_authored_metadata_and_calls_prepare(tmp_path):
+@pytest.mark.parametrize("cycle", [1, 4, 5])
+def test_recovery_request_replaces_only_authored_metadata_and_calls_prepare(tmp_path, cycle):
     store = FakeStore(base_state())
     data = payload()
+    data["repair_cycle"] = cycle
     with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
             patch(
                 "scripts.recover_episode_request.prepare_request",
@@ -67,7 +69,7 @@ def test_recovery_request_replaces_only_authored_metadata_and_calls_prepare(tmp_
             data,
         )
 
-    assert result["repair_cycle"] == 1
+    assert result["repair_cycle"] == cycle
     assert result["previous_request_id"] == "old_request"
     assert store.assertions == 1
     prepare.assert_called_once_with(tmp_path, "demo", "new_request")
@@ -102,7 +104,7 @@ def test_recovery_request_rejects_unsafe_authority_states(tmp_path, change, code
         )
 
 
-def test_recovery_request_requires_fresh_request_and_three_cycle_limit(tmp_path):
+def test_recovery_request_requires_fresh_request(tmp_path):
     store = FakeStore(base_state())
     with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
             pytest.raises(PipelineError, match="RECOVERY_REQUEST_ID_REUSED"):
@@ -114,8 +116,12 @@ def test_recovery_request_requires_fresh_request_and_three_cycle_limit(tmp_path)
             payload(request_id="old_request"),
         )
 
+
+@pytest.mark.parametrize("cycle", [0, 6, -1, True, 1.0, "5", None])
+def test_recovery_request_enforces_five_cycle_limit(tmp_path, cycle):
+    store = FakeStore(base_state())
     invalid = payload()
-    invalid["repair_cycle"] = 4
+    invalid["repair_cycle"] = cycle
     with patch("scripts.recover_episode_request.PipelineStore", return_value=store), \
             pytest.raises(PipelineError, match="RECOVERY_REQUEST_INVALID"):
         recover_and_prepare(

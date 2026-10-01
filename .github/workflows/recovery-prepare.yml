@@ -67,8 +67,8 @@ jobs:
               raise SystemExit("invalid previous_request_id")
           if not re.fullmatch(safe_request, request_id) or request_id == previous:
               raise SystemExit("invalid/fresh request_id required")
-          if cycle not in (1, 2, 3):
-              raise SystemExit("repair_cycle must be 1, 2 or 3")
+          if not isinstance(cycle, int) or isinstance(cycle, bool) or not 1 <= cycle <= 5:
+              raise SystemExit("repair_cycle must be an integer from 1 to 5")
           with open(sys.argv[2], "a", encoding="utf-8") as handle:
               handle.write(f"file={path.as_posix()}\n")
               handle.write(f"slug={slug}\n")

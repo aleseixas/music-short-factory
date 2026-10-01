@@ -49,7 +49,7 @@ pedido, não autoriza rerun/dispatch duplicado. QUEUED já bloqueia mutação.
 
 Repare falhas pré-publicação com mudança real e revalidação batch. Preserve
 limites compartilhados: 15 candidatas desde última queue, até 5 autorados por
-slot; prepare até 2 reparos internos e Media Preflight até 10 passes internos
+slot; prepare até 5 reparos internos (6 validações) e Media Preflight até 10 passes internos
 conforme código atual. Candidata inviável pode ser substituída somente após
 cancelamento seguro/CAS/tombstone e canal livre; não force transition CANCELLED
 se o grafo não oferece a transição. Falha de candidata não encerra slot elegível.

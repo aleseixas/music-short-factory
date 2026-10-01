@@ -12,8 +12,8 @@ Ausência inicial de coordination é representada como IDLE pelo coordinator;
 a reserva do duplicate guard inicializa por CAS/migra candidate_window quando
 necessário. Não crie authority manual nem declare blocker pela ausência isolada.
 A janela compartilhada tem até 15 candidatas desde a última queue; cinco autorados
-por slot e três ciclos por rodada de recovery são limites operacionais adicionais.
-Prepare tem até dois reparos internos; CI Media Preflight até dez passes internos
+por slot e cinco ciclos por rodada de recovery são limites operacionais adicionais.
+Prepare tem até cinco reparos internos (seis validações); CI Media Preflight até dez passes internos
 atualmente. Esses contadores não são reruns de publisher e não admitem reset manual.
 
 ## Autoridade, posse e continuidade

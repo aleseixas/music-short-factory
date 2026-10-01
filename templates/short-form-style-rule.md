@@ -332,7 +332,7 @@ mutação; observe/reconcilie o receipt de dispatch existente, sem novo POST.
 Após publisher iniciado/possível: nenhuma nova sessão, retry/rerun, plataforma
 faltante ou substituto do slot. O run original pode concluir suas plataformas.
 
-Prepare tem até 2 reparos internos; CI até 10 passes internos atualmente.
-Recovery até 3 ciclos reais por rodada; 15 candidatas na janela CAS desde a
+Prepare tem até 5 reparos internos (6 validações); CI até 10 passes internos atualmente.
+Recovery até 5 ciclos reais por rodada; 15 candidatas na janela CAS desde a
 última queue e até 5 autorados por slot, somando creator/recovery.
 Esses contadores são distintos; não resete nem reduza gates.

@@ -41,10 +41,10 @@ CAS/fence/cache stale exige releitura e reconcile; lease ocupada exige observaç
 
 Para falha realmente pré-publicação: diagnóstico concreto -> correção material
 de todos os erros recuperáveis -> revalidação pelo prepare -> acompanhar run
-exato. Faça até 3 ciclos reais de reparo por rodada quando elegíveis. Polling
-não conta como tentativa. Prepare permite até 2 reparos internos (3 validações);
+exato. Faça até 5 ciclos reais de reparo por rodada quando elegíveis. Polling
+não conta como tentativa. Prepare permite até 5 reparos internos (6 validações);
 Media Preflight tem até 10 passadas batch internas por run. Não transforme
-3 ciclos em três reruns de Actions/publisher nem resete limites compartilhados.
+5 ciclos em cinco reruns de Actions/publisher nem resete limites compartilhados.
 Sem mudança, não repita erro determinístico; transitório admite backoff.
 Run em andamento permanece em observação.
 
@@ -52,7 +52,7 @@ Reparo/autoria/prepare exige clone autenticado e runtime da repo; GitHub MCP
 sozinho não prova credencial de terminal. Recovery pré-publicação pode usar o
 caminho oficial `.recovery-request/*.json` -> `recovery-prepare.yml`: envie
 somente o mesmo slug ativo, previous_request_id autoritativo, request_id de mídia
-novo, repair_cycle 1..3 e os seis arquivos editoriais completos. O workflow deve
+novo, repair_cycle 1..5 e os seis arquivos editoriais completos. O workflow deve
 reconciliar e executar o mesmo prepare fenced/CAS com `GITHUB_TOKEN` nativo;
 depois envia somente o `workflow_dispatch` de mídia com slug/request/SHA exatos.
 Nunca use esse request para queue/publisher. Sem runtime/permissões reporte blocker exato, sem criar

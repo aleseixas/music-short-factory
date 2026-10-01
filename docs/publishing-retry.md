@@ -35,10 +35,10 @@ Repare todos os itens independentes elegíveis; erro de autoria pede novas fonte
 Não repita erro determinístico sem mudança, não relaxe validators.
 
 Limites atuais distintos: 15 candidatas compartilhadas desde última queue;
-até 5 autorados/substitutos por slot entre creator/recovery; até 3 ciclos
-materiais por rodada de recovery; prepare até 2 reparos internos (3 validações);
+até 5 autorados/substitutos por slot entre creator/recovery; até 5 ciclos
+materiais por rodada de recovery; prepare até 5 reparos internos (6 validações);
 Media Preflight até 10 passes batch internos por run.
-Polling não conta como tentativa. Não resete contadores nem gere 3 reruns cegos.
+Polling não conta como tentativa. Não resete contadores nem gere 5 reruns cegos.
 A janela de 15 é autoritativa no CAS; reset pertence ao fluxo da queue.
 
 ## Pré-publicação inviável

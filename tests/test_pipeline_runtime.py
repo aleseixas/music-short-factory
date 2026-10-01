@@ -91,6 +91,43 @@ class PipelineRuntimeTests(unittest.TestCase):
         self.assertTrue((self.root / result["request_path"]).is_file())
         self.assertEqual(result["stage"], "MEDIA_PREFLIGHT")
 
+    def test_prepare_can_pass_after_five_material_repairs(self):
+        self.author()
+        checks, repairs = [], []
+
+        def validate(root, slug, **kwargs):
+            self.assertFalse((root / ".episode-check/episode--req_1.json").exists())
+            checks.append(True)
+            return [{"error_code": "BAD_ASSET", "recoverable": True}] if len(repairs) < 5 else []
+
+        def repair(root, slug, errors):
+            repairs.append(errors)
+            atomic_json(root / "episodes/episode/assets.json", {"repair": len(repairs)})
+
+        result = prepare_request(self.root, "episode", "req_1", validator=validate, repairer=repair)
+        self.assertEqual(len(repairs), 5)
+        self.assertEqual(len(checks), 6)
+        self.assertEqual(result["stage"], "MEDIA_PREFLIGHT")
+        self.assertTrue((self.root / result["request_path"]).is_file())
+
+    def test_prepare_stops_after_five_repairs_when_validation_still_fails(self):
+        self.author()
+        checks, repairs = [], []
+
+        def validate(root, slug, **kwargs):
+            checks.append(True)
+            return [{"error_code": "BAD_ASSET", "recoverable": True}]
+
+        def repair(root, slug, errors):
+            repairs.append(errors)
+            atomic_json(root / "episodes/episode/assets.json", {"repair": len(repairs)})
+
+        result = prepare_request(self.root, "episode", "req_1", validator=validate, repairer=repair)
+        self.assertEqual(len(repairs), 5)
+        self.assertEqual(len(checks), 6)
+        self.assertEqual(result["stage"], "VALIDATION_FAILED")
+        self.assertFalse((self.root / ".episode-check").exists())
+
     def test_deterministic_failure_no_retry_without_change(self):
         self.author()
         calls = []

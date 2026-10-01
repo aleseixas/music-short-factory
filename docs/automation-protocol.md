@@ -85,7 +85,7 @@ prova que um terminal tenha essa credencial e nunca autoriza criar
 
 Para recovery pré-publicação existe também o caminho dedicado
 `.recovery-request/*.json` -> `recovery-prepare.yml`: o request carrega o mesmo
-slug, o request anterior, um request de mídia novo, repair_cycle 1..3 e os seis
+slug, o request anterior, um request de mídia novo, repair_cycle 1..5 e os seis
 arquivos editoriais completos. O workflow reconcilia a autoridade, rejeita
 publisher/queue/attempt, aplica os bytes somente no clone e chama o mesmo
 `prepare` fenced/CAS. Ele usa `GITHUB_TOKEN` nativo (`contents: write` e
@@ -185,10 +185,10 @@ Separe os contadores:
   Consultas e retomada do mesmo request não consomem nova candidata.
 - No máximo 5 candidatos autorados/substitutos por slot, acumulando creator e
   recovery nos checkpoints; aplique limite menor da main se houver.
-- Até 3 ciclos reais de reparo seguro por rodada de recovery, com causa concreta,
+- Até 5 ciclos reais de reparo seguro por rodada de recovery, com causa concreta,
   correção material e revalidação. Leitura/polling não conta como tentativa.
-- Prepare tem até 2 reparos internos (3 validações); Media Preflight atualmente
-  tem até 10 passadas batch internas por run. Não confunda esses limites com três
+- Prepare tem até 5 reparos internos (6 validações); Media Preflight atualmente
+  tem até 10 passadas batch internas por run. Não confunda esses limites com cinco
   reruns de Actions/publicação, não reduza os gates e releia o código atual.
 
 Run em andamento é observado. Erro determinístico exige mudança; transitório

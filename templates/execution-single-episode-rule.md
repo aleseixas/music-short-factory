@@ -32,8 +32,8 @@ por arquivo manual. Não pule o guard usando start/new_episode para outro slug.
 
 Até 15 candidatas na candidate_window compartilhada desde a última queue, não
 15 por invocação. Até 5 autorados/substitutos por slot, somando creator/recovery.
-No recovery, até 3 ciclos materiais por rodada; prepare tem até 2 reparos
-internos e Media Preflight até 10 passes internos atualmente. Não resete contador
+No recovery, até 5 ciclos materiais por rodada; prepare tem até 5 reparos
+internos (6 validações) e Media Preflight até 10 passes internos atualmente. Não resete contador
 ou confunda passes com reruns. Código atual/limite mais restritivo prevalece.
 
 ## Substituição segura

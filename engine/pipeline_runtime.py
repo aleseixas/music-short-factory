@@ -92,7 +92,7 @@ from engine.mutation_transaction import fenced_mutation
 @fenced_mutation(root_arg="root")
 def _prepare_request(root: Path, slug: str, request_id: str, *,
                     validator: Callable | None = None, repairer: Callable | None = None,
-                    max_repairs: int = 2) -> dict:
+                    max_repairs: int = 5) -> dict:
     """Validate all errors, repair a batch, and create the trigger only after PASS."""
     slug, request_id = safe_slug(slug), safe_request(request_id)
     store = PipelineStore(root)

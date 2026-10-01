@@ -41,7 +41,7 @@ target, detail, commit_sha e diagnósticos/artefatos do run exato.
 Erro genérico/exit code/falta de log não é causa raiz.
 Repare todos os erros independentes elegíveis e revalide após mudança material.
 Não reduza gates. Consulte [publishing-retry.md](../docs/publishing-retry.md).
-Prepare: até 2 reparos internos. CI: até 10 passes internos. Recovery: até 3
+Prepare: até 5 reparos internos (6 validações). CI: até 10 passes internos. Recovery: até 5
 ciclos reais por rodada, sem contar observação, respeitando limites acumulados.
 
 READY_TO_QUEUE pertence ao workflow. QUEUED já proíbe mutar/reautorizar mídia;
