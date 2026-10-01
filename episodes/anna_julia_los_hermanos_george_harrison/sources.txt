@@ -42,3 +42,6 @@ Todos os visuais têm página-fonte e crédito. Direitos não foram presumidos q
 
 REPARO MATERIAL 1
 Substituído locator sem extensão suportada de Jim Capaldi por mídia .jpg concreta do Wikimedia Commons. Substituído vídeo indisponível qcbSdfOaspo por 0Cxo0sqNTWs. Alternativas de vídeo foram marcadas direct somente após revisão semântica: todas mostram Los Hermanos/Anna Júlia ou George Harrison em movimento e são compatíveis com os respectivos slots.
+
+REPARO MATERIAL 2 — BACKGROUND FRESHNESS
+O Media Preflight comprovou todos os 16 visuais, o pool, a unicidade e os assets, mas bloqueou a trilha por reutilização recente após 10 passes internos. Foi escolhido o profile local latin_pop_uplifting, compatível com o pop-rock brasileiro e com última ocorrência identificada fora da janela recente de 20 episódios. Volume 0.10. Resolução, decodificação e freshness serão novamente comprovadas pelo runtime nativo.
