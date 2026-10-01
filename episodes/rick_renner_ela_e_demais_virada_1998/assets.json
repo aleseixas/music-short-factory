@@ -3,178 +3,178 @@
   "assets": [
     {
       "id": "visual_01",
-      "file": "visual_01.mp4",
-      "url": "https://www.youtube.com/watch?v=9MKDPcv5sVU",
-      "credit": "YouTube / Piunti Sessions",
-      "license": "Source page credited; editorial reference",
+      "file": "youtube-mIMW1K_37I0.mp4",
+      "url": "https://www.youtube.com/watch?v=mIMW1K_37I0",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_02",
-      "file": "visual_02.mp4",
+      "file": "youtube-zqq4limSkJA.mp4",
       "url": "https://www.youtube.com/watch?v=zqq4limSkJA",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_03",
-      "file": "visual_03.jpg",
+      "file": "web-visual_03-1-rick-renner-still-vexmso7smtq.jpg",
       "url": "https://i.ytimg.com/vi/VExMSo7sMtQ/hqdefault.jpg",
-      "credit": "YouTube thumbnail / referenced Rick & Renner video",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_04",
-      "file": "visual_04.jpg",
+      "file": "web-visual_04-1-rick-renner-still-ecatmvoasta.jpg",
       "url": "https://i.ytimg.com/vi/ECaTMvoastA/hqdefault.jpg",
-      "credit": "YouTube thumbnail / Rick & Renner Oficial",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_05",
-      "file": "visual_05.jpg",
+      "file": "web-visual_05-1-rick-renner-still-iskyl9fbgiq.jpg",
       "url": "https://i.ytimg.com/vi/iSkYL9FbgiQ/hqdefault.jpg",
-      "credit": "YouTube thumbnail / referenced Rick & Renner video",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_06",
-      "file": "visual_06.mp4",
+      "file": "youtube-AO8Ka0ZyKy4.mp4",
       "url": "https://www.youtube.com/watch?v=AO8Ka0ZyKy4",
-      "credit": "YouTube / Rick & Renner performance",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_07",
-      "file": "visual_07.mp4",
+      "file": "youtube-yFStYiP-x8s.mp4",
       "url": "https://www.youtube.com/watch?v=yFStYiP-x8s",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_08",
-      "file": "visual_08.jpg",
+      "file": "web-visual_08-1-rick-renner-still-4ivazxnj_ou.jpg",
       "url": "https://i.ytimg.com/vi/4IvazXNJ_oU/hqdefault.jpg",
-      "credit": "YouTube thumbnail / referenced Rick & Renner video",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_09",
-      "file": "visual_09.mp4",
+      "file": "youtube-nq0iYIHuWxg.mp4",
       "url": "https://www.youtube.com/watch?v=nq0iYIHuWxg",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_10",
-      "file": "visual_10.mp4",
+      "file": "youtube-Xl7AB8lu0C4.mp4",
       "url": "https://www.youtube.com/watch?v=Xl7AB8lu0C4",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_11",
-      "file": "visual_11.jpg",
+      "file": "web-visual_11-1-rick-renner-still-wmmwzs8bx3y.jpg",
       "url": "https://i.ytimg.com/vi/WMmWZS8bx3Y/hqdefault.jpg",
-      "credit": "YouTube thumbnail / referenced Rick & Renner video",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_12",
-      "file": "visual_12.mp4",
+      "file": "youtube-UcpeQkz_FrY.mp4",
       "url": "https://www.youtube.com/watch?v=UcpeQkz_FrY",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_13",
-      "file": "visual_13.mp4",
+      "file": "youtube-wwLqZ2EwBiU.mp4",
       "url": "https://www.youtube.com/watch?v=wwLqZ2EwBiU",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_14",
-      "file": "visual_14.jpg",
+      "file": "web-visual_14-1-rick-renner-still-btm4o1vhq4g.jpg",
       "url": "https://i.ytimg.com/vi/BTM4o1VHQ4g/hqdefault.jpg",
-      "credit": "YouTube thumbnail / referenced Rick & Renner video",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_15",
-      "file": "visual_15.mp4",
+      "file": "youtube-T4TOeMyfBMk.mp4",
       "url": "https://www.youtube.com/watch?v=T4TOeMyfBMk",
-      "credit": "YouTube / Rick & Renner catalog",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     },
     {
       "id": "visual_16",
-      "file": "visual_16.jpg",
+      "file": "web-visual_16-1-rick-renner-still-cc3rsrxvlh8.jpg",
       "url": "https://i.ytimg.com/vi/cc3RsrxvlH8/hqdefault.jpg",
-      "credit": "YouTube thumbnail / referenced Rick & Renner video",
-      "license": "Source page credited; editorial reference",
+      "credit": "YouTube thumbnail",
+      "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.42
+        "y": 0.5
       }
     }
   ]

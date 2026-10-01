@@ -74,14 +74,16 @@
       "asset": "visual_01",
       "motion": "push_in",
       "transition_out": "crossfade",
-      "highlight": "O HIT NÃO FOI ESCRITO PELO RICK"
+      "highlight": "O HIT NÃO FOI ESCRITO PELO RICK",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_02",
       "segment": "agora",
       "asset": "visual_02",
       "motion": "pan_left",
-      "transition_out": "cut"
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_03",
@@ -110,14 +112,16 @@
       "segment": "explosao",
       "asset": "visual_06",
       "motion": "pan_left",
-      "transition_out": "crossfade"
+      "transition_out": "crossfade",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_07",
       "segment": "paradas",
       "asset": "visual_07",
       "motion": "pull_out",
-      "transition_out": "cut"
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_08",
@@ -131,14 +135,16 @@
       "segment": "identidade",
       "asset": "visual_09",
       "motion": "push_in",
-      "transition_out": "cut"
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_10",
       "segment": "catalogo",
       "asset": "visual_10",
       "motion": "pan_left",
-      "transition_out": "cut"
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_11",
@@ -153,14 +159,16 @@
       "segment": "perda",
       "asset": "visual_12",
       "motion": "pan_right",
-      "transition_out": "cut"
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_13",
       "segment": "homenagens",
       "asset": "visual_13",
       "motion": "push_in",
-      "transition_out": "cut"
+      "transition_out": "cut",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_14",
@@ -175,7 +183,8 @@
       "asset": "visual_15",
       "motion": "pull_out",
       "transition_out": "cut",
-      "highlight": "UM HIT, QUATRO DÉCADAS"
+      "highlight": "UM HIT, QUATRO DÉCADAS",
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_16",
