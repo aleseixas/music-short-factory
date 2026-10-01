@@ -79,7 +79,7 @@
       "motion": "push_in",
       "transition_out": "crossfade",
       "highlight": "UM MAPA VIROU HIT",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_02",
@@ -87,7 +87,7 @@
       "asset": "visual_02",
       "motion": "pan_left",
       "transition_out": "cut",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_03",
@@ -96,7 +96,7 @@
       "motion": "pull_out",
       "transition_out": "cut",
       "highlight": "7 MÚSICAS",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_04",
@@ -104,7 +104,7 @@
       "asset": "visual_04",
       "motion": "pan_right",
       "transition_out": "cut",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_05",
@@ -120,7 +120,7 @@
       "asset": "visual_06",
       "motion": "pan_left",
       "transition_out": "crossfade",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_07",
@@ -136,7 +136,7 @@
       "asset": "visual_08",
       "motion": "pan_right",
       "transition_out": "cut",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_09",
@@ -152,7 +152,7 @@
       "asset": "visual_10",
       "motion": "pan_left",
       "transition_out": "cut",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_11",
@@ -168,7 +168,7 @@
       "asset": "visual_12",
       "motion": "pan_right",
       "transition_out": "cut",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_13",
@@ -184,7 +184,7 @@
       "asset": "visual_14",
       "motion": "pan_left",
       "transition_out": "cut",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_15",
@@ -193,7 +193,7 @@
       "motion": "pull_out",
       "transition_out": "cut",
       "highlight": "DOIS FÃS DECIFRARAM TIM",
-      "source_start_seconds": 0
+      "source_start_seconds": 0.0
     },
     {
       "id": "shot_16",
