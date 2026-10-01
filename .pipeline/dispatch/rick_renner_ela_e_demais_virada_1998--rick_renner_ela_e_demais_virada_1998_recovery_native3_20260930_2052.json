@@ -3,7 +3,7 @@
   "slug": "rick_renner_ela_e_demais_virada_1998",
   "request_id": "rick_renner_ela_e_demais_virada_1998_recovery_native3_20260930_2052",
   "source_run_id": "36793653512",
-  "status": "SENDING",
+  "status": "DISPATCHED",
   "display_title": "publish/rick_renner_ela_e_demais_virada_1998/rick_renner_ela_e_demais_virada_1998_recovery_native3_20260930_2052/36793653512",
   "expected_workflow": ".github/workflows/publish-episode.yml",
   "expected_source_sha": "1da593184052489de1e3c6cc50fdc859f598bf72",
@@ -15,5 +15,8 @@
   "lease_expires_at": 1790816471.0,
   "reconcile_after": 1790817251.0,
   "run_reconcile_after": 1790902751.0,
-  "send_authorized_at": 1790816356.0
+  "send_authorized_at": 1790816356.0,
+  "http_status": 200,
+  "response_received_at": 1790816361.0,
+  "run_id": 36798889345
 }
