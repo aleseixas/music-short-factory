@@ -4,7 +4,7 @@
     "enabled": true
   },
   "background_music": {
-    "profile": "external_apt_monkeys_spinning_monkeys",
+    "profile": "emotional_piano",
     "volume": 0.1
   },
   "sfx_cues": [
@@ -74,7 +74,7 @@
       "asset": "visual_03",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 45
+      "source_start_seconds": 35
     },
     {
       "id": "shot_04",
