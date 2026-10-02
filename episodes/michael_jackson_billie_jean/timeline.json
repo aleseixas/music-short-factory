@@ -1,0 +1,769 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": false
+  },
+  "background_music": null,
+  "sfx_cues": [
+    {
+      "time_seconds": 1.1,
+      "type": "impact",
+      "volume": 0.06,
+      "duration_seconds": 0.4
+    },
+    {
+      "time_seconds": 11.367,
+      "type": "riser",
+      "volume": 0.025,
+      "duration_seconds": 0.7
+    },
+    {
+      "time_seconds": 77.167,
+      "type": "impact",
+      "volume": 0.055,
+      "duration_seconds": 0.4
+    },
+    {
+      "time_seconds": 160.4,
+      "type": "riser",
+      "volume": 0.035,
+      "duration_seconds": 0.8
+    },
+    {
+      "time_seconds": 207.9,
+      "type": "impact",
+      "volume": 0.085,
+      "duration_seconds": 0.45
+    },
+    {
+      "time_seconds": 311.9,
+      "type": "impact",
+      "volume": 0.04,
+      "duration_seconds": 0.3
+    }
+  ],
+  "visual_fx_cues": [],
+  "text_fx_cues": [],
+  "overlay_cues": [],
+  "shots": [
+    {
+      "id": "shot_cold_open_01",
+      "segment": "cold_open_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 71.8,
+      "source_end_seconds": 75.73533333333333,
+      "highlight": {
+        "text": "QUEM ERA BILLIE JEAN?",
+        "start_seconds": 0.18,
+        "duration_seconds": 2
+      }
+    },
+    {
+      "id": "shot_cold_open_02",
+      "segment": "cold_open_02",
+      "asset": "archive_01",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_cold_open_03",
+      "segment": "cold_open_03",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 94.2,
+      "source_end_seconds": 98.002
+    },
+    {
+      "id": "shot_cold_open_04",
+      "segment": "cold_open_04",
+      "asset": "archive_02",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_promise_01",
+      "segment": "promise_01",
+      "asset": "quincy_pbs",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 2500,
+      "source_end_seconds": 2504.4686666666666
+    },
+    {
+      "id": "shot_promise_02",
+      "segment": "promise_02",
+      "asset": "archive_03",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_promise_03",
+      "segment": "promise_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 6.2,
+      "source_end_seconds": 10.235333333333335
+    },
+    {
+      "id": "shot_promise_04",
+      "segment": "promise_04",
+      "asset": "archive_04",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_first_payoff_01",
+      "segment": "first_payoff_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 109.6,
+      "source_end_seconds": 116.10199999999999
+    },
+    {
+      "id": "shot_first_payoff_02",
+      "segment": "first_payoff_02",
+      "asset": "plate_photo_02",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_first_payoff_03",
+      "segment": "first_payoff_03",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 116.55,
+      "source_end_seconds": 122.71866666666666
+    },
+    {
+      "id": "shot_first_payoff_04",
+      "segment": "first_payoff_04",
+      "asset": "plate_photo_00",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_meaning_01",
+      "segment": "meaning_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 140.7,
+      "source_end_seconds": 145.302
+    },
+    {
+      "id": "shot_meaning_02",
+      "segment": "meaning_02",
+      "asset": "plate_photo_03",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_meaning_03",
+      "segment": "meaning_03",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 145.74999999999997,
+      "source_end_seconds": 150.2853333333333
+    },
+    {
+      "id": "shot_meaning_04",
+      "segment": "meaning_04",
+      "asset": "archive_05",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_complication_01",
+      "segment": "complication_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 150.7333333333333,
+      "source_end_seconds": 155.36866666666663
+    },
+    {
+      "id": "shot_complication_02",
+      "segment": "complication_02",
+      "asset": "plate_photo_04",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_complication_03",
+      "segment": "complication_03",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 155.8166666666666,
+      "source_end_seconds": 160.65199999999996
+    },
+    {
+      "id": "shot_complication_04",
+      "segment": "complication_04",
+      "asset": "archive_06",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_rehook_01",
+      "segment": "rehook_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 173.5,
+      "source_end_seconds": 179.502,
+      "highlight": {
+        "text": "A INTRODUÇÃO EM DISPUTA",
+        "start_seconds": 0.18,
+        "duration_seconds": 2
+      }
+    },
+    {
+      "id": "shot_rehook_02",
+      "segment": "rehook_02",
+      "asset": "archive_07",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_rehook_03",
+      "segment": "rehook_03",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 179.95,
+      "source_end_seconds": 186.152
+    },
+    {
+      "id": "shot_rehook_04",
+      "segment": "rehook_04",
+      "asset": "archive_08",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_intro_conflict_01",
+      "segment": "intro_conflict_01",
+      "asset": "quincy_pbs",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 2504.9166666666665,
+      "source_end_seconds": 2509.1853333333333
+    },
+    {
+      "id": "shot_intro_conflict_02",
+      "segment": "intro_conflict_02",
+      "asset": "archive_09",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_intro_conflict_03",
+      "segment": "intro_conflict_03",
+      "asset": "quincy_pbs",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 2509.633333333333,
+      "source_end_seconds": 2513.635333333333
+    },
+    {
+      "id": "shot_intro_conflict_04",
+      "segment": "intro_conflict_04",
+      "asset": "quincy_pbs",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 2514.083333333333,
+      "source_end_seconds": 2516.785333333333
+    },
+    {
+      "id": "shot_production_01",
+      "segment": "production_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 194.1,
+      "source_end_seconds": 201.40200000000002
+    },
+    {
+      "id": "shot_production_02",
+      "segment": "production_02",
+      "asset": "graphic_bass",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_production_03",
+      "segment": "production_03",
+      "asset": "graphic_drummer",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_production_04",
+      "segment": "production_04",
+      "asset": "plate_bruce_portrait",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_production_05",
+      "segment": "production_05",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 161.09999999999994,
+      "source_end_seconds": 164.70199999999994
+    },
+    {
+      "id": "shot_drums_01",
+      "segment": "drums_01",
+      "asset": "graphic_platform",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_drums_02",
+      "segment": "drums_02",
+      "asset": "graphic_kick",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_drums_03",
+      "segment": "drums_03",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 201.85,
+      "source_end_seconds": 207.41866666666667
+    },
+    {
+      "id": "shot_drums_04",
+      "segment": "drums_04",
+      "asset": "archive_10",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_mix_01",
+      "segment": "mix_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 207.86666666666665,
+      "source_end_seconds": 211.902
+    },
+    {
+      "id": "shot_mix_02",
+      "segment": "mix_02",
+      "asset": "graphic_mix91",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_mix_03",
+      "segment": "mix_03",
+      "asset": "graphic_mix2",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_mix_04",
+      "segment": "mix_04",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 10.683333333333334,
+      "source_end_seconds": 16.151999999999997
+    },
+    {
+      "id": "shot_stage_loop_01",
+      "segment": "stage_loop_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 16.599999999999998,
+      "source_end_seconds": 21.93533333333333
+    },
+    {
+      "id": "shot_stage_loop_02",
+      "segment": "stage_loop_02",
+      "asset": "plate_photo_05",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_stage_loop_03",
+      "segment": "stage_loop_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 27,
+      "source_end_seconds": 32.16866666666667
+    },
+    {
+      "id": "shot_stage_loop_04",
+      "segment": "stage_loop_04",
+      "asset": "plate_photo_06",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_dates_01",
+      "segment": "dates_01",
+      "asset": "graphic_date_record",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_dates_02",
+      "segment": "dates_02",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 32.61666666666667,
+      "source_end_seconds": 36.08533333333334
+    },
+    {
+      "id": "shot_dates_03",
+      "segment": "dates_03",
+      "asset": "graphic_date_tv",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_build_climax_01",
+      "segment": "build_climax_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 36.53333333333334,
+      "source_end_seconds": 42.36866666666668
+    },
+    {
+      "id": "shot_build_climax_02",
+      "segment": "build_climax_02",
+      "asset": "archive_11",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_build_climax_03",
+      "segment": "build_climax_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 42.81666666666668,
+      "source_end_seconds": 48.85200000000001
+    },
+    {
+      "id": "shot_build_climax_04",
+      "segment": "build_climax_04",
+      "asset": "archive_12",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_moonwalk_01",
+      "segment": "moonwalk_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 217.5,
+      "source_end_seconds": 225.56866666666667
+    },
+    {
+      "id": "shot_moonwalk_02",
+      "segment": "moonwalk_02",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 49.30000000000001,
+      "source_end_seconds": 52.335333333333345
+    },
+    {
+      "id": "shot_moonwalk_03",
+      "segment": "moonwalk_03",
+      "asset": "archive_13",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_moonwalk_04",
+      "segment": "moonwalk_04",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 52.783333333333346,
+      "source_end_seconds": 55.95200000000001
+    },
+    {
+      "id": "shot_moonwalk_05",
+      "segment": "moonwalk_05",
+      "asset": "archive_14",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_dance_origin_01",
+      "segment": "dance_origin_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 63,
+      "source_end_seconds": 67.16866666666667
+    },
+    {
+      "id": "shot_dance_origin_02",
+      "segment": "dance_origin_02",
+      "asset": "archive_15",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_dance_origin_03",
+      "segment": "dance_origin_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 67.61666666666667,
+      "source_end_seconds": 71.68533333333333
+    },
+    {
+      "id": "shot_dance_origin_04",
+      "segment": "dance_origin_04",
+      "asset": "archive_16",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_consequence_01",
+      "segment": "consequence_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 72.13333333333334,
+      "source_end_seconds": 76.26866666666668
+    },
+    {
+      "id": "shot_consequence_02",
+      "segment": "consequence_02",
+      "asset": "graphic_chart",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_consequence_03",
+      "segment": "consequence_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 76.71666666666668,
+      "source_end_seconds": 81.08533333333334
+    },
+    {
+      "id": "shot_consequence_04",
+      "segment": "consequence_04",
+      "asset": "archive_17",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_consequence_05",
+      "segment": "consequence_05",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 81.53333333333335,
+      "source_end_seconds": 86.06866666666667
+    },
+    {
+      "id": "shot_consequence_06",
+      "segment": "consequence_06",
+      "asset": "archive_18",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_video_impact_01",
+      "segment": "video_impact_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 86.51666666666668,
+      "source_end_seconds": 92.052
+    },
+    {
+      "id": "shot_video_impact_02",
+      "segment": "video_impact_02",
+      "asset": "archive_19",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_video_impact_03",
+      "segment": "video_impact_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 98,
+      "source_end_seconds": 103.86866666666666
+    },
+    {
+      "id": "shot_video_impact_04",
+      "segment": "video_impact_04",
+      "asset": "archive_20",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_legacy_01",
+      "segment": "legacy_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 104.31666666666666,
+      "source_end_seconds": 109.31866666666666
+    },
+    {
+      "id": "shot_legacy_02",
+      "segment": "legacy_02",
+      "asset": "graphic_grammy",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_legacy_03",
+      "segment": "legacy_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 109.76666666666667,
+      "source_end_seconds": 115.002
+    },
+    {
+      "id": "shot_legacy_04",
+      "segment": "legacy_04",
+      "asset": "archive_21",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_final_question_01",
+      "segment": "final_question_01",
+      "asset": "billie_official",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 222,
+      "source_end_seconds": 226.80200000000002,
+      "highlight": {
+        "text": "ELA EXISTIU?",
+        "start_seconds": 0.18,
+        "duration_seconds": 2
+      }
+    },
+    {
+      "id": "shot_final_question_02",
+      "segment": "final_question_02",
+      "asset": "graphic_composite",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_final_question_03",
+      "segment": "final_question_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 115.45,
+      "source_end_seconds": 120.31866666666666
+    },
+    {
+      "id": "shot_final_question_04",
+      "segment": "final_question_04",
+      "asset": "archive_22",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_last_rehook_01",
+      "segment": "last_rehook_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 120.76666666666667,
+      "source_end_seconds": 125.16866666666667
+    },
+    {
+      "id": "shot_last_rehook_02",
+      "segment": "last_rehook_02",
+      "asset": "archive_23",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_last_rehook_03",
+      "segment": "last_rehook_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 125.61666666666667,
+      "source_end_seconds": 129.4186666666667
+    },
+    {
+      "id": "shot_last_rehook_04",
+      "segment": "last_rehook_04",
+      "asset": "plate_photo_19",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_last_rehook_05",
+      "segment": "last_rehook_05",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 136,
+      "source_end_seconds": 141.002
+    },
+    {
+      "id": "shot_final_payoff_01",
+      "segment": "final_payoff_01",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 141.45,
+      "source_end_seconds": 145.552
+    },
+    {
+      "id": "shot_final_payoff_02",
+      "segment": "final_payoff_02",
+      "asset": "archive_24",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_final_payoff_03",
+      "segment": "final_payoff_03",
+      "asset": "motown25",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 145.99999999999997,
+      "source_end_seconds": 150.16866666666664
+    },
+    {
+      "id": "shot_final_payoff_04",
+      "segment": "final_payoff_04",
+      "asset": "archive_25",
+      "motion": "push_in",
+      "transition_out": "cut"
+    }
+  ]
+}

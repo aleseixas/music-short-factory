@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "cover_intro": false,
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "working_scale": 1,
+    "intermediate_crf": 16,
+    "intermediate_preset": "veryfast",
+    "crf": 18,
+    "preset": "medium"
+  },
+  "style": {
+    "captions": {
+      "font_size": 43,
+      "active_color": "#FFFFFF",
+      "max_words": 8,
+      "max_chars": 56,
+      "max_duration": 3.2,
+      "balanced_split_threshold": 50,
+      "margin_bottom": 65,
+      "margin_left": 150,
+      "margin_right": 150,
+      "outline_size": 3
+    },
+    "highlights": {
+      "font_size": 70,
+      "top": 100,
+      "max_width": 1400
+    },
+    "motion": {
+      "zoom_amount": 0.035,
+      "pan_zoom": 1.055
+    }
+  },
+  "music_sections": [
+    {
+      "start_segment": "cold_open_01",
+      "end_segment": "first_payoff_01",
+      "profile": "billie_mystery",
+      "volume": 0.095,
+      "fade_in": 0.7,
+      "fade_out": 0.7,
+      "source_start": 0
+    },
+    {
+      "start_segment": "first_payoff_01",
+      "end_segment": "rehook_01",
+      "profile": "billie_mystery",
+      "volume": 0.065,
+      "fade_in": 0.7,
+      "fade_out": 1.6,
+      "source_start": 24
+    },
+    {
+      "start_segment": "rehook_01",
+      "end_segment": "mix_01",
+      "profile": "billie_pulse",
+      "volume": 0.1,
+      "fade_in": 0.45,
+      "fade_out": 0.7,
+      "source_start": 0
+    },
+    {
+      "start_segment": "mix_01",
+      "end_segment": "stage_loop_01",
+      "profile": "billie_tension",
+      "volume": 0.075,
+      "fade_in": 0.4,
+      "fade_out": 1.2,
+      "source_start": 0
+    },
+    {
+      "start_segment": "stage_loop_01",
+      "end_segment": "build_climax_04",
+      "profile": "billie_arrival",
+      "volume": 0.1,
+      "fade_in": 1.1,
+      "fade_out": 1,
+      "source_start": 0
+    },
+    {
+      "start_segment": "moonwalk_01",
+      "end_segment": "consequence_01",
+      "profile": "billie_arrival",
+      "volume": 0.13,
+      "fade_in": 0.15,
+      "fade_out": 1,
+      "source_start": 40
+    },
+    {
+      "start_segment": "consequence_01",
+      "end_segment": "final_question_01",
+      "profile": "billie_pulse",
+      "volume": 0.075,
+      "fade_in": 0.6,
+      "fade_out": 1.5,
+      "source_start": 28
+    },
+    {
+      "start_segment": "final_question_01",
+      "end_segment": "last_rehook_01",
+      "profile": "billie_resolution",
+      "volume": 0.065,
+      "fade_in": 0.8,
+      "fade_out": 1,
+      "source_start": 0
+    },
+    {
+      "start_segment": "last_rehook_01",
+      "end_segment": "END",
+      "profile": "billie_resolution",
+      "volume": 0.075,
+      "fade_in": 0.7,
+      "fade_out": 2,
+      "source_start": 34
+    }
+  ],
+  "preserve_exact_authored_windows": true
+}

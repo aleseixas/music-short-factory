@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "billie_official",
+      "file": "billie_official.mp4",
+      "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "motown25",
+      "file": "motown25.mp4",
+      "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "quincy_pbs",
+      "file": "quincy_pbs.mp4",
+      "url": "https://wnet-am-archive-production-tc.digi-producers.pbs.org/wp-content/uploads/2022/manual/3x8aWov4QdyFhOkd9bJgkQ.mp4",
+      "credit": "PBS American Masters",
+      "license": "Copyright retained; public archive editorial excerpt",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "archive_01",
+      "file": "archive_01.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_02",
+      "file": "archive_02.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_03",
+      "file": "archive_03.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_04",
+      "file": "archive_04.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_02",
+      "file": "plate_photo_02.jpg",
+      "url": "",
+      "credit": "Bernie Ilson, Inc., public relations, New York.",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_00",
+      "file": "plate_photo_00.jpg",
+      "url": "",
+      "credit": "Bernie Ilson, Inc., public relations, New York.",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_03",
+      "file": "plate_photo_03.jpg",
+      "url": "",
+      "credit": "CBS Television",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_05",
+      "file": "archive_05.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_04",
+      "file": "plate_photo_04.jpg",
+      "url": "",
+      "credit": "The Jackson 5",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_06",
+      "file": "archive_06.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_07",
+      "file": "archive_07.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_08",
+      "file": "archive_08.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_09",
+      "file": "archive_09.jpg",
+      "url": "",
+      "credit": "PBS American Masters",
+      "license": "Copyright retained; public archive editorial excerpt",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_bass",
+      "file": "graphic_bass.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_drummer",
+      "file": "graphic_drummer.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_bruce_portrait",
+      "file": "plate_bruce_portrait.jpg",
+      "url": "",
+      "credit": "checkov",
+      "license": "CC BY-SA 2.0 de",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_platform",
+      "file": "graphic_platform.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_kick",
+      "file": "graphic_kick.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_10",
+      "file": "archive_10.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_mix91",
+      "file": "graphic_mix91.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_mix2",
+      "file": "graphic_mix2.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_05",
+      "file": "plate_photo_05.jpg",
+      "url": "",
+      "credit": "CBS Television",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_06",
+      "file": "plate_photo_06.jpg",
+      "url": "",
+      "credit": "CBS Television",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_date_record",
+      "file": "graphic_date_record.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_date_tv",
+      "file": "graphic_date_tv.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_11",
+      "file": "archive_11.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_12",
+      "file": "archive_12.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_13",
+      "file": "archive_13.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_14",
+      "file": "archive_14.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_15",
+      "file": "archive_15.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_16",
+      "file": "archive_16.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_chart",
+      "file": "graphic_chart.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_17",
+      "file": "archive_17.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_18",
+      "file": "archive_18.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_19",
+      "file": "archive_19.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_20",
+      "file": "archive_20.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_grammy",
+      "file": "graphic_grammy.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_21",
+      "file": "archive_21.jpg",
+      "url": "",
+      "credit": "Michael Jackson",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "graphic_composite",
+      "file": "graphic_composite.jpg",
+      "url": "",
+      "credit": "Além do Hit / ilustração editorial original",
+      "license": "Original project artwork",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_22",
+      "file": "archive_22.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_23",
+      "file": "archive_23.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "plate_photo_19",
+      "file": "plate_photo_19.jpg",
+      "url": "",
+      "credit": "Studio publicity still",
+      "license": "Public domain",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_24",
+      "file": "archive_24.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "archive_25",
+      "file": "archive_25.jpg",
+      "url": "",
+      "credit": "eware",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "thumbnail_base",
+      "file": "thumbnail_base.jpg",
+      "url": "",
+      "credit": "Michael Jackson / canal oficial; frame 144.5s, composição editorial",
+      "license": "Copyright retained; no open license declared",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}

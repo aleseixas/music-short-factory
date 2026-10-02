@@ -1,0 +1,1804 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id": "cold_open_01",
+      "visual_intent": "Quem era Billie Jean? Michael Jackson transformou",
+      "required_seconds": 3.933333333333333,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 71.8,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        },
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 2,
+          "source_start_seconds": 40,
+          "rights_status": "unknown",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "cold_open_02",
+      "visual_intent": "esse nome em um mistério que atravessou",
+      "required_seconds": 2.0333333333333337,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 79.2,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_01",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "cold_open_03",
+      "visual_intent": "décadas. A mulher da música existiu? A",
+      "required_seconds": 3.8000000000000007,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 94.2,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "cold_open_04",
+      "visual_intent": "resposta começa longe do palco.",
+      "required_seconds": 2.299999999999999,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 93,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_02",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "promise_01",
+      "visual_intent": "Para chegar lá, precisamos ligar três histórias. As pessoas",
+      "required_seconds": 4.466666666666669,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Quincy Jones Interview #1, 2001-06-08",
+          "url": "https://wnet-am-archive-production-tc.digi-producers.pbs.org/wp-content/uploads/2022/manual/3x8aWov4QdyFhOkd9bJgkQ.mp4",
+          "file": "quincy_pbs.mp4",
+          "source_page_url": "https://www.pbs.org/wnet/americanmasters/archive/interview/quincy-jones-interview-1/",
+          "source": "pbs",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "PBS American Masters",
+          "license": "Copyright retained; public archive editorial excerpt",
+          "source_start_seconds": 2500,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "search_provider": "authoring-pool"
+        }
+      ]
+    },
+    {
+      "id": "promise_02",
+      "visual_intent": "que inspiraram a personagem, uma decisão de",
+      "required_seconds": 2.8666666666666636,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 108.4,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_03",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "promise_03",
+      "visual_intent": "estúdio que quase mudou a música e uma apresentação que você",
+      "required_seconds": 4.033333333333335,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 6.2,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "promise_04",
+      "visual_intent": "provavelmente reconhece sem ouvir uma palavra.",
+      "required_seconds": 3.466666666666665,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 24.6,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_04",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "first_payoff_01",
+      "visual_intent": "Billie Jean não era, segundo Michael, o retrato de uma única mulher. Em sua autobiografia,",
+      "required_seconds": 6.5,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 109.6,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "first_payoff_03",
+      "visual_intent": "pessoas que haviam perturbado a vida dele e dos irmãos. A história vinha de experiências com fãs que",
+      "required_seconds": 6.166666666666664,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 116.55,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "meaning_01",
+      "visual_intent": "Isso ajuda a entender a tensão da letra. O narrador encontra",
+      "required_seconds": 4.600000000000001,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 140.7,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "meaning_03",
+      "visual_intent": "Ele nega. A música deixa o ouvinte dentro dessa disputa,",
+      "required_seconds": 4.5333333333333385,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 145.74999999999997,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "meaning_04",
+      "visual_intent": "sem funcionar como documento de um caso real.",
+      "required_seconds": 2.8999999999999986,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 125.95,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_05",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "complication_01",
+      "visual_intent": "Por isso, histórias sobre uma fã específica precisam de cuidado.",
+      "required_seconds": 4.633333333333326,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 150.7333333333333,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "complication_03",
+      "visual_intent": "mas eles não comprovam que aquela pessoa era a Billie Jean da canção. E",
+      "required_seconds": 4.833333333333329,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 155.8166666666666,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "complication_04",
+      "visual_intent": "havia outro mistério, agora dentro do estúdio.",
+      "required_seconds": 3.433333333333337,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 139.95,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_06",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "rehook_01",
+      "visual_intent": "Enquanto o público tentava descobrir quem era a Billie Jean, Michael precisava defender outra coisa.",
+      "required_seconds": 6.0,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 173.5,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "rehook_02",
+      "visual_intent": "A entrada da própria música. A parte que",
+      "required_seconds": 3.6999999999999886,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 167.1,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_07",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "rehook_03",
+      "visual_intent": "hoje reconhecemos quase imediatamente também foi motivo de discussão. O que parecia demora",
+      "required_seconds": 6.200000000000003,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 179.95,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "rehook_04",
+      "visual_intent": "para um produtor era para Michael o motivo para dançar.",
+      "required_seconds": 3.5333333333333314,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 189.4,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_08",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "intro_conflict_01",
+      "visual_intent": "Quincy Jones contou, em entrevista preservada pela PBS, que",
+      "required_seconds": 4.266666666666666,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Quincy Jones Interview #1, 2001-06-08",
+          "url": "https://wnet-am-archive-production-tc.digi-producers.pbs.org/wp-content/uploads/2022/manual/3x8aWov4QdyFhOkd9bJgkQ.mp4",
+          "file": "quincy_pbs.mp4",
+          "source_page_url": "https://www.pbs.org/wnet/americanmasters/archive/interview/quincy-jones-interview-1/",
+          "source": "pbs",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "PBS American Masters",
+          "license": "Copyright retained; public archive editorial excerpt",
+          "source_start_seconds": 2504.9166666666665,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "search_provider": "authoring-pool"
+        }
+      ]
+    },
+    {
+      "id": "intro_conflict_02",
+      "visual_intent": "a introdução provocou debate. Michael",
+      "required_seconds": 2.76666666666668,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Quincy Jones Interview #1, 2001-06-08",
+          "url": "https://wnet-am-archive-production-tc.digi-producers.pbs.org/wp-content/uploads/2022/manual/3x8aWov4QdyFhOkd9bJgkQ.mp4",
+          "file": "quincy_pbs.mp4",
+          "source_page_url": "https://www.pbs.org/wnet/americanmasters/archive/interview/quincy-jones-interview-1/",
+          "source": "pbs",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "PBS American Masters",
+          "license": "Copyright retained; public archive editorial excerpt",
+          "source_start_seconds": 2606,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_09",
+          "search_provider": "authoring-pool"
+        }
+      ]
+    },
+    {
+      "id": "intro_conflict_03",
+      "visual_intent": "insistia naquele espaço antes da voz. A introdução ficou",
+      "required_seconds": 4.0,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Quincy Jones Interview #1, 2001-06-08",
+          "url": "https://wnet-am-archive-production-tc.digi-producers.pbs.org/wp-content/uploads/2022/manual/3x8aWov4QdyFhOkd9bJgkQ.mp4",
+          "file": "quincy_pbs.mp4",
+          "source_page_url": "https://www.pbs.org/wnet/americanmasters/archive/interview/quincy-jones-interview-1/",
+          "source": "pbs",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "PBS American Masters",
+          "license": "Copyright retained; public archive editorial excerpt",
+          "source_start_seconds": 2509.633333333333,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "search_provider": "authoring-pool"
+        }
+      ]
+    },
+    {
+      "id": "intro_conflict_04",
+      "visual_intent": "e ganhou uma função decisiva.",
+      "required_seconds": 2.6999999999999886,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Quincy Jones Interview #1, 2001-06-08",
+          "url": "https://wnet-am-archive-production-tc.digi-producers.pbs.org/wp-content/uploads/2022/manual/3x8aWov4QdyFhOkd9bJgkQ.mp4",
+          "file": "quincy_pbs.mp4",
+          "source_page_url": "https://www.pbs.org/wnet/americanmasters/archive/interview/quincy-jones-interview-1/",
+          "source": "pbs",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "PBS American Masters",
+          "license": "Copyright retained; public archive editorial excerpt",
+          "source_start_seconds": 2514.083333333333,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "search_provider": "authoring-pool"
+        }
+      ]
+    },
+    {
+      "id": "production_01",
+      "visual_intent": "Antes de Michael cantar, a bateria estabelece o pulso e o baixo prende a atenção. A composição era dele.",
+      "required_seconds": 7.300000000000011,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 194.1,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "production_05",
+      "visual_intent": "que a faixa pudesse ser reconhecida antes da primeira frase.",
+      "required_seconds": 3.5999999999999943,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 161.09999999999994,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "drums_03",
+      "visual_intent": "Mas a combinação de precisão, espaço e repetição transformava uma história",
+      "required_seconds": 5.566666666666663,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 201.85,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "drums_04",
+      "visual_intent": "inquietante numa música impossível de ignorar.",
+      "required_seconds": 3.1333333333333258,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 190.5,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_10",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "mix_01",
+      "visual_intent": "A busca pela versão certa foi tão longe que Swedien contou",
+      "required_seconds": 4.033333333333331,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 207.86666666666665,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "mix_04",
+      "visual_intent": "gravação estava pronta. Só faltava uma imagem capaz de transformar aquele pulso em memória.",
+      "required_seconds": 5.466666666666669,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 10.683333333333334,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "stage_loop_01",
+      "visual_intent": "Essa imagem apareceu no Motown 25. O especial celebrava a gravadora",
+      "required_seconds": 5.333333333333343,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 16.599999999999998,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "stage_loop_03",
+      "visual_intent": "os irmãos no palco, mas queria mostrar também quem havia se tornado sozinho. E",
+      "required_seconds": 5.166666666666686,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 27,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "dates_02",
+      "visual_intent": "1983, em Pasadena. A",
+      "required_seconds": 3.4666666666666686,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 32.61666666666667,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "build_climax_01",
+      "visual_intent": "Michael ficou sozinho. A luva, a jaqueta e o corpo em contraste",
+      "required_seconds": 5.833333333333343,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 36.53333333333334,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "build_climax_02",
+      "visual_intent": "com o palco concentravam a atenção. Mas agora cada",
+      "required_seconds": 3.799999999999983,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 25.8,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_11",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "build_climax_03",
+      "visual_intent": "movimento parecia conversar com aquela introdução que ele havia defendido. Até que o corpo anunciou",
+      "required_seconds": 6.033333333333331,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 42.81666666666668,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "build_climax_04",
+      "visual_intent": "uma direção e os pés seguiram a outra.",
+      "required_seconds": 3.2333333333333485,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 61.2,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_12",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "moonwalk_01",
+      "visual_intent": "Era o moonwalk. O efeito parecia contrariar o chão, caminhar para frente enquanto deslizava para trás.",
+      "required_seconds": 8.066666666666663,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 217.5,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "moonwalk_02",
+      "visual_intent": "Não foi a invenção de um passo naquele instante.",
+      "required_seconds": 3.0333333333333314,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 49.30000000000001,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "moonwalk_03",
+      "visual_intent": "Foi a chegada de um movimento",
+      "required_seconds": 2.166666666666657,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 62.1,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_13",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "moonwalk_04",
+      "visual_intent": "já existente ao lugar, à música e ao",
+      "required_seconds": 3.1666666666666856,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 52.783333333333346,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "moonwalk_05",
+      "visual_intent": "intérprete que o tornariam inseparável de sua imagem.",
+      "required_seconds": 3.0999999999999943,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "exact",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 96.2,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_14",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "dance_origin_01",
+      "visual_intent": "O passo vinha do backslide. Dançarinos como Jeffrey",
+      "required_seconds": 4.166666666666657,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 63,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "dance_origin_02",
+      "visual_intent": "Daniel e Derek Cooley Jaxson fazem parte dessa",
+      "required_seconds": 2.6333333333333258,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 97.2,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_15",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "dance_origin_03",
+      "visual_intent": "história de transmissão. A contribuição de Michael foi incorporar e",
+      "required_seconds": 4.066666666666691,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 67.61666666666667,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "dance_origin_04",
+      "visual_intent": "lapidar o movimento dentro de uma performance inteira.",
+      "required_seconds": 3.1333333333333258,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 133.2,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_16",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "consequence_01",
+      "visual_intent": "E aqui a ordem dos acontecimentos importa. Billie Jean",
+      "required_seconds": 4.133333333333326,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 72.13333333333334,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "consequence_03",
+      "visual_intent": "antes da exibição do especial. Ficou sete semanas no topo.",
+      "required_seconds": 4.366666666666646,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 76.71666666666668,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "consequence_04",
+      "visual_intent": "O moonwalk não criou o sucesso do zero.",
+      "required_seconds": 2.8000000000000114,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 134.4,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_17",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "consequence_05",
+      "visual_intent": "Ele deu a um sucesso que já existia, uma imagem que podia ser reconhecida,",
+      "required_seconds": 4.533333333333303,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 81.53333333333335,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "consequence_06",
+      "visual_intent": "repetida e lembrada.",
+      "required_seconds": 2.0,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 172.3,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_18",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "video_impact_01",
+      "visual_intent": "O videoclipe acrescentou outra assinatura, o chão que se iluminava sob os passos de",
+      "required_seconds": 5.53333333333336,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 86.51666666666668,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "video_impact_02",
+      "visual_intent": "Michael. Na televisão, o movimento parecia desafiar",
+      "required_seconds": 3.6000000000000227,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 193.1,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_19",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "video_impact_03",
+      "visual_intent": "o chão. No clipe, o chão reagia a ele. Essa ligação entre som e corpo ajuda",
+      "required_seconds": 5.866666666666617,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 98,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "video_impact_04",
+      "visual_intent": "a explicar por que Billie Jean virou muito mais do que uma faixa de thriller.",
+      "required_seconds": 3.8666666666666742,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 214.1,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_20",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "legacy_01",
+      "visual_intent": "Em 1984, Billie Jean venceu dois Grammys, um",
+      "required_seconds": 5.0,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 104.31666666666666,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "legacy_03",
+      "visual_intent": "nas categorias de rhythm and blues. Uma história de desconfiança havia se transformado",
+      "required_seconds": 5.2333333333333485,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 109.76666666666667,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "legacy_04",
+      "visual_intent": "em um dos retratos mais reconhecíveis de Michael Jackson.",
+      "required_seconds": 2.933333333333337,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 228.3,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_21",
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_question_01",
+      "visual_intent": "Então, afinal, quem era Billie Jean? A resposta mais sustentada",
+      "required_seconds": 4.800000000000011,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "Michael Jackson - Billie Jean (Official Video)",
+          "url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "file": "billie_official.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=Zi_XLOBDo_Y",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "Michael Jackson",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 222,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "Zi_XLOBDo_Y",
+          "video_id": "Zi_XLOBDo_Y",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_question_03",
+      "visual_intent": "Não há uma única mulher confirmada como a identidade por trás do nome. Mas",
+      "required_seconds": 4.866666666666674,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 115.45,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_question_04",
+      "visual_intent": "ainda falta uma última peça dessa transformação.",
+      "required_seconds": 2.566666666666663,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 173.1,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_22",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "last_rehook_01",
+      "visual_intent": "O momento que tanta gente considera perfeito não parecia perfeito para Michael.",
+      "required_seconds": 4.400000000000034,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 120.76666666666667,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "last_rehook_02",
+      "visual_intent": "Em moonwalk, ele contou que saiu frustrado por não ter",
+      "required_seconds": 3.599999999999966,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 196.1,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_23",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "last_rehook_03",
+      "visual_intent": "sustentado uma posição na ponta dos pés como queria. Depois,",
+      "required_seconds": 3.8000000000000114,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 125.61666666666667,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "last_rehook_05",
+      "visual_intent": "O que ele enxergava como falha, outro grande dançador enxergava como uma conquista.",
+      "required_seconds": 5.0,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 136,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_payoff_01",
+      "visual_intent": "A mulher era uma personagem. O medo vinha de experiências.",
+      "required_seconds": 4.099999999999966,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 141.45,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_payoff_02",
+      "visual_intent": "E o legado nasceu quando Michael deu movimento a",
+      "required_seconds": 2.8000000000000114,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 198,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_24",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_payoff_03",
+      "visual_intent": "essa história. Para continuar, veja também como o outro clipe dele virou",
+      "required_seconds": 4.166666666666686,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 145.99999999999997,
+          "authored_kind": "video",
+          "derived_image_asset": null,
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    },
+    {
+      "id": "final_payoff_04",
+      "visual_intent": "uma disputa no Brasil, aqui no Além do Hit.",
+      "required_seconds": 2.819999999999993,
+      "candidates": [
+        {
+          "kind": "video",
+          "name": "The first Moonwalk - Michael Jackson - Billie Jean - King Of Pop HD",
+          "url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "file": "motown25.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=LXJcOduo0w4",
+          "source": "youtube",
+          "semantic_fit": "direct",
+          "editorial_rank": 1,
+          "rights_status": "unknown",
+          "credit": "eware",
+          "license": "Copyright retained; no open license declared",
+          "source_start_seconds": 200.5,
+          "authored_kind": "image",
+          "derived_image_asset": "archive_25",
+          "provider_id": "LXJcOduo0w4",
+          "video_id": "LXJcOduo0w4",
+          "search_provider": "youtube_web"
+        }
+      ]
+    }
+  ]
+}

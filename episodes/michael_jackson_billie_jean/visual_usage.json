@@ -1,0 +1,2163 @@
+{
+  "schema_version": 1,
+  "episode": "michael_jackson_billie_jean",
+  "recorded_at": "2026-10-02T13:21:47Z",
+  "visual_usage": [
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_cold_open_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e9b3668c8335c39c",
+          "ec21599327692edc",
+          "c4a16d9997946b63",
+          "9ec6a3f26cb44b84",
+          "bad7cc865aa5d029",
+          "86dd70a65c69965c",
+          "e3470e4f2c273297",
+          "e3c70f32464b1997"
+        ],
+        "source_start_seconds": 71.8,
+        "source_duration_seconds": 3.933333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_cold_open_02",
+      "asset_id": "archive_01",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "976f09d30deffa50cd7d5d77e130af37ac1088cabd8d9f895a8e052fda22f72e",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "969264cd696f4e38",
+          "969424c939cf6e5c",
+          "969425c139c76ece",
+          "9d294a724ccd7366",
+          "9db5698d33322666",
+          "c33f642c61e30f3c",
+          "c3db37c31e1e1838"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_cold_open_03",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "daf765a4b101992d",
+          "daf765a4b5819924",
+          "d8e764b6b589a524",
+          "cee765b6b189a424",
+          "cce765b6b189a425",
+          "cee765b6b581a424",
+          "cee76496a599a425",
+          "cef76492a599a524"
+        ],
+        "source_start_seconds": 94.2,
+        "source_duration_seconds": 3.8
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_cold_open_04",
+      "asset_id": "archive_02",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "06f221485cb997ac26514c451c2dc63706d2ec0857fb01a572c3cfb2c1fb1bcd",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c3c364b63b992c78",
+          "c3c264a63b933e96",
+          "c0c264e4b3973e97",
+          "87cd6934347b7252",
+          "87864bcb4ba78749",
+          "dbf333191c262c6c",
+          "c8cd67e227d8f821"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_promise_01",
+      "asset_id": "quincy_pbs",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2581fadcf8a5994275dd1175dc966b28702f2ab2cefcb4b881f1e18d6ddc64a1",
+        "url_hashes": [
+          "25cfd40b942807516f0ac33bc124bb6b37606cd0fe022500f233cdbf3b2c83bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8f72678c72877813",
+          "8f72678c708f7825",
+          "8d72678c728f7813",
+          "8d7266ac72877893",
+          "8c7267ad79857813",
+          "8c7a63ad79863893",
+          "8c7263ad79863897",
+          "847a63ad79863897"
+        ],
+        "source_start_seconds": 2500.0,
+        "source_duration_seconds": 4.466667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_promise_02",
+      "asset_id": "archive_03",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b3e7f13dfc7bb5f998cf10b3d526cf554a6c7230de198707dca476e2f4830b21",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "969460cb6967ce78",
+          "969c34cb69c74e4c",
+          "969c259339c34ece",
+          "9d6b46524ed97066",
+          "9d996b8d33322666",
+          "c337742c65e30d3c",
+          "c3d337d30c1c3c3c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_promise_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "fd0c00ffb7002ef4",
+          "ff0000fff7001ef1",
+          "ff8000ffe0003fe7",
+          "ff0000ffe0103fe7",
+          "ff0000ffe0103fe7",
+          "fe0101fee0177ee0",
+          "d9f6f69b26929820",
+          "d9f6f69927829920"
+        ],
+        "source_start_seconds": 6.2,
+        "source_duration_seconds": 4.033333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_promise_04",
+      "asset_id": "archive_04",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "4fd2c0af5996cb4bcb392009a3100332f98bcfb73264348f4969bfaabd5e8cc3",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "ce3971c639c136c9",
+          "ce39718679c136c9",
+          "c639718678e137c9",
+          "9d628d9d626c936c",
+          "9d72628d7d938964",
+          "c33cd3c13c31cf31",
+          "c32c3cd301cfd339"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_first_payoff_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "862f2f5879c64e1c",
+          "cc8d33e66631396c",
+          "ccc933e66631396c",
+          "c1f99f4666311c2d",
+          "c9668b6659311f35",
+          "c9668b6659311f95",
+          "c1669b6659311fb1",
+          "c9669b6659311f91"
+        ],
+        "source_start_seconds": 109.6,
+        "source_duration_seconds": 6.5
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_first_payoff_02",
+      "asset_id": "plate_photo_02",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1f8957c106b6a1ee7707582728e2d4aa7b0f81719731e00f0ededebf42c87738",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "ce9b64ce31732271",
+          "ce9a64ce31cb668a",
+          "ce9a64ce29c666c6",
+          "9c63696b66657232",
+          "9c94639d6b939263",
+          "c13e32363c333e1e",
+          "c1c93ec1368ecc3e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_first_payoff_03",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cdb3b0cf9c485c49",
+          "8fb132cfb7c8481c",
+          "92e9b1c6c99d6646",
+          "ccf332cce1839c78",
+          "c8bb31d4c1df4c46",
+          "8cd8b1e4c8e3ce4e",
+          "c7b9b0e6c8e1cc4c",
+          "c09b31f0cd1d4e5e"
+        ],
+        "source_start_seconds": 116.55,
+        "source_duration_seconds": 6.166667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_first_payoff_04",
+      "asset_id": "plate_photo_00",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6d4f087f1bead237e7f2441805dcfd243ce55733d6793a1b21f61de1085f46f7",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "cce6739964cc6471",
+          "ce66339b61cc6499",
+          "ce66339b738c648c",
+          "9c64b6d24b6b6362",
+          "988d6f9464769666",
+          "c1308cee66363e3e",
+          "c5e13acd3919cd38"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_meaning_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "b26ea46a551c2de5",
+          "f9e4aa54d8cb1859",
+          "f3eda21c919a1a53",
+          "d927a0c734f1075e",
+          "f9e6ae44669a181e",
+          "9970ab45d2db0357",
+          "dcb2ab71c2cd4c4c",
+          "d975a2cd66235652"
+        ],
+        "source_start_seconds": 140.7,
+        "source_duration_seconds": 4.6
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_meaning_02",
+      "asset_id": "plate_photo_03",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7680fd20d49eb40b95f5cb1e7fae5c772eeceb95c07d7ca091fd0354c83de5e7",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "cf3364cc30cd3371",
+          "cf31648e38cf3331",
+          "cf3165841ccf339a",
+          "94636b919c646bcb",
+          "9c9463cc635b9b68",
+          "c13e32cfc13836e6",
+          "c1c93ee03e66c732"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_meaning_03",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cd34927c56413fb8",
+          "983367cc66719933",
+          "983367cc66719933",
+          "c9609fcf66193616",
+          "c9609fcf6619341e",
+          "c960bfc76619181f",
+          "c9609fcb6619321f",
+          "c960bfc76619181f"
+        ],
+        "source_start_seconds": 145.75,
+        "source_duration_seconds": 4.533333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_meaning_04",
+      "asset_id": "archive_05",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8ecdab7afd4d22d66b1ed3e9d9f24126f221bc48afef4b7afde33e2f9dac5e17",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c3cd6d933e943238",
+          "c2cd69d22f863e98",
+          "c0c969d06fc76ed0",
+          "875a473c383d3734",
+          "858d5ac77552257a",
+          "db667f18131b1d18",
+          "dbc326ff3d2c1820"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_complication_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c960bfcb66193856",
+          "cd60bfcb6e193016",
+          "c860b01f6f437376",
+          "c0679fc96e585316",
+          "c17fbec06c491f12",
+          "c0679fd86f781312",
+          "c1669ec966591756",
+          "85761e8936293b37"
+        ],
+        "source_start_seconds": 150.733333,
+        "source_duration_seconds": 4.633333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_complication_02",
+      "asset_id": "plate_photo_04",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7bf8d1a0329428a25bdf81793d3bf232f442cfc8f5b476830c5da33dae49bf09",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9bdb66cb48646466",
+          "9b9b668b98cc6c26",
+          "9bb1669b9889c996",
+          "9465cc936b696563",
+          "94936d8c943593db",
+          "c933f1ce36323236",
+          "c9ce33f1c819c5c6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_complication_03",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c57a1e8934313577",
+          "c9761e4326993799",
+          "c9761e432699369b",
+          "c9761e432699369b",
+          "c9761e432699369b",
+          "c9761e432699369b",
+          "c9761e6324b93699",
+          "cd56c96e268136cb"
+        ],
+        "source_start_seconds": 155.816667,
+        "source_duration_seconds": 4.833333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_complication_04",
+      "asset_id": "archive_06",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "021c596b41ba88909a1937f8fb81df1a5ae6cb466458d668528cf98c0bd3c99a",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "98f373dc64486c78",
+          "90b3339c66c86f5a",
+          "98b0b29566cd2f5a",
+          "93655c785858758f",
+          "93a7649067a7872e",
+          "de38092665057dde",
+          "cefa39c8309bda30"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_rehook_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c0c7393036373b3e",
+          "c0c7193837373c3d",
+          "c0c7383c37333e3c",
+          "c0c7383827333f3e",
+          "c0c7383837373b33",
+          "c8c7393826373f38",
+          "c0c7383827373f1e",
+          "95926d62726e62b3"
+        ],
+        "source_start_seconds": 173.5,
+        "source_duration_seconds": 6.0
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_rehook_02",
+      "asset_id": "archive_07",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8b42a208afa4ded36ca93b3ebd32e5da6843a7fc5bba42dc21343664ecf42e37",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c6c979936934363a",
+          "c6c971c16b346e96",
+          "c44af1c16ba56e95",
+          "8f52a2706965b477",
+          "8fd572875496a255",
+          "d26d9e2d3239183d",
+          "d2e12dd24dc89e2d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_rehook_03",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9d966d62626a666a",
+          "9d966d62626a666a",
+          "c4b1334c3c33cfb4",
+          "c4b1334e6c258f73",
+          "94913b4e6e6398bc",
+          "96d1391f4e74914b",
+          "d091334a4e3fd8c7",
+          "d1b23649683e9df0"
+        ],
+        "source_start_seconds": 179.95,
+        "source_duration_seconds": 6.2
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_rehook_04",
+      "asset_id": "archive_08",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "1a9be0cd87a8f9cfd2cc75f2447158586206bf4f225c1033ca5cf74fc485387a",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c9e336d873192c6c",
+          "c9e336dc33992c1c",
+          "c8e3b7c43398a69c",
+          "93e4397072597a78",
+          "93c66c9b6c663664",
+          "ceb8972d0c07272f",
+          "cff830c7333c1c31"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_intro_conflict_01",
+      "asset_id": "quincy_pbs",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2581fadcf8a5994275dd1175dc966b28702f2ab2cefcb4b881f1e18d6ddc64a1",
+        "url_hashes": [
+          "25cfd40b942807516f0ac33bc124bb6b37606cd0fe022500f233cdbf3b2c83bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "847a63ad79867893",
+          "8c7a63ad79863893",
+          "847a63ad59863997",
+          "8c7263ad798c7893",
+          "847263ad59867997",
+          "847063ad598e7997",
+          "8c7063a9598e7997",
+          "8d7062ab598e7197"
+        ],
+        "source_start_seconds": 2504.916667,
+        "source_duration_seconds": 4.266667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_intro_conflict_02",
+      "asset_id": "archive_09",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "c35fad3205c639f176dd491fb3482c5b66defa7cdbd0b48650dc3fdc5eef091e",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9663699c71699c71",
+          "94636b94796b8479",
+          "94736a847b8e8c3b",
+          "9b66496376996689",
+          "9b96669989669d89",
+          "d23d233e2cc33cc3",
+          "c2dc2dc3d33cc1c3"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_intro_conflict_03",
+      "asset_id": "quincy_pbs",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2581fadcf8a5994275dd1175dc966b28702f2ab2cefcb4b881f1e18d6ddc64a1",
+        "url_hashes": [
+          "25cfd40b942807516f0ac33bc124bb6b37606cd0fe022500f233cdbf3b2c83bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8d7066ab518e7197",
+          "8d7046ab538d7317",
+          "8d7046aa738d7317",
+          "8d7046aa738d7317",
+          "8d7046aa738d7317",
+          "8d7446aa738d7316",
+          "897546aa738d7307",
+          "8d7046aa538d7397"
+        ],
+        "source_start_seconds": 2509.633333,
+        "source_duration_seconds": 4.0
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_intro_conflict_04",
+      "asset_id": "quincy_pbs",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "2581fadcf8a5994275dd1175dc966b28702f2ab2cefcb4b881f1e18d6ddc64a1",
+        "url_hashes": [
+          "25cfd40b942807516f0ac33bc124bb6b37606cd0fe022500f233cdbf3b2c83bc"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8d7046aa538d7397",
+          "8d7046aa538d7397",
+          "8d7046aa738d7317",
+          "8d7046aa738d7317",
+          "8d7546aa738d7306",
+          "8d7546aa738d7306",
+          "8d7546aa738d7306",
+          "8d7446aa738d7307"
+        ],
+        "source_start_seconds": 2514.083333,
+        "source_duration_seconds": 2.7
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_production_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c1324ecfb0b0db3a",
+          "d863e75e58382a2b",
+          "f26d9b1524366a4d",
+          "d1aee6d8535b1831",
+          "c39be6e611524d35",
+          "d0afb7dc14490d3c",
+          "c1a51f6e2e312d93",
+          "c08592536f6e2e3d"
+        ],
+        "source_start_seconds": 194.1,
+        "source_duration_seconds": 7.3
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_production_02",
+      "asset_id": "graphic_bass",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "87c1d52d77cd19e851d903b9749a6fe8f2fa5f2aae3f4ea14e2d57cb00890a24",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c1e83ec19f3d1c94",
+          "c1ef7fc094381c9c",
+          "e16f6fc1812a959c",
+          "c378c2837b99b163",
+          "c3e07ce486cc6766",
+          "fe2168d22f82867d",
+          "fef02178d0d03d78"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_production_03",
+      "asset_id": "graphic_drummer",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "8c1458486a21aeebaf54deba01038034b5720df5b77d7b7342ab40cb3d2c6e46",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "cbf870c69b313730",
+          "cbf874c69831333c",
+          "c3fc7cc6d813303c",
+          "94736897362c3dcc",
+          "9c93636ccd919cc6",
+          "c03f73c91c3913f8",
+          "c0ce3f31e1cbc0dc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_production_04",
+      "asset_id": "plate_bruce_portrait",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "da6e6287a9094e3b37a24058de8eb408a9753f72f2edbf842f19adc5dd69ad70",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9c7973d269c66861",
+          "9c39339269967ac5",
+          "8c39b71a69967a85",
+          "9b62a4728c79cbd4",
+          "9b5b668d72a39470",
+          "c63ef92ed005f609",
+          "c60632d12ff6c92d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_production_05",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cd56c91e24a136db",
+          "cd56c93e268136cb",
+          "cd56c93e248136db",
+          "cd56c93e248136db",
+          "c676895e7409768b",
+          "c676895e6c09768b",
+          "c676895e2c0976cb",
+          "c676895e2c0976cb"
+        ],
+        "source_start_seconds": 161.1,
+        "source_duration_seconds": 3.6
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_drums_01",
+      "asset_id": "graphic_platform",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "dbb58aafb6c63008ea09653da22ffc89d6aa69d3fdd193e567ad12b19634b54a",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c2e861933c3f133b",
+          "c66861d37c95333a",
+          "c46ce1d36c85723e",
+          "956286753e263d87",
+          "9d716a8695798e43",
+          "c32fd80f363901fa",
+          "c22736d8d927c27c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_drums_02",
+      "asset_id": "graphic_kick",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "15ff8c1f9b8869a54ea088b204511a5a7c8c1b6bae37b957c579bb4ecba25c37",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "cee070cb133e1b33",
+          "cff870c3b11c1b31",
+          "c7fc7cc2e18e1b20",
+          "9c6161963e362f8e",
+          "9e9a6159e76388c6",
+          "c03f3bdc121c3fd0",
+          "c0c43f63fc36c2cc"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_drums_03",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d1afb6524c580d3d",
+          "e1abb6da504c359c",
+          "c8afb1cc56434f26",
+          "d863b34c1d493d8d",
+          "d9f6a7085e612a4d",
+          "d2ccb1b24e79660e",
+          "d1dcb3b34c6d7408",
+          "c03cc3393fc730c7"
+        ],
+        "source_start_seconds": 201.85,
+        "source_duration_seconds": 5.566667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_drums_04",
+      "asset_id": "archive_10",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "19f7cc2ef778b77e812b5939cacb79bdd9f94d9a05f0385e1dfd94b6c9291607",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c3e76698729838f1",
+          "c1e7661c66983e99",
+          "c1e16725669e3c99",
+          "876c78719133d64d",
+          "93cf6c926ec6c468",
+          "de70070f0d1efc61",
+          "cef070ce30f8e133"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_mix_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "924dc936366a6667",
+          "934d4db6b26a6266",
+          "91a4649b926b6b6b",
+          "c03ec0393fc39ecc",
+          "c03ec0393fc3ce9c",
+          "c91863c791c738e7",
+          "c69c30e338c13f73",
+          "fdf0e00dec1f010f"
+        ],
+        "source_start_seconds": 207.866667,
+        "source_duration_seconds": 4.033333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_mix_02",
+      "asset_id": "graphic_mix91",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "dc77a361a6cd56c0d4f9951994842d13dab9985d4142f02c5fe573bf9de89295",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c8f837278fc8f070",
+          "fcfc302303cdf870",
+          "dfff3020008bdf70",
+          "d0f02f0fd0e0671f",
+          "d0d0e065272f1f9e",
+          "c49f3bc0c4f93bc0",
+          "c4c41f3b3b3f06c4"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_mix_03",
+      "asset_id": "graphic_mix2",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6a23211ab1fffea690923c13ee45f39fa5eb1c3beb5dc6776eac05195fb830c7",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "f8f827271f98f060",
+          "f8fc2123079ef8e0",
+          "fefe2021009ade7c",
+          "f0f00f0f91e06a6f",
+          "f0f0f0624e4f1f94",
+          "cb8734f8cff83030",
+          "cfcb0f34343406cf"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_mix_04",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "d9f6f69b27829820",
+          "d977f68b27849824",
+          "d977f68b27c48824",
+          "d96776db23c48922",
+          "997577da23e59802",
+          "9821779c3be7984a",
+          "9821679c39e7985b",
+          "9921679e39e59619"
+        ],
+        "source_start_seconds": 10.683333,
+        "source_duration_seconds": 5.466667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_stage_loop_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "db2c34c339e41b4e",
+          "db2c659328ed268e",
+          "de3961c639e106d9",
+          "de39618639e906d9",
+          "932c659379e506d9",
+          "936c6d9679e106d8",
+          "9669e9965be90598",
+          "9976e28d716e02d9"
+        ],
+        "source_start_seconds": 16.6,
+        "source_duration_seconds": 5.333333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_stage_loop_02",
+      "asset_id": "plate_photo_05",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "5373249147bba99237e3e214d6998710ad64561f0d155fdcdc62551cbd1bcb86",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c66969963cc33374",
+          "c66969943cd23774",
+          "866b69956cd235d4",
+          "9d72633965666a54",
+          "9d9472867a5b9538",
+          "c02d3e17793a272d",
+          "c0c92dda2667cd1d"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_stage_loop_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8679e986d823cd96",
+          "9679e986d823cc96",
+          "9679e986d923cc94",
+          "9368ec97f8234996",
+          "936cea9779234c91",
+          "9669e896f8239e92",
+          "9669e996f8618e92",
+          "9669e996f8219b92"
+        ],
+        "source_start_seconds": 27.0,
+        "source_duration_seconds": 5.166667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_stage_loop_04",
+      "asset_id": "plate_photo_06",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "953c02f4fc0d55f6c139a5b7ad16017ab436f693879117c1f5dab698419513a8",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9ae3659b31c66c49",
+          "92636d9a33c709cb",
+          "92616d9a33c79393",
+          "956a52266e937a69",
+          "95956a9873666969",
+          "c9366e3870c72637",
+          "c9c126c52f3c3337"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dates_01",
+      "asset_id": "graphic_date_record",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "79379e596e9c52710ddd7fc9a933c0a635b8b250a8e0ab972a860d1c371425e1",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "e0c03b3b3f3fe0c0",
+          "e4e408393b1b39fc",
+          "e6e66c191b133b19",
+          "c0c93f363ec1c9c9",
+          "c0c9c9c9c9d9cfc4",
+          "f3e30c1c08e7e3e1",
+          "e3e3e3e3e3c1c060"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dates_02",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9669e896f8218f96",
+          "9669e996f821cc96",
+          "9669e996f821cc96",
+          "9669e996f8218d96",
+          "9669e996f8218e96",
+          "9669e996f8218e96",
+          "9669e996f8219696",
+          "9669e996fa21cc92"
+        ],
+        "source_start_seconds": 32.616667,
+        "source_duration_seconds": 3.466667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dates_03",
+      "asset_id": "graphic_date_tv",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "522d2eadc3f06aedb298f25fb13455accba9115551f7eafec71d4ffdd27cb18f",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c0c03b3f3d3be2e0",
+          "e4e67a19391b38e1",
+          "e6e6771919191939",
+          "c0c03f3f3fc9c1c8",
+          "c0c8c8cdcdcdcdcc",
+          "f1f30e0c0af1f1e1",
+          "f1e1e1e1f1f1e060"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_build_climax_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9768ec97f821c692",
+          "9668e897f821ce96",
+          "936ce6937821669b",
+          "936eec9369740393",
+          "9469ec976b641aca",
+          "9648ec977a27169a",
+          "9468e9977a67069a",
+          "9468e9b77a650e98"
+        ],
+        "source_start_seconds": 36.533333,
+        "source_duration_seconds": 5.833333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_build_climax_02",
+      "asset_id": "archive_11",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "172e841b6e4842b63a97d93bcbe641c5fadb66f12aa5a8c68752acad5b982a04",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9e39619e78c136cc",
+          "9639699679c137c4",
+          "9639699678913fc4",
+          "9c638d94636c99b6",
+          "9d72638c3c939666",
+          "c13ed2c93e31c798",
+          "c12f3ed201cfcc3c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_build_climax_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9468e997fa650e98",
+          "9468e9b7fa650c98",
+          "9448e9b7fa670698",
+          "9448e9b7fa650e98",
+          "9448e9b77a670e98",
+          "cccc3970c4e63b39",
+          "c6cc3872c6ae38d9",
+          "c6c839d2c63739d8"
+        ],
+        "source_start_seconds": 42.816667,
+        "source_duration_seconds": 6.033333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_build_climax_04",
+      "asset_id": "archive_12",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "4bbc2b5f2b7cb59af06e6c53e71132fa6f34062c9227c8884eed2ec5da0b2ac9",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9966669966c033f3",
+          "9966669964d8639b",
+          "9966669964cc669e",
+          "926d949b6db6a4c2",
+          "926b6d96269b1b4a",
+          "ce33c9c633d898e4",
+          "ce3631cc38c76666"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_moonwalk_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9669e99679e104ba",
+          "916cec916de4539c",
+          "9b6ca0d32cf10eb9",
+          "9559ecd62bc61983",
+          "8479ecd63bc53087",
+          "c823c72d655cad72",
+          "de26d50b6159a374",
+          "c43cc41b2b5b2be5"
+        ],
+        "source_start_seconds": 217.5,
+        "source_duration_seconds": 8.066667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_moonwalk_02",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c65939c2c6339bcc",
+          "c21d39c2c633dbcc",
+          "c61d3de26633d84c",
+          "c61d3bc62933cc4d",
+          "c63933c6339bcc43",
+          "c63931e6339c3cc3",
+          "c63915e633dc2cc3",
+          "c63990e7319c6fc1"
+        ],
+        "source_start_seconds": 49.3,
+        "source_duration_seconds": 3.033333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_moonwalk_03",
+      "asset_id": "archive_13",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "38c962e16999782affd8b7dbcfbeef496721e4889e36b52269d3b099d784285a",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9966669964d213f3",
+          "99666699649e6393",
+          "99666699648e6c9e",
+          "926d949b6d96a4e2",
+          "926b6d9626a92b4b",
+          "ce33d9c631dc9834",
+          "ce2631cc3c971766"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_moonwalk_04",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c639dce7309cc3b0",
+          "c639dce7101ec3b4",
+          "c738cce3380df2ac",
+          "c53ecd63390ef00e",
+          "c80cdb731b65da8c",
+          "eb1cca771867c886",
+          "eb1cca770867d886",
+          "ca0cda771a67d0ac"
+        ],
+        "source_start_seconds": 52.783333,
+        "source_duration_seconds": 3.166667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_moonwalk_05",
+      "asset_id": "archive_14",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "b49233736e8b4d51c012027ae52636682a02fe1683c55448e3fc97a7d869d8a6",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c66c3897c769989c",
+          "c76c38976369949c",
+          "c56e3c976361942e",
+          "8e71b08e639378c7",
+          "8e5b71b19c6c6c86",
+          "d22f9ad025ce25f8",
+          "d2e72f8fd03130d8"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dance_origin_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9566496c33cd3633",
+          "936649cc36d99d32",
+          "b6696d5a4b256893",
+          "966a496cdaa96996",
+          "966d6d26996d9262",
+          "966d69b64996126d",
+          "b44b4b74b354694e",
+          "dc23c11fc2c8b759"
+        ],
+        "source_start_seconds": 63.0,
+        "source_duration_seconds": 4.166667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dance_origin_02",
+      "asset_id": "archive_15",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "7be2c17b52a9f268d1a0827f51d20122c5542297d7583645bd7b36a9b8cdb845",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c77838966761927c",
+          "c76c3c976361906e",
+          "c36c3c9762e1906f",
+          "8e71bccc62957887",
+          "8e6b71909d68ce87",
+          "d02fc3f03cdb20da",
+          "d0262f8bd321f0de"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dance_origin_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "de22c13fc0c8a775",
+          "dc01c33ec1d827f5",
+          "dc07c33ec1d82774",
+          "dc03c33ec1d827f4",
+          "855ae38568670cfb",
+          "cf32f28db8624d98",
+          "8d32e28df86b259c",
+          "cc32e38c7a654d9c"
+        ],
+        "source_start_seconds": 67.616667,
+        "source_duration_seconds": 4.066667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_dance_origin_04",
+      "asset_id": "archive_16",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "c8af2d0b1a117e6ee184d3f55f6c5b044eccbeaf064d4589d87ab71ab3288649",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "926d6d9638c53678",
+          "92696d963ac136d9",
+          "966969967ac12e99",
+          "957a8db5ca3d9284",
+          "95726a8f3592866d",
+          "db24d3996413ccf8",
+          "db2c24d21bccdc33"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_consequence_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c739c1c77c20c7ca",
+          "c339e9c67c20c7ca",
+          "c739e1c67c20c7d2",
+          "c639e1c67c20cdda",
+          "c739e1c67821cdd2",
+          "c639e38678239dd2",
+          "c639e38678239dd2",
+          "c639e18678239dda"
+        ],
+        "source_start_seconds": 72.133333,
+        "source_duration_seconds": 4.133333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_consequence_02",
+      "asset_id": "graphic_chart",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "c84a193f7760c3495345d1aab15a95500bcb32d83c948350f684e2b36c241df0",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c0c63f393131cece",
+          "e6c61e3939310ece",
+          "e6c60e3f3939390c",
+          "c0d93f3627cdc9c0",
+          "c0c8c9d9d8f8e6e2",
+          "f1e30e1c1ce3e1f0",
+          "f1e1e3c3c1c0f83c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_consequence_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c639e18678239dda",
+          "c639e18678239dda",
+          "916a69a54a69adda",
+          "9a6d63926d659619",
+          "9a6d32926996d669",
+          "9a6d368e69b2632c",
+          "9a6d32936d369269",
+          "996433936d969a39"
+        ],
+        "source_start_seconds": 76.716667,
+        "source_duration_seconds": 4.366667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_consequence_04",
+      "asset_id": "archive_17",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "3326878d73f1b3399da858dc65870a186c59349ff2899f3403482c52d4620852",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "92696d9638c57678",
+          "966969963ac536d8",
+          "966b69967ac12ec4",
+          "95728fb54a2d9686",
+          "95726a8f3596866c",
+          "db24d39b6413ccd8",
+          "db2c24d21bcddc31"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_consequence_05",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "986d32926db69a69",
+          "986433936d269b6d",
+          "996463926d649b79",
+          "9b6d629669649279",
+          "986d32b26d36d2c9",
+          "c639d9c6782127d6",
+          "c739c1c6782766d2",
+          "c639e1c6782786da"
+        ],
+        "source_start_seconds": 81.533333,
+        "source_duration_seconds": 4.533333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_consequence_06",
+      "asset_id": "archive_18",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "a678782dd85ff3732ff24f5b9e5a8bdf718329b82b22acb33426ddb1a1359a26",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "92b06d9392716dcd",
+          "92386d97923269cf",
+          "943c6b97963268c7",
+          "a5707885635a9e6b",
+          "87a37a5a9e846563",
+          "db2d25da3f64c034",
+          "db9b2525c0d8393e"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_video_impact_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "99993d2dd292266e",
+          "9999391dd1d4266e",
+          "9b9b3b19d195246c",
+          "9a9b3b1bd1816c6c",
+          "929b3b1b93906d6c",
+          "929a3b1b93b12d4d",
+          "90921b1b93b3794f",
+          "90921e1393b77a5b"
+        ],
+        "source_start_seconds": 86.516667,
+        "source_duration_seconds": 5.533333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_video_impact_02",
+      "asset_id": "archive_19",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "291888f38ed25040dbbca983d986e7e81a19c746808bdf9455d9c3b2d0997c3b",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c3923363ccc33c7c",
+          "c3943373ccc3363c",
+          "c0943333cdd395b3",
+          "8fa464db85797950",
+          "9f9b24647858c6da",
+          "c29a38e7d9232765",
+          "c3c71a382667ecc6"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_video_impact_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e11d8f647ab642a5",
+          "e11d86667a8e49ad",
+          "f91d87723b87488c",
+          "f40d87733b8768a4",
+          "f81c83723b8778ac",
+          "d84c837237876c9d",
+          "b9198666268679bd",
+          "bb19827627c4789d"
+        ],
+        "source_start_seconds": 98.0,
+        "source_duration_seconds": 5.866667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_video_impact_04",
+      "asset_id": "archive_20",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "842bd5e7534b50dac5bc49b868b6da9e381515e60220a1dbe1ce2491ba486faf",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c6c66cb9397430d9",
+          "86c66c991b343bd3",
+          "84c66e991b647bd1",
+          "8fc972b26964d668",
+          "8f8d49cb96962b38",
+          "d2e32e1c33397c32",
+          "d2d363f7cccc3201"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_legacy_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "8959e23614ee3fa1",
+          "ab5de33a11e61e84",
+          "ab59e23a53e61e84",
+          "ab59e22e54e61e91",
+          "8a5dc23a11e37f86",
+          "be4c82721d837c97",
+          "f15d82637e936194",
+          "c07e9b63f89c4293"
+        ],
+        "source_start_seconds": 104.316667,
+        "source_duration_seconds": 5.0
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_legacy_02",
+      "asset_id": "graphic_grammy",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "bfb4709088dbfb4b323814ba236bcc945c3a5ee4e511e66ee84d98909040e52b",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c0c43f3b3b3bc4c4",
+          "e4c41e393b3b71c4",
+          "e4c40c3f3b3b39c4",
+          "c0c93f3636c9c9c6",
+          "c0c8c9c9c9c93f37",
+          "e3e31d1c1ce2e3e0",
+          "e2e2e3e3e3e3081c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_legacy_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c07c9f63f01946b6",
+          "c05d9e62f03d479c",
+          "c05d9662f03b4db6",
+          "c1599e46f03947b5",
+          "c15d9e46f0334795",
+          "c15d9e42f03947b5",
+          "c05d9e46f039479d",
+          "c11d9e62f039479d"
+        ],
+        "source_start_seconds": 109.766667,
+        "source_duration_seconds": 5.233333
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_legacy_04",
+      "asset_id": "archive_21",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ea08e409d755ec7500d34bc2ab23003f0c7abce382144f6407e1cde785472818",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c3ee6cc13c62197c",
+          "c16e6ec13ee219e4",
+          "c12f6ed136e01fe0",
+          "867961b26dd269b2",
+          "869679c392eda730",
+          "dc217f8c31cc338e",
+          "dcc821ff8c33da0c"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_question_01",
+      "asset_id": "billie_official",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "1f9db63888b3a713d5d28c0c2f502468b4f494cfd558b366f008ba2c55dc1ef5",
+        "url_hashes": [
+          "5afe8fbd9adcb5630d232cb355a39c53aa585b40257d7059e167f2f2192e9b45"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e4d6c66e1c0be03d",
+          "bb4d12eb17b00d9a",
+          "bb4d12eb15b04d9a",
+          "bf2512ea15f0879a",
+          "bd25926e99f4071a",
+          "fb0106fb5df0071a",
+          "f1035eb116f04dda",
+          "f0634f904bad4b96"
+        ],
+        "source_start_seconds": 222.0,
+        "source_duration_seconds": 4.8
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_question_02",
+      "asset_id": "graphic_composite",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "46dbe95fe954ac9614095c3796be3dfc977db6a21a295eb1cd27eb5cce6cb5a3",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c8c9373636f8c8c9",
+          "c9c9373434346c7d",
+          "dbdb372434342c36",
+          "d0d02f2f79d0d6d0",
+          "d0d0d4d6eee696c0",
+          "cccc33370fc4cccc",
+          "ccccccc8f0d8cccd"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_question_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "c17d9662f119469e",
+          "c03b9f44f03c4797",
+          "f95d85681e027a97",
+          "bb59912b11e67e84",
+          "8959e42e74e433d5",
+          "895cf62676e528d1",
+          "8959e52e76652ad1",
+          "895ce626d2f52ad4"
+        ],
+        "source_start_seconds": 115.45,
+        "source_duration_seconds": 4.866667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_question_04",
+      "asset_id": "archive_22",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "6b410d9b8a2588d0bc8367507da83ab05f447b29db629c55ee9bc7d7d1dc8420",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "92b26c8e92e36ccd",
+          "92b26d1f92b278c9",
+          "903c6f0f96327cc9",
+          "a5717885e77a9a28",
+          "87a77b7a1894a465",
+          "db3f24d8f926c412",
+          "dbdb272504c9983b"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_last_rehook_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "a858e62ed3b91ad4",
+          "aa5ae42cd6b31ad1",
+          "a85ae62ed3b10af4",
+          "ab5ae42cd6b11ad4",
+          "ab5ae62ed2b10ad4",
+          "aa52ed2d57a91ad0",
+          "aa56e72bd5290ad4",
+          "a95ae52ec6652ad4"
+        ],
+        "source_start_seconds": 120.766667,
+        "source_duration_seconds": 4.4
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_last_rehook_02",
+      "asset_id": "archive_23",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "122d1bf069a171bf23131a5a158b24d656efbb475700bd1041f5acfef3824ad3",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9e3961de38e32658",
+          "9e3961967ac136d8",
+          "9e3961967ae126d8",
+          "9d628d9d663d9286",
+          "9d72628f3d92866c",
+          "c33cd2c37c03ced8",
+          "c32c3cda03ccfe31"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_last_rehook_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "cc843733d9cd2e34",
+          "9b8c6c26b3938d6c",
+          "9a4d363369966d92",
+          "9964336699669b66",
+          "89263f33d9668c72",
+          "99067e22d9669c76",
+          "990c6c32d36e3c76",
+          "990c6e32f32c2cf3"
+        ],
+        "source_start_seconds": 125.616667,
+        "source_duration_seconds": 3.8
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_last_rehook_04",
+      "asset_id": "plate_photo_19",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "bc035608fd7f627f4bd73ff69bc79d72acd619d22689cff490230cfb5aaa1bb2",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "da9b71666471646c",
+          "9e9b39c664316c9c",
+          "969b19c639336c9c",
+          "9c926b6b62497366",
+          "9c94329cc9b3666e",
+          "c1cc36333e633e38",
+          "c1c91ec9e39e3836"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_last_rehook_05",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "956ba46659a54bb1",
+          "9469b67649b44b35",
+          "9869b6734d964d31",
+          "986532b36d92cd3c",
+          "9e6d92794c926d92",
+          "9e6c936d86b82d92",
+          "986db2d36c926db0",
+          "916b24b64ba49c7b"
+        ],
+        "source_start_seconds": 136.0,
+        "source_duration_seconds": 5.0
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_payoff_01",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "9b6536b66d924961",
+          "9865b26d9669b463",
+          "9a6d3269e6936c92",
+          "9a6d33926d966994",
+          "906b65b44a5b9d5a",
+          "99659639d62196d9",
+          "e318e7e6111ee19c",
+          "f308f5e7100ff984"
+        ],
+        "source_start_seconds": 141.45,
+        "source_duration_seconds": 4.1
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_payoff_02",
+      "asset_id": "archive_24",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "f025109c47405eaa6b3e0d3113ba5d6b58a1099257311b4485a0ba6994d45643",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "9269659e6db298cc",
+          "9669379e69b0d924",
+          "9468379f68b0dc27",
+          "9562bcd8e7986896",
+          "a54363bc58686797",
+          "db2c80e7bfc120cd",
+          "db6f3c8044323dcd"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_payoff_03",
+      "asset_id": "motown25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "video",
+        "sha256": "39dbdcd78d43af6f97b7d97b4025a69cf3a3f57d60d1fbfd185733ec61677f6b",
+        "url_hashes": [
+          "12e25eaf04d3da703b153227c01bc8360cbe57b8e6d2a6b80d2203aa54f8da90"
+        ],
+        "perceptual_hashes": [],
+        "video_frame_hashes": [
+          "e31cf1e6100ff19c",
+          "e31cf1e6100ff19c",
+          "e30cf1e7180ff984",
+          "e11ef1e33807f88c",
+          "e31ce3e13a07f88c",
+          "e11cf3e01b06fb8c",
+          "f10cf3e018c7f887",
+          "f00ef1e21fc67886"
+        ],
+        "source_start_seconds": 146.0,
+        "source_duration_seconds": 4.166667
+      }
+    },
+    {
+      "episode": "michael_jackson_billie_jean",
+      "shot_id": "shot_final_payoff_04",
+      "asset_id": "archive_25",
+      "recorded_at": "2026-10-02T13:21:47Z",
+      "fingerprint": {
+        "kind": "image",
+        "sha256": "ebddabb92bb08ba016abecd8b9a7889927e75a1da3cba959179112b4b3b7395f",
+        "url_hashes": [],
+        "perceptual_hashes": [
+          "c92672d972ccc399",
+          "c926629976cce399",
+          "c926629b76cc7299",
+          "936de4924996b2cd",
+          "93596d962672496d",
+          "c631f8cc73c88e71",
+          "ce0733cc381f7331"
+        ],
+        "video_frame_hashes": [],
+        "source_start_seconds": 0.0,
+        "source_duration_seconds": null
+      }
+    }
+  ]
+}

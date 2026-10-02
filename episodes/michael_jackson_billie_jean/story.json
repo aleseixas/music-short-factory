@@ -1,0 +1,448 @@
+{
+  "schema_version": 1,
+  "title": "Quem Era Billie Jean? A História Por Trás do Hit de Michael Jackson",
+  "slug": "michael_jackson_billie_jean",
+  "target_duration_seconds": 360,
+  "segments": [
+    {
+      "id": "cold_open_01",
+      "text": "Quem era Billie Jean? Michael Jackson transformou",
+      "delivery": "hook"
+    },
+    {
+      "id": "cold_open_02",
+      "text": "esse nome em um mistério que atravessou",
+      "delivery": "hook"
+    },
+    {
+      "id": "cold_open_03",
+      "text": "décadas. A mulher da música existiu? A",
+      "delivery": "hook"
+    },
+    {
+      "id": "cold_open_04",
+      "text": "resposta começa longe do palco.",
+      "delivery": "hook"
+    },
+    {
+      "id": "promise_01",
+      "text": "Para chegar lá, precisamos ligar três histórias. As pessoas",
+      "delivery": "curious"
+    },
+    {
+      "id": "promise_02",
+      "text": "que inspiraram a personagem, uma decisão de",
+      "delivery": "curious"
+    },
+    {
+      "id": "promise_03",
+      "text": "estúdio que quase mudou a música e uma apresentação que você",
+      "delivery": "curious"
+    },
+    {
+      "id": "promise_04",
+      "text": "provavelmente reconhece sem ouvir uma palavra.",
+      "delivery": "curious"
+    },
+    {
+      "id": "first_payoff_01",
+      "text": "Billie Jean não era, segundo Michael, o retrato de uma única mulher. Em sua autobiografia,",
+      "delivery": "reveal"
+    },
+    {
+      "id": "first_payoff_02",
+      "text": "moonwalk, ele descreveu a personagem como uma combinação de",
+      "delivery": "reveal"
+    },
+    {
+      "id": "first_payoff_03",
+      "text": "pessoas que haviam perturbado a vida dele e dos irmãos. A história vinha de experiências com fãs que",
+      "delivery": "reveal"
+    },
+    {
+      "id": "first_payoff_04",
+      "text": "atribuíam aos Jacksons relacionamentos e filhos.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "meaning_01",
+      "text": "Isso ajuda a entender a tensão da letra. O narrador encontra",
+      "delivery": "curious"
+    },
+    {
+      "id": "meaning_02",
+      "text": "uma mulher que afirma que ele é o pai de seu filho.",
+      "delivery": "curious"
+    },
+    {
+      "id": "meaning_03",
+      "text": "Ele nega. A música deixa o ouvinte dentro dessa disputa,",
+      "delivery": "curious"
+    },
+    {
+      "id": "meaning_04",
+      "text": "sem funcionar como documento de um caso real.",
+      "delivery": "curious"
+    },
+    {
+      "id": "complication_01",
+      "text": "Por isso, histórias sobre uma fã específica precisam de cuidado.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "complication_02",
+      "text": "Existem relatos de perseguição em biografias,",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "complication_03",
+      "text": "mas eles não comprovam que aquela pessoa era a Billie Jean da canção. E",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "complication_04",
+      "text": "havia outro mistério, agora dentro do estúdio.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "rehook_01",
+      "text": "Enquanto o público tentava descobrir quem era a Billie Jean, Michael precisava defender outra coisa.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "rehook_02",
+      "text": "A entrada da própria música. A parte que",
+      "delivery": "reveal"
+    },
+    {
+      "id": "rehook_03",
+      "text": "hoje reconhecemos quase imediatamente também foi motivo de discussão. O que parecia demora",
+      "delivery": "reveal"
+    },
+    {
+      "id": "rehook_04",
+      "text": "para um produtor era para Michael o motivo para dançar.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "intro_conflict_01",
+      "text": "Quincy Jones contou, em entrevista preservada pela PBS, que",
+      "delivery": "curious"
+    },
+    {
+      "id": "intro_conflict_02",
+      "text": "a introdução provocou debate. Michael",
+      "delivery": "curious"
+    },
+    {
+      "id": "intro_conflict_03",
+      "text": "insistia naquele espaço antes da voz. A introdução ficou",
+      "delivery": "curious"
+    },
+    {
+      "id": "intro_conflict_04",
+      "text": "e ganhou uma função decisiva.",
+      "delivery": "curious"
+    },
+    {
+      "id": "production_01",
+      "text": "Antes de Michael cantar, a bateria estabelece o pulso e o baixo prende a atenção. A composição era dele.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "production_02",
+      "text": "O baixo elétrico foi gravado por Louis Johnson.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "production_03",
+      "text": "Na bateria estava Leon Ndugu Chancler.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "production_04",
+      "text": "O engenheiro Bruce Swedien buscava um som tão próprio",
+      "delivery": "neutral"
+    },
+    {
+      "id": "production_05",
+      "text": "que a faixa pudesse ser reconhecida antes da primeira frase.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "drums_01",
+      "text": "Swedien relatou que a bateria foi colocada numa plataforma de madeira",
+      "delivery": "curious"
+    },
+    {
+      "id": "drums_02",
+      "text": "e que o bumbo recebeu uma cobertura para controlar vazamentos.",
+      "delivery": "curious"
+    },
+    {
+      "id": "drums_03",
+      "text": "Mas a combinação de precisão, espaço e repetição transformava uma história",
+      "delivery": "curious"
+    },
+    {
+      "id": "drums_04",
+      "text": "inquietante numa música impossível de ignorar.",
+      "delivery": "curious"
+    },
+    {
+      "id": "mix_01",
+      "text": "A busca pela versão certa foi tão longe que Swedien contou",
+      "delivery": "reveal"
+    },
+    {
+      "id": "mix_02",
+      "text": "ter feito 91 mixagens.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "mix_03",
+      "text": "E a escolhida acabou sendo a segunda. A",
+      "delivery": "reveal"
+    },
+    {
+      "id": "mix_04",
+      "text": "gravação estava pronta. Só faltava uma imagem capaz de transformar aquele pulso em memória.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "stage_loop_01",
+      "text": "Essa imagem apareceu no Motown 25. O especial celebrava a gravadora",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "stage_loop_02",
+      "text": "que havia lançado os Jackson Five. Michael reencontrou",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "stage_loop_03",
+      "text": "os irmãos no palco, mas queria mostrar também quem havia se tornado sozinho. E",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "stage_loop_04",
+      "text": "Billie Jean seria a ponte entre essas duas fases.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "dates_01",
+      "text": "A apresentação foi gravada em 25 de março de",
+      "delivery": "neutral"
+    },
+    {
+      "id": "dates_02",
+      "text": "1983, em Pasadena. A",
+      "delivery": "neutral"
+    },
+    {
+      "id": "dates_03",
+      "text": "televisão americana exibiu o especial em 16 de maio.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "build_climax_01",
+      "text": "Michael ficou sozinho. A luva, a jaqueta e o corpo em contraste",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "build_climax_02",
+      "text": "com o palco concentravam a atenção. Mas agora cada",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "build_climax_03",
+      "text": "movimento parecia conversar com aquela introdução que ele havia defendido. Até que o corpo anunciou",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "build_climax_04",
+      "text": "uma direção e os pés seguiram a outra.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "moonwalk_01",
+      "text": "Era o moonwalk. O efeito parecia contrariar o chão, caminhar para frente enquanto deslizava para trás.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "moonwalk_02",
+      "text": "Não foi a invenção de um passo naquele instante.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "moonwalk_03",
+      "text": "Foi a chegada de um movimento",
+      "delivery": "payoff"
+    },
+    {
+      "id": "moonwalk_04",
+      "text": "já existente ao lugar, à música e ao",
+      "delivery": "payoff"
+    },
+    {
+      "id": "moonwalk_05",
+      "text": "intérprete que o tornariam inseparável de sua imagem.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "dance_origin_01",
+      "text": "O passo vinha do backslide. Dançarinos como Jeffrey",
+      "delivery": "curious"
+    },
+    {
+      "id": "dance_origin_02",
+      "text": "Daniel e Derek Cooley Jaxson fazem parte dessa",
+      "delivery": "curious"
+    },
+    {
+      "id": "dance_origin_03",
+      "text": "história de transmissão. A contribuição de Michael foi incorporar e",
+      "delivery": "curious"
+    },
+    {
+      "id": "dance_origin_04",
+      "text": "lapidar o movimento dentro de uma performance inteira.",
+      "delivery": "curious"
+    },
+    {
+      "id": "consequence_01",
+      "text": "E aqui a ordem dos acontecimentos importa. Billie Jean",
+      "delivery": "neutral"
+    },
+    {
+      "id": "consequence_02",
+      "text": "já havia chegado ao primeiro lugar da parada americana",
+      "delivery": "neutral"
+    },
+    {
+      "id": "consequence_03",
+      "text": "antes da exibição do especial. Ficou sete semanas no topo.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "consequence_04",
+      "text": "O moonwalk não criou o sucesso do zero.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "consequence_05",
+      "text": "Ele deu a um sucesso que já existia, uma imagem que podia ser reconhecida,",
+      "delivery": "neutral"
+    },
+    {
+      "id": "consequence_06",
+      "text": "repetida e lembrada.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "video_impact_01",
+      "text": "O videoclipe acrescentou outra assinatura, o chão que se iluminava sob os passos de",
+      "delivery": "curious"
+    },
+    {
+      "id": "video_impact_02",
+      "text": "Michael. Na televisão, o movimento parecia desafiar",
+      "delivery": "curious"
+    },
+    {
+      "id": "video_impact_03",
+      "text": "o chão. No clipe, o chão reagia a ele. Essa ligação entre som e corpo ajuda",
+      "delivery": "curious"
+    },
+    {
+      "id": "video_impact_04",
+      "text": "a explicar por que Billie Jean virou muito mais do que uma faixa de thriller.",
+      "delivery": "curious"
+    },
+    {
+      "id": "legacy_01",
+      "text": "Em 1984, Billie Jean venceu dois Grammys, um",
+      "delivery": "emotional"
+    },
+    {
+      "id": "legacy_02",
+      "text": "pela interpretação vocal de Michael e outro pela composição,",
+      "delivery": "emotional"
+    },
+    {
+      "id": "legacy_03",
+      "text": "nas categorias de rhythm and blues. Uma história de desconfiança havia se transformado",
+      "delivery": "emotional"
+    },
+    {
+      "id": "legacy_04",
+      "text": "em um dos retratos mais reconhecíveis de Michael Jackson.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "final_question_01",
+      "text": "Então, afinal, quem era Billie Jean? A resposta mais sustentada",
+      "delivery": "curious"
+    },
+    {
+      "id": "final_question_02",
+      "text": "pelo relato de Michael é uma personagem composta.",
+      "delivery": "curious"
+    },
+    {
+      "id": "final_question_03",
+      "text": "Não há uma única mulher confirmada como a identidade por trás do nome. Mas",
+      "delivery": "curious"
+    },
+    {
+      "id": "final_question_04",
+      "text": "ainda falta uma última peça dessa transformação.",
+      "delivery": "curious"
+    },
+    {
+      "id": "last_rehook_01",
+      "text": "O momento que tanta gente considera perfeito não parecia perfeito para Michael.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "last_rehook_02",
+      "text": "Em moonwalk, ele contou que saiu frustrado por não ter",
+      "delivery": "reveal"
+    },
+    {
+      "id": "last_rehook_03",
+      "text": "sustentado uma posição na ponta dos pés como queria. Depois,",
+      "delivery": "reveal"
+    },
+    {
+      "id": "last_rehook_04",
+      "text": "recebeu um telefonema de Fred Astaire elogiando sua dança.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "last_rehook_05",
+      "text": "O que ele enxergava como falha, outro grande dançador enxergava como uma conquista.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "final_payoff_01",
+      "text": "A mulher era uma personagem. O medo vinha de experiências.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "final_payoff_02",
+      "text": "E o legado nasceu quando Michael deu movimento a",
+      "delivery": "payoff"
+    },
+    {
+      "id": "final_payoff_03",
+      "text": "essa história. Para continuar, veja também como o outro clipe dele virou",
+      "delivery": "payoff"
+    },
+    {
+      "id": "final_payoff_04",
+      "text": "uma disputa no Brasil, aqui no Além do Hit.",
+      "delivery": "payoff"
+    }
+  ]
+}
