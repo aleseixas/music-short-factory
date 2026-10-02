@@ -1,0 +1,7 @@
+{
+  "slug": "queen_bohemian_rhapsody_corte_opera",
+  "request_id": "queen_bohemian_rhapsody_corte_opera_repair2_20261002_0725",
+  "local_preflight_passed": true,
+  "episode_fingerprint": "75bf9c961ba05339bb6716d363255c2ae21fafa82400f2ca7b921e14f234075f",
+  "workflow": "episode-media-preflight.yml"
+}

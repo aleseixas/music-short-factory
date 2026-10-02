@@ -2216,7 +2216,7 @@
     },
     {
       "id": "shot_19",
-      "visual_intent": "Freddie Mercury e Queen interpretando Bohemian Rhapsody em Wembley 1986; canção reconhecível para o payoff.",
+      "visual_intent": "Queen e Freddie Mercury interpretando Bohemian Rhapsody em registro real; payoff da canção preservada, sem afirmar imagem de 1975.",
       "required_seconds": 7,
       "crossfade_seconds": 0,
       "inspect_top": 5,
@@ -2224,15 +2224,15 @@
       "candidates": [
         {
           "kind": "video",
-          "name": "Queen Bohemian Rhapsody Wembley Saturday 12 July1986",
-          "url": "https://www.youtube.com/watch?v=oozJH6jSr2U",
-          "source_page_url": "https://www.youtube.com/watch?v=oozJH6jSr2U",
+          "name": "Queen Official Bohemian Rhapsody Wembley 11 July1986 DVD",
+          "url": "https://www.youtube.com/watch?v=9F53ks3Cszw",
+          "source_page_url": "https://www.youtube.com/watch?v=9F53ks3Cszw",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "oozJH6jSr2U",
-          "video_id": "oozJH6jSr2U",
-          "file": "queen_oozJH6jSr2U.mp4",
-          "credit": "Queen Bohemian Rhapsody Wembley Saturday 12 July1986 / YouTube",
+          "provider_id": "9F53ks3Cszw",
+          "video_id": "9F53ks3Cszw",
+          "file": "queen_9F53ks3Cszw.mp4",
+          "credit": "Queen Official Bohemian Rhapsody Wembley 11 July1986 DVD / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 15,
@@ -2242,7 +2242,51 @@
           },
           "editorial_rank": 1,
           "semantic_fit": "direct",
-          "description": "Freddie Mercury e Queen interpretando Bohemian Rhapsody em Wembley 1986; canção reconhecível para o payoff."
+          "description": "Queen e Freddie Mercury interpretando Bohemian Rhapsody em registro real; payoff da canção preservada, sem afirmar imagem de 1975."
+        },
+        {
+          "kind": "video",
+          "name": "Queen Bohemian Rhapsody Rock In Rio1985",
+          "url": "https://www.youtube.com/watch?v=QxOIm6yAMus",
+          "source_page_url": "https://www.youtube.com/watch?v=QxOIm6yAMus",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "QxOIm6yAMus",
+          "video_id": "QxOIm6yAMus",
+          "file": "queen_QxOIm6yAMus.mp4",
+          "credit": "Queen Bohemian Rhapsody Rock In Rio1985 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 15,
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "direct",
+          "description": "Queen e Freddie Mercury interpretando Bohemian Rhapsody em registro real; payoff da canção preservada, sem afirmar imagem de 1975."
+        },
+        {
+          "kind": "video",
+          "name": "Queen Bohemian Rhapsody Tokyo11May1985",
+          "url": "https://www.youtube.com/watch?v=BJWh_GyXe78",
+          "source_page_url": "https://www.youtube.com/watch?v=BJWh_GyXe78",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "BJWh_GyXe78",
+          "video_id": "BJWh_GyXe78",
+          "file": "queen_BJWh_GyXe78.mp4",
+          "credit": "Queen Bohemian Rhapsody Tokyo11May1985 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 15,
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "direct",
+          "description": "Queen e Freddie Mercury interpretando Bohemian Rhapsody em registro real; payoff da canção preservada, sem afirmar imagem de 1975."
         }
       ]
     },
