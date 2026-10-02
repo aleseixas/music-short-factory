@@ -59,7 +59,7 @@
       "asset": "visual_01",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 10
+      "source_start_seconds": 10.0
     },
     {
       "id": "shot_02",
@@ -74,7 +74,7 @@
       "asset": "visual_03",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 35
+      "source_start_seconds": 35.0
     },
     {
       "id": "shot_04",
@@ -89,7 +89,7 @@
       "asset": "visual_05",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 30
+      "source_start_seconds": 30.0
     },
     {
       "id": "shot_06",
@@ -104,7 +104,7 @@
       "asset": "visual_07",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 30
+      "source_start_seconds": 30.0
     },
     {
       "id": "shot_08",
@@ -119,7 +119,7 @@
       "asset": "visual_09",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 35
+      "source_start_seconds": 35.0
     },
     {
       "id": "shot_10",
@@ -141,7 +141,7 @@
       "asset": "visual_12",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 190
+      "source_start_seconds": 190.0
     },
     {
       "id": "shot_13",
@@ -149,7 +149,7 @@
       "asset": "visual_13",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 25
+      "source_start_seconds": 25.0
     },
     {
       "id": "shot_14",
@@ -157,7 +157,7 @@
       "asset": "visual_14",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 30
+      "source_start_seconds": 30.0
     },
     {
       "id": "shot_15",
@@ -179,7 +179,7 @@
       "asset": "visual_17",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 15
+      "source_start_seconds": 15.0
     },
     {
       "id": "shot_18",
@@ -187,7 +187,7 @@
       "asset": "visual_18",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 15
+      "source_start_seconds": 15.0
     },
     {
       "id": "shot_19",
@@ -195,7 +195,7 @@
       "asset": "visual_19",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 15
+      "source_start_seconds": 15.0
     },
     {
       "id": "shot_20",
@@ -203,7 +203,7 @@
       "asset": "visual_20",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 15
+      "source_start_seconds": 15.0
     }
   ]
 }
