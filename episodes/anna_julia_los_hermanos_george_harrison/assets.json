@@ -3,9 +3,9 @@
   "assets": [
     {
       "id": "visual_01",
-      "file": "youtube-umMIcZODm2k.mp4",
-      "url": "https://www.youtube.com/watch?v=umMIcZODm2k",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-uTfRaS6i4Gs.mp4",
+      "url": "https://www.youtube.com/watch?v=uTfRaS6i4Gs",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -14,20 +14,20 @@
     },
     {
       "id": "visual_02",
-      "file": "marcelo-camelo.jpg",
+      "file": "web-visual_02-1-wikimedia-commons-marcelo-camelo.jpg",
       "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Marcelo_Camelo.jpg",
       "credit": "Wikimedia Commons — Marcelo Camelo",
       "license": "CC BY 3.0 BR",
       "focus": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       }
     },
     {
       "id": "visual_03",
-      "file": "youtube-UmaQiHbunmc.mp4",
-      "url": "https://www.youtube.com/watch?v=UmaQiHbunmc",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-XzSrShbqlz8.mp4",
+      "url": "https://www.youtube.com/watch?v=XzSrShbqlz8",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -36,9 +36,9 @@
     },
     {
       "id": "visual_04",
-      "file": "youtube-CxurJJK5_HM.mp4",
-      "url": "https://www.youtube.com/watch?v=CxurJJK5_HM",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-B4_O4VNMuso.mp4",
+      "url": "https://www.youtube.com/watch?v=B4_O4VNMuso",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -47,20 +47,20 @@
     },
     {
       "id": "visual_05",
-      "file": "los-hermanos.jpg",
+      "file": "web-visual_05-1-wikimedia-commons.jpg",
       "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Los_Hermanos.jpg",
       "credit": "Rodrigo Senna / Wikimedia Commons",
       "license": "CC BY 2.0",
       "focus": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       }
     },
     {
       "id": "visual_06",
-      "file": "youtube-uTfRaS6i4Gs.mp4",
-      "url": "https://www.youtube.com/watch?v=uTfRaS6i4Gs",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-uLMsRqN_ydk.mp4",
+      "url": "https://www.youtube.com/watch?v=uLMsRqN_ydk",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -69,20 +69,20 @@
     },
     {
       "id": "visual_07",
-      "file": "jim-capaldi-gold-record.jpg",
+      "file": "web-visual_07-1-jim-capaldi-wikimedia-commons.jpg",
       "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Traffic_Gold_record_acceptance_-_Jim_Capaldi.jpg",
       "credit": "Wikimedia Commons — Jim Capaldi",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       }
     },
     {
       "id": "visual_08",
-      "file": "youtube-oKSD-gbvggs.mp4",
-      "url": "https://www.youtube.com/watch?v=oKSD-gbvggs",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-wGj_jw07oUc.mp4",
+      "url": "https://www.youtube.com/watch?v=wGj_jw07oUc",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -91,20 +91,20 @@
     },
     {
       "id": "visual_09",
-      "file": "george-harrison.jpg",
+      "file": "web-visual_09-1-wikimedia-commons-george-harrison.jpg",
       "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/George_Harrison.jpg",
       "credit": "Wikimedia Commons — George Harrison",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       }
     },
     {
       "id": "visual_10",
       "file": "youtube-0Cxo0sqNTWs.mp4",
       "url": "https://www.youtube.com/watch?v=0Cxo0sqNTWs",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -113,9 +113,9 @@
     },
     {
       "id": "visual_11",
-      "file": "youtube-XzSrShbqlz8.mp4",
-      "url": "https://www.youtube.com/watch?v=XzSrShbqlz8",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-umMIcZODm2k.mp4",
+      "url": "https://www.youtube.com/watch?v=umMIcZODm2k",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -124,20 +124,20 @@
     },
     {
       "id": "visual_12",
-      "file": "los-hermanos-2012-wide.jpg",
+      "file": "web-visual_12-1-wikimedia-commons.jpg",
       "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Los_Hermanos_%287197739364%29.jpg",
       "credit": "Priscila Leal / Editorial J / Wikimedia Commons",
       "license": "CC BY-SA 2.0",
       "focus": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       }
     },
     {
       "id": "visual_13",
-      "file": "youtube-B4_O4VNMuso.mp4",
-      "url": "https://www.youtube.com/watch?v=B4_O4VNMuso",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-UmaQiHbunmc.mp4",
+      "url": "https://www.youtube.com/watch?v=UmaQiHbunmc",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -146,20 +146,20 @@
     },
     {
       "id": "visual_14",
-      "file": "los-hermanos-2012-stage.jpg",
+      "file": "web-visual_14-1-wikimedia-commons.jpg",
       "url": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Los_Hermanos_%287197741396%29.jpg",
       "credit": "Priscila Leal / Editorial J / Wikimedia Commons",
       "license": "CC BY-SA 2.0",
       "focus": {
         "x": 0.5,
-        "y": 0.45
+        "y": 0.5
       }
     },
     {
       "id": "visual_15",
-      "file": "youtube-uLMsRqN_ydk.mp4",
-      "url": "https://www.youtube.com/watch?v=uLMsRqN_ydk",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-CxurJJK5_HM.mp4",
+      "url": "https://www.youtube.com/watch?v=CxurJJK5_HM",
+      "credit": "YouTube",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
@@ -168,9 +168,9 @@
     },
     {
       "id": "visual_16",
-      "file": "youtube-wGj_jw07oUc.mp4",
-      "url": "https://www.youtube.com/watch?v=wGj_jw07oUc",
-      "credit": "YouTube — canal/fonte identificada na página",
+      "file": "youtube-U0u5MECnC-w.mp4",
+      "url": "https://www.youtube.com/watch?v=U0u5MECnC-w",
+      "credit": "YouTube / TV Cultura",
       "license": "Source page credited",
       "focus": {
         "x": 0.5,
