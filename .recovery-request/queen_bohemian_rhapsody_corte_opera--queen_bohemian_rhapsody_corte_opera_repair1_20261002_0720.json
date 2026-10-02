@@ -1,0 +1,3014 @@
+{
+  "slug": "queen_bohemian_rhapsody_corte_opera",
+  "previous_request_id": "queen_bohemian_rhapsody_corte_opera_20261002_0700",
+  "request_id": "queen_bohemian_rhapsody_corte_opera_repair1_20261002_0720",
+  "repair_cycle": 1,
+  "files": {
+    "story.json": {
+      "schema_version": 1,
+      "title": "Queen quase cortou a ópera",
+      "slug": "queen_bohemian_rhapsody_corte_opera",
+      "target_duration_seconds": 78,
+      "segments": [
+        {
+          "id": "hook",
+          "text": "Queen quase lançou Bohemian Rhapsody sem a ópera. Existiu uma versão cortada, e a própria banda odiou o resultado.",
+          "delivery": "hook"
+        },
+        {
+          "id": "musica",
+          "text": "Sim, aquele clássico de quase seis minutos.",
+          "delivery": "curious"
+        },
+        {
+          "id": "relato",
+          "text": "Brian May contou à Biblioteca do Congresso que John Deacon chegou a montar uma edição mais curta.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "problema",
+          "text": "O problema era simples: diziam que era longa demais.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "radio",
+          "text": "A orientação que eles recebiam era assustadora: nenhuma rádio tocaria uma faixa daquele tamanho como single.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "deacon",
+          "text": "Foi aí que entrou a proposta de Deacon.",
+          "delivery": "curious"
+        },
+        {
+          "id": "edicao",
+          "text": "A edição começava na parte cantada, arrancava toda a seção operística e pulava para o final.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "opera",
+          "text": "Cara, sairia justamente a virada mais maluca da música.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "rejeicao",
+          "text": "Só que ninguém da banda gostou. Segundo Brian, até o empresário John Reid via a duração como problema.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "aposta",
+          "text": "Eles precisavam decidir: cortar ou bancar a aposta.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "kenny",
+          "text": "A história virou com o DJ Kenny Everett.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "tocou",
+          "text": "Brian conta que Everett conseguiu uma cópia ainda inacabada e passou a tocar a faixa na Capital Radio.",
+          "delivery": "curious"
+        },
+        {
+          "id": "publico",
+          "text": "E o público respondeu. Os ouvintes pediam a música, e outras rádios começaram a entrar na onda.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "inteira",
+          "text": "De repente, a canção que supostamente não cabia no rádio estava conquistando espaço do jeito que era.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "lancamento",
+          "text": "O single saiu em outubro de 1975, sem aquele corte.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "numero",
+          "text": "E ficou nove semanas no topo britânico.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "consequencia",
+          "text": "Olha a inversão: o tamanho usado para duvidar da música acabou fazendo parte da experiência que todo mundo reconhece.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "palco",
+          "text": "A balada, a ópera e o rock sobreviveram juntos.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "payoff",
+          "text": "O Queen não precisou transformar Bohemian Rhapsody numa música comum. O público abriu espaço para ela inteira.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "cta",
+          "text": "Você cortaria a ópera? Conta nos comentários.",
+          "delivery": "payoff"
+        }
+      ]
+    },
+    "timeline.json": {
+      "schema_version": 1,
+      "smart_visual_pacing": {
+        "enabled": true
+      },
+      "background_music": {
+        "profile": "emotional_piano",
+        "volume": 0.1
+      },
+      "sfx_cues": [
+        {
+          "time_seconds": 0.15,
+          "type": "impact",
+          "volume": 0.2
+        },
+        {
+          "time_seconds": 24,
+          "type": "record_scratch",
+          "volume": 0.18,
+          "duration_seconds": 0.8
+        },
+        {
+          "time_seconds": 46,
+          "type": "whoosh_fast",
+          "volume": 0.18,
+          "duration_seconds": 0.7
+        },
+        {
+          "time_seconds": 64,
+          "type": "correct_ding",
+          "volume": 0.18,
+          "duration_seconds": 0.6
+        }
+      ],
+      "text_fx_cues": [
+        {
+          "segment": "hook",
+          "offset_seconds": 0.15,
+          "duration_seconds": 1.3,
+          "text": "A ÓPERA QUASE SUMIU",
+          "animation": "scale_bounce",
+          "position": "center",
+          "intensity": 0.7
+        },
+        {
+          "segment": "edicao",
+          "offset_seconds": 0.1,
+          "duration_seconds": 1.2,
+          "text": "SEM A ÓPERA",
+          "animation": "pop_in",
+          "position": "center",
+          "intensity": 0.7
+        }
+      ],
+      "shots": [
+        {
+          "id": "shot_01",
+          "segment": "hook",
+          "asset": "visual_01",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 10
+        },
+        {
+          "id": "shot_02",
+          "segment": "musica",
+          "asset": "visual_02",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_03",
+          "segment": "relato",
+          "asset": "visual_03",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 35
+        },
+        {
+          "id": "shot_04",
+          "segment": "problema",
+          "asset": "visual_04",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_05",
+          "segment": "radio",
+          "asset": "visual_05",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_06",
+          "segment": "deacon",
+          "asset": "visual_06",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_07",
+          "segment": "edicao",
+          "asset": "visual_07",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_08",
+          "segment": "opera",
+          "asset": "visual_08",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_09",
+          "segment": "rejeicao",
+          "asset": "visual_09",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 35
+        },
+        {
+          "id": "shot_10",
+          "segment": "aposta",
+          "asset": "visual_10",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_11",
+          "segment": "kenny",
+          "asset": "visual_11",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_12",
+          "segment": "tocou",
+          "asset": "visual_12",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 190
+        },
+        {
+          "id": "shot_13",
+          "segment": "publico",
+          "asset": "visual_13",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 25
+        },
+        {
+          "id": "shot_14",
+          "segment": "inteira",
+          "asset": "visual_14",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_15",
+          "segment": "lancamento",
+          "asset": "visual_15",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_16",
+          "segment": "numero",
+          "asset": "visual_16",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_17",
+          "segment": "consequencia",
+          "asset": "visual_17",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 15
+        },
+        {
+          "id": "shot_18",
+          "segment": "palco",
+          "asset": "visual_18",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 15
+        },
+        {
+          "id": "shot_19",
+          "segment": "payoff",
+          "asset": "visual_19",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 15
+        },
+        {
+          "id": "shot_20",
+          "segment": "cta",
+          "asset": "visual_20",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 15
+        }
+      ]
+    },
+    "assets.json": {
+      "schema_version": 1,
+      "assets": [
+        {
+          "id": "visual_01",
+          "file": "queen_JYY6LxJ2GPE.mp4",
+          "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+          "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_02",
+          "file": "queen_photo_1.jpg",
+          "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+          "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_03",
+          "file": "queen_7VzEuTUjuuI.mp4",
+          "url": "https://www.youtube.com/watch?v=7VzEuTUjuuI",
+          "credit": "Brian May Bohemian Rhapsody ITV News At Ten 2015 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_04",
+          "file": "queen_photo_2.jpg",
+          "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+          "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_05",
+          "file": "queen_JobuSQcj_OA.mp4",
+          "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+          "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_06",
+          "file": "queen_photo_3.jpg",
+          "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+          "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_07",
+          "file": "queen_YmSpT_F-ONI.mp4",
+          "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+          "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_08",
+          "file": "queen_photo_4.jpg",
+          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_09",
+          "file": "queen_hsuKIVQ10Wk.mp4",
+          "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+          "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_10",
+          "file": "queen_photo_5.jpg",
+          "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+          "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_11",
+          "file": "queen_photo_6.jpg",
+          "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+          "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_12",
+          "file": "queen_fJ9rUzIMcZQ.mp4",
+          "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+          "credit": "Queen Bohemian Rhapsody official video / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_13",
+          "file": "queen_wcZYOaCNzHM.mp4",
+          "url": "https://www.youtube.com/watch?v=wcZYOaCNzHM",
+          "credit": "Queen Path to A Night At The Opera Part1 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_14",
+          "file": "queen_brian_beato.mp4",
+          "url": "https://www.youtube.com/watch?v=mgkvU5eCaYo",
+          "credit": "Rick Beato / Brian May / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_15",
+          "file": "queen_photo_7.jpg",
+          "url": "https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg",
+          "credit": "Bohemian Rhapsody German single1975 sleeve / https://eil.com/shop/moreinfo.asp?catalogid=132478",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_16",
+          "file": "queen_photo_8.jpg",
+          "url": "https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg",
+          "credit": "Queen studio group1975 gold jacket / https://www.pinterest.com/pin/574560864943561872/",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_17",
+          "file": "queen_N0dbGGvsjf8.mp4",
+          "url": "https://www.youtube.com/watch?v=N0dbGGvsjf8",
+          "credit": "Queen Bohemian Rhapsody Montreal1981 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_18",
+          "file": "queen_vbvyNnw8Qjg.mp4",
+          "url": "https://www.youtube.com/watch?v=vbvyNnw8Qjg",
+          "credit": "Queen Bohemian Rhapsody LiveAid1985 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_19",
+          "file": "queen_oozJH6jSr2U.mp4",
+          "url": "https://www.youtube.com/watch?v=oozJH6jSr2U",
+          "credit": "Queen Bohemian Rhapsody Wembley Saturday 12 July1986 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        },
+        {
+          "id": "visual_20",
+          "file": "queen_d1OxNccvEkk.mp4",
+          "url": "https://www.youtube.com/watch?v=d1OxNccvEkk",
+          "credit": "Queen Bohemian Rhapsody Budapest1986 / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.45
+          }
+        }
+      ]
+    },
+    "visual_candidates.json": {
+      "schema_version": 1,
+      "slots": [
+        {
+          "id": "shot_01",
+          "visual_intent": "Freddie Mercury reconhecível cantando Bohemian Rhapsody; registro real, não cena de filme.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Freddie Mercury reconhecível cantando Bohemian Rhapsody; registro real, não cena de filme."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody official video",
+              "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source_page_url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "fJ9rUzIMcZQ",
+              "video_id": "fJ9rUzIMcZQ",
+              "file": "queen_fJ9rUzIMcZQ.mp4",
+              "credit": "Queen Bohemian Rhapsody official video / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 190,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_02",
+          "visual_intent": "Single Bohemian Rhapsody original; nome da música e Queen visíveis.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "UK single Bohemian Rhapsody EMI2375 1975",
+              "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+              "source_page_url": "https://www.ebay.com/itm/358370904392",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_1.jpg",
+              "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Single Bohemian Rhapsody original; nome da música e Queen visíveis."
+            },
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen A Night At The Opera era courtyard",
+              "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+              "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_5.jpg",
+              "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Kenny Everett in radio studio",
+              "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+              "source_page_url": "https://x.com/TheKennyEverett",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_6.jpg",
+              "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_03",
+          "visual_intent": "Brian May em entrevista real sobre Bohemian Rhapsody; imagem de apoio do entrevistado, não gravação da entrevista à Biblioteca do Congresso.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Brian May Bohemian Rhapsody ITV News At Ten 2015",
+              "url": "https://www.youtube.com/watch?v=7VzEuTUjuuI",
+              "source_page_url": "https://www.youtube.com/watch?v=7VzEuTUjuuI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "7VzEuTUjuuI",
+              "video_id": "7VzEuTUjuuI",
+              "file": "queen_7VzEuTUjuuI.mp4",
+              "credit": "Brian May Bohemian Rhapsody ITV News At Ten 2015 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Brian May em entrevista real sobre Bohemian Rhapsody; imagem de apoio do entrevistado, não gravação da entrevista à Biblioteca do Congresso."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "direct",
+              "description": "Brian May em entrevista real sobre Bohemian Rhapsody; imagem de apoio do entrevistado, não gravação da entrevista à Biblioteca do Congresso."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Bohemian Rhapsody Absolute Radio interview",
+              "url": "https://www.youtube.com/watch?v=TnPDXB0Q1X4",
+              "source_page_url": "https://www.youtube.com/watch?v=TnPDXB0Q1X4",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "TnPDXB0Q1X4",
+              "video_id": "TnPDXB0Q1X4",
+              "file": "queen_TnPDXB0Q1X4.mp4",
+              "credit": "Brian May Bohemian Rhapsody Absolute Radio interview / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 25,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "direct",
+              "description": "Brian May em entrevista real sobre Bohemian Rhapsody; imagem de apoio do entrevistado, não gravação da entrevista à Biblioteca do Congresso."
+            }
+          ]
+        },
+        {
+          "id": "shot_04",
+          "visual_intent": "Queen no período de lançamento1975; portrait editorial dos quatro músicos.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen no período de lançamento1975; portrait editorial dos quatro músicos."
+            },
+            {
+              "kind": "image",
+              "name": "UK single Bohemian Rhapsody EMI2375 1975",
+              "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+              "source_page_url": "https://www.ebay.com/itm/358370904392",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_1.jpg",
+              "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen A Night At The Opera era courtyard",
+              "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+              "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_5.jpg",
+              "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Kenny Everett in radio studio",
+              "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+              "source_page_url": "https://x.com/TheKennyEverett",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_6.jpg",
+              "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_05",
+          "visual_intent": "Brian May/Roger Taylor relatando o caminho de Bohemian Rhapsody; entrevista contextual.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Brian May/Roger Taylor relatando o caminho de Bohemian Rhapsody; entrevista contextual."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody official video",
+              "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source_page_url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "fJ9rUzIMcZQ",
+              "video_id": "fJ9rUzIMcZQ",
+              "file": "queen_fJ9rUzIMcZQ.mp4",
+              "credit": "Queen Bohemian Rhapsody official video / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 190,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_06",
+          "visual_intent": "John Deacon, o baixista responsável pela edição curta segundo Brian May.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "John Deacon, o baixista responsável pela edição curta segundo Brian May."
+            },
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen studio group1975 gold jacket",
+              "url": "https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg",
+              "source_page_url": "https://www.pinterest.com/pin/574560864943561872/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_8.jpg",
+              "credit": "Queen studio group1975 gold jacket / https://www.pinterest.com/pin/574560864943561872/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_07",
+          "visual_intent": "Integrantes de Queen entrevistados sobre o álbum e a canção; não simular o áudio da edição não disponível.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Integrantes de Queen entrevistados sobre o álbum e a canção; não simular o áudio da edição não disponível."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody official video",
+              "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source_page_url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "fJ9rUzIMcZQ",
+              "video_id": "fJ9rUzIMcZQ",
+              "file": "queen_fJ9rUzIMcZQ.mp4",
+              "credit": "Queen Bohemian Rhapsody official video / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 190,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_08",
+          "visual_intent": "Portrait de Queen da época; visualizar os criadores da estrutura da canção.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Portrait de Queen da época; visualizar os criadores da estrutura da canção."
+            },
+            {
+              "kind": "image",
+              "name": "UK single Bohemian Rhapsody EMI2375 1975",
+              "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+              "source_page_url": "https://www.ebay.com/itm/358370904392",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_1.jpg",
+              "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen A Night At The Opera era courtyard",
+              "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+              "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_5.jpg",
+              "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Kenny Everett in radio studio",
+              "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+              "source_page_url": "https://x.com/TheKennyEverett",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_6.jpg",
+              "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_09",
+          "visual_intent": "Queen e entrevista de Brian May em documentário sobre Bohemian Rhapsody; contextual, não imagem falsa de John Reid.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen e entrevista de Brian May em documentário sobre Bohemian Rhapsody; contextual, não imagem falsa de John Reid."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody official video",
+              "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source_page_url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "fJ9rUzIMcZQ",
+              "video_id": "fJ9rUzIMcZQ",
+              "file": "queen_fJ9rUzIMcZQ.mp4",
+              "credit": "Queen Bohemian Rhapsody official video / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 190,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_10",
+          "visual_intent": "Queen juntos no período do álbum A Night At The Opera.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "Queen A Night At The Opera era courtyard",
+              "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+              "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_5.jpg",
+              "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen juntos no período do álbum A Night At The Opera."
+            },
+            {
+              "kind": "image",
+              "name": "UK single Bohemian Rhapsody EMI2375 1975",
+              "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+              "source_page_url": "https://www.ebay.com/itm/358370904392",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_1.jpg",
+              "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Kenny Everett in radio studio",
+              "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+              "source_page_url": "https://x.com/TheKennyEverett",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_6.jpg",
+              "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_11",
+          "visual_intent": "Kenny Everett real em estúdio de rádio; fotografia contextual, data do episódio não inferida da foto.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "Kenny Everett in radio studio",
+              "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+              "source_page_url": "https://x.com/TheKennyEverett",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_6.jpg",
+              "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Kenny Everett real em estúdio de rádio; fotografia contextual, data do episódio não inferida da foto."
+            }
+          ]
+        },
+        {
+          "id": "shot_12",
+          "visual_intent": "Clipe oficial Bohemian Rhapsody em sua seção operística, mostrando o material musical que a rádio preservou.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody official video",
+              "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source_page_url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "fJ9rUzIMcZQ",
+              "video_id": "fJ9rUzIMcZQ",
+              "file": "queen_fJ9rUzIMcZQ.mp4",
+              "credit": "Queen Bohemian Rhapsody official video / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 190,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Clipe oficial Bohemian Rhapsody em sua seção operística, mostrando o material musical que a rádio preservou."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_13",
+          "visual_intent": "Queen e entrevistas sobre o lançamento do álbum; contextual para resposta ao single.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Path to A Night At The Opera Part1",
+              "url": "https://www.youtube.com/watch?v=wcZYOaCNzHM",
+              "source_page_url": "https://www.youtube.com/watch?v=wcZYOaCNzHM",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "wcZYOaCNzHM",
+              "video_id": "wcZYOaCNzHM",
+              "file": "queen_wcZYOaCNzHM.mp4",
+              "credit": "Queen Path to A Night At The Opera Part1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 25,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen e entrevistas sobre o lançamento do álbum; contextual para resposta ao single."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_14",
+          "visual_intent": "Performance real de Bohemian Rhapsody pelos Queen, reforçando a sobrevivência da versão completa.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Brian May interview Rick Beato Bohemian Rhapsody",
+              "url": "https://www.youtube.com/watch?v=mgkvU5eCaYo",
+              "source_page_url": "https://www.youtube.com/watch?v=mgkvU5eCaYo",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "mgkvU5eCaYo",
+              "video_id": "mgkvU5eCaYo",
+              "file": "queen_brian_beato.mp4",
+              "credit": "Rick Beato / Brian May / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Brian May falando em entrevista real sobre Bohemian Rhapsody e a composição da música."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_15",
+          "visual_intent": "Sleeve real de Bohemian Rhapsody1975, lançamento alemão como objeto contextual, não anúncio britânico.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "Bohemian Rhapsody German single1975 sleeve",
+              "url": "https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg",
+              "source_page_url": "https://eil.com/shop/moreinfo.asp?catalogid=132478",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_7.jpg",
+              "credit": "Bohemian Rhapsody German single1975 sleeve / https://eil.com/shop/moreinfo.asp?catalogid=132478",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Sleeve real de Bohemian Rhapsody1975, lançamento alemão como objeto contextual, não anúncio britânico."
+            },
+            {
+              "kind": "image",
+              "name": "UK single Bohemian Rhapsody EMI2375 1975",
+              "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+              "source_page_url": "https://www.ebay.com/itm/358370904392",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_1.jpg",
+              "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen A Night At The Opera era courtyard",
+              "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+              "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_5.jpg",
+              "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_16",
+          "visual_intent": "Queen em1975, período do sucesso original; não usar arte de chart fabricada.",
+          "required_seconds": 3.5,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "image",
+              "name": "Queen studio group1975 gold jacket",
+              "url": "https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg",
+              "source_page_url": "https://www.pinterest.com/pin/574560864943561872/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_8.jpg",
+              "credit": "Queen studio group1975 gold jacket / https://www.pinterest.com/pin/574560864943561872/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen em1975, período do sucesso original; não usar arte de chart fabricada."
+            },
+            {
+              "kind": "image",
+              "name": "UK single Bohemian Rhapsody EMI2375 1975",
+              "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+              "source_page_url": "https://www.ebay.com/itm/358370904392",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_1.jpg",
+              "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen band seated promotional portrait1975",
+              "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+              "source_page_url": "https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_2.jpg",
+              "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "John Deacon playing bass",
+              "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+              "source_page_url": "https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_3.jpg",
+              "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen black and white portrait1975",
+              "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+              "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_4.jpg",
+              "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "image",
+              "name": "Queen A Night At The Opera era courtyard",
+              "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+              "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "source": "web",
+              "search_provider": "web_image_search",
+              "file": "queen_photo_5.jpg",
+              "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            }
+          ]
+        },
+        {
+          "id": "shot_17",
+          "visual_intent": "Freddie Mercury interpretando Bohemian Rhapsody Montreal1981; legado real, não confundir com lançamento1975.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Montreal1981",
+              "url": "https://www.youtube.com/watch?v=N0dbGGvsjf8",
+              "source_page_url": "https://www.youtube.com/watch?v=N0dbGGvsjf8",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "N0dbGGvsjf8",
+              "video_id": "N0dbGGvsjf8",
+              "file": "queen_N0dbGGvsjf8.mp4",
+              "credit": "Queen Bohemian Rhapsody Montreal1981 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 15,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Freddie Mercury interpretando Bohemian Rhapsody Montreal1981; legado real, não confundir com lançamento1975."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_18",
+          "visual_intent": "Queen real no LiveAid1985, trecho da balada; contexto de legado, não fingir apresentação da ópera neste set.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody LiveAid1985",
+              "url": "https://www.youtube.com/watch?v=vbvyNnw8Qjg",
+              "source_page_url": "https://www.youtube.com/watch?v=vbvyNnw8Qjg",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "vbvyNnw8Qjg",
+              "video_id": "vbvyNnw8Qjg",
+              "file": "queen_vbvyNnw8Qjg.mp4",
+              "credit": "Queen Bohemian Rhapsody LiveAid1985 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 15,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen real no LiveAid1985, trecho da balada; contexto de legado, não fingir apresentação da ópera neste set."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        },
+        {
+          "id": "shot_19",
+          "visual_intent": "Freddie Mercury e Queen interpretando Bohemian Rhapsody em Wembley 1986; canção reconhecível para o payoff.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Wembley Saturday 12 July1986",
+              "url": "https://www.youtube.com/watch?v=oozJH6jSr2U",
+              "source_page_url": "https://www.youtube.com/watch?v=oozJH6jSr2U",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "oozJH6jSr2U",
+              "video_id": "oozJH6jSr2U",
+              "file": "queen_oozJH6jSr2U.mp4",
+              "credit": "Queen Bohemian Rhapsody Wembley Saturday 12 July1986 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 15,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Freddie Mercury e Queen interpretando Bohemian Rhapsody em Wembley 1986; canção reconhecível para o payoff."
+            }
+          ]
+        },
+        {
+          "id": "shot_20",
+          "visual_intent": "Queen cantando Bohemian Rhapsody em Budapest1986, último visual contextual para pergunta sobre a canção.",
+          "required_seconds": 7,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Budapest1986",
+              "url": "https://www.youtube.com/watch?v=d1OxNccvEkk",
+              "source_page_url": "https://www.youtube.com/watch?v=d1OxNccvEkk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "d1OxNccvEkk",
+              "video_id": "d1OxNccvEkk",
+              "file": "queen_d1OxNccvEkk.mp4",
+              "credit": "Queen Bohemian Rhapsody Budapest1986 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 15,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct",
+              "description": "Queen cantando Bohemian Rhapsody em Budapest1986, último visual contextual para pergunta sobre a canção."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Bohemian Rhapsody Hammersmith 1975",
+              "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source_page_url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JYY6LxJ2GPE",
+              "video_id": "JYY6LxJ2GPE",
+              "file": "queen_JYY6LxJ2GPE.mp4",
+              "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 10,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1",
+              "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source_page_url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "JobuSQcj_OA",
+              "video_id": "JobuSQcj_OA",
+              "file": "queen_JobuSQcj_OA.mp4",
+              "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Brian May Roger Taylor Path to A Night At The Opera Part2",
+              "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source_page_url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "YmSpT_F-ONI",
+              "video_id": "YmSpT_F-ONI",
+              "file": "queen_YmSpT_F-ONI.mp4",
+              "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen 1975 Bohemian Rhapsody Making History Episode6",
+              "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source_page_url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "hsuKIVQ10Wk",
+              "video_id": "hsuKIVQ10Wk",
+              "file": "queen_hsuKIVQ10Wk.mp4",
+              "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
+            },
+            {
+              "kind": "video",
+              "name": "Queen Official Inside The Rhapsody mini documentary part 1",
+              "url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source_page_url": "https://www.youtube.com/watch?v=MizPUYNrAyI",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "MizPUYNrAyI",
+              "video_id": "MizPUYNrAyI",
+              "file": "queen_MizPUYNrAyI.mp4",
+              "credit": "Queen Official Inside The Rhapsody mini documentary part 1 / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 45,
+              "focus": {
+                "x": 0.5,
+                "y": 0.45
+              },
+              "editorial_rank": 6,
+              "semantic_fit": "contextual",
+              "description": "Documentário real do Queen sobre a construção da mesma canção; alternativa editorial sujeita à pertinência da intenção do slot."
+            }
+          ]
+        }
+      ]
+    },
+    "post.json": {
+      "schema_version": 1,
+      "cover": {
+        "headline": "A ÓPERA QUASE SUMIU",
+        "source": {
+          "type": "video_frame",
+          "timestamp_seconds": 0.7,
+          "asset_id": "visual_01"
+        }
+      },
+      "youtube": {
+        "title": "Queen quase cortou a ópera",
+        "description": "Brian May contou que John Deacon montou uma edição de Bohemian Rhapsody que retirava toda a ópera. A banda odiou. Kenny Everett ajudou a mostrar que o público queria a versão inteira. Fontes: entrevista de Brian May à Biblioteca do Congresso (11/12/2024) e arquivo oficial Queen.",
+        "hashtags": [
+          "queen",
+          "bohemianrhapsody",
+          "freddiemercury",
+          "curiosidade",
+          "alemdohit"
+        ],
+        "privacy_status": "public",
+        "category_id": "10"
+      },
+      "instagram": {
+        "caption": "Queen quase lançou Bohemian Rhapsody sem a ópera. Brian May revelou que existiu uma edição curta — e a banda inteira odiou. Você cortaria essa parte?",
+        "hashtags": [
+          "queen",
+          "bohemianrhapsody",
+          "freddiemercury",
+          "curiosidade",
+          "alemdohit",
+          "brianmay",
+          "rockclassico",
+          "historiadamusica"
+        ],
+        "share_to_feed": true,
+        "thumb_offset_ms": 1000
+      },
+      "facebook": {
+        "title": "Queen quase cortou a ópera",
+        "caption": "Queen quase lançou Bohemian Rhapsody sem a ópera. Brian May revelou que existiu uma edição curta — e a banda inteira odiou. Você cortaria essa parte?",
+        "hashtags": [
+          "queen",
+          "bohemianrhapsody",
+          "freddiemercury",
+          "curiosidade",
+          "alemdohit",
+          "brianmay",
+          "rockclassico",
+          "historiadamusica"
+        ]
+      },
+      "tiktok": {
+        "caption": "Queen quase lançou Bohemian Rhapsody sem a ópera. Brian May revelou que existiu uma edição curta — e a banda inteira odiou. Você cortaria essa parte?",
+        "hashtags": [
+          "queen",
+          "bohemianrhapsody",
+          "freddiemercury",
+          "curiosidade",
+          "alemdohit"
+        ],
+        "privacy_level": "SELF_ONLY",
+        "video_cover_timestamp_ms": 1000,
+        "disable_comment": false,
+        "disable_duet": false,
+        "disable_stitch": false,
+        "brand_content_toggle": false,
+        "brand_organic_toggle": false,
+        "is_aigc": false
+      }
+    },
+    "sources.txt": "EPISÓDIO: queen_bohemian_rhapsody_corte_opera\nRequest: queen_bohemian_rhapsody_corte_opera_20261002_0700\nSlot: 2026-10-02 07:00 America/Sao_Paulo\nFATUALIDADE\nhttps://blogs.loc.gov/now-see-hear/2024/12/all-hail-queen-an-interview-with-sir-brian-may/ — Brian May entrevistado em11/12/2024: Deacon criou edição sem seção operística, banda odiou, duração era preocupação, Everett tocou cópia inacabada, público respondeu. Não atribuímos número exato de execuções a Everett.\nhttps://www.queenonline.com/news/watch-queen-the-greatest-special-episode-1-the-path-to-bohemian-rhapsody — lançamento em31/10/1975, entrevistas oficiais.\nhttps://www.hollywoodrecords.com/press/queen/ — primeiro número1 britânico, nove semanas.\nhttps://brianmay.com/queen-news/2025/11/queen-the-greatest-special-episode-3-the-path-to-a-night-at-the-opera-part-2/ — material oficial contextual.\nPESQUISA EDITORIAL\nTema central: edição de John Deacon que removia a ópera, não lista genérica de curiosidades. Gate GitHub UNIQUE_CANDIDATE run36993211432 job110793945301 SHA a1635b75fbc93a5a611f2b1f794d0ba8b4f59468. Histórico por paths e busca Bohemian Rhapsody sem episódio da música; gate real positivo.\nCuradoria: S9 H9 N8 C8 R10 M5 F9 V9; score ponderado=101.5. Queen reconhecido noBrasil; últimos três episódios publicados TimMaia/RickRenner/LosHermanos nacionais. Momento cultural auxiliar: anúncio Sony Music Queen Budapest26/08/2026 e premiere QueenOnline01/10/2026, sem prioridade especial de evento. vidIQ público pesquisado sem volume/competition autenticados: métricas não disponíveis, nenhum valor fabricado. Saturação geral alta; ângulo específico Deacon/ópera tem mérito factual próprio.\nBACKGROUND OBRIGATÓRIA\nBusca externa nova: rock documental semContentID; suspense piano; orquestral lúdico; synth analógico investigativo; piano dramático narrativo. Comparadas: Suspense/leberch, Sports Documentary/JonasBlakewood (ContentID registrado), Investigations/KevinMacLeod (atribuição/catálogo novo exigidos), Knife/Magiksolo, DarkChill/DRAGON-STUDIO, MorningFog/Silentvoice e NightPatrol/MonolithAudio. MorningFog demasiado meditativa; NightPatrol demasiado funky; Knife/DarkChill adequadas à tensão da edição rejeitada. Nenhum profile dedicado novo pode ser criado nesta rodada (config/catálogo fora de escopo), portanto família aprovada fallback_social_cinematic, volume0.10, do catálogo atual, com faixas remotas Pixabay já suportadas. Escolha determinística e freshness/resolução/decodificação serão comprovadas somente pelo runtime; não alegamos audição ou decode local. Profiles dos episódios recentes: latin_pop_uplifting, bright_fun, external_iris_sincere_love, external_i_knew_it_taylor_warm_sunset, uplifting_documentary; família nova neste conjunto.\nhttps://pixabay.com/music/modern-classical-magiksolo-knife-425649/\nhttps://pixabay.com/music/modern-classical-dark-chill-ambient-piano-music-316537/\nhttps://pixabay.com/music/ambient-morning-fog-263352/\nhttps://pixabay.com/music/funk-night-patrol-230379/\nVISUAIS\n20 segmentos=20shots;12vídeos/8imagens. Primeiro vídeo Hammersmith real, frame0.7 do início renderizado para capa. Nenhum filme/ator como Freddie. Fotos de outras datas/performance são contextuais e não prova da reunião ou edição original; rádio foto Kenny contexto sem data inferida. Fontes distintas selecionadas sem repetição; pool compara candidatos do mesmo tipo; runtime decide validade e dedup global. 113 candidatos-slot, 22 fontes distintas descobertas. Direitos desconhecidos registrados honestamente, sem licença inventada. Publicadores recebem hashtags lowercase separadas da caption.\nQueen Bohemian Rhapsody Hammersmith 1975 https://www.youtube.com/watch?v=JYY6LxJ2GPE\nInside The Rhapsody documentary Queen https://www.youtube.com/watch?v=m4qYBqIieEk\nBrian May Roger Taylor Path to Bohemian Rhapsody Episode 1 https://www.youtube.com/watch?v=JobuSQcj_OA\nBrian May Roger Taylor Path to A Night At The Opera Part2 https://www.youtube.com/watch?v=YmSpT_F-ONI\nQueen 1975 Bohemian Rhapsody Making History Episode6 https://www.youtube.com/watch?v=hsuKIVQ10Wk\nQueen Bohemian Rhapsody official video https://www.youtube.com/watch?v=fJ9rUzIMcZQ\nQueen Path to A Night At The Opera Part1 https://www.youtube.com/watch?v=wcZYOaCNzHM\nQueen 50 Years Bohemian Rhapsody Live Episode4 https://www.youtube.com/watch?v=R8tOgurYwV0\nQueen Bohemian Rhapsody Montreal1981 https://www.youtube.com/watch?v=N0dbGGvsjf8\nQueen Bohemian Rhapsody LiveAid1985 https://www.youtube.com/watch?v=vbvyNnw8Qjg\nQueen Greatest Live Bohemian Rhapsody Episode37 https://www.youtube.com/watch?v=5AcoydbNTVY\nQueen Bohemian Rhapsody Budapest1986 https://www.youtube.com/watch?v=d1OxNccvEkk\nQueen Bohemian Rhapsody Wembley1986 https://www.youtube.com/watch?v=F79Q-_oOjq0\nUK single Bohemian Rhapsody EMI2375 1975 https://www.ebay.com/itm/358370904392 https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg\nQueen band seated promotional portrait1975 https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677 https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j\nJohn Deacon playing bass https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/ https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200\nQueen black and white portrait1975 https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/ https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627\nQueen A Night At The Opera era courtyard https://ultimateclassicrock.com/queen-a-night-at-the-opera/ https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg\nKenny Everett in radio studio https://x.com/TheKennyEverett https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg\nBohemian Rhapsody German single1975 sleeve https://eil.com/shop/moreinfo.asp?catalogid=132478 https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg\nQueen studio group1975 gold jacket https://www.pinterest.com/pin/574560864943561872/ https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg\nQueen 1975 outdoors group portrait https://www.pinterest.com/pin/queen-1975--859835753838233549/ https://i.pinimg.com/736x/51/9b/19/519b19af7a63d6e14ca580a06861f611.jpg\nAjuste de fontes antes da autoria: shot14 BrianMay/RickBeato https://www.youtube.com/watch?v=mgkvU5eCaYo; shot19 Wembley1986 https://www.youtube.com/watch?v=F79Q-_oOjq0. Retiradas montagens das escolhas-base para reduzir repetição de filmagens de shows.\n\nREPARO MATERIAL 1 — 2026-10-02: native author run36994221567/job110797122800 found unavailable videos m4qYBqIieEk and F79Q-_oOjq0 (VISUAL_ASSET_INVALID LOCAL_VALIDATION). Replaced by independently discovered sources Brian May ITV News2015 https://brianmay.com/brian-news/2015/11/brian-may-on-bohemian-rhapsody-on-itv-news-at-ten/ https://www.youtube.com/watch?v=7VzEuTUjuuI and Queen Wembley1986 https://www.virginradio.it/queen-bohemian-rhapsody-live-at-wembley-stadium-saturday-12-july-1986/amp/ https://www.youtube.com/watch?v=oozJH6jSr2U . Removed unavailable providers from all pools. Added separate Brian May interview/documentary alternatives. Sources are supportive visuals, not literal images of the LOC interview. No source download/decode claim before native validation.\nBACKGROUND REVISION: external Pixabay tracks failed HTTP403 in native runtime, catalog-wide repair selected Monkeys Spinning Monkeys, whose comedic mood is unsuitable for this episode. Choose approved local emotional_piano profile at volume0.10 for the piano-based song, tension about the edit, and release payoff. Compared cinematic/ambient/folk/comedy alternatives documented above; local fallback justified by proven provider403 and constrained approved catalog. Neither emotional_piano family appeared in the recently inspected Anna/Tim/Joao/Emicida/Taylor set; complete freshness and decoding remain native gates. Do not omit background. Native run had backgroundOK for its auto-selected monkey track; that evidence does not prove this new profile decodes.\n"
+  }
+}
