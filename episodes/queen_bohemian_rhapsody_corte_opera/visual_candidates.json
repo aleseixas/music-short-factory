@@ -210,25 +210,6 @@
         },
         {
           "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "source": "web",
-          "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual",
-          "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
-        },
-        {
-          "kind": "image",
           "name": "Queen A Night At The Opera era courtyard",
           "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
           "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
@@ -405,25 +386,6 @@
             "y": 0.4
           },
           "editorial_rank": 3,
-          "semantic_fit": "contextual",
-          "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
-        },
-        {
-          "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "source": "web",
-          "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "editorial_rank": 4,
           "semantic_fit": "contextual",
           "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
         },
@@ -657,25 +619,6 @@
         },
         {
           "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "source": "web",
-          "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual",
-          "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
-        },
-        {
-          "kind": "image",
           "name": "Queen studio group1975 gold jacket",
           "url": "https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg",
           "source_page_url": "https://www.pinterest.com/pin/574560864943561872/",
@@ -839,7 +782,7 @@
     },
     {
       "id": "shot_08",
-      "visual_intent": "Portrait de Queen da época; visualizar os criadores da estrutura da canção.",
+      "visual_intent": "Retrato promocional reconhecível dos quatro membros do Queen associado a Bohemian Rhapsody; sustenta a identidade operística da canção.",
       "required_seconds": 3.5,
       "crossfade_seconds": 0,
       "inspect_top": 5,
@@ -847,22 +790,22 @@
       "candidates": [
         {
           "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+          "name": "Queen Bohemian Rhapsody promotional four faces portrait",
+          "url": "https://www.infobae.com/resizer/v2/DVXXUTCW3VES5FSY5XNPP6BVPM.jpg?auth=fad3663d40cf37ee394201f087d0b28adc8f05dc115239fea0f952c4dd7c1fb8&height=900&quality=85&smart=true&width=1200",
+          "source_page_url": "https://www.infobae.com/entretenimiento/2024/08/30/la-historia-desconocida-y-fascinante-detras-de-la-creacion-de-bohemian-rhapsody-de-queen/",
           "source": "web",
           "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+          "file": "queen_borap_four_faces_infobae.jpg",
+          "credit": "Queen Bohemian Rhapsody promotional four faces portrait / https://www.infobae.com/entretenimiento/2024/08/30/la-historia-desconocida-y-fascinante-detras-de-la-creacion-de-bohemian-rhapsody-de-queen/",
           "license": "",
           "rights_status": "unknown",
           "focus": {
             "x": 0.5,
-            "y": 0.4
+            "y": 0.5
           },
           "editorial_rank": 1,
           "semantic_fit": "direct",
-          "description": "Portrait de Queen da época; visualizar os criadores da estrutura da canção."
+          "description": "Retrato promocional reconhecível dos quatro membros do Queen associado a Bohemian Rhapsody; sustenta a identidade operística da canção."
         },
         {
           "kind": "image",
@@ -1184,25 +1127,6 @@
             "y": 0.4
           },
           "editorial_rank": 4,
-          "semantic_fit": "contextual",
-          "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
-        },
-        {
-          "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "source": "web",
-          "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "editorial_rank": 5,
           "semantic_fit": "contextual",
           "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
         },
@@ -1684,7 +1608,7 @@
     },
     {
       "id": "shot_15",
-      "visual_intent": "Sleeve real de Bohemian Rhapsody1975, lançamento alemão como objeto contextual, não anúncio britânico.",
+      "visual_intent": "Objeto real: single original EMI Electrola de Bohemian Rhapsody1975, usado como ilustração do lançamento sem alegar anúncio britânico.",
       "required_seconds": 3.5,
       "crossfade_seconds": 0,
       "inspect_top": 5,
@@ -1692,22 +1616,22 @@
       "candidates": [
         {
           "kind": "image",
-          "name": "Bohemian Rhapsody German single1975 sleeve",
-          "url": "https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg",
-          "source_page_url": "https://eil.com/shop/moreinfo.asp?catalogid=132478",
+          "name": "Queen Bohemian Rhapsody 1975 EMI Electrola original single sleeve",
+          "url": "https://img.ricardostatic.ch/images/97af2b31-79b6-4841-9228-aa59ef582ee9/t_1800x1350/queen-kult-hit-bohemian-rhapsody-original-1975-51-jahre-alt",
+          "source_page_url": "https://www.ricardo.ch/de/a/queen-kult-hit-bohemian-rhapsody-original-1975-51-jahre-alt-1316690234/",
           "source": "web",
           "search_provider": "web_image_search",
-          "file": "queen_photo_7.jpg",
-          "credit": "Bohemian Rhapsody German single1975 sleeve / https://eil.com/shop/moreinfo.asp?catalogid=132478",
+          "file": "queen_borap_1975_electrola_sleeve.jpg",
+          "credit": "Queen Bohemian Rhapsody 1975 EMI Electrola original single sleeve / https://www.ricardo.ch/de/a/queen-kult-hit-bohemian-rhapsody-original-1975-51-jahre-alt-1316690234/",
           "license": "",
           "rights_status": "unknown",
           "focus": {
             "x": 0.5,
-            "y": 0.4
+            "y": 0.5
           },
           "editorial_rank": 1,
           "semantic_fit": "direct",
-          "description": "Sleeve real de Bohemian Rhapsody1975, lançamento alemão como objeto contextual, não anúncio britânico."
+          "description": "Objeto real: single original EMI Electrola de Bohemian Rhapsody1975, usado como ilustração do lançamento sem alegar anúncio britânico."
         },
         {
           "kind": "image",
@@ -1768,25 +1692,6 @@
         },
         {
           "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "source": "web",
-          "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual",
-          "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
-        },
-        {
-          "kind": "image",
           "name": "Queen A Night At The Opera era courtyard",
           "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
           "source_page_url": "https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
@@ -1800,7 +1705,7 @@
             "x": 0.5,
             "y": 0.4
           },
-          "editorial_rank": 6,
+          "editorial_rank": 5,
           "semantic_fit": "contextual",
           "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
         }
@@ -1887,25 +1792,6 @@
             "y": 0.4
           },
           "editorial_rank": 4,
-          "semantic_fit": "contextual",
-          "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
-        },
-        {
-          "kind": "image",
-          "name": "Queen black and white portrait1975",
-          "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-          "source_page_url": "https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "source": "web",
-          "search_provider": "web_image_search",
-          "file": "queen_photo_4.jpg",
-          "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "editorial_rank": 5,
           "semantic_fit": "contextual",
           "description": "Alternativa real da mesma canção/artista/época; só selecionar se coerente com a intenção do slot. Não prova literal do evento narrado."
         },

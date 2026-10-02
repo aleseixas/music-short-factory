@@ -80,13 +80,13 @@
     },
     {
       "id": "visual_08",
-      "file": "queen_photo_4.jpg",
-      "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
-      "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+      "file": "queen_borap_four_faces_infobae.jpg",
+      "url": "https://www.infobae.com/resizer/v2/DVXXUTCW3VES5FSY5XNPP6BVPM.jpg?auth=fad3663d40cf37ee394201f087d0b28adc8f05dc115239fea0f952c4dd7c1fb8&height=900&quality=85&smart=true&width=1200",
+      "credit": "Queen Bohemian Rhapsody promotional four faces portrait / https://www.infobae.com/entretenimiento/2024/08/30/la-historia-desconocida-y-fascinante-detras-de-la-creacion-de-bohemian-rhapsody-de-queen/",
       "license": "",
       "focus": {
         "x": 0.5,
-        "y": 0.4
+        "y": 0.5
       }
     },
     {
@@ -157,13 +157,13 @@
     },
     {
       "id": "visual_15",
-      "file": "queen_photo_7.jpg",
-      "url": "https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg",
-      "credit": "Bohemian Rhapsody German single1975 sleeve / https://eil.com/shop/moreinfo.asp?catalogid=132478",
+      "file": "queen_borap_1975_electrola_sleeve.jpg",
+      "url": "https://img.ricardostatic.ch/images/97af2b31-79b6-4841-9228-aa59ef582ee9/t_1800x1350/queen-kult-hit-bohemian-rhapsody-original-1975-51-jahre-alt",
+      "credit": "Queen Bohemian Rhapsody 1975 EMI Electrola original single sleeve / https://www.ricardo.ch/de/a/queen-kult-hit-bohemian-rhapsody-original-1975-51-jahre-alt-1316690234/",
       "license": "",
       "focus": {
         "x": 0.5,
-        "y": 0.4
+        "y": 0.5
       }
     },
     {
