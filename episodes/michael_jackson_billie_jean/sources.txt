@@ -39,7 +39,13 @@ photo_05: https://commons.wikimedia.org/wiki/File:Jackson_5_tv_special_1972.JPG 
 photo_06: https://commons.wikimedia.org/wiki/File:Jackson_siblings_1977.jpg | CBS Television | Public domain | reenquadramento, placa e crédito adicionados
 photo_19: https://commons.wikimedia.org/wiki/File:Fred_Astaire.png | Studio publicity still | Public domain | reenquadramento, placa e crédito adicionados
 Bruce Swedien: https://creativecommons.org/licenses/by-sa/2.0/de/deed.pt_BR; versão da fotografia adaptada distribuída sob a mesma licença.
-Trilhas locais: Tapis / Silent Descent / Discover — Eugenio Mininni; Gimme That Groove — Michael Ramir C.; Piano Reflections — Ahjay Stelino. Mixkit Stock Music Free License.
+Trilhas locais: Fallen (Asper) / Selpan — Eugenio Mininni; Dreaming Big — Ahjay Stelino; Gimme That Groove — Michael Ramir C.; Piano Reflections — Ahjay Stelino. Mixkit Stock Music Free License.
 Ilustrações do baixo, bateria e montagem de estúdio são originais e identificadas; não foram apresentadas como arquivo histórico.
 SEO/vidIQ: métricas fornecidas pelo solicitante; não verificadas independentemente nem apresentadas como métricas atuais.
 Vídeo de continuação: episódio local michael_jackson_brasil_hero. Nenhum ID público confirmado; tela final sem link inventado.
+
+TRILHAS SUBSTITUTAS — GATE DE REPETIÇÃO RECENTE
+Fallen (Asper): Eugenio Mininni, https://assets.mixkit.co/music/565/565.mp3
+Selpan: Eugenio Mininni, https://assets.mixkit.co/music/612/612.mp3
+Dreaming Big: Ahjay Stelino, https://assets.mixkit.co/music/31/31.mp3
+Origem/licença: https://mixkit.co/free-stock-music/mood/mysterious/ ; https://mixkit.co/free-stock-music/mood/triumphant/ ; https://mixkit.co/license/#musicFree
