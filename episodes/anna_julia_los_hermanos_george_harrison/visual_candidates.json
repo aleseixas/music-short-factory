@@ -2088,20 +2088,20 @@
       "min_visual_score": 0.52,
       "candidates": [
         {
-          "name": "Los Hermanos em performance ao vivo",
+          "name": "Los Hermanos — Anna Júlia ao vivo na TV Cultura",
           "kind": "video",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "wGj_jw07oUc",
-          "video_id": "wGj_jw07oUc",
-          "url": "https://www.youtube.com/watch?v=wGj_jw07oUc",
-          "source_page_url": "https://www.youtube.com/watch?v=wGj_jw07oUc",
-          "credit": "YouTube",
+          "provider_id": "U0u5MECnC-w",
+          "video_id": "U0u5MECnC-w",
+          "url": "https://www.youtube.com/watch?v=U0u5MECnC-w",
+          "source_page_url": "https://www.youtube.com/watch?v=U0u5MECnC-w",
+          "credit": "YouTube / TV Cultura",
           "license": "Source page credited",
           "rights_status": "reference_only",
           "semantic_fit": "direct",
           "editorial_rank": 1,
-          "description": "Los Hermanos em performance ao vivo"
+          "description": "Performance real e dinâmica de Los Hermanos para o encerramento do episódio"
         },
         {
           "name": "Clipe oficial de Anna Júlia",

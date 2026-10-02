@@ -45,3 +45,8 @@ Substituído locator sem extensão suportada de Jim Capaldi por mídia .jpg conc
 
 REPARO MATERIAL 2 — BACKGROUND FRESHNESS
 O Media Preflight comprovou todos os 16 visuais, o pool, a unicidade e os assets, mas bloqueou a trilha por reutilização recente após 10 passes internos. Foi escolhido o profile local latin_pop_uplifting, compatível com o pop-rock brasileiro e com última ocorrência identificada fora da janela recente de 20 episódios. Volume 0.10. Resolução, decodificação e freshness serão novamente comprovadas pelo runtime nativo.
+
+REPARO MATERIAL 3 — UNICIDADE VISUAL FINAL
+A revalidação pós-resolução comprovou trilha, 15 slots e todos os demais gates, mas bloqueou porque shot_16 repetiu o arquivo wGj_jw07oUc já usado em shot_08. O candidato repetido foi removido integralmente do pool de shot_16 e substituído por um vídeo real, dinâmico e distinto de Los Hermanos na TV Cultura:
+https://www.youtube.com/watch?v=U0u5MECnC-w
+O mesmo slug foi preservado; nenhuma queue ou publicação foi criada.
