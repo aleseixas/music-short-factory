@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "visual_01",
+      "file": "queen_JYY6LxJ2GPE.mp4",
+      "url": "https://www.youtube.com/watch?v=JYY6LxJ2GPE",
+      "credit": "Queen Bohemian Rhapsody Hammersmith 1975 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_02",
+      "file": "queen_photo_1.jpg",
+      "url": "https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg",
+      "credit": "UK single Bohemian Rhapsody EMI2375 1975 / https://www.ebay.com/itm/358370904392",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_03",
+      "file": "queen_m4qYBqIieEk.mp4",
+      "url": "https://www.youtube.com/watch?v=m4qYBqIieEk",
+      "credit": "Inside The Rhapsody documentary Queen / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_04",
+      "file": "queen_photo_2.jpg",
+      "url": "https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j",
+      "credit": "Queen band seated promotional portrait1975 / https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_05",
+      "file": "queen_JobuSQcj_OA.mp4",
+      "url": "https://www.youtube.com/watch?v=JobuSQcj_OA",
+      "credit": "Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_06",
+      "file": "queen_photo_3.jpg",
+      "url": "https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200",
+      "credit": "John Deacon playing bass / https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_07",
+      "file": "queen_YmSpT_F-ONI.mp4",
+      "url": "https://www.youtube.com/watch?v=YmSpT_F-ONI",
+      "credit": "Brian May Roger Taylor Path to A Night At The Opera Part2 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_08",
+      "file": "queen_photo_4.jpg",
+      "url": "https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627",
+      "credit": "Queen black and white portrait1975 / https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_09",
+      "file": "queen_hsuKIVQ10Wk.mp4",
+      "url": "https://www.youtube.com/watch?v=hsuKIVQ10Wk",
+      "credit": "Queen 1975 Bohemian Rhapsody Making History Episode6 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_10",
+      "file": "queen_photo_5.jpg",
+      "url": "https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg",
+      "credit": "Queen A Night At The Opera era courtyard / https://ultimateclassicrock.com/queen-a-night-at-the-opera/",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_11",
+      "file": "queen_photo_6.jpg",
+      "url": "https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg",
+      "credit": "Kenny Everett in radio studio / https://x.com/TheKennyEverett",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_12",
+      "file": "queen_fJ9rUzIMcZQ.mp4",
+      "url": "https://www.youtube.com/watch?v=fJ9rUzIMcZQ",
+      "credit": "Queen Bohemian Rhapsody official video / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_13",
+      "file": "queen_wcZYOaCNzHM.mp4",
+      "url": "https://www.youtube.com/watch?v=wcZYOaCNzHM",
+      "credit": "Queen Path to A Night At The Opera Part1 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_14",
+      "file": "queen_brian_beato.mp4",
+      "url": "https://www.youtube.com/watch?v=mgkvU5eCaYo",
+      "credit": "Rick Beato / Brian May / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_15",
+      "file": "queen_photo_7.jpg",
+      "url": "https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg",
+      "credit": "Bohemian Rhapsody German single1975 sleeve / https://eil.com/shop/moreinfo.asp?catalogid=132478",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_16",
+      "file": "queen_photo_8.jpg",
+      "url": "https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg",
+      "credit": "Queen studio group1975 gold jacket / https://www.pinterest.com/pin/574560864943561872/",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.4
+      }
+    },
+    {
+      "id": "visual_17",
+      "file": "queen_N0dbGGvsjf8.mp4",
+      "url": "https://www.youtube.com/watch?v=N0dbGGvsjf8",
+      "credit": "Queen Bohemian Rhapsody Montreal1981 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_18",
+      "file": "queen_vbvyNnw8Qjg.mp4",
+      "url": "https://www.youtube.com/watch?v=vbvyNnw8Qjg",
+      "credit": "Queen Bohemian Rhapsody LiveAid1985 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_19",
+      "file": "queen_wembley1986.mp4",
+      "url": "https://www.youtube.com/watch?v=F79Q-_oOjq0",
+      "credit": "Queen Wembley1986 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    },
+    {
+      "id": "visual_20",
+      "file": "queen_d1OxNccvEkk.mp4",
+      "url": "https://www.youtube.com/watch?v=d1OxNccvEkk",
+      "credit": "Queen Bohemian Rhapsody Budapest1986 / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.45
+      }
+    }
+  ]
+}

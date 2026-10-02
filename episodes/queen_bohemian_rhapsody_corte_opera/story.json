@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "title": "Queen quase cortou a ópera",
+  "slug": "queen_bohemian_rhapsody_corte_opera",
+  "target_duration_seconds": 78,
+  "segments": [
+    {
+      "id": "hook",
+      "text": "Queen quase lançou Bohemian Rhapsody sem a ópera. Existiu uma versão cortada, e a própria banda odiou o resultado.",
+      "delivery": "hook"
+    },
+    {
+      "id": "musica",
+      "text": "Sim, aquele clássico de quase seis minutos.",
+      "delivery": "curious"
+    },
+    {
+      "id": "relato",
+      "text": "Brian May contou à Biblioteca do Congresso que John Deacon chegou a montar uma edição mais curta.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "problema",
+      "text": "O problema era simples: diziam que era longa demais.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "radio",
+      "text": "A orientação que eles recebiam era assustadora: nenhuma rádio tocaria uma faixa daquele tamanho como single.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "deacon",
+      "text": "Foi aí que entrou a proposta de Deacon.",
+      "delivery": "curious"
+    },
+    {
+      "id": "edicao",
+      "text": "A edição começava na parte cantada, arrancava toda a seção operística e pulava para o final.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "opera",
+      "text": "Cara, sairia justamente a virada mais maluca da música.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "rejeicao",
+      "text": "Só que ninguém da banda gostou. Segundo Brian, até o empresário John Reid via a duração como problema.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "aposta",
+      "text": "Eles precisavam decidir: cortar ou bancar a aposta.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "kenny",
+      "text": "A história virou com o DJ Kenny Everett.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "tocou",
+      "text": "Brian conta que Everett conseguiu uma cópia ainda inacabada e passou a tocar a faixa na Capital Radio.",
+      "delivery": "curious"
+    },
+    {
+      "id": "publico",
+      "text": "E o público respondeu. Os ouvintes pediam a música, e outras rádios começaram a entrar na onda.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "inteira",
+      "text": "De repente, a canção que supostamente não cabia no rádio estava conquistando espaço do jeito que era.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "lancamento",
+      "text": "O single saiu em outubro de 1975, sem aquele corte.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "numero",
+      "text": "E ficou nove semanas no topo britânico.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "consequencia",
+      "text": "Olha a inversão: o tamanho usado para duvidar da música acabou fazendo parte da experiência que todo mundo reconhece.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "palco",
+      "text": "A balada, a ópera e o rock sobreviveram juntos.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "payoff",
+      "text": "O Queen não precisou transformar Bohemian Rhapsody numa música comum. O público abriu espaço para ela inteira.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "cta",
+      "text": "Você cortaria a ópera? Conta nos comentários.",
+      "delivery": "payoff"
+    }
+  ]
+}

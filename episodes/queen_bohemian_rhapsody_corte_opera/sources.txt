@@ -1,0 +1,42 @@
+EPISÓDIO: queen_bohemian_rhapsody_corte_opera
+Request: queen_bohemian_rhapsody_corte_opera_20261002_0700
+Slot: 2026-10-02 07:00 America/Sao_Paulo
+FATUALIDADE
+https://blogs.loc.gov/now-see-hear/2024/12/all-hail-queen-an-interview-with-sir-brian-may/ — Brian May entrevistado em11/12/2024: Deacon criou edição sem seção operística, banda odiou, duração era preocupação, Everett tocou cópia inacabada, público respondeu. Não atribuímos número exato de execuções a Everett.
+https://www.queenonline.com/news/watch-queen-the-greatest-special-episode-1-the-path-to-bohemian-rhapsody — lançamento em31/10/1975, entrevistas oficiais.
+https://www.hollywoodrecords.com/press/queen/ — primeiro número1 britânico, nove semanas.
+https://brianmay.com/queen-news/2025/11/queen-the-greatest-special-episode-3-the-path-to-a-night-at-the-opera-part-2/ — material oficial contextual.
+PESQUISA EDITORIAL
+Tema central: edição de John Deacon que removia a ópera, não lista genérica de curiosidades. Gate GitHub UNIQUE_CANDIDATE run36993211432 job110793945301 SHA a1635b75fbc93a5a611f2b1f794d0ba8b4f59468. Histórico por paths e busca Bohemian Rhapsody sem episódio da música; gate real positivo.
+Curadoria: S9 H9 N8 C8 R10 M5 F9 V9; score ponderado=101.5. Queen reconhecido noBrasil; últimos três episódios publicados TimMaia/RickRenner/LosHermanos nacionais. Momento cultural auxiliar: anúncio Sony Music Queen Budapest26/08/2026 e premiere QueenOnline01/10/2026, sem prioridade especial de evento. vidIQ público pesquisado sem volume/competition autenticados: métricas não disponíveis, nenhum valor fabricado. Saturação geral alta; ângulo específico Deacon/ópera tem mérito factual próprio.
+BACKGROUND OBRIGATÓRIA
+Busca externa nova: rock documental semContentID; suspense piano; orquestral lúdico; synth analógico investigativo; piano dramático narrativo. Comparadas: Suspense/leberch, Sports Documentary/JonasBlakewood (ContentID registrado), Investigations/KevinMacLeod (atribuição/catálogo novo exigidos), Knife/Magiksolo, DarkChill/DRAGON-STUDIO, MorningFog/Silentvoice e NightPatrol/MonolithAudio. MorningFog demasiado meditativa; NightPatrol demasiado funky; Knife/DarkChill adequadas à tensão da edição rejeitada. Nenhum profile dedicado novo pode ser criado nesta rodada (config/catálogo fora de escopo), portanto família aprovada fallback_social_cinematic, volume0.10, do catálogo atual, com faixas remotas Pixabay já suportadas. Escolha determinística e freshness/resolução/decodificação serão comprovadas somente pelo runtime; não alegamos audição ou decode local. Profiles dos episódios recentes: latin_pop_uplifting, bright_fun, external_iris_sincere_love, external_i_knew_it_taylor_warm_sunset, uplifting_documentary; família nova neste conjunto.
+https://pixabay.com/music/modern-classical-magiksolo-knife-425649/
+https://pixabay.com/music/modern-classical-dark-chill-ambient-piano-music-316537/
+https://pixabay.com/music/ambient-morning-fog-263352/
+https://pixabay.com/music/funk-night-patrol-230379/
+VISUAIS
+20 segmentos=20shots;12vídeos/8imagens. Primeiro vídeo Hammersmith real, frame0.7 do início renderizado para capa. Nenhum filme/ator como Freddie. Fotos de outras datas/performance são contextuais e não prova da reunião ou edição original; rádio foto Kenny contexto sem data inferida. Fontes distintas selecionadas sem repetição; pool compara candidatos do mesmo tipo; runtime decide validade e dedup global. 113 candidatos-slot, 22 fontes distintas descobertas. Direitos desconhecidos registrados honestamente, sem licença inventada. Publicadores recebem hashtags lowercase separadas da caption.
+Queen Bohemian Rhapsody Hammersmith 1975 https://www.youtube.com/watch?v=JYY6LxJ2GPE
+Inside The Rhapsody documentary Queen https://www.youtube.com/watch?v=m4qYBqIieEk
+Brian May Roger Taylor Path to Bohemian Rhapsody Episode 1 https://www.youtube.com/watch?v=JobuSQcj_OA
+Brian May Roger Taylor Path to A Night At The Opera Part2 https://www.youtube.com/watch?v=YmSpT_F-ONI
+Queen 1975 Bohemian Rhapsody Making History Episode6 https://www.youtube.com/watch?v=hsuKIVQ10Wk
+Queen Bohemian Rhapsody official video https://www.youtube.com/watch?v=fJ9rUzIMcZQ
+Queen Path to A Night At The Opera Part1 https://www.youtube.com/watch?v=wcZYOaCNzHM
+Queen 50 Years Bohemian Rhapsody Live Episode4 https://www.youtube.com/watch?v=R8tOgurYwV0
+Queen Bohemian Rhapsody Montreal1981 https://www.youtube.com/watch?v=N0dbGGvsjf8
+Queen Bohemian Rhapsody LiveAid1985 https://www.youtube.com/watch?v=vbvyNnw8Qjg
+Queen Greatest Live Bohemian Rhapsody Episode37 https://www.youtube.com/watch?v=5AcoydbNTVY
+Queen Bohemian Rhapsody Budapest1986 https://www.youtube.com/watch?v=d1OxNccvEkk
+Queen Bohemian Rhapsody Wembley1986 https://www.youtube.com/watch?v=F79Q-_oOjq0
+UK single Bohemian Rhapsody EMI2375 1975 https://www.ebay.com/itm/358370904392 https://i.ebayimg.com/images/g/ZyoAAeSwu6hppx33/s-l1200.jpg
+Queen band seated promotional portrait1975 https://www.mynewsdesk.com/se/universalmusic/images/queen-band-photo-1975-c-queen-productions-ltd-3324677 https://mnd-assets.mynewsdesk.com/image/upload/c_fill%2Cdpr_auto%2Cf_auto%2Cg_auto%2Cq_auto%3Agood%2Cw_746/gf6f196dmusln6a4fwp31j
+John Deacon playing bass https://ultimateclassicrock.com/john-deacon-queen-songs-ranked/ https://townsquare.media/site/295/files/2026/06/attachment-johndeacon.jpg?format=natural&q=75&w=1200
+Queen black and white portrait1975 https://queenphotos.wordpress.com/2013/08/22/queen-1975-4/ https://queenphotos.files.wordpress.com/2013/08/1975-queen-photo.jpg?h=476&w=627
+Queen A Night At The Opera era courtyard https://ultimateclassicrock.com/queen-a-night-at-the-opera/ https://townsquare.media/site/295/files/2015/11/KeystoneStringer.jpg
+Kenny Everett in radio studio https://x.com/TheKennyEverett https://pbs.twimg.com/media/Gfmw6BoWMAAixbL.jpg
+Bohemian Rhapsody German single1975 sleeve https://eil.com/shop/moreinfo.asp?catalogid=132478 https://images.eil.com/large_image/QUEEN_BOHEMIAN%2BRHAPSODY-132478.jpg
+Queen studio group1975 gold jacket https://www.pinterest.com/pin/574560864943561872/ https://i.pinimg.com/originals/6b/04/c6/6b04c6d877ece6213aa644d4ada377b1.jpg
+Queen 1975 outdoors group portrait https://www.pinterest.com/pin/queen-1975--859835753838233549/ https://i.pinimg.com/736x/51/9b/19/519b19af7a63d6e14ca580a06861f611.jpg
+Ajuste de fontes antes da autoria: shot14 BrianMay/RickBeato https://www.youtube.com/watch?v=mgkvU5eCaYo; shot19 Wembley1986 https://www.youtube.com/watch?v=F79Q-_oOjq0. Retiradas montagens das escolhas-base para reduzir repetição de filmagens de shows.

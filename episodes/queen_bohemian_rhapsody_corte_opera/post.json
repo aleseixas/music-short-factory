@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "A ÓPERA QUASE SUMIU",
+    "source": {
+      "type": "video_frame",
+      "timestamp_seconds": 0.7,
+      "asset_id": "visual_01"
+    }
+  },
+  "youtube": {
+    "title": "Queen quase cortou a ópera",
+    "description": "Brian May contou que John Deacon montou uma edição de Bohemian Rhapsody que retirava toda a ópera. A banda odiou. Kenny Everett ajudou a mostrar que o público queria a versão inteira. Fontes: entrevista de Brian May à Biblioteca do Congresso (11/12/2024) e arquivo oficial Queen.",
+    "hashtags": [
+      "queen",
+      "bohemianrhapsody",
+      "freddiemercury",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Queen quase lançou Bohemian Rhapsody sem a ópera. Brian May revelou que existiu uma edição curta — e a banda inteira odiou. Você cortaria essa parte?",
+    "hashtags": [
+      "queen",
+      "bohemianrhapsody",
+      "freddiemercury",
+      "curiosidade",
+      "alemdohit",
+      "brianmay",
+      "rockclassico",
+      "historiadamusica"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "facebook": {
+    "title": "Queen quase cortou a ópera",
+    "caption": "Queen quase lançou Bohemian Rhapsody sem a ópera. Brian May revelou que existiu uma edição curta — e a banda inteira odiou. Você cortaria essa parte?",
+    "hashtags": [
+      "queen",
+      "bohemianrhapsody",
+      "freddiemercury",
+      "curiosidade",
+      "alemdohit",
+      "brianmay",
+      "rockclassico",
+      "historiadamusica"
+    ]
+  },
+  "tiktok": {
+    "caption": "Queen quase lançou Bohemian Rhapsody sem a ópera. Brian May revelou que existiu uma edição curta — e a banda inteira odiou. Você cortaria essa parte?",
+    "hashtags": [
+      "queen",
+      "bohemianrhapsody",
+      "freddiemercury",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

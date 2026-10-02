@@ -1,0 +1,209 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "external_apt_monkeys_spinning_monkeys",
+    "volume": 0.1
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0.15,
+      "type": "impact",
+      "volume": 0.2
+    },
+    {
+      "time_seconds": 24,
+      "type": "record_scratch",
+      "volume": 0.18,
+      "duration_seconds": 0.8
+    },
+    {
+      "time_seconds": 46,
+      "type": "whoosh_fast",
+      "volume": 0.18,
+      "duration_seconds": 0.7
+    },
+    {
+      "time_seconds": 64,
+      "type": "correct_ding",
+      "volume": 0.18,
+      "duration_seconds": 0.6
+    }
+  ],
+  "text_fx_cues": [
+    {
+      "segment": "hook",
+      "offset_seconds": 0.15,
+      "duration_seconds": 1.3,
+      "text": "A ÓPERA QUASE SUMIU",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.7
+    },
+    {
+      "segment": "edicao",
+      "offset_seconds": 0.1,
+      "duration_seconds": 1.2,
+      "text": "SEM A ÓPERA",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.7
+    }
+  ],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "hook",
+      "asset": "visual_01",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 10
+    },
+    {
+      "id": "shot_02",
+      "segment": "musica",
+      "asset": "visual_02",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "relato",
+      "asset": "visual_03",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 45
+    },
+    {
+      "id": "shot_04",
+      "segment": "problema",
+      "asset": "visual_04",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_05",
+      "segment": "radio",
+      "asset": "visual_05",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 30
+    },
+    {
+      "id": "shot_06",
+      "segment": "deacon",
+      "asset": "visual_06",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_07",
+      "segment": "edicao",
+      "asset": "visual_07",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 30
+    },
+    {
+      "id": "shot_08",
+      "segment": "opera",
+      "asset": "visual_08",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_09",
+      "segment": "rejeicao",
+      "asset": "visual_09",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 35
+    },
+    {
+      "id": "shot_10",
+      "segment": "aposta",
+      "asset": "visual_10",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_11",
+      "segment": "kenny",
+      "asset": "visual_11",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_12",
+      "segment": "tocou",
+      "asset": "visual_12",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 190
+    },
+    {
+      "id": "shot_13",
+      "segment": "publico",
+      "asset": "visual_13",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 25
+    },
+    {
+      "id": "shot_14",
+      "segment": "inteira",
+      "asset": "visual_14",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 30
+    },
+    {
+      "id": "shot_15",
+      "segment": "lancamento",
+      "asset": "visual_15",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_16",
+      "segment": "numero",
+      "asset": "visual_16",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_17",
+      "segment": "consequencia",
+      "asset": "visual_17",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 15
+    },
+    {
+      "id": "shot_18",
+      "segment": "palco",
+      "asset": "visual_18",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 15
+    },
+    {
+      "id": "shot_19",
+      "segment": "payoff",
+      "asset": "visual_19",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 15
+    },
+    {
+      "id": "shot_20",
+      "segment": "cta",
+      "asset": "visual_20",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 15
+    }
+  ]
+}
