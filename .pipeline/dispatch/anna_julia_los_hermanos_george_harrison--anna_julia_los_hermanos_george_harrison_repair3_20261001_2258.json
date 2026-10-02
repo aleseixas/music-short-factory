@@ -3,7 +3,7 @@
   "slug": "anna_julia_los_hermanos_george_harrison",
   "request_id": "anna_julia_los_hermanos_george_harrison_repair3_20261001_2258",
   "source_run_id": "36953835811",
-  "status": "PREPARED",
+  "status": "SENDING",
   "display_title": "publish/anna_julia_los_hermanos_george_harrison/anna_julia_los_hermanos_george_harrison_repair3_20261001_2258/36953835811",
   "expected_workflow": ".github/workflows/publish-episode.yml",
   "expected_source_sha": "bc7dd8522051cbb1dd221791456bab7da67f19d5",
@@ -11,8 +11,9 @@
   "owner_id": "3df3ae433e94410dbfef3d40faf60cc4",
   "generation": 1,
   "created_at": 1790907845.0,
-  "heartbeat_at": 1790907845.0,
+  "heartbeat_at": 1790907850.0,
   "lease_expires_at": 1790907965.0,
   "reconcile_after": 1790908745.0,
-  "run_reconcile_after": 1790994245.0
+  "run_reconcile_after": 1790994245.0,
+  "send_authorized_at": 1790907850.0
 }
