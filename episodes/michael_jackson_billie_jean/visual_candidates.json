@@ -2,7 +2,7 @@
   "schema_version": 1,
   "slots": [
     {
-      "id": "cold_open_01",
+      "id": "shot_cold_open_01",
       "visual_intent": "Quem era Billie Jean? Michael Jackson transformou",
       "required_seconds": 3.933333333333333,
       "candidates": [
@@ -40,10 +40,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "cold_open_02",
+      "id": "shot_cold_open_02",
       "visual_intent": "esse nome em um mistério que atravessou",
       "required_seconds": 2.0333333333333337,
       "candidates": [
@@ -66,10 +67,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "cold_open_03",
+      "id": "shot_cold_open_03",
       "visual_intent": "décadas. A mulher da música existiu? A",
       "required_seconds": 3.8000000000000007,
       "candidates": [
@@ -92,10 +94,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "cold_open_04",
+      "id": "shot_cold_open_04",
       "visual_intent": "resposta começa longe do palco.",
       "required_seconds": 2.299999999999999,
       "candidates": [
@@ -118,10 +121,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "promise_01",
+      "id": "shot_promise_01",
       "visual_intent": "Para chegar lá, precisamos ligar três histórias. As pessoas",
       "required_seconds": 4.466666666666669,
       "candidates": [
@@ -142,10 +146,11 @@
           "derived_image_asset": null,
           "search_provider": "authoring-pool"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "promise_02",
+      "id": "shot_promise_02",
       "visual_intent": "que inspiraram a personagem, uma decisão de",
       "required_seconds": 2.8666666666666636,
       "candidates": [
@@ -168,10 +173,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "promise_03",
+      "id": "shot_promise_03",
       "visual_intent": "estúdio que quase mudou a música e uma apresentação que você",
       "required_seconds": 4.033333333333335,
       "candidates": [
@@ -194,10 +200,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "promise_04",
+      "id": "shot_promise_04",
       "visual_intent": "provavelmente reconhece sem ouvir uma palavra.",
       "required_seconds": 3.466666666666665,
       "candidates": [
@@ -220,10 +227,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "first_payoff_01",
+      "id": "shot_first_payoff_01",
       "visual_intent": "Billie Jean não era, segundo Michael, o retrato de uma única mulher. Em sua autobiografia,",
       "required_seconds": 6.5,
       "candidates": [
@@ -246,10 +254,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "first_payoff_03",
+      "id": "shot_first_payoff_03",
       "visual_intent": "pessoas que haviam perturbado a vida dele e dos irmãos. A história vinha de experiências com fãs que",
       "required_seconds": 6.166666666666664,
       "candidates": [
@@ -272,10 +281,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "meaning_01",
+      "id": "shot_meaning_01",
       "visual_intent": "Isso ajuda a entender a tensão da letra. O narrador encontra",
       "required_seconds": 4.600000000000001,
       "candidates": [
@@ -298,10 +308,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "meaning_03",
+      "id": "shot_meaning_03",
       "visual_intent": "Ele nega. A música deixa o ouvinte dentro dessa disputa,",
       "required_seconds": 4.5333333333333385,
       "candidates": [
@@ -324,10 +335,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "meaning_04",
+      "id": "shot_meaning_04",
       "visual_intent": "sem funcionar como documento de um caso real.",
       "required_seconds": 2.8999999999999986,
       "candidates": [
@@ -350,10 +362,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "complication_01",
+      "id": "shot_complication_01",
       "visual_intent": "Por isso, histórias sobre uma fã específica precisam de cuidado.",
       "required_seconds": 4.633333333333326,
       "candidates": [
@@ -376,10 +389,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "complication_03",
+      "id": "shot_complication_03",
       "visual_intent": "mas eles não comprovam que aquela pessoa era a Billie Jean da canção. E",
       "required_seconds": 4.833333333333329,
       "candidates": [
@@ -402,10 +416,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "complication_04",
+      "id": "shot_complication_04",
       "visual_intent": "havia outro mistério, agora dentro do estúdio.",
       "required_seconds": 3.433333333333337,
       "candidates": [
@@ -428,10 +443,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "rehook_01",
+      "id": "shot_rehook_01",
       "visual_intent": "Enquanto o público tentava descobrir quem era a Billie Jean, Michael precisava defender outra coisa.",
       "required_seconds": 6.0,
       "candidates": [
@@ -454,10 +470,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "rehook_02",
+      "id": "shot_rehook_02",
       "visual_intent": "A entrada da própria música. A parte que",
       "required_seconds": 3.6999999999999886,
       "candidates": [
@@ -480,10 +497,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "rehook_03",
+      "id": "shot_rehook_03",
       "visual_intent": "hoje reconhecemos quase imediatamente também foi motivo de discussão. O que parecia demora",
       "required_seconds": 6.200000000000003,
       "candidates": [
@@ -506,10 +524,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "rehook_04",
+      "id": "shot_rehook_04",
       "visual_intent": "para um produtor era para Michael o motivo para dançar.",
       "required_seconds": 3.5333333333333314,
       "candidates": [
@@ -532,10 +551,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "intro_conflict_01",
+      "id": "shot_intro_conflict_01",
       "visual_intent": "Quincy Jones contou, em entrevista preservada pela PBS, que",
       "required_seconds": 4.266666666666666,
       "candidates": [
@@ -556,10 +576,11 @@
           "derived_image_asset": null,
           "search_provider": "authoring-pool"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "intro_conflict_02",
+      "id": "shot_intro_conflict_02",
       "visual_intent": "a introdução provocou debate. Michael",
       "required_seconds": 2.76666666666668,
       "candidates": [
@@ -580,10 +601,11 @@
           "derived_image_asset": "archive_09",
           "search_provider": "authoring-pool"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "intro_conflict_03",
+      "id": "shot_intro_conflict_03",
       "visual_intent": "insistia naquele espaço antes da voz. A introdução ficou",
       "required_seconds": 4.0,
       "candidates": [
@@ -604,10 +626,11 @@
           "derived_image_asset": null,
           "search_provider": "authoring-pool"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "intro_conflict_04",
+      "id": "shot_intro_conflict_04",
       "visual_intent": "e ganhou uma função decisiva.",
       "required_seconds": 2.6999999999999886,
       "candidates": [
@@ -628,10 +651,11 @@
           "derived_image_asset": null,
           "search_provider": "authoring-pool"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "production_01",
+      "id": "shot_production_01",
       "visual_intent": "Antes de Michael cantar, a bateria estabelece o pulso e o baixo prende a atenção. A composição era dele.",
       "required_seconds": 7.300000000000011,
       "candidates": [
@@ -654,10 +678,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "production_05",
+      "id": "shot_production_05",
       "visual_intent": "que a faixa pudesse ser reconhecida antes da primeira frase.",
       "required_seconds": 3.5999999999999943,
       "candidates": [
@@ -680,10 +705,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "drums_03",
+      "id": "shot_drums_03",
       "visual_intent": "Mas a combinação de precisão, espaço e repetição transformava uma história",
       "required_seconds": 5.566666666666663,
       "candidates": [
@@ -706,10 +732,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "drums_04",
+      "id": "shot_drums_04",
       "visual_intent": "inquietante numa música impossível de ignorar.",
       "required_seconds": 3.1333333333333258,
       "candidates": [
@@ -732,10 +759,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "mix_01",
+      "id": "shot_mix_01",
       "visual_intent": "A busca pela versão certa foi tão longe que Swedien contou",
       "required_seconds": 4.033333333333331,
       "candidates": [
@@ -758,10 +786,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "mix_04",
+      "id": "shot_mix_04",
       "visual_intent": "gravação estava pronta. Só faltava uma imagem capaz de transformar aquele pulso em memória.",
       "required_seconds": 5.466666666666669,
       "candidates": [
@@ -784,10 +813,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "stage_loop_01",
+      "id": "shot_stage_loop_01",
       "visual_intent": "Essa imagem apareceu no Motown 25. O especial celebrava a gravadora",
       "required_seconds": 5.333333333333343,
       "candidates": [
@@ -810,10 +840,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "stage_loop_03",
+      "id": "shot_stage_loop_03",
       "visual_intent": "os irmãos no palco, mas queria mostrar também quem havia se tornado sozinho. E",
       "required_seconds": 5.166666666666686,
       "candidates": [
@@ -836,10 +867,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "dates_02",
+      "id": "shot_dates_02",
       "visual_intent": "1983, em Pasadena. A",
       "required_seconds": 3.4666666666666686,
       "candidates": [
@@ -862,10 +894,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "build_climax_01",
+      "id": "shot_build_climax_01",
       "visual_intent": "Michael ficou sozinho. A luva, a jaqueta e o corpo em contraste",
       "required_seconds": 5.833333333333343,
       "candidates": [
@@ -888,10 +921,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "build_climax_02",
+      "id": "shot_build_climax_02",
       "visual_intent": "com o palco concentravam a atenção. Mas agora cada",
       "required_seconds": 3.799999999999983,
       "candidates": [
@@ -914,10 +948,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "build_climax_03",
+      "id": "shot_build_climax_03",
       "visual_intent": "movimento parecia conversar com aquela introdução que ele havia defendido. Até que o corpo anunciou",
       "required_seconds": 6.033333333333331,
       "candidates": [
@@ -940,10 +975,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "build_climax_04",
+      "id": "shot_build_climax_04",
       "visual_intent": "uma direção e os pés seguiram a outra.",
       "required_seconds": 3.2333333333333485,
       "candidates": [
@@ -966,10 +1002,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "moonwalk_01",
+      "id": "shot_moonwalk_01",
       "visual_intent": "Era o moonwalk. O efeito parecia contrariar o chão, caminhar para frente enquanto deslizava para trás.",
       "required_seconds": 8.066666666666663,
       "candidates": [
@@ -992,10 +1029,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "moonwalk_02",
+      "id": "shot_moonwalk_02",
       "visual_intent": "Não foi a invenção de um passo naquele instante.",
       "required_seconds": 3.0333333333333314,
       "candidates": [
@@ -1018,10 +1056,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "moonwalk_03",
+      "id": "shot_moonwalk_03",
       "visual_intent": "Foi a chegada de um movimento",
       "required_seconds": 2.166666666666657,
       "candidates": [
@@ -1044,10 +1083,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "moonwalk_04",
+      "id": "shot_moonwalk_04",
       "visual_intent": "já existente ao lugar, à música e ao",
       "required_seconds": 3.1666666666666856,
       "candidates": [
@@ -1070,10 +1110,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "moonwalk_05",
+      "id": "shot_moonwalk_05",
       "visual_intent": "intérprete que o tornariam inseparável de sua imagem.",
       "required_seconds": 3.0999999999999943,
       "candidates": [
@@ -1096,10 +1137,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "dance_origin_01",
+      "id": "shot_dance_origin_01",
       "visual_intent": "O passo vinha do backslide. Dançarinos como Jeffrey",
       "required_seconds": 4.166666666666657,
       "candidates": [
@@ -1122,10 +1164,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "dance_origin_02",
+      "id": "shot_dance_origin_02",
       "visual_intent": "Daniel e Derek Cooley Jaxson fazem parte dessa",
       "required_seconds": 2.6333333333333258,
       "candidates": [
@@ -1148,10 +1191,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "dance_origin_03",
+      "id": "shot_dance_origin_03",
       "visual_intent": "história de transmissão. A contribuição de Michael foi incorporar e",
       "required_seconds": 4.066666666666691,
       "candidates": [
@@ -1174,10 +1218,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "dance_origin_04",
+      "id": "shot_dance_origin_04",
       "visual_intent": "lapidar o movimento dentro de uma performance inteira.",
       "required_seconds": 3.1333333333333258,
       "candidates": [
@@ -1200,10 +1245,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "consequence_01",
+      "id": "shot_consequence_01",
       "visual_intent": "E aqui a ordem dos acontecimentos importa. Billie Jean",
       "required_seconds": 4.133333333333326,
       "candidates": [
@@ -1226,10 +1272,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "consequence_03",
+      "id": "shot_consequence_03",
       "visual_intent": "antes da exibição do especial. Ficou sete semanas no topo.",
       "required_seconds": 4.366666666666646,
       "candidates": [
@@ -1252,10 +1299,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "consequence_04",
+      "id": "shot_consequence_04",
       "visual_intent": "O moonwalk não criou o sucesso do zero.",
       "required_seconds": 2.8000000000000114,
       "candidates": [
@@ -1278,10 +1326,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "consequence_05",
+      "id": "shot_consequence_05",
       "visual_intent": "Ele deu a um sucesso que já existia, uma imagem que podia ser reconhecida,",
       "required_seconds": 4.533333333333303,
       "candidates": [
@@ -1304,10 +1353,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "consequence_06",
+      "id": "shot_consequence_06",
       "visual_intent": "repetida e lembrada.",
       "required_seconds": 2.0,
       "candidates": [
@@ -1330,10 +1380,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "video_impact_01",
+      "id": "shot_video_impact_01",
       "visual_intent": "O videoclipe acrescentou outra assinatura, o chão que se iluminava sob os passos de",
       "required_seconds": 5.53333333333336,
       "candidates": [
@@ -1356,10 +1407,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "video_impact_02",
+      "id": "shot_video_impact_02",
       "visual_intent": "Michael. Na televisão, o movimento parecia desafiar",
       "required_seconds": 3.6000000000000227,
       "candidates": [
@@ -1382,10 +1434,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "video_impact_03",
+      "id": "shot_video_impact_03",
       "visual_intent": "o chão. No clipe, o chão reagia a ele. Essa ligação entre som e corpo ajuda",
       "required_seconds": 5.866666666666617,
       "candidates": [
@@ -1408,10 +1461,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "video_impact_04",
+      "id": "shot_video_impact_04",
       "visual_intent": "a explicar por que Billie Jean virou muito mais do que uma faixa de thriller.",
       "required_seconds": 3.8666666666666742,
       "candidates": [
@@ -1434,10 +1488,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "legacy_01",
+      "id": "shot_legacy_01",
       "visual_intent": "Em 1984, Billie Jean venceu dois Grammys, um",
       "required_seconds": 5.0,
       "candidates": [
@@ -1460,10 +1515,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "legacy_03",
+      "id": "shot_legacy_03",
       "visual_intent": "nas categorias de rhythm and blues. Uma história de desconfiança havia se transformado",
       "required_seconds": 5.2333333333333485,
       "candidates": [
@@ -1486,10 +1542,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "legacy_04",
+      "id": "shot_legacy_04",
       "visual_intent": "em um dos retratos mais reconhecíveis de Michael Jackson.",
       "required_seconds": 2.933333333333337,
       "candidates": [
@@ -1512,10 +1569,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_question_01",
+      "id": "shot_final_question_01",
       "visual_intent": "Então, afinal, quem era Billie Jean? A resposta mais sustentada",
       "required_seconds": 4.800000000000011,
       "candidates": [
@@ -1538,10 +1596,11 @@
           "video_id": "Zi_XLOBDo_Y",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_question_03",
+      "id": "shot_final_question_03",
       "visual_intent": "Não há uma única mulher confirmada como a identidade por trás do nome. Mas",
       "required_seconds": 4.866666666666674,
       "candidates": [
@@ -1564,10 +1623,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_question_04",
+      "id": "shot_final_question_04",
       "visual_intent": "ainda falta uma última peça dessa transformação.",
       "required_seconds": 2.566666666666663,
       "candidates": [
@@ -1590,10 +1650,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "last_rehook_01",
+      "id": "shot_last_rehook_01",
       "visual_intent": "O momento que tanta gente considera perfeito não parecia perfeito para Michael.",
       "required_seconds": 4.400000000000034,
       "candidates": [
@@ -1616,10 +1677,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "last_rehook_02",
+      "id": "shot_last_rehook_02",
       "visual_intent": "Em moonwalk, ele contou que saiu frustrado por não ter",
       "required_seconds": 3.599999999999966,
       "candidates": [
@@ -1642,10 +1704,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "last_rehook_03",
+      "id": "shot_last_rehook_03",
       "visual_intent": "sustentado uma posição na ponta dos pés como queria. Depois,",
       "required_seconds": 3.8000000000000114,
       "candidates": [
@@ -1668,10 +1731,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "last_rehook_05",
+      "id": "shot_last_rehook_05",
       "visual_intent": "O que ele enxergava como falha, outro grande dançador enxergava como uma conquista.",
       "required_seconds": 5.0,
       "candidates": [
@@ -1694,10 +1758,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_payoff_01",
+      "id": "shot_final_payoff_01",
       "visual_intent": "A mulher era uma personagem. O medo vinha de experiências.",
       "required_seconds": 4.099999999999966,
       "candidates": [
@@ -1720,10 +1785,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_payoff_02",
+      "id": "shot_final_payoff_02",
       "visual_intent": "E o legado nasceu quando Michael deu movimento a",
       "required_seconds": 2.8000000000000114,
       "candidates": [
@@ -1746,10 +1812,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_payoff_03",
+      "id": "shot_final_payoff_03",
       "visual_intent": "essa história. Para continuar, veja também como o outro clipe dele virou",
       "required_seconds": 4.166666666666686,
       "candidates": [
@@ -1772,10 +1839,11 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     },
     {
-      "id": "final_payoff_04",
+      "id": "shot_final_payoff_04",
       "visual_intent": "uma disputa no Brasil, aqui no Além do Hit.",
       "required_seconds": 2.819999999999993,
       "candidates": [
@@ -1798,7 +1866,8 @@
           "video_id": "LXJcOduo0w4",
           "search_provider": "youtube_web"
         }
-      ]
+      ],
+      "crossfade_seconds": 0
     }
   ]
 }
