@@ -1,0 +1,87 @@
+name: Close manually published Billie Jean reservation
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/close-billie-jean-manual.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: close-manual-billie-jean
+  cancel-in-progress: false
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - name: Install coordinator HTTP dependency
+        run: python -m pip install requests
+      - name: Close exact reservation with fenced CAS and preserve manual publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PIPELINE_DEFAULT_GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from engine.shared_coordination import SharedCoordinator
+          
+          slug = "michael_jackson_billie_jean"
+          request_id = "billie-jean-long-20261002"
+          coordinator = SharedCoordinator(Path.cwd())
+          state = coordinator.status(slug)
+          closed = state.get("requested_slug_closed")
+          if closed:
+              if closed.get("request_id") != request_id:
+                  raise RuntimeError("Unexpected closed request; refusing any change")
+              print(json.dumps({"result": "ALREADY_CLOSED", "closed": closed}))
+          else:
+              if (state["slug"] != slug or state["request_id"] != request_id
+                      or state["generation"] != 258 or state["version"] != 623
+                      or state["phase"] != "LOCAL_REPAIR" or state["publisher_started"]):
+                  raise RuntimeError("Authority changed; refusing closure of a different state")
+              paths = [f".publish-queue/{slug}.txt",
+                       f".publication-attempts/{slug}.json",
+                       f".pipeline/dispatch/{slug}--{request_id}.json"]
+              def assert_no_native_publication(revision):
+                  evidence = coordinator.read_files(paths, revision)
+                  if any(value is not None for value in evidence.values()):
+                      raise RuntimeError("Native queue/attempt/dispatch exists; observe original session only")
+              assert_no_native_publication(state["revision"])
+              token = coordinator.acquire(slug, request_id, expected_generation=258)
+              assert_no_native_publication(token["revision"])
+              ledger_path = f".pipeline/episodes/{slug}.json"
+              raw = coordinator.read_files([ledger_path], token["revision"])[ledger_path]
+              if raw is None:
+                  raise RuntimeError("Exact episode ledger missing")
+              ledger = json.loads(raw)
+              if ledger.get("request_id") != request_id:
+                  raise RuntimeError("Ledger request mismatch")
+              ledger.update(stage="CANCELLED", active=False, closed_generation=token["generation"] + 1,
+                            mutation_allowed=False, recovery_mutation_allowed=False,
+                            republication_allowed=False, ever_published_or_attempted=True,
+                            EVER_PUBLISHED_OR_ATTEMPTED="YES", REPUBLICATION_ALLOWED="NO",
+                            next_action="create_new_episode",
+                            manual_publication={"confirmed_by": "user",
+                                                "confirmed_at": "2026-10-03T05:50:57-03:00",
+                                                "platforms": "unspecified",
+                                                "note": "User published manually and authorized closing the stuck automation reservation."})
+              finished = coordinator.finish(token, "CANCELLED",
+                                            files={ledger_path: (json.dumps(ledger, ensure_ascii=False, sort_keys=True) + "\n").encode()})
+              final = coordinator.status(slug)
+              if (final["phase"] != "CANCELLED" or not final["released"]
+                      or final["mutation_allowed"] or not final.get("requested_slug_closed")):
+                  raise RuntimeError("Terminal closure not confirmed")
+              print(json.dumps({"result": "RESERVATION_CLOSED_MANUAL_PUBLICATION",
+                                "authority": finished, "tombstone": final["requested_slug_closed"]}, sort_keys=True))
+          
+          PY
