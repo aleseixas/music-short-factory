@@ -169,3 +169,8 @@ https://pixabay.com/music/disco-nu-disco-584761/ — DRAGON-STUDIO
 Licença/metadata do catálogo da main; registro técnico da faixa efetivamente resolvida pertence ao runtime.
 SFX somente tipos do catálogo atual: pop, record_scratch, correct_ding, whoosh.
 vidIQ: consulta Cyndi Lauper BR retornou insufficientCredits; nenhuma métrica estimada.
+
+Reparo material 1 — 2026-10-03: AbiOcB-6yso retornou Video unavailable inclusive fallback cookies no run37154082438. Removido do pool e da montagem. Slot13 agora videoclipe original PIb6AZdTr-A, início125s; antiga ocorrência do mesmo clipe no slot10 substituída por imagem DSC8198, para zero repetição. Slot14 agora Cyndi e Cher, fonteUELlwbUlStE, com texto específico correspondente. Pools de vídeo possuem baseline direct/exact apenas quando mostram Cyndi/ação vinculada; alternativas só contextuais não são aprovadas como movimento decorativo. Validação técnica continua nativa.
+Trilha fallback_social_fun efetivamente falhou HTTP403; reparo interno resolveu external_apt_monkeys_spinning_monkeys. Essa faixa foi substituída por bright_fun local existente: a documentação de crédito público de Monkeys Spinning Monkeys não consta no catálogo e o post não suporta bloco técnico de atribuição. bright_fun é fallback local após falha real do fornecedor, volume0.10. Sem mudança de catálogo.
+
+Pool revisado:97 entradas após remover a fonte indisponível; 20 fontes distintas na montagem.

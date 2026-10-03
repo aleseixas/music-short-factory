@@ -4,7 +4,7 @@
     "enabled": true
   },
   "background_music": {
-    "profile": "external_apt_monkeys_spinning_monkeys",
+    "profile": "bright_fun",
     "volume": 0.1
   },
   "sfx_cues": [
@@ -125,9 +125,8 @@
       "id": "shot_10",
       "segment": "s10",
       "asset": "visual_10",
-      "motion": "hold",
-      "transition_out": "cut",
-      "source_start_seconds": 18
+      "motion": "push_in",
+      "transition_out": "cut"
     },
     {
       "id": "shot_11",
@@ -149,14 +148,15 @@
       "asset": "visual_13",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 40
+      "source_start_seconds": 125
     },
     {
       "id": "shot_14",
       "segment": "s14",
       "asset": "visual_14",
-      "motion": "push_in",
-      "transition_out": "cut"
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 45
     },
     {
       "id": "shot_15",
