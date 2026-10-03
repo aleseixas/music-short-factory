@@ -3,8 +3,8 @@
   "assets": [
     {
       "id": "visual_01",
+      "file": "youtube-djV11Xbc914.mp4",
       "url": "https://www.youtube.com/watch?v=djV11Xbc914",
-      "file": "video_source_01.mp4",
       "credit": "a-ha / YouTube",
       "license": "",
       "focus": {
@@ -14,8 +14,8 @@
     },
     {
       "id": "visual_02",
-      "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
       "file": "image_source_3.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -25,8 +25,8 @@
     },
     {
       "id": "visual_03",
+      "file": "youtube-liq-seNVvrM.mp4",
       "url": "https://www.youtube.com/watch?v=liq-seNVvrM",
-      "file": "video_source_02.mp4",
       "credit": "MagneticNorth71 / YouTube",
       "license": "",
       "focus": {
@@ -36,8 +36,8 @@
     },
     {
       "id": "visual_04",
+      "file": "youtube-wlTHJJX7QVU.mp4",
       "url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
-      "file": "video_source_03.mp4",
       "credit": "a-ha / YouTube",
       "license": "",
       "focus": {
@@ -47,8 +47,8 @@
     },
     {
       "id": "visual_05",
-      "url": "https://static.wixstatic.com/media/083c11_c79b87580ba543a5a867a1b3ad803ee0~mv2_d_3188_2150_s_2.png",
       "file": "image_source_0.png",
+      "url": "https://static.wixstatic.com/media/083c11_c79b87580ba543a5a867a1b3ad803ee0~mv2_d_3188_2150_s_2.png",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -58,8 +58,8 @@
     },
     {
       "id": "visual_06",
-      "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
       "file": "image_source_4.png",
+      "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -69,8 +69,8 @@
     },
     {
       "id": "visual_07",
-      "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
       "file": "image_source_7.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -80,8 +80,8 @@
     },
     {
       "id": "visual_08",
+      "file": "youtube-CcxLyGKw48s.mp4",
       "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
-      "file": "video_source_04.mp4",
       "credit": "a-ha / YouTube",
       "license": "",
       "focus": {
@@ -91,8 +91,8 @@
     },
     {
       "id": "visual_09",
-      "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
       "file": "image_source_2.png",
+      "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -102,8 +102,8 @@
     },
     {
       "id": "visual_10",
-      "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
       "file": "image_source_6.png",
+      "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -113,8 +113,8 @@
     },
     {
       "id": "visual_11",
-      "url": "https://static.wixstatic.com/media/083c11_dd20f9b4d1644344850fb46e354eef89~mv2_d_5000_4200_s_4_2.jpg",
       "file": "image_source_1.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_dd20f9b4d1644344850fb46e354eef89~mv2_d_5000_4200_s_4_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -124,8 +124,8 @@
     },
     {
       "id": "visual_12",
+      "file": "youtube-7Lho0_9-V-8.mp4",
       "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
-      "file": "video_source_05.mp4",
       "credit": "a-ha / YouTube",
       "license": "",
       "focus": {
@@ -135,8 +135,8 @@
     },
     {
       "id": "visual_13",
-      "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
       "file": "image_source_5.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -146,8 +146,8 @@
     },
     {
       "id": "visual_14",
-      "url": "https://static.wixstatic.com/media/083c11_30e7326f706b4224bdddd05eb84c78d8~mv2_d_3463_2496_s_4_2.jpg",
       "file": "image_source_9.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_30e7326f706b4224bdddd05eb84c78d8~mv2_d_3463_2496_s_4_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -157,8 +157,8 @@
     },
     {
       "id": "visual_15",
-      "url": "https://static.wixstatic.com/media/083c11_51e2a983dd074f8987a8639cfee3f7b5~mv2_d_2584_1976_s_2.jpg",
       "file": "image_source_12.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_51e2a983dd074f8987a8639cfee3f7b5~mv2_d_2584_1976_s_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -168,8 +168,8 @@
     },
     {
       "id": "visual_16",
+      "file": "youtube-Mphh_6yJHSs.webm",
       "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
-      "file": "video_source_06.mp4",
       "credit": "Arquivo BBC / a-ha / YouTube",
       "license": "",
       "focus": {
@@ -179,8 +179,8 @@
     },
     {
       "id": "visual_17",
-      "url": "https://static.wixstatic.com/media/083c11_54c2c422d35846bf99f67e811778e9ae~mv2_d_3840_2200_s_2.jpg",
       "file": "image_source_19.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_54c2c422d35846bf99f67e811778e9ae~mv2_d_3840_2200_s_2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -190,8 +190,8 @@
     },
     {
       "id": "visual_18",
+      "file": "youtube-3meKlaJL3qo.mp4",
       "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
-      "file": "video_source_07.mp4",
       "credit": "Live 8 / YouTube",
       "license": "",
       "focus": {
@@ -201,8 +201,8 @@
     },
     {
       "id": "visual_19",
-      "url": "https://static.wixstatic.com/media/083c11_4fc3a33620b24f6d965a474bcb42ac17~mv2.jpg",
       "file": "image_source_8.jpg",
+      "url": "https://static.wixstatic.com/media/083c11_4fc3a33620b24f6d965a474bcb42ac17~mv2.jpg",
       "credit": "Patterson + Reckinger — arquivo de produção",
       "license": "",
       "focus": {
@@ -212,8 +212,8 @@
     },
     {
       "id": "visual_20",
+      "file": "youtube-0FJFKCnYtN4.mp4",
       "url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
-      "file": "video_source_08.mp4",
       "credit": "Kygo / a-ha / YouTube",
       "license": "",
       "focus": {
@@ -223,8 +223,8 @@
     },
     {
       "id": "visual_21",
+      "file": "youtube-GAiRrA7elvo.mp4",
       "url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
-      "file": "video_source_09.mp4",
       "credit": "Arquivo Rock in Rio / YouTube",
       "license": "",
       "focus": {
@@ -234,8 +234,8 @@
     },
     {
       "id": "visual_22",
+      "file": "youtube-m7VvOziBbT8.mp4",
       "url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
-      "file": "video_source_10.mp4",
       "credit": "a-ha / YouTube",
       "license": "",
       "focus": {

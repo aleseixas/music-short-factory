@@ -53,7 +53,7 @@
       "asset": "visual_01",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 48
+      "source_start_seconds": 48.0
     },
     {
       "id": "shot_02",
@@ -68,7 +68,7 @@
       "asset": "visual_03",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 20
+      "source_start_seconds": 20.0
     },
     {
       "id": "shot_04",
@@ -76,7 +76,7 @@
       "asset": "visual_04",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 65
+      "source_start_seconds": 65.0
     },
     {
       "id": "shot_05",
@@ -105,7 +105,7 @@
       "asset": "visual_08",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 80
+      "source_start_seconds": 80.0
     },
     {
       "id": "shot_09",
@@ -134,7 +134,7 @@
       "asset": "visual_12",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 90
+      "source_start_seconds": 90.0
     },
     {
       "id": "shot_13",
@@ -163,7 +163,7 @@
       "asset": "visual_16",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 20
+      "source_start_seconds": 20.0
     },
     {
       "id": "shot_17",
@@ -178,7 +178,7 @@
       "asset": "visual_18",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 30
+      "source_start_seconds": 30.0
     },
     {
       "id": "shot_19",
@@ -193,7 +193,7 @@
       "asset": "visual_20",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 35
+      "source_start_seconds": 35.0
     },
     {
       "id": "shot_21",
@@ -201,7 +201,7 @@
       "asset": "visual_21",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 40
+      "source_start_seconds": 40.0
     },
     {
       "id": "shot_22",
@@ -209,7 +209,7 @@
       "asset": "visual_22",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 5
+      "source_start_seconds": 5.0
     }
   ]
 }
