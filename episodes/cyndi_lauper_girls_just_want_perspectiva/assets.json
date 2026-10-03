@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "id": "visual_01",
+      "file": "youtube-iS61LkCObFc.mp4",
+      "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+      "credit": "Cyndi Lauper / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_02",
+      "file": "youtube-OpftQA56x1I.mp4",
+      "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+      "credit": "YouTube; proveniência no sources.txt",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_03",
+      "file": "cyndi-image-1.jpg",
+      "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+      "credit": "Upworthy — imagem editorial",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_04",
+      "file": "cyndi-image-2.jpg",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+      "credit": "John Bellissimo / Portrait Records",
+      "license": "Public domain (US; Commons metadata)",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_05",
+      "file": "youtube-b88QHBAQai8.mp4",
+      "url": "https://www.youtube.com/watch?v=b88QHBAQai8",
+      "credit": "MSNBC / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_06",
+      "file": "youtube-t-yis9av6xc.mp4",
+      "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+      "credit": "YouTube; proveniência no sources.txt",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_07",
+      "file": "youtube-cZbZ48Am8Y4.mp4",
+      "url": "https://www.youtube.com/watch?v=cZbZ48Am8Y4",
+      "credit": "The Kelly Clarkson Show / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_08",
+      "file": "cyndi-image-5.jpg",
+      "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+      "credit": "Shore Fire Media — imprensa",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_09",
+      "file": "youtube-92HNWyDBlE0.mp4",
+      "url": "https://www.youtube.com/watch?v=92HNWyDBlE0",
+      "credit": "The Talk / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_10",
+      "file": "youtube-PIb6AZdTr-A.mp4",
+      "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+      "credit": "Cyndi Lauper / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_11",
+      "file": "cyndi-image-4.jpg",
+      "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+      "credit": "Shore Fire Media — imprensa",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_12",
+      "file": "cyndi-image-6.jpg",
+      "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg",
+      "credit": "Shore Fire Media — imprensa",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_13",
+      "file": "youtube-AbiOcB-6yso.mp4",
+      "url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+      "credit": "Cyndi Lauper / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_14",
+      "file": "cyndi-image-8.jpg",
+      "url": "https://shorefire.com/images/uploads/gallery/TGS.jpg",
+      "credit": "Shore Fire Media — imprensa",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_15",
+      "file": "cyndi-image-9.jpg",
+      "url": "https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg",
+      "credit": "Cyndi Lauper — site oficial",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_16",
+      "file": "youtube-qpmDbn-l7ac.mp4",
+      "url": "https://www.youtube.com/watch?v=qpmDbn-l7ac",
+      "credit": "Cyndi Lauper / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_17",
+      "file": "youtube-EyXX6xiFUX8.mp4",
+      "url": "https://www.youtube.com/watch?v=EyXX6xiFUX8",
+      "credit": "Marcos Md / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_18",
+      "file": "cyndi-image-7.jpg",
+      "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg",
+      "credit": "Shore Fire Media — imprensa",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_19",
+      "file": "youtube-CaqeAABlH3Q.mp4",
+      "url": "https://www.youtube.com/watch?v=CaqeAABlH3Q",
+      "credit": "Cyndi Lauper / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_20",
+      "file": "youtube-tVN-KpUbS7w.mp4",
+      "url": "https://www.youtube.com/watch?v=tVN-KpUbS7w",
+      "credit": "YouTube; proveniência no sources.txt",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  ]
+}

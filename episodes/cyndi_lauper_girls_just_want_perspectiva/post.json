@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "A VOZ MUDA TUDO",
+    "source": {
+      "type": "video_frame",
+      "timestamp_seconds": 0.7,
+      "asset_id": "visual_01"
+    }
+  },
+  "youtube": {
+    "title": "Cyndi mudou a voz da festa",
+    "description": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+    "hashtags": [
+      "cyndilauper",
+      "girlsjustwanttohavefun",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+    "hashtags": [
+      "cyndilauper",
+      "girlsjustwanttohavefun",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "facebook": {
+    "title": "Cyndi mudou a voz da festa",
+    "caption": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+    "hashtags": [
+      "cyndilauper",
+      "girlsjustwanttohavefun",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ]
+  },
+  "tiktok": {
+    "caption": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+    "hashtags": [
+      "cyndilauper",
+      "girlsjustwanttohavefun",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}

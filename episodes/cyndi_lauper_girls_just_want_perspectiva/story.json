@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "title": "Cyndi mudou quem conta a história",
+  "slug": "cyndi_lauper_girls_just_want_perspectiva",
+  "target_duration_seconds": 80,
+  "segments": [
+    {
+      "id": "s01",
+      "text": "Girls Just Want to Have Fun, da Cyndi Lauper, quase ficou sem a voz que você conhece.",
+      "delivery": "hook"
+    },
+    {
+      "id": "s02",
+      "text": "Ela não queria cantar aquela versão. E o motivo muda a música que você conhece.",
+      "delivery": "curious"
+    },
+    {
+      "id": "s03",
+      "text": "A canção foi escrita por Robert Hazard.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "s04",
+      "text": "Só que a perspectiva original era masculina.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "s05",
+      "text": "Cyndi não se reconhecia ali. Como defender aquela história, se ela não falava por você?",
+      "delivery": "curious"
+    },
+    {
+      "id": "s06",
+      "text": "O produtor Rick Chertoff pediu que ela imaginasse o significado da música na própria voz.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "s07",
+      "text": "E aí ela mudou partes da letra, o arranjo e a intenção por trás da festa.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "s08",
+      "text": "Queria uma música alegre, com sons eletrônicos.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "s09",
+      "text": "Mas também instrumentos orgânicos. Essa mistura ajudou a construir a energia que atravessa o refrão.",
+      "delivery": "neutral"
+    },
+    {
+      "id": "s10",
+      "text": "A virada mais forte veio da própria família: Cyndi pensou nas mulheres que conhecia.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "s11",
+      "text": "Na mãe, nas tias e na avó.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "s12",
+      "text": "Mulheres que tinham poucas oportunidades na vida.",
+      "delivery": "emotional"
+    },
+    {
+      "id": "s13",
+      "text": "Por isso, ela queria garotas diferentes no videoclipe, para que cada uma pudesse se reconhecer.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "s14",
+      "text": "A alegria precisava caber em todo mundo.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "s15",
+      "text": "Não era só uma festa sem consequência.",
+      "delivery": "dramatic"
+    },
+    {
+      "id": "s16",
+      "text": "Era o direito de existir com alegria. Cara, o refrão ganhou força porque virou outra história.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "s17",
+      "text": "Um homem falando sobre garotas deu lugar a uma mulher defendendo a liberdade delas.",
+      "delivery": "reveal"
+    },
+    {
+      "id": "s18",
+      "text": "A mesma canção passou a dizer outra coisa.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "s19",
+      "text": "Pensa nisso: mudar quem conta a história também muda o que a gente escuta no refrão.",
+      "delivery": "payoff"
+    },
+    {
+      "id": "s20",
+      "text": "Comenta: você já sabia dessa virada de Girls Just Want to Have Fun?",
+      "delivery": "curious"
+    }
+  ]
+}

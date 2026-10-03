@@ -1,0 +1,2265 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id": "visual_01",
+      "visual_intent": "Girls Just Want to Have Fun, da Cyndi Lauper, quase ficou sem a voz que você conhece. Mostrar Girls Just Want to Have Fun — Live in Paris; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "direct"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — To Memphis With Love",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "file": "youtube-AbiOcB-6yso.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "AbiOcB-6yso",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_02",
+      "visual_intent": "Ela não queria cantar aquela versão. E o motivo muda a música que você conhece. Mostrar Cyndi explica o videoclipe de Girls Just Want; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — To Memphis With Love",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "file": "youtube-AbiOcB-6yso.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "AbiOcB-6yso",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_03",
+      "visual_intent": "A canção foi escrita por Robert Hazard. Mostrar Robert Hazard e Cyndi — contextualização da canção; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "direct"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "file": "cyndi-image-5.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "5",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_04",
+      "visual_intent": "Só que a perspectiva original era masculina. Mostrar Cyndi Lauper — retrato promocional 1984; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "file": "cyndi-image-5.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "5",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_05",
+      "visual_intent": "Cyndi não se reconhecia ali. Como defender aquela história, se ela não falava por você? Mostrar Cyndi Lauper — MSNBC Mavericks; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — MSNBC Mavericks",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=b88QHBAQai8",
+          "file": "youtube-b88QHBAQai8.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=b88QHBAQai8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "b88QHBAQai8",
+          "creator": "MSNBC",
+          "credit": "MSNBC / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_06",
+      "visual_intent": "O produtor Rick Chertoff pediu que ela imaginasse o significado da música na própria voz. Mostrar Girls Just Want — Tonight Show 1984; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — To Memphis With Love",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "file": "youtube-AbiOcB-6yso.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "AbiOcB-6yso",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_07",
+      "visual_intent": "E aí ela mudou partes da letra, o arranjo e a intenção por trás da festa. Mostrar Cyndi Lauper — Kelly Clarkson Show; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — Kelly Clarkson Show",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=cZbZ48Am8Y4",
+          "file": "youtube-cZbZ48Am8Y4.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=cZbZ48Am8Y4",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "cZbZ48Am8Y4",
+          "creator": "The Kelly Clarkson Show",
+          "credit": "The Kelly Clarkson Show / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_08",
+      "visual_intent": "Queria uma música alegre, com sons eletrônicos. Mostrar Cyndi Lauper — retrato de imprensa; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — retrato de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "file": "cyndi-image-5.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "5",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_09",
+      "visual_intent": "Mas também instrumentos orgânicos. Essa mistura ajudou a construir a energia que atravessa o refrão. Mostrar Cyndi Lauper — The Talk; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — The Talk",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=92HNWyDBlE0",
+          "file": "youtube-92HNWyDBlE0.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=92HNWyDBlE0",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "92HNWyDBlE0",
+          "creator": "The Talk",
+          "credit": "The Talk / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_10",
+      "visual_intent": "A virada mais forte veio da própria família: Cyndi pensou nas mulheres que conhecia. Mostrar Girls Just Want to Have Fun — videoclipe oficial; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — To Memphis With Love",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "file": "youtube-AbiOcB-6yso.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "AbiOcB-6yso",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_11",
+      "visual_intent": "Na mãe, nas tias e na avó. Mostrar Cyndi Lauper — foto de imprensa; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "file": "cyndi-image-5.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "5",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_12",
+      "visual_intent": "Mulheres que tinham poucas oportunidades na vida. Mostrar Cyndi Lauper — SNAPePHOTO 015; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — SNAPePHOTO 015",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg",
+          "file": "cyndi-image-6.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "6",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_13",
+      "visual_intent": "Por isso, ela queria garotas diferentes no videoclipe, para que cada uma pudesse se reconhecer. Mostrar Girls Just Want — To Memphis With Love; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Girls Just Want — To Memphis With Love",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "file": "youtube-AbiOcB-6yso.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=AbiOcB-6yso",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "AbiOcB-6yso",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_14",
+      "visual_intent": "A alegria precisava caber em todo mundo. Mostrar Cyndi Lauper — registro de imprensa; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — registro de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/TGS.jpg",
+          "file": "cyndi-image-8.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/TGS.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "8",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_15",
+      "visual_intent": "Não era só uma festa sem consequência. Mostrar Cyndi Lauper — site oficial; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — site oficial",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg",
+          "file": "cyndi-image-9.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "9",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_16",
+      "visual_intent": "Era o direito de existir com alegria. Cara, o refrão ganhou força porque virou outra história. Mostrar Girls Just Want — Live At Last; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Girls Just Want — Live At Last",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=qpmDbn-l7ac",
+          "file": "youtube-qpmDbn-l7ac.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=qpmDbn-l7ac",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "qpmDbn-l7ac",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_17",
+      "visual_intent": "Um homem falando sobre garotas deu lugar a uma mulher defendendo a liberdade delas. Mostrar Girls Just Want — ao vivo 2016; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Girls Just Want — ao vivo 2016",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=EyXX6xiFUX8",
+          "file": "youtube-EyXX6xiFUX8.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=EyXX6xiFUX8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "EyXX6xiFUX8",
+          "creator": "Marcos Md",
+          "credit": "Marcos Md / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_18",
+      "visual_intent": "A mesma canção passou a dizer outra coisa. Mostrar Cyndi Lauper — SNAPePHOTO 091; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 4,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper — SNAPePHOTO 091",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg",
+          "file": "cyndi-image-7.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "7",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "kind": "image",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "file": "cyndi-image-1.jpg",
+          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "1",
+          "creator": "",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — retrato promocional 1984",
+          "kind": "image",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "file": "cyndi-image-2.jpg",
+          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "source": "wikimedia",
+          "search_provider": "wikimedia_commons",
+          "provider_id": "2",
+          "creator": "John Bellissimo; Portrait Records",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Let the Canary Sing — arquivo da artista",
+          "kind": "image",
+          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "file": "cyndi-image-3.jpg",
+          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "3",
+          "creator": "",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi Lauper — foto de imprensa",
+          "kind": "image",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "file": "cyndi-image-4.jpg",
+          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "4",
+          "creator": "",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_19",
+      "visual_intent": "Pensa nisso: mudar quem conta a história também muda o que a gente escuta no refrão. Mostrar Hey Now Girls Just Want to Have Fun — oficial; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Hey Now Girls Just Want to Have Fun — oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CaqeAABlH3Q",
+          "file": "youtube-CaqeAABlH3Q.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CaqeAABlH3Q",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CaqeAABlH3Q",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_20",
+      "visual_intent": "Comenta: você já sabia dessa virada de Girls Just Want to Have Fun? Mostrar Cyndi Lauper e Cher — Hollywood Bowl; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "required_seconds": 9,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cyndi Lauper e Cher — Hollywood Bowl",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=tVN-KpUbS7w",
+          "file": "youtube-tVN-KpUbS7w.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=tVN-KpUbS7w",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "tVN-KpUbS7w",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "file": "youtube-iS61LkCObFc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "iS61LkCObFc",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "file": "youtube-OpftQA56x1I.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "OpftQA56x1I",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 8,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want — Tonight Show 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "file": "youtube-t-yis9av6xc.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "t-yis9av6xc",
+          "creator": "",
+          "credit": "YouTube; proveniência no sources.txt",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "file": "youtube-PIb6AZdTr-A.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "PIb6AZdTr-A",
+          "creator": "Cyndi Lauper",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 18,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    }
+  ]
+}
