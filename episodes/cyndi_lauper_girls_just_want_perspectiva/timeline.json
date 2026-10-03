@@ -154,9 +154,8 @@
       "id": "shot_14",
       "segment": "s14",
       "asset": "visual_14",
-      "motion": "hold",
-      "transition_out": "cut",
-      "source_start_seconds": 45
+      "motion": "push_in",
+      "transition_out": "cut"
     },
     {
       "id": "shot_15",
