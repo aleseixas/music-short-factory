@@ -1,0 +1,2415 @@
+{
+  "schema_version": 1,
+  "slots": [
+    {
+      "id": "visual_01",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — clipe oficial 1985",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — clipe oficial 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=djV11Xbc914",
+          "file": "video_source_01.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=djV11Xbc914",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "djV11Xbc914",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 48,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Take On Me — versão original 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "file": "video_source_02.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "liq-seNVvrM",
+          "creator": "MagneticNorth71",
+          "credit": "MagneticNorth71 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 20,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 1",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "file": "video_source_03.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "wlTHJJX7QVU",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 65,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 2",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "file": "video_source_04.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CcxLyGKw48s",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 80,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_02",
+      "visual_intent": "Documento visual de produção para a frase: E o truque começa com gente de verdade. Fonte preferida: Página de quadrinhos e mão estendida",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Página de quadrinhos e mão estendida",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
+          "file": "image_source_3.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Animador na mesa de trabalho",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
+          "file": "image_source_2.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenho original Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_dd20f9b4d1644344850fb46e354eef89~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_1.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_03",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — versão original 1984",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — versão original 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "file": "video_source_02.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "liq-seNVvrM",
+          "creator": "MagneticNorth71",
+          "credit": "MagneticNorth71 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 20,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Take On Me — clipe oficial 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=djV11Xbc914",
+          "file": "video_source_01.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=djV11Xbc914",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "djV11Xbc914",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 48,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 1",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "file": "video_source_03.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "wlTHJJX7QVU",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 65,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 2",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "file": "video_source_04.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CcxLyGKw48s",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 80,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_04",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; The Making of Take On Me — Episode 1",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "The Making of Take On Me — Episode 1",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "file": "video_source_03.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "wlTHJJX7QVU",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 65,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Take On Me — versão original 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "file": "video_source_02.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "liq-seNVvrM",
+          "creator": "MagneticNorth71",
+          "credit": "MagneticNorth71 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 20,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 2",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "file": "video_source_04.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CcxLyGKw48s",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 80,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — clipe oficial 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=djV11Xbc914",
+          "file": "video_source_01.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=djV11Xbc914",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "djV11Xbc914",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 48,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_05",
+      "visual_intent": "Documento visual de produção para a frase: Olha o Morten no cenário da filmagem real. Fonte preferida: Bastidor filmagem com Morten e Bunty",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Bastidor filmagem com Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_c79b87580ba543a5a867a1b3ad803ee0~mv2_d_3188_2150_s_2.png",
+          "file": "image_source_0.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Desenho original Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_dd20f9b4d1644344850fb46e354eef89~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_1.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Animador na mesa de trabalho",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
+          "file": "image_source_2.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos e mão estendida",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
+          "file": "image_source_3.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_06",
+      "visual_intent": "Documento visual de produção para a frase: Os desenhos já faziam parte daquele universo. Fonte preferida: Cenário com desenhos ao fundo",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Página de quadrinhos e mão estendida",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
+          "file": "image_source_3.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Animador na mesa de trabalho",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
+          "file": "image_source_2.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenhista trabalhando em mesa iluminada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
+          "file": "image_source_6.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_07",
+      "visual_intent": "Documento visual de produção para a frase: E o romance atravessava o papel para a realidade. Fonte preferida: Desenho do casal",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Desenho do casal",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_7.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Desenhista trabalhando em mesa iluminada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
+          "file": "image_source_6.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Equipe de filmagem no café",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_4fc3a33620b24f6d965a474bcb42ac17~mv2.jpg",
+          "file": "image_source_8.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Billboard Hot 100 com Take On Me",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_54c2c422d35846bf99f67e811778e9ae~mv2_d_3840_2200_s_2.jpg",
+          "file": "image_source_19.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_08",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; The Making of Take On Me — Episode 2",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "The Making of Take On Me — Episode 2",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "file": "video_source_04.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CcxLyGKw48s",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 80,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 1",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "file": "video_source_03.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "wlTHJJX7QVU",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 65,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — versão original 1984",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "file": "video_source_02.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=liq-seNVvrM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "liq-seNVvrM",
+          "creator": "MagneticNorth71",
+          "credit": "MagneticNorth71 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 20,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_09",
+      "visual_intent": "Documento visual de produção para a frase: Primeiro, o movimento vinha do filme com atores. Fonte preferida: Animador na mesa de trabalho",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Animador na mesa de trabalho",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
+          "file": "image_source_2.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Desenho original Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_dd20f9b4d1644344850fb46e354eef89~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_1.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos e mão estendida",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
+          "file": "image_source_3.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Bastidor filmagem com Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_c79b87580ba543a5a867a1b3ad803ee0~mv2_d_3188_2150_s_2.png",
+          "file": "image_source_0.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_10",
+      "visual_intent": "Documento visual de produção para a frase: Depois, era redesenhado à mão, quadro por quadro. Fonte preferida: Desenhista trabalhando em mesa iluminada",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Desenhista trabalhando em mesa iluminada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
+          "file": "image_source_6.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenho do casal",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_7.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Equipe de filmagem no café",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_4fc3a33620b24f6d965a474bcb42ac17~mv2.jpg",
+          "file": "image_source_8.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_11",
+      "visual_intent": "Documento visual de produção para a frase: Essa técnica tem um nome: rotoscopia. Fonte preferida: Desenho original Morten e Bunty",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Desenho original Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_dd20f9b4d1644344850fb46e354eef89~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_1.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Bastidor filmagem com Morten e Bunty",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_c79b87580ba543a5a867a1b3ad803ee0~mv2_d_3188_2150_s_2.png",
+          "file": "image_source_0.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Animador na mesa de trabalho",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_aa2dfe2224834d508f6de3260365c144~mv2.png",
+          "file": "image_source_2.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos e mão estendida",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
+          "file": "image_source_3.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_12",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; The Making of Take On Me — Episode 3",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 2",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "file": "video_source_04.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CcxLyGKw48s",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 80,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 1",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "file": "video_source_03.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=wlTHJJX7QVU",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "wlTHJJX7QVU",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 65,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Live 8 2005",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "file": "video_source_07.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "3meKlaJL3qo",
+          "creator": "Live 8",
+          "credit": "Live 8 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_13",
+      "visual_intent": "Documento visual de produção para a frase: Uma página dessas precisava virar movimento contínuo. Fonte preferida: Página de quadrinhos motociclista",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Cenário com desenhos ao fundo",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_9f648ccbeaf44145bc310a6623f586ea~mv2.png",
+          "file": "image_source_4.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenhista trabalhando em mesa iluminada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
+          "file": "image_source_6.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos e mão estendida",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f6f2a54458b0445f8b8664b23af0c6a4~mv2_d_3678_4691_s_4_2.jpg",
+          "file": "image_source_3.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenho do casal",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_7.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_14",
+      "visual_intent": "Documento visual de produção para a frase: Patterson já explorava essa linguagem no curta Commuter. Fonte preferida: Commuter — figura desenhada",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Commuter — figura desenhada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_30e7326f706b4224bdddd05eb84c78d8~mv2_d_3463_2496_s_4_2.jpg",
+          "file": "image_source_9.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Commuter — carros",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_0604252ea83c447d9245d39d9d50972b~mv2_d_2196_1596_s_2.jpg",
+          "file": "image_source_18.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Commuter — personagem",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_d52743f40987432b9b67f7226c471ee9~mv2_d_1859_1379_s_2.jpg",
+          "file": "image_source_17.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Commuter — cidade",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f7c21842d57f4533b4a16c0c0693f50f~mv2_d_2073_1524_s_2.jpg",
+          "file": "image_source_16.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Commuter — retrato",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f8c775a4a1f141c3ba9cf026d2902d88~mv2_d_2291_1761_s_2.jpg",
+          "file": "image_source_15.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_15",
+      "visual_intent": "Documento visual de produção para a frase: Esses traços anteriores ajudaram a inspirar o clipe. Fonte preferida: Commuter — silhueta urbana",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Commuter — silhueta urbana",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_51e2a983dd074f8987a8639cfee3f7b5~mv2_d_2584_1976_s_2.jpg",
+          "file": "image_source_12.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Commuter — carros",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_0604252ea83c447d9245d39d9d50972b~mv2_d_2196_1596_s_2.jpg",
+          "file": "image_source_18.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Commuter — personagem",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_d52743f40987432b9b67f7226c471ee9~mv2_d_1859_1379_s_2.jpg",
+          "file": "image_source_17.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Commuter — cidade",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f7c21842d57f4533b4a16c0c0693f50f~mv2_d_2073_1524_s_2.jpg",
+          "file": "image_source_16.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Commuter — retrato",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_f8c775a4a1f141c3ba9cf026d2902d88~mv2_d_2291_1761_s_2.jpg",
+          "file": "image_source_15.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_16",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — Top Of The Pops 1985",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Live 8 2005",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "file": "video_source_07.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "3meKlaJL3qo",
+          "creator": "Live 8",
+          "credit": "Live 8 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 2",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "file": "video_source_04.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=CcxLyGKw48s",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "CcxLyGKw48s",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 80,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Nobel Peace Prize Concert 2015",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "file": "video_source_08.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "0FJFKCnYtN4",
+          "creator": "Kygo / a-ha",
+          "credit": "Kygo / a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_17",
+      "visual_intent": "Documento visual de produção para a frase: Take On Me chegou ao topo americano. Fonte preferida: Billboard Hot 100 com Take On Me",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Billboard Hot 100 com Take On Me",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_54c2c422d35846bf99f67e811778e9ae~mv2_d_3840_2200_s_2.jpg",
+          "file": "image_source_19.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Equipe de filmagem no café",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_4fc3a33620b24f6d965a474bcb42ac17~mv2.jpg",
+          "file": "image_source_8.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenho do casal",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_7.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenhista trabalhando em mesa iluminada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
+          "file": "image_source_6.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_18",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — Live 8 2005",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — Live 8 2005",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "file": "video_source_07.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "3meKlaJL3qo",
+          "creator": "Live 8",
+          "credit": "Live 8 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Nobel Peace Prize Concert 2015",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "file": "video_source_08.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "0FJFKCnYtN4",
+          "creator": "Kygo / a-ha",
+          "credit": "Kygo / a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "The Making of Take On Me — Episode 3",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "file": "video_source_05.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=7Lho0_9-V-8",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "7Lho0_9-V-8",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 90,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Rock in Rio 1991",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "file": "video_source_09.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "GAiRrA7elvo",
+          "creator": "Arquivo Rock in Rio",
+          "credit": "Arquivo Rock in Rio / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_19",
+      "visual_intent": "Documento visual de produção para a frase: Atrás da fantasia, havia atores, câmeras e desenhistas. Fonte preferida: Equipe de filmagem no café",
+      "required_seconds": 3.5,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Equipe de filmagem no café",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_4fc3a33620b24f6d965a474bcb42ac17~mv2.jpg",
+          "file": "image_source_8.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Desenho do casal",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_3c9abbd16c55407b9b19f49c0d0d577d~mv2_d_5000_4200_s_4_2.jpg",
+          "file": "image_source_7.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Billboard Hot 100 com Take On Me",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_54c2c422d35846bf99f67e811778e9ae~mv2_d_3840_2200_s_2.jpg",
+          "file": "image_source_19.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Desenhista trabalhando em mesa iluminada",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_713acc6a636340f3ae4622587e374ec2~mv2.png",
+          "file": "image_source_6.png",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Página de quadrinhos motociclista",
+          "kind": "image",
+          "url": "https://static.wixstatic.com/media/083c11_b704ff0897274f2b8465eb7850ce9f68~mv2_d_3657_4135_s_4_2.jpg",
+          "file": "image_source_5.jpg",
+          "source_page_url": "https://www.pattersonreckinger.com/take-on-me",
+          "source": "creator_archive",
+          "search_provider": "web",
+          "creator": "Michael Patterson / Candace Reckinger",
+          "credit": "Patterson + Reckinger — arquivo de produção",
+          "license": "",
+          "rights_status": "unknown",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_20",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — Nobel Peace Prize Concert 2015",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — Nobel Peace Prize Concert 2015",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "file": "video_source_08.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "0FJFKCnYtN4",
+          "creator": "Kygo / a-ha",
+          "credit": "Kygo / a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Take On Me — Live 8 2005",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "file": "video_source_07.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "3meKlaJL3qo",
+          "creator": "Live 8",
+          "credit": "Live 8 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Rock in Rio 1991",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "file": "video_source_09.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "GAiRrA7elvo",
+          "creator": "Arquivo Rock in Rio",
+          "credit": "Arquivo Rock in Rio / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — MTV Unplugged Giske 2017",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "file": "video_source_10.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "-xKM3mGt2pE",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 45,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_21",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — Rock in Rio 1991",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — Rock in Rio 1991",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "file": "video_source_09.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "GAiRrA7elvo",
+          "creator": "Arquivo Rock in Rio",
+          "credit": "Arquivo Rock in Rio / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Take On Me — Nobel Peace Prize Concert 2015",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "file": "video_source_08.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "0FJFKCnYtN4",
+          "creator": "Kygo / a-ha",
+          "credit": "Kygo / a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — MTV Unplugged Giske 2017",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "file": "video_source_10.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "-xKM3mGt2pE",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 45,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Live 8 2005",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "file": "video_source_07.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "3meKlaJL3qo",
+          "creator": "Live 8",
+          "credit": "Live 8 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    },
+    {
+      "id": "visual_22",
+      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — MTV Unplugged Giske 2017",
+      "required_seconds": 7,
+      "crossfade_seconds": 0,
+      "inspect_top": 5,
+      "min_visual_score": 45,
+      "candidates": [
+        {
+          "name": "Take On Me — MTV Unplugged Giske 2017",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "file": "video_source_10.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "-xKM3mGt2pE",
+          "creator": "a-ha",
+          "credit": "a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 45,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 1,
+          "semantic_fit": "exact"
+        },
+        {
+          "name": "Take On Me — Rock in Rio 1991",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "file": "video_source_09.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=GAiRrA7elvo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "GAiRrA7elvo",
+          "creator": "Arquivo Rock in Rio",
+          "credit": "Arquivo Rock in Rio / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 40,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 2,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Nobel Peace Prize Concert 2015",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "file": "video_source_08.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=0FJFKCnYtN4",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "0FJFKCnYtN4",
+          "creator": "Kygo / a-ha",
+          "credit": "Kygo / a-ha / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 35,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 3,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Live 8 2005",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "file": "video_source_07.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=3meKlaJL3qo",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "3meKlaJL3qo",
+          "creator": "Live 8",
+          "credit": "Live 8 / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 4,
+          "semantic_fit": "contextual"
+        },
+        {
+          "name": "Take On Me — Top Of The Pops 1985",
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "file": "video_source_06.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source": "youtube",
+          "search_provider": "youtube_web",
+          "provider_id": "lvXeVNnnhmM",
+          "creator": "Arquivo Top Of The Pops",
+          "credit": "Arquivo Top Of The Pops / YouTube",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 25,
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          },
+          "editorial_rank": 5,
+          "semantic_fit": "contextual"
+        }
+      ]
+    }
+  ]
+}

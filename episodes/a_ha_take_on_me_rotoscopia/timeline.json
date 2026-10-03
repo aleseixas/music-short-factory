@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "smart_visual_pacing": {
+    "enabled": true
+  },
+  "background_music": {
+    "profile": "ambient_calm",
+    "volume": 0.085
+  },
+  "sfx_cues": [
+    {
+      "time_seconds": 0,
+      "type": "pop",
+      "volume": 0.12
+    },
+    {
+      "time_seconds": 31,
+      "type": "camera_shutter",
+      "volume": 0.1
+    },
+    {
+      "time_seconds": 44,
+      "type": "ding",
+      "volume": 0.12
+    }
+  ],
+  "visual_fx_cues": [],
+  "text_fx_cues": [
+    {
+      "segment": "s11",
+      "offset_seconds": 0.2,
+      "duration_seconds": 1.6,
+      "text": "ROTOSCOPIA",
+      "animation": "pop_in",
+      "position": "center",
+      "intensity": 0.35
+    },
+    {
+      "segment": "s12",
+      "offset_seconds": 0.3,
+      "duration_seconds": 2,
+      "text": "16 SEMANAS",
+      "animation": "scale_bounce",
+      "position": "center",
+      "intensity": 0.35
+    }
+  ],
+  "overlay_cues": [],
+  "shots": [
+    {
+      "id": "shot_01",
+      "segment": "s01",
+      "asset": "visual_01",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 48
+    },
+    {
+      "id": "shot_02",
+      "segment": "s02",
+      "asset": "visual_02",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_03",
+      "segment": "s03",
+      "asset": "visual_03",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 20
+    },
+    {
+      "id": "shot_04",
+      "segment": "s04",
+      "asset": "visual_04",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 65
+    },
+    {
+      "id": "shot_05",
+      "segment": "s05",
+      "asset": "visual_05",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_06",
+      "segment": "s06",
+      "asset": "visual_06",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_07",
+      "segment": "s07",
+      "asset": "visual_07",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_08",
+      "segment": "s08",
+      "asset": "visual_08",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 80
+    },
+    {
+      "id": "shot_09",
+      "segment": "s09",
+      "asset": "visual_09",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_10",
+      "segment": "s10",
+      "asset": "visual_10",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_11",
+      "segment": "s11",
+      "asset": "visual_11",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_12",
+      "segment": "s12",
+      "asset": "visual_12",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 90
+    },
+    {
+      "id": "shot_13",
+      "segment": "s13",
+      "asset": "visual_13",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_14",
+      "segment": "s14",
+      "asset": "visual_14",
+      "motion": "push_in",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_15",
+      "segment": "s15",
+      "asset": "visual_15",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_16",
+      "segment": "s16",
+      "asset": "visual_16",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 25
+    },
+    {
+      "id": "shot_17",
+      "segment": "s17",
+      "asset": "visual_17",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_18",
+      "segment": "s18",
+      "asset": "visual_18",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 30
+    },
+    {
+      "id": "shot_19",
+      "segment": "s19",
+      "asset": "visual_19",
+      "motion": "pull_out",
+      "transition_out": "cut"
+    },
+    {
+      "id": "shot_20",
+      "segment": "s20",
+      "asset": "visual_20",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 35
+    },
+    {
+      "id": "shot_21",
+      "segment": "s21",
+      "asset": "visual_21",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 40
+    },
+    {
+      "id": "shot_22",
+      "segment": "s22",
+      "asset": "visual_22",
+      "motion": "hold",
+      "transition_out": "cut",
+      "source_start_seconds": 45
+    }
+  ]
+}

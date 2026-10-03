@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "cover": {
+    "headline": "16 SEMANAS DE LÁPIS",
+    "source": {
+      "type": "video_frame",
+      "timestamp_seconds": 0.7,
+      "asset_id": "visual_01"
+    }
+  },
+  "youtube": {
+    "title": "Take On Me: 16 semanas de lápis",
+    "description": "O mundo de lápis de Take On Me nasceu de filmagem real e milhares de quadros desenhados à mão. Michael Patterson e Candace Reckinger passaram 16 semanas animando o clipe. O que você lembra primeiro: o vídeo ou o refrão?",
+    "hashtags": [
+      "aha",
+      "takeonme",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "privacy_status": "public",
+    "category_id": "10"
+  },
+  "instagram": {
+    "caption": "O mundo de lápis de Take On Me nasceu de filmagem real e milhares de quadros desenhados à mão. Michael Patterson e Candace Reckinger passaram 16 semanas animando o clipe. O que você lembra primeiro: o vídeo ou o refrão?",
+    "hashtags": [
+      "aha",
+      "takeonme",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "share_to_feed": true,
+    "thumb_offset_ms": 1000
+  },
+  "facebook": {
+    "title": "Take On Me: 16 semanas de lápis",
+    "caption": "O mundo de lápis de Take On Me nasceu de filmagem real e milhares de quadros desenhados à mão. Michael Patterson e Candace Reckinger passaram 16 semanas animando o clipe. O que você lembra primeiro: o vídeo ou o refrão?",
+    "hashtags": [
+      "aha",
+      "takeonme",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ]
+  },
+  "tiktok": {
+    "caption": "O mundo de lápis de Take On Me nasceu de filmagem real e milhares de quadros desenhados à mão. Michael Patterson e Candace Reckinger passaram 16 semanas animando o clipe. O que você lembra primeiro: o vídeo ou o refrão?",
+    "hashtags": [
+      "aha",
+      "takeonme",
+      "anos80",
+      "curiosidade",
+      "alemdohit"
+    ],
+    "privacy_level": "SELF_ONLY",
+    "video_cover_timestamp_ms": 1000,
+    "disable_comment": false,
+    "disable_duet": false,
+    "disable_stitch": false,
+    "brand_content_toggle": false,
+    "brand_organic_toggle": false,
+    "is_aigc": false
+  }
+}
