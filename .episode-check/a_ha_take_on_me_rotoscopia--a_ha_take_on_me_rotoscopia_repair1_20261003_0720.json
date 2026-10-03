@@ -1,0 +1,7 @@
+{
+  "slug": "a_ha_take_on_me_rotoscopia",
+  "request_id": "a_ha_take_on_me_rotoscopia_repair1_20261003_0720",
+  "local_preflight_passed": true,
+  "episode_fingerprint": "19d08949195357fb952f349e4cbc8ef2cdab4996b3492bdb21b2bf625b5add62",
+  "workflow": "episode-media-preflight.yml"
+}

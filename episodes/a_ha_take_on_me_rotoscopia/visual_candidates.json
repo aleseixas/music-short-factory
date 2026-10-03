@@ -859,19 +859,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -1247,19 +1247,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -1628,32 +1628,32 @@
     },
     {
       "id": "visual_16",
-      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — Top Of The Pops 1985",
+      "visual_intent": "Mostrar a-ha tocando Take On Me na televisão britânica em1985, performance Saturday Superstore, sem apresentar como Top Of The Pops ou como cena do clipe.",
       "required_seconds": 7,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
           },
           "editorial_rank": 1,
-          "semantic_fit": "exact"
+          "semantic_fit": "direct"
         },
         {
           "name": "The Making of Take On Me — Episode 3",
@@ -1848,7 +1848,7 @@
     },
     {
       "id": "visual_18",
-      "visual_intent": "Mostrar a-ha / Take On Me no contexto da narração; Take On Me — Live 8 2005",
+      "visual_intent": "a-ha executando Take On Me no Live8; performance ilustra longevidade da canção, não a cerimônia de premiação.",
       "required_seconds": 7,
       "crossfade_seconds": 0,
       "inspect_top": 5,
@@ -1873,22 +1873,22 @@
             "y": 0.5
           },
           "editorial_rank": 1,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct"
         },
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -2138,19 +2138,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -2159,19 +2159,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — MTV Unplugged Giske 2017",
+          "name": "Take On Me — MTV Unplugged preview oficial",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
           "file": "video_source_10.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "source_page_url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "-xKM3mGt2pE",
+          "provider_id": "m7VvOziBbT8",
           "creator": "a-ha",
           "credit": "a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 45,
+          "source_start_seconds": 5,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -2232,19 +2232,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — MTV Unplugged Giske 2017",
+          "name": "Take On Me — MTV Unplugged preview oficial",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
           "file": "video_source_10.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "source_page_url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "-xKM3mGt2pE",
+          "provider_id": "m7VvOziBbT8",
           "creator": "a-ha",
           "credit": "a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 45,
+          "source_start_seconds": 5,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -2274,19 +2274,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -2305,19 +2305,19 @@
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Take On Me — MTV Unplugged Giske 2017",
+          "name": "Take On Me — MTV Unplugged preview oficial",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
           "file": "video_source_10.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=-xKM3mGt2pE",
+          "source_page_url": "https://www.youtube.com/watch?v=m7VvOziBbT8",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "-xKM3mGt2pE",
+          "provider_id": "m7VvOziBbT8",
           "creator": "a-ha",
           "credit": "a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 45,
+          "source_start_seconds": 5,
           "focus": {
             "x": 0.5,
             "y": 0.5
@@ -2389,19 +2389,19 @@
           "semantic_fit": "contextual"
         },
         {
-          "name": "Take On Me — Top Of The Pops 1985",
+          "name": "Take On Me — Saturday Superstore BBC 1985",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "file": "video_source_06.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=lvXeVNnnhmM",
+          "source_page_url": "https://www.youtube.com/watch?v=Mphh_6yJHSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "lvXeVNnnhmM",
-          "creator": "Arquivo Top Of The Pops",
-          "credit": "Arquivo Top Of The Pops / YouTube",
+          "provider_id": "Mphh_6yJHSs",
+          "creator": "Arquivo BBC / a-ha",
+          "credit": "Arquivo BBC / a-ha / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 25,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5

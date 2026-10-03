@@ -163,7 +163,7 @@
       "asset": "visual_16",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 25
+      "source_start_seconds": 20
     },
     {
       "id": "shot_17",
@@ -209,7 +209,7 @@
       "asset": "visual_22",
       "motion": "hold",
       "transition_out": "cut",
-      "source_start_seconds": 45
+      "source_start_seconds": 5
     }
   ]
 }
