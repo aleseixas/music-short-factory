@@ -3,7 +3,7 @@
   "slug": "a_ha_take_on_me_rotoscopia",
   "request_id": "a_ha_take_on_me_rotoscopia_repair2_20261003_0730",
   "source_run_id": "37116795409",
-  "status": "SENDING",
+  "status": "DISPATCHED",
   "display_title": "publish/a_ha_take_on_me_rotoscopia/a_ha_take_on_me_rotoscopia_repair2_20261003_0730/37116795409",
   "expected_workflow": ".github/workflows/publish-episode.yml",
   "expected_source_sha": "29d6447ff8bee88cd14414826f5c2bf96921f9ba",
@@ -15,5 +15,8 @@
   "lease_expires_at": 1791024637.0,
   "reconcile_after": 1791025417.0,
   "run_reconcile_after": 1791110917.0,
-  "send_authorized_at": 1791024521.0
+  "send_authorized_at": 1791024521.0,
+  "http_status": 200,
+  "response_received_at": 1791024526.0,
+  "run_id": 37117627120
 }
