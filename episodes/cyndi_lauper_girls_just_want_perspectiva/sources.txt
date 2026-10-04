@@ -177,3 +177,26 @@ Pool revisado:97 entradas após remover a fonte indisponível; 20 fontes distint
 
 Reparo material2: UELlwbUlStE indisponível no run37154628588; removido da montagem/pool e substituído por foto distinta TGS. Texto correspondente voltou à mensagem inclusiva original, sem sugerir registro de concerto. 20takes:11vídeos/9imagens;20fontesfinaldistintas. Trilha bright_fun/summer-fun-01.mp3 decodificada no nativeprepare, volume0.10.
 Outros erros do mesmo run: falhas de rede googlevideo.com (Network unreachable, download truncado), HTTP503 e Read timed out. As fontes afetadas tinham sido adquiridas no run37154082438. Esses detalhes são evidência de instabilidade externa, apesar de parte deles ter código VISUAL_ASSET_INVALID. Mantêm-se identidade/tema e gates nativos; o novo prepare após backoff continua obrigado a obter PASS real. Sem retry/rerun/publisher/queue manual.
+
+RECOVERY MATERIAL — 2026-10-03
+Run 37155708306 completed MEDIA_PREFLIGHT batch10/10: eleven primary YouTube acquisition failures (bot challenge; googlevideo network unreachable) and BACKGROUND_MUSIC_REUSE for The Funkhouser. Replace every rejected primary with new source; remove failed video pool. Four direct ABC MP4s downloaded, ffprobe video640x360 and durations81.114/115.916/416.883/464.864 seconds verified; frames inspected at30s show Cyndi. These are retrospective interviews/archive context, not records of the 1983 rewrite. Remaining sources are distinct Girls Just Want performances and a new official clip upload; download/trim/motion still require native prepare/preflight validation. No source appears twice in chosen timeline; no crop/trim used to masquerade as a new source.
+Cyndi Lauper — retrospectiva da carreira Nightline | https://abcnews.com/video/123790722/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4
+Cyndi Lauper — entrevista GMA sobre carreira | https://abcnews.com/video/123566139/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4
+Cyndi Lauper — entrevista 1984 | https://www.youtube.com/watch?v=GjeUc1FGiLw | https://www.youtube.com/watch?v=GjeUc1FGiLw
+Girls Just Want — Summit 1984 | https://www.youtube.com/watch?v=bjuNrs8yvxU | https://www.youtube.com/watch?v=bjuNrs8yvxU
+Cyndi Lauper — comenta sua intenção artística | https://abcnews.com/video/123589041/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_digital_sitecyndilauper_700.mp4
+Cyndi Lauper — conversa sobre preparação no Graham Norton | https://www.youtube.com/watch?v=twLrHDqNv3w | https://www.youtube.com/watch?v=twLrHDqNv3w
+Girls Just Want — vídeo oficial | https://www.youtube.com/watch?v=899Hwew0tk8 | https://www.youtube.com/watch?v=899Hwew0tk8
+Girls Just Want — Rock in Rio Brasil 2024 | https://www.youtube.com/watch?v=B9CKEaGWGbE | https://www.youtube.com/watch?v=B9CKEaGWGbE
+Cyndi Lauper — fala da própria carreira e Hall of Fame | https://abcnews.com/video/123574974/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4
+Girls Just Want — performance ao vivo HD | https://www.youtube.com/watch?v=_HT4Qjko3lA | https://www.youtube.com/watch?v=_HT4Qjko3lA
+Girls Just Want — Cyndi e Boy George O2 Londres | https://www.youtube.com/watch?v=8IsmTVie0H4 | https://www.youtube.com/watch?v=8IsmTVie0H4
+Girls Just Want — Austin City Limits | https://www.youtube.com/watch?v=gKjzdnSbBWU | https://www.youtube.com/watch?v=gKjzdnSbBWU
+Cyndi Lauper — entrevista sobre carreira e documentário | https://www.youtube.com/watch?v=u0UFzGS1P-4 | https://www.youtube.com/watch?v=u0UFzGS1P-4
+Cyndi Lauper — entrevista Today 1985 | https://www.youtube.com/watch?v=hCKg9C9_K8I | https://www.youtube.com/watch?v=hCKg9C9_K8I
+Cyndi Lauper — entrevista evento beneficente 1985 | https://www.youtube.com/watch?v=5JdmUI8_j3M | https://www.youtube.com/watch?v=5JdmUI8_j3M
+Girls Just Want — Rock in Rio Lisboa 2026 | https://www.youtube.com/watch?v=TeYtaCh1bSs | https://www.youtube.com/watch?v=TeYtaCh1bSs
+BACKGROUND research queries: upbeat synth pop instrumental royalty free background; 1980s synth instrumental background music CC0; happy funk instrumental public domain; uplifting electronic pop instrumental creative commons; retro new wave instrumental CC0.
+Compared Synth pop with4 on the floor (Mesostic, existing external_drop_dead_synth_pop profile); Stock Music Links upbeat synth (public attribution required); RomanSenyk Pop Party (public attribution required); Petrushkasound Upbeat Synth (Pixabay); HoliznaCC0 Retro Synths (no existing profile); Lostsomewhere (existing profile but less rhythmic). Choose existing Mesostic synth profile: steady electronic pulse fits explanation of electronic pop arrangement, volume0.08 under narration. HTTP source downloaded and ffprobe decoded Vorbis, duration198.000907s. Recent-use/freshness remains mandatory native gate; no PASS implied.
+https://commons.wikimedia.org/wiki/File:Synth_pop_with_4_on_the_floor.ogg
+https://upload.wikimedia.org/wikipedia/commons/c/c2/Synth_pop_with_4_on_the_floor.ogg

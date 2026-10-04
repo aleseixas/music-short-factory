@@ -3,65 +3,44 @@
   "slots": [
     {
       "id": "visual_01",
-      "visual_intent": "Cyndi Lauper identificável cantando a canção; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Girls Just Want to Have Fun, da Cyndi Lauper, quase ficou sem a voz que você conhece.",
+      "visual_intent": "Cyndi Lauper claramente reconhecível em vídeo real desde o primeiro frame editorial; retrospectiva da própria artista.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "name": "Cyndi Lauper — retrospectiva da carreira Nightline",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
+          "file": "abc-123790722.mp4",
+          "source_page_url": "https://abcnews.com/video/123790722/",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "abc-123790722",
+          "creator": "ABC News",
+          "credit": "ABC News — Cyndi Lauper",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 40,
+          "source_start_seconds": 30,
           "focus": {
             "x": 0.5,
-            "y": 0.5
+            "y": 0.4
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         },
         {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "name": "Cyndi Lauper — entrevista sobre carreira e documentário",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
+          "url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
+          "file": "youtube-u0UFzGS1P-4.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
+          "provider_id": "u0UFzGS1P-4",
+          "creator": "Jimmy Kimmel Live",
+          "credit": "Jimmy Kimmel Live / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 35,
@@ -69,72 +48,72 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 2
         },
         {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "name": "Girls Just Want — Austin City Limits",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "url": "https://www.youtube.com/watch?v=gKjzdnSbBWU",
+          "file": "youtube-gKjzdnSbBWU.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=gKjzdnSbBWU",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
+          "provider_id": "gKjzdnSbBWU",
+          "creator": "Austin City Limits",
+          "credit": "Austin City Limits / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 18,
+          "source_start_seconds": 30,
           "focus": {
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 3
         }
       ]
     },
     {
       "id": "visual_02",
-      "visual_intent": "Cyndi Lauper identificável em entrevista ou falando; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Ela não queria cantar aquela versão. E o motivo muda a música que você conhece.",
+      "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Ela não queria cantar aquela versão. E o motivo muda a música que você conhece.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
+          "name": "Cyndi Lauper — entrevista GMA sobre carreira",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
+          "file": "abc-123566139.mp4",
+          "source_page_url": "https://abcnews.com/video/123566139/",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "abc-123566139",
+          "creator": "ABC News",
+          "credit": "ABC News — Cyndi Lauper",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 8,
+          "source_start_seconds": 30,
           "focus": {
-            "x": 0.5,
-            "y": 0.5
+            "x": 0.68,
+            "y": 0.4
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         },
         {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
+          "name": "Girls Just Want — Rock in Rio Lisboa 2026",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
+          "url": "https://www.youtube.com/watch?v=TeYtaCh1bSs",
+          "file": "youtube-TeYtaCh1bSs.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=TeYtaCh1bSs",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
+          "provider_id": "TeYtaCh1bSs",
+          "creator": "Registro Rock in Rio Lisboa",
+          "credit": "Registro Rock in Rio Lisboa / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 40,
@@ -142,50 +121,8 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 2
         }
       ]
     },
@@ -411,159 +348,54 @@
     },
     {
       "id": "visual_05",
-      "visual_intent": "Cyndi Lauper identificável em entrevista ou falando; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Cyndi não se reconhecia ali. Como defender aquela história, se ela não falava por você?",
+      "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Cyndi não se reconhecia ali. Como defender aquela história, se ela não falava por você?",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi Lauper — MSNBC Mavericks",
+          "name": "Cyndi Lauper — entrevista 1984",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=b88QHBAQai8",
-          "file": "youtube-b88QHBAQai8.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=b88QHBAQai8",
+          "url": "https://www.youtube.com/watch?v=GjeUc1FGiLw",
+          "file": "youtube-GjeUc1FGiLw.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=GjeUc1FGiLw",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "b88QHBAQai8",
-          "creator": "MSNBC",
-          "credit": "MSNBC / YouTube",
+          "provider_id": "GjeUc1FGiLw",
+          "creator": "CLyoutubɘ",
+          "credit": "CLyoutubɘ / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 30,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
     {
       "id": "visual_06",
-      "visual_intent": "Cyndi Lauper identificável cantando a canção; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. O produtor pediu que ela imaginasse a canção na própria voz. E Cyndi encontrou outra história.",
+      "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. O produtor pediu que ela imaginasse a canção na própria voz. E Cyndi encontrou outra história.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Girls Just Want — Tonight Show 1984",
+          "name": "Girls Just Want — Summit 1984",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
+          "url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
+          "file": "youtube-bjuNrs8yvxU.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
+          "provider_id": "bjuNrs8yvxU",
+          "creator": "Arquivo de performance no Summit",
+          "credit": "Arquivo de performance no Summit / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 40,
@@ -571,165 +403,39 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
     {
       "id": "visual_07",
-      "visual_intent": "Cyndi Lauper identificável em entrevista ou falando; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. E aí ela mudou partes da letra, o arranjo e a intenção por trás da festa.",
+      "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. E aí ela mudou partes da letra, o arranjo e a intenção por trás da festa.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi Lauper — Kelly Clarkson Show",
+          "name": "Cyndi Lauper — comenta sua intenção artística",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=cZbZ48Am8Y4",
-          "file": "youtube-cZbZ48Am8Y4.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=cZbZ48Am8Y4",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "cZbZ48Am8Y4",
-          "creator": "The Kelly Clarkson Show",
-          "credit": "The Kelly Clarkson Show / YouTube",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_digital_sitecyndilauper_700.mp4",
+          "file": "abc-123589041.mp4",
+          "source_page_url": "https://abcnews.com/video/123589041/",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "abc-123589041",
+          "creator": "ABC News",
+          "credit": "ABC News — Cyndi Lauper",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 30,
           "focus": {
             "x": 0.5,
-            "y": 0.5
+            "y": 0.4
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
@@ -845,116 +551,32 @@
     },
     {
       "id": "visual_09",
-      "visual_intent": "Cyndi Lauper identificável em entrevista ou falando; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Mas também instrumentos orgânicos. Essa mistura ajudou a construir a energia que atravessa o refrão.",
+      "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Mas também instrumentos orgânicos. Essa mistura ajudou a construir a energia que atravessa o refrão.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi Lauper — The Talk",
+          "name": "Cyndi Lauper — conversa sobre preparação no Graham Norton",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=92HNWyDBlE0",
-          "file": "youtube-92HNWyDBlE0.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=92HNWyDBlE0",
+          "url": "https://www.youtube.com/watch?v=twLrHDqNv3w",
+          "file": "youtube-twLrHDqNv3w.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=twLrHDqNv3w",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "92HNWyDBlE0",
-          "creator": "The Talk",
-          "credit": "The Talk / YouTube",
+          "provider_id": "twLrHDqNv3w",
+          "creator": "BBC",
+          "credit": "BBC / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 30,
+          "source_start_seconds": 20,
           "focus": {
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
@@ -1290,21 +912,21 @@
     },
     {
       "id": "visual_13",
-      "visual_intent": "Garotas diversas e Cyndi no videoclipe original de Girls Just Want; plano de grupo que materializa a intenção do clipe.",
+      "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Por isso, ela queria garotas diferentes no videoclipe, para que cada uma pudesse se reconhecer.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
+          "name": "Girls Just Want — vídeo oficial",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+          "url": "https://www.youtube.com/watch?v=899Hwew0tk8",
+          "file": "youtube-899Hwew0tk8.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=899Hwew0tk8",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
+          "provider_id": "899Hwew0tk8",
           "creator": "Cyndi Lauper",
           "credit": "Cyndi Lauper / YouTube",
           "license": "",
@@ -1314,92 +936,8 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 1,
-          "semantic_fit": "exact"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi Lauper — MSNBC Mavericks",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=b88QHBAQai8",
-          "file": "youtube-b88QHBAQai8.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=b88QHBAQai8",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "b88QHBAQai8",
-          "creator": "MSNBC",
-          "credit": "MSNBC / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 30,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
@@ -1625,23 +1163,23 @@
     },
     {
       "id": "visual_16",
-      "visual_intent": "Cyndi Lauper identificável cantando a canção; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Era o direito de existir com alegria. Cara, o refrão ganhou força porque virou outra história.",
+      "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Era o direito de existir com alegria. Cara, o refrão ganhou força porque virou outra história.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Girls Just Want — Live At Last",
+          "name": "Girls Just Want — Rock in Rio Brasil 2024",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=qpmDbn-l7ac",
-          "file": "youtube-qpmDbn-l7ac.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=qpmDbn-l7ac",
+          "url": "https://www.youtube.com/watch?v=B9CKEaGWGbE",
+          "file": "youtube-B9CKEaGWGbE.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=B9CKEaGWGbE",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "qpmDbn-l7ac",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
+          "provider_id": "B9CKEaGWGbE",
+          "creator": "Registro Rock in Rio Brasil",
+          "credit": "Registro Rock in Rio Brasil / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 40,
@@ -1649,207 +1187,39 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
     {
       "id": "visual_17",
-      "visual_intent": "Cyndi Lauper identificável cantando a canção; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Um homem falando sobre garotas deu lugar a uma mulher defendendo a liberdade delas.",
+      "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Um homem falando sobre garotas deu lugar a uma mulher defendendo a liberdade delas.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Girls Just Want — ao vivo 2016",
+          "name": "Cyndi Lauper — fala da própria carreira e Hall of Fame",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=EyXX6xiFUX8",
-          "file": "youtube-EyXX6xiFUX8.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=EyXX6xiFUX8",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "EyXX6xiFUX8",
-          "creator": "Marcos Md",
-          "credit": "Marcos Md / YouTube",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4",
+          "file": "abc-123574974.mp4",
+          "source_page_url": "https://abcnews.com/video/123574974/",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "abc-123574974",
+          "creator": "ABC News",
+          "credit": "ABC News — Cyndi Lauper",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 35,
+          "source_start_seconds": 30,
           "focus": {
             "x": 0.5,
-            "y": 0.5
+            "y": 0.6
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
@@ -1965,86 +1335,23 @@
     },
     {
       "id": "visual_19",
-      "visual_intent": "Cyndi Lauper identificável cantando a canção; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Pensa nisso: mudar quem conta a história também muda o que a gente escuta no refrão.",
+      "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Pensa nisso: mudar quem conta a história também muda o que a gente escuta no refrão.",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Hey Now Girls Just Want to Have Fun — oficial",
+          "name": "Girls Just Want — performance ao vivo HD",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=CaqeAABlH3Q",
-          "file": "youtube-CaqeAABlH3Q.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=CaqeAABlH3Q",
+          "url": "https://www.youtube.com/watch?v=_HT4Qjko3lA",
+          "file": "youtube-_HT4Qjko3lA.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=_HT4Qjko3lA",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "CaqeAABlH3Q",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 30,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
+          "provider_id": "_HT4Qjko3lA",
+          "creator": "Registro de performance Cyndi Lauper",
+          "credit": "Registro de performance Cyndi Lauper / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 35,
@@ -2052,114 +1359,30 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
     {
       "id": "visual_20",
-      "visual_intent": "Cyndi Lauper identificável cantando a canção; o centro do beat é a artista e a voz/interpretação dela. Não afirmar que o material documenta o momento histórico da decisão. Comenta: você já sabia dessa virada de Girls Just Want to Have Fun?",
+      "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Comenta: você já sabia dessa virada de Girls Just Want to Have Fun?",
       "required_seconds": 9,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi Lauper e Cher — Hollywood Bowl",
+          "name": "Girls Just Want — Cyndi e Boy George O2 Londres",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=tVN-KpUbS7w",
-          "file": "youtube-tVN-KpUbS7w.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=tVN-KpUbS7w",
+          "url": "https://www.youtube.com/watch?v=8IsmTVie0H4",
+          "file": "youtube-8IsmTVie0H4.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=8IsmTVie0H4",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "tVN-KpUbS7w",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 30,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — Live in Paris",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "file": "youtube-iS61LkCObFc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "iS61LkCObFc",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 40,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi explica o videoclipe de Girls Just Want",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "file": "youtube-OpftQA56x1I.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "OpftQA56x1I",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 8,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want — Tonight Show 1984",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "file": "youtube-t-yis9av6xc.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "t-yis9av6xc",
-          "creator": "",
-          "credit": "YouTube; proveniência no sources.txt",
+          "provider_id": "8IsmTVie0H4",
+          "creator": "Registro O2 Londres",
+          "credit": "Registro O2 Londres / YouTube",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 35,
@@ -2167,29 +1390,8 @@
             "x": 0.5,
             "y": 0.5
           },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Girls Just Want to Have Fun — videoclipe oficial",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "file": "youtube-PIb6AZdTr-A.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "PIb6AZdTr-A",
-          "creator": "Cyndi Lauper",
-          "credit": "Cyndi Lauper / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 18,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     }

@@ -3,24 +3,24 @@
   "assets": [
     {
       "id": "visual_01",
-      "file": "youtube-iS61LkCObFc.mp4",
-      "url": "https://www.youtube.com/watch?v=iS61LkCObFc",
-      "credit": "Cyndi Lauper / YouTube",
+      "file": "abc-123790722.mp4",
+      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
+      "credit": "ABC News — Cyndi Lauper",
       "license": "",
       "focus": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.4
       }
     },
     {
       "id": "visual_02",
-      "file": "youtube-OpftQA56x1I.mp4",
-      "url": "https://www.youtube.com/watch?v=OpftQA56x1I",
-      "credit": "YouTube; proveniência no sources.txt",
+      "file": "abc-123566139.mp4",
+      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
+      "credit": "ABC News — Cyndi Lauper",
       "license": "",
       "focus": {
-        "x": 0.5,
-        "y": 0.5
+        "x": 0.68,
+        "y": 0.4
       }
     },
     {
@@ -47,9 +47,9 @@
     },
     {
       "id": "visual_05",
-      "file": "youtube-b88QHBAQai8.mp4",
-      "url": "https://www.youtube.com/watch?v=b88QHBAQai8",
-      "credit": "MSNBC / YouTube",
+      "file": "youtube-GjeUc1FGiLw.mp4",
+      "url": "https://www.youtube.com/watch?v=GjeUc1FGiLw",
+      "credit": "CLyoutubɘ / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
@@ -58,9 +58,9 @@
     },
     {
       "id": "visual_06",
-      "file": "youtube-t-yis9av6xc.mp4",
-      "url": "https://www.youtube.com/watch?v=t-yis9av6xc",
-      "credit": "YouTube; proveniência no sources.txt",
+      "file": "youtube-bjuNrs8yvxU.mp4",
+      "url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
+      "credit": "Arquivo de performance no Summit / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
@@ -69,13 +69,13 @@
     },
     {
       "id": "visual_07",
-      "file": "youtube-cZbZ48Am8Y4.mp4",
-      "url": "https://www.youtube.com/watch?v=cZbZ48Am8Y4",
-      "credit": "The Kelly Clarkson Show / YouTube",
+      "file": "abc-123589041.mp4",
+      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_digital_sitecyndilauper_700.mp4",
+      "credit": "ABC News — Cyndi Lauper",
       "license": "",
       "focus": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.4
       }
     },
     {
@@ -91,9 +91,9 @@
     },
     {
       "id": "visual_09",
-      "file": "youtube-92HNWyDBlE0.mp4",
-      "url": "https://www.youtube.com/watch?v=92HNWyDBlE0",
-      "credit": "The Talk / YouTube",
+      "file": "youtube-twLrHDqNv3w.mp4",
+      "url": "https://www.youtube.com/watch?v=twLrHDqNv3w",
+      "credit": "BBC / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
@@ -135,8 +135,8 @@
     },
     {
       "id": "visual_13",
-      "file": "youtube-PIb6AZdTr-A.mp4",
-      "url": "https://www.youtube.com/watch?v=PIb6AZdTr-A",
+      "file": "youtube-899Hwew0tk8.mp4",
+      "url": "https://www.youtube.com/watch?v=899Hwew0tk8",
       "credit": "Cyndi Lauper / YouTube",
       "license": "",
       "focus": {
@@ -168,9 +168,9 @@
     },
     {
       "id": "visual_16",
-      "file": "youtube-qpmDbn-l7ac.mp4",
-      "url": "https://www.youtube.com/watch?v=qpmDbn-l7ac",
-      "credit": "Cyndi Lauper / YouTube",
+      "file": "youtube-B9CKEaGWGbE.mp4",
+      "url": "https://www.youtube.com/watch?v=B9CKEaGWGbE",
+      "credit": "Registro Rock in Rio Brasil / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
@@ -179,13 +179,13 @@
     },
     {
       "id": "visual_17",
-      "file": "youtube-EyXX6xiFUX8.mp4",
-      "url": "https://www.youtube.com/watch?v=EyXX6xiFUX8",
-      "credit": "Marcos Md / YouTube",
+      "file": "abc-123574974.mp4",
+      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4",
+      "credit": "ABC News — Cyndi Lauper",
       "license": "",
       "focus": {
         "x": 0.5,
-        "y": 0.5
+        "y": 0.6
       }
     },
     {
@@ -201,9 +201,9 @@
     },
     {
       "id": "visual_19",
-      "file": "youtube-CaqeAABlH3Q.mp4",
-      "url": "https://www.youtube.com/watch?v=CaqeAABlH3Q",
-      "credit": "Cyndi Lauper / YouTube",
+      "file": "youtube-_HT4Qjko3lA.mp4",
+      "url": "https://www.youtube.com/watch?v=_HT4Qjko3lA",
+      "credit": "Registro de performance Cyndi Lauper / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
@@ -212,9 +212,9 @@
     },
     {
       "id": "visual_20",
-      "file": "youtube-tVN-KpUbS7w.mp4",
-      "url": "https://www.youtube.com/watch?v=tVN-KpUbS7w",
-      "credit": "YouTube; proveniência no sources.txt",
+      "file": "youtube-8IsmTVie0H4.mp4",
+      "url": "https://www.youtube.com/watch?v=8IsmTVie0H4",
+      "credit": "Registro O2 Londres / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
