@@ -10,48 +10,6 @@
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi Lauper — retrospectiva da carreira Nightline",
-          "kind": "video",
-          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
-          "file": "abc-123790722.mp4",
-          "source_page_url": "https://abcnews.com/video/123790722/",
-          "source": "web",
-          "search_provider": "web",
-          "provider_id": "abc-123790722",
-          "creator": "ABC News",
-          "credit": "ABC News — Cyndi Lauper",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 30,
-          "focus": {
-            "x": 0.5,
-            "y": 0.4
-          },
-          "semantic_fit": "direct",
-          "editorial_rank": 1
-        },
-        {
-          "name": "Cyndi Lauper — entrevista sobre carreira e documentário",
-          "kind": "video",
-          "url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
-          "file": "youtube-u0UFzGS1P-4.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
-          "source": "youtube",
-          "search_provider": "youtube_web",
-          "provider_id": "u0UFzGS1P-4",
-          "creator": "Jimmy Kimmel Live",
-          "credit": "Jimmy Kimmel Live / YouTube",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 35,
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "semantic_fit": "direct",
-          "editorial_rank": 2
-        },
-        {
           "name": "Girls Just Want — Austin City Limits",
           "kind": "video",
           "url": "https://www.youtube.com/watch?v=gKjzdnSbBWU",
@@ -71,6 +29,27 @@
           },
           "semantic_fit": "direct",
           "editorial_rank": 3
+        },
+        {
+          "name": "Cyndi Lauper — retrospectiva da carreira Nightline",
+          "kind": "video",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
+          "file": "abc-123790722.mp4",
+          "source_page_url": "https://abcnews.com/video/123790722/",
+          "source": "web",
+          "search_provider": "web",
+          "provider_id": "abc-123790722",
+          "creator": "ABC News",
+          "credit": "ABC News — Cyndi Lauper",
+          "license": "",
+          "rights_status": "unknown",
+          "source_start_seconds": 30,
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          },
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         }
       ]
     },
@@ -82,27 +61,6 @@
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
-        {
-          "name": "Cyndi Lauper — entrevista GMA sobre carreira",
-          "kind": "video",
-          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
-          "file": "abc-123566139.mp4",
-          "source_page_url": "https://abcnews.com/video/123566139/",
-          "source": "web",
-          "search_provider": "web",
-          "provider_id": "abc-123566139",
-          "creator": "ABC News",
-          "credit": "ABC News — Cyndi Lauper",
-          "license": "",
-          "rights_status": "unknown",
-          "source_start_seconds": 30,
-          "focus": {
-            "x": 0.68,
-            "y": 0.4
-          },
-          "semantic_fit": "direct",
-          "editorial_rank": 1
-        },
         {
           "name": "Girls Just Want — Rock in Rio Lisboa 2026",
           "kind": "video",
@@ -128,111 +86,51 @@
     },
     {
       "id": "visual_03",
-      "visual_intent": "A canção foi escrita por Robert Hazard. Mostrar Robert Hazard e Cyndi — contextualização da canção; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+      "visual_intent": "Retrato de Robert Hazard, compositor nomeado na narração.",
       "required_seconds": 4,
       "crossfade_seconds": 0,
       "inspect_top": 5,
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Robert Hazard e Cyndi — contextualização da canção",
+          "name": "Robert Hazard — retrato do compositor 1",
           "kind": "image",
-          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
-          "file": "cyndi-image-1.jpg",
-          "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "url": "https://iv1.lisimg.com/image/31331880/740full-robert-hazard.jpg",
+          "file": "robert-hazard-1.jpg",
+          "source_page_url": "https://www.listal.com/viewimage/31331880",
           "source": "web",
           "search_provider": "web",
-          "provider_id": "1",
+          "provider_id": "hazard-1",
           "creator": "",
-          "credit": "Upworthy — imagem editorial",
+          "credit": "Arquivo Robert Hazard / Listal",
           "license": "",
           "rights_status": "unknown",
           "focus": {
             "x": 0.5,
-            "y": 0.5
+            "y": 0.35
           },
-          "editorial_rank": 1,
-          "semantic_fit": "direct"
+          "semantic_fit": "direct",
+          "editorial_rank": 1
         },
         {
-          "name": "Cyndi Lauper — retrato promocional 1984",
+          "name": "Robert Hazard — retrato do compositor 2",
           "kind": "image",
-          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
-          "file": "cyndi-image-2.jpg",
-          "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
-          "source": "wikimedia",
-          "search_provider": "wikimedia_commons",
-          "provider_id": "2",
-          "creator": "John Bellissimo; Portrait Records",
-          "credit": "John Bellissimo / Portrait Records",
-          "license": "Public domain (US; Commons metadata)",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 2,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Let the Canary Sing — arquivo da artista",
-          "kind": "image",
-          "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
-          "file": "cyndi-image-3.jpg",
-          "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+          "url": "https://iv1.lisimg.com/image/15189710/584full-robert-hazard.jpg",
+          "file": "robert-hazard-2.jpg",
+          "source_page_url": "https://www.listal.com/viewimage/15189710",
           "source": "web",
           "search_provider": "web",
-          "provider_id": "3",
+          "provider_id": "hazard-2",
           "creator": "",
-          "credit": "Cyndi Lauper — site oficial",
+          "credit": "Arquivo Robert Hazard / Listal",
           "license": "",
           "rights_status": "unknown",
           "focus": {
             "x": 0.5,
-            "y": 0.5
+            "y": 0.35
           },
-          "editorial_rank": 3,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi Lauper — foto de imprensa",
-          "kind": "image",
-          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
-          "file": "cyndi-image-4.jpg",
-          "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
-          "source": "web",
-          "search_provider": "web",
-          "provider_id": "4",
-          "creator": "",
-          "credit": "Shore Fire Media — imprensa",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 4,
-          "semantic_fit": "contextual"
-        },
-        {
-          "name": "Cyndi Lauper — retrato de imprensa",
-          "kind": "image",
-          "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
-          "file": "cyndi-image-5.jpg",
-          "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
-          "source": "web",
-          "search_provider": "web",
-          "provider_id": "5",
-          "creator": "",
-          "credit": "Shore Fire Media — imprensa",
-          "license": "",
-          "rights_status": "unknown",
-          "focus": {
-            "x": 0.5,
-            "y": 0.5
-          },
-          "editorial_rank": 5,
-          "semantic_fit": "contextual"
+          "semantic_fit": "direct",
+          "editorial_rank": 2
         }
       ]
     },
@@ -386,25 +284,25 @@
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Girls Just Want — Summit 1984",
+          "name": "Cyndi Lauper — entrevista sobre carreira e documentário",
           "kind": "video",
-          "url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
-          "file": "youtube-bjuNrs8yvxU.mp4",
-          "source_page_url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
+          "url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
+          "file": "youtube-u0UFzGS1P-4.mp4",
+          "source_page_url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
           "source": "youtube",
           "search_provider": "youtube_web",
-          "provider_id": "bjuNrs8yvxU",
-          "creator": "Arquivo de performance no Summit",
-          "credit": "Arquivo de performance no Summit / YouTube",
+          "provider_id": "u0UFzGS1P-4",
+          "creator": "Jimmy Kimmel Live",
+          "credit": "Jimmy Kimmel Live / YouTube",
           "license": "",
           "rights_status": "unknown",
-          "source_start_seconds": 40,
+          "source_start_seconds": 35,
           "focus": {
             "x": 0.5,
             "y": 0.5
           },
           "semantic_fit": "direct",
-          "editorial_rank": 1
+          "editorial_rank": 2
         }
       ]
     },
@@ -1201,22 +1099,22 @@
       "min_visual_score": 45,
       "candidates": [
         {
-          "name": "Cyndi Lauper — fala da própria carreira e Hall of Fame",
+          "name": "Cyndi Lauper — entrevista GMA sobre carreira",
           "kind": "video",
-          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4",
-          "file": "abc-123574974.mp4",
-          "source_page_url": "https://abcnews.com/video/123574974/",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
+          "file": "abc-123566139.mp4",
+          "source_page_url": "https://abcnews.com/video/123566139/",
           "source": "web",
           "search_provider": "web",
-          "provider_id": "abc-123574974",
+          "provider_id": "abc-123566139",
           "creator": "ABC News",
           "credit": "ABC News — Cyndi Lauper",
           "license": "",
           "rights_status": "unknown",
           "source_start_seconds": 30,
           "focus": {
-            "x": 0.5,
-            "y": 0.6
+            "x": 0.68,
+            "y": 0.4
           },
           "semantic_fit": "direct",
           "editorial_rank": 1

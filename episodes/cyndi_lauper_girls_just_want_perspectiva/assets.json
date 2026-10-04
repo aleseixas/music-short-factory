@@ -3,35 +3,35 @@
   "assets": [
     {
       "id": "visual_01",
-      "file": "abc-123790722.mp4",
-      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
-      "credit": "ABC News — Cyndi Lauper",
-      "license": "",
-      "focus": {
-        "x": 0.5,
-        "y": 0.4
-      }
-    },
-    {
-      "id": "visual_02",
-      "file": "abc-123566139.mp4",
-      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
-      "credit": "ABC News — Cyndi Lauper",
-      "license": "",
-      "focus": {
-        "x": 0.68,
-        "y": 0.4
-      }
-    },
-    {
-      "id": "visual_03",
-      "file": "cyndi-image-1.jpg",
-      "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
-      "credit": "Upworthy — imagem editorial",
+      "file": "youtube-gKjzdnSbBWU.mp4",
+      "url": "https://www.youtube.com/watch?v=gKjzdnSbBWU",
+      "credit": "Austin City Limits / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
         "y": 0.5
+      }
+    },
+    {
+      "id": "visual_02",
+      "file": "youtube-TeYtaCh1bSs.mp4",
+      "url": "https://www.youtube.com/watch?v=TeYtaCh1bSs",
+      "credit": "Registro Rock in Rio Lisboa / YouTube",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "visual_03",
+      "file": "robert-hazard-1.jpg",
+      "url": "https://iv1.lisimg.com/image/31331880/740full-robert-hazard.jpg",
+      "credit": "Arquivo Robert Hazard / Listal",
+      "license": "",
+      "focus": {
+        "x": 0.5,
+        "y": 0.35
       }
     },
     {
@@ -58,9 +58,9 @@
     },
     {
       "id": "visual_06",
-      "file": "youtube-bjuNrs8yvxU.mp4",
-      "url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
-      "credit": "Arquivo de performance no Summit / YouTube",
+      "file": "youtube-u0UFzGS1P-4.mp4",
+      "url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
+      "credit": "Jimmy Kimmel Live / YouTube",
       "license": "",
       "focus": {
         "x": 0.5,
@@ -179,13 +179,13 @@
     },
     {
       "id": "visual_17",
-      "file": "abc-123574974.mp4",
-      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4",
+      "file": "abc-123566139.mp4",
+      "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
       "credit": "ABC News — Cyndi Lauper",
       "license": "",
       "focus": {
-        "x": 0.5,
-        "y": 0.6
+        "x": 0.68,
+        "y": 0.4
       }
     },
     {
