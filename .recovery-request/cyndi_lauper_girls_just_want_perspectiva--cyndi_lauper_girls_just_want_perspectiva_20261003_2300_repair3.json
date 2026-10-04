@@ -1,0 +1,2013 @@
+{
+  "slug": "cyndi_lauper_girls_just_want_perspectiva",
+  "previous_request_id": "cyndi_lauper_girls_just_want_perspectiva_20261003_1700_repair2",
+  "request_id": "cyndi_lauper_girls_just_want_perspectiva_20261003_2300_repair3",
+  "repair_cycle": 1,
+  "files": {
+    "story.json": {
+      "schema_version": 1,
+      "title": "Cyndi mudou quem conta a história",
+      "slug": "cyndi_lauper_girls_just_want_perspectiva",
+      "target_duration_seconds": 80,
+      "segments": [
+        {
+          "id": "s01",
+          "text": "Girls Just Want to Have Fun, da Cyndi Lauper, quase ficou sem a voz que você conhece.",
+          "delivery": "hook"
+        },
+        {
+          "id": "s02",
+          "text": "Ela não queria cantar aquela versão. E o motivo muda a música que você conhece.",
+          "delivery": "curious"
+        },
+        {
+          "id": "s03",
+          "text": "A canção foi escrita por Robert Hazard.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "s04",
+          "text": "Só que a perspectiva original era masculina.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "s05",
+          "text": "Cyndi não se reconhecia ali. Como defender aquela história, se ela não falava por você?",
+          "delivery": "curious"
+        },
+        {
+          "id": "s06",
+          "text": "O produtor pediu que ela imaginasse a canção na própria voz. E Cyndi encontrou outra história.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "s07",
+          "text": "E aí ela mudou partes da letra, o arranjo e a intenção por trás da festa.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "s08",
+          "text": "Queria uma música alegre, com sons eletrônicos.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "s09",
+          "text": "Mas também instrumentos orgânicos. Essa mistura ajudou a construir a energia que atravessa o refrão.",
+          "delivery": "neutral"
+        },
+        {
+          "id": "s10",
+          "text": "A virada mais forte veio da própria família: Cyndi pensou nas mulheres que conhecia.",
+          "delivery": "emotional"
+        },
+        {
+          "id": "s11",
+          "text": "Na mãe, nas tias e na avó.",
+          "delivery": "emotional"
+        },
+        {
+          "id": "s12",
+          "text": "Mulheres que tinham poucas oportunidades na vida.",
+          "delivery": "emotional"
+        },
+        {
+          "id": "s13",
+          "text": "Por isso, ela queria garotas diferentes no videoclipe, para que cada uma pudesse se reconhecer.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "s14",
+          "text": "A alegria precisava caber em todo mundo.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "s15",
+          "text": "Não era só uma festa sem consequência.",
+          "delivery": "dramatic"
+        },
+        {
+          "id": "s16",
+          "text": "Era o direito de existir com alegria. Cara, o refrão ganhou força porque virou outra história.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "s17",
+          "text": "Um homem falando sobre garotas deu lugar a uma mulher defendendo a liberdade delas.",
+          "delivery": "reveal"
+        },
+        {
+          "id": "s18",
+          "text": "A mesma canção passou a dizer outra coisa.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "s19",
+          "text": "Pensa nisso: mudar quem conta a história também muda o que a gente escuta no refrão.",
+          "delivery": "payoff"
+        },
+        {
+          "id": "s20",
+          "text": "Comenta: você já sabia dessa virada de Girls Just Want to Have Fun?",
+          "delivery": "curious"
+        }
+      ]
+    },
+    "timeline.json": {
+      "schema_version": 1,
+      "smart_visual_pacing": {
+        "enabled": true
+      },
+      "background_music": {
+        "profile": "external_drop_dead_synth_pop",
+        "volume": 0.08
+      },
+      "sfx_cues": [
+        {
+          "time_seconds": 0,
+          "type": "pop",
+          "volume": 0.1
+        },
+        {
+          "time_seconds": 10,
+          "type": "record_scratch",
+          "volume": 0.12
+        },
+        {
+          "time_seconds": 27,
+          "type": "correct_ding",
+          "volume": 0.11
+        },
+        {
+          "time_seconds": 51,
+          "type": "whoosh",
+          "volume": 0.1
+        }
+      ],
+      "visual_fx_cues": [],
+      "text_fx_cues": [
+        {
+          "segment": "s04",
+          "offset_seconds": 0.2,
+          "duration_seconds": 1.2,
+          "text": "OUTRA PERSPECTIVA",
+          "animation": "pop_in",
+          "position": "center",
+          "intensity": 0.3
+        },
+        {
+          "segment": "s17",
+          "offset_seconds": 0.2,
+          "duration_seconds": 1.4,
+          "text": "A VOZ MUDA TUDO",
+          "animation": "scale_bounce",
+          "position": "center",
+          "intensity": 0.3
+        }
+      ],
+      "overlay_cues": [],
+      "shots": [
+        {
+          "id": "shot_01",
+          "segment": "s01",
+          "asset": "visual_01",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_02",
+          "segment": "s02",
+          "asset": "visual_02",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_03",
+          "segment": "s03",
+          "asset": "visual_03",
+          "motion": "pull_out",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_04",
+          "segment": "s04",
+          "asset": "visual_04",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_05",
+          "segment": "s05",
+          "asset": "visual_05",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 20
+        },
+        {
+          "id": "shot_06",
+          "segment": "s06",
+          "asset": "visual_06",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 40
+        },
+        {
+          "id": "shot_07",
+          "segment": "s07",
+          "asset": "visual_07",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_08",
+          "segment": "s08",
+          "asset": "visual_08",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_09",
+          "segment": "s09",
+          "asset": "visual_09",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 20
+        },
+        {
+          "id": "shot_10",
+          "segment": "s10",
+          "asset": "visual_10",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_11",
+          "segment": "s11",
+          "asset": "visual_11",
+          "motion": "pull_out",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_12",
+          "segment": "s12",
+          "asset": "visual_12",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_13",
+          "segment": "s13",
+          "asset": "visual_13",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 125
+        },
+        {
+          "id": "shot_14",
+          "segment": "s14",
+          "asset": "visual_14",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_15",
+          "segment": "s15",
+          "asset": "visual_15",
+          "motion": "pull_out",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_16",
+          "segment": "s16",
+          "asset": "visual_16",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 40
+        },
+        {
+          "id": "shot_17",
+          "segment": "s17",
+          "asset": "visual_17",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 30
+        },
+        {
+          "id": "shot_18",
+          "segment": "s18",
+          "asset": "visual_18",
+          "motion": "push_in",
+          "transition_out": "cut"
+        },
+        {
+          "id": "shot_19",
+          "segment": "s19",
+          "asset": "visual_19",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 35
+        },
+        {
+          "id": "shot_20",
+          "segment": "s20",
+          "asset": "visual_20",
+          "motion": "hold",
+          "transition_out": "cut",
+          "source_start_seconds": 35
+        }
+      ]
+    },
+    "assets.json": {
+      "schema_version": 1,
+      "assets": [
+        {
+          "id": "visual_01",
+          "file": "abc-123790722.mp4",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
+          "credit": "ABC News — Cyndi Lauper",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_02",
+          "file": "abc-123566139.mp4",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
+          "credit": "ABC News — Cyndi Lauper",
+          "license": "",
+          "focus": {
+            "x": 0.68,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_03",
+          "file": "cyndi-image-1.jpg",
+          "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+          "credit": "Upworthy — imagem editorial",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_04",
+          "file": "cyndi-image-2.jpg",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+          "credit": "John Bellissimo / Portrait Records",
+          "license": "Public domain (US; Commons metadata)",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_05",
+          "file": "youtube-GjeUc1FGiLw.mp4",
+          "url": "https://www.youtube.com/watch?v=GjeUc1FGiLw",
+          "credit": "CLyoutubɘ / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_06",
+          "file": "youtube-bjuNrs8yvxU.mp4",
+          "url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
+          "credit": "Arquivo de performance no Summit / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_07",
+          "file": "abc-123589041.mp4",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_digital_sitecyndilauper_700.mp4",
+          "credit": "ABC News — Cyndi Lauper",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.4
+          }
+        },
+        {
+          "id": "visual_08",
+          "file": "cyndi-image-5.jpg",
+          "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_09",
+          "file": "youtube-twLrHDqNv3w.mp4",
+          "url": "https://www.youtube.com/watch?v=twLrHDqNv3w",
+          "credit": "BBC / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_10",
+          "file": "cyndi-image-10.jpg",
+          "url": "https://shorefire.com/images/uploads/gallery/DSC_8198-Edit.jpg",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_11",
+          "file": "cyndi-image-4.jpg",
+          "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_12",
+          "file": "cyndi-image-6.jpg",
+          "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_13",
+          "file": "youtube-899Hwew0tk8.mp4",
+          "url": "https://www.youtube.com/watch?v=899Hwew0tk8",
+          "credit": "Cyndi Lauper / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_14",
+          "file": "cyndi-image-8.jpg",
+          "url": "https://shorefire.com/images/uploads/gallery/TGS.jpg",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_15",
+          "file": "cyndi-image-9.jpg",
+          "url": "https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg",
+          "credit": "Cyndi Lauper — site oficial",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_16",
+          "file": "youtube-B9CKEaGWGbE.mp4",
+          "url": "https://www.youtube.com/watch?v=B9CKEaGWGbE",
+          "credit": "Registro Rock in Rio Brasil / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_17",
+          "file": "abc-123574974.mp4",
+          "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4",
+          "credit": "ABC News — Cyndi Lauper",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.6
+          }
+        },
+        {
+          "id": "visual_18",
+          "file": "cyndi-image-7.jpg",
+          "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg",
+          "credit": "Shore Fire Media — imprensa",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_19",
+          "file": "youtube-_HT4Qjko3lA.mp4",
+          "url": "https://www.youtube.com/watch?v=_HT4Qjko3lA",
+          "credit": "Registro de performance Cyndi Lauper / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        },
+        {
+          "id": "visual_20",
+          "file": "youtube-8IsmTVie0H4.mp4",
+          "url": "https://www.youtube.com/watch?v=8IsmTVie0H4",
+          "credit": "Registro O2 Londres / YouTube",
+          "license": "",
+          "focus": {
+            "x": 0.5,
+            "y": 0.5
+          }
+        }
+      ]
+    },
+    "visual_candidates.json": {
+      "schema_version": 1,
+      "slots": [
+        {
+          "id": "visual_01",
+          "visual_intent": "Cyndi Lauper claramente reconhecível em vídeo real desde o primeiro frame editorial; retrospectiva da própria artista.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — retrospectiva da carreira Nightline",
+              "kind": "video",
+              "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4",
+              "file": "abc-123790722.mp4",
+              "source_page_url": "https://abcnews.com/video/123790722/",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "abc-123790722",
+              "creator": "ABC News",
+              "credit": "ABC News — Cyndi Lauper",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            },
+            {
+              "name": "Cyndi Lauper — entrevista sobre carreira e documentário",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
+              "file": "youtube-u0UFzGS1P-4.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=u0UFzGS1P-4",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "u0UFzGS1P-4",
+              "creator": "Jimmy Kimmel Live",
+              "credit": "Jimmy Kimmel Live / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 2
+            },
+            {
+              "name": "Girls Just Want — Austin City Limits",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=gKjzdnSbBWU",
+              "file": "youtube-gKjzdnSbBWU.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=gKjzdnSbBWU",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "gKjzdnSbBWU",
+              "creator": "Austin City Limits",
+              "credit": "Austin City Limits / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 3
+            }
+          ]
+        },
+        {
+          "id": "visual_02",
+          "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Ela não queria cantar aquela versão. E o motivo muda a música que você conhece.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — entrevista GMA sobre carreira",
+              "kind": "video",
+              "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4",
+              "file": "abc-123566139.mp4",
+              "source_page_url": "https://abcnews.com/video/123566139/",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "abc-123566139",
+              "creator": "ABC News",
+              "credit": "ABC News — Cyndi Lauper",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.68,
+                "y": 0.4
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            },
+            {
+              "name": "Girls Just Want — Rock in Rio Lisboa 2026",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=TeYtaCh1bSs",
+              "file": "youtube-TeYtaCh1bSs.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=TeYtaCh1bSs",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "TeYtaCh1bSs",
+              "creator": "Registro Rock in Rio Lisboa",
+              "credit": "Registro Rock in Rio Lisboa / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 40,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 2
+            }
+          ]
+        },
+        {
+          "id": "visual_03",
+          "visual_intent": "A canção foi escrita por Robert Hazard. Mostrar Robert Hazard e Cyndi — contextualização da canção; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "file": "cyndi-image-5.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "5",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_04",
+          "visual_intent": "Só que a perspectiva original era masculina. Mostrar Cyndi Lauper — retrato promocional 1984; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "file": "cyndi-image-5.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "5",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_05",
+          "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Cyndi não se reconhecia ali. Como defender aquela história, se ela não falava por você?",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — entrevista 1984",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=GjeUc1FGiLw",
+              "file": "youtube-GjeUc1FGiLw.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=GjeUc1FGiLw",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "GjeUc1FGiLw",
+              "creator": "CLyoutubɘ",
+              "credit": "CLyoutubɘ / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 20,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_06",
+          "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. O produtor pediu que ela imaginasse a canção na própria voz. E Cyndi encontrou outra história.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Girls Just Want — Summit 1984",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
+              "file": "youtube-bjuNrs8yvxU.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=bjuNrs8yvxU",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "bjuNrs8yvxU",
+              "creator": "Arquivo de performance no Summit",
+              "credit": "Arquivo de performance no Summit / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 40,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_07",
+          "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. E aí ela mudou partes da letra, o arranjo e a intenção por trás da festa.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — comenta sua intenção artística",
+              "kind": "video",
+              "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_digital_sitecyndilauper_700.mp4",
+              "file": "abc-123589041.mp4",
+              "source_page_url": "https://abcnews.com/video/123589041/",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "abc-123589041",
+              "creator": "ABC News",
+              "credit": "ABC News — Cyndi Lauper",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.4
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_08",
+          "visual_intent": "Queria uma música alegre, com sons eletrônicos. Mostrar Cyndi Lauper — retrato de imprensa; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — retrato de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "file": "cyndi-image-5.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "5",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_09",
+          "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Mas também instrumentos orgânicos. Essa mistura ajudou a construir a energia que atravessa o refrão.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — conversa sobre preparação no Graham Norton",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=twLrHDqNv3w",
+              "file": "youtube-twLrHDqNv3w.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=twLrHDqNv3w",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "twLrHDqNv3w",
+              "creator": "BBC",
+              "credit": "BBC / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 20,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_10",
+          "visual_intent": "Retrato de Cyndi: a lembrança pessoal de sua família, sem representar parentes ausentes.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — foto DSC8198",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/DSC_8198-Edit.jpg",
+              "file": "cyndi-image-10.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/DSC_8198-Edit.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "10",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_11",
+          "visual_intent": "Na mãe, nas tias e na avó. Mostrar Cyndi Lauper — foto de imprensa; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "file": "cyndi-image-5.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "5",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_12",
+          "visual_intent": "Mulheres que tinham poucas oportunidades na vida. Mostrar Cyndi Lauper — SNAPePHOTO 015; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — SNAPePHOTO 015",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg",
+              "file": "cyndi-image-6.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "6",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_13",
+          "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Por isso, ela queria garotas diferentes no videoclipe, para que cada uma pudesse se reconhecer.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Girls Just Want — vídeo oficial",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=899Hwew0tk8",
+              "file": "youtube-899Hwew0tk8.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=899Hwew0tk8",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "899Hwew0tk8",
+              "creator": "Cyndi Lauper",
+              "credit": "Cyndi Lauper / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 125,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_14",
+          "visual_intent": "Cyndi como voz de uma mensagem de alegria inclusiva; imagem da própria artista, sem apresentar concerto inexistente.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — registro de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/TGS.jpg",
+              "file": "cyndi-image-8.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/TGS.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "8",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "direct"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_15",
+          "visual_intent": "Não era só uma festa sem consequência. Mostrar Cyndi Lauper — site oficial; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — site oficial",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg",
+              "file": "cyndi-image-9.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "9",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_16",
+          "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Era o direito de existir com alegria. Cara, o refrão ganhou força porque virou outra história.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Girls Just Want — Rock in Rio Brasil 2024",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=B9CKEaGWGbE",
+              "file": "youtube-B9CKEaGWGbE.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=B9CKEaGWGbE",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "B9CKEaGWGbE",
+              "creator": "Registro Rock in Rio Brasil",
+              "credit": "Registro Rock in Rio Brasil / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 40,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_17",
+          "visual_intent": "Cyndi Lauper em entrevista, falando e mostrando sua própria expressão; não afirmar que registra a decisão histórica. Um homem falando sobre garotas deu lugar a uma mulher defendendo a liberdade delas.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — fala da própria carreira e Hall of Fame",
+              "kind": "video",
+              "url": "https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4",
+              "file": "abc-123574974.mp4",
+              "source_page_url": "https://abcnews.com/video/123574974/",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "abc-123574974",
+              "creator": "ABC News",
+              "credit": "ABC News — Cyndi Lauper",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 30,
+              "focus": {
+                "x": 0.5,
+                "y": 0.6
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_18",
+          "visual_intent": "A mesma canção passou a dizer outra coisa. Mostrar Cyndi Lauper — SNAPePHOTO 091; outros registros da artista são contexto, sem fingir registrar o fato histórico.",
+          "required_seconds": 4,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Cyndi Lauper — SNAPePHOTO 091",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg",
+              "file": "cyndi-image-7.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "7",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 1,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Robert Hazard e Cyndi — contextualização da canção",
+              "kind": "image",
+              "url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "file": "cyndi-image-1.jpg",
+              "source_page_url": "https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "1",
+              "creator": "",
+              "credit": "Upworthy — imagem editorial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 2,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — retrato promocional 1984",
+              "kind": "image",
+              "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "file": "cyndi-image-2.jpg",
+              "source_page_url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg",
+              "source": "wikimedia",
+              "search_provider": "wikimedia_commons",
+              "provider_id": "2",
+              "creator": "John Bellissimo; Portrait Records",
+              "credit": "John Bellissimo / Portrait Records",
+              "license": "Public domain (US; Commons metadata)",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 3,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Let the Canary Sing — arquivo da artista",
+              "kind": "image",
+              "url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "file": "cyndi-image-3.jpg",
+              "source_page_url": "https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "3",
+              "creator": "",
+              "credit": "Cyndi Lauper — site oficial",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 4,
+              "semantic_fit": "contextual"
+            },
+            {
+              "name": "Cyndi Lauper — foto de imprensa",
+              "kind": "image",
+              "url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "file": "cyndi-image-4.jpg",
+              "source_page_url": "https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg",
+              "source": "web",
+              "search_provider": "web",
+              "provider_id": "4",
+              "creator": "",
+              "credit": "Shore Fire Media — imprensa",
+              "license": "",
+              "rights_status": "unknown",
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "editorial_rank": 5,
+              "semantic_fit": "contextual"
+            }
+          ]
+        },
+        {
+          "id": "visual_19",
+          "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Pensa nisso: mudar quem conta a história também muda o que a gente escuta no refrão.",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Girls Just Want — performance ao vivo HD",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=_HT4Qjko3lA",
+              "file": "youtube-_HT4Qjko3lA.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=_HT4Qjko3lA",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "_HT4Qjko3lA",
+              "creator": "Registro de performance Cyndi Lauper",
+              "credit": "Registro de performance Cyndi Lauper / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        },
+        {
+          "id": "visual_20",
+          "visual_intent": "Cyndi Lauper cantando Girls Just Want to Have Fun em performance; mostra a voz e energia da própria música. Comenta: você já sabia dessa virada de Girls Just Want to Have Fun?",
+          "required_seconds": 9,
+          "crossfade_seconds": 0,
+          "inspect_top": 5,
+          "min_visual_score": 45,
+          "candidates": [
+            {
+              "name": "Girls Just Want — Cyndi e Boy George O2 Londres",
+              "kind": "video",
+              "url": "https://www.youtube.com/watch?v=8IsmTVie0H4",
+              "file": "youtube-8IsmTVie0H4.mp4",
+              "source_page_url": "https://www.youtube.com/watch?v=8IsmTVie0H4",
+              "source": "youtube",
+              "search_provider": "youtube_web",
+              "provider_id": "8IsmTVie0H4",
+              "creator": "Registro O2 Londres",
+              "credit": "Registro O2 Londres / YouTube",
+              "license": "",
+              "rights_status": "unknown",
+              "source_start_seconds": 35,
+              "focus": {
+                "x": 0.5,
+                "y": 0.5
+              },
+              "semantic_fit": "direct",
+              "editorial_rank": 1
+            }
+          ]
+        }
+      ]
+    },
+    "post.json": {
+      "schema_version": 1,
+      "cover": {
+        "headline": "A VOZ MUDA TUDO",
+        "source": {
+          "type": "video_frame",
+          "timestamp_seconds": 0.7,
+          "asset_id": "visual_01"
+        }
+      },
+      "youtube": {
+        "title": "Cyndi mudou a voz da festa",
+        "description": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+        "hashtags": [
+          "cyndilauper",
+          "girlsjustwanttohavefun",
+          "anos80",
+          "curiosidade",
+          "alemdohit"
+        ],
+        "privacy_status": "public",
+        "category_id": "10"
+      },
+      "instagram": {
+        "caption": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+        "hashtags": [
+          "cyndilauper",
+          "girlsjustwanttohavefun",
+          "anos80",
+          "curiosidade",
+          "alemdohit"
+        ],
+        "share_to_feed": true,
+        "thumb_offset_ms": 1000
+      },
+      "facebook": {
+        "title": "Cyndi mudou a voz da festa",
+        "caption": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+        "hashtags": [
+          "cyndilauper",
+          "girlsjustwanttohavefun",
+          "anos80",
+          "curiosidade",
+          "alemdohit"
+        ]
+      },
+      "tiktok": {
+        "caption": "Cyndi Lauper transformou uma canção escrita por um homem em uma defesa da liberdade das garotas. A festa tinha uma intenção — e vinha das mulheres da própria família. Você já sabia dessa virada?",
+        "hashtags": [
+          "cyndilauper",
+          "girlsjustwanttohavefun",
+          "anos80",
+          "curiosidade",
+          "alemdohit"
+        ],
+        "privacy_level": "SELF_ONLY",
+        "video_cover_timestamp_ms": 1000,
+        "disable_comment": false,
+        "disable_duet": false,
+        "disable_stitch": false,
+        "brand_content_toggle": false,
+        "brand_organic_toggle": false,
+        "is_aigc": false
+      }
+    },
+    "sources.txt": "Pesquisa factual — consulta em 2026-10-03\nhttps://www.loc.gov/static/programs/national-recording-preservation-board/documents/CyndiLauperInterview.pdf\nEntrevista com Cyndi Lauper, Library of Congress, 24/05/2019: desejo de alegria; mudança de letra/perspectiva e arranjo; eletrônico + orgânico; garotas diversas no clipe.\nhttps://wnyc.org/story/brooke-talks-cyndi-lauper/transcript/\nEntrevista primária WNYC: recusa inicial da versão masculina; Rick Chertoff; mãe, tias e avó; oportunidades e direito a uma existência alegre. Falas parafraseadas, sem reprodução de letra.\nhttps://time.com/65952/cyndi-lauper-shes-so-unusual/\nEntrevista primária TIME: canção escrita por Robert Hazard para voz masculina; transformação para perspectiva feminina.\nhttps://cyndilauper.com/\nhttps://shorefire.com/roster/cyndi-lauper\nFotos de imprensa e links de apresentações/entrevistas reais da artista. Não inferir que uma imagem atual documenta o acontecimento histórico narrado.\nhttps://www.jambase.com/article/cyndi-lauper-joni-mitchell-cher-sza-farewell-tour-final-concert-videos-setlist\nProveniência para show e alternativas de performance.\nhttps://commons.wikimedia.org/wiki/File:Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg\nJohn Bellissimo / Portrait Records, 1984. Commons declara domínio público nos EUA; não presumir domínio público universal.\nConsulta Wikimedia/Openverse comparada a fontes oficiais; aquisição Commons direta na conversa retornou HTTP403. Fontes web alternativas mantidas. Qualidade, hashes, duração e movimento só serão confirmados pelo runtime.\nVisuais — localizadores reais; 100 entradas de candidatos por slot, 29 fontes distintas pesquisadas. Repetição em pools é alternativa, nunca autorização para repetir fonte no corte final.\nGirls Just Want to Have Fun — Live in Paris\nhttps://www.youtube.com/watch?v=iS61LkCObFc\nPágina-fonte: https://www.youtube.com/watch?v=iS61LkCObFc\nCrédito conhecido: Cyndi Lauper / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nCyndi explica o videoclipe de Girls Just Want\nhttps://www.youtube.com/watch?v=OpftQA56x1I\nPágina-fonte: https://www.youtube.com/watch?v=OpftQA56x1I\nCrédito conhecido: YouTube; proveniência no sources.txt; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — MSNBC Mavericks\nhttps://www.youtube.com/watch?v=b88QHBAQai8\nPágina-fonte: https://www.youtube.com/watch?v=b88QHBAQai8\nCrédito conhecido: MSNBC / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nGirls Just Want — Tonight Show 1984\nhttps://www.youtube.com/watch?v=t-yis9av6xc\nPágina-fonte: https://www.youtube.com/watch?v=t-yis9av6xc\nCrédito conhecido: YouTube; proveniência no sources.txt; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — Kelly Clarkson Show\nhttps://www.youtube.com/watch?v=cZbZ48Am8Y4\nPágina-fonte: https://www.youtube.com/watch?v=cZbZ48Am8Y4\nCrédito conhecido: The Kelly Clarkson Show / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — The Talk\nhttps://www.youtube.com/watch?v=92HNWyDBlE0\nPágina-fonte: https://www.youtube.com/watch?v=92HNWyDBlE0\nCrédito conhecido: The Talk / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nGirls Just Want to Have Fun — videoclipe oficial\nhttps://www.youtube.com/watch?v=PIb6AZdTr-A\nPágina-fonte: https://www.youtube.com/watch?v=PIb6AZdTr-A\nCrédito conhecido: Cyndi Lauper / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nGirls Just Want — To Memphis With Love\nhttps://www.youtube.com/watch?v=AbiOcB-6yso\nPágina-fonte: https://www.youtube.com/watch?v=AbiOcB-6yso\nCrédito conhecido: Cyndi Lauper / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nGirls Just Want — Live At Last\nhttps://www.youtube.com/watch?v=qpmDbn-l7ac\nPágina-fonte: https://www.youtube.com/watch?v=qpmDbn-l7ac\nCrédito conhecido: Cyndi Lauper / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nGirls Just Want — ao vivo 2016\nhttps://www.youtube.com/watch?v=EyXX6xiFUX8\nPágina-fonte: https://www.youtube.com/watch?v=EyXX6xiFUX8\nCrédito conhecido: Marcos Md / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nHey Now Girls Just Want to Have Fun — oficial\nhttps://www.youtube.com/watch?v=CaqeAABlH3Q\nPágina-fonte: https://www.youtube.com/watch?v=CaqeAABlH3Q\nCrédito conhecido: Cyndi Lauper / YouTube; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper e Cher — Hollywood Bowl\nhttps://www.youtube.com/watch?v=tVN-KpUbS7w\nPágina-fonte: https://www.youtube.com/watch?v=tVN-KpUbS7w\nCrédito conhecido: YouTube; proveniência no sources.txt; licença: não confirmada; metadata de direitos: unknown\n\nGirls Just Want — Cyndi e Cher no Hollywood Bowl\nhttps://www.youtube.com/watch?v=UELlwbUlStE\nPágina-fonte: https://www.youtube.com/watch?v=UELlwbUlStE\nCrédito conhecido: YouTube; proveniência no sources.txt; licença: não confirmada; metadata de direitos: unknown\n\nRobert Hazard e Cyndi — contextualização da canção\nhttps://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200\nPágina-fonte: https://www.upworthy.com/wp-content/uploads/sites/2/2026/07/Girls-1200.jpg?w=1200\nCrédito conhecido: Upworthy — imagem editorial; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — retrato promocional 1984\nhttps://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg\nPágina-fonte: https://upload.wikimedia.org/wikipedia/commons/8/8c/Cyndi_Lauper_1984_promotional_photograph_from_Portrait_Records.jpg\nCrédito conhecido: John Bellissimo / Portrait Records; licença: Public domain (US; Commons metadata); metadata de direitos: unknown\n\nLet the Canary Sing — arquivo da artista\nhttps://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg\nPágina-fonte: https://cyndilauper.com/wp-content/uploads/2025/03/LTCS-1024x576.jpg\nCrédito conhecido: Cyndi Lauper — site oficial; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — foto de imprensa\nhttps://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_Prints.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — retrato de imprensa\nhttps://shorefire.com/images/uploads/gallery/HIGH_RES.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/HIGH_RES.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — SNAPePHOTO 015\nhttps://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_015.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — SNAPePHOTO 091\nhttps://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/CyndiLauper_bySNAPePHOTO_091.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — registro de imprensa\nhttps://shorefire.com/images/uploads/gallery/TGS.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/TGS.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — site oficial\nhttps://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg\nPágina-fonte: https://cyndilauper.com/wp-content/uploads/2026/09/Cyndi-Lauper.jpg\nCrédito conhecido: Cyndi Lauper — site oficial; licença: não confirmada; metadata de direitos: unknown\n\nCyndi Lauper — foto DSC8198\nhttps://shorefire.com/images/uploads/gallery/DSC_8198-Edit.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/DSC_8198-Edit.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi no Madison Square Garden — Taylor Hill\nhttps://shorefire.com/images/uploads/gallery/Cyndi_Lauper_MSG_by_Taylor_Hill_GETTY.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/Cyndi_Lauper_MSG_by_Taylor_Hill_GETTY.jpg\nCrédito conhecido: Taylor Hill / Getty / Shore Fire Media; licença: não confirmada; metadata de direitos: unknown\n\nCyndi — Jones Beach 0794\nhttps://shorefire.com/images/uploads/gallery/2226070794.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/2226070794.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi — Jones Beach 0918\nhttps://shorefire.com/images/uploads/gallery/2226070918.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/2226070918.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi — performance 8238\nhttps://shorefire.com/images/uploads/gallery/2182038238.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/2182038238.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi — performance 8281\nhttps://shorefire.com/images/uploads/gallery/2182038281.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/2182038281.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\n\nCyndi — performance 8344\nhttps://shorefire.com/images/uploads/gallery/2182038344.jpg\nPágina-fonte: https://shorefire.com/images/uploads/gallery/2182038344.jpg\nCrédito conhecido: Shore Fire Media — imprensa; licença: não confirmada; metadata de direitos: unknown\nTrilha — pesquisa externa: cinco consultas (synthpop alegre anos80; funk documental feminino; disco instrumental; pop storytelling sem voz; quirky retro funk).\nCandidatas comparadas: Sweet 1989 Synthpop 176135; Synth Pop 583369; 80s Retro 223103; Funky Beat Don't Be Afraid 337984; Bright Pop 310359; Quirky Retro Funk 236124.\nhttps://pixabay.com/music/search/synthpop/\nhttps://pixabay.com/music/search/funky/\nCandidatas novas não podem entrar sem profile no catálogo; alteração de catálogo é proibida nesta rodada. Opções com indicação Content ID rebaixadas; ausência de claim não garantida. Usa profile existente fallback_social_fun, volume0.10; resolver escolhe faixa e valida aquisição/decodificação.\nhttps://pixabay.com/music/folk-happy-funky-polka-folk-230649/ — MonolithAudio\nhttps://pixabay.com/music/funk-night-patrol-230379/ — MonolithAudio\nhttps://pixabay.com/music/disco-nu-disco-584761/ — DRAGON-STUDIO\nLicença/metadata do catálogo da main; registro técnico da faixa efetivamente resolvida pertence ao runtime.\nSFX somente tipos do catálogo atual: pop, record_scratch, correct_ding, whoosh.\nvidIQ: consulta Cyndi Lauper BR retornou insufficientCredits; nenhuma métrica estimada.\n\nReparo material 1 — 2026-10-03: AbiOcB-6yso retornou Video unavailable inclusive fallback cookies no run37154082438. Removido do pool e da montagem. Slot13 agora videoclipe original PIb6AZdTr-A, início125s; antiga ocorrência do mesmo clipe no slot10 substituída por imagem DSC8198, para zero repetição. Slot14 agora Cyndi e Cher, fonteUELlwbUlStE, com texto específico correspondente. Pools de vídeo possuem baseline direct/exact apenas quando mostram Cyndi/ação vinculada; alternativas só contextuais não são aprovadas como movimento decorativo. Validação técnica continua nativa.\nTrilha fallback_social_fun efetivamente falhou HTTP403; reparo interno resolveu external_apt_monkeys_spinning_monkeys. Essa faixa foi substituída por bright_fun local existente: a documentação de crédito público de Monkeys Spinning Monkeys não consta no catálogo e o post não suporta bloco técnico de atribuição. bright_fun é fallback local após falha real do fornecedor, volume0.10. Sem mudança de catálogo.\n\nPool revisado:97 entradas após remover a fonte indisponível; 20 fontes distintas na montagem.\n\nReparo material2: UELlwbUlStE indisponível no run37154628588; removido da montagem/pool e substituído por foto distinta TGS. Texto correspondente voltou à mensagem inclusiva original, sem sugerir registro de concerto. 20takes:11vídeos/9imagens;20fontesfinaldistintas. Trilha bright_fun/summer-fun-01.mp3 decodificada no nativeprepare, volume0.10.\nOutros erros do mesmo run: falhas de rede googlevideo.com (Network unreachable, download truncado), HTTP503 e Read timed out. As fontes afetadas tinham sido adquiridas no run37154082438. Esses detalhes são evidência de instabilidade externa, apesar de parte deles ter código VISUAL_ASSET_INVALID. Mantêm-se identidade/tema e gates nativos; o novo prepare após backoff continua obrigado a obter PASS real. Sem retry/rerun/publisher/queue manual.\n\nRECOVERY MATERIAL — 2026-10-03\nRun 37155708306 completed MEDIA_PREFLIGHT batch10/10: eleven primary YouTube acquisition failures (bot challenge; googlevideo network unreachable) and BACKGROUND_MUSIC_REUSE for The Funkhouser. Replace every rejected primary with new source; remove failed video pool. Four direct ABC MP4s downloaded, ffprobe video640x360 and durations81.114/115.916/416.883/464.864 seconds verified; frames inspected at30s show Cyndi. These are retrospective interviews/archive context, not records of the 1983 rewrite. Remaining sources are distinct Girls Just Want performances and a new official clip upload; download/trim/motion still require native prepare/preflight validation. No source appears twice in chosen timeline; no crop/trim used to masquerade as a new source.\nCyndi Lauper — retrospectiva da carreira Nightline | https://abcnews.com/video/123790722/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250715_ntl_cyndi_lauper_1242_700.mp4\nCyndi Lauper — entrevista GMA sobre carreira | https://abcnews.com/video/123566139/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_cyndi_lauper_0830_700.mp4\nCyndi Lauper — entrevista 1984 | https://www.youtube.com/watch?v=GjeUc1FGiLw | https://www.youtube.com/watch?v=GjeUc1FGiLw\nGirls Just Want — Summit 1984 | https://www.youtube.com/watch?v=bjuNrs8yvxU | https://www.youtube.com/watch?v=bjuNrs8yvxU\nCyndi Lauper — comenta sua intenção artística | https://abcnews.com/video/123589041/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_digital_sitecyndilauper_700.mp4\nCyndi Lauper — conversa sobre preparação no Graham Norton | https://www.youtube.com/watch?v=twLrHDqNv3w | https://www.youtube.com/watch?v=twLrHDqNv3w\nGirls Just Want — vídeo oficial | https://www.youtube.com/watch?v=899Hwew0tk8 | https://www.youtube.com/watch?v=899Hwew0tk8\nGirls Just Want — Rock in Rio Brasil 2024 | https://www.youtube.com/watch?v=B9CKEaGWGbE | https://www.youtube.com/watch?v=B9CKEaGWGbE\nCyndi Lauper — fala da própria carreira e Hall of Fame | https://abcnews.com/video/123574974/ | https://ondemand.abcnews.com/playback/abcnews/2025/07/250708_gma_social_lauper_700.mp4\nGirls Just Want — performance ao vivo HD | https://www.youtube.com/watch?v=_HT4Qjko3lA | https://www.youtube.com/watch?v=_HT4Qjko3lA\nGirls Just Want — Cyndi e Boy George O2 Londres | https://www.youtube.com/watch?v=8IsmTVie0H4 | https://www.youtube.com/watch?v=8IsmTVie0H4\nGirls Just Want — Austin City Limits | https://www.youtube.com/watch?v=gKjzdnSbBWU | https://www.youtube.com/watch?v=gKjzdnSbBWU\nCyndi Lauper — entrevista sobre carreira e documentário | https://www.youtube.com/watch?v=u0UFzGS1P-4 | https://www.youtube.com/watch?v=u0UFzGS1P-4\nCyndi Lauper — entrevista Today 1985 | https://www.youtube.com/watch?v=hCKg9C9_K8I | https://www.youtube.com/watch?v=hCKg9C9_K8I\nCyndi Lauper — entrevista evento beneficente 1985 | https://www.youtube.com/watch?v=5JdmUI8_j3M | https://www.youtube.com/watch?v=5JdmUI8_j3M\nGirls Just Want — Rock in Rio Lisboa 2026 | https://www.youtube.com/watch?v=TeYtaCh1bSs | https://www.youtube.com/watch?v=TeYtaCh1bSs\nBACKGROUND research queries: upbeat synth pop instrumental royalty free background; 1980s synth instrumental background music CC0; happy funk instrumental public domain; uplifting electronic pop instrumental creative commons; retro new wave instrumental CC0.\nCompared Synth pop with4 on the floor (Mesostic, existing external_drop_dead_synth_pop profile); Stock Music Links upbeat synth (public attribution required); RomanSenyk Pop Party (public attribution required); Petrushkasound Upbeat Synth (Pixabay); HoliznaCC0 Retro Synths (no existing profile); Lostsomewhere (existing profile but less rhythmic). Choose existing Mesostic synth profile: steady electronic pulse fits explanation of electronic pop arrangement, volume0.08 under narration. HTTP source downloaded and ffprobe decoded Vorbis, duration198.000907s. Recent-use/freshness remains mandatory native gate; no PASS implied.\nhttps://commons.wikimedia.org/wiki/File:Synth_pop_with_4_on_the_floor.ogg\nhttps://upload.wikimedia.org/wikipedia/commons/c/c2/Synth_pop_with_4_on_the_floor.ogg\n"
+  }
+}
